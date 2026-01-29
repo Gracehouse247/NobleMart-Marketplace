@@ -70,66 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load Footer
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
-        footerPlaceholder.innerHTML = `
-            <footer class="bg-[#3e444a] text-gray-200 pt-16 pb-8 border-t border-gray-700">
-                <div class="max-w-[1440px] mx-auto px-4 md:px-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                        <div>
-                            <div class="flex items-center gap-2 mb-6">
-                                <div class="size-8 brand-gradient rounded-full flex items-center justify-center text-white">
-                                    <span class="material-symbols-outlined text-lg">shopping_bag</span>
-                                </div>
-                                <h5 class="text-xl font-bold text-white">NobleMart</h5>
-                            </div>
-                            <p class="text-sm text-gray-400 mb-6 leading-relaxed">NobleMart is the #1 multi-vendor platform in Nigeria, connecting you with verified sellers for everything you need. Quality products, fast delivery.</p>
-                            <div class="flex gap-4">
-                                <a class="size-10 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
-                                <a class="size-10 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1" href="#"><span class="material-symbols-outlined text-xl">thumb_up</span></a>
-                                <a class="size-10 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-all transform hover:-translate-y-1" href="#"><span class="material-symbols-outlined text-xl">camera_alt</span></a>
-                            </div>
-                        </div>
-                        <div>
-                            <h5 class="font-bold text-white text-base uppercase tracking-wider mb-6 border-b border-gray-600 pb-2 w-fit">Support</h5>
-                            <ul class="space-y-3 text-sm font-medium text-gray-400">
-                                <li><a class="hover:text-primary hover:pl-2 transition-all block" href="#">Help Center</a></li>
-                                <li><a class="hover:text-primary hover:pl-2 transition-all block" href="#">How to Shop</a></li>
-                                <li><a class="hover:text-primary hover:pl-2 transition-all block" href="#">Delivery Options</a></li>
-                                <li><a class="hover:text-primary hover:pl-2 transition-all block" href="#">Return Policy</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="font-bold text-white text-base uppercase tracking-wider mb-6 border-b border-gray-600 pb-2 w-fit">Business</h5>
-                            <ul class="space-y-3 text-sm font-medium text-gray-400">
-                                <li><a class="hover:text-primary hover:pl-2 transition-all block" href="/seller/register_vendor.html">Sell on NobleMart</a></li>
-                                <li><a class="hover:text-primary hover:pl-2 transition-all block" href="#">Logistics Partner</a></li>
-                                <li><a class="hover:text-primary hover:pl-2 transition-all block" href="#">Vendor Hub</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="font-bold text-white text-base uppercase tracking-wider mb-6 border-b border-gray-600 pb-2 w-fit">Contact</h5>
-                            <ul class="space-y-4 text-sm font-medium text-gray-400">
-                                <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary shrink-0">location_on</span>
-                                    <span>Lagos, Nigeria</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-primary shrink-0">mail</span>
-                                    <a class="hover:text-white transition-colors" href="mailto:help@noblemart.com.ng">help@noblemart.com.ng</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p class="text-xs text-gray-500">© ${new Date().getFullYear()} NobleMart Technologies Limited. All Rights Reserved.</p>
-                        <div class="flex gap-4 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
-                            <span class="text-xs font-bold border border-gray-600 px-2 py-1 rounded">VISA</span>
-                            <span class="text-xs font-bold border border-gray-600 px-2 py-1 rounded">MASTERCARD</span>
-                            <span class="text-xs font-bold border border-gray-600 px-2 py-1 rounded">PAYSTACK</span>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        `;
+        const isShop = window.location.pathname.includes('/shop/');
+        const pathPrefix = isShop ? '../' : '';
+        const componentPath = pathPrefix + 'components/global-footer.html';
+
+        fetch(componentPath)
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load footer component');
+                return response.text();
+            })
+            .then(html => {
+                const fixedHtml = html.replace(/src="assets\//g, `src="${pathPrefix}assets/`)
+                    .replace(/href="assets\//g, `href="${pathPrefix}assets/`);
+                footerPlaceholder.innerHTML = fixedHtml;
+            })
+            .catch(err => {
+                console.error('Error loading global footer:', err);
+            });
     }
 
     // Initialize Cart Badge

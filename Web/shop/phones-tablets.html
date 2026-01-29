@@ -183,23 +183,56 @@
                 </div>
             </div>
         </div>
-        <!-- Trade-in Banner -->
+        <!-- Mobile Deals Banner -->
         <div class="mb-10 @container">
             <div
-                class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary to-indigo-600 p-8 md:p-12 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-[1.01] cursor-pointer group">
-                <div class="relative z-10 max-w-lg">
-                    <h2 class="text-3xl md:text-4xl font-black text-white leading-tight mb-4">Upgrade Smarter. Trade in
-                        your old device for credit.</h2>
-                    <p class="text-indigo-100 mb-6 text-lg">Get up to ₦250,000 instant credit toward a new smartphone.
-                        Verified Nigerian warranty included.</p>
-                    <button
-                        class="bg-white text-primary font-bold px-8 py-3 rounded-lg hover:bg-slate-50 transition-colors">Start
-                        Appraisal</button>
+                class="relative overflow-hidden rounded-xl bg-[#2DD4BF] p-8 md:p-0 md:h-[300px] flex items-center group">
+                <!-- Decorative Circles Background -->
+                <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+                    <div
+                        class="absolute top-[-50px] left-[50px] w-24 h-24 rounded-full border-4 border-white/30 backdrop-blur-sm">
+                    </div>
+                    <div
+                        class="absolute top-[20px] left-[150px] w-16 h-16 rounded-full bg-indigo-500/80 backdrop-blur-sm">
+                    </div>
+                    <div class="absolute top-[-20px] left-[250px] w-32 h-32 rounded-full border-4 border-white/40">
+                    </div>
                 </div>
-                <div class="absolute right-[-10%] top-[-20%] w-[50%] h-[140%] opacity-20 pointer-events-none">
-                    <div class="w-full h-full bg-cover bg-center rotate-12"
-                        data-alt="Collage of modern premium smartphones"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuH5yG87dvPgCpfqpXAbrSc61pXOGJKK6UG6zvw_2cnourfcbHKpJDlerdR0twBIwk8NdkGPLAlvIl5V8xivroVaLRJ3Zs0QfqpdMQ0buErbK7CZpMJn94J1-E1OCvVc3nOlqE4lk9fSc47CUjYed_QbD2J3piih4uZ5kujNcgddfQ5hc-6dfwAIb5FtDmp_2z-tEAPEQD7OHcOpPAuF9CnytRWpXMGElBmER1uLYd6uHhXrh6nRFOGLJrqRcIQWB8qExT4xhoJng');">
+
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between w-full h-full">
+                    <!-- Text Content -->
+                    <div class="p-8 md:pl-16 md:py-12 flex flex-col justify-center items-start z-20">
+                        <h2 class="text-5xl md:text-7xl font-black text-white leading-[0.9] mb-6 drop-shadow-sm">
+                            Mobile <br />Discounts
+                        </h2>
+                        <button
+                            class="bg-[#A5F3FC] hover:bg-white text-slate-900 font-bold px-8 py-3 rounded-full flex items-center gap-2 group-hover:scale-105 transition-all shadow-lg hover:shadow-cyan-200/50">
+                            SHOP NOW <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Discount Badge -->
+                    <div class="absolute top-[35%] left-[30%] md:left-[35%] z-30 animate-bounce duration-[3000ms]">
+                        <div
+                            class="w-32 h-32 md:w-40 md:h-40 bg-[#1e40af] rounded-full flex flex-col items-center justify-center text-white border-4 border-white/20 shadow-xl rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                            <span class="text-xs font-bold uppercase tracking-wider mb-1">UP TO</span>
+                            <span class="text-4xl md:text-5xl font-black leading-none">30%</span>
+                            <span class="text-xl md:text-2xl font-bold uppercase">OFF</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Image Composition -->
+                    <div
+                        class="relative md:absolute md:right-0 md:bottom-0 h-[300px] md:h-full w-full md:w-1/2 flex items-end justify-center md:justify-end overflow-hidden">
+                        <!-- Person Overlay -->
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwnzVt9sZHRbwSh_JuXFzryqqyu-PZQmU3fRzW9fwZwoOVsff89xkCuK-4suw0WD4nFjnkyxMaeny0Bdn2FVI_dvy_I0GKgbc94iShOfoBzNla6qDUS2jN5ZuhnsvuA7ISwbxXz2giThF3o76HysCUm5deypGwLmQnqGLgqY8SfRN6YOfo-vd9x4IeZ1U7I0lQDm9MbTaaQW72VKl5WZSjIGJvaWgcqHOVk6kN9Cdij3CeTgDCcXaf8bkysAgg0rqDn9vNvc6CRNE"
+                            alt="Happy Customer"
+                            class="h-[85%] md:h-[95%] object-contain relative z-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-700" />
+
+                        <!-- Phones Composition -->
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvdJkhE29lHs0z_b3DybYR7DTIE0Dz-kjxX0FLbe65CsFQ03MmJAzv8i_JO2cFffCqPzgBHnXJ0rqzl19bAu-Y9-ix6EhF9dOt_ZmUnZsoxHc5uTePWl27Fryx18Vz1xBgju5M1E1n52K9jHI2VNsbM2KE4sbkdonOk20DXIk5R-4pIyFmyjl7Cs_9-NbbF2ZZ_PMAvqvPDzznL3GHt1GT_ASXJPMZzLZrJQGMKeNiHX6mQ6nz5tUvrIjtWb5YMI6aHLBfOUEU0LU"
+                            alt="Phones"
+                            class="absolute right-[-20px] bottom-[-40px] h-[60%] md:h-[70%] object-contain z-20 drop-shadow-2xl group-hover:scale-110 transition-transform duration-700 delay-100" />
                     </div>
                 </div>
             </div>
@@ -790,7 +823,7 @@
             </div>
         </div>
     </main>
-    <div id="global-footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
     <script src="../assets/js/load-footer.js"></script>
 </body>
 

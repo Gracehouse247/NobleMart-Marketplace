@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const footerPlaceholder = document.getElementById('global-footer-placeholder');
+    const footerPlaceholder = document.getElementById('footer-placeholder');
     if (!footerPlaceholder) return;
 
     // Determine path depth relative to Web root
