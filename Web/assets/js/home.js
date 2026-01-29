@@ -521,10 +521,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load dynamic content
     await loadCategories();
 
-    // Load product sections (you can customize endpoints)
-    // await loadProductSection('flash-sales', '/products/flash-sales', 6);
-    // await loadProductSection('top-sellers', '/products/top-sellers', 6);
-    // await loadProductSection('limited-stock', '/products/limited-stock', 18);
+    // Load product sections from live API
+    await loadProductSection('flash-sales-section', '/products/flash-sales', 6);
+    await loadProductSection('top-sellers-section', '/products/top-sellers', 6);
+    await loadProductSection('limited-stock-section', '/products/limited-stock', 18);
     // await loadProductSection('phone-deals', '/products?category=phones', 6);
 });
 
