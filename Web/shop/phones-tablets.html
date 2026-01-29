@@ -101,73 +101,90 @@
             <span class="text-slate-900 dark:text-slate-100">Phones &amp; Tablets</span>
         </nav>
         <!-- Model Quick Scroller -->
-        <div class="mb-8">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Popular Models</h3>
-            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
-                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+        <div class="mb-10">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-base font-bold uppercase tracking-wider text-slate-900 dark:text-white">Popular Devices
+                </h3>
+                <a href="#" class="text-xs font-bold text-primary hover:underline">View All</a>
+            </div>
+
+            <div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
+                <div class="flex flex-col items-center gap-3 min-w-[85px] cursor-pointer group snap-start">
                     <div
-                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border-2 border-primary p-1 transition-transform group-hover:scale-105">
-                        <div class="w-full h-full rounded-full bg-cover bg-center"
-                            data-alt="Close up of iPhone 15 titanium frame"
+                        class="w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden p-1">
+                        <div class="w-full h-full rounded-xl bg-cover bg-center" data-alt="iPhone 15"
                             style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRV6-J7JP6TVnEMhZEKmAL63kdpfJpbazdRPEeAdQR67sMeqDA3omR5MnpZGldML4DGx4dPLJJjv_N24Mdfru3BB6LQGSJ1Kf3hsTmUA-npLvu4H6G6k2RAB6L7Qob0UGE2264p8cgbkEKwNdrnC3Dj8aVdYbPf6ISu_NAmAc82_8r60xb5fs5oszounOmr1DiOeDww3NptAGCLBsD3UObJSA9VipOZIjxNbYpnjOuedsSRxN4IuPLZsaMBGEg-KjSAbGatv5ASxE');">
                         </div>
                     </div>
-                    <span class="text-xs font-bold text-primary">iPhone 15</span>
+                    <span
+                        class="text-xs font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">iPhone
+                        15</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+
+                <div class="flex flex-col items-center gap-3 min-w-[85px] cursor-pointer group snap-start">
                     <div
-                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
-                        <div class="w-full h-full rounded-full bg-cover bg-center"
-                            data-alt="Samsung Galaxy S24 Ultra camera module"
+                        class="w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden p-1">
+                        <div class="w-full h-full rounded-xl bg-cover bg-center" data-alt="Galaxy S24"
                             style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVpbxGawA8xmQns6GNEolNw1cPjDzVgRQQgzxWxy1B6HqOa5A_Yuht2lpv6SMAh6I8qmFuZtpbgXoYTAdokO3nv1VauQEKhq3P4hiYlM2bFZ69wD3OHzofPT0Ev8-pCZLWn1QBUZhzrtZxVrGrQy0oBuSWiR6eHKk-iMdCx5mb5QoPc4VO7-X9paxOWllYdWm1X0CRwRrXnm26XeLt9t-dfTu4nbgW1wxQi8PXh57ACxjEpUZDuVeUi_SCoT2hGv0Rz1m2gFhVC_w');">
                         </div>
                     </div>
-                    <span class="text-xs font-medium">Galaxy S24</span>
+                    <span
+                        class="text-xs font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Galaxy
+                        S24</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+
+                <div class="flex flex-col items-center gap-3 min-w-[85px] cursor-pointer group snap-start">
                     <div
-                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
-                        <div class="w-full h-full rounded-full bg-cover bg-center"
-                            data-alt="Google Pixel 8 Pro porcelain finish"
+                        class="w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden p-1">
+                        <div class="w-full h-full rounded-xl bg-cover bg-center" data-alt="Pixel 8"
                             style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAh-OjBh-dIOhRwI3anEWe-cLVm_18HOnsBjBWrkxFGhlnx5KsjVJJcDprIwkAsMt3LgZ53Pt-SbdtVBKrCxh7T1Ao8VyAJDbldmSxW1Qkrk9VvUrk2xwT1IVXu8Ur9tHUUnti9niNIxhzBWJPudFXXxolUQBuhWeAhpV48UOmZrPby9OKqAGp_4I3r1N80Dm5jtpNVOVHPvpzBhanqQmL2wPpe_BBOEzz77Ua0R44oUUPM6N4atBMqNWVPNxSkwtYlffWC96Ab_FE');">
                         </div>
                     </div>
-                    <span class="text-xs font-medium">Pixel 8</span>
+                    <span
+                        class="text-xs font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Pixel
+                        8</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+
+                <div class="flex flex-col items-center gap-3 min-w-[85px] cursor-pointer group snap-start">
                     <div
-                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
-                        <div class="w-full h-full rounded-full bg-cover bg-center"
-                            data-alt="Xiaomi 14 Ultra photography kit"
+                        class="w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden p-1">
+                        <div class="w-full h-full rounded-xl bg-cover bg-center" data-alt="Xiaomi 14"
                             style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvdJkhE29lHs0z_b3DybYR7DTIE0Dz-kjxX0FLbe65CsFQ03MmJAzv8i_JO2cFffCqPzgBHnXJ0rqzl19bAu-Y9-ix6EhF9dOt_ZmUnZsoxHc5uTePWl27Fryx18Vz1xBgju5M1E1n52K9jHI2VNsbM2KE4sbkdonOk20DXIk5R-4pIyFmyjl7Cs_9-NbbF2ZZ_PMAvqvPDzznL3GHt1GT_ASXJPMZzLZrJQGMKeNiHX6mQ6nz5tUvrIjtWb5YMI6aHLBfOUEU0LU');">
                         </div>
                     </div>
-                    <span class="text-xs font-medium">Xiaomi 14</span>
+                    <span
+                        class="text-xs font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Xiaomi
+                        14</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+
+                <div class="flex flex-col items-center gap-3 min-w-[85px] cursor-pointer group snap-start">
                     <div
-                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
-                        <div class="w-full h-full rounded-full bg-cover bg-center"
-                            data-alt="Infinix Note series sleek design"
+                        class="w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden p-1">
+                        <div class="w-full h-full rounded-xl bg-cover bg-center" data-alt="Infinix"
                             style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwnzVt9sZHRbwSh_JuXFzryqqyu-PZQmU3fRzW9fwZwoOVsff89xkCuK-4suw0WD4nFjnkyxMaeny0Bdn2FVI_dvy_I0GKgbc94iShOfoBzNla6qDUS2jN5ZuhnsvuA7ISwbxXz2giThF3o76HysCUm5deypGwLmQnqGLgqY8SfRN6YOfo-vd9x4IeZ1U7I0lQDm9MbTaaQW72VKl5WZSjIGJvaWgcqHOVk6kN9Cdij3CeTgDCcXaf8bkysAgg0rqDn9vNvc6CRNE');">
                         </div>
                     </div>
-                    <span class="text-xs font-medium">Infinix</span>
+                    <span
+                        class="text-xs font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Infinix</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+
+                <div class="flex flex-col items-center gap-3 min-w-[85px] cursor-pointer group snap-start">
                     <div
-                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
-                        <div class="w-full h-full rounded-full bg-cover bg-center" data-alt="iPad Pro M2 screen display"
+                        class="w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all duration-300 shadow-md group-hover:shadow-xl group-hover:-translate-y-1 overflow-hidden p-1">
+                        <div class="w-full h-full rounded-xl bg-cover bg-center" data-alt="iPad Pro"
                             style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9d8RQObRCHa_lYMwraco-UO72y1eAQd9VA8jFCxtt1A9fTLpxoBG72tFJUcRj8soWVWelvgsKJIYWvholUcPmzMuoX_Mk6D07YC1b-vXusV1NexK9u8-fpldgWx6sslKUNCv5ppKCi-dYRGj266jGL_xEZYAlVgklQv5QxASptqSDvs6wwrHrnfVQVCo6w3iB4nAGZ1DHtQRqTE1E_fkH5xQWCWoXIE0yyLMskIKglM52njbqzlsmPED410hkOZ3yTGg5js_4hFM');">
                         </div>
                     </div>
-                    <span class="text-xs font-medium">iPad Pro</span>
+                    <span
+                        class="text-xs font-bold text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">iPad
+                        Pro</span>
                 </div>
             </div>
         </div>
         <!-- Trade-in Banner -->
         <div class="mb-10 @container">
-            <div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary to-indigo-600 p-8 md:p-12">
+            <div
+                class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary to-indigo-600 p-8 md:p-12 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:scale-[1.01] cursor-pointer group">
                 <div class="relative z-10 max-w-lg">
                     <h2 class="text-3xl md:text-4xl font-black text-white leading-tight mb-4">Upgrade Smarter. Trade in
                         your old device for credit.</h2>
@@ -189,91 +206,150 @@
             <!-- Side Filters -->
             <aside class="w-full lg:w-64 flex-shrink-0">
                 <div class="sticky top-24 space-y-8">
-                    <div>
-                        <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">filter_alt</span> Filters
-                        </h4>
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-100 dark:border-slate-800 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <h4 class="font-bold text-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">filter_alt</span> Filters
+                            </h4>
+                            <button
+                                class="text-xs font-bold text-slate-400 hover:text-primary transition-colors">RESET</button>
+                        </div>
+
+                        <!-- Condition -->
+                        <div class="mb-6 border-b border-slate-100 dark:border-slate-700 pb-6">
+                            <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Condition</p>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all"
+                                            checked>
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Brand
+                                        New</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">Renewed
+                                        (Refurbished)</span>
+                                </label>
+                            </div>
+                        </div>
+
                         <!-- Internal Storage -->
-                        <div class="mb-6">
-                            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Internal Storage
-                            </p>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
+                        <div class="mb-6 border-b border-slate-100 dark:border-slate-700 pb-6">
+                            <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Storage</p>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
                                     <span
-                                        class="text-sm font-medium group-hover:text-primary transition-colors">128GB</span>
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">128GB</span>
                                 </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input checked=""
-                                        class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all"
+                                            checked>
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
                                     <span
-                                        class="text-sm font-medium group-hover:text-primary transition-colors">256GB</span>
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">256GB</span>
                                 </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
                                     <span
-                                        class="text-sm font-medium group-hover:text-primary transition-colors">512GB</span>
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">512GB</span>
                                 </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
                                     <span
-                                        class="text-sm font-medium group-hover:text-primary transition-colors">1TB</span>
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">1TB</span>
                                 </label>
                             </div>
                         </div>
+
                         <!-- RAM -->
-                        <div class="mb-6">
-                            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">RAM Capacity</p>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
-                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">4GB -
-                                        6GB</span>
-                                </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
-                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">8GB -
-                                        12GB</span>
-                                </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
+                        <div class="mb-6 border-b border-slate-100 dark:border-slate-700 pb-6">
+                            <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">RAM</p>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
                                     <span
-                                        class="text-sm font-medium group-hover:text-primary transition-colors">16GB+</span>
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">4GB
+                                        - 6GB</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">8GB
+                                        - 12GB</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">16GB+</span>
                                 </label>
                             </div>
                         </div>
+
                         <!-- Battery -->
-                        <div class="mb-6">
-                            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Battery Capacity
-                            </p>
-                            <div class="space-y-2">
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
-                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">Under
-                                        4000mAh</span>
-                                </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
-                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">4000 -
-                                        5000mAh</span>
-                                </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
-                                        type="checkbox" />
-                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">5000mAh
-                                        &amp; Above</span>
+                        <div class="mb-0">
+                            <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Battery</p>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer group select-none">
+                                    <div class="relative flex items-center">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-5 h-5 border-2 border-slate-300 dark:border-slate-600 rounded bg-transparent checked:bg-primary checked:border-primary transition-all">
+                                        <span
+                                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-[2px] pointer-events-none transition-opacity">check</span>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">5000mAh+</span>
                                 </label>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </aside>
@@ -287,242 +363,298 @@
                     </div>
                     <div class="flex items-center gap-3">
                         <button
-                            class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold">
+                            class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:border-primary dark:hover:border-primary transition-colors">
                             Sort by: Recommended <span class="material-symbols-outlined text-sm">expand_more</span>
                         </button>
                     </div>
                 </div>
                 <!-- Cards Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
                     <!-- Product Card 1 -->
                     <div
-                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
-                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
-                            <div class="absolute top-3 left-3 z-10">
+                        class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 dark:hover:shadow-none transition-all duration-300 group relative flex flex-col">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
                                 <span
-                                    class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Official
+                                    class="backdrop-blur-md bg-white/90 dark:bg-black/60 text-slate-900 dark:text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm">Official
                                     Store</span>
+                                <span
+                                    class="backdrop-blur-md bg-blue-500/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm">New</span>
                             </div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Macro shot of iPhone 15 Pro Max camera lenses"
+                            <button
+                                class="absolute top-3 right-3 z-10 size-9 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-md flex items-center justify-center text-slate-500 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300 hover:scale-110">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAb4BgIEwKX3Hi42mtgmkGGLgAp-5fqqn7-c2JMBybNJ_DtEwgkvZ79dkKaUBS1HgUGRz_CsDfT1edknMH-IOQ9tmujsQTtBu2CXjSwG8WUedk8DsCiS5_Wtu5si6Pbskr4MvXmk5qJUEtDYQ-EqRuiCb-uSZ_q_y-Q3ilp5B3U0hYeiwICe26r6WiDcv88O1_UM6mmA5A7NT6YFCQnIecxkkOucIMbGqNw55rvWI8c8P5a4-19jrykrJCsVhKYyZYjpRTQJuGwGgk');">
                             </div>
                         </div>
-                        <div class="p-5">
-                            <div class="flex items-center gap-2 mb-2">
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3
+                                class="font-bold text-base md:text-lg leading-snug mb-3 text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+                                iPhone 15 Pro Max - 256GB - Titanium Blue</h3>
+
+                            <div class="flex flex-wrap gap-2 mb-4">
                                 <span
-                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">New</span>
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">memory</span> 8GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">hard_drive</span> 256GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">battery_charging_full</span>
+                                    4441mAh
+                                </span>
                             </div>
-                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">iPhone 15 Pro Max - 256GB -
-                                Titanium Blue</h3>
-                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">memory</span> 8GB RAM</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
-                                    4441mAh</span>
-                            </div>
-                            <div class="flex items-end justify-between">
+
+                            <div class="mt-auto flex items-end justify-between gap-4">
                                 <div>
-                                    <p class="text-sm text-slate-400 line-through">₦2,100,000</p>
-                                    <p class="text-xl font-black text-primary">₦1,950,000</p>
+                                    <p class="text-xs text-slate-400 line-through mb-0.5 font-medium">₦2,100,000</p>
+                                    <p class="text-lg md:text-xl font-extrabold text-primary">₦1,950,000</p>
                                 </div>
-                                <button
-                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
-                                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                                </button>
+                                <a href="shop/phones-tablets.html"
+                                    class="h-10 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl flex items-center gap-2 text-xs font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-primary/20 hover:-translate-y-0.5">
+                                    Add <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Product Card 2 (Renewed) -->
                     <div
-                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
-                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
-                            <div class="absolute top-3 left-3 z-10">
+                        class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-teal-500/5 dark:hover:shadow-none transition-all duration-300 group relative flex flex-col">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
                                 <span
-                                    class="bg-teal-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Renewed</span>
+                                    class="backdrop-blur-md bg-teal-500/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm">Renewed</span>
                             </div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Samsung S23 Ultra in phantom black"
+                            <button
+                                class="absolute top-3 right-3 z-10 size-9 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-md flex items-center justify-center text-slate-500 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300 hover:scale-110">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDweMGa-6LWOel0r1Q-P3XgxOlUSpi44czVlepd514A89Y1S7BY6KcPbvBszpOmEbYrjFoDWN71_Sn1DWqxnLaUYYd8f42qWejDGqYT8FmoueAKwojVCSU-5mR6IkAHZqhDIqj3eRWDKAVPVWcIpINAUYMNRBo-s0W6eZvn44xQ9Pbqa6Bl20AM3DEbgXuAM-xJgY4PiMIix8MSkbz5L2S9q7acua1ZyDRdCZ4nywbUS-36c3SVyWLcxtYZQP0ddJgHX2DhbwFuqiE');">
                             </div>
                         </div>
-                        <div class="p-5">
-                            <div class="flex items-center gap-2 mb-2">
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3
+                                class="font-bold text-base md:text-lg leading-snug mb-3 text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+                                Samsung Galaxy S23 Ultra - 512GB - 12GB RAM</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
                                 <span
-                                    class="text-[10px] font-bold bg-teal-100 text-teal-700 px-2 py-0.5 rounded uppercase">Certified
-                                    Refurbished</span>
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">memory</span> 12GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">hard_drive</span> 512GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-400 rounded-md text-[10px] font-bold flex items-center gap-1 border border-teal-100 dark:border-teal-800">
+                                    <span class="material-symbols-outlined text-[12px]">verified</span> Excellent
+                                </span>
                             </div>
-                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">Samsung Galaxy S23 Ultra -
-                                512GB - 12GB RAM</h3>
-                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">memory</span> 12GB RAM</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
-                                    5000mAh</span>
-                            </div>
-                            <div class="flex items-end justify-between">
+                            <div class="mt-auto flex items-end justify-between gap-4">
                                 <div>
-                                    <p class="text-sm text-slate-400">Excellent Condition</p>
-                                    <p class="text-xl font-black text-primary">₦850,000</p>
+                                    <p class="text-xs text-slate-400 mb-0.5 font-medium">Retail: ₦1.2M</p>
+                                    <p class="text-lg md:text-xl font-extrabold text-primary">₦850,000</p>
                                 </div>
-                                <button
-                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
-                                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                                </button>
+                                <a href="shop/phones-tablets.html"
+                                    class="h-10 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl flex items-center gap-2 text-xs font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-primary/20 hover:-translate-y-0.5">
+                                    Add <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Product Card 3 -->
                     <div
-                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
-                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Google Pixel 8 Pro rear visor cameras"
+                        class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 dark:hover:shadow-none transition-all duration-300 group relative flex flex-col">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
+                                <span
+                                    class="backdrop-blur-md bg-white/90 dark:bg-black/60 text-slate-900 dark:text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm">New
+                                    Arrival</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 z-10 size-9 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-md flex items-center justify-center text-slate-500 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300 hover:scale-110">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRZ7Y75pMABaSEJnLTLA_Em3y5PwnRL7egL-o9hd0HgKw2nyyKsvqfyWzxV7OZ7rnYIaWs5H_9i7ShQrCzjFJ_mhsfSCPrlqIMKIUa-IURXlMP_8sqJjcUU_rhRgjI56lpBQal0E1PxqniUv8gjYXbI_zc_F6eaim9vlItg8dqbVpdhdIcqigZrvXdB3iExm1ED-Nm_aIYJvG9XtQCIIcJDbxqU2To0PH2ZMoZ5elhxL0wVM3PxQ-WXMH9txs11bndamDh2TRy4LU');">
                             </div>
                         </div>
-                        <div class="p-5">
-                            <div class="flex items-center gap-2 mb-2">
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3
+                                class="font-bold text-base md:text-lg leading-snug mb-3 text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+                                Google Pixel 8 Pro - 128GB - Bay Blue</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
                                 <span
-                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">New
-                                    Arrival</span>
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">memory</span> 12GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">hard_drive</span> 128GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">android</span> Android 14
+                                </span>
                             </div>
-                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">Google Pixel 8 Pro - 128GB -
-                                Bay Blue</h3>
-                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">memory</span> 12GB RAM</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
-                                    5050mAh</span>
-                            </div>
-                            <div class="flex items-end justify-between">
+                            <div class="mt-auto flex items-end justify-between gap-4">
                                 <div>
-                                    <p class="text-sm text-slate-400 line-through">₦1,200,000</p>
-                                    <p class="text-xl font-black text-primary">₦1,120,000</p>
+                                    <p class="text-xs text-slate-400 line-through mb-0.5 font-medium">₦1,200,000</p>
+                                    <p class="text-lg md:text-xl font-extrabold text-primary">₦1,120,000</p>
                                 </div>
-                                <button
-                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
-                                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                                </button>
+                                <a href="shop/phones-tablets.html"
+                                    class="h-10 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl flex items-center gap-2 text-xs font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-primary/20 hover:-translate-y-0.5">
+                                    Add <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Product Card 4 -->
                     <div
-                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
-                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
-                            <div class="absolute top-3 left-3 z-10">
+                        class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-orange-500/5 dark:hover:shadow-none transition-all duration-300 group relative flex flex-col">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
                                 <span
-                                    class="bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Top
+                                    class="backdrop-blur-md bg-orange-500/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm">Top
                                     Seller</span>
                             </div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Close up of iPad Pro liquid retina display"
+                            <button
+                                class="absolute top-3 right-3 z-10 size-9 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-md flex items-center justify-center text-slate-500 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300 hover:scale-110">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCb3_1-tMhwHLTjcFdMJz8X7UemIL9I3Txxb3xcSjLE2evDlV5ig6qyvl00ZZIx4Edm9RoOqqnIr1BP0LadwEEwusP11zW6uDqJi_Go40Wk-odARpHPnbU8Gfj39fuQ36-_NClllMlFgrWYoRqLsfRs1NWcvafSyue6i-fU_B_mAXP1gM39KxEaHR2NsJYgMRk2MG2QXH9IQb4xMkIiK4KmQPy3R4PMhmc_8L_-puOl-DtNhg6R5ezRhRQWlPUyZEnG5mKuGR5VbHk');">
                             </div>
                         </div>
-                        <div class="p-5">
-                            <div class="flex items-center gap-2 mb-2">
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3
+                                class="font-bold text-base md:text-lg leading-snug mb-3 text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+                                iPad Pro 12.9-inch (M2) - 256GB WiFi</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
                                 <span
-                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">Tablet</span>
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">display_settings</span> 12.9"
+                                    XDR
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">hard_drive</span> 256GB
+                                </span>
                             </div>
-                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">iPad Pro 12.9-inch (M2) -
-                                256GB WiFi</h3>
-                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">display_settings</span> 12.9"
-                                    XDR</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">bolt</span> 10,758mAh</span>
-                            </div>
-                            <div class="flex items-end justify-between">
+                            <div class="mt-auto flex items-end justify-between gap-4">
                                 <div>
-                                    <p class="text-sm text-slate-400">Official Warranty</p>
-                                    <p class="text-xl font-black text-primary">₦1,450,000</p>
+                                    <p class="text-xs text-slate-400 mb-0.5 font-medium">Warranty Included</p>
+                                    <p class="text-lg md:text-xl font-extrabold text-primary">₦1,450,000</p>
                                 </div>
-                                <button
-                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
-                                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                                </button>
+                                <a href="shop/phones-tablets.html"
+                                    class="h-10 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl flex items-center gap-2 text-xs font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-primary/20 hover:-translate-y-0.5">
+                                    Add <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Product Card 5 (Renewed) -->
                     <div
-                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
-                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
-                            <div class="absolute top-3 left-3 z-10">
+                        class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-teal-500/5 dark:hover:shadow-none transition-all duration-300 group relative flex flex-col">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
                                 <span
-                                    class="bg-teal-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Renewed</span>
+                                    class="backdrop-blur-md bg-teal-500/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm">Renewed</span>
                             </div>
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Refurbished iPhone 13 Pro in alpine green"
+                            <button
+                                class="absolute top-3 right-3 z-10 size-9 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-md flex items-center justify-center text-slate-500 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300 hover:scale-110">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7aJRcaCu5SW-VW-6gsTcfOfN8IU8d1LMw8tQTj0Q9mw4_feqM649b4o14TtMpZHaVRqHfVv5-4R7oESd8gqvS9_83uV2f2RKNh0DHybOshWRumZMFSpmxyl1B64eAKtSwwRINA0Y9V62PQl23SJT_Zjg-79TkXzwUHLqiY0IcenNR5-FyBoPXwzzcy0mmX1zbLJO1xgy_23F1SPXhyXMtzHwkXpO5CgeNxYAMfH221t-ZcZTffYE4J8RGbTwC9uFqtoZy6WKkOr0');">
                             </div>
                         </div>
-                        <div class="p-5">
-                            <div class="flex items-center gap-2 mb-2">
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3
+                                class="font-bold text-base md:text-lg leading-snug mb-3 text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+                                iPhone 13 Pro - 128GB - Alpine Green</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
                                 <span
-                                    class="text-[10px] font-bold bg-teal-100 text-teal-700 px-2 py-0.5 rounded uppercase">Premium
-                                    Grade A</span>
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">memory</span> 6GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">hard_drive</span> 128GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-400 rounded-md text-[10px] font-bold flex items-center gap-1 border border-teal-100 dark:border-teal-800">
+                                    <span class="material-symbols-outlined text-[12px]">health_and_safety</span> 100%
+                                    Battery
+                                </span>
                             </div>
-                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">iPhone 13 Pro - 128GB - Alpine
-                                Green</h3>
-                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">memory</span> 6GB RAM</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">health_and_safety</span> 100% Battery
-                                    Health</span>
-                            </div>
-                            <div class="flex items-end justify-between">
+                            <div class="mt-auto flex items-end justify-between gap-4">
                                 <div>
-                                    <p class="text-sm text-slate-400 line-through">₦650,000</p>
-                                    <p class="text-xl font-black text-primary">₦545,000</p>
+                                    <p class="text-xs text-slate-400 line-through mb-0.5 font-medium">₦650,000</p>
+                                    <p class="text-lg md:text-xl font-extrabold text-primary">₦545,000</p>
                                 </div>
-                                <button
-                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
-                                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                                </button>
+                                <a href="shop/phones-tablets.html"
+                                    class="h-10 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl flex items-center gap-2 text-xs font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-primary/20 hover:-translate-y-0.5">
+                                    Add <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <!-- Product Card 6 -->
                     <div
-                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
-                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
-                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Infinix Note 40 Pro in racing edition"
+                        class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 dark:hover:shadow-none transition-all duration-300 group relative flex flex-col">
+                        <div class="relative aspect-[4/5] overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
+                                <span
+                                    class="backdrop-blur-md bg-white/90 dark:bg-black/60 text-slate-900 dark:text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-white/20 shadow-sm">Budget
+                                    King</span>
+                            </div>
+                            <button
+                                class="absolute top-3 right-3 z-10 size-9 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-md flex items-center justify-center text-slate-500 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 duration-300 hover:scale-110">
+                                <span class="material-symbols-outlined text-[20px]">favorite</span>
+                            </button>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKxDA23687Iw2bRtOUg7K96XYG3nLhffSmKOyC4f2fkzel_nTDo3BQVJmKmDsVSK_8jwbtdd3h3Eb85IBQw3vcnIo9Fsta-pB85e3w1-Fu1t00wnp-FPbO2fq6gmMxpmwfJxdc66C5znUeUCQo0VwOfgHt3yjLQnKwOzUIeNV-GPK8WpFu68-DGX_A_JgnrWwCQMfS-a0Q_FFn1kWMPRUmwaYvmeBsWdG_fmihLMs8XKLPMRWIwavTQVmk2udDxApD9-jaTkhXHJI');">
                             </div>
                         </div>
-                        <div class="p-5">
-                            <div class="flex items-center gap-2 mb-2">
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3
+                                class="font-bold text-base md:text-lg leading-snug mb-3 text-slate-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+                                Infinix Note 40 Pro - 256GB - 12GB RAM</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
                                 <span
-                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">Budget
-                                    King</span>
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">memory</span> 12GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">hard_drive</span> 256GB
+                                </span>
+                                <span
+                                    class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700/50 rounded-md text-[10px] font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">bolt</span> 100W Fast Charge
+                                </span>
                             </div>
-                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">Infinix Note 40 Pro - 256GB -
-                                12GB RAM</h3>
-                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">memory</span> 12GB RAM</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
-                                    5000mAh</span>
-                            </div>
-                            <div class="flex items-end justify-between">
+                            <div class="mt-auto flex items-end justify-between gap-4">
                                 <div>
-                                    <p class="text-sm text-slate-400">100W Fast Charge</p>
-                                    <p class="text-xl font-black text-primary">₦320,000</p>
+                                    <p class="text-xs text-slate-400 mb-0.5 font-medium">Bestseller</p>
+                                    <p class="text-lg md:text-xl font-extrabold text-primary">₦320,000</p>
                                 </div>
-                                <button
-                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
-                                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                                </button>
+                                <a href="shop/phones-tablets.html"
+                                    class="h-10 px-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl flex items-center gap-2 text-xs font-bold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-primary/20 hover:-translate-y-0.5">
+                                    Add <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                                </a>
                             </div>
                         </div>
                     </div>
