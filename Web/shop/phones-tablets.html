@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NobleMart Phones &amp; Tablets Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-[1280px] mx-auto px-4 md:px-10 py-3 flex items-center justify-between gap-8">
+            <div class="flex items-center gap-8">
+                <a href="../index.html" class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_6_330)">
+                                <path clip-rule="evenodd"
+                                    d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                                    fill="currentColor" fill-rule="evenodd"></path>
+                            </g>
+                            <defs>
+                                <clippath id="clip0_6_330">
+                                    <rect fill="white" height="48" width="48"></rect>
+                                </clippath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-extrabold tracking-tight">NobleMart</h1>
+                </a>
+                <nav class="hidden lg:flex items-center gap-6">
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Mobile Phones</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tablets</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Accessories</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Deals</a>
+                </nav>
+            </div>
+            <div class="flex-1 max-w-md hidden md:block">
+                <div class="relative">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                    <input
+                        class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary"
+                        placeholder="Search devices, brands, or specs..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </button>
+                <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1280px] mx-auto px-4 md:px-10 py-6">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 mb-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+            <a class="hover:text-primary" href="../index.html">Home</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <a class="hover:text-primary" href="#">Electronics</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-slate-900 dark:text-slate-100">Phones &amp; Tablets</span>
+        </nav>
+        <!-- Model Quick Scroller -->
+        <div class="mb-8">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Popular Models</h3>
+            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border-2 border-primary p-1 transition-transform group-hover:scale-105">
+                        <div class="w-full h-full rounded-full bg-cover bg-center"
+                            data-alt="Close up of iPhone 15 titanium frame"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRV6-J7JP6TVnEMhZEKmAL63kdpfJpbazdRPEeAdQR67sMeqDA3omR5MnpZGldML4DGx4dPLJJjv_N24Mdfru3BB6LQGSJ1Kf3hsTmUA-npLvu4H6G6k2RAB6L7Qob0UGE2264p8cgbkEKwNdrnC3Dj8aVdYbPf6ISu_NAmAc82_8r60xb5fs5oszounOmr1DiOeDww3NptAGCLBsD3UObJSA9VipOZIjxNbYpnjOuedsSRxN4IuPLZsaMBGEg-KjSAbGatv5ASxE');">
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-primary">iPhone 15</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
+                        <div class="w-full h-full rounded-full bg-cover bg-center"
+                            data-alt="Samsung Galaxy S24 Ultra camera module"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVpbxGawA8xmQns6GNEolNw1cPjDzVgRQQgzxWxy1B6HqOa5A_Yuht2lpv6SMAh6I8qmFuZtpbgXoYTAdokO3nv1VauQEKhq3P4hiYlM2bFZ69wD3OHzofPT0Ev8-pCZLWn1QBUZhzrtZxVrGrQy0oBuSWiR6eHKk-iMdCx5mb5QoPc4VO7-X9paxOWllYdWm1X0CRwRrXnm26XeLt9t-dfTu4nbgW1wxQi8PXh57ACxjEpUZDuVeUi_SCoT2hGv0Rz1m2gFhVC_w');">
+                        </div>
+                    </div>
+                    <span class="text-xs font-medium">Galaxy S24</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
+                        <div class="w-full h-full rounded-full bg-cover bg-center"
+                            data-alt="Google Pixel 8 Pro porcelain finish"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAh-OjBh-dIOhRwI3anEWe-cLVm_18HOnsBjBWrkxFGhlnx5KsjVJJcDprIwkAsMt3LgZ53Pt-SbdtVBKrCxh7T1Ao8VyAJDbldmSxW1Qkrk9VvUrk2xwT1IVXu8Ur9tHUUnti9niNIxhzBWJPudFXXxolUQBuhWeAhpV48UOmZrPby9OKqAGp_4I3r1N80Dm5jtpNVOVHPvpzBhanqQmL2wPpe_BBOEzz77Ua0R44oUUPM6N4atBMqNWVPNxSkwtYlffWC96Ab_FE');">
+                        </div>
+                    </div>
+                    <span class="text-xs font-medium">Pixel 8</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
+                        <div class="w-full h-full rounded-full bg-cover bg-center"
+                            data-alt="Xiaomi 14 Ultra photography kit"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvdJkhE29lHs0z_b3DybYR7DTIE0Dz-kjxX0FLbe65CsFQ03MmJAzv8i_JO2cFffCqPzgBHnXJ0rqzl19bAu-Y9-ix6EhF9dOt_ZmUnZsoxHc5uTePWl27Fryx18Vz1xBgju5M1E1n52K9jHI2VNsbM2KE4sbkdonOk20DXIk5R-4pIyFmyjl7Cs_9-NbbF2ZZ_PMAvqvPDzznL3GHt1GT_ASXJPMZzLZrJQGMKeNiHX6mQ6nz5tUvrIjtWb5YMI6aHLBfOUEU0LU');">
+                        </div>
+                    </div>
+                    <span class="text-xs font-medium">Xiaomi 14</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
+                        <div class="w-full h-full rounded-full bg-cover bg-center"
+                            data-alt="Infinix Note series sleek design"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwnzVt9sZHRbwSh_JuXFzryqqyu-PZQmU3fRzW9fwZwoOVsff89xkCuK-4suw0WD4nFjnkyxMaeny0Bdn2FVI_dvy_I0GKgbc94iShOfoBzNla6qDUS2jN5ZuhnsvuA7ISwbxXz2giThF3o76HysCUm5deypGwLmQnqGLgqY8SfRN6YOfo-vd9x4IeZ1U7I0lQDm9MbTaaQW72VKl5WZSjIGJvaWgcqHOVk6kN9Cdij3CeTgDCcXaf8bkysAgg0rqDn9vNvc6CRNE');">
+                        </div>
+                    </div>
+                    <span class="text-xs font-medium">Infinix</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 min-w-[70px] cursor-pointer group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 transition-transform group-hover:scale-105">
+                        <div class="w-full h-full rounded-full bg-cover bg-center" data-alt="iPad Pro M2 screen display"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9d8RQObRCHa_lYMwraco-UO72y1eAQd9VA8jFCxtt1A9fTLpxoBG72tFJUcRj8soWVWelvgsKJIYWvholUcPmzMuoX_Mk6D07YC1b-vXusV1NexK9u8-fpldgWx6sslKUNCv5ppKCi-dYRGj266jGL_xEZYAlVgklQv5QxASptqSDvs6wwrHrnfVQVCo6w3iB4nAGZ1DHtQRqTE1E_fkH5xQWCWoXIE0yyLMskIKglM52njbqzlsmPED410hkOZ3yTGg5js_4hFM');">
+                        </div>
+                    </div>
+                    <span class="text-xs font-medium">iPad Pro</span>
+                </div>
+            </div>
+        </div>
+        <!-- Trade-in Banner -->
+        <div class="mb-10 @container">
+            <div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary to-indigo-600 p-8 md:p-12">
+                <div class="relative z-10 max-w-lg">
+                    <h2 class="text-3xl md:text-4xl font-black text-white leading-tight mb-4">Upgrade Smarter. Trade in
+                        your old device for credit.</h2>
+                    <p class="text-indigo-100 mb-6 text-lg">Get up to ₦250,000 instant credit toward a new smartphone.
+                        Verified Nigerian warranty included.</p>
+                    <button
+                        class="bg-white text-primary font-bold px-8 py-3 rounded-lg hover:bg-slate-50 transition-colors">Start
+                        Appraisal</button>
+                </div>
+                <div class="absolute right-[-10%] top-[-20%] w-[50%] h-[140%] opacity-20 pointer-events-none">
+                    <div class="w-full h-full bg-cover bg-center rotate-12"
+                        data-alt="Collage of modern premium smartphones"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuH5yG87dvPgCpfqpXAbrSc61pXOGJKK6UG6zvw_2cnourfcbHKpJDlerdR0twBIwk8NdkGPLAlvIl5V8xivroVaLRJ3Zs0QfqpdMQ0buErbK7CZpMJn94J1-E1OCvVc3nOlqE4lk9fSc47CUjYed_QbD2J3piih4uZ5kujNcgddfQ5hc-6dfwAIb5FtDmp_2z-tEAPEQD7OHcOpPAuF9CnytRWpXMGElBmER1uLYd6uHhXrh6nRFOGLJrqRcIQWB8qExT4xhoJng');">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-10">
+            <!-- Side Filters -->
+            <aside class="w-full lg:w-64 flex-shrink-0">
+                <div class="sticky top-24 space-y-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">filter_alt</span> Filters
+                        </h4>
+                        <!-- Internal Storage -->
+                        <div class="mb-6">
+                            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Internal Storage
+                            </p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span
+                                        class="text-sm font-medium group-hover:text-primary transition-colors">128GB</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input checked=""
+                                        class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span
+                                        class="text-sm font-medium group-hover:text-primary transition-colors">256GB</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span
+                                        class="text-sm font-medium group-hover:text-primary transition-colors">512GB</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span
+                                        class="text-sm font-medium group-hover:text-primary transition-colors">1TB</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- RAM -->
+                        <div class="mb-6">
+                            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">RAM Capacity</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">4GB -
+                                        6GB</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">8GB -
+                                        12GB</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span
+                                        class="text-sm font-medium group-hover:text-primary transition-colors">16GB+</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Battery -->
+                        <div class="mb-6">
+                            <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Battery Capacity
+                            </p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">Under
+                                        4000mAh</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">4000 -
+                                        5000mAh</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input class="rounded border-slate-300 text-primary focus:ring-primary h-5 w-5"
+                                        type="checkbox" />
+                                    <span class="text-sm font-medium group-hover:text-primary transition-colors">5000mAh
+                                        &amp; Above</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Product Grid Content -->
+            <div class="flex-1">
+                <!-- Heading & Sort -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                    <div>
+                        <h2 class="text-3xl font-black tracking-tight">Phones &amp; Tablets</h2>
+                        <p class="text-slate-500 font-medium">12,450 premium devices available</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold">
+                            Sort by: Recommended <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Product Card 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
+                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Official
+                                    Store</span>
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Macro shot of iPhone 15 Pro Max camera lenses"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAb4BgIEwKX3Hi42mtgmkGGLgAp-5fqqn7-c2JMBybNJ_DtEwgkvZ79dkKaUBS1HgUGRz_CsDfT1edknMH-IOQ9tmujsQTtBu2CXjSwG8WUedk8DsCiS5_Wtu5si6Pbskr4MvXmk5qJUEtDYQ-EqRuiCb-uSZ_q_y-Q3ilp5B3U0hYeiwICe26r6WiDcv88O1_UM6mmA5A7NT6YFCQnIecxkkOucIMbGqNw55rvWI8c8P5a4-19jrykrJCsVhKYyZYjpRTQJuGwGgk');">
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">New</span>
+                            </div>
+                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">iPhone 15 Pro Max - 256GB -
+                                Titanium Blue</h3>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">memory</span> 8GB RAM</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
+                                    4441mAh</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-400 line-through">₦2,100,000</p>
+                                    <p class="text-xl font-black text-primary">₦1,950,000</p>
+                                </div>
+                                <button
+                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 (Renewed) -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
+                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="bg-teal-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Renewed</span>
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Samsung S23 Ultra in phantom black"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDweMGa-6LWOel0r1Q-P3XgxOlUSpi44czVlepd514A89Y1S7BY6KcPbvBszpOmEbYrjFoDWN71_Sn1DWqxnLaUYYd8f42qWejDGqYT8FmoueAKwojVCSU-5mR6IkAHZqhDIqj3eRWDKAVPVWcIpINAUYMNRBo-s0W6eZvn44xQ9Pbqa6Bl20AM3DEbgXuAM-xJgY4PiMIix8MSkbz5L2S9q7acua1ZyDRdCZ4nywbUS-36c3SVyWLcxtYZQP0ddJgHX2DhbwFuqiE');">
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold bg-teal-100 text-teal-700 px-2 py-0.5 rounded uppercase">Certified
+                                    Refurbished</span>
+                            </div>
+                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">Samsung Galaxy S23 Ultra -
+                                512GB - 12GB RAM</h3>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">memory</span> 12GB RAM</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
+                                    5000mAh</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-400">Excellent Condition</p>
+                                    <p class="text-xl font-black text-primary">₦850,000</p>
+                                </div>
+                                <button
+                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
+                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Google Pixel 8 Pro rear visor cameras"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRZ7Y75pMABaSEJnLTLA_Em3y5PwnRL7egL-o9hd0HgKw2nyyKsvqfyWzxV7OZ7rnYIaWs5H_9i7ShQrCzjFJ_mhsfSCPrlqIMKIUa-IURXlMP_8sqJjcUU_rhRgjI56lpBQal0E1PxqniUv8gjYXbI_zc_F6eaim9vlItg8dqbVpdhdIcqigZrvXdB3iExm1ED-Nm_aIYJvG9XtQCIIcJDbxqU2To0PH2ZMoZ5elhxL0wVM3PxQ-WXMH9txs11bndamDh2TRy4LU');">
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">New
+                                    Arrival</span>
+                            </div>
+                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">Google Pixel 8 Pro - 128GB -
+                                Bay Blue</h3>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">memory</span> 12GB RAM</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
+                                    5050mAh</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-400 line-through">₦1,200,000</p>
+                                    <p class="text-xl font-black text-primary">₦1,120,000</p>
+                                </div>
+                                <button
+                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
+                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Top
+                                    Seller</span>
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Close up of iPad Pro liquid retina display"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCb3_1-tMhwHLTjcFdMJz8X7UemIL9I3Txxb3xcSjLE2evDlV5ig6qyvl00ZZIx4Edm9RoOqqnIr1BP0LadwEEwusP11zW6uDqJi_Go40Wk-odARpHPnbU8Gfj39fuQ36-_NClllMlFgrWYoRqLsfRs1NWcvafSyue6i-fU_B_mAXP1gM39KxEaHR2NsJYgMRk2MG2QXH9IQb4xMkIiK4KmQPy3R4PMhmc_8L_-puOl-DtNhg6R5ezRhRQWlPUyZEnG5mKuGR5VbHk');">
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">Tablet</span>
+                            </div>
+                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">iPad Pro 12.9-inch (M2) -
+                                256GB WiFi</h3>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">display_settings</span> 12.9"
+                                    XDR</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">bolt</span> 10,758mAh</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-400">Official Warranty</p>
+                                    <p class="text-xl font-black text-primary">₦1,450,000</p>
+                                </div>
+                                <button
+                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 (Renewed) -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
+                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="bg-teal-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Renewed</span>
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Refurbished iPhone 13 Pro in alpine green"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7aJRcaCu5SW-VW-6gsTcfOfN8IU8d1LMw8tQTj0Q9mw4_feqM649b4o14TtMpZHaVRqHfVv5-4R7oESd8gqvS9_83uV2f2RKNh0DHybOshWRumZMFSpmxyl1B64eAKtSwwRINA0Y9V62PQl23SJT_Zjg-79TkXzwUHLqiY0IcenNR5-FyBoPXwzzcy0mmX1zbLJO1xgy_23F1SPXhyXMtzHwkXpO5CgeNxYAMfH221t-ZcZTffYE4J8RGbTwC9uFqtoZy6WKkOr0');">
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold bg-teal-100 text-teal-700 px-2 py-0.5 rounded uppercase">Premium
+                                    Grade A</span>
+                            </div>
+                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">iPhone 13 Pro - 128GB - Alpine
+                                Green</h3>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">memory</span> 6GB RAM</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">health_and_safety</span> 100% Battery
+                                    Health</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-400 line-through">₦650,000</p>
+                                    <p class="text-xl font-black text-primary">₦545,000</p>
+                                </div>
+                                <button
+                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden group">
+                        <div class="relative aspect-square overflow-hidden bg-slate-50 dark:bg-slate-900">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Infinix Note 40 Pro in racing edition"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKxDA23687Iw2bRtOUg7K96XYG3nLhffSmKOyC4f2fkzel_nTDo3BQVJmKmDsVSK_8jwbtdd3h3Eb85IBQw3vcnIo9Fsta-pB85e3w1-Fu1t00wnp-FPbO2fq6gmMxpmwfJxdc66C5znUeUCQo0VwOfgHt3yjLQnKwOzUIeNV-GPK8WpFu68-DGX_A_JgnrWwCQMfS-a0Q_FFn1kWMPRUmwaYvmeBsWdG_fmihLMs8XKLPMRWIwavTQVmk2udDxApD9-jaTkhXHJI');">
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded uppercase">Budget
+                                    King</span>
+                            </div>
+                            <h3 class="font-bold text-lg leading-tight mb-2 line-clamp-2">Infinix Note 40 Pro - 256GB -
+                                12GB RAM</h3>
+                            <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">memory</span> 12GB RAM</span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-sm">battery_charging_full</span>
+                                    5000mAh</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <p class="text-sm text-slate-400">100W Fast Charge</p>
+                                    <p class="text-xl font-black text-primary">₦320,000</p>
+                                </div>
+                                <button
+                                    class="size-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12 pb-10">
+                    <nav class="flex items-center gap-2">
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800"><span
+                                class="material-symbols-outlined">chevron_left</span></button>
+                        <button class="w-10 h-10 rounded-lg bg-primary text-white font-bold">1</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800">2</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800">3</button>
+                        <span class="px-2">...</span>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-800">42</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800"><span
+                                class="material-symbols-outlined">chevron_right</span></button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-10 mt-auto">
+        <div class="max-w-[1280px] mx-auto px-10 text-center">
+            <p class="text-slate-500 text-sm">© 2024 NobleMart Nigeria - The Premium Tech Marketplace. All Prices in
+                NGN.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
