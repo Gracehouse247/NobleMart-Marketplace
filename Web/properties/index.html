@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NobleMart Properties | Luxury Real Estate & Lands</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        :root {
+            --prop-navy: #0f172a;
+            --prop-gold: #c29d59;
+            --prop-slate: #64748b;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #fafafa;
+        }
+
+        .hero-prop {
+            height: 80vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6199f7e009?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .search-box-luxury {
+            background: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) auto;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: -5rem;
+            z-index: 10;
+        }
+
+        @media (max-width: 900px) {
+            .search-box-luxury {
+                grid-template-columns: 1fr;
+                margin-top: 2rem;
+            }
+        }
+
+        .luxury-input {
+            border: none;
+            border-bottom: 2px solid var(--slate-100);
+            padding: 0.75rem 0;
+            width: 100%;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .luxury-input:focus {
+            border-color: var(--prop-gold);
+        }
+
+        .lux-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--prop-slate);
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .prop-card {
+            background: white;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            border: 1px solid var(--slate-100);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .prop-img-box {
+            height: 250px;
+            position: relative;
+        }
+
+        .prop-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prop-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--prop-navy);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .prop-price {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: white;
+            color: var(--prop-navy);
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .prop-content {
+            padding: 1.5rem;
+        }
+
+        .prop-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--prop-navy);
+        }
+
+        .prop-loc {
+            font-size: 0.875rem;
+            color: var(--prop-slate);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .prop-meta {
+            display: flex;
+            gap: 1.5rem;
+            border-top: 1px solid var(--slate-100);
+            padding-top: 1rem;
+            color: var(--prop-slate);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero-prop">
+        <h1 style="font-size: 4rem; font-weight: 900; margin-bottom: 1.5rem;">Find Your Dream Property</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; max-width: 700px;">NobleMart Properties offers the most exclusive
+            real estate listings across Nigeria, from luxury apartments to prime development lands.</p>
+    </section>
+
+    <div class="container" style="display: flex; justify-content: center;">
+        <form class="search-box-luxury" id="prop-search-form">
+            <div>
+                <label class="lux-label">Location</label>
+                <input type="text" class="luxury-input" id="prop-loc" placeholder="Lagos, Abuja, Port Harcourt...">
+            </div>
+            <div>
+                <label class="lux-label">Property Type</label>
+                <select class="luxury-input" id="prop-type">
+                    <option value="">Any Type</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="land">Land</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+            </div>
+            <div>
+                <label class="lux-label">Min Price (₦)</label>
+                <input type="number" class="luxury-input" id="prop-min" placeholder="No Min">
+            </div>
+            <div>
+                <label class="lux-label">Max Price (₦)</label>
+                <input type="number" class="luxury-input" id="prop-max" placeholder="No Max">
+            </div>
+            <button type="submit" class="btn-primary"
+                style="width: auto; padding: 0 2.5rem; border-radius: 0.75rem;">Search</button>
+        </form>
+    </div>
+
+    <section class="container" style="padding: 5rem 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+            <div>
+                <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--prop-navy);">Featured Listings</h2>
+                <p style="color: var(--prop-slate);">Handpicked properties for exceptional living.</p>
+            </div>
+            <a href="#" class="btn-secondary" style="width: auto;">View All Properties</a>
+        </div>
+
+        <div class="product-grid" id="featured-properties">
+            <!-- Loading States -->
+            <div class="loading-shimmer" style="height: 400px; border-radius: 1.25rem;"></div>
+            <div class="loading-shimmer" style="height: 400px; border-radius: 1.25rem;"></div>
+            <div class="loading-shimmer" style="height: 400px; border-radius: 1.25rem;"></div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const propContainer = document.getElementById('featured-properties');
+
+            try {
+                const res = await fetch('https://api.noblemart.com.ng/properties');
+                const properties = await res.json();
+
+                if (properties.length === 0) {
+                    propContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--prop-slate);">No properties found. Check back later!</p>';
+                } else {
+                    propContainer.innerHTML = properties.map(p => `
+                        <div class="prop-card" onclick="window.location.href='listing.html?slug=${p.slug}'">
+                            <div class="prop-img-box">
+                                <img src="${p.images ? JSON.parse(p.images)[0] : 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800'}" class="prop-img">
+                                <span class="prop-tag">${p.property_type.toUpperCase()}</span>
+                                <div class="prop-price">₦${parseFloat(p.price).toLocaleString()}</div>
+                            </div>
+                            <div class="prop-content">
+                                <h3 class="prop-title">${p.title}</h3>
+                                <div class="prop-loc">
+                                    <span class="material-symbols-outlined" style="font-size: 1rem; color: var(--prop-gold);">location_on</span>
+                                    ${p.location}
+                                </div>
+                                <div class="prop-meta">
+                                    ${p.bedrooms ? `
+                                        <div style="display: flex; align-items: center; gap: 0.25rem;">
+                                            <span class="material-symbols-outlined" style="font-size: 1rem;">bed</span>
+                                            ${p.bedrooms} Beds
+                                        </div>
+                                    ` : ''}
+                                    ${p.bathrooms ? `
+                                        <div style="display: flex; align-items: center; gap: 0.25rem;">
+                                            <span class="material-symbols-outlined" style="font-size: 1rem;">bathtub</span>
+                                            ${p.bathrooms} Baths
+                                        </div>
+                                    ` : ''}
+                                    <div style="display: flex; align-items: center; gap: 0.25rem;">
+                                        <span class="material-symbols-outlined" style="font-size: 1rem;">square_foot</span>
+                                        ${p.area_sqft || 'N/A'} SqFt
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (err) {
+                propContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ef4444;">Failed to load properties.</p>';
+            }
+
+            document.getElementById('prop-search-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const loc = document.getElementById('prop-loc').value;
+                const type = document.getElementById('prop-type').value;
+                const min = document.getElementById('prop-min').value;
+                const max = document.getElementById('prop-max').value;
+
+                window.location.href = `index.html?location=${encodeURIComponent(loc)}&type=${type}&minPrice=${min}&maxPrice=${max}`;
+            });
+        });
+    </script>
+</body>
+
+</html>

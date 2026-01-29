@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Performance Report</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter and Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4f14f0",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#151022",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#110d1c] dark:text-white min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-white rounded-lg flex items-center justify-center">
+<svg class="text-federal-blue size-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h1 class="font-poppins font-bold text-lg leading-tight">NobleMart</h1>
+<p class="text-white/60 text-xs uppercase tracking-widest">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white shadow-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="bg-white/5 rounded-xl p-4 border border-white/10">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-8 rounded-full bg-robin-egg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">verified_user</span>
+</div>
+<span class="text-xs font-semibold">Tier: Platinum</span>
+</div>
+<button class="w-full py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition-all">Support Center</button>
+</div>
+<div class="mt-4 flex items-center gap-3 px-3">
+<div class="size-8 rounded-full bg-center bg-cover border border-white/20" data-alt="Professional entrepreneur in a modern office" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbBrUSMuPFuJgR4DF_h6eJa5UK0wD92i6Qu9sW6_UwFMQmP8cCtZNh3sPHj52TpDE0oDi5TvGCBflTCIeUsEQwtwruZxkuItzdpYq6PBaUwCIiT1B6O05QWK3YhAsaURwTFc3m6VVYL7NDfDM5FiCEr_M9woWJUPX1DdZAZOJCQUtwMqTfwzalioY0HLXPEyY99tMzNg2sE_J_fNkV1D1ModI_gR67sRNxp90YtU2sMLHyAVPPo115I8EWRKefMAhe3awkqLusFSE');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold truncate">Adekunle Gold</p>
+<p class="text-[10px] text-white/50 truncate">Gold's Tech Hub</p>
+</div>
+<span class="material-symbols-outlined text-white/40 cursor-pointer">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-white dark:bg-background-dark">
+<!-- Header Component -->
+<header class="sticky top-0 z-10 flex items-center justify-between px-10 py-6 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#eae7f3] dark:border-white/10">
+<div class="flex items-center gap-8">
+<h2 class="text-2xl font-poppins font-bold tracking-tight">Performance Overview</h2>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-background-light dark:bg-white/5 rounded-lg text-sm font-medium border border-[#d5cfe8] dark:border-white/10">
+<span>Last 30 Days</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<input class="w-64 pl-10 pr-4 py-2 bg-background-light dark:bg-white/5 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/50" placeholder="Search insights..."/>
+<span class="material-symbols-outlined absolute left-3 top-2 text-[#604b9b] dark:text-white/40">search</span>
+</div>
+<button class="p-2 bg-background-light dark:bg-white/5 rounded-lg text-[#110d1c] dark:text-white relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold shadow-lg shadow-primary/30">Download Report</button>
+</div>
+</header>
+<div class="px-10 py-8">
+<!-- Key Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-[#604b9b] dark:text-white/60 text-sm font-medium">Success Rate</p>
+<span class="text-[#078843] text-xs font-bold bg-[#078843]/10 px-2 py-0.5 rounded-full">+2.1%</span>
+</div>
+<h3 class="text-3xl font-poppins font-bold">98%</h3>
+<p class="text-[10px] text-gray-400 mt-2">Target: 95.0%</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-[#604b9b] dark:text-white/60 text-sm font-medium">Cancellation Rate</p>
+<span class="text-[#078843] text-xs font-bold bg-[#078843]/10 px-2 py-0.5 rounded-full">-0.2%</span>
+</div>
+<h3 class="text-3xl font-poppins font-bold">0.5%</h3>
+<p class="text-[10px] text-gray-400 mt-2">Industry Avg: 1.2%</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-[#604b9b] dark:text-white/60 text-sm font-medium">Average Rating</p>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+</div>
+<h3 class="text-3xl font-poppins font-bold">4.7<span class="text-lg text-gray-400">/5</span></h3>
+<p class="text-[10px] text-gray-400 mt-2">2.4k Total Reviews</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<p class="text-[#604b9b] dark:text-white/60 text-sm font-medium">Return Rate</p>
+<span class="text-[#e74408] text-xs font-bold bg-[#e74408]/10 px-2 py-0.5 rounded-full">+0.1%</span>
+</div>
+<h3 class="text-3xl font-poppins font-bold">1.2%</h3>
+<p class="text-[10px] text-gray-400 mt-2">Goal: &lt;1.0%</p>
+</div>
+</div>
+<!-- Performance Gauge and Health Status -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<div class="lg:col-span-2 bg-white dark:bg-white/5 p-8 rounded-xl border border-[#d5cfe8] dark:border-white/10 flex items-center justify-between shadow-sm">
+<div class="space-y-6 flex-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-robin-egg/10 text-robin-egg rounded-full">
+<span class="material-symbols-outlined text-sm">shield_with_heart</span>
+<span class="text-xs font-bold uppercase tracking-wider">NobleShield Verified</span>
+</div>
+<div>
+<h4 class="text-2xl font-poppins font-bold mb-2">Overall Account Health: Excellent</h4>
+<p class="text-[#604b9b] dark:text-white/60 max-w-md">You are in the top 5% of NobleMart vendors in Nigeria. Your commitment to quality has earned you the NobleShield elite badge.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-robin-egg text-white rounded-lg text-sm font-bold">View Certification</button>
+<button class="px-6 py-2.5 bg-background-light dark:bg-white/10 rounded-lg text-sm font-bold">Share Milestone</button>
+</div>
+</div>
+<div class="relative flex items-center justify-center p-4">
+<!-- Circular Gauge Placeholder -->
+<div class="size-48 rounded-full border-[12px] border-robin-egg/10 flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-[12px] border-transparent border-t-robin-egg border-r-robin-egg rotate-45"></div>
+<div class="text-center">
+<p class="text-4xl font-poppins font-bold text-robin-egg">96</p>
+<p class="text-[10px] font-medium text-[#604b9b] uppercase tracking-widest">Health Score</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-federal-blue text-white p-8 rounded-xl relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-10 -top-10 size-40 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h4 class="font-poppins font-bold text-xl mb-4">Growth Milestone</h4>
+<p class="text-white/70 text-sm leading-relaxed mb-6">"Selling on NobleMart allowed me to expand my small electronics shop from Lagos to 15 different states in just one year."</p>
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-full border-2 border-robin-egg p-0.5">
+<div class="size-full rounded-full bg-center bg-cover" data-alt="Successful vendor smiling in a bright office space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPOB7Q0xNYOfba4Plq0-mz--5MadwxEVEl3mJ1mY7EI_WzelDoQOUfCgRac5mC9uMdRlusK99xfcrJR3rZAfwZu4x4UFPhtzH6xVKKioIEvRfhC2HAcv_jLwAhBKsKcE1cvIgMqMEKpL1vWQw-S8XiwbA_C1pocWkasedm_ifelObyx6-eglruFwH9hf-yScq_V2LOcq3slKr8QKKCk2gi5ZwKTpD3A7WKVi2FJo0MYEwxXKmpMj0FR-Qx4aQJONr-O-7BkeeIdzc');"></div>
+</div>
+<div>
+<p class="font-bold text-sm">Chidi Okafor</p>
+<p class="text-xs text-white/50">TechHub Solutions</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<!-- Order Volume Trends (Line Chart Placeholder) -->
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-poppins font-bold">Order Volume Trends</h4>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer">more_horiz</span>
+</div>
+<div class="h-64 flex items-end justify-between gap-2 px-2">
+<!-- Simulated Chart Bars/Points -->
+<div class="w-full bg-electric-indigo/10 h-32 rounded-t-sm relative group">
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-electric-indigo"></div>
+</div>
+<div class="w-full bg-electric-indigo/10 h-40 rounded-t-sm relative">
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-electric-indigo"></div>
+</div>
+<div class="w-full bg-electric-indigo/10 h-24 rounded-t-sm relative">
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-electric-indigo"></div>
+</div>
+<div class="w-full bg-electric-indigo/20 h-48 rounded-t-sm relative">
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-electric-indigo"></div>
+</div>
+<div class="w-full bg-electric-indigo/30 h-56 rounded-t-sm relative">
+<div class="absolute bottom-0 left-0 right-0 h-2 bg-electric-indigo shadow-[0_-4px_10px_rgba(92,27,232,0.3)]"></div>
+</div>
+<div class="w-full bg-electric-indigo/10 h-44 rounded-t-sm relative">
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-electric-indigo"></div>
+</div>
+<div class="w-full bg-electric-indigo/10 h-52 rounded-t-sm relative">
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-electric-indigo"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-[10px] font-medium text-gray-400">
+<span>WK 1</span><span>WK 2</span><span>WK 3</span><span>WK 4</span><span>WK 5</span><span>WK 6</span><span>WK 7</span>
+</div>
+</div>
+<!-- Top 5 Selling Products (Bar Chart Placeholder) -->
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-poppins font-bold">Top 5 Selling Products</h4>
+<button class="text-primary text-xs font-bold uppercase tracking-wider hover:underline">Full Analytics</button>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>Wireless Earbuds Pro</span>
+<span>1,240 Sales</span>
+</div>
+<div class="w-full bg-background-light dark:bg-white/5 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>Solar Power Bank 20k mAh</span>
+<span>892 Sales</span>
+</div>
+<div class="w-full bg-background-light dark:bg-white/5 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full opacity-80" style="width: 65%;"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>Smart Watch Series X</span>
+<span>567 Sales</span>
+</div>
+<div class="w-full bg-background-light dark:bg-white/5 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full opacity-60" style="width: 45%;"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>USB-C Quick Charger</span>
+<span>421 Sales</span>
+</div>
+<div class="w-full bg-background-light dark:bg-white/5 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full opacity-40" style="width: 30%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Sections: Insights and Tips -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Customer Insight Section -->
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<h4 class="font-poppins font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-robin-egg">chat_bubble</span>
+                            Common Positive Keywords
+                        </h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-robin-egg/10 text-robin-egg text-sm font-bold rounded-lg border border-robin-egg/20">Fast Shipping</span>
+<span class="px-4 py-2 bg-primary/10 text-primary text-sm font-bold rounded-lg border border-primary/20">Great Quality</span>
+<span class="px-4 py-2 bg-green-500/10 text-green-600 text-sm font-bold rounded-lg border border-green-500/20">Well Packaged</span>
+<span class="px-4 py-2 bg-[#eae7f3] text-[#110d1c] dark:text-white/80 text-sm font-bold rounded-lg">Authentic Product</span>
+<span class="px-4 py-2 bg-[#eae7f3] text-[#110d1c] dark:text-white/80 text-sm font-bold rounded-lg">Friendly Support</span>
+<span class="px-4 py-2 bg-[#eae7f3] text-[#110d1c] dark:text-white/80 text-sm font-bold rounded-lg">Exactly as Described</span>
+</div>
+<div class="mt-8 p-4 bg-background-light dark:bg-white/5 rounded-lg border border-dashed border-[#d5cfe8] dark:border-white/20">
+<p class="text-xs italic text-gray-500">"The fastest delivery I've ever experienced in Abuja! NobleMart never disappoints with this vendor." - Recent Customer Review</p>
+</div>
+</div>
+<!-- Improvement Tips -->
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<h4 class="font-poppins font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-500">lightbulb</span>
+                            How to Improve Your Rank
+                        </h4>
+<div class="space-y-4">
+<div class="flex gap-4 p-3 rounded-lg hover:bg-background-light dark:hover:bg-white/5 transition-all group">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">speed</span>
+</div>
+<div>
+<p class="text-sm font-bold">Speed up fulfillment</p>
+<p class="text-xs text-gray-400">Reduce average shipping time by 4 hours to enter the top 2% tier.</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-lg hover:bg-background-light dark:hover:bg-white/5 transition-all group">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">inventory</span>
+</div>
+<div>
+<p class="text-sm font-bold">Reduce out-of-stock items</p>
+<p class="text-xs text-gray-400">Inventory alerts are active for 3 items with low stock levels.</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-lg hover:bg-background-light dark:hover:bg-white/5 transition-all group">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</div>
+<div>
+<p class="text-sm font-bold">Optimize product images</p>
+<p class="text-xs text-gray-400">Products with high-res white background images see 20% more clicks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="px-10 py-8 text-center text-gray-400 text-xs">
+<p>© 2024 NobleMart Africa. All rights reserved. Vendor Performance Portal v2.4.1</p>
+</footer>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Store Performance</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                        "background-light": "#f8f9fa",
+                        "surface-white": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 15px rgba(1, 194, 202, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(92, 27, 232, 0.2) 0%, rgba(92, 27, 232, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-gray-800 antialiased overflow-hidden h-screen flex">
+<aside class="w-64 bg-federal-blue h-full flex flex-col text-white flex-shrink-0 z-20 hidden lg:flex">
+<div class="h-16 flex items-center px-8 border-b border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-robin-egg text-3xl">shopping_bag</span>
+<span class="text-xl font-bold tracking-tight">NobleMart</span>
+</div>
+</div>
+<div class="p-6 pb-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="h-12 w-12 rounded-full bg-cover bg-center border-2 border-robin-egg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwA7EsWZ8PZ7DDJuC4EC6-QYFuUEjh70IhlAfqWmo-qqqaOWFSv_LkRzd2gz_byJx4wkRTHfhGeJ564VRjgEzx63pB6ErsHzKQ0rlaFoZVXfn7tBoTw0Yflyn5Q8YYD92eZYPdd_5zQHkRZ4kJd80qhuhmUr4RLzVy4HrNmUg2_3H2Ag7P2PC9x-_hGXYCK4XNKMT9SyXz6606Bc7-GE1zIHKENHttjv49EdV--UKdmLzro1wzS1fJNR4IS3uq1AeO9xDkj88_afI");'></div>
+<div>
+<p class="text-sm font-semibold">Tunde A.</p>
+<p class="text-xs text-gray-400">Tunde's Electronics</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Products
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+                <span class="ml-auto bg-electric-indigo text-xs py-0.5 px-2 rounded-full">3</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-white bg-white/10 rounded-lg shadow-sm border-l-4 border-robin-egg" href="#">
+<span class="material-symbols-outlined text-robin-egg">monitoring</span>
+                Performance
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                Wallet
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">campaign</span>
+                Marketing
+            </a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col h-full overflow-hidden relative">
+<header class="bg-surface-white border-b border-gray-100 h-16 flex items-center justify-between px-6 lg:px-10 flex-shrink-0 z-10">
+<div class="flex items-center gap-4 lg:hidden">
+<button class="text-gray-500 hover:text-federal-blue">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-lg font-bold text-federal-blue">NobleMart</span>
+</div>
+<div class="hidden lg:block">
+<h1 class="text-xl font-bold text-federal-blue">Performance Overview</h1>
+<p class="text-xs text-gray-500">Last updated: Just now</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<input class="pl-10 pr-4 py-2 bg-gray-50 border-none rounded-full text-sm focus:ring-2 focus:ring-robin-egg w-64" placeholder="Search data..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2 text-gray-400 text-[20px]">search</span>
+</div>
+<button class="relative p-2 text-gray-500 hover:bg-gray-50 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 scroll-smooth">
+<div class="max-w-7xl mx-auto space-y-6">
+<div class="bg-surface-white rounded-2xl p-6 lg:p-8 shadow-soft flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-robin-egg/5 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-col gap-4 z-10 text-center md:text-left">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-robin-egg/10 text-robin-egg rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                NobleShield Elite
+                            </div>
+<h2 class="text-gray-500 font-medium text-sm uppercase tracking-wide">Overall Store Health</h2>
+<p class="text-4xl lg:text-5xl font-extrabold text-federal-blue mt-1">Excellent</p>
+</div>
+<p class="text-gray-500 max-w-md text-sm leading-relaxed">
+                            Your store is performing exceptionally well. You are currently ranked in the <span class="text-federal-blue font-bold">top 5%</span> of vendors in the Electronics category. Keep it up!
+                        </p>
+</div>
+<div class="relative w-40 h-40 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#f1f5f9" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="none" r="45" stroke="#01C2CA" stroke-dasharray="283" stroke-dashoffset="14" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-federal-blue">
+<span class="text-3xl font-bold">98</span>
+<span class="text-xs font-medium text-gray-400">SCORE</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-white p-5 rounded-xl shadow-soft border border-gray-100 flex flex-col gap-1">
+<div class="flex justify-between items-start mb-2">
+<div class="p-2 bg-indigo-50 rounded-lg text-federal-blue">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<span class="flex items-center text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>
+                                2.4%
+                            </span>
+</div>
+<p class="text-gray-500 text-xs font-medium uppercase">Fulfillment Rate</p>
+<p class="text-2xl font-bold text-federal-blue">99.2%</p>
+</div>
+<div class="bg-surface-white p-5 rounded-xl shadow-soft border border-gray-100 flex flex-col gap-1">
+<div class="flex justify-between items-start mb-2">
+<div class="p-2 bg-yellow-50 rounded-lg text-yellow-600">
+<span class="material-symbols-outlined">star</span>
+</div>
+<span class="flex items-center text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>
+                                0.1
+                            </span>
+</div>
+<p class="text-gray-500 text-xs font-medium uppercase">Customer Rating</p>
+<p class="text-2xl font-bold text-federal-blue">4.8 <span class="text-sm font-normal text-gray-400">/ 5.0</span></p>
+</div>
+<div class="bg-surface-white p-5 rounded-xl shadow-soft border border-gray-100 flex flex-col gap-1">
+<div class="flex justify-between items-start mb-2">
+<div class="p-2 bg-teal-50 rounded-lg text-teal-600">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<span class="flex items-center text-xs font-bold text-red-500 bg-red-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_down</span>
+                                0.5%
+                            </span>
+</div>
+<p class="text-gray-500 text-xs font-medium uppercase">On-Time Shipping</p>
+<p class="text-2xl font-bold text-federal-blue">97%</p>
+</div>
+<div class="bg-surface-white p-5 rounded-xl shadow-soft border border-gray-100 flex flex-col gap-1">
+<div class="flex justify-between items-start mb-2">
+<div class="p-2 bg-red-50 rounded-lg text-red-500">
+<span class="material-symbols-outlined">cancel</span>
+</div>
+<span class="flex items-center text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_down</span>
+                                1.2%
+                            </span>
+</div>
+<p class="text-gray-500 text-xs font-medium uppercase">Cancellation Rate</p>
+<p class="text-2xl font-bold text-federal-blue">0.4%</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-surface-white p-6 rounded-xl shadow-soft border border-gray-100">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-federal-blue font-bold text-lg">Sales Revenue vs Satisfaction</h3>
+<div class="flex gap-4 text-xs font-medium">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-electric-indigo"></span> Revenue
+                                </div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-robin-egg"></span> CSAT Score
+                                </div>
+</div>
+</div>
+<div class="relative h-64 w-full flex items-end justify-between gap-2 px-2 border-b border-gray-200">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none text-xs text-gray-300">
+<div class="border-b border-gray-100 w-full h-0"></div>
+<div class="border-b border-gray-100 w-full h-0"></div>
+<div class="border-b border-gray-100 w-full h-0"></div>
+<div class="border-b border-gray-100 w-full h-0"></div>
+<div class="border-b border-gray-100 w-full h-0"></div>
+</div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 40%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 60%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 45%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 70%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 55%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 85%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 65%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 90%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 75%;"></div>
+<div class="w-full bg-electric-indigo rounded-t-sm opacity-80 hover:opacity-100 transition-opacity" style="height: 80%;"></div>
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+<path d="M0,180 C20,170 40,160 60,165 C100,175 140,100 200,80 C300,50 400,60 500,40 C600,20 700,30 800,10" fill="none" stroke="#01C2CA" stroke-linecap="round" stroke-width="3" vector-effect="non-scaling-stroke"></path>
+<circle cx="10%" cy="75%" fill="#ffffff" r="4" stroke="#01C2CA" stroke-width="2"></circle>
+<circle cx="30%" cy="65%" fill="#ffffff" r="4" stroke="#01C2CA" stroke-width="2"></circle>
+<circle cx="50%" cy="40%" fill="#ffffff" r="4" stroke="#01C2CA" stroke-width="2"></circle>
+<circle cx="70%" cy="25%" fill="#ffffff" r="4" stroke="#01C2CA" stroke-width="2"></circle>
+<circle cx="90%" cy="15%" fill="#ffffff" r="4" stroke="#01C2CA" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between text-xs text-gray-400 mt-2 px-2">
+<span>Week 1</span>
+<span>Week 2</span>
+<span>Week 3</span>
+<span>Week 4</span>
+</div>
+</div>
+<div class="bg-federal-blue text-white p-6 rounded-xl shadow-soft flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-electric-indigo rounded-full blur-3xl opacity-50 -mr-10 -mt-10"></div>
+<div>
+<h3 class="font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-robin-egg">leaderboard</span>
+                                Peer Ranking
+                            </h3>
+<p class="text-sm text-gray-300 mt-1">Electronics Category</p>
+</div>
+<div class="my-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-3xl font-bold">Top 10%</span>
+<span class="text-xs bg-robin-egg text-federal-blue px-2 py-1 rounded font-bold">#14 of 500+</span>
+</div>
+<div class="h-3 w-full bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-electric-indigo to-robin-egg w-[90%] rounded-full"></div>
+</div>
+<p class="text-xs text-gray-300 mt-2 text-right">You are ahead of 450 sellers</p>
+</div>
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/5">
+<p class="text-xs font-medium text-gray-300 mb-2">NEXT MILESTONE</p>
+<p class="text-sm font-semibold">Reach <span class="text-robin-egg">99.5%</span> Fulfillment to enter Top 5%</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-white rounded-xl shadow-soft border border-gray-100 overflow-hidden">
+<div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+<h3 class="text-federal-blue font-bold text-lg">Actionable Insights</h3>
+<a class="text-sm text-electric-indigo font-medium hover:underline" href="#">View All</a>
+</div>
+<div class="divide-y divide-gray-50">
+<div class="p-4 sm:px-6 hover:bg-gray-50 transition-colors flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between group">
+<div class="flex items-start gap-4">
+<div class="h-10 w-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">inventory</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-800">Low Stock Alert: Premium Leather Bag</p>
+<p class="text-xs text-gray-500 mt-1">Product SKU-123 is down to 2 units. High velocity item.</p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm font-medium rounded-lg hover:border-federal-blue hover:text-federal-blue transition-colors shadow-sm">
+                                Restock Now
+                            </button>
+</div>
+<div class="p-4 sm:px-6 hover:bg-gray-50 transition-colors flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between group">
+<div class="flex items-start gap-4">
+<div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-800">3 Pending Customer Inquiries</p>
+<p class="text-xs text-gray-500 mt-1">Response time affects your seller rating. 2 are &gt; 4 hours old.</p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm font-medium rounded-lg hover:border-federal-blue hover:text-federal-blue transition-colors shadow-sm">
+                                Respond
+                            </button>
+</div>
+<div class="p-4 sm:px-6 hover:bg-gray-50 transition-colors flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between group">
+<div class="flex items-start gap-4">
+<div class="h-10 w-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-800">Boost your 'Summer Sneakers' listing</p>
+<p class="text-xs text-gray-500 mt-1">Category traffic is up 20%. Add a discount to capture sales.</p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm font-medium rounded-lg hover:border-federal-blue hover:text-federal-blue transition-colors shadow-sm">
+                                Create Promo
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-12 mb-6 text-center text-xs text-gray-400">
+                © 2023 NobleMart Vendor Center. <a class="hover:text-federal-blue" href="#">Terms</a> • <a class="hover:text-federal-blue" href="#">Privacy</a>
+</footer>
+</main>
+</div>
+
+</body></html>

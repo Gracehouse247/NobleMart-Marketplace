@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Groceries - Beverages &amp; Drinks</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#5C1BE8", // Electric Indigo
+                        secondary: "#01C2CA", // Robin Egg Blue
+                        "federal-blue": "#020249",
+                        "background-light": "#F5F5F7",
+                        "background-dark": "#0A0A0B",
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                        body: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body { font-family: 'Poppins', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<header class="bg-white dark:bg-slate-900 shadow-sm sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-2 rounded-lg">
+<span class="text-white font-bold text-xl tracking-tighter">NM</span>
+</div>
+<h1 class="text-2xl font-bold text-federal-blue dark:text-white hidden md:block">NobleMart</h1>
+</div>
+<div class="flex-1 max-w-2xl relative">
+<input class="w-full pl-10 pr-24 py-2 border border-slate-200 dark:border-slate-700 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-800" placeholder="Search products, brands and categories" type="text"/>
+<span class="material-icons absolute left-3 top-2.5 text-slate-400">search</span>
+<button class="absolute right-1 top-1 bottom-1 bg-primary text-white px-4 rounded font-medium text-sm hover:bg-opacity-90 transition-all">SEARCH</button>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
+<span class="material-icons">person_outline</span>
+<span class="font-medium hidden lg:block">Account</span>
+<span class="material-icons text-sm">expand_more</span>
+</div>
+<div class="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
+<span class="material-icons">help_outline</span>
+<span class="font-medium hidden lg:block">Help</span>
+<span class="material-icons text-sm">expand_more</span>
+</div>
+<div class="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
+<span class="material-icons">shopping_cart</span>
+<span class="font-medium hidden lg:block">Cart</span>
+</div>
+</div>
+</div>
+</header>
+<nav class="max-w-7xl mx-auto px-4 py-3 text-xs text-slate-500 flex gap-2 items-center">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-icons text-[10px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Groceries</a>
+<span class="material-icons text-[10px]">chevron_right</span>
+<span class="text-slate-800 dark:text-slate-300 font-medium">Beverages &amp; Drinks</span>
+</nav>
+<main class="max-w-7xl mx-auto px-4 pb-20 space-y-8">
+<section class="rounded-xl overflow-hidden relative aspect-[21/6] bg-slate-200 dark:bg-slate-800">
+<img alt="Beverage Collection" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB_jqdpPAajCEPuXi9IixtIdeYKzCcf3btqoMrftB9NE5KmZxBDLp6VKY6i1YjJeievJPPP6S080Z1tKUKd8VQFJ763i_5tyzmzLZIzKhLZirbj6_YysUs4md_-7PP9a5CtBIWySdBkbiscHIMMWFbygqeG3QIvf7v9SBbwTgfjr30MN5dLdasAIB8-UU6JBlWSmwieGyVifdOSWARr7y5A3iNUDBf0gUmID7JBWFleAUYPJmwup_LY-Rr_D9aDRVMoFHuQMPcE5M"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center p-12 text-white">
+<h2 class="text-4xl font-bold mb-4">Perfect for Every Occasion</h2>
+<p class="text-lg opacity-90 max-w-lg">Discover our premium selection of spirits, wines, and beverages curated for your celebrations.</p>
+<button class="mt-6 bg-white text-federal-blue px-6 py-2.5 rounded-full font-semibold w-fit hover:bg-opacity-90 transition-all">Shop Now</button>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1 relative">
+<input class="w-full py-3 px-12 border border-slate-200 dark:border-slate-700 rounded-lg dark:bg-slate-800" placeholder="Search for your best drinks here" type="text"/>
+<span class="material-icons absolute left-4 top-3.5 text-slate-400">local_bar</span>
+</div>
+<button class="bg-primary text-white px-10 py-3 rounded-lg font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/20">SEARCH</button>
+</div>
+</section>
+<section class="flex flex-wrap justify-center gap-8 md:gap-12">
+<div class="group cursor-pointer text-center space-y-2">
+<div class="w-24 h-24 rounded-full border-4 border-federal-blue p-1 transition-transform group-hover:scale-105">
+<img alt="Champagne" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtHVfU5fSFEy4WH3Vc9A1weX7kMcQlbemDHhpPCIgPaFlxuuOuC-qPifaQkWEr4RDLwXr1jNU8-xKb1zopJNzHGyIMKjU0qVGBRsk57EIp0Cz7Q5txkcvSyNulAd5D4VJVMJbIvW3haM6eRdfBX32qgMgCqfd0HYp2g8I9EFcbUuBN5OIQMJQCvc0S1jrR7yJehiNgrsYgm50QIyTSRv1JTlhQH0kpwH2PU4INEofd01cpy5AWkeWFq5tKp8C9d1qQa3dGVgWNNzI"/>
+</div>
+<p class="text-sm font-semibold">Champagne</p>
+</div>
+<div class="group cursor-pointer text-center space-y-2">
+<div class="w-24 h-24 rounded-full border-4 border-federal-blue p-1 transition-transform group-hover:scale-105">
+<img alt="Spirit" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG99vaK0bycYezqE6bJCsurU53g0TgLGONFumKgF-pJk0EKnhdttqfOzlv3X4MOjJDlbE5SiTZ4__i8iQmd7yt6kKv5B1fqi7dbQ04_TBaPLbASCF5wG-OSGNTc5oqwBvaQCVMvwDqLhss0VY2C9N04BmZbNqicRfJqgMOVRsYCDeNJw1osL1HB2RMrjeuO5BmWPzsajjB-P0eV4uxSjvo6NnJaS3PzT2N0y7MIj45Ze7kLYmFgVT9GUJY1NIDhoxH-OiocrERHNo"/>
+</div>
+<p class="text-sm font-semibold">Spirit</p>
+</div>
+<div class="group cursor-pointer text-center space-y-2">
+<div class="w-24 h-24 rounded-full border-4 border-federal-blue p-1 transition-transform group-hover:scale-105">
+<img alt="Wines" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA94PaOh61VichZySoPG9rI3brpjD5KPqxFJjR8rYg4e6JXFh2QSruodtnC6TthMAOWXe8Hu7EuF5nZsK1H7ke874obumb1OP5jlVIr2t9RFgQ3PuLPqLrcMjd34pFTtfLSBQKvPyylH4luuBr_JkoDLij9CXZg6FVLLVB8i0Wko_zMgJVgkUPTq9lI7zTQ8e3h6dJT2Yih44_V4oPsccIgvlvd0a8TADB0TMNxAeRMECEQjr_nxlX_kAsZYmONb5SUOED_k3nPW5s"/>
+</div>
+<p class="text-sm font-semibold">Wines</p>
+</div>
+<div class="group cursor-pointer text-center space-y-2">
+<div class="w-24 h-24 rounded-full border-4 border-federal-blue p-1 transition-transform group-hover:scale-105">
+<img alt="Cognac" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_6Y71tnb9oDUPXTJ0UHkGuj_-zi82oqSEASUxby-bO0fxZIqp6tOFBJKFgqeT8wybSx583iALvZdKfaKvXM3mMIB5jOw8jc1JN8LvaLVixrcdo7c7LFNyDrGlWk99ozrcfG4qSZhYXDDFxcZw5TxmtcuHNDhSiBeK6T64GVpjxj6dTTETH7YKfoCekPJO-FAzRoYisgH4HyTA7zrE8eliH9muIw1mGnSBNyZ4zzJu1dq3biJ_mOBGsEcjWjSctBd8KanvF6KaByY"/>
+</div>
+<p class="text-sm font-semibold">Cognac</p>
+</div>
+<div class="group cursor-pointer text-center space-y-2">
+<div class="w-24 h-24 rounded-full border-4 border-federal-blue p-1 transition-transform group-hover:scale-105">
+<img alt="Whisky" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhUHIQ5UPwjEACC7wB7A3Xf_VuX3ZmldVGdEuEszYZo_4p19Zcd56M494owgpszQFTwmRWfDHBmTi6V8jUucnytN9kuurU7RoisHiETXob5GkAD6wJeeGvfMJThWg1SMcpB0cEyyTUeUQ5Ju-ON3tQpT87tWjjjL69-HY4sWhuTQTrGiz-TyV0uUSxiHd2340uPd36OW-xk-1NUQu2uden5K6n5uq-FAOyDEnrHMUuwENcXDDG3oJnEENpRe1zFkiL1T8UrXrE5P8"/>
+</div>
+<p class="text-sm font-semibold">Whisky</p>
+</div>
+<div class="group cursor-pointer text-center space-y-2">
+<div class="w-24 h-24 rounded-full border-4 border-federal-blue p-1 transition-transform group-hover:scale-105">
+<img alt="Mixers" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASExsqPFGlDss6QF1taGTxgE_Q-7a3glXcBLRoaMP0KkHxUElNuAf4hJ8S8Sfi6iIn_D7v9ZSxguuqiDASlB6nwhS2lzX3V_LNc52lvW7FwTunIdTxoku15KAPiYf_aC5ys1fhCEB9ysxrMqtdJL5_GCRXX5NXgwMJ9T7oFLOjtc0qgPadPQa84ztgY5CQctEa1OKex5luhgRGuLghGRmTo3jKkFOVH8j-DwErkrYpBZTpYO9EbWRdtSglW9a08arlOPOoxmfLP1Y"/>
+</div>
+<p class="text-sm font-semibold">Mixers &amp; Soft Drinks</p>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-900 rounded-xl shadow-sm overflow-hidden">
+<div class="bg-secondary p-3 flex justify-between items-center px-6">
+<h3 class="text-white font-bold text-lg">Premium Spirit</h3>
+<a class="text-white text-sm font-medium hover:underline" href="#">SEE ALL</a>
+</div>
+<div class="p-6 grid grid-cols-2 md:grid-cols-6 gap-4">
+<div class="group cursor-pointer">
+<div class="relative aspect-square mb-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 overflow-hidden">
+<img alt="Whisky Bottle" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkKjs3mqaVsU9_sYIGbyLadtY2bjElGI4losllCthMlNfZgX-t2XFdnXBO_FovGhODLfKFbvoauwdYkEg3su_GOnMNcdWF4eAe-AQwJvujw5YHPZJ7qA7mY1lWeXZPVT0FST7UwEFjNBVUCPIVvFCBS8vWxS6ELwPm1Jd1f2Jo3kwXNNUp7ISYpjTz4cTz0dqlUBd1YwwkyOR5a4mxSTsZWFExIoTJryfTBrHbeDoR_ksL4Cj2Z88eed0AyNE2VIwYK-V2lEQoEQM"/>
+<span class="absolute top-2 right-2 bg-red-100 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded">-43%</span>
+</div>
+<p class="text-sm line-clamp-2 mb-1">Johnnie Walker Blue Label 750ml</p>
+<p class="font-bold text-lg">₦ 277,000</p>
+<p class="text-xs text-slate-400 line-through">₦ 489,100</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square mb-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 overflow-hidden">
+<img alt="Cognac" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz3FfRLn21QYEGozof3_ceFVr-L73MJVAL0R5h8Cl94yppRpZgKd71-hxhsjg-M9c68R4G8ahp4pDTDyWRyqD1MuExDAovwkBtfZ1meoOhMzoPkfuYFSHw-F1tD2-7cbpZK297XRcdIoH0iaaD0B1qcHYaGtICtWYzwx12DGgHXFWLnxHNVy2pmF65Fh7qn9p8veOKginstQzIRlJbfwZtbWEnmCiXkXuy3oVBrGAH3VP0lSsXn2UqT-v7ZPb8z7dWx2qiqjTltoQ"/>
+<span class="absolute top-2 right-2 bg-red-100 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded">-10%</span>
+</div>
+<p class="text-sm line-clamp-2 mb-1">D'USSE XO Cognac 75cl</p>
+<p class="font-bold text-lg">₦ 159,000</p>
+<p class="text-xs text-slate-400 line-through">₦ 175,000</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square mb-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 overflow-hidden">
+<img alt="Vodka" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyDqyDWCsYYpOs_EpWUzS9A3w7n9CTfxb_tJIKRONeQMYnHGZRV_nys8IH9ftpCiFVL_F7ra2LWzoyMCNXBbFnDPYReqwKdCkqMK5Pw6-YGodf7X3own1rIkcyCur21QSn-n0aYnf4AGq6d7PP1pjArUPs_foQmJeoJS618LCl6ZthD2MjxUGUpnf7aRs39hTT8rO3DHfhraIJJ-l3kv4D9vfuS2JyulP0CSeDfPxLzp1kLS-HY3bnGEWdJ9GmYguaRfXTjIuofEA"/>
+<span class="absolute top-2 right-2 bg-red-100 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded">-14%</span>
+</div>
+<p class="text-sm line-clamp-2 mb-1">Grey Goose Premium Vodka 1L</p>
+<p class="font-bold text-lg">₦ 28,125</p>
+<p class="text-xs text-slate-400 line-through">₦ 32,500</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square mb-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 overflow-hidden">
+<img alt="Whisky" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiBXRJoaUsDlgZlAcnGo3CjrTd7jYBiJad2O-zA-VSOw6P-i0l52XfXO8sNOwoLKv79qIPVOeRnqhSQ2jJbvDmhvmrUs28Ji93m74FZiOCkpVfu4sD04BVMW8F6ySZbODIsPwjbwcUUS0gN-ttO2kDHSQfgUr1FTm_PeBBfjnEeLRQuJ5QNTYqFPzEhZIABPiE5Ug_piltnxdg0yjsN4VKEacGFIeVJon8oYuIMTh-F88G9nOV_KV9-7-xibNV0OzXFAgoGKBsKDk"/>
+</div>
+<p class="text-sm line-clamp-2 mb-1">Jameson Black Barrel 70cl</p>
+<p class="font-bold text-lg">₦ 31,065</p>
+<p class="text-xs text-slate-400 line-through">₦ 36,035</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square mb-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 overflow-hidden">
+<img alt="Spirit" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvnXOWfFCrr1fPkSVmhb7s0NZKNi68K0kC0hygsM3z0RYdntUFBb5lGMs6lLsObZsySUqXR9Y4a8OVwHvKaq7uL4sUbWpA5Y3Hz9DLYAesRborloiQ36ldk2yPYhl1nsg6Wpia_K_UOA10oDIZ_Acf_VjhNex38YEvy2Nh2fr7PZ9OAgvImOMWsW2G7KaTE8O-5TnPbCdOgEvybOuWzICdANpsoL7OMtJxi_ht8pyjwUF981ITdOBVmzPCw-A-hlsAUkaN26s5jnI"/>
+</div>
+<p class="text-sm line-clamp-2 mb-1">Martell Blue Swift 75cl</p>
+<p class="font-bold text-lg">₦ 79,000</p>
+<p class="text-xs text-slate-400 line-through">₦ 86,780</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-square mb-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 overflow-hidden">
+<img alt="Gin" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Uu6ozGEIAe3iMh1PSnYU9YNfEZUp0k4sceSbTRaB-nHkjTN-64FxnZ-pLAYgaOqfuM9oaf-Ex7U5vgE-H4f0tLvlu5z3scI3EiLifopiPR3bZD8fdJyadYt1-uC7l7Icg4Kkm8bsZW33ruwFa2K0yzVJ2gaC67VdVZtNHZYJgPxAYfvpKVQ6d9bhaNx9XbibyCc8smhT9UhfzlhpXqkfQC0vsFMOry794mkNcq-XsAPBtuPqJRRuXDisX3R-BCeL9gGjSxfjovU"/>
+</div>
+<p class="text-sm line-clamp-2 mb-1">Hendricks Midsummer Solstice</p>
+<p class="font-bold text-lg">₦ 45,500</p>
+<p class="text-xs text-slate-400 line-through">₦ 52,000</p>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-2 md:grid-cols-6 gap-4">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer border border-slate-100 dark:border-slate-800">
+<img alt="Nestle" class="h-8 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIyOOt59JjPYVxHzLLYtwWSghJcvxpn1BjoWG-JIjctWKf78KhyF6ya4RDotaOkFuUbaNJ6DtQmuhV0ExY5KB_WL7utggMY860QlgFUl2mfMXcmwS2uX6_qn43UBjNBBWpkBdCgTXT_ZKBWHToLYWgQrcYuifknAgmScrfZxYFTVVDbKijJT9HmSKQAHFeZhMdy4tfq-remH_xgu8MLAEBmhASH2GF_PyUlGMJ5VKkdzMfiTbapOiItJfAGSyXJ-7T6vNhhkOgqyM"/>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer border border-slate-100 dark:border-slate-800">
+<img alt="Pepsi" class="h-8 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBExvAJ32ubzhnkIv3UXY_O2wWyZZQBcU8Wcfxg3akbh9iaJRMJk7Bao-jO7s9h26xiCQEShXQmnBGGsza_CbUlRJ2Z1dnG5UYnWVCJhYWCSaB8n203ZC4E12GyJEVQtlCyPPEcHwNBHX36xZmKheui6H2gCr3qi965xhWNGnR0ZdQb4gE7pEyqQyporIcCr6h74ZHCSSY5vhkGSmlXmR2M_rZap9SuL2uyPeknKl3vPW9erp0VXdgfI5CISZezoxc5rmuSDC2tdYg"/>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer border border-slate-100 dark:border-slate-800">
+<img alt="Coca Cola" class="h-8 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUfMAFtHZSbHKfECesx9S6uiU1iildIu7p97YTKRI2xtGskpMmAlMOuoobiElnZvRFVzvrzFJMzbVSVQ6GP2LN12rklGu7I-u1icQDeZ7KqHYt6IfKZBjK5uA0RAmbGdA9GHqk6ApI8Ld_yJUwzm8BCKdYSpoOqcOPsgD40WRl0novPxtJIi5qzLUbr6CceC6nalqngSoVfkVAI5EgflguqROj1YYOxY1kLBGw9Tchg9kAL97S2KLWhsRXJ3gLQ3GOSN35ocpr9Aw"/>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer border border-slate-100 dark:border-slate-800">
+<img alt="Diageo" class="h-8 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjb3FGI3x_pVAOtPPI-TpMQPTi7lTXhgA_1z0yumCuHXIO73Wy3ZDyiC2QHNUG_qSCZWwgGtqV-oZfpIZryGCSiRcw5vzrxbAX7lTzCUiUgyaW3CSx2iVfUxOFcGVB9m5L34IPWuSLNBvMr4WzduhYE3tlLZoee3WAKZx4SC1EcgrpWVylw-0HWpbpTXDTgz0gik7fCED8Mz4Zmj-HFCEFQxMvusqAFZtY7WAqS9MwjSIiRjUzJrxbDNhZSMsQikDmEbbofDJ-cPw"/>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer border border-slate-100 dark:border-slate-800">
+<img alt="Bacardi" class="h-8 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhaZpK0JdpdcdtI4yNQcTVboSiO6IFnH0EI0HQFcC67-WqnIQEzhVWtctxkUGAqOHSm_cB5QsU8AeFq6J0kWmHO7Y8kDqgvLfkUVD0cdOsqOdDqm4CDe26Vys-UiHV19UR76QcTNjbw_dH2wBaOw1ZZBiHHdb3A6f8sVXTo47fOtDE8txVcD-ngiUPcCyJb0U6geIfIhTpGEmjCOwsFUQ65SYjcJC9ujgrOwdjg1sJTH9TVl97mJMuizyCgikm-OWB9G-nO4K2JWA"/>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition-shadow cursor-pointer border border-slate-100 dark:border-slate-800">
+<img alt="Pernod Ricard" class="h-8 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg0KE61flwMNx9uWmB9kBRXRhf4HIbrrO2y3rLiRBN4_S8n-woD2X8wv47fQmm-IiwvZi3jGVHW5SSebDyfVG5r0fZoy-7xn9TqNBsydcpPtmljMcGeOU9qi-NZXJ_znAf2tzJwSitqveUsWr7kABoEvA0szewQrVfMSKQa9wNGQJP2B4fKggVHJlNXDlJHN6WDdaFpSV3ASY_1GQO29xJN4NsDEZmA_MOy5ts8y2_n4h838FA-QT5nqthL3EQXGg0dAw4xUYvk6U"/>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-6">
+<aside class="w-full lg:w-64 space-y-6 flex-shrink-0">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold text-sm border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">BRAND</h4>
+<div class="relative mb-4">
+<input class="w-full text-xs py-2 pl-8 border border-slate-200 dark:border-slate-700 rounded dark:bg-slate-800" placeholder="Search Brand" type="text"/>
+<span class="material-icons absolute left-2 top-2 text-slate-400 text-sm">search</span>
+</div>
+<div class="space-y-2 max-h-40 overflow-y-auto pr-2 custom-scrollbar text-xs">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>Absolut</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>BEEFEATER</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>Jameson</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>Martell</span>
+</label>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold text-sm border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">PRICE (₦)</h4>
+<div class="flex items-center gap-2 mb-4">
+<input class="w-full text-xs py-2 border border-slate-200 dark:border-slate-700 rounded dark:bg-slate-800" placeholder="Min" type="number"/>
+<span class="text-slate-400">-</span>
+<input class="w-full text-xs py-2 border border-slate-200 dark:border-slate-700 rounded dark:bg-slate-800" placeholder="Max" type="number"/>
+</div>
+<button class="w-full bg-primary/10 text-primary py-2 rounded text-xs font-bold hover:bg-primary/20 transition-all">APPLY</button>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold text-sm border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">PRODUCT RATING</h4>
+<div class="space-y-2 text-xs">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="text-primary focus:ring-primary" name="rating" type="radio"/>
+<div class="flex text-amber-400">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm text-slate-200">star</span>
+</div>
+<span>&amp; above</span>
+</label>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold text-sm border-b border-slate-100 dark:border-slate-800 pb-2 mb-4">OFFICIAL STORES</h4>
+<label class="flex items-center gap-2 cursor-pointer text-xs">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>NobleMart Official Store</span>
+</label>
+</div>
+</aside>
+<section class="flex-1 space-y-4">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm flex justify-between items-center border border-slate-100 dark:border-slate-800">
+<h2 class="font-bold text-lg">Beverages &amp; Drinks <span class="text-slate-400 text-sm font-normal ml-2">(132 products found)</span></h2>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500">Sort by:</span>
+<select class="text-xs border-none bg-slate-50 dark:bg-slate-800 rounded px-3 py-1.5 focus:ring-0">
+<option>Popularity</option>
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 group overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+<div class="relative p-4 bg-slate-50 dark:bg-slate-800/50 flex-shrink-0 aspect-square">
+<span class="absolute top-2 left-2 bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-1 rounded">Non-returnable</span>
+<span class="absolute top-2 right-2 material-icons text-slate-300 group-hover:text-red-500 cursor-pointer transition-colors">favorite_border</span>
+<img alt="Guinness" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwcl-tEEz4PMN_zVMHK3RmBgb6buUGc5Pk_XN1-mPUMPVdBKipvyNlIbQq8Vj0qKJt_6j84q2UJcqIkjdCI9rVL4a4oOPU-qf3Z3Yk03nW0EYo4jg-CFcdjb1H6a9RHMp1Xae1WQJYk8bgS-9a8QpzP-xYd7cUXwNso8Li-kLrGfSAET1eSqj13-__M-xHRsCD_lHDNuOxW32hZ279_kL1ScyYtwuqfOswcIshBsBX_hHWBVeSmAI5OVO4EQiG2iQ9XzUX4Fm2QxQ"/>
+<div class="absolute bottom-2 left-2 bg-federal-blue text-white text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-icons text-[10px]">verified</span> Official Store
+                            </div>
+</div>
+<div class="p-4 flex-1 flex flex-col">
+<p class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">Malta Guinness Can 330ml x24 Pack</p>
+<p class="text-lg font-bold text-federal-blue dark:text-white mb-1">₦ 18,933</p>
+<div class="flex items-center gap-1 text-amber-400 mb-2">
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs text-slate-200">star</span>
+<span class="text-slate-400 text-[10px] ml-1">(18)</span>
+</div>
+<div class="mt-auto pt-2 border-t border-slate-50 dark:border-slate-800">
+<span class="text-[10px] font-bold italic tracking-tighter flex items-center gap-1 text-primary">
+<span class="material-icons text-[12px]">bolt</span> NobleShield Express
+                                </span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 group overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+<div class="relative p-4 bg-slate-50 dark:bg-slate-800/50 flex-shrink-0 aspect-square">
+<span class="absolute top-2 left-2 bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-1 rounded">Free Delivery</span>
+<img alt="Baileys" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs9V4GEjjnvVh9glxM9VgdXWaI6YTAjGlS1hfnvXHvL7Kl1MOBQWWg6vPrXJ0XbUDvW9Xspgx2XBiV9w0J4mgrHWZPUzEL6n4laUokiebBnxLD1g02PFv6UbM2GWtHYOw2tHvsH2tGvFzmgvwOWQSUXdjfTgwnc8WJZOW6syl383W65wHhNGVuRgyP8KIDvaP8uo3xxr3fxNo1Q9n4icD5j-pYDInnh_QuI3b-k0N_dnuHkRiUq6S7fQ_BvUpMMdlqd_3AjZ6u74k"/>
+<span class="absolute bottom-2 right-2 text-red-500 font-bold text-lg">18+</span>
+</div>
+<div class="p-4 flex-1 flex flex-col">
+<p class="text-sm font-medium line-clamp-2 mb-2">Baileys Original Irish Cream 700ml</p>
+<p class="text-lg font-bold text-federal-blue dark:text-white mb-1">₦ 20,295</p>
+<div class="flex items-center gap-2">
+<p class="text-xs text-slate-400 line-through">₦ 21,750</p>
+<span class="text-red-500 text-[10px] font-bold bg-red-50 px-1 rounded">-7%</span>
+</div>
+<div class="mt-auto pt-4">
+<button class="w-full bg-primary text-white py-2 rounded font-bold text-sm opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">ADD TO CART</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 group overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+<div class="relative p-4 bg-slate-50 dark:bg-slate-800/50 flex-shrink-0 aspect-square">
+<img alt="Jameson" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuOC_Ut1DWdC8rKg4t6f0HYt51ujOIgfE8NMH99WPnpcfb95rJBlc_XWTvp6Qun5bhz2Ky-z1nBKJBTYBi6X1GIHEWdVUd8wHXfucpbLcc4gQWn7ptWrjIcd5s8sZR3Uv48O2XqLLKUX2yOgLYeqU05_nNcwf-UEer9fQyZRMe1N2L3Y-NSlWJxPUa7bUx4D8f3rWU7SMyodtiLyMc6VI52YcJWGaAqGLT245fQ2FquJVtKYp8o3G9jxunjwtNB9rIlJCZStwluxE"/>
+<span class="absolute top-2 right-2 bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded">-35%</span>
+</div>
+<div class="p-4 flex-1 flex flex-col">
+<p class="text-sm font-medium line-clamp-2 mb-2">Jameson Irish Whiskey 70cl</p>
+<p class="text-lg font-bold text-federal-blue dark:text-white mb-1">₦ 19,000</p>
+<p class="text-xs text-slate-400 line-through">₦ 31,263</p>
+<div class="flex items-center gap-1 text-amber-400 mt-2">
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star_half</span>
+<span class="text-slate-400 text-[10px] ml-1">(359)</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 group overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300">
+<div class="relative p-4 bg-slate-50 dark:bg-slate-800/50 flex-shrink-0 aspect-square">
+<img alt="Martell" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAdSleggvfH4B1fVLOmKhugguEqPr4KR5Enxxf45SOeKtXFw4nDwqpEarrC41vnXIBpWPITrGLljciVS4xdJS5fxVv-fGN37xt5m8hPW3faRKDMjmFHzrDfiHp1xoVJbVxkjAx8EhQ2KtQLoEK-2YfcTvNg7Pn5haBSyvsKVav24b8YT3LkQRhI9vTUV5RRwYmzPD4phGGMV8zDEb3Wnx9u71qmYqNKeNEBA3yEgIg1hmYlLaD3IWbxjjQZSodCFmfXxWukh-kB3o"/>
+</div>
+<div class="p-4 flex-1 flex flex-col">
+<p class="text-sm font-medium line-clamp-2 mb-2">Martell Cognac VS 70cl</p>
+<p class="text-lg font-bold text-federal-blue dark:text-white mb-1">₦ 315,693</p>
+<div class="flex items-center gap-1 text-amber-400 mt-2">
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs">star</span>
+<span class="material-icons text-xs text-slate-200">star</span>
+<span class="text-slate-400 text-[10px] ml-1">(4)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm flex items-center justify-center gap-2 border border-slate-100 dark:border-slate-800 mt-8">
+<button class="w-10 h-10 rounded flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-400"><span class="material-icons">chevron_left</span></button>
+<button class="w-10 h-10 rounded flex items-center justify-center bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 rounded flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">2</button>
+<button class="w-10 h-10 rounded flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 rounded flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">11</button>
+<button class="w-10 h-10 rounded flex items-center justify-center border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-400"><span class="material-icons">chevron_right</span></button>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16">
+<div class="max-w-7xl mx-auto px-4 mb-16">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold">Recently Viewed</h3>
+<a class="text-primary font-medium text-sm" href="#">See All</a>
+</div>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 p-2 overflow-hidden mb-2">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkxU1PhCzhKLaRnVGjx_E9yIPDZmiBYuiQC74TyNctEAPxdmponbEBR7fo5jwwv1CLOTHwjuc26Adj_cqIHOB6BoM-_j7eU-3soQWJidyBBCQnLzqC7-nBQmfQZGyzE2P5D1U7kG1pTQjY95rfWcJA63VPOi0iUHjUi3PZTd2QsOb_Njoo65AYY0KejGXgJLFUgBdQIhqj8J1SJbytNjwrM663KjE6UhyNv0OlwH6Cs7gncIxowympsv9d-Lm8NhQVjIumy3z9ozc"/>
+</div>
+<p class="text-xs truncate font-medium">Malta Guinness 330ml</p>
+<p class="text-xs font-bold">₦ 18,933</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 p-2 overflow-hidden mb-2">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_iVnIdETdusYlk-WHj4gSyArsKa9kFBb921GtgfNHwP4c-qfGEF-fy2vUzeE2qyn21bFp7-8WEZvMs6FX6x6H2SePweFJc-iM2GZGU2fkwRNQ5Wb21-pyff8jKzJIHWtyNwMENR0UB88cWTjUqp_zROLZ2DIQKnsvNII3182OWLPOOqhjclT2Iai3WXdlsNCSs_f4GfNvtIsqqQGUBPQq9fNlQtI2xeLrlshVNp9bK7_BPDvMi3YUKNgulXnWFvrxO7fyoFlziAs"/>
+</div>
+<p class="text-xs truncate font-medium">Jameson Whiskey</p>
+<p class="text-xs font-bold">₦ 19,000</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 p-2 overflow-hidden mb-2">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4h7rxbc4iCzK0wIabfqqJyQddsMzGr2ia0pgO5nS5F-9Ddt6YLQE21KkoAOGwuloJdFjPZ6nOIQMjU7rc7Hc-mdesxptEeFAaRrCFGPCZCezKU6-KDCpJbk897DMt67SSNR7gHzzknYfmqJ--XfZNmBri2GxIdHdTjkpxqPN98Bcsmm3B2wVf4wuy0lkSF5KPpUzTZUJOBE1DaofT0fCwypnPmywacatumowa8heop4weC4tnkp1FIWF141TSZVLvMPpZ5FZHfM8"/>
+</div>
+<p class="text-xs truncate font-medium">Baileys Irish Cream</p>
+<p class="text-xs font-bold">₦ 20,295</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 p-2 overflow-hidden mb-2">
+<img class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACii5sFvp_kKLfVY9r-GnRR49yKJAZzEumJQEtuwUqmcpBOgvq6gAuO_ALmlUeP8VthVbU9JWRYShO_pjWzEfNZTrelqlZlEEXZeG6SjHghzcaR193Uv5dyCPScQpuzNzl4KCBH2Sg2UZ2DZHA3pfq1K0zabMOkQeP8MQsOYd_Ig6NeV_3BR_z2XiE4rvsY-ZU33XeDM1ML1BK4kbgbrPTThgwbmwtDGBBso7rAZPxEar9TDUjzyrWljZWJtD0szto8L0bs8Rvysg"/>
+</div>
+<p class="text-xs truncate font-medium">Martell Cognac</p>
+<p class="text-xs font-bold">₦ 315,693</p>
+</div>
+</div>
+</div>
+<div class="bg-federal-blue py-8">
+<div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="text-white">
+<h3 class="text-lg font-bold mb-1">New to NobleMart?</h3>
+<p class="text-xs opacity-70">Subscribe to our newsletter to get updates on our latest offers!</p>
+</div>
+<div class="flex-1 max-w-lg w-full">
+<form class="flex gap-2">
+<input class="flex-1 rounded-md px-4 py-3 text-sm focus:ring-primary focus:border-primary" placeholder="Enter E-mail Address" type="email"/>
+<button class="bg-primary text-white px-8 py-3 rounded-md font-bold text-sm hover:opacity-90">MALE</button>
+<button class="bg-primary text-white px-8 py-3 rounded-md font-bold text-sm hover:opacity-90">FEMALE</button>
+</form>
+</div>
+<div class="flex items-center gap-4 text-white">
+<div class="bg-white/10 p-2 rounded-lg"><span class="material-icons text-3xl">smartphone</span></div>
+<div>
+<p class="text-xs font-bold">NobleMart FREE APP</p>
+<p class="text-[10px] opacity-70">Get access to exclusive offers!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 py-12">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+<div>
+<h5 class="text-federal-blue dark:text-white font-bold text-sm mb-4">NEED HELP?</h5>
+<ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400">
+<li><a class="hover:underline" href="#">Chat with us</a></li>
+<li><a class="hover:underline" href="#">Help Center</a></li>
+<li><a class="hover:underline" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-federal-blue dark:text-white font-bold text-sm mb-4">USEFUL LINKS</h5>
+<ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400">
+<li><a class="hover:underline" href="#">Service Center</a></li>
+<li><a class="hover:underline" href="#">How to shop on NobleMart?</a></li>
+<li><a class="hover:underline" href="#">Delivery options and timelines</a></li>
+<li><a class="hover:underline" href="#">How to return a product?</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-federal-blue dark:text-white font-bold text-sm mb-4">ABOUT NOBLEMART</h5>
+<ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400">
+<li><a class="hover:underline" href="#">About us</a></li>
+<li><a class="hover:underline" href="#">NobleMart careers</a></li>
+<li><a class="hover:underline" href="#">Privacy Notice</a></li>
+<li><a class="hover:underline" href="#">Official Stores</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-federal-blue dark:text-white font-bold text-sm mb-4">MAKE MONEY WITH US</h5>
+<ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400">
+<li><a class="hover:underline" href="#">Sell on NobleMart</a></li>
+<li><a class="hover:underline" href="#">Vendor hub</a></li>
+<li><a class="hover:underline" href="#">Become a Sales Consultant</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-federal-blue dark:text-white font-bold text-sm mb-4">COUNTRIES</h5>
+<ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400">
+<li><a class="hover:underline" href="#">Nigeria</a></li>
+<li><a class="hover:underline" href="#">Kenya</a></li>
+<li><a class="hover:underline" href="#">Egypt</a></li>
+<li><a class="hover:underline" href="#">Ghana</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-200 dark:border-slate-700 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-6">
+<span class="text-slate-400 text-xs">JOIN US ON</span>
+<div class="flex gap-4">
+<span class="material-icons text-federal-blue dark:text-white cursor-pointer opacity-70 hover:opacity-100">facebook</span>
+<span class="material-icons text-federal-blue dark:text-white cursor-pointer opacity-70 hover:opacity-100">public</span>
+<span class="material-icons text-federal-blue dark:text-white cursor-pointer opacity-70 hover:opacity-100">play_circle</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-slate-400 text-xs">PAYMENT METHODS</span>
+<div class="flex gap-4 opacity-70 grayscale">
+<span class="material-icons">credit_card</span>
+<span class="material-icons">payments</span>
+<span class="material-icons">account_balance</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-slate-200 dark:bg-slate-900 py-4 text-center">
+<p class="text-[10px] text-slate-500">© 2024 NobleMart Nigeria Ltd. All Rights Reserved.</p>
+</div>
+</footer>
+<button class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-[60]" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-icons">arrow_upward</span>
+</button>
+
+</body></html>

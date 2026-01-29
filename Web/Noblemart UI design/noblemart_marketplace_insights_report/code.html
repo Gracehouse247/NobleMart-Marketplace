@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Marketplace Insights</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7310f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#181022",
+                        "noble-blue": "#020249",
+                        "insight-teal": "#01C2CA",
+                        "insight-indigo": "#5C1BE8",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(24, 16, 35, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden">
+<div class="flex min-h-screen w-full flex-row">
+<!-- Sidebar -->
+<div class="hidden md:flex w-64 flex-col bg-[#020249] border-r border-white/10 shrink-0 sticky top-0 h-screen z-20">
+<div class="flex h-16 items-center px-6 border-b border-white/10">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded bg-gradient-to-br from-insight-teal to-primary flex items-center justify-center text-white font-bold text-lg">N</div>
+<h1 class="text-white text-lg font-bold tracking-tight">NobleMart</h1>
+</div>
+</div>
+<div class="flex flex-col gap-1 p-4 overflow-y-auto">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">inventory_2</span>
+<p class="text-sm font-medium">Products</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+<p class="text-sm font-medium">Orders</p>
+</div>
+<!-- Active State -->
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary text-white shadow-lg shadow-primary/20 cursor-pointer">
+<span class="material-symbols-outlined fill-1">insights</span>
+<p class="text-sm font-medium">Insights</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<p class="text-sm font-medium">Wallet</p>
+</div>
+<div class="mt-8 px-3">
+<p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Settings</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Store Settings</p>
+</div>
+</div>
+<div class="mt-auto p-4 border-t border-white/10">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white/20" data-alt="Portrait of vendor profile user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDByKnA84GCq4bVeep9enBNHGQOxdI-EWsD5uOErtBJS_Tomjx0peyoG6Me6nskJGUdgMt2kOetg7-p9Gn6if_mONpfWG3HxmmKyYMKbBQBMbMrqCOWSDfDWyzWRA69k7-TdhHWvcSm8BaoQqqvDTVmGi3xXKKyyuaQ9xusDcpcOeU-7OQ4O2dWnl2frzpga2WuB7O_RTK6l2i8hMHXCab9dYFjzsOzd_kL70QvErPy8mi2Q9fJ64w-3F3xE1ZdAy5OaqxXy2bL3Ho");'></div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-medium">Tunde A.</p>
+<p class="text-xs text-gray-400">Tech Haven NG</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="relative flex-1 flex flex-col min-w-0">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-[#120b18]/90 z-10"></div>
+<div class="w-full h-full bg-cover bg-fixed bg-center" data-alt="Abstract background of entrepreneur looking at business strategy board" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAirlf11bem2_ejeHiH49_qzMynLKoqy1S1nSUvDBXkZh7_-LGWal_mRqkKOPvAWkfBKsSFyrI2I1K2W8SPvR1gJsdwfC6cl_tP0RID4BbicZ14IHRalm_3bhJQ-RDjsX0XTdyd97nlKfhXg9QH56cgJ33YMuOWO6dzvdyMWVhnim_iXHhqTaXVFm9hfA1RJ7nebMUdRKFzFJLn1MnAsZYLth7WOHjF9PzE1xTYvEbIqdbvAxI4Z5nd5_wwaQT2v5dxV6TWX_P4uE0");'></div>
+</div>
+<!-- Content Container -->
+<div class="relative z-10 flex flex-col h-full overflow-y-auto">
+<div class="w-full max-w-[1400px] mx-auto p-6 md:p-8 lg:p-10 flex flex-col gap-8">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Marketplace Insights</h1>
+<p class="text-[#a990cb] text-base font-medium">Real-time data to grow your business on NobleMart</p>
+</div>
+<div class="flex flex-col min-w-[240px]">
+<label class="text-sm font-medium text-[#a990cb] mb-1.5 ml-1">Category Focus</label>
+<div class="relative">
+<select class="w-full appearance-none bg-[#241834] border border-[#493168] text-white text-base rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent shadow-lg">
+<option>Electronics &amp; Gadgets</option>
+<option>Fashion &amp; Apparel</option>
+<option>Home &amp; Office</option>
+<option>Beauty &amp; Health</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-[#a990cb]">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Trending Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1 -->
+<div class="glass-panel p-5 rounded-xl flex flex-col gap-3 group hover:border-insight-indigo/50 transition-colors">
+<div class="flex justify-between items-start">
+<div class="bg-insight-indigo/20 p-2 rounded-lg text-insight-indigo">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+<span class="text-xs font-bold text-[#0bda73] bg-[#0bda73]/10 px-2 py-1 rounded">+12.5%</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-white mb-1">Hot Keywords</h3>
+<p class="text-gray-400 text-sm">Most searched this week</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-200">iPhone 15</span>
+<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-200">OLED TV</span>
+<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-gray-200">PS5 Slim</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-5 rounded-xl flex flex-col gap-3 group hover:border-insight-teal/50 transition-colors">
+<div class="flex justify-between items-start">
+<div class="bg-insight-teal/20 p-2 rounded-lg text-insight-teal">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="text-xs font-bold text-[#0bda73] bg-[#0bda73]/10 px-2 py-1 rounded">+8.2%</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-white mb-1">Fastest Growing</h3>
+<p class="text-gray-400 text-sm">Categories spiking now</p>
+</div>
+<div class="flex flex-col gap-2 mt-auto">
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-200">Wearables</span>
+<div class="w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-insight-teal w-[85%] rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-200">Smart Home</span>
+<div class="w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-insight-teal w-[65%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-5 rounded-xl flex flex-col gap-3 group hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start">
+<div class="bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">search</span>
+</div>
+<span class="text-xs font-bold text-white bg-white/10 px-2 py-1 rounded">Vol: 24k</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-white mb-1">Top Search Term</h3>
+<p class="text-gray-400 text-sm">Highest unmet demand</p>
+</div>
+<div class="mt-auto">
+<p class="text-xl font-bold text-white truncate">"Power bank 20000mah"</p>
+<p class="text-xs text-primary mt-1">High conversion potential</p>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Benchmarking -->
+<div class="glass-panel p-6 rounded-xl flex flex-col h-full">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="text-lg font-bold text-white">Competitive Benchmarking</h3>
+<p class="text-sm text-gray-400">Your store vs. Market Leaders</p>
+</div>
+<div class="flex gap-4 text-xs font-medium">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-insight-indigo"></span>
+<span class="text-gray-300">You</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-white/20"></span>
+<span class="text-gray-300">Competitors</span>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-6 min-h-[250px] relative px-4 pb-2">
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between px-4 pb-8 pointer-events-none">
+<div class="w-full h-px bg-white/5"></div>
+<div class="w-full h-px bg-white/5"></div>
+<div class="w-full h-px bg-white/5"></div>
+<div class="w-full h-px bg-white/5"></div>
+</div>
+<div class="flex justify-around items-end h-full z-10 gap-8">
+<!-- Metric 1: Avg Price -->
+<div class="flex gap-3 h-full items-end w-24 justify-center">
+<div class="w-8 bg-insight-indigo rounded-t-lg relative group h-[70%]" title="Your Price">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">₦45k</div>
+</div>
+<div class="w-8 bg-white/20 rounded-t-lg relative group h-[60%]" title="Competitor Avg">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">₦42k</div>
+</div>
+</div>
+<!-- Metric 2: Shipping Speed -->
+<div class="flex gap-3 h-full items-end w-24 justify-center">
+<div class="w-8 bg-insight-indigo rounded-t-lg relative group h-[85%]" title="Your Speed">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">1.2 Days</div>
+</div>
+<div class="w-8 bg-white/20 rounded-t-lg relative group h-[50%]" title="Competitor Avg">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">2.5 Days</div>
+</div>
+</div>
+<!-- Metric 3: Cust. Rating -->
+<div class="flex gap-3 h-full items-end w-24 justify-center">
+<div class="w-8 bg-insight-indigo rounded-t-lg relative group h-[92%]" title="Your Rating">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">4.8/5</div>
+</div>
+<div class="w-8 bg-white/20 rounded-t-lg relative group h-[80%]" title="Competitor Avg">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">4.2/5</div>
+</div>
+</div>
+</div>
+<div class="flex justify-around text-xs font-medium text-gray-400 border-t border-white/10 pt-3">
+<span class="w-24 text-center">Avg Price</span>
+<span class="w-24 text-center">Ship Speed</span>
+<span class="w-24 text-center">Rating</span>
+</div>
+</div>
+</div>
+<!-- Demand Forecast -->
+<div class="glass-panel p-6 rounded-xl flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-lg font-bold text-white">Demand Forecast</h3>
+<div class="flex items-center gap-2 mt-1">
+<p class="text-3xl font-bold text-white">+24%</p>
+<span class="text-xs bg-insight-teal/20 text-insight-teal px-2 py-0.5 rounded-full font-medium">Growth Expected</span>
+</div>
+<p class="text-sm text-gray-400 mt-1">Next 3 months based on seasonality</p>
+</div>
+<div class="bg-[#241834] border border-[#493168] rounded-lg p-1 flex">
+<button class="px-3 py-1 text-xs font-medium text-white bg-[#493168] rounded">3M</button>
+<button class="px-3 py-1 text-xs font-medium text-gray-400 hover:text-white">6M</button>
+<button class="px-3 py-1 text-xs font-medium text-gray-400 hover:text-white">1Y</button>
+</div>
+</div>
+<div class="relative flex-1 min-h-[200px] w-full mt-4">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 500 150">
+<defs>
+<lineargradient id="gradientArea" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#01C2CA" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#01C2CA" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area Path -->
+<path d="M0,120 C50,120 80,100 120,90 C180,75 220,110 280,80 C340,50 380,60 420,30 C460,0 500,20 500,20 V150 H0 Z" fill="url(#gradientArea)"></path>
+<!-- Line Path -->
+<path d="M0,120 C50,120 80,100 120,90 C180,75 220,110 280,80 C340,50 380,60 420,30 C460,0 500,20" fill="none" stroke="#01C2CA" stroke-linecap="round" stroke-width="3"></path>
+<!-- Points -->
+<circle cx="120" cy="90" fill="#181023" r="4" stroke="#01C2CA" stroke-width="2"></circle>
+<circle cx="280" cy="80" fill="#181023" r="4" stroke="#01C2CA" stroke-width="2"></circle>
+<circle cx="420" cy="30" fill="#01C2CA" r="6" stroke="#fff" stroke-width="2"></circle>
+</svg>
+<!-- Tooltip Overlay (Static for design) -->
+<div class="absolute top-[10%] right-[12%] bg-white text-background-dark text-xs font-bold py-1 px-3 rounded shadow-xl">
+                                    Back to School Spike
+                                    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45"></div>
+</div>
+</div>
+<div class="flex justify-between text-xs font-medium text-gray-400 mt-2 px-2">
+<span>Aug</span>
+<span>Sep</span>
+<span>Oct</span>
+<span>Nov</span>
+</div>
+</div>
+</div>
+<!-- Opportunity Grid -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-2xl font-bold text-white">Market Opportunities</h2>
+<p class="text-[#a990cb] text-sm mt-1">High demand products with low competition in your niche.</p>
+</div>
+<button class="text-primary text-sm font-bold hover:text-insight-indigo transition-colors flex items-center gap-1">
+                                View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Opp Card 1 -->
+<div class="bg-[#241834] border border-[#493168] rounded-xl overflow-hidden group hover:border-insight-teal transition-all hover:shadow-[0_0_20px_rgba(1,194,202,0.15)] flex flex-col">
+<div class="h-40 bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Modern portable mini blender on kitchen counter" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDUevqgsjTuOLIUrt8S_Dvf7NHkwPWNjjxWvbS2QBGYqsIxhNOhdy6oKBEO6HjlDPkBdtq7HYPrfEgBNGJphzcwTIR0FStAHHupID_e3iVyfKlec6E4KaueEIOv4GswzHn4ttnvOoA7Si4otiO2xCE7cwrVR50SznCXqyfaCE_u7C5mJ5iu8nGRdNyEiJ7ihwfD3cgnmuPlUD5xOFFYgCC_KA5zBCnObWedZMu0FDFQ2t5RTsV1N4zVJS80bkiwLD9Ubi0RnTeRSw");'></div>
+<div class="absolute top-2 right-2 bg-insight-teal text-[#181023] text-xs font-bold px-2 py-1 rounded">High Demand</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="font-bold text-white text-lg">Mini Blenders</h3>
+<div class="flex justify-between items-center mt-3 text-sm">
+<span class="text-gray-400">Est. Sales</span>
+<span class="font-bold text-white">500+/mo</span>
+</div>
+<div class="flex justify-between items-center mt-1 text-sm">
+<span class="text-gray-400">Competition</span>
+<span class="font-bold text-[#0bda73]">Low</span>
+</div>
+<button class="mt-4 w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white text-sm font-medium border border-white/10 transition-colors">Source Inventory</button>
+</div>
+</div>
+<!-- Opp Card 2 -->
+<div class="bg-[#241834] border border-[#493168] rounded-xl overflow-hidden group hover:border-insight-indigo transition-all hover:shadow-[0_0_20px_rgba(92,27,232,0.15)] flex flex-col">
+<div class="h-40 bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Cordless vacuum cleaner in modern living room" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCc0WrhyiiTouH2PxFRdjOXmmEsxdbnNO_HUCmSYYMzl_AHSQ7RxluKgFDRUHkMgUdsNwzqK5l1AgI-G2VL3wKB0wzKfzcQRgkrqw2sfNnPL1ibqNNY1RBn341zsIZVaB_1u2deiGhJrtJ3dvL8p-psDiHx_jLgzu99rxl3nylkoHRMfL6xFSjcXoyFgjmFdwAV6PTNM6CnQtGXg0rhUx__JhliovOXt41MLA9xdToXSOy5X5l2W_RPMHSLFxfwOBPqiB8srR8kQuA");'></div>
+<div class="absolute top-2 right-2 bg-insight-indigo text-white text-xs font-bold px-2 py-1 rounded">Trending</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="font-bold text-white text-lg">Cordless Vacuums</h3>
+<div class="flex justify-between items-center mt-3 text-sm">
+<span class="text-gray-400">Est. Sales</span>
+<span class="font-bold text-white">320+/mo</span>
+</div>
+<div class="flex justify-between items-center mt-1 text-sm">
+<span class="text-gray-400">Competition</span>
+<span class="font-bold text-[#facc15]">Medium</span>
+</div>
+<button class="mt-4 w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white text-sm font-medium border border-white/10 transition-colors">Source Inventory</button>
+</div>
+</div>
+<!-- Opp Card 3 -->
+<div class="bg-[#241834] border border-[#493168] rounded-xl overflow-hidden group hover:border-insight-teal transition-all hover:shadow-[0_0_20px_rgba(1,194,202,0.15)] flex flex-col">
+<div class="h-40 bg-gray-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Smart watch on wrist" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD87CJabTV7-kaa8iF7Nvjok3Ar11r4VG5QY808ABijJt9h0Cu5k1SX8omylDRGICBNkQhzjnYwWm9B6cFHrJwoS9p4aUMRrresdDudSpC6zoq8iyPVlgRVaApU8Tp7c-_uOiZgW4GQ0ZXi2B9Dk12Mj_d_26C971Ox69NmsZ1lzOSDGZiY8B0GwWoJ6jWQHOZzP59WALIYYzDK8sTDLGZQwotw7BTcGRO7Zvk5vGkwf1G72pUMq8CuT-h-V_jugHdA5tT28vN1_K4");'></div>
+<div class="absolute top-2 right-2 bg-insight-teal text-[#181023] text-xs font-bold px-2 py-1 rounded">Gap in Market</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="font-bold text-white text-lg">Budget Smart Watch</h3>
+<div class="flex justify-between items-center mt-3 text-sm">
+<span class="text-gray-400">Est. Sales</span>
+<span class="font-bold text-white">850+/mo</span>
+</div>
+<div class="flex justify-between items-center mt-1 text-sm">
+<span class="text-gray-400">Competition</span>
+<span class="font-bold text-[#0bda73]">Very Low</span>
+</div>
+<button class="mt-4 w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white text-sm font-medium border border-white/10 transition-colors">Source Inventory</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="rounded-2xl bg-gradient-to-r from-insight-indigo to-primary p-1 relative overflow-hidden shadow-2xl mt-4 mb-8">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="bg-[#181023] rounded-xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+<div class="flex flex-col gap-2 max-w-xl">
+<h2 class="text-2xl md:text-3xl font-bold text-white">Stay ahead of the competition</h2>
+<p class="text-[#a990cb] text-base md:text-lg">Learn how to leverage these insights to boost your sales in our exclusive Seller Academy course.</p>
+</div>
+<button class="whitespace-nowrap px-8 py-4 bg-white text-primary font-bold text-base rounded-full hover:bg-gray-100 hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">school</span>
+                                Browse Trending Products in Seller Academy
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Community Forum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "secondary": "#5C1BE8",
+                        "accent": "#020249",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.gradient-header {
+    background: linear-gradient(90deg, #01C2CA 0%, #5C1BE8 100%)
+    }
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px)
+    }
+.main-bg-overlay {
+    background-image: linear-gradient(rgba(245, 248, 248, 0.95), rgba(245, 248, 248, 0.95)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuAPPu3niOTxqwveiZBQe3eokrLmeClLvxnRTL19WRRymXHHUDz-ygNumJah6iYjyLf9meZPlzpcWI6VJ1fz_j6d3FPlODRBnT0PRtmHNTHtFqgUCWxvfanj4Sw0MmkWZJSeoCZfNvBEdlYn8DhBFJbLhQNxe94kOklPu5N7u1a-zMY3lmiQXwg4wpaKqkv042cwe7vTZ75DghR8_BKJjGV1H30le_NnM6Lb7Cj46BlP0F8VXsfdrPFJpc9iwPfOqkl3lthTc6-6z4E);
+    background-size: cover;
+    background-position: center
+    }
+.dark .main-bg-overlay {
+    background-image: linear-gradient(rgba(15, 34, 35, 0.96), rgba(15, 34, 35, 0.96)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuBk64YmBK71Xcdac0zTGJxlxwRu4m2dEuJOunqEPTzRQfDgfBYR5yFsAT27JrY97B3_XfZK_x_mEaUhBODVx2YjiKqNAFSxA_fsFXTmWKXn3mUTynlVyQDRV_67vWtj4YVG4uQ1Qlq66EXWUuHTb6GGuWmtdi2YwART1YwkaGr8eiUM7n5Zkwg6gHxm7anSvEEO4UwR1Eb-ZLQPJnVhdXUCIveRCgYSeZcFF44hg6lTeq7KzB-QWiwNoSld34ErywEYt7986s8ZYNQ)
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-accent dark:text-white transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="gradient-header sticky top-0 z-50 px-4 md:px-10 py-3 shadow-lg">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="size-10 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-3xl font-bold">hub</span>
+</div>
+<div class="hidden md:block">
+<h1 class="text-white text-xl font-extrabold leading-tight tracking-tight">NobleMart</h1>
+<p class="text-white/80 text-xs font-medium">Vendor Community Hub</p>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-2xl px-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-white/70 group-focus-within:text-white">search</span>
+</div>
+<input class="w-full h-11 bg-white/20 border-none rounded-xl pl-12 pr-4 text-white placeholder:text-white/70 focus:ring-2 focus:ring-white/50 focus:bg-white/30 transition-all text-sm md:text-base" placeholder="Search the forum for tips or support..." type="text"/>
+</div>
+</div>
+<!-- Action Icons -->
+<div class="flex items-center gap-2 md:gap-4">
+<button class="p-2 text-white hover:bg-white/10 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-[#5C1BE8]"></span>
+</button>
+<button class="p-2 text-white hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<div class="h-8 w-[1px] bg-white/20 mx-1 hidden sm:block"></div>
+<button class="flex items-center gap-2 bg-white text-secondary px-4 py-2 rounded-lg font-bold text-sm shadow-md hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg">person</span>
+<span class="hidden sm:inline">Profile</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 md:px-10 py-8 main-bg-overlay min-h-screen">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Sidebar: Forum Categories -->
+<aside class="lg:col-span-3 space-y-6">
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 backdrop-blur-sm">
+<div class="mb-6">
+<h2 class="text-accent dark:text-white text-lg font-bold">Forum Categories</h2>
+<p class="text-gray-500 dark:text-gray-400 text-xs mt-1">Browse by popular topics</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 text-primary font-bold transition-all" href="#">
+<span class="material-symbols-outlined text-xl">forum</span>
+<span class="text-sm">General Discussion</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span class="text-sm">Selling Tips</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">local_shipping</span>
+<span class="text-sm">Logistics &amp; Delivery</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">support_agent</span>
+<span class="text-sm">Tech Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all" href="#">
+<span class="material-symbols-outlined text-xl">star</span>
+<span class="text-sm">Success Stories</span>
+</a>
+</nav>
+<div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-amber-600">Premium Access</span>
+<span class="material-symbols-outlined text-amber-500 text-sm">lock</span>
+</div>
+<a class="flex items-center gap-3 px-3 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold shadow-lg shadow-amber-500/20 hover:scale-[1.02] transition-transform" href="#">
+<span class="material-symbols-outlined">shield_with_heart</span>
+<span class="text-sm">NobleShield Elite</span>
+</a>
+</div>
+</div>
+<!-- Ad/Announcement Card -->
+<div class="bg-accent text-white p-6 rounded-xl overflow-hidden relative group">
+<div class="relative z-10">
+<h3 class="font-bold text-lg mb-2">Vendor Summit 2024</h3>
+<p class="text-xs text-white/70 mb-4">Join our annual meeting in Lagos for exclusive networking.</p>
+<button class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded text-xs font-bold transition-all">Learn More</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-8xl text-white/5 group-hover:scale-110 transition-transform">groups</span>
+</div>
+</aside>
+<!-- Middle Column: Discussion Feed -->
+<section class="lg:col-span-6 space-y-6">
+<!-- Create Discussion Header -->
+<div class="flex items-center justify-between bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div>
+<h2 class="text-accent dark:text-white text-xl font-bold">Recent Discussions</h2>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Stay updated with the community</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Start a Discussion</span>
+</button>
+</div>
+<!-- Thread List -->
+<div class="space-y-4">
+<!-- Thread 1: Official -->
+<div class="bg-white dark:bg-background-dark/80 p-5 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex gap-4">
+<div class="relative shrink-0">
+<img class="size-12 rounded-full object-cover border-2 border-primary/20" data-alt="Official staff member avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH7Ooq43Lf_U2iFvWO_KdI6aVdrZVuWbEMF6_paA7LiywKXaUW8p4EBIR1qSP1pJil8M4qqvxSY10G3Ryv-QGWSSk3ZzSzRUKcaE7J06HDkCFAC3UMndo7CI6DYqq87Gu0FHWrb012mOM0b7olCsnk7_JX51bUBnPh_Szg9X_yLaAhycKuK-njhCyAby4spfWipNzcpmHtxMMc5v79fzyGXFBJO5FzWnOtRxaHjR5GC2PH7S-u8McSoj9Y5I-oW3Bzc2tBA6XpMeo"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white text-[10px] p-0.5 rounded-full border-2 border-white">
+<span class="material-symbols-outlined text-[12px] leading-none">verified</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-bold text-primary px-2 py-0.5 bg-primary/10 rounded-full">NobleMart Official</span>
+<span class="text-gray-400 text-xs">• 2 hours ago</span>
+</div>
+<h3 class="text-accent dark:text-white text-lg font-bold leading-snug group-hover:text-primary transition-colors">
+                                    Upcoming Platform Updates: New Dashboard Metrics &amp; Vendor Analytics
+                                </h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-2 line-clamp-2 font-medium">
+                                    We're excited to announce a series of updates designed to help you track your sales performance more effectively. Starting next Monday, you'll see...
+                                </p>
+<div class="flex items-center gap-6 mt-4">
+<div class="flex items-center gap-1.5 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-lg">chat</span>
+<span class="font-semibold">124 Replies</span>
+</div>
+<div class="flex items-center gap-1.5 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-lg">visibility</span>
+<span>2.1k Views</span>
+</div>
+<div class="flex -space-x-2 ml-auto overflow-hidden">
+<img class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Vendor avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8mey3NFmwDkIlDclK83TDndZxyN3lk-diIV0umfUOfqY6LWy59SWyx8pZ4rWg7WhhQAYO_Uzr4YvCNVkQCgQMBSKf-SqB1q1MJTdAzQU4EHEt5hG9O9JmTpCf87-a33hoNnHaYUvr0pJYxMbAZUyT6Emx-rJsLUarlX2L3Usa63X-t4zcWz53W3aexHiKOMsSx0Qt80ugg5acPAKSTCRxvS2BPzhrZyGKAN2f43qiPmXQJM26aE-8mEYrd1wqFTNYdQmgyLetPww"/>
+<img class="inline-block size-6 rounded-full ring-2 ring-white" data-alt="Vendor avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACCG_e44vd8sZIv-MlBnKAiVhlXC-kms71WMfbUrrt5tzjeEFa29vswjq_6ybtJLNULn8e6aTEpdkp48rGXOhCbUuTwDCYJlIjRX9DckvXr9pG8MOUHP1wUkIkQsBuYRvAvLCeihrnsCEQnIdL6D9wZJHMNE-XrvsJBSgoPz3NC5JkGzqA4bP3rUV5vLlnphfnldyN-nemMz0zfkgoG6SBEOdaFxaNQz32Itg0KcaqJNK-JlbcK2wgcOIWXxT75iAmiF8NsKm00LA"/>
+<div class="flex items-center justify-center size-6 rounded-full ring-2 ring-white bg-gray-200 text-[8px] font-bold">+12</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Thread 2: Community -->
+<div class="bg-white dark:bg-background-dark/80 p-5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex gap-4">
+<div class="relative shrink-0">
+<img class="size-12 rounded-full object-cover border-2 border-amber-500" data-alt="Gold rank vendor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWCYsyuTfjKpYfzBnbxhahnVsRww2vJe2kLM9YDg7N1aKyQuTLTX0yfSiXq0i-SlKFA4YMsmrPJ-f9G-INLPE-ex0mW_TVm0ke6SDGTnP6lBPcb1mMOCjv1MD2Owjexjkq-3Ddt-H1iMECBTcMaslldv5aIEpxqZDf0HdFSFAR4ZOQTznRFH26jVZ1Z_YX738dieBYxghhH8sF0HQjouPmuJpm7MpI6AkiKTh21g4KiPwZ6AvXgjvOkK_A2cPzykJCvfvYtoTiBfA"/>
+<div class="absolute -bottom-1 -right-1 bg-amber-500 text-white p-0.5 rounded-full border-2 border-white" title="Gold Vendor">
+<span class="material-symbols-outlined text-[12px] leading-none">shield</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-bold text-amber-600">Gold Merchant</span>
+<span class="text-gray-400 text-xs">• 45 mins ago</span>
+</div>
+<h3 class="text-accent dark:text-white text-lg font-bold leading-snug">
+                                    Best practices for packaging fragile items for Lagos-Abuja transit?
+                                </h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-2 line-clamp-2">
+                                    I've been having some issues with ceramic goods arriving damaged when shipped through the standard logistics partners. What bubble wrap density are you using?
+                                </p>
+<div class="flex items-center gap-6 mt-4">
+<div class="flex items-center gap-1.5 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-lg text-primary">chat</span>
+<span class="font-semibold">32 Replies</span>
+</div>
+<div class="flex items-center gap-1.5 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-lg">share</span>
+<span>Share</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Thread 3: Success Story -->
+<div class="bg-white dark:bg-background-dark/80 p-5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex gap-4">
+<div class="relative shrink-0">
+<img class="size-12 rounded-full object-cover border-2 border-slate-300" data-alt="Silver rank vendor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpyo8g7isA_5tz3BGyw5x_lAyvFcYPw_HUjNEriyRi1WRQLaBbb6ZyLl7x7vFibhYr5-xRMmjORLKgF5OY9nFuulEMP6IFr6_OpE4uhp8AdKgp-Bpcb_1h9rkts8F_vI3vrQ0HMqNSSVtm1z7n4Nr-yf6XIbPpfKd3kX-ooaep6Y5Ro23qP-FahCMGfcphZkG7-oqFnm9Z0VHctlQX1SCqpvwUYSJ43f98nPdQqEFMS3KQgs6pPod8iQYYrSzHBCQ2QS-mreYg2Y"/>
+<div class="absolute -bottom-1 -right-1 bg-slate-400 text-white p-0.5 rounded-full border-2 border-white" title="Silver Vendor">
+<span class="material-symbols-outlined text-[12px] leading-none">shield</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-bold text-slate-500">Silver Merchant</span>
+<span class="text-gray-400 text-xs">• 5 hours ago</span>
+</div>
+<h3 class="text-accent dark:text-white text-lg font-bold leading-snug">
+                                    How I reached 1,000 orders in 3 months - My NobleMart Story
+                                </h3>
+<div class="flex items-center gap-6 mt-4">
+<div class="flex items-center gap-1.5 text-gray-400 text-sm">
+<span class="material-symbols-outlined text-lg">chat</span>
+<span class="font-semibold">89 Replies</span>
+</div>
+<div class="flex items-center gap-1.5 text-primary text-sm font-bold">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span>256 Likes</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Button -->
+<button class="w-full py-4 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-xl text-gray-500 font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    Load More Discussions
+                </button>
+</section>
+<!-- Right Sidebar: Contributors & Stats -->
+<aside class="lg:col-span-3 space-y-6">
+<!-- Top Contributors Section -->
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-accent dark:text-white text-base font-bold">Top Contributors</h2>
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 bg-primary/10 rounded">Weekly</span>
+</div>
+<div class="space-y-5">
+<!-- Contributor 1 -->
+<div class="flex items-center gap-4">
+<div class="size-10 shrink-0 relative">
+<img class="size-full rounded-full object-cover" data-alt="Top contributor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcOb1Gea50BS2XcOlMKuJi1lupFEVlqoKXYkDLNpQSK1_2hb_5JvfTeLsfkN5pPutvQ46r_2yPgJynCLrJ8aIDjrA5qVjz4A2VmNaudyWq5VWqEfBgUYl4ym7WLLkKqW-B1-oP9cJp9BQVdPfNpCwdCbQsZEVcA_9vlEfsQu1lPXRv6zcw4wrMuH5fR7o9ZWpoLMS6scC7Ktbg4d58lom6YDlg-gXmFYYGcJlJzsKE7KKMKX5Sh85cqpiwcXGan0_ILxX1q4oR_4M"/>
+<div class="absolute -top-1 -right-1 size-4 bg-amber-500 rounded-full flex items-center justify-center border-2 border-white">
+<span class="text-[8px] text-white font-bold">1</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-accent dark:text-white truncate">Adewale Davies</h4>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-amber-500 font-fill">military_tech</span>
+<p class="text-[11px] text-gray-500">Platinum Guide</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-primary">1.2k</span>
+<p class="text-[9px] text-gray-400 uppercase">Points</p>
+</div>
+</div>
+<!-- Contributor 2 -->
+<div class="flex items-center gap-4">
+<div class="size-10 shrink-0 relative">
+<img class="size-full rounded-full object-cover" data-alt="Top contributor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh44o1K1vH2_BfmQ1SuSXFdrwTqv8tvzy8dEqhxETDwbXIf5K_tXprOI0R3kVmraF70QxkTugkkdzDf-lgmSQT1ooHAN9pwgea0gtxfZ8tCgAlFnAvuPukRMekmCZHCufib_3fRK3PPy2UFAZkwDqDUQHw92BebP2mb1gbPA_RPE2UapdOCk2qJrDoA-CERFNv56NNxBJa9iYn8Lw7eIZyDzn7hlXJgL447TY2G_o5n-Frfz2vj1aB4rkwsN9CYd0roAXfsmsz98U"/>
+<div class="absolute -top-1 -right-1 size-4 bg-slate-400 rounded-full flex items-center justify-center border-2 border-white">
+<span class="text-[8px] text-white font-bold">2</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-accent dark:text-white truncate">Chinyere Okafor</h4>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary font-fill">verified</span>
+<p class="text-[11px] text-gray-500">Solutions Expert</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-primary">942</span>
+<p class="text-[9px] text-gray-400 uppercase">Points</p>
+</div>
+</div>
+<!-- Contributor 3 -->
+<div class="flex items-center gap-4">
+<div class="size-10 shrink-0 relative">
+<img class="size-full rounded-full object-cover" data-alt="Top contributor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvAt7YTsew8pZIqDobkGV4QYS52d_Gnz-3CA5p1y142UADc-qJT83vKcJasFQ6sXcgoQ98jFfBhtruMq_qr9dY07CCBRpTJa9xM2PmYLJupog9eJ8lz46bp4NHwBZRVRttL8UHAwE5jlqfQl-bDJrSsN5QNst1ZzSbfKQGPl_bOXN75Jrum3Kzs5h0ZB4yJVbnhJk_0v_M89MuzVeMWDEpkMn5qhwiIzY-jAiw6N3bjS6WCUYtCD1FiCvlGT08ER2uT3-VMsI7-vU"/>
+<div class="absolute -top-1 -right-1 size-4 bg-orange-400 rounded-full flex items-center justify-center border-2 border-white">
+<span class="text-[8px] text-white font-bold">3</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-accent dark:text-white truncate">Tunde Bakare</h4>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-orange-400 font-fill">star</span>
+<p class="text-[11px] text-gray-500">Rising Star</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-primary">812</span>
+<p class="text-[9px] text-gray-400 uppercase">Points</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 text-primary text-xs font-bold hover:underline">View Leaderboard</button>
+</div>
+<!-- Forum Stats Card -->
+<div class="bg-primary/5 p-6 rounded-xl border border-primary/10">
+<h2 class="text-accent dark:text-white text-base font-bold mb-4">Forum Statistics</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-background-dark/30 p-3 rounded-lg text-center">
+<p class="text-xl font-extrabold text-primary">12.4k</p>
+<p class="text-[10px] text-gray-500 font-bold uppercase">Members</p>
+</div>
+<div class="bg-white dark:bg-background-dark/30 p-3 rounded-lg text-center">
+<p class="text-xl font-extrabold text-primary">45k</p>
+<p class="text-[10px] text-gray-500 font-bold uppercase">Posts</p>
+</div>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="px-2 space-y-2">
+<div class="flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-gray-400 font-medium">
+<a class="hover:text-primary" href="#">Guidelines</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Help Center</a>
+<a class="hover:text-primary" href="#">Terms of Use</a>
+</div>
+<p class="text-[10px] text-gray-400 pt-4">© 2024 NobleMart Nigeria. All rights reserved.</p>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

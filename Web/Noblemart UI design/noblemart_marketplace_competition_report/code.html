@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Marketplace Competition Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#01c4cb",
+                "background-light": "#f5f8f8",
+                "background-dark": "#0f2223",
+                "federal-blue": "#020249",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"],
+                "poppins": ["Poppins", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .poppins { font-family: 'Poppins', sans-serif; }
+        .donut-gradient {
+            background: conic-gradient(
+                #01c4cb 0% 35%, 
+                #020249 35% 60%, 
+                #1e3a8a 60% 80%, 
+                #cbd5e1 80% 100%
+            );
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col fixed h-full z-10">
+<div class="p-6 border-b border-white/10">
+<h1 class="text-2xl font-bold poppins flex items-center gap-2">
+<span class="text-primary material-icons">shopping_bag</span>
+                    NobleMart
+                </h1>
+</div>
+<nav class="flex-1 py-6 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-all" href="#">
+<span class="material-icons text-xl">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-all" href="#">
+<span class="material-icons text-xl">inventory_2</span> Products
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-all" href="#">
+<span class="material-icons text-xl">shopping_cart</span> Orders
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/20 text-primary border-l-4 border-primary rounded-r-lg font-medium transition-all" href="#">
+<span class="material-icons text-xl text-primary">analytics</span> Insights
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-all" href="#">
+<span class="material-icons text-xl">payments</span> Finances
+                </a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="bg-white/5 rounded-xl p-4">
+<p class="text-xs text-white/50 mb-2 uppercase font-bold tracking-wider">Account Manager</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">CN</div>
+<div>
+<p class="text-sm font-semibold">Chidi Nnamdi</p>
+<p class="text-[10px] text-white/40">Premium Vendor</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 flex-1 p-8">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h2 class="text-3xl font-bold poppins text-federal-blue dark:text-white">Competitive Intelligence Report</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Detailed performance analysis vs. Electronics Category leaders</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<select class="appearance-none bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 pr-10 text-sm font-medium focus:ring-primary focus:border-primary">
+<option>Top 10% in Electronics</option>
+<option>All Category Sellers</option>
+<option>Direct Rivals (Electronics)</option>
+</select>
+<span class="material-icons absolute right-3 top-2.5 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-semibold py-2 px-6 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-icons text-lg">download</span>
+                        Export PDF
+                    </button>
+</div>
+</header>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Market Share Donut -->
+<div class="col-span-12 lg:col-span-4 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="font-bold text-lg mb-6 poppins">Market Share Distribution</h3>
+<div class="relative flex justify-center py-4">
+<div class="w-48 h-48 rounded-full donut-gradient flex items-center justify-center relative">
+<div class="w-32 h-32 rounded-full bg-white dark:bg-slate-800 flex flex-col items-center justify-center">
+<span class="text-3xl font-bold text-federal-blue dark:text-white">35%</span>
+<span class="text-xs text-slate-400 uppercase tracking-tighter">Your Share</span>
+</div>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-slate-600 dark:text-slate-400">Your Store</span>
+</div>
+<span class="font-bold">35.2%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-federal-blue"></span>
+<span class="text-slate-600 dark:text-slate-400">Competitor A</span>
+</div>
+<span class="font-bold">24.8%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-blue-800"></span>
+<span class="text-slate-600 dark:text-slate-400">Competitor B</span>
+</div>
+<span class="font-bold">20.0%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-slate-300"></span>
+<span class="text-slate-600 dark:text-slate-400">Others</span>
+</div>
+<span class="font-bold">20.0%</span>
+</div>
+</div>
+</div>
+<!-- Benchmarking Table -->
+<div class="col-span-12 lg:col-span-8 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="font-bold text-lg mb-6 poppins text-federal-blue dark:text-white">KPI Benchmarking Table</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-slate-400 text-xs uppercase tracking-wider border-b border-slate-100 dark:border-slate-700">
+<th class="pb-4 font-bold">Metric</th>
+<th class="pb-4 font-bold">Your Store</th>
+<th class="pb-4 font-bold">Category Avg.</th>
+<th class="pb-4 font-bold">Market Leader</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr class="hover:bg-background-light dark:hover:bg-slate-700/50 transition-colors">
+<td class="py-5 font-medium">Avg. Fulfillment Time</td>
+<td class="py-5">
+<div class="flex items-center gap-2 text-emerald-500 font-bold">
+                                            1.2 Days <span class="material-icons text-sm">arrow_downward</span>
+</div>
+</td>
+<td class="py-5 text-slate-500">2.4 Days</td>
+<td class="py-5 font-semibold">0.8 Days</td>
+</tr>
+<tr class="hover:bg-background-light dark:hover:bg-slate-700/50 transition-colors">
+<td class="py-5 font-medium">Return Rate</td>
+<td class="py-5">
+<div class="flex items-center gap-2 text-rose-500 font-bold">
+                                            4.2% <span class="material-icons text-sm">arrow_upward</span>
+</div>
+</td>
+<td class="py-5 text-slate-500">2.1%</td>
+<td class="py-5 font-semibold">1.5%</td>
+</tr>
+<tr class="hover:bg-background-light dark:hover:bg-slate-700/50 transition-colors">
+<td class="py-5 font-medium">Price Competitiveness</td>
+<td class="py-5">
+<div class="flex items-center gap-2 text-primary font-bold">
+                                            92/100
+                                        </div>
+</td>
+<td class="py-5 text-slate-500">85/100</td>
+<td class="py-5 font-semibold">96/100</td>
+</tr>
+<tr class="hover:bg-background-light dark:hover:bg-slate-700/50 transition-colors">
+<td class="py-5 font-medium">Seller Trust Score</td>
+<td class="py-5 font-bold text-federal-blue dark:text-primary">
+                                        4.8/5.0
+                                    </td>
+<td class="py-5 text-slate-500">4.2/5.0</td>
+<td class="py-5 font-semibold">4.9/5.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Price Positioning Map (Scatter Plot) -->
+<div class="col-span-12 lg:col-span-7 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-lg poppins">Price vs. Rating Position</h3>
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary shadow-lg shadow-primary/40"></span> Your Position</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-300"></span> Competitors</div>
+</div>
+</div>
+<div class="relative h-64 border-l border-b border-slate-200 dark:border-slate-700 mt-4 ml-6 mb-8">
+<!-- Y-Axis Label -->
+<div class="absolute -left-10 top-1/2 -rotate-90 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Customer Rating (Stars)</div>
+<!-- X-Axis Label -->
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Relative Price (₦)</div>
+<!-- Scatter Points -->
+<div class="absolute top-10 left-[20%] w-3 h-3 rounded-full bg-slate-300"></div>
+<div class="absolute top-32 left-[45%] w-3 h-3 rounded-full bg-slate-300"></div>
+<div class="absolute top-16 left-[70%] w-3 h-3 rounded-full bg-slate-300"></div>
+<div class="absolute top-48 left-[30%] w-3 h-3 rounded-full bg-slate-300"></div>
+<div class="absolute top-24 left-[85%] w-3 h-3 rounded-full bg-slate-300"></div>
+<!-- Your Point -->
+<div class="absolute top-12 left-[60%] w-6 h-6 rounded-full bg-primary border-4 border-white dark:border-slate-800 shadow-xl shadow-primary/30 flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</div>
+<!-- Grid Lines -->
+<div class="absolute top-1/4 left-0 w-full h-px bg-slate-50 dark:bg-slate-700/30 -z-10"></div>
+<div class="absolute top-1/2 left-0 w-full h-px bg-slate-50 dark:bg-slate-700/30 -z-10"></div>
+<div class="absolute top-3/4 left-0 w-full h-px bg-slate-50 dark:bg-slate-700/30 -z-10"></div>
+<div class="absolute left-1/4 top-0 h-full w-px bg-slate-50 dark:bg-slate-700/30 -z-10"></div>
+<div class="absolute left-1/2 top-0 h-full w-px bg-slate-50 dark:bg-slate-700/30 -z-10"></div>
+<div class="absolute left-3/4 top-0 h-full w-px bg-slate-50 dark:bg-slate-700/30 -z-10"></div>
+</div>
+</div>
+<!-- Rival Strategy Insights -->
+<div class="col-span-12 lg:col-span-5 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="font-bold text-lg mb-4 poppins">Observed Rival Strategies</h3>
+<div class="space-y-4">
+<div class="p-4 rounded-lg bg-background-light dark:bg-slate-700/30 border-l-4 border-federal-blue">
+<p class="text-xs font-bold text-federal-blue dark:text-primary uppercase mb-1">Logistics Shift</p>
+<p class="text-sm text-slate-700 dark:text-slate-300">Competitor A is now offering <span class="font-bold">free shipping</span> on all Electronics orders over ₦20,000.</p>
+</div>
+<div class="p-4 rounded-lg bg-background-light dark:bg-slate-700/30 border-l-4 border-primary">
+<p class="text-xs font-bold text-primary uppercase mb-1">Pricing Alert</p>
+<p class="text-sm text-slate-700 dark:text-slate-300">Market Leader has implemented <span class="font-bold">Dynamic Pricing</span> adjustments between 8PM - 11PM daily.</p>
+</div>
+<div class="p-4 rounded-lg bg-background-light dark:bg-slate-700/30 border-l-4 border-slate-400">
+<p class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Service Strategy</p>
+<p class="text-sm text-slate-700 dark:text-slate-300">Competitor B recently launched an extended <span class="font-bold">18-month warranty</span> on refurbished laptops.</p>
+</div>
+</div>
+</div>
+<!-- Call to Action Section -->
+<div class="col-span-12 bg-federal-blue rounded-xl overflow-hidden relative">
+<div class="grid md:grid-cols-2 items-center">
+<div class="p-8 md:p-12 z-10">
+<h2 class="text-3xl font-bold poppins text-white mb-4 leading-tight">Need a Deeper Dive into Your Competition?</h2>
+<p class="text-white/80 text-lg mb-8 max-w-lg">Get a 1-on-1 personalized analysis from our marketplace experts to dominate your niche.</p>
+<button class="bg-primary hover:bg-white hover:text-federal-blue text-white font-bold py-4 px-8 rounded-lg transition-all flex items-center gap-3 text-lg">
+                                Request Professional Category Analysis
+                                <span class="material-icons">trending_up</span>
+</button>
+</div>
+<div class="hidden md:block relative h-full min-h-[400px]">
+<img alt="Vendor analyzing data" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="Vendor analyzing competitive landscape on multiple monitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPehJqHH9zwU8ZsW8o9BUpjl_VoV6S7yx9ZcPT93U9q9o198_izN9xUVXQqilEwsQb7kev_eG1l_WZ-LOAHGYV1jSSvpCjiricwwvuv0hEVZqbvrKLzXyeh9CdWHK8qhQNIg_vwKm11n6ZCV7_YSsR7xowhzKsQIhOIH8qhKnFkVJ2Yg1sG6fcI665llr52SZ29loMDcITZC9-Ustr4J9J35301rfgapukbjYxPEPS60SYuwKgviy_A6IZJT0s2dfwWpdPGRVkKYg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-federal-blue via-federal-blue/40 to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Branding -->
+<footer class="mt-12 py-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm">
+<p>© 2024 NobleMart Africa. All Intelligence data is encrypted and confidential.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Seller Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Mediation Guide</title>
+<!-- Google Fonts: Poppins & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6217ee",
+                        "brand-indigo": "#5C1BE8",
+                        "brand-teal": "#01C2CA",
+                        "brand-navy": "#020249",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "heading": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-brand-navy rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<h2 class="font-heading text-brand-navy dark:text-white text-lg font-bold leading-tight">NobleMart Seller Academy</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Courses</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+<a class="text-sm font-medium text-primary" href="#">Mediation Guide</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border border-slate-300 dark:border-slate-600">
+<div class="w-full h-full bg-cover bg-center" data-alt="User profile avatar circle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTz-7Zs23_wV_7OgZdb_0Nx3S9rPUY2URjIDcL-cSKU_AnA9R6cSM_psCxuSrQq1-t_2sXpRmOdob76ZAygcOmHzUczMME2xDfDCsWXXaz9LqZdh9ntRToNicSpPl3Un1JHpInTE2KncZi8vIe3tj0vaZB3jCYqkEtNkE6Ou8Ylc2OgRNvICOXFGCaIisNmmM60-yrSizDbgO7Mn4l7T-sen-_xJ_AOP4ieOlgOAqrHbc_vJnQ06Uk5sakqD1vchtB0awsoDzBO4s')"></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="header-gradient text-white py-16 px-6">
+<div class="max-w-5xl mx-auto flex flex-col items-center text-center gap-8">
+<div class="space-y-4">
+<h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                        Mastering Dispute Mediation
+                    </h1>
+<p class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto">
+                        Learn how to resolve vendor-buyer conflicts fairly with our NobleShield Escrow system guide.
+                    </p>
+</div>
+<div class="w-full max-w-lg">
+<div class="flex items-stretch bg-white rounded-lg shadow-xl overflow-hidden p-1">
+<div class="flex items-center px-4 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex-1 border-none focus:ring-0 text-slate-900 text-base py-3" placeholder="Search mediation topics..." type="text"/>
+<button class="bg-brand-navy hover:bg-brand-navy/90 text-white px-6 rounded-md font-bold transition-all">Search</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Intro Section: NobleShield Escrow -->
+<section class="py-16 px-6 bg-white dark:bg-slate-900">
+<div class="max-w-5xl mx-auto">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="flex-1 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-wider">
+                            NobleShield Escrow
+                        </div>
+<h2 class="font-heading text-3xl font-bold text-brand-navy dark:text-white">Your Safety Net for Every Transaction</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                            Conflicts happen, but they shouldn't halt your business. NobleShield holds funds securely until both parties fulfill their obligations. If a dispute arises, our system provides a neutral ground for resolution, ensuring that honest vendors are always protected.
+                        </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-teal">check_circle</span>
+<span class="font-medium">Guaranteed payment upon successful delivery</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-teal">check_circle</span>
+<span class="font-medium">Evidence-based dispute resolution</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-teal">check_circle</span>
+<span class="font-medium">Neutral third-party mediation</span>
+</li>
+</ul>
+</div>
+<div class="flex-1">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-2xl bg-slate-100" data-alt="Professional dark-skinned mentor explaining mediation steps to vendor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwARoAj5b-Xd3QU2dF0WanRVFAAFMxoFQKQK_SNYW1DYbu5CdQciIvRWQSV3UmWxI_8uE2W_f2VCcsK8NpNHt1d6REo7uMn8FrX64OmN_UoVDUdVgc-v23RemUD3JSOHUhYGL6f9abn5-WkySETrH8-AMn3bKyyBNm6ljHaOezuZ4Ie2hCcpQ5N7NLU7eJgtc4w5-i55WD4TS-JyIUttwfsTiRzUN4sE6OkcVyeBDdcwv_WY5rh_3TzxovORHY5z7n3NgxBoPpWtk'); background-size: cover; background-position: center;">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Roadmap Section -->
+<section class="py-16 px-6 bg-slate-50 dark:bg-slate-800/50">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-heading text-3xl font-bold text-brand-navy dark:text-white">4-Step Mediation Roadmap</h2>
+<p class="text-slate-500">The lifecycle of a dispute on NobleMart</p>
+</div>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 dark:bg-slate-700 -translate-x-1/2 hidden md:block"></div>
+<div class="space-y-12">
+<!-- Step 1 -->
+<div class="relative flex flex-col md:flex-row gap-8 items-start">
+<div class="md:w-1/2 md:text-right order-2 md:order-1">
+<h3 class="font-bold text-xl mb-2">1. Dispute Notification</h3>
+<p class="text-slate-600 dark:text-slate-400">Receive an alert via the Seller Dashboard or Email. Review the buyer's reason for the dispute immediately.</p>
+<div class="mt-4 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 text-left">
+<span class="text-xs font-bold text-primary uppercase">Best Practices</span>
+<p class="text-sm mt-1 italic">Do not take it personally. Respond professionally to show your commitment to quality.</p>
+</div>
+</div>
+<div class="z-10 absolute left-0 md:left-1/2 -translate-x-1/2 size-12 rounded-full bg-brand-navy flex items-center justify-center text-white border-4 border-slate-50 dark:border-slate-800 shadow-lg">
+<span class="material-symbols-outlined">notification_important</span>
+</div>
+<div class="md:w-1/2 order-3"></div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col md:flex-row gap-8 items-start">
+<div class="md:w-1/2 order-2 md:order-1"></div>
+<div class="z-10 absolute left-0 md:left-1/2 -translate-x-1/2 size-12 rounded-full bg-brand-teal flex items-center justify-center text-white border-4 border-slate-50 dark:border-slate-800 shadow-lg">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="md:w-1/2 order-3">
+<h3 class="font-bold text-xl mb-2">2. Evidence Collection</h3>
+<p class="text-slate-600 dark:text-slate-400">The "Golden Hour": Gather photos, shipping receipts, and conversation logs. You have 48 hours to upload proof.</p>
+<div class="mt-4 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+<span class="text-xs font-bold text-primary uppercase">Best Practices</span>
+<p class="text-sm mt-1 italic">Ensure all photos have clear timestamps and show the item condition before packing.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col md:flex-row gap-8 items-start">
+<div class="md:w-1/2 md:text-right order-2 md:order-1">
+<h3 class="font-bold text-xl mb-2">3. Mediator Review</h3>
+<p class="text-slate-600 dark:text-slate-400">A NobleMart specialist reviews both claims based on platform policy and the evidence provided.</p>
+<div class="mt-4 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 text-left">
+<span class="text-xs font-bold text-primary uppercase">Best Practices</span>
+<p class="text-sm mt-1 italic">Check your inbox regularly in case the mediator requests additional clarification.</p>
+</div>
+</div>
+<div class="z-10 absolute left-0 md:left-1/2 -translate-x-1/2 size-12 rounded-full bg-brand-indigo flex items-center justify-center text-white border-4 border-slate-50 dark:border-slate-800 shadow-lg">
+<span class="material-symbols-outlined">balance</span>
+</div>
+<div class="md:w-1/2 order-3"></div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex flex-col md:flex-row gap-8 items-start">
+<div class="md:w-1/2 order-2 md:order-1"></div>
+<div class="z-10 absolute left-0 md:left-1/2 -translate-x-1/2 size-12 rounded-full bg-green-500 flex items-center justify-center text-white border-4 border-slate-50 dark:border-slate-800 shadow-lg">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="md:w-1/2 order-3">
+<h3 class="font-bold text-xl mb-2">4. Final Settlement</h3>
+<p class="text-slate-600 dark:text-slate-400">Escrow funds are released to the winning party. If a partial refund is agreed, the split is handled instantly.</p>
+<div class="mt-4 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+<span class="text-xs font-bold text-primary uppercase">Best Practices</span>
+<p class="text-sm mt-1 italic">Close the loop by asking the mediator for feedback to avoid future disputes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Evidence Checklist & Pro-Tips -->
+<section class="py-16 px-6 bg-white dark:bg-slate-900">
+<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Evidence Checklist -->
+<div class="bg-white dark:bg-slate-800 border-2 border-brand-navy rounded-xl p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-brand-navy dark:text-brand-teal">fact_check</span>
+<h2 class="font-heading text-2xl font-bold text-brand-navy dark:text-white">Evidence Checklist</h2>
+</div>
+<div class="space-y-4">
+<label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group">
+<input class="mt-1 rounded text-primary focus:ring-primary size-5" type="checkbox"/>
+<div>
+<p class="font-bold">Waybill / Proof of Shipping</p>
+<p class="text-sm text-slate-500">Official receipt from the courier service.</p>
+</div>
+</label>
+<label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group">
+<input class="mt-1 rounded text-primary focus:ring-primary size-5" type="checkbox"/>
+<div>
+<p class="font-bold">Pre-Packing Photos</p>
+<p class="text-sm text-slate-500">Photos showing product quality before sealing.</p>
+</div>
+</label>
+<label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group">
+<input class="mt-1 rounded text-primary focus:ring-primary size-5" type="checkbox"/>
+<div>
+<p class="font-bold">NobleMart Chat Logs</p>
+<p class="text-sm text-slate-500">Screenshots of relevant buyer agreements.</p>
+</div>
+</label>
+<label class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group">
+<input class="mt-1 rounded text-primary focus:ring-primary size-5" type="checkbox"/>
+<div>
+<p class="font-bold">Product ID Verification</p>
+<p class="text-sm text-slate-500">Visible serial numbers or specific tags.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Pro-Tips Card -->
+<div class="bg-primary/5 dark:bg-primary/10 border-2 border-primary/20 rounded-xl p-8 flex flex-col">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">stars</span>
+<h2 class="font-heading text-2xl font-bold text-brand-navy dark:text-white">Pro-Tips to Win</h2>
+</div>
+<div class="space-y-6 flex-1">
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">1</div>
+<div>
+<p class="font-bold">Respond within 24 Hours</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Speed shows the mediator that you are an active and responsible vendor.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">2</div>
+<div>
+<p class="font-bold">Keep Communication Internal</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Only messages on the NobleMart platform are valid as evidence in disputes.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">3</div>
+<div>
+<p class="font-bold">Professional Tone Always</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Arguments or rude behavior can negatively impact the mediator's final decision.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quiz Section -->
+<section class="py-16 px-6 bg-slate-50 dark:bg-slate-800/50">
+<div class="max-w-2xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-10 text-center border border-slate-200 dark:border-slate-700">
+<div class="inline-flex items-center justify-center size-16 rounded-full bg-brand-teal/20 text-brand-teal mb-6">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h2 class="font-heading text-2xl font-bold mb-2">Test Your Knowledge</h2>
+<p class="text-slate-500 mb-8">Quick check on our mediation policy</p>
+<div class="text-left space-y-6">
+<p class="font-bold text-lg">A buyer claims an item is "Not as Described". What is your first best step?</p>
+<div class="space-y-3">
+<label class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary transition-all cursor-pointer">
+<input class="text-primary focus:ring-primary" name="quiz" type="radio"/>
+<span>Issue an immediate full refund without checking</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary transition-all cursor-pointer">
+<input class="text-primary focus:ring-primary" name="quiz" type="radio"/>
+<span>Upload pre-shipping photos showing item condition</span>
+</label>
+<label class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 hover:border-primary transition-all cursor-pointer">
+<input class="text-primary focus:ring-primary" name="quiz" type="radio"/>
+<span>Message the buyer on WhatsApp to settle privately</span>
+</label>
+</div>
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">Check Answer</button>
+</div>
+</div>
+</section>
+<!-- Footer Actions -->
+<footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 px-6">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="text-center md:text-left">
+<h3 class="font-heading text-xl font-bold">Ready to proceed?</h3>
+<p class="text-slate-500">Download these resources for offline access.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="flex items-center gap-2 px-8 py-3 bg-brand-navy text-white rounded-lg font-bold hover:bg-brand-navy/90 transition-all">
+<span class="material-symbols-outlined">download</span>
+                        Download PDF Guide
+                    </button>
+<button class="flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+                        Watch Video Tutorial
+                    </button>
+</div>
+</div>
+<div class="max-w-5xl mx-auto mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between text-sm text-slate-400">
+<p>© 2024 NobleMart Nigeria. All Rights Reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Seller Protection</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

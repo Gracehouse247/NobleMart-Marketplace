@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NobleMart - Nigeria's #1 Multi-Vendor Marketplace</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "federal-blue": "#020249",
+                        "dark-green": "#2D6A4F",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "sans": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #01c2ca 0%, #5C1BE8 100%);
+        }
+        .flash-sale-header {
+             background: linear-gradient(90deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .top-sellers-header {
+            background: linear-gradient(90deg, #5C1BE8 0%, #01C2CA 100%);
+        }
+        .mobile-deals-gradient {
+            background: linear-gradient(90deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+        .promo-gradient {
+            background: linear-gradient(135deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+        
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 280px !important;
+            }
+            
+            .category-circle {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            
+            .product-card {
+                font-size: 12px;
+            }
+        }
+        
+        /* Touch Device Optimizations */
+        .touch-device button,
+        .touch-device a {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading States */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .skeleton {
+            animation: shimmer 2s infinite;
+            background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
+            background-size: 1000px 100%;
+        }
+        
+        /* Mobile Menu Animations */
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        
+        @keyframes slideOutLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        
+        /* Improved Focus States for Accessibility */
+        *:focus-visible {
+            outline: 2px solid #5C1BE8;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-sans text-[#0c1c1d] dark:text-white transition-colors duration-300">
+    <header
+        class="sticky top-0 z-50 w-full bg-white dark:bg-[#0c1c1d] border-b border-gray-100 dark:border-gray-800 shadow-sm">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-6">
+            <a href="/" class="flex items-center gap-3 shrink-0">
+                <img src="assets/img/noblemart-logo.png" alt="NobleMart" class="h-10 md:h-12 w-auto object-contain" />
+            </a>
+            <div class="flex-1 max-w-2xl hidden md:block">
+                <div class="relative flex w-full">
+                    <div class="relative flex-1">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-gray-400">search</span>
+                        </div>
+                        <input
+                            class="w-full bg-white border border-gray-300 rounded-l-md py-2.5 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary outline-none placeholder:text-gray-400 text-sm"
+                            placeholder="Search products, brands and categories" type="text" />
+                    </div>
+                    <button
+                        class="bg-[#5C1BE8] hover:bg-opacity-90 text-white px-6 font-bold text-sm uppercase rounded-r-md shadow-sm transition-colors">Search</button>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 shrink-0">
+                <div class="hidden lg:flex items-center gap-4">
+                    <a class="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-[24px]">person</span>
+                        <span class="hidden xl:inline">Account</span>
+                        <span class="material-symbols-outlined text-[20px]">expand_more</span>
+                    </a>
+                    <a class="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-[24px]">help</span>
+                        <span class="hidden xl:inline">Help</span>
+                        <span class="material-symbols-outlined text-[20px]">expand_more</span>
+                    </a>
+                </div>
+                <button
+                    class="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
+                    <div class="relative">
+                        <span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+                        <span
+                            class="cart-badge absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                    <span class="text-sm font-medium hidden xl:inline">Cart</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1440px] mx-auto px-4 md:px-6 py-4">
+        <div class="flex flex-col lg:flex-row gap-4 mb-4">
+            <aside
+                class="hidden lg:flex w-[210px] shrink-0 bg-white dark:bg-gray-900 rounded-md shadow-sm flex-col py-2 h-[384px]">
+                <nav class="flex flex-col h-full text-[12px]">
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">kitchen</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Appliances</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">smartphone</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Phones &amp; Tablets</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">health_and_safety</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Health &amp; Beauty</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">home</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Home &amp; Office</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">tv</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Electronics</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">apparel</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Fashion</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">storefront</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Supermarket</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">laptop_mac</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Computing</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">child_care</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Baby Products</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">sports_esports</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Gaming</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">more_horiz</span>
+                        <span class="font-normal text-gray-700 dark:text-gray-300">Other Categories</span>
+                    </a>
+                </nav>
+            </aside>
+            <div class="flex-1 min-w-0">
+                <div id="hero-slider"
+                    class="relative w-full h-[280px] md:h-[384px] rounded-md overflow-hidden bg-gray-100 group">
+                    <div id="hero-slides-wrapper" class="w-full h-full relative">
+                        <!-- Slides will be injected here by JS -->
+                        <div class="w-full h-full flex items-center justify-center bg-gray-50">
+                            <span
+                                class="material-symbols-outlined text-4xl text-gray-300 animate-spin">progress_activity</span>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <button
+                        class="hero-prev absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="hero-next absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+
+                    <!-- Dots -->
+                    <div id="hero-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <!-- Dots injected by JS -->
+                    </div>
+                </div>
+            </div>
+            <div class="hidden xl:flex flex-col gap-3 w-[218px] h-[384px]">
+                <!-- Quick Actions Section -->
+                <div class="bg-white dark:bg-gray-900 rounded-md shadow-sm p-4 flex flex-col gap-4">
+                    <!-- Call to Order -->
+                    <div class="flex items-center gap-3 group cursor-pointer">
+                        <div
+                            class="p-2 rounded-full border border-secondary/20 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">call</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="font-bold text-xs uppercase text-[#0c1c1d] dark:text-white leading-tight">CALL TO
+                                ORDER</h4>
+                            <p class="text-[10px] text-gray-500 mt-0.5">07050507824</p>
+                        </div>
+                    </div>
+
+                    <!-- Sell on NobleMart -->
+                    <div class="flex items-center gap-3 group cursor-pointer">
+                        <div
+                            class="p-2 rounded-full border border-secondary/20 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">store</span>
+                        </div>
+                        <h4
+                            class="font-medium text-xs text-[#0c1c1d] dark:text-white group-hover:text-secondary transition-colors">
+                            Sell on NobleMart</h4>
+                    </div>
+
+                    <!-- Send Your Packages -->
+                    <div class="flex items-center gap-3 group cursor-pointer">
+                        <div
+                            class="p-2 rounded-full border border-secondary/20 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+                        </div>
+                        <h4
+                            class="font-medium text-xs text-[#0c1c1d] dark:text-white group-hover:text-secondary transition-colors">
+                            Send Your Packages</h4>
+                    </div>
+                </div>
+
+                <!-- Banner Placeholder -->
+                <!-- Right Banner -->
+                <div class="flex-1 bg-gray-100 dark:bg-gray-800 rounded-md shadow-sm overflow-hidden relative group">
+                    <img src="assets/img/gif/FOR FREE.gif" alt="Special Offer"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+        </div>
+        <section class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm p-6">
+
+            <div class="relative group px-1">
+                <!-- Navigation Buttons -->
+                <button id="tc-prev"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -ml-3 z-10 bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 rounded-full p-1.5 text-gray-700 dark:text-gray-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 transition-all hover:bg-gray-50 focus:outline-none hidden md:block">
+                    <span class="material-symbols-outlined text-xl">chevron_left</span>
+                </button>
+                <button id="tc-next"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 -mr-3 z-10 bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700 rounded-full p-1.5 text-gray-700 dark:text-gray-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 transition-all hover:bg-gray-50 focus:outline-none hidden md:block">
+                    <span class="material-symbols-outlined text-xl">chevron_right</span>
+                </button>
+
+                <div class="overflow-hidden">
+                    <div id="top-categories-track" class="flex transition-transform duration-300 ease-out">
+                        <!-- Categories injected by JS -->
+                        <div class="w-full h-32 flex items-center justify-center">
+                            <span
+                                class="material-symbols-outlined text-4xl text-gray-300 animate-spin">progress_activity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+            <div class="flash-sale-header px-4 py-3 flex items-center justify-between text-white">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-yellow-300 fill-1 animate-pulse">bolt</span>
+                        <h2 class="text-lg md:text-xl font-bold uppercase tracking-tight">Flash Sales</h2>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-2">
+                        <span class="text-sm font-medium opacity-90">Time Left:</span>
+                        <div class="flex gap-1 text-sm font-mono font-bold">
+                            <span>02h</span> : <span>14m</span> : <span>45s</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="flex items-center gap-1 text-white font-bold text-xs uppercase hover:underline" href="#">
+                    See All <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0 divide-x divide-gray-100 dark:divide-gray-800">
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-3V9cLYjezBWqhJ_2jM8GZHR2DXEFnzfNuTUBHeIO7YlUrxaA6HQqm7wA76IwzhfO4w445FO3R8FQPZcWRC0-QU7G8QHeyK_zHnwLXyHmK-lgyqBVo5lNwDChztYcglozxEXCbzKcFzeNRAsS1tXC5f-ao2th8GDC2ZWjOG6_3ur7MO62-Wuk0BUH-bPI0L9B8U9yAeyA87QDhhpVUyQcFG-fYqSOJiQSjAUi6PGBfoHtr2yy8O2BXagM5qPkiBZ2ZTuSFPdm4VA');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-17%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2"
+                            title="Wireless Noise Cancelling Headphones">Wireless Noise Cancelling Headphones - Onyx
+                            Black</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦45,000</p>
+                            <p class="text-xs text-gray-400 line-through">₦54,200</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-[10px] text-gray-500 mb-1">20 items left</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                                <div class="bg-secondary h-1.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-10%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">SmartX Pro
+                            128GB - 5G Enabled Smartphone</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦280,000</p>
+                            <p class="text-xs text-gray-400 line-through">₦310,000</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-[10px] text-gray-500 mb-1">5 items left</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                                <div class="bg-[#f68b1e] h-1.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_m8L2QY0IaJEzav33kU6YWm0UvIr65XZ9fbaU606g5zYGyzHBc9UcVamGOoBRowuU3VXep6QX6xbip7B6Kxs-u7ZG6izG55SANSRaKjm9dRW9i-tIJ2BQyH_COqLx60WiGibMyZjysWeqGt-h5d2N8wDyWqyieJgrVtQmJYs1USSGf8BDyI1I-1GKmimvisbhyOToIpSOK18IOLz4TnOAEKcLklrPnVfn7SGtQV2dtO3_D1No1Ujurv7Rb8aUe0xvckhARo2JoKg');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-25%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">NutriBullet
+                            Professional 1200W Kitchen Blender</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦85,000</p>
+                            <p class="text-xs text-gray-400 line-through">₦113,300</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-[10px] text-gray-500 mb-1">12 items left</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                                <div class="bg-secondary h-1.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX5Y_aaz8WF3-JNEgq6ge13Z4VUn95CtkxCrqFJkOKWkNsmeT3JOmgK6UX11kIb0YU9Ilz18F5P9wcPhIgAJfpu8VJUJwji0b6jXxH4dduNCQnhOJvt6rIwwWnoE56HEW57HNsFOMYkVFmNEfEi5Bo2yhI0vGBhxINjdVz5ZYVzfwZUNSG47DeUjJZmJno-XxlMlrNICBIb2Mxhz6VwpASzhL-VjUmEdn5_V4zc-dqUe0a6z-UDWEdZsNIKR_YJrruZs5kwZocMUs');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Glow Kit:
+                            Organic Shea &amp; Cocoa Butter Set</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦12,500</p>
+                            <p class="text-xs text-gray-400 line-through">₦13,150</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-[10px] text-gray-500 mb-1">150 items left</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                                <div class="bg-secondary h-1.5 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRxk4ExsWEEyleyqyuIQJUWZLxAWECbQZhEA330IWeplGzfLr8dnbcUK04IovaUgyXAQcCm-_so-EC3blGmLgzMK5-7EBePZJaDPbqV6b4IWrGQ29V_3a517SAsbTuD5LlFX2xM-FBb3N3hoIO8WkeAbDNs8iG-y9iLdixedA6AkRuVK8Pd2YR_yf_N-S1R-nyOyggv5Y1LaBFUAfgtg4hHRgmvsXE_YlZpzj9SfjzH4-HxXQnmBz0H51qTRYpw1UxbR0umDnYGBY');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-20%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Urban Elite
+                            Leather Sneakers - Midnight Blue</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦24,000</p>
+                            <p class="text-xs text-gray-400 line-through">₦30,000</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-[10px] text-gray-500 mb-1">8 items left</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                                <div class="bg-[#f68b1e] h-1.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <img alt="Watch" class="w-full h-full object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMiaUMLz9fsCjddC3JVFfSa-IKI7DkX1IrZrJMc6nlF-lz_o62vf2mdyHz8jpPL4DLkND-Ew-XKCHrT_GdH-wHVdN5FvMy7N4rgpOmtrp-xJkcTaiO9lSQyInQRXUT_vxWNu1Kk98XLkm9FRjKGT0IYTopk0CrMx2Ui1M3SjYga-Uw1VICzCiI9TueytJZIKiMCOCN1sVr5B2rF2QuSOEYqxvbGe5hLZP57pSnj-0V6tZo4FYfFBsgBwkPh20N23ROOqcjwVdtsgE" />
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-30%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Classic Analog
+                            Wristwatch - Gold Plated</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦15,000</p>
+                            <p class="text-xs text-gray-400 line-through">₦21,400</p>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-[10px] text-gray-500 mb-1">45 items left</p>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                                <div class="bg-secondary h-1.5 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="weekly-category-section" class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm p-4">
+            <h3 class="text-lg font-bold mb-4 px-2">Featured Categories</h3>
+            <div id="weekly-category-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden bg-[#1a237e] flex items-center justify-center relative shadow-sm group-hover:shadow-md transition-all">
+                        <span class="text-white font-bold text-center px-2">Buy Now,<br />Pay Small Small</span>
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Buy
+                        Now, Pay Small Small</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Phones &amp; Tablets"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkVe4SG_KEUERTVumrNgPDPp3HeKx-19BcamhDxciz3eeNG5YHuc6MfPZ_HMnJHjMGNs1gt9VYJC8GGRjdwwj_lBKKBj4XlkgJ2dpv8x_5pnJ_BysaIOF7MRoxCwdUaV3O9I-tqaHNy7veg9-Di9nCNktIu9YZgU-WKm4UI7_M2u2VonZpQOgMhZHRBy7GADypf6BGvlnCaiMDAJwMfDOLWp8uh02IlDk8N0GqbCKi05S8gE0hFYkFZUZoq0sQqinDd_JHUKcjo2k" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Phones
+                        &amp; Tablets</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Appliances"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYnMC6bVBlA-fYKob-s8BsiRblnHs8QoMvWzSNid6JEtqhqFGUMK7yyoKtXY73G3lGyY1MU8VAE-ZVoYXzyXhwzA7BBJJ6h65ucLAI1z044uVXeqz87pjXiHc_jlFiCbvgembXcv_y_h6NfZvViFQHNb_YFef-0QCbFFviih5033AIwuA1Ag65knWRacEv7VmcemiGqurJJKSRfqw0jVm8wAO2gGaSNVvke-rhDSz38q80Nlt2qdzeX--WfZccdIl-3QFTVaW5-tg" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Appliances</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Fashion"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgmH7WB5MWgk_DCRVpfmZLWHOLWtibzzyJu8ikJvSsTo3YSyzryzRMcx31IfD8cTwbmkcpmgSiijugogogi5etCVG0bG-ijp3R0p7BnE0jolN-fo852rI71ZWhgMHhus2Kh1lIjJVP650dq0fuyhmcS5HpFsFPKBSmnW8MlnJweVbsjU6220pE9xkKEuA5e-sZifGeyDwXZL32E-x1GiG8dC3kr0yh55BnbPlNW0-fRANxAkziDwnv4kwL1_kWJcMcWuaNv_JGHR8" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Fashion</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="TV &amp; Audio"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr3cOmqBOAVhZdUYaFaP474kqrD5bxL83sralbNlx9UHYge4aVmbrQD8VgSe7GYeDNzuKGIHSQon0xDSiBoV9Ljm0oOiVOURkYDUoCj6W6ecy5YxWX6DXlxgFAU2ce-qFECdj4jMfAClKkkrKOrcDzMSGlXX0hSce9YATjlRME-aWjAcR0yNws0DZAtX7gV5CXI1KCru8AZy1ApKxtpPUa3-_hBTd8PkuCPZG9vQJPxBztCYcV6_hupvaU1bofCvN0wd5KNQqNpm4" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">TV
+                        &amp; Audio</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Beauty Must Have"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnGTU_kgsQFW4vGFngAS8gSqd0BCO5YoOkYQULjL83yr7fbbDGIvG8GJDPjt4S7tIPsAPEfGyNPLLde6uhTd0H9PvoLDkItzllU0Rtj9mZynsN5tDGgwHFJz1IfL6DcF09ZJaATl66MStpYkRhDivM5T_EvEsAyTnrOeqk1LJBVtaScC5u0H_bIyHIp8gKuJoeaV5frxZfeIIfXBXVSPjETx7DdsNnxNqbBKiVmXYPQWH0K247JikAcdJSGsHRXTrP8aUW4X0UUtU" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Beauty
+                        Must Have</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Home &amp; Office"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfN18e4-A8NvbjGcXEGlEjbei68iP3vH4WfNyNSryFnH2fzmWlsDAY7Crlr0_j_rgmoH6Bt_Sqy_eKQkVshvul0F908btksJHTtb3b3ZwBs3m_LcoYxDcRm5ZThVXvCuiTiBWz3Ie0iv38mpHGj6TR3Z2LEQV_JanYTnh1KeVh652wDhy0WtQeBiGyLxtei8-xVY6woCoYkbAlZTq5HdshGFOcIQPjaWPRIbtJYm6FGjdlqbzp3Sw8zm6Yy6cen4hppymwrPllEdU" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Home
+                        &amp; Office</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Computing"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV1i_416CCWYmMYI1JfZqIfh5lTIv0j8UIC8MQhcYrSF7yweUkNTYQovV3KRKu-JHVFwBnmWLB3boa8SEVUliDlP1YqKuDeOhORN0y0L_BjnA-ewQxa011abbDhWzapqiI3mJxEoMRIGiJDXqPc7cmYtPxFI3wyE5B39quNf18rUwExo1WEHarKOChomGsQMEln2wN_5Srf6FV_LvCZ6s0FShVVgFA4a4wJzjszxNa6CUa7ZWdwGNgd35IQhFK5O5gt2a1K_bR5jY" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Computing</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Fitness deals"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaWws7LWToegKt_0lKx4JOb-jzEpLE0FQt9u6jbqMnJo3obkfr7XloXROhOihJLQnJczQhHwjXmQ4vrgHOUIlf50OsvVsAWx75QV4h-yYFYAX7kwvXJsvjsKSkUVc52d3pujyZD-ceQXNkoVBwYCe_adSdvLzf30QnYrn47bwyeTKDeDexcLXP-5BxfcTd_4a-tgHhdBPMhcXlos4PhRElIVScQ-LrZmj7nSiHiPd91AvERksHQb8mABnvG-5kVGRo0OJJ5Fm4ML0" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Fitness
+                        deals</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Generators &amp; Inverters"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw3oTerIH8eFHO5AmPQyAw1qtG0uVCc27zHM35z4LZqnEr7QcFPeAO4tFBzoyIyEwV5nvK0Y-ZAS9GmEUWxc8B6xoO_oLgSWiwXWOkdEPsdcYWI6JGW58BAknGQbwKf90r4qFJO-6uDEFJUPoj9ZPCAitm08adnGm8C2llH8WVaC12XKUFAhuDAAJXtpuctqC9rEARWlT1QiqrhvAyCUL-6nncMZIeKVhYU48K9QW0X-8mL2yV3gkSbBRLmDP5iS5D3WTy0udKwgs" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Generators
+                        &amp; Inverters</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Mobile Accessories"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVDLLcXOaRBG2vGXjeR93Wm0y3Vw3I9LFr52C93ZUcEIytvTGrlsls8vQPzvcuxTlfAxkq3Nm1NUQhjhNwXkzB2prfRle2Fme6i2RvZQadWfinsPfNXwPha6mQ97U1p2USS1ZqzK5G0TtKVGfYRZoPCX4Ac_Mu0YyX6EYpNUrxxebTaXZ94SZkuoebL3Mkqe-rUPt0fTPPVKpKEWRawCpyZzOTBDeLuboacZBWhhVixBiwAmWRnpMwL0EqoLtRS7kCWsTwjWsAls0" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Mobile
+                        Accessories</span>
+                </a>
+                <a class="group flex flex-col items-center gap-2" href="#">
+                    <div
+                        class="w-full aspect-square rounded-md overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                        <img alt="Sneakers"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiZrLw71eU5trt_IiyO8Y8JUXefQzRqjx_RNLNqq8K1QFPU0rIz3lLcwfqLM4F1wOiWKEA5gqEqik0XTaNuE5mUJdcBcosPAdRqm725_HTxEmnj3FiLQ91DQ-eZFrfEjhhNlMgioxZ3x-XyXfVkvgY3wkS20812K42rTfHinQNOYf57e9kz7cG5DcsWDAsifJ42V435aQ9Dm3wGV52sAzy_bsN_9Q73o8KxbQqQKY1PwuCG4VWoyB78jq0ac7cbqLhyn-Ey_JG9Ic" />
+                    </div>
+                    <span
+                        class="text-[13px] text-center font-normal text-gray-700 dark:text-gray-300 group-hover:text-secondary">Sneakers</span>
+                </a>
+            </div>
+        </section>
+        <section
+            class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+            <div class="top-sellers-header px-4 py-3 flex items-center justify-between text-white">
+                <h2 class="text-lg md:text-xl font-bold tracking-tight">Top Sellers</h2>
+                <a class="flex items-center gap-1 text-white font-bold text-xs uppercase hover:underline" href="#">
+                    See All <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0 divide-x divide-gray-100 dark:divide-gray-800">
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAaEkrSQtd-3Ixu7JAvP2QwqcUj3jrHulEpl-SLwEx_TphHgkPQk19aemxc6bEIyf0TWv_ov2DpymxCyyLi-YCcw9LjIAaWnaIMKC-himuSTTSUo6UqJttc0TaBOCFhElK_cbkn8-_YoqJc-M0FygtcKsXckIr8Rs4vvTey3kYJY4EYbW_8dZtx0D8qKidIJJeoEtjmyUPt0i3MiaVy_oHMCAoBb0nxifz_sUv7niXZnnCKwfFQg9WsfCZ4uYL9D_rSBO_4xRe3mc');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">XIAOMI Redmi
+                            15C 6.9" 6GB RAM</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦153,206</p>
+                            <p class="text-xs text-gray-400 line-through">₦160,866</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNQil3IhjxCXw85QTdpDzKeEDtzigu28X713fjR2wVyLRVd_XIxrlW3AwrM9l5f6lxsatF0WG9Tf7lEYCVAa7UTYUkCG7Kars7EV8BZ06qQIsq0vd_To-muZbrfm0Zt7S1qqm7aq5OulRPuihODfFHBKhcw2dHxwaq_sWnioecDCKeYt3HRWx8R-Lxwn-0uvJRG4LjLjTXfWykgK2FgW4o78EvHQ9u3JbUpoZheJgmOnIfvznAVUr1WblY83x3LQSSsBwUUQL7lMo');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-23%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Skyrun 200L
+                            Chest Freezer</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦299,450</p>
+                            <p class="text-xs text-gray-400 line-through">₦388,266</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5PMnSSkQ9kjFGcLFeWfMj8jzH_F5V2N7ysnGQ95SBtk9tHmlQhpkZgDiHUtkyuwyGuUkkGmIrefzy-PbrmHuqViLm0h6Yn3XcypWjq74ZXNaog6Lpm2XDytvmUmLuyi0ppWA_AGn8Ngkni1e0RSSfVWkKADuzE3eo9H0Nd4YOOC_G_hBziIaQNWUI3Q3x5NMNUz6IkiSMaxTuJbVC29pelgAWJbSXY0fIztm-EcA7dRVkfSJzbn54cANy4OZeBNQ2Srs9god7o0U');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-10%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">SILVER CREST
+                            8L Extra Large Air Fryer</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦39,399</p>
+                            <p class="text-xs text-gray-400 line-through">₦44,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0XEMkbFnlv6G050wX5cUnroZlP0jDI8v7P_wZTbwFm3DZ-VuVYumbFmyM_e0PPkzsnEvc9tUB3qCVKczqTggDDBWOuPflKn7-mRYfvAnBjyPOUezNYTajPF0OUBUcrfN8pgT4g3YODda3YGR637Q_KyX-6FQ9bRKETxnaXm-sZivOaAB3fDuTGbc9yl6rZsI1OW5tg-G6w78YIqvssuJ_Jog0XgyIlpoygOnMdHUmg7MCU0ipEWnk-Dc0Z3m8QJof4FTg4xfVjys');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-24%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">NIVEA Sun UV
+                            Sunscreen</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦16,578</p>
+                            <p class="text-xs text-gray-400 line-through">₦21,819</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFBt1L7hO-Tc0-oVPLI8a2CMrkCsGKPwt5G9F1S2JiFRP86Nrde3iTkLtw116nnEM4I8WCV6ncH0l_ixSUVrNpPcJdd4NBbcmUO98-xxrUHf48kiEcSoOSmc_VEkaJSkEwGWmgP4jnMPMrcFaYdJgQbs7bV8u8c5YhWv3kLVTsnmSBRwpZ38qP-UHqf30pNJJIRbnekXj_lyk5iJxjiDlDSSXCt5e9xtQ8CR1DPSM2-XgZKEZ5iADQ1ePYsu684KPs8EeHsw8beKM');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-23%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Hisense 7.5kg
+                            Twin Tub Washing Machine</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦189,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦247,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB471mU6YpnN2yQdpqoeSs_FJreFYPHoWTf2tHoykxYzin9UTagqB7XV78AAQdW0t2aES0ywlStMtpdC-ZaLuUq9lAC7erYQhM97iTBRCDDWoZ3tMH2dobnXezN24tPT8s6alrwCiFbdHz97V0FDEzRP3Y-249vfSbakd_YO4TDEp4kYWS7irXO5w3FVE8wsbtpTEsyN9KtIS7ovIqYKJyWLDhqEO5MtKKTr3-33g92b8T26DH2csdfPhkQbDhbAk9Frbcdtm2VrPE');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-25%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">TropicWhirl
+                            Blender 2L 2 in 1</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦19,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦26,649</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-6">
+            <h2 class="text-xl font-bold mb-4 font-['Poppins']">Don't Miss Out On These!!!</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="/shop/category.html?search=Men%27s%20Clothing"
+                    class="relative block h-[280px] rounded-lg overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+                    <img alt="MEN'S CLOTHING"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="assets/img/banners/mens_clothing_banner.png" />
+                </a>
+                <a href="/shop/category.html?search=Air%20Conditioners"
+                    class="relative block h-[280px] rounded-lg overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+                    <img alt="AIR CONDITIONERS"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="assets/img/banners/air_conditioners_banner.png" />
+                </a>
+                <a href="/shop/category.html?search=Women%27s%20Bags"
+                    class="relative block h-[280px] rounded-lg overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+                    <img alt="WOMEN'S BAGS"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        src="assets/img/banners/womens_bags_banner.png" />
+                </a>
+            </div>
+        </section>
+        <section id="best-selling-section" class="mb-6">
+            <div class="bg-gray-100/50 dark:bg-gray-800/50 py-3 px-4 mb-4 rounded">
+                <h2 class="text-xl font-bold font-['Poppins']">Shop From NobleMart Collections!</h2>
+            </div>
+            <div id="best-selling-grid"
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 min-h-[400px] items-center justify-center">
+                <div class="col-span-full flex flex-col items-center gap-4 py-12">
+                    <div class="w-12 h-12 border-4 border-gray-200 border-t-secondary rounded-full animate-spin"></div>
+                    <p class="text-gray-500 font-medium">Loading weekly collections...</p>
+                </div>
+            </div>
+        </section>
+        <section
+            class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+            <div class="top-sellers-header px-4 py-3 flex items-center justify-between text-white">
+                <h2 class="text-lg md:text-xl font-bold tracking-tight">Limited Stock deals | Up to 60% Off</h2>
+                <a class="flex items-center gap-1 text-white font-bold text-xs uppercase hover:underline" href="#">
+                    See All <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0 divide-x divide-y divide-gray-100 dark:divide-gray-800">
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0XEMkbFnlv6G050wX5cUnroZlP0jDI8v7P_wZTbwFm3DZ-VuVYumbFmyM_e0PPkzsnEvc9tUB3qCVKczqTggDDBWOuPflKn7-mRYfvAnBjyPOUezNYTajPF0OUBUcrfN8pgT4g3YODda3YGR637Q_KyX-6FQ9bRKETxnaXm-sZivOaAB3fDuTGbc9yl6rZsI1OW5tg-G6w78YIqvssuJ_Jog0XgyIlpoygOnMdHUmg7MCU0ipEWnk-Dc0Z3m8QJof4FTg4xfVjys');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-20%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">NIVEA Radiant
+                            Body Lotion 400ml</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦11,730</p>
+                            <p class="text-xs text-gray-400 line-through">₦14,600</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAaEkrSQtd-3Ixu7JAvP2QwqcUj3jrHulEpl-SLwEx_TphHgkPQk19aemxc6bEIyf0TWv_ov2DpymxCyyLi-YCcw9LjIAaWnaIMKC-himuSTTSUo6UqJttc0TaBOCFhElK_cbkn8-_YoqJc-M0FygtcKsXckIr8Rs4vvTey3kYJY4EYbW_8dZtx0D8qKidIJJeoEtjmyUPt0i3MiaVy_oHMCAoBb0nxifz_sUv7niXZnnCKwfFQg9WsfCZ4uYL9D_rSBO_4xRe3mc');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-7%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">XIAOMI REDMI
+                            A5 - 6.6"</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦103,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦111,999</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFBt1L7hO-Tc0-oVPLI8a2CMrkCsGKPwt5G9F1S2JiFRP86Nrde3iTkLtw116nnEM4I8WCV6ncH0l_ixSUVrNpPcJdd4NBbcmUO98-xxrUHf48kiEcSoOSmc_VEkaJSkEwGWmgP4jnMPMrcFaYdJgQbs7bV8u8c5YhWv3kLVTsnmSBRwpZ38qP-UHqf30pNJJIRbnekXj_lyk5iJxjiDlDSSXCt5e9xtQ8CR1DPSM2-XgZKEZ5iADQ1ePYsu684KPs8EeHsw8beKM');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-23%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Hisense 7.5kg
+                            Twin Tub</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦189,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦247,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-14%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Itel A100C
+                            90Hz 6.6"</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦90,100</p>
+                            <p class="text-xs text-gray-400 line-through">₦105,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX5Y_aaz8WF3-JNEgq6ge13Z4VUn95CtkxCrqFJkOKWkNsmeT3JOmgK6UX11kIb0YU9Ilz18F5P9wcPhIgAJfpu8VJUJwji0b6jXxH4dduNCQnhOJvt6rIwwWnoE56HEW57HNsFOMYkVFmNEfEi5Bo2yhI0vGBhxINjdVz5ZYVzfwZUNSG47DeUjJZmJno-XxlMlrNICBIb2Mxhz6VwpASzhL-VjUmEdn5_V4zc-dqUe0a6z-UDWEdZsNIKR_YJrruZs5kwZocMUs');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Axe Ice Chill
+                            Mint</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦2,420</p>
+                            <p class="text-xs text-gray-400 line-through">₦2,550</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkVe4SG_KEUERTVumrNgPDPp3HeKx-19BcamhDxciz3eeNG5YHuc6MfPZ_HMnJHjMGNs1gt9VYJC8GGRjdwwj_lBKKBj4XlkgJ2dpv8x_5pnJ_BysaIOF7MRoxCwdUaV3O9I-tqaHNy7veg9-Di9nCNktIu9YZgU-WKm4UI7_M2u2VonZpQOgMhZHRBy7GADypf6BGvlnCaiMDAJwMfDOLWp8uh02IlDk8N0GqbCKi05S8gE0hFYkFZUZoq0sQqinDd_JHUKcjo2k');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-14%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">HITHIUM 1kWh
+                            Portable</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦264,000</p>
+                            <p class="text-xs text-gray-400 line-through">₦306,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5PMnSSkQ9kjFGcLFeWfMj8jzH_F5V2N7ysnGQ95SBtk9tHmlQhpkZgDiHUtkyuwyGuUkkGmIrefzy-PbrmHuqViLm0h6Yn3XcypWjq74ZXNaog6Lpm2XDytvmUmLuyi0ppWA_AGn8Ngkni1e0RSSfVWkKADuzE3eo9H0Nd4YOOC_G_hBziIaQNWUI3Q3x5NMNUz6IkiSMaxTuJbVC29pelgAWJbSXY0fIztm-EcA7dRVkfSJzbn54cANy4OZeBNQ2Srs9god7o0U');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-23%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Aeon 1HP Split
+                            Inverter</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦219,900</p>
+                            <p class="text-xs text-gray-400 line-through">₦285,500</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkVe4SG_KEUERTVumrNgPDPp3HeKx-19BcamhDxciz3eeNG5YHuc6MfPZ_HMnJHjMGNs1gt9VYJC8GGRjdwwj_lBKKBj4XlkgJ2dpv8x_5pnJ_BysaIOF7MRoxCwdUaV3O9I-tqaHNy7veg9-Di9nCNktIu9YZgU-WKm4UI7_M2u2VonZpQOgMhZHRBy7GADypf6BGvlnCaiMDAJwMfDOLWp8uh02IlDk8N0GqbCKi05S8gE0hFYkFZUZoq0sQqinDd_JHUKcjo2k');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-14%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">ECOFLOW RIVER
+                            3 Max</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦546,220</p>
+                            <p class="text-xs text-gray-400 line-through">₦635,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-8%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Samsung Galaxy
+                            A06 6.7"</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦116,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦127,100</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRxk4ExsWEEyleyqyuIQJUWZLxAWECbQZhEA330IWeplGzfLr8dnbcUK04IovaUgyXAQcCm-_so-EC3blGmLgzMK5-7EBePZJaDPbqV6b4IWrGQ29V_3a517SAsbTuD5LlFX2xM-FBb3N3hoIO8WkeAbDNs8iG-y9iLdixedA6AkRuVK8Pd2YR_yf_N-S1R-nyOyggv5Y1LaBFUAfgtg4hHRgmvsXE_YlZpzj9SfjzH4-HxXQnmBz0H51qTRYpw1UxbR0umDnYGBY');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-63%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">ADIDAS
+                            WideWalk Sneak</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦35,598</p>
+                            <p class="text-xs text-gray-400 line-through">₦96,200</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCr3cOmqBOAVhZdUYaFaP474kqrD5bxL83sralbNlx9UHYge4aVmbrQD8VgSe7GYeDNzuKGIHSQon0xDSiBoV9Ljm0oOiVOURkYDUoCj6W6ecy5YxWX6DXlxgFAU2ce-qFECdj4jMfAClKkkrKOrcDzMSGlXX0hSce9YATjlRME-aWjAcR0yNws0DZAtX7gV5CXI1KCru8AZy1ApKxtpPUa3-_hBTd8PkuCPZG9vQJPxBztCYcV6_hupvaU1bofCvN0wd5KNQqNpm4');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-4%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Hikers 55"
+                            Inch Frameless</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦328,900</p>
+                            <p class="text-xs text-gray-400 line-through">₦342,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgmH7WB5MWgk_DCRVpfmZLWHOLWtibzzyJu8ikJvSsTo3YSyzryzRMcx31IfD8cTwbmkcpmgSiijugogogi5etCVG0bG-ijp3R0p7BnE0jolN-fo852rI71ZWhgMHhus2Kh1lIjJVP650dq0fuyhmcS5HpFsFPKBSmnW8MlnJweVbsjU6220pE9xkKEuA5e-sZifGeyDwXZL32E-x1GiG8dC3kr0yh55BnbPlNW0-fRANxAkziDwnv4kwL1_kWJcMcWuaNv_JGHR8');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-28%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Machider
+                            Europe And Th...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦5,886</p>
+                            <p class="text-xs text-gray-400 line-through">₦8,175</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDV1i_416CCWYmMYI1JfZqIfh5lTIv0j8UIC8MQhcYrSF7yweUkNTYQovV3KRKu-JHVFwBnmWLB3boa8SEVUliDlP1YqKuDeOhORN0y0L_BjnA-ewQxa011abbDhWzapqiI3mJxEoMRIGiJDXqPc7cmYtPxFI3wyE5B39quNf18rUwExo1WEHarKOChomGsQMEln2wN_5Srf6FV_LvCZ6s0FShVVgFA4a4wJzjszxNa6CUa7ZWdwGNgd35IQhFK5O5gt2a1K_bR5jY');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-22%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Hp EliteBook
+                            840 G7 Intel</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦520,000</p>
+                            <p class="text-xs text-gray-400 line-through">₦666,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkVe4SG_KEUERTVumrNgPDPp3HeKx-19BcamhDxciz3eeNG5YHuc6MfPZ_HMnJHjMGNs1gt9VYJC8GGRjdwwj_lBKKBj4XlkgJ2dpv8x_5pnJ_BysaIOF7MRoxCwdUaV3O9I-tqaHNy7veg9-Di9nCNktIu9YZgU-WKm4UI7_M2u2VonZpQOgMhZHRBy7GADypf6BGvlnCaiMDAJwMfDOLWp8uh02IlDk8N0GqbCKi05S8gE0hFYkFZUZoq0sQqinDd_JHUKcjo2k');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-63%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">ECOFLOW RIVER
+                            2 Pro Po...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦552,790</p>
+                            <p class="text-xs text-gray-400 line-through">₦1,494,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNQil3IhjxCXw85QTdpDzKeEDtzigu28X713fjR2wVyLRVd_XIxrlW3AwrM9l5f6lxsatF0WG9Tf7lEYCVAa7UTYUkCG7Kars7EV8BZ06qQIsq0vd_To-muZbrfm0Zt7S1qqm7aq5OulRPuihODfFHBKhcw2dHxwaq_sWnioecDCKeYt3HRWx8R-Lxwn-0uvJRG4LjLjTXfWykgK2FgW4o78EvHQ9u3JbUpoZheJgmOnIfvznAVUr1WblY83x3LQSSsBwUUQL7lMo');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-25%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Haier
+                            Thermocool 200 Lit</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦365,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦488,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgmH7WB5MWgk_DCRVpfmZLWHOLWtibzzyJu8ikJvSsTo3YSyzryzRMcx31IfD8cTwbmkcpmgSiijugogogi5etCVG0bG-ijp3R0p7BnE0jolN-fo852rI71ZWhgMHhus2Kh1lIjJVP650dq0fuyhmcS5HpFsFPKBSmnW8MlnJweVbsjU6220pE9xkKEuA5e-sZifGeyDwXZL32E-x1GiG8dC3kr0yh55BnbPlNW0-fRANxAkziDwnv4kwL1_kWJcMcWuaNv_JGHR8');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-8%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Danami Henley
+                            Long Slee...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦9,130</p>
+                            <p class="text-xs text-gray-400 line-through">₦9,923</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0XEMkbFnlv6G050wX5cUnroZlP0jDI8v7P_wZTbwFm3DZ-VuVYumbFmyM_e0PPkzsnEvc9tUB3qCVKczqTggDDBWOuPflKn7-mRYfvAnBjyPOUezNYTajPF0OUBUcrfN8pgT4g3YODda3YGR637Q_KyX-6FQ9bRKETxnaXm-sZivOaAB3fDuTGbc9yl6rZsI1OW5tg-G6w78YIqvssuJ_Jog0XgyIlpoygOnMdHUmg7MCU0ipEWnk-Dc0Z3m8QJof4FTg4xfVjys');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Rexona Rexona
+                            Women B...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦4,525</p>
+                            <p class="text-xs text-gray-400 line-through">₦4,763</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-t border-gray-100">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5PMnSSkQ9kjFGcLFeWfMj8jzH_F5V2N7ysnGQ95SBtk9tHmlQhpkZgDiHUtkyuwyGuUkkGmIrefzy-PbrmHuqViLm0h6Yn3XcypWjq74ZXNaog6Lpm2XDytvmUmLuyi0ppWA_AGn8Ngkni1e0RSSfVWkKADuzE3eo9H0Nd4YOOC_G_hBziIaQNWUI3Q3x5NMNUz6IkiSMaxTuJbVC29pelgAWJbSXY0fIztm-EcA7dRVkfSJzbn54cANy4OZeBNQ2Srs9god7o0U');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-22%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Nexus 1.5HP
+                            Split Air Con...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦305,200</p>
+                            <p class="text-xs text-gray-400 line-through">₦391,280</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+            <div class="top-sellers-header px-4 py-3 flex items-center justify-between text-white">
+                <h2 class="text-lg md:text-xl font-bold tracking-tight">Phones deals</h2>
+                <a class="flex items-center gap-1 text-white font-bold text-xs uppercase hover:underline" href="#">
+                    See All <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0 divide-x divide-gray-100 dark:divide-gray-800">
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAaEkrSQtd-3Ixu7JAvP2QwqcUj3jrHulEpl-SLwEx_TphHgkPQk19aemxc6bEIyf0TWv_ov2DpymxCyyLi-YCcw9LjIAaWnaIMKC-himuSTTSUo6UqJttc0TaBOCFhElK_cbkn8-_YoqJc-M0FygtcKsXckIr8Rs4vvTey3kYJY4EYbW_8dZtx0D8qKidIJJeoEtjmyUPt0i3MiaVy_oHMCAoBb0nxifz_sUv7niXZnnCKwfFQg9WsfCZ4uYL9D_rSBO_4xRe3mc');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-7%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">XIAOMI Redmi
+                            15C 6.9" 4...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦139,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦150,500</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-4%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Samsung Galaxy
+                            A06 6.7"</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦143,300</p>
+                            <p class="text-xs text-gray-400 line-through">₦149,300</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkVe4SG_KEUERTVumrNgPDPp3HeKx-19BcamhDxciz3eeNG5YHuc6MfPZ_HMnJHjMGNs1gt9VYJC8GGRjdwwj_lBKKBj4XlkgJ2dpv8x_5pnJ_BysaIOF7MRoxCwdUaV3O9I-tqaHNy7veg9-Di9nCNktIu9YZgU-WKm4UI7_M2u2VonZpQOgMhZHRBy7GADypf6BGvlnCaiMDAJwMfDOLWp8uh02IlDk8N0GqbCKi05S8gE0hFYkFZUZoq0sQqinDd_JHUKcjo2k');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-7%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Poco C71 6.88"
+                            3GB RAM</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦99,999</p>
+                            <p class="text-xs text-gray-400 line-through">₦107,500</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-18%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Philips
+                            Essence 10 6.6 HD...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦102,300</p>
+                            <p class="text-xs text-gray-400 line-through">₦124,760</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAaEkrSQtd-3Ixu7JAvP2QwqcUj3jrHulEpl-SLwEx_TphHgkPQk19aemxc6bEIyf0TWv_ov2DpymxCyyLi-YCcw9LjIAaWnaIMKC-himuSTTSUo6UqJttc0TaBOCFhElK_cbkn8-_YoqJc-M0FygtcKsXckIr8Rs4vvTey3kYJY4EYbW_8dZtx0D8qKidIJJeoEtjmyUPt0i3MiaVy_oHMCAoBb0nxifz_sUv7niXZnnCKwfFQg9WsfCZ4uYL9D_rSBO_4xRe3mc');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">XIAOMI Redmi
+                            15C 6.9" 6...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦153,206</p>
+                            <p class="text-xs text-gray-400 line-through">₦161,270</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+                    <div class="relative aspect-square overflow-hidden mb-2">
+                        <div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw');">
+                        </div>
+                        <span
+                            class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-1">
+                        <p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Infinix Hot
+                            40i 6.78" 4GB...</p>
+                        <div class="flex flex-col gap-0.5 mt-1">
+                            <p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦202,326</p>
+                            <p class="text-xs text-gray-400 line-through">₦212,900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-6 rounded-md overflow-hidden shadow-sm">
+            <img src="assets/img/banners/mobile_deals_banner.png"
+                alt="MOBILE DEALS - UK-USED IPHONES AT THE BEST PRICES"
+                class="w-full h-auto object-cover hover:opacity-95 transition-opacity duration-300">
+        </section>
+        <section class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm overflow-hidden">
+            <div class="bg-[#d1e8ff] dark:bg-gray-800 px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                <h2 class="text-lg md:text-xl font-bold text-gray-800 dark:text-white text-center">Phones &amp; Tablets
+                    Categories</h2>
+            </div>
+            <div class="p-4">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div
+                        class="group relative flex flex-col h-full bg-[#f8fafc] dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div class="p-3">
+
+                            <div
+                                class="aspect-square relative mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-md overflow-hidden">
+                                <img alt="Android Phones"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="assets/img/Phones and accessories/7.png" />
+                            </div>
+                            <button
+                                class="w-full py-2 bg-secondary text-white text-[10px] font-bold rounded uppercase hover:bg-opacity-90 transition-colors mt-auto">SHOP
+                                NOW</button>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-col h-full bg-[#f8fafc] dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div class="p-3">
+
+                            <div
+                                class="aspect-square relative mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-md overflow-hidden">
+                                <img alt="iPhones"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="assets/img/Phones and accessories/8.png" />
+                            </div>
+                            <button
+                                class="w-full py-2 bg-secondary text-white text-[10px] font-bold rounded uppercase hover:bg-opacity-90 transition-colors mt-auto">SHOP
+                                NOW</button>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-col h-full bg-[#f8fafc] dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div class="p-3">
+
+                            <div
+                                class="aspect-square relative mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-md overflow-hidden">
+                                <img alt="Cell Phones"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="assets/img/Phones and accessories/9.png" />
+                            </div>
+                            <button
+                                class="w-full py-2 bg-secondary text-white text-[10px] font-bold rounded uppercase hover:bg-opacity-90 transition-colors mt-auto">SHOP
+                                NOW</button>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-col h-full bg-[#f8fafc] dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div class="p-3">
+
+                            <div
+                                class="aspect-square relative mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-md overflow-hidden">
+                                <img alt="Android Tablets"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="assets/img/Phones and accessories/10.png" />
+                            </div>
+                            <button
+                                class="w-full py-2 bg-secondary text-white text-[10px] font-bold rounded uppercase hover:bg-opacity-90 transition-colors mt-auto">SHOP
+                                NOW</button>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-col h-full bg-[#f8fafc] dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div class="p-3">
+
+                            <div
+                                class="aspect-square relative mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-md overflow-hidden">
+                                <img alt="iPads"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="assets/img/Phones and accessories/11.png" />
+                            </div>
+                            <button
+                                class="w-full py-2 bg-secondary text-white text-[10px] font-bold rounded uppercase hover:bg-opacity-90 transition-colors mt-auto">SHOP
+                                NOW</button>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-col h-full bg-[#f8fafc] dark:bg-gray-900 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div class="p-3">
+
+                            <div
+                                class="aspect-square relative mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-md overflow-hidden">
+                                <img alt="Renewed"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="assets/img/Phones and accessories/12.png" />
+                            </div>
+                            <button
+                                class="w-full py-2 bg-secondary text-white text-[10px] font-bold rounded uppercase hover:bg-opacity-90 transition-colors mt-auto">SHOP
+                                NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            class="mb-12 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-8 md:p-12 overflow-hidden relative">
+            <!-- Decorative Background Element -->
+            <div
+                class="absolute top-0 right-0 -tr-y-1/2 tr-x-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="relative z-10 w-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6 font-display">
+                    NobleMart: Fast Online Shopping Marketplace in Nigeria.
+                </h2>
+
+                <div class="space-y-6 text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed">
+                    <p>
+                        NobleMart is your go-to online store for quality products and services in Nigeria. We are a
+                        premier multi-vendor platform where you can easily buy and sell a wide range of items, including
+                        high-end electronics, modern lighting, sporting goods, books, home appliances, children's items,
+                        fashion for all ages, cool gadgets, laptops, auto parts, and much more, all while on the go. Our
+                        platform is designed to provide a seamless shopping experience tailored to the Nigerian market.
+                    </p>
+
+                    <p>
+                        What's next? Your purchases can be delivered right to your door with our reliable logistics
+                        network. You can shop online with great convenience while using our secure payment options.
+                        NobleMart prioritizes your security, implementing an advanced Escrow system that ensures the
+                        safest possible payment environment for all online purchases. We have everything you may ever
+                        want to buy at pricing you can truly rely on.
+                    </p>
+
+                    <p>
+                        No matter your taste, social class, or preferences, NobleMart has a payment and delivery option
+                        for you. For added convenience, you can choose to pay securely online or via our verified
+                        partners. With NobleMart, internet shopping in Nigeria is simple, practical, and risk-free. We
+                        offer a huge selection of reliable products from thousands of verified vendors. Participate in
+                        the daily bargains to find the most affordable rates on a variety of goods every single day.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="w-full bg-[#020249] py-12 text-white mt-12 mb-0">
+            <div class="max-w-[1440px] mx-auto px-4 md:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                    <div class="flex items-center">
+                        <img src="assets/img/noblemart-icon.png" alt="NobleMart"
+                            class="h-16 w-auto object-contain brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-lg font-bold uppercase font-['Poppins']">NEW TO NOBLEMART?</h3>
+                        <p class="text-sm opacity-90">Subscribe to our newsletter to get updates on our latest offers!
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex gap-2">
+                                <div class="relative flex-1">
+                                    <span
+                                        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 material-symbols-outlined">mail</span>
+                                    <input
+                                        class="w-full pl-10 pr-4 py-3 rounded bg-white text-gray-900 border-none text-sm focus:ring-2 focus:ring-primary outline-none"
+                                        placeholder="Enter E-mail Address" type="email" />
+                                </div>
+                                <button
+                                    class="bg-[#1a1a1a] hover:bg-black text-white font-bold px-6 py-3 rounded text-sm uppercase transition-all">SUBSCRIBE</button>
+                            </div>
+                            <label class="flex items-start gap-2 cursor-pointer group">
+                                <input
+                                    class="mt-1 rounded border-gray-400 text-primary focus:ring-primary bg-transparent"
+                                    type="checkbox" />
+                                <span
+                                    class="text-[11px] text-gray-300 leading-tight group-hover:text-white transition-colors">
+                                    I agree to NobleMart's Privacy and Cookie Policy. You can unsubscribe from
+                                    newsletters at any time.
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 md:items-end">
+                        <div class="flex items-start gap-3 md:justify-end">
+                            <div
+                                class="bg-yellow-400 text-[#020249] p-1.5 rounded-lg flex items-center justify-center shadow-lg">
+                                <span class="material-symbols-outlined fill-1 text-2xl">star</span>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold uppercase tracking-tight">DOWNLOAD NOBLEMART FREE APP</h3>
+                                <p class="text-xs opacity-80 mt-1">Get access to exclusive offers!</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 mt-2 md:justify-end">
+                            <a class="hover:opacity-80 transition-opacity" href="#">
+                                <img alt="Download on the App Store" class="h-10"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4CWc0fZ3ThuZsP_xdoWMW_LRPmBD-JFpQelWCLwBxdGB3YFsymeJxsXgKm1GmgS9iB5qLj2xc3LPK1-si6f6ike46FwTS8t0Lkh0vKyNoStS_3JrYU_BsH8ZyB94VzgXMj8yDsAHo8CmYAIYwqa3JDcfKLegK2j9lfb140rcsbDtK2701LTGZGcfrmjJ1HkIvVfgBNGfTntlxBXRXQEpfPsMYXN-8u5lLl37wrSctFD72Xxaaesgsn_zul1r61EaMibPgqBoUO5k" />
+                            </a>
+                            <a class="hover:opacity-80 transition-opacity" href="#">
+                                <img alt="Get it on Google Play" class="h-10"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt5Uva4wRgYoCAYr6kT1hb1UF14oL0WIdRQhlhLOWLquB-mVkeH3d9E3n-BuipZseDnFaZGU71-6-Th1Djt_zSMSTl0LM4wfoHM0PJ4dLoE05d5b8y3fHN9Z2ISRe-mBQk5ATO0VsF4B_ToQtjDuB_vxjzrxE5XdaRHeBv0HdFeIUulByLp0EFVspzPEc7b6u0VB4jnAIoiLrUM7-eMA18-BLBCakRdsDD1E1BnjWHgy0tBxCmBe_AxvHagb6jsalLKZaoCeVvBP0" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#3e444a] text-gray-200 pt-10 pb-8 border-t border-gray-700 text-xs">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="mb-4">
+                        <img src="assets/img/noblemart-icon.png" alt="NobleMart" class="h-16 w-auto object-contain" />
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-gray-400">NobleMart is the #1 multi-vendor platform in Nigeria.</p>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Support</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a class="hover:text-white transition-all block" href="#">Help Center</a></li>
+                        <li><a class="hover:text-white transition-all block" href="#">How to Shop on NobleMart</a></li>
+                        <li><a class="hover:text-white transition-all block" href="#">Delivery Options</a></li>
+                        <li><a class="hover:text-white transition-all block" href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Business</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a class="hover:text-white transition-all block" href="#">Sell on NobleMart</a></li>
+                        <li><a class="hover:text-white transition-all block" href="#">Become a Sales Consultant</a></li>
+                        <li><a class="hover:text-white transition-all block" href="#">Become a Logistics Partner</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Contact Us</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span>Lagos, Nigeria</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">mail</span>
+                            <a class="hover:text-white transition-colors"
+                                href="mailto:help@noblemart.com.ng">help@noblemart.com.ng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500">© 2024 NobleMart Technologies Limited.</p>
+                <div class="flex gap-2 opacity-50">
+                    <span class="font-bold border border-gray-600 px-1 py-0.5 rounded">VISA</span>
+                    <span class="font-bold border border-gray-600 px-1 py-0.5 rounded">Mastercard</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/responsive.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+
+</html>

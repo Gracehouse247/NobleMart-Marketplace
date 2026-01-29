@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Marketing Newsletter</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6915ef", // Electric Indigo
+              "robin-egg": "#01C2CA",
+              "federal-blue": "#020249",
+              "background-light": "#f7f6f8",
+              "background-dark": "#171022",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .logo-gradient {
+        background: linear-gradient(90deg, #01C2CA 0%, #5C1BE8 100%);
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#130d1c] dark:text-white">
+<div class="flex flex-col items-center w-full min-h-screen">
+<div class="w-full max-w-[800px] bg-white dark:bg-[#1f162e] shadow-xl">
+<!-- 1. Header -->
+<header class="flex flex-col items-center justify-center py-6 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 mb-2">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-black tracking-tighter text-[#130d1c] dark:text-white">NobleMart</h2>
+</div>
+<div class="h-1 w-32 rounded-full logo-gradient"></div>
+</header>
+<!-- 2. Hero Section -->
+<section class="relative">
+<div class="flex min-h-[440px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-8 text-center" data-alt="Stylish Nigerian couple shopping on smartphones together" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBevWwYr_seXY2lBK7Fq4BGERVBmuOMXhMccNWeQJn0ODiqKLSn3qyAk4IltQB-sJ9ksMJmiX9iEXR9IjKEXO4KdyWjuCsZCiD2CmDQFr-oNEBYyXK7NwtM2wCqgNzX0pSrMOCmyoSQ3eCVH_4nmm1NB6i2dUAKjMtRKJIYeE0UDOL-9ubD0H9P36bEKHnomejcNNaa-Y7IQINQr8JZRJtZrBmDIFo8VSeWrTii1lQJPAkD7gryqfqKMTlINr9T73xoGsHlYj4J1sc");'>
+<div class="flex flex-col gap-4 max-w-lg">
+<h1 class="text-white text-5xl font-extrabold leading-tight tracking-tight">
+                        Upgrade Your Lifestyle!
+                    </h1>
+<p class="text-white/90 text-lg font-medium">
+                        Discover the best deals from verified vendors across Nigeria. High-quality products delivered to your doorstep.
+                    </p>
+<div class="mt-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all">
+                            Shop the Collection
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Featured Offer (Flash Sale) -->
+<section class="p-6">
+<div class="bg-robin-egg rounded-xl p-8 flex flex-col @md:flex-row items-center justify-between gap-6 text-white shadow-md">
+<div class="flex-1">
+<h3 class="text-3xl font-bold mb-2">Flash Sales: Up to 50% Off</h3>
+<p class="text-white/90 font-medium">Limited time offers on top premium brands. Grab them before they're gone!</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<!-- Timer Component -->
+<div class="flex gap-3">
+<div class="flex flex-col items-center gap-1">
+<div class="bg-white/20 backdrop-blur-md rounded-lg size-14 flex items-center justify-center border border-white/30">
+<span class="text-xl font-bold">04</span>
+</div>
+<span class="text-xs uppercase font-bold tracking-widest">Hrs</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="bg-white/20 backdrop-blur-md rounded-lg size-14 flex items-center justify-center border border-white/30">
+<span class="text-xl font-bold">25</span>
+</div>
+<span class="text-xs uppercase font-bold tracking-widest">Min</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="bg-white/20 backdrop-blur-md rounded-lg size-14 flex items-center justify-center border border-white/30">
+<span class="text-xl font-bold">59</span>
+</div>
+<span class="text-xs uppercase font-bold tracking-widest">Sec</span>
+</div>
+</div>
+<button class="w-full bg-white text-robin-egg hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition-colors">
+                        Shop Now
+                    </button>
+</div>
+</div>
+</section>
+<!-- 4. Product Showcase (2x2 Grid) -->
+<section class="px-6 py-4">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-[#130d1c] dark:text-white">Trending Products</h2>
+<a class="text-primary font-semibold flex items-center gap-1" href="#">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<!-- Product 1 -->
+<div class="flex flex-col gap-3 group">
+<div class="aspect-square rounded-xl bg-center bg-cover bg-no-repeat overflow-hidden relative shadow-sm" data-alt="Modern high-end smartphone studio shot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFLayNQUbgAH-VLtJDPwQ_vGe8Z2bthC-y-IKASaha02jR2igkfX3lqMgbh4I-cqBWFzXAFQeHfMMGWVfH8GFYmcl0aBrfXldXwY8wP9ON-r1biJNmtwd8u5Uqz0xEdgejSgojBOIrFQ_eg5RAMSmG6JBl59fAgatbsSzrVCjLcAuxAH5UQK_CFLzIweYxsNojsr7FM4Unp0WapQ6mkHi0L3Y8wcDtwzu0hGAqUnD-pCKns6Kw3SlGz8BdEz9yMV07VzMaAxjj5w0");'>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/50 p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg text-[#130d1c] dark:text-white truncate">UltraPhone 15 Pro</h4>
+<p class="text-primary font-black text-xl">₦750,000</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex flex-col gap-3 group">
+<div class="aspect-square rounded-xl bg-center bg-cover bg-no-repeat overflow-hidden relative shadow-sm" data-alt="Luxury analog wristwatch on white background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBN0gryZMNHIo-i4wRxUPMUsX7EJuxoR5WCyBospgtq5CvWEeo0hQHwgXd_64sugB0ffRvP8hvJyjQdF2amfeLHo0v43fhJj2rJ_u_6WHuASqh0BpWiX-D0E80HXTZuzbDYmul8HbUX3bRJY6eSmHPiM4Kryb0kY1CsCIH9R4K0DkB5lZtzi2ueo5TPEjmxsOZ-pyPhR_Y28zpMA999Lz8OvQqAM_yLK_rdUJS5XdslRhSSiHzVUb0Z3_Mivc9FQ3YtOALoWHsAqEk");'>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/50 p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg text-[#130d1c] dark:text-white truncate">Classic Onyx Watch</h4>
+<p class="text-primary font-black text-xl">₦120,500</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex flex-col gap-3 group">
+<div class="aspect-square rounded-xl bg-center bg-cover bg-no-repeat overflow-hidden relative shadow-sm" data-alt="Premium athletic running sneakers" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACH0cmplozGsEEocooeFVIW8_YEiK7Lmsvv7QGpNBoOdXP3JewG7amB4YHHOyeaL-38BuA30BQYOT065yscBEGfKiScSD8_bVoLxpdosSzl1hA5HImv64rEfRVU5I-4v6TjGb2S5edfOA5F5rd1B8VSCtmhGSTLMfEZ6Sj6w_IG3Fn8vCJ2ti9-ZWCQKTxrYrV_FAnjznttA4nIOXoTctXq269L3KdtfL8JvTb-S9iNNOuYAPnQYnq3p30VxCNj_cq9QW6QTJt8_I");'>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/50 p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg text-[#130d1c] dark:text-white truncate">Bolt Series Sneakers</h4>
+<p class="text-primary font-black text-xl">₦45,000</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="flex flex-col gap-3 group">
+<div class="aspect-square rounded-xl bg-center bg-cover bg-no-repeat overflow-hidden relative shadow-sm" data-alt="High-end kitchen blender studio shot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJPyEaS6T3w4sbS4KNfuKwLhLawu_hd2bUn0AGc_ySGP4kVBS7HmXFhreRdNg89Vg--6iwlhc_e5fTuMH0J-8caRwtbyRU9EKz1n0H1gTn1oF3Ubiw531kbDGSl9Hs_roAjfNLMdfsPG475AVvOqclNhi_qI4jZRAucASs0gFKDximWre5y_PwYJfb_-JQkav936vk66XVZrAoS6H5g7EsWeM0Qswna5_4-7HICNbbKjblazmXsTcXg8F2KXNyjQUmQFv07m9-UqM");'>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/50 p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg text-[#130d1c] dark:text-white truncate">Pro-Mixer Master</h4>
+<p class="text-primary font-black text-xl">₦89,900</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Trust Badge Section -->
+<section class="p-6">
+<div class="bg-background-light dark:bg-background-dark border-2 border-primary/20 rounded-xl p-6 flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-[#130d1c] dark:text-white mb-1">NobleShield Verified</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Shop with peace of mind. Our <strong>Escrow payment system</strong> ensures your money is only released to the vendor after you confirm receipt and satisfaction with your order.
+                    </p>
+</div>
+</div>
+</section>
+<!-- 6. Main Call to Action -->
+<section class="px-6 py-10 flex flex-col items-center">
+<button class="w-full max-w-md bg-primary hover:bg-primary/90 text-white font-bold text-xl py-5 rounded-xl shadow-xl transition-all flex items-center justify-center gap-2">
+                Discover More Deals
+                <span class="material-symbols-outlined">explore</span>
+</button>
+<p class="mt-4 text-sm text-gray-500 font-medium">Join 500,000+ happy shoppers in Nigeria</p>
+</section>
+<!-- 7. Footer -->
+<footer class="bg-federal-blue text-white w-full">
+<div class="p-10 flex flex-col items-center text-center gap-8">
+<div class="flex flex-col items-center gap-4">
+<p class="font-bold text-lg">Download Our App</p>
+<div class="flex gap-4">
+<div class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg flex items-center gap-3 cursor-pointer transition-colors border border-white/10">
+<span class="material-symbols-outlined text-3xl">play_arrow</span>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold text-white/60 leading-none">Get it on</p>
+<p class="text-sm font-bold">Google Play</p>
+</div>
+</div>
+<div class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg flex items-center gap-3 cursor-pointer transition-colors border border-white/10">
+<span class="material-symbols-outlined text-3xl">phone_iphone</span>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold text-white/60 leading-none">Download on</p>
+<p class="text-sm font-bold">App Store</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-6">
+<a class="bg-white/10 p-2 rounded-full hover:bg-primary transition-colors" href="#">
+<svg class="size-5 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="bg-white/10 p-2 rounded-full hover:bg-primary transition-colors" href="#">
+<svg class="size-5 fill-current" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+</a>
+<a class="bg-white/10 p-2 rounded-full hover:bg-primary transition-colors" href="#">
+<svg class="size-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.977 6.981 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.981.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.359-2.62-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+</a>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-white/40 text-sm">© 2024 NobleMart Nigeria. All rights reserved.</p>
+<div class="flex gap-4 justify-center text-xs font-medium text-white/60">
+<a class="hover:text-white underline" href="#">Privacy Policy</a>
+<a class="hover:text-white underline" href="#">Terms of Service</a>
+<a class="hover:text-white underline" href="#">Unsubscribe</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

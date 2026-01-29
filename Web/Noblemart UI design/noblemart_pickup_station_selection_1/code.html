@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Pickup Station Selection</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb", // Robin Egg Blue
+                        "federal-blue": "#020249",
+                        "background-light": "#f8fcfc",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-federal-blue dark:text-white antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-slate-200 bg-white dark:bg-background-dark px-6 py-3 lg:px-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-federal-blue dark:text-white text-xl font-bold leading-tight font-poppins">NobleMart</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Shop</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Categories</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Deals</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Orders</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="hidden lg:block w-full max-w-xs">
+<label class="relative flex items-center h-10">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="w-full h-full pl-10 pr-4 rounded-lg border border-slate-200 bg-slate-50 dark:bg-slate-800 dark:border-slate-700 text-sm focus:ring-primary focus:border-primary" placeholder="Search products..."/>
+</label>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuWUB4lqlF0e_khWIlVt6mn5XOVjMepfQT5_R6sA4lSrH8ezP4g94Gbgh0Dpwsedb4KXlTMuNRodR73iVXfHDLsguKck_TaBlR7QkllvgyNrZ87ImRBW27wB1tY9MyofB5I6QmxrFWYDIFmI3Sc_D4gs7KZ2fN7i9EtUgmcwMFYBi2bAlVoMTSx1ZFFA1lrQbTVjIFqtrvA-0Il9MGFPnyhGH5gDqjG-JTKmzXY2IU8zlubVjVPltLKEgT_Lpc-Lexy_teUX6ul7s");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col">
+<!-- Breadcrumbs & Heading -->
+<div class="bg-white dark:bg-background-dark border-b border-slate-100 dark:border-slate-800 px-6 lg:px-20 py-6">
+<div class="flex flex-wrap gap-2 text-sm font-medium text-primary mb-4">
+<a class="hover:underline" href="#">Delivery Method</a>
+<span>/</span>
+<span class="text-federal-blue dark:text-slate-400">Select Pickup Station</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h1 class="text-federal-blue dark:text-white text-3xl lg:text-4xl font-poppins font-bold tracking-tight mb-2">Select a Pickup Station</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">Find the nearest NobleMart hub in your city for faster and cheaper collection.</p>
+</div>
+<div class="w-full md:w-96">
+<label class="relative flex items-center h-12">
+<span class="material-symbols-outlined absolute left-4 text-primary">location_on</span>
+<input class="w-full h-full pl-12 pr-4 rounded-xl border-none bg-primary/10 dark:bg-primary/20 text-federal-blue dark:text-white placeholder:text-primary/60 font-medium focus:ring-2 focus:ring-primary transition-all" placeholder="Area, City or Zip Code" value="Lagos, Nigeria"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Split View -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Pane: List of Stations -->
+<div class="w-full md:w-[450px] lg:w-[500px] flex flex-col bg-white dark:bg-background-dark border-r border-slate-100 dark:border-slate-800">
+<div class="p-4 border-b border-slate-50 dark:border-slate-800">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Available Stations in Lagos (4)</p>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Station Card 1 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-800 border-2 border-primary rounded-xl overflow-hidden shadow-sm transition-all">
+<div class="absolute top-3 right-3 z-10">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Selected</span>
+</div>
+<div class="flex h-32 w-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="NobleMart Ikeja Hub storefront" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaIuZhFy0HVYn6tIv8YV_mruIn5EKM-P9h6BboUlPN88NDE9fA0xw0Yr1xJd2eOGOoralEXAurkqVC0mGI4eM6JkHOJbOrBvEYVpC1zg08dOVMKRirWropyleaZ4qzOVMOHxZllJ1t1zv-UU7CHgwGYTEOB-GqmwDxnep-M2iro2KOBiTIeKldtHuK1VIFoIwUN6jSVGNh4wWDFA8q5XisWtWPxJ0siPsS2V81I9N9QLaVgomAfeYabkixDe9Rwxw2-ZZRTESpFls');"></div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="text-federal-blue dark:text-white font-bold text-lg">Lagos - Ikeja Hub</h3>
+<div class="flex items-start gap-2 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base mt-0.5 text-primary">pin_drop</span>
+<p>12 Allen Avenue, Ikeja, Lagos State, Nigeria</p>
+</div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-primary">schedule</span>
+<p>Open: 08:00 AM - 06:00 PM (Mon-Sat)</p>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-xs font-semibold text-emerald-500 flex items-center gap-1">
+<span class="size-2 rounded-full bg-emerald-500"></span> Open Now
+                                </span>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-6 rounded-lg text-sm transition-colors">Select this Station</button>
+</div>
+</div>
+</div>
+<!-- Station Card 2 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm hover:border-primary/50 transition-all">
+<div class="flex h-32 w-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="NobleMart Lekki Phase 1 Hub" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCi7f9CVvsrLV0MwD-I3s9IXuvbDDJqamD5yvUpvZhEI1YrUW3mr39idYvWld7VlJEGy45qGg1Tt5rr4V4LuGHql_abw07Y1zAKun7AIRrIyIa7awyKj6lra1ytDImquSmnySCVSJOJtNWky0ZmQq2oDLc411o-r3yt7x6jQEkDzrR5z0sTPumsBcx9Dj-tlU_SWFFNIAhiFb5p7-uQkQfSjH48aD4n2S2m62zH_qVJ1DZrneeF62OLyQ2Okt7rQOpikHux-UC8xeg');"></div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="text-federal-blue dark:text-white font-bold text-lg">Lekki Phase 1 Hub</h3>
+<div class="flex items-start gap-2 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base mt-0.5 text-slate-400">pin_drop</span>
+<p>Plot 4, Admiralty Way, Lekki Phase 1, Lagos</p>
+</div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-slate-400">schedule</span>
+<p>Open: 09:00 AM - 07:00 PM (Mon-Sat)</p>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-xs font-semibold text-emerald-500 flex items-center gap-1">
+<span class="size-2 rounded-full bg-emerald-500"></span> Open Now
+                                </span>
+<button class="border border-primary text-primary hover:bg-primary hover:text-white font-bold py-2 px-6 rounded-lg text-sm transition-all">Select this Station</button>
+</div>
+</div>
+</div>
+<!-- Station Card 3 -->
+<div class="group relative flex flex-col bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm hover:border-primary/50 transition-all">
+<div class="flex h-32 w-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="NobleMart Surulere Station" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh4yrkW2_rH9bsbhjR_dt80smMHZdkp3aKXJf1tQRDvCcbh97SyTp528Ce3PldX7QZs2w_UiTPo7VJDHbtG6nbmnfXQ6knOQT8Ihe1IQ6WPy8uGI9Gft2CUhrx31yOBGWjSrqr6c6OgFlQzWBedSLHLfs3dP65qLRADA1bHrrM0PFNBS3PUA9GaMclFMPLxjnEwcu1Ljka3ELbDgHCLlB9qNdq5fKvChzPWVn83man4MxOcx99dvwdCSwEX9P8deWSlV5YHmHLeMM');"></div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="text-federal-blue dark:text-white font-bold text-lg">Surulere Collection Point</h3>
+<div class="flex items-start gap-2 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base mt-0.5 text-slate-400">pin_drop</span>
+<p>22 Ojuelegba Road, Surulere, Lagos</p>
+</div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-slate-400">schedule</span>
+<p>Open: 08:30 AM - 05:30 PM (Mon-Sat)</p>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-xs font-semibold text-emerald-500 flex items-center gap-1">
+<span class="size-2 rounded-full bg-emerald-500"></span> Open Now
+                                </span>
+<button class="border border-primary text-primary hover:bg-primary hover:text-white font-bold py-2 px-6 rounded-lg text-sm transition-all">Select this Station</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Pane -->
+<div class="p-6 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<a class="text-slate-500 hover:text-federal-blue dark:text-slate-400 dark:hover:text-white text-sm font-bold flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-lg">arrow_back</span> Back
+                    </a>
+<button class="bg-federal-blue dark:bg-primary text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-federal-blue/20 hover:scale-[1.02] transition-transform">
+                        Confirm Selection
+                    </button>
+</div>
+</div>
+<!-- Right Pane: Map Interface -->
+<div class="hidden md:block flex-1 relative bg-slate-100 dark:bg-slate-900 overflow-hidden">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="High quality digital map of Lagos" data-location="Lagos, Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1tjdwoV9wpVihu2D6I8_xqeTRV8jtNInJ27hsUcljd1sh1GnKrx9DVdKppFe2wl0x_QvoHcfEwmFPEE158p65b0n0ksBX8FEQN8yiubzdSnBU7vnvBOki5JRLUyoYiO8z3BNjo6uKEufp3FK0JpEPKuftER3D429cZ9j5gULXS1z6cZ6CMU4qeht6Wy4Z5Ml4LaHFoPb1E2PzqAesTeyPOndve-IaFFeVMqAAQ9XQxbfyaxrw99SJ8qEvX9wPmvpAEHJtM8Tel50');">
+<!-- Overlay to make map look digital/branded -->
+<div class="absolute inset-0 bg-federal-blue/10 pointer-events-none"></div>
+</div>
+<!-- Map UI Controls -->
+<div class="absolute top-6 right-6 flex flex-col gap-2">
+<button class="size-10 bg-white dark:bg-slate-800 shadow-md rounded-lg flex items-center justify-center text-federal-blue dark:text-white hover:bg-slate-50">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="size-10 bg-white dark:bg-slate-800 shadow-md rounded-lg flex items-center justify-center text-federal-blue dark:text-white hover:bg-slate-50">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="size-10 bg-white dark:bg-slate-800 shadow-md rounded-lg flex items-center justify-center text-primary hover:bg-slate-50">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Map Pins -->
+<!-- Pin 1 (Active) -->
+<div class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2">
+<div class="relative flex flex-col items-center">
+<div class="bg-primary text-white px-3 py-1.5 rounded-lg text-xs font-bold mb-1 shadow-lg whitespace-nowrap">Ikeja Hub (Selected)</div>
+<div class="size-8 bg-primary rounded-full border-4 border-white shadow-xl flex items-center justify-center animate-pulse">
+<div class="size-2 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Pin 2 -->
+<div class="absolute top-2/3 right-1/4 translate-x-1/2">
+<div class="group cursor-pointer">
+<div class="size-6 bg-federal-blue rounded-full border-2 border-white shadow-lg flex items-center justify-center hover:scale-125 transition-transform">
+<div class="size-1.5 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Pin 3 -->
+<div class="absolute bottom-1/4 left-1/2">
+<div class="group cursor-pointer">
+<div class="size-6 bg-federal-blue rounded-full border-2 border-white shadow-lg flex items-center justify-center hover:scale-125 transition-transform">
+<div class="size-1.5 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Staff Support Visual -->
+<div class="absolute bottom-6 right-6 max-w-xs bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-2xl flex items-center gap-4">
+<div class="size-16 rounded-xl bg-cover bg-center shrink-0" data-alt="Dark-skinned NobleMart staff member smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO7btGRPUARMLFzIO7PgQSe74zDzPTZ41n_Xb06cZh1Uaim5CW5PHzfS66KLXxl-_habmPFYwhJa8hV88TgspmBCWj0ny5hWQwvjRBZApsTBzJQZwPoYGKC645zpIghLwUByju30J4_CeV0k5Mg_wTuEL0qQybfv2VkuriKuM-VYuh2f5hLwvRxPMGyujuHVox2uJb_ZY-qqnxFbyvvw9K_tPBx5xxpLMnS8PnNivizyY5g2q8xyxIAr68WNDyNwZuvdWabdnc3EA');"></div>
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-wider">Customer Support</p>
+<p class="text-sm font-bold text-federal-blue dark:text-white leading-tight">Our staff is ready to assist with your pickup.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

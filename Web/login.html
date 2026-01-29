@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | NobleMart</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "federal-blue": "#020249",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-[#f5f8f8] font-display text-[#0c1c1d]">
+    <div class="flex h-screen w-full overflow-hidden">
+        <!-- Left Side: Visuals -->
+        <div class="hidden lg:flex lg:w-1/2 relative">
+            <div class="absolute inset-0 bg-primary/20 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070&auto=format&fit=crop"
+                class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute bottom-12 left-12 z-20 text-white max-w-md">
+                <h1 class="text-5xl font-black leading-tight mb-4 italic">Discover <span
+                        class="text-primary">Quality</span> With NobleMart</h1>
+                <p class="text-lg font-bold opacity-90 uppercase tracking-[0.1em]">Nigeria's #1 Multi-Vendor Hub</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center items-center px-8 md:px-20 bg-white">
+            <div class="w-full max-w-[440px]">
+                <div class="flex items-center gap-3 mb-12 cursor-pointer" onclick="window.location.href='/'">
+                    <div
+                        class="size-10 brand-gradient rounded-full flex items-center justify-center text-white shadow-lg">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                    </div>
+                    <h2 class="text-2xl font-black tracking-tight">NobleMart</h2>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="text-4xl font-black italic tracking-tight">Welcome <span class="text-primary">Back</span>
+                    </h2>
+                    <p class="text-gray-400 font-bold uppercase tracking-widest text-[10px] mt-2">Manage your premium
+                        account</p>
+                </div>
+
+                <form id="login-form" class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black text-gray-300 uppercase tracking-widest">Email
+                            Address</label>
+                        <input id="email" required
+                            class="w-full bg-gray-50 border-none rounded-2xl text-xs font-bold px-5 py-4 focus:ring-1 focus:ring-primary"
+                            placeholder="name@example.com" type="email" />
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label
+                                class="text-[10px] font-black text-gray-300 uppercase tracking-widest">Password</label>
+                            <a class="text-[10px] font-black text-primary uppercase tracking-widest hover:underline"
+                                href="#">Forgot?</a>
+                        </div>
+                        <div class="relative">
+                            <input id="password" required
+                                class="w-full bg-gray-50 border-none rounded-2xl text-xs font-bold px-5 py-4 focus:ring-1 focus:ring-primary"
+                                placeholder="••••••••" type="password" />
+                            <button type="button"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-primary hover:bg-opacity-90 text-white py-5 rounded-2xl font-black text-xs tracking-[0.2em] shadow-xl shadow-primary/20 transition-all uppercase">
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="mt-8 text-center">
+                    <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest">
+                        New to NobleMart?
+                        <a class="text-primary hover:underline ml-1" href="/register.html">Create Account</a>
+                    </p>
+                </div>
+
+                <div class="relative my-10">
+                    <div class="absolute inset-0 flex items-center"><span class="w-full border-t border-gray-50"></span>
+                    </div>
+                    <div
+                        class="relative flex justify-center text-[8px] font-black uppercase tracking-[0.3em] text-gray-300">
+                        <span class="bg-white px-4">Social Access</span></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <button
+                        class="flex items-center justify-center gap-3 h-14 border border-gray-50 rounded-2xl hover:bg-gray-50 transition-all text-[10px] font-black uppercase tracking-widest">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="size-4">
+                        Google
+                    </button>
+                    <button
+                        class="flex items-center justify-center gap-3 h-14 border border-gray-50 rounded-2xl hover:bg-gray-50 transition-all text-[10px] font-black uppercase tracking-widest">
+                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="size-4">
+                        Facebook
+                    </button>
+                </div>
+            </div>
+
+            <p class="mt-auto py-8 text-[8px] font-black text-gray-300 uppercase tracking-[0.2em]">
+                © 2024 NobleMart Technologies. Secure Ecosystem.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').onsubmit = async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            btn.disabled = true;
+            btn.innerHTML = 'Verifying...';
+
+            try {
+                const res = await fetch('https://api.noblemart.com.ng/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    window.location.href = data.user.role === 'vendor' ? '/seller' : '/customer';
+                } else {
+                    alert(data.message || 'Login failed');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Connection error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Sign In';
+            }
+        };
+    </script>
+</body>
+
+</html>

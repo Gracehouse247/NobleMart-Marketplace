@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Account Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "secondary-indigo": "#5C1BE8",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                        "noble-gold": "#D4AF37",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .prime-badge-gradient {
+            background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            background-size: 200% 200%;
+        }
+        .metallic-sheen {
+            position: relative;
+            overflow: hidden;
+        }
+        .metallic-sheen::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.4) 50%, transparent 55%);
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101818] dark:text-white">
+<div class="flex min-h-screen">
+<aside class="w-72 bg-white dark:bg-zinc-900 border-r border-[#dae6e7] dark:border-zinc-800 flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3">
+<div class="h-10 w-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">NobleMart</h1>
+<p class="text-xs text-[#5e8b8d] dark:text-zinc-400">Premium Shopping</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-bold" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="text-sm">My Account</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5e8b8d] dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+<span class="text-sm">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5e8b8d] dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">inbox</span>
+<span class="text-sm">Inbox</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5e8b8d] dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">star_rate</span>
+<span class="text-sm">Ratings &amp; Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5e8b8d] dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+<span class="text-sm">Voucher</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5e8b8d] dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="text-sm">Saved Items</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#5e8b8d] dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm">Account Management</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#dae6e7] dark:border-zinc-800">
+<button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-500 hover:bg-red-50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</button>
+</div>
+</aside>
+<main class="ml-72 flex-1 pb-12">
+<div class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-8 py-4">
+<div class="flex flex-wrap gap-2 text-sm mb-2">
+<a class="text-[#5e8b8d] dark:text-zinc-400 font-medium hover:text-primary" href="#">Home</a>
+<span class="text-[#5e8b8d] dark:text-zinc-400">/</span>
+<span class="text-[#101818] dark:text-zinc-100 font-medium">My Account</span>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h1 class="text-[#101818] dark:text-white tracking-tight text-3xl font-extrabold font-poppins">Hello, Chidi Okoro</h1>
+</div>
+<div class="flex flex-col items-end">
+<div class="prime-badge-gradient metallic-sheen flex items-center gap-1.5 px-4 py-1.5 rounded-full shadow-md border border-white/20">
+<span class="material-symbols-outlined text-black text-[18px] !font-bold" style="font-variation-settings: 'FILL' 1;">crown</span>
+<span class="text-[13px] font-bold text-black font-poppins uppercase tracking-wider">NobleMart Prime</span>
+</div>
+<span class="text-[10px] text-[#5e8b8d] dark:text-zinc-400 font-poppins font-light mt-1 mr-2 uppercase tracking-widest">Since 2021</span>
+</div>
+</div>
+</div>
+<div class="px-8 mt-4 max-w-[1200px]">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="flex flex-col justify-between gap-3 rounded-xl border-none bg-primary p-5 text-white shadow-lg shadow-primary/20">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+<span class="material-symbols-outlined text-lg cursor-pointer opacity-80 hover:opacity-100">visibility</span>
+</div>
+<div class="flex flex-col">
+<h2 class="text-xs font-medium uppercase tracking-wider opacity-90">Wallet Balance</h2>
+<p class="text-2xl font-bold leading-tight">₦24,500.00</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dae6e7] dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
+<div class="h-10 w-10 bg-background-light dark:bg-zinc-800 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<h2 class="text-sm font-bold">Recent Orders</h2>
+<p class="text-[#5e8b8d] dark:text-zinc-400 text-xs">In Transit (1 package)</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dae6e7] dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
+<div class="h-10 w-10 bg-background-light dark:bg-zinc-800 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div class="flex flex-col">
+<h2 class="text-sm font-bold">Saved Items</h2>
+<p class="text-[#5e8b8d] dark:text-zinc-400 text-xs">12 items in your list</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dae6e7] dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5">
+<div class="h-10 w-10 bg-background-light dark:bg-zinc-800 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<h2 class="text-sm font-bold">Default Address</h2>
+<p class="text-[#5e8b8d] dark:text-zinc-400 text-xs truncate">123 Victoria Island, Lagos</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<div class="flex items-center justify-between mb-4 px-1">
+<h2 class="text-xl font-bold">Recent Activity</h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+</div>
+<div class="bg-white dark:bg-zinc-900 rounded-xl border border-[#dae6e7] dark:border-zinc-800 overflow-hidden">
+<div class="divide-y divide-[#dae6e7] dark:divide-zinc-800">
+<div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors">
+<div class="h-16 w-16 rounded-lg bg-gray-100 dark:bg-zinc-700 bg-center bg-cover flex-shrink-0" data-alt="Photo-realistic bright red athletic running shoes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAH6VyQXsYJKWNUt-D9qr-tcolSinJ98vd7lHROuw2HWZBK6Er8JOe4q6EkPxLXVgQS1ATHUDTki2KYGeS25pU8rJlUr9yNktkR9SPSC4TQuEvC1u_hblzDJgTvD-TLRT93KhDnkdO7oRYjs4czjzCZGoDMk-mbsDkmRmFzabNu4-n-4g6GOIRs_V4YMysK1o7CNG7zduhNQkccZyAO3j7TNSHnxkSTWyDVqVq1AGySk9NUuOFusGSSjQ7GNhIz4zRIJ5HgwxF6r0A");'></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-sm">UltraBoost 22 Running Shoes</h3>
+<p class="text-xs text-[#5e8b8d] dark:text-zinc-400 mt-1">Order #NM-92834 • Oct 24, 2023</p>
+</div>
+<span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 text-[10px] font-bold uppercase rounded">Shipped</span>
+</div>
+</div>
+<div class="flex-shrink-0">
+<a class="text-secondary-indigo font-bold text-sm hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors">
+<div class="h-16 w-16 rounded-lg bg-gray-100 dark:bg-zinc-700 bg-center bg-cover flex-shrink-0" data-alt="Sleek black high-quality wireless headphones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuCdlswnGCj0Zh3dOlV5H74ZBq0NlIz7IV9lmdSUjphnuGV31yn4MWpxWBcKBvYxnb8aIvDGEtG8b2ObTRIF1m5jHkJRGBoMFA7svZ_ckBlhqhj5D9tUc928JOFOR5nqXYfXiB4hcY8orggeoooaQ7Q1IdHB_Vfz0njO299FHr-qlVpSGCGglsqY7Xva7P0Rw68Tix-xnj4zPncC2BX_5sMv7MWeTE0VkG8fNoAEJrlb6B5M6F1D-osgj-GPs7q1xavYY2_3GNNzQ");'></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-sm">Noise Cancelling Wireless Headphones</h3>
+<p class="text-xs text-[#5e8b8d] dark:text-zinc-400 mt-1">Order #NM-92712 • Oct 20, 2023</p>
+</div>
+<span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase rounded">Delivered</span>
+</div>
+</div>
+<div class="flex-shrink-0">
+<a class="text-secondary-indigo font-bold text-sm hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="p-4 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors">
+<div class="h-16 w-16 rounded-lg bg-gray-100 dark:bg-zinc-700 bg-center bg-cover flex-shrink-0" data-alt="Minimalist white professional analog wristwatch" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQakC_7mCp9zaD6HRubtMlyhBbibVT-95OCvQ9o4mzxGF7WoN9jo95_m1_IUo4MekViFHFz6x6qHvUVQ_uBvTAcmbX_EJpEjpKD16PN-HQ6NtjQzR8w5QeCTYotdIMmHp2HCB-dClk2V7Wh7jfyubEbq3jgVy4bDruJwJbVZfSj3Cj1Iy6arC2bfeMAtRlTmmnVJu5zx1tvPcTH9amGyOyUStmrfZ01Zf-bzPH-3z1PUOTRL-ThS_dmOwYwmqZxycVV_ThHjA91GE");'></div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-sm">Minimalist Classic Wristwatch</h3>
+<p class="text-xs text-[#5e8b8d] dark:text-zinc-400 mt-1">Order #NM-92605 • Oct 15, 2023</p>
+</div>
+<span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase rounded">Delivered</span>
+</div>
+</div>
+<div class="flex-shrink-0">
+<a class="text-secondary-indigo font-bold text-sm hover:underline" href="#">View Details</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="flex items-center justify-between mb-4 px-1">
+<h2 class="text-xl font-bold">Personal Details</h2>
+</div>
+<div class="bg-white dark:bg-zinc-900 rounded-xl border border-[#dae6e7] dark:border-zinc-800 p-6 flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="h-14 w-14 rounded-full bg-primary/20 flex items-center justify-center text-primary relative">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+<div class="absolute -bottom-1 -right-1 h-6 w-6 prime-badge-gradient rounded-full border-2 border-white dark:border-zinc-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-[12px] !font-bold" style="font-variation-settings: 'FILL' 1;">crown</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-base">Chidi Okoro</h3>
+<p class="text-xs text-noble-gold font-bold">Prime Member</p>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-[#5e8b8d] dark:text-zinc-400 uppercase tracking-wider mb-1">Email Address</label>
+<p class="text-sm font-medium">chidi.okoro@example.ng</p>
+</div>
+<div>
+<label class="block text-xs font-bold text-[#5e8b8d] dark:text-zinc-400 uppercase tracking-wider mb-1">Phone Number</label>
+<p class="text-sm font-medium">+234 803 123 4567</p>
+</div>
+<div>
+<label class="block text-xs font-bold text-[#5e8b8d] dark:text-zinc-400 uppercase tracking-wider mb-1">Newsletter</label>
+<p class="text-sm font-medium">Subscribed</p>
+</div>
+</div>
+<button class="w-full mt-2 py-2.5 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-sm">
+                            Edit Profile
+                        </button>
+</div>
+<div class="mt-6 rounded-xl overflow-hidden bg-zinc-900 relative aspect-video group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="Luxury shopping bags with professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtTbeT8i7JTu8fmDVmJ0BxaG4N64OwcSljq5lq3eUXW19pxZtppeOISweSJJaV3_1BmzY1g8TRtAB-9W9yvCfRZCBD9ZHrx7HxX_wXcMzxEmRqN5J1hbuOnHXN8nXL3mef71hCTzPnmzsExw_63PS4cWynWTKn5vyDL-7js2bY9vjILf4nitbCACclws7YKXe4YXTc7WwHHKXL1ELNNJxRG-zW8JXvRteQUji9-iD4cO6C8zzupBRyC92ahksbJVWAaW3P__uLYAY"/>
+<div class="absolute bottom-4 left-4 z-20">
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest">Limited Offer</p>
+<h4 class="text-white font-bold text-lg">Black Friday is Here</h4>
+<p class="text-white/70 text-xs">Up to 70% off selected items</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

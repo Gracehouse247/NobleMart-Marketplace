@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Badge System</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#5c1ce9",
+              "background-light": "#f6f6f8",
+              "background-dark": "#161121",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .badge-card:hover .badge-overlay {
+            opacity: 1;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+        }
+        .blue-gradient {
+            background: linear-gradient(135deg, #00D2FF 0%, #3a7bd5 100%);
+        }
+        .indigo-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #5c1ce9 100%);
+        }
+        .navy-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] font-display">NobleMart</h2>
+</div>
+<div class="flex items-center gap-9">
+<a class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Badges</a>
+<a class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Settings</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-gray-100 dark:bg-gray-800">
+<div class="text-gray-500 flex border-none items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-500 px-4 text-base font-normal leading-normal" placeholder="Search rewards..."/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Vendor profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCk8vd-dtVW4ZNbUKnPb5J94TmvRRB_hbjY6bifvnjmwkGNHRC9UTDpf0ZBOAROXteSbEUpt5bX4rk5Q352pr_l3LRqU-pqZy8JfBDNSE3Fca2V05kVQBzCtLbNEjaVllIEi7H7nfd7XLmvJzEy9jfteHCsNHdL8NovBbYfI9mbSa1lC8-izaDdBwjszsK1gH4XGGV1WuX1azkhy4oipKaXlumrvsoCO89AIOfrJGdck-S-Krsb3EyyxwJs67OU171TzolDScIdxQ0");'></div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-10 px-4">
+<div class="max-w-[1024px] w-full flex flex-col gap-10">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-6 px-4">
+<div class="flex flex-col gap-3 max-w-2xl">
+<p class="text-gray-900 dark:text-white text-5xl font-black leading-tight tracking-[-0.033em] font-display">NobleMart Vendor Badge &amp; Recognition</p>
+<p class="text-gray-600 dark:text-gray-400 text-lg font-normal leading-normal">Earn prestigious badges to build customer trust, boost search visibility, and unlock exclusive marketplace perks.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-sm font-bold leading-normal transition-all hover:bg-opacity-90 shadow-lg shadow-primary/20">
+                            View My Progress
+                        </button>
+</div>
+</div>
+<!-- Section Header -->
+<div>
+<h2 class="text-gray-900 dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">workspace_premium</span>
+                        The NobleMart Badge Showcase
+                    </h2>
+<!-- Badge Grid with Hover Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+<!-- Badge 1: NobleShield Elite -->
+<div class="badge-card group relative flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="size-20 rounded-full gold-gradient flex items-center justify-center shadow-lg shadow-yellow-500/20 mx-auto">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1">shield</span>
+</div>
+<div class="text-center">
+<p class="text-gray-900 dark:text-white text-lg font-bold font-display">NobleShield Elite</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">98%+ Fulfillment Rate</p>
+</div>
+<!-- Hover Tooltip -->
+<div class="badge-overlay opacity-0 pointer-events-none absolute inset-0 bg-gray-900/95 rounded-xl p-6 transition-opacity duration-300 flex flex-col justify-center text-white z-10">
+<p class="text-primary font-bold text-sm mb-2">HOW TO EARN</p>
+<p class="text-xs mb-4">Maintain 4.8+ rating and &gt;98% fulfillment for 30 consecutive days.</p>
+<p class="text-primary font-bold text-sm mb-2">PERKS</p>
+<ul class="text-xs space-y-1">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> 2% Commission Discount</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> Priority Search Boost</li>
+</ul>
+</div>
+</div>
+<!-- Badge 2: Speed Master -->
+<div class="badge-card group relative flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="size-20 rounded-full blue-gradient flex items-center justify-center shadow-lg shadow-blue-500/20 mx-auto">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1">bolt</span>
+</div>
+<div class="text-center">
+<p class="text-gray-900 dark:text-white text-lg font-bold font-display">Speed Master</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Under 12hr Shipping</p>
+</div>
+<div class="badge-overlay opacity-0 pointer-events-none absolute inset-0 bg-gray-900/95 rounded-xl p-6 transition-opacity duration-300 flex flex-col justify-center text-white z-10">
+<p class="text-blue-400 font-bold text-sm mb-2">HOW TO EARN</p>
+<p class="text-xs mb-4">Process and ship 95% of orders within 12 hours of payment.</p>
+<p class="text-blue-400 font-bold text-sm mb-2">PERKS</p>
+<ul class="text-xs space-y-1">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> 'Fast Shipping' Tag</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> 24/7 Support Access</li>
+</ul>
+</div>
+</div>
+<!-- Badge 3: Customer Favorite -->
+<div class="badge-card group relative flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="size-20 rounded-full indigo-gradient flex items-center justify-center shadow-lg shadow-indigo-500/20 mx-auto">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1">favorite</span>
+</div>
+<div class="text-center">
+<p class="text-gray-900 dark:text-white text-lg font-bold font-display">Customer Favorite</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Top-Rated Service</p>
+</div>
+<div class="badge-overlay opacity-0 pointer-events-none absolute inset-0 bg-gray-900/95 rounded-xl p-6 transition-opacity duration-300 flex flex-col justify-center text-white z-10">
+<p class="text-indigo-400 font-bold text-sm mb-2">HOW TO EARN</p>
+<p class="text-xs mb-4">Receive 50+ 5-star reviews with &lt;1hr response time.</p>
+<p class="text-indigo-400 font-bold text-sm mb-2">PERKS</p>
+<ul class="text-xs space-y-1">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> Homepage Placement</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> Featured Storefront</li>
+</ul>
+</div>
+</div>
+<!-- Badge 4: Authentic Pro -->
+<div class="badge-card group relative flex flex-col gap-4 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="size-20 rounded-full navy-gradient flex items-center justify-center shadow-lg shadow-blue-900/20 mx-auto">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1">verified</span>
+</div>
+<div class="text-center">
+<p class="text-gray-900 dark:text-white text-lg font-bold font-display">Authentic Pro</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">100% Genuine Products</p>
+</div>
+<div class="badge-overlay opacity-0 pointer-events-none absolute inset-0 bg-gray-900/95 rounded-xl p-6 transition-opacity duration-300 flex flex-col justify-center text-white z-10">
+<p class="text-blue-300 font-bold text-sm mb-2">HOW TO EARN</p>
+<p class="text-xs mb-4">Complete platform verification for all inventory categories.</p>
+<p class="text-blue-300 font-bold text-sm mb-2">PERKS</p>
+<ul class="text-xs space-y-1">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> Trust Guarantee Icon</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px]">check_circle</span> Zero Fraud Claims</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Profile Preview -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+<div class="flex flex-col gap-6">
+<h2 class="text-gray-900 dark:text-white text-2xl font-bold font-display flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+                            Live Profile Preview
+                        </h2>
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-xl flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-gray-50 dark:border-gray-700 pb-4">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="font-bold text-gray-900 dark:text-white text-lg">NobleMart Marketplace</span>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="size-20 rounded-xl bg-gray-200 dark:bg-gray-700" data-alt="Vendor store logo placeholder"></div>
+<div class="flex-1 flex flex-col gap-2">
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Elite Electronics Co.</h3>
+<div class="flex items-center gap-1 text-yellow-500">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1">star_half</span>
+<span class="text-gray-500 text-sm ml-2 font-medium">(1,240 Reviews)</span>
+</div>
+<!-- Badges in Preview -->
+<div class="flex gap-2 mt-2">
+<div class="h-7 px-3 rounded-full gold-gradient flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-white text-[14px]" style="font-variation-settings: 'FILL' 1">shield</span>
+<span class="text-white text-[10px] font-bold uppercase tracking-wider">Elite</span>
+</div>
+<div class="h-7 px-3 rounded-full blue-gradient flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-white text-[14px]" style="font-variation-settings: 'FILL' 1">bolt</span>
+<span class="text-white text-[10px] font-bold uppercase tracking-wider">Fast</span>
+</div>
+<div class="h-7 px-3 rounded-full navy-gradient flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-white text-[14px]" style="font-variation-settings: 'FILL' 1">verified</span>
+<span class="text-white text-[10px] font-bold uppercase tracking-wider">Pro</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Integration Section -->
+<div class="flex flex-col gap-6">
+<h2 class="text-gray-900 dark:text-white text-2xl font-bold font-display flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                            Why Badges Matter
+                        </h2>
+<div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/10 flex flex-col gap-6 h-full">
+<div class="flex flex-col gap-2">
+<p class="text-gray-900 dark:text-white font-bold text-lg">NobleShield Trust Score</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm">Badges directly contribute to your platform-wide trust score. A higher score unlocks lower insurance premiums and priority payouts.</p>
+</div>
+<div class="flex flex-col gap-4 mt-auto">
+<div class="w-full bg-gray-200 dark:bg-gray-700 h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%] rounded-full relative">
+<div class="absolute right-0 -top-1 size-5 bg-white border-2 border-primary rounded-full shadow-md"></div>
+</div>
+</div>
+<div class="flex justify-between text-xs font-bold text-gray-500">
+<span>STABLE</span>
+<span class="text-primary text-sm">850 - EXCELLENT</span>
+<span>TOP 5%</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<div class="flex flex-col">
+<span class="text-gray-900 dark:text-white font-bold text-sm">3.4x</span>
+<span class="text-gray-500 text-[10px] uppercase font-bold">Conv. Rate</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</div>
+<div class="flex flex-col">
+<span class="text-gray-900 dark:text-white font-bold text-sm">+25%</span>
+<span class="text-gray-500 text-[10px] uppercase font-bold">Store Views</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<div class="px-4 pt-10 pb-20 border-t border-gray-100 dark:border-gray-800 mt-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-4 opacity-50">
+<div class="size-4 text-gray-500">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
+</svg>
+</div>
+<p class="text-gray-500 text-sm font-medium">© 2024 NobleMart Vendor Portal. All verification badges are dynamic and recalculated daily.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-gray-500 text-sm hover:text-primary underline" href="#">Rules &amp; Regulations</a>
+<a class="text-gray-500 text-sm hover:text-primary underline" href="#">Help Center</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

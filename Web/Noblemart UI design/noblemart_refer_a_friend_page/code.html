@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Refer a Friend</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "accent": "#01C2CA",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "brand": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#120e1b] dark:text-white">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#ebe7f3] dark:border-b-[#2d263d] bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#120e1b] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] font-brand">NobleMart</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden md:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#654d99] flex border-none bg-[#ebe7f3] dark:bg-[#2d263d] items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#ebe7f3] dark:bg-[#2d263d] h-full placeholder:text-[#654d99] px-4 rounded-l-none text-base font-normal dark:text-white" placeholder="Search products..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Sell</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Help</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex min-w-[100px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold">
+                    My Account
+                </button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#ebe7f3] dark:bg-[#2d263d] text-[#120e1b] dark:text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1100px] mx-auto px-4 py-8">
+<!-- Hero Section -->
+<section class="hero-gradient rounded-xl overflow-hidden mb-12 shadow-xl">
+<div class="flex flex-col @[864px]:flex-row items-center gap-8 p-8 md:p-12 lg:p-16">
+<div class="flex flex-col gap-6 flex-1 text-white">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight font-brand">
+                        Invite Friends, Earn Rewards Together!
+                    </h1>
+<p class="text-lg md:text-xl font-medium opacity-90 leading-relaxed">
+                        Give your friends <span class="font-bold underline">₦1,000 off</span> their first order and get <span class="font-bold underline">₦1,000 for yourself</span> when they shop!
+                    </p>
+<div class="mt-4">
+<button class="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg flex items-center gap-2">
+                            Share Now <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<div class="w-full @[864px]:w-1/2 flex justify-center">
+<div class="w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl bg-center bg-cover" data-alt="Two dark-skinned friends laughing while looking at a smartphone" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdyjjFU3IRrfqFZYCub6qYYK34vOKp7VEHxn2pchkj7AvKXnK5WngSyEdTlIOLBO0h3Yh936jtNN-Kk5ajcP0NWTY22ATSNLR1Hn5cHE_b1oH1ZZGuPed36bqUDvJNeOAs7y87-N0w4VFZyaWKosPKsgVCtk5RQ224bYLfRbCT0RY-K8pVDhA8ENe3QVwbIkMJsyCfo9HZV7WGHmHIEonQwlhyCaou8srSwo5hHLUxAHzmJOmbZ3KOQRhlab4ypaSZPakYTJJOk-4");'>
+</div>
+</div>
+</div>
+</section>
+<!-- Referral Link & Social Sharing -->
+<section class="max-w-[800px] mx-auto mb-16">
+<div class="bg-white dark:bg-background-dark p-8 rounded-xl shadow-sm border border-[#ebe7f3] dark:border-[#2d263d]">
+<h2 class="text-xl font-bold mb-6 text-center">Your Unique Referral Link</h2>
+<div class="flex flex-col md:flex-row gap-4 mb-8">
+<div class="flex-1 relative">
+<input class="w-full h-14 pl-4 pr-12 rounded-lg border border-[#d7d0e7] dark:border-[#2d263d] bg-[#f9f8fc] dark:bg-[#1a1527] text-primary font-medium" readonly="" value="noblemart.com/ref/user123"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined cursor-pointer">content_copy</span>
+</div>
+</div>
+<button class="h-14 px-8 bg-primary text-white font-bold rounded-lg hover:brightness-110 transition-all whitespace-nowrap">
+                        Copy Link
+                    </button>
+</div>
+<div class="flex flex-col items-center gap-4">
+<p class="text-sm font-semibold text-[#654d99] uppercase tracking-wider">Share via</p>
+<div class="flex gap-6">
+<div class="group cursor-pointer flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#25D366]/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</div>
+<span class="text-xs font-bold">WhatsApp</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2] group-hover:bg-[#1877F2] group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">social_leaderboard</span>
+</div>
+<span class="text-xs font-bold">Facebook</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full bg-[#1DA1F2]/10 flex items-center justify-center text-[#1DA1F2] group-hover:bg-[#1DA1F2] group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">flutter_dash</span>
+</div>
+<span class="text-xs font-bold">Twitter</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Referral Stats Dashboard -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8 text-center font-brand">Your Referral Stats</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#ebe7f3] dark:border-[#2d263d] text-center shadow-sm">
+<p class="text-[#654d99] text-sm font-semibold mb-2">Friends Invited</p>
+<p class="text-4xl font-black text-[#120e1b] dark:text-white">24</p>
+</div>
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#ebe7f3] dark:border-[#2d263d] text-center shadow-sm">
+<p class="text-[#654d99] text-sm font-semibold mb-2">Successful Referrals</p>
+<p class="text-4xl font-black text-accent">12</p>
+</div>
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-primary/30 text-center shadow-md ring-1 ring-primary/10">
+<p class="text-[#654d99] text-sm font-semibold mb-2">Total Earned</p>
+<p class="text-4xl font-black text-primary">₦12,000</p>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="mb-16 py-12 bg-white dark:bg-[#1a1527] rounded-2xl px-8 border border-[#ebe7f3] dark:border-[#2d263d]">
+<h2 class="text-2xl font-bold mb-12 text-center font-brand">How it Works</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6 relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary">forward_to_inbox</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">1</div>
+</div>
+<h3 class="text-lg font-bold mb-3">1. Send Invite</h3>
+<p class="text-[#654d99] dark:text-gray-400 text-sm leading-relaxed">Share your unique referral link with your friends through social media, email or text.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-6 relative z-10">
+<span class="material-symbols-outlined text-4xl text-accent">shopping_bag</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">2</div>
+</div>
+<h3 class="text-lg font-bold mb-3">2. They Shop</h3>
+<p class="text-[#654d99] dark:text-gray-400 text-sm leading-relaxed">When they click your link and make their first purchase of ₦5,000 or more, they get a ₦1,000 discount.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6 relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary">payments</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">3</div>
+</div>
+<h3 class="text-lg font-bold mb-3">3. You Both Get Paid</h3>
+<p class="text-[#654d99] dark:text-gray-400 text-sm leading-relaxed">Once their order is completed, ₦1,000 will be instantly credited to your NobleMart Wallet.</p>
+</div>
+</div>
+</section>
+<!-- Trust Notice -->
+<footer class="text-center max-w-[600px] mx-auto py-8">
+<div class="flex items-center justify-center gap-2 mb-4">
+<div class="text-primary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined">verified_user</span>
+<span>NobleShield Protected</span>
+</div>
+</div>
+<p class="text-sm text-[#654d99] dark:text-gray-400 leading-relaxed">
+                Rewards are instantly credited to your NobleMart Wallet. Covered by NobleShield security. All referrals are subject to our terms of service and fraud prevention policies.
+            </p>
+</footer>
+</main>
+</body></html>

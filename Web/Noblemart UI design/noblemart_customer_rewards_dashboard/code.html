@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Customer Rewards Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#5c1ce9",
+                "accent-blue": "#01C2CA",
+                "background-light": "#f6f6f8",
+                "background-dark": "#161121",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#120e1b] dark:text-white">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-white dark:bg-[#1c162e] border-r border-gray-200 dark:border-gray-800 flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined filled-icon">shopping_bag</span>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tight">NobleMart</h1>
+<p class="text-xs text-primary font-medium">Customer Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-sm font-medium">Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined filled-icon">emoji_events</span>
+<span class="text-sm font-semibold">Rewards &amp; Points</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</nav>
+<div class="p-4 border-t border-gray-100 dark:border-gray-800">
+<a class="flex items-center gap-3 px-3 py-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-72">
+<div class="max-w-5xl mx-auto p-8 space-y-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl font-black leading-tight tracking-tight">Customer Loyalty Rewards</h2>
+<p class="text-gray-500 dark:text-gray-400 text-base">Manage your points and redeem exclusive rewards for your shopping.</p>
+</div>
+<a class="text-primary font-semibold text-sm flex items-center gap-1 hover:underline" href="#">
+                        How to earn more points? <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Loyalty Tier Header Card -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-accent-blue to-primary p-8 shadow-xl shadow-primary/20 min-h-[220px] flex flex-col justify-between">
+<div class="absolute right-0 top-0 h-full w-1/3 bg-cover bg-center opacity-30 mix-blend-overlay" data-alt="Happy customer smiling while using smartphone" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgSPfm5IzpDttZWT9RKS_LVcrapY_VSpvOg1hIcA8XvmM8zUg6bXFPYBpRl7aaASprTvKbpbMGKaBCXr8bUYulHiOm8XwRy8T86wNT0vRuIyhEksYyvUVejHQt9afklBG0WMpbaor9wJ2DKZvsb7pgGto92H2U0o6ylwoqBwkIRFgcejJ0djaeZFiejTyd8FXGufixEEdfPeNo6ecaydhYkK3i4RXO7JHUzlnXlNekkB0Tm42Cg2DHFYabu-VgRwqeo_Xb8pfuXGc");'></div>
+<div class="relative z-10">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm border border-white/30">
+                            Current Status
+                        </span>
+<div class="mt-4 flex items-center gap-4">
+<div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20">
+<span class="material-symbols-outlined text-4xl text-gray-200 filled-icon">monetization_on</span>
+</div>
+<h3 class="text-4xl font-black text-white tracking-tighter">SILVER MEMBER</h3>
+</div>
+</div>
+<div class="relative z-10 flex justify-between items-end">
+<p class="text-white/80 text-sm font-medium">NobleMart VIP Program</p>
+<div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
+<p class="text-white text-xs font-medium opacity-70">Total Earned</p>
+<p class="text-white text-lg font-bold">12,450 pts</p>
+</div>
+</div>
+</div>
+<!-- Points Tracker Section -->
+<div class="bg-white dark:bg-[#1c162e] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Progress to next tier</p>
+<p class="text-xl font-bold text-[#120e1b] dark:text-white">Gold Status</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary">2,450 / 5,000 Points</p>
+</div>
+</div>
+<div class="h-4 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 49%;"></div>
+</div>
+<div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-primary text-lg">info</span>
+<p>Earn <span class="font-bold text-primary">2,550 more points</span> to get free delivery on all orders!</p>
+</div>
+</div>
+</div>
+<!-- Rewards Shop Grid -->
+<div>
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold tracking-tight">Rewards Shop</h2>
+<a class="text-sm font-medium text-gray-500 hover:text-primary" href="#">View all rewards</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Reward Item 1 -->
+<div class="group bg-white dark:bg-[#1c162e] rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="h-40 bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Digital voucher card with cash symbol" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2V5C03SQ4-OCdJKwFaWCkAglins6GPiO975rITsJbGGQ80ZvGl01YjPMtpucmYSAcvImhTQbwvnd5oc1ASuJYL0Iy5T0yPA8EZNqSSySWhQ9enFEhOuixoHXsJKA8yJdtsBZNQ2P1FE7KjHAlI3IQFJIekiumTpGNHV2irN0nAKYcoK3mxlU9MbBakE6gVmK1yn6CWgy3hppnFXBPqKZaWnz355spkooDg0ZtP_GaxhJ7wTw5Knj-Q9WNfDMMq5Y5FyehQU7Evn4");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<h4 class="font-bold text-lg">₦1,000 Voucher</h4>
+<p class="text-xs text-gray-500">Valid on any purchase over ₦5,000</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-primary font-black">500 Points</p>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary/90 transition-colors">Redeem</button>
+</div>
+</div>
+</div>
+<!-- Reward Item 2 -->
+<div class="group bg-white dark:bg-[#1c162e] rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="h-40 bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Delivery truck icon for free shipping" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCliHAb_rfGlXlnqoZFyfSqzGpHwLYRdo5kEo1gQiIHGMtnUwkLGdsLl3pqe9hmNaQJrDfjvKSfIZquOMB7pZjdVeOLLkSWL8IWUAw0qxGH7YfUzdJEvgPaPoVaMige7H5ZqUZ7v-4ZaOdr-7l_r-0NyZN0QEtCcqRYcTQMcbqd7tgASTCttzZVC4pES8LYVcahDiQ0bav6_w9tLEssqYT0cXB3SIKwIApygh3QpUGqM5vV4PYlyIRvbRZWxxQWlXrJVpOzitc03Eg");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<h4 class="font-bold text-lg">Free Shipping for 1 Month</h4>
+<p class="text-xs text-gray-500">Unlimited free deliveries nationwide</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-primary font-black">2,000 Points</p>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary/90 transition-colors">Redeem</button>
+</div>
+</div>
+</div>
+<!-- Reward Item 3 -->
+<div class="group bg-white dark:bg-[#1c162e] rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="h-40 bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Black Friday early access banner design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtUbtF1kl3nA6Mil5p4gjvcb4ZABjOHV6osku8johwym_sqkZK9Rm19ABvMedt7vwRLpl-Zx-PgsmnenD1elymMstqTB_WMBSA5UDAykGESgP83Ykp-UFJRrIr5MRWU6DNVceux2U8XYYHFQNj_SF3DWxSIcNIGq0xAV2F75KcE2apiXcGrPt9DDg3p7KhCYrTDZ4Nips7CPEQ3jwFIoaeRIvLPsOc6EbwIr5b7py4pSXKtiQTRPQeonFd1x4onY14miZnHz4qWxw");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<div>
+<h4 class="font-bold text-lg">Early Access to Black Friday</h4>
+<p class="text-xs text-gray-500">Shop 24 hours before everyone else</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-primary font-black">1,500 Points</p>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary/90 transition-colors">Redeem</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Points History Table -->
+<div class="bg-white dark:bg-[#1c162e] rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<h2 class="text-xl font-bold tracking-tight">Points History</h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 dark:bg-gray-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase">Activity</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase">Date</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase text-right">Points</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600 text-sm filled-icon">star</span>
+</div>
+<p class="text-sm font-semibold">Product Review</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 24, 2023</td>
+<td class="px-6 py-4 text-sm font-bold text-green-600 text-right">+50</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm filled-icon">shopping_bag</span>
+</div>
+<p class="text-sm font-semibold">Order #NM-12345</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 22, 2023</td>
+<td class="px-6 py-4 text-sm font-bold text-green-600 text-right">+150</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600 text-sm filled-icon">cake</span>
+</div>
+<p class="text-sm font-semibold">Birthday Bonus</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 15, 2023</td>
+<td class="px-6 py-4 text-sm font-bold text-green-600 text-right">+500</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-red-100 dark:bg-red-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-600 text-sm filled-icon">redeem</span>
+</div>
+<p class="text-sm font-semibold">Redeemed ₦500 Voucher</p>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-500">Oct 10, 2023</td>
+<td class="px-6 py-4 text-sm font-bold text-red-600 text-right">-250</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footer Call to Action -->
+<div class="p-8 bg-primary/5 rounded-xl border-2 border-dashed border-primary/20 flex flex-col items-center text-center gap-4">
+<span class="material-symbols-outlined text-primary text-5xl">rocket_launch</span>
+<div>
+<h3 class="text-xl font-bold">Want to reach Gold faster?</h3>
+<p class="text-gray-500 dark:text-gray-400 mt-1 max-w-md mx-auto">Invite your friends to shop on NobleMart and earn 500 bonus points for every successful referral.</p>
+</div>
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-primary/90 shadow-lg shadow-primary/30 transition-all">Invite Friends</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

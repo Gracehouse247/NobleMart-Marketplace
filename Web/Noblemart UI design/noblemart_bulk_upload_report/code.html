@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Portal - Upload Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "background-light": "#f9f8fc",
+                        "background-dark": "#161121",
+                        "success": "#00C4B4", // Robin Egg Blue-ish
+                        "error": "#EF4444",   // Red
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-[#120e1b] antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#ebe7f3] bg-white px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#120e1b]">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-[32px]">storefront</span>
+</div>
+<h2 class="text-[#120e1b] text-xl font-display font-bold leading-tight tracking-[-0.015em]">NobleMart Vendor</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden md:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#ebe7f3]">
+<div class="text-[#654d99] flex border-none items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#120e1b] focus:outline-0 focus:ring-0 border-none bg-transparent focus:border-none h-full placeholder:text-[#654d99] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search orders, products..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-[#120e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#120e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-[#120e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-[#120e1b] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Analytics</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative text-[#654d99] hover:text-primary">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-px bg-[#ebe7f3]"></div>
+<div class="flex items-center gap-3 cursor-pointer">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border border-[#ebe7f3]" data-alt="Vendor profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5NyhXCEbkm_MKSPB9vuV1EQp_EKciQiUN12nFy3F-5BvWkL9PH4FIYm845QkVBUEbmVzWDCT5AgutTe7_s7OuHJ6IlIH_1UnMRnwfmjyB5jitVBtv0gV-xbmSr-DCxiKpmhbbCjrSIiBPq5rBcOWuROHPSTWXfHGStLOKLeq-QJhw0gUSUWLby-dIvUqHkX4m2kamrx59R2jhz4wV0mzzS7pKpdL6X5ppQHe0GnD-u7iBYQ7vcfvHVxyOG1BSzrBtxuupoAHRLZM");'></div>
+<div class="hidden xl:block">
+<p class="text-sm font-bold text-[#120e1b] leading-none">ShopRite NG</p>
+<p class="text-xs text-[#654d99] mt-1">Vendor ID: #88392</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 mb-6">
+<a class="text-[#654d99] text-sm font-medium leading-normal hover:underline" href="#">Home</a>
+<span class="text-[#654d99] text-sm font-medium leading-normal">/</span>
+<a class="text-[#654d99] text-sm font-medium leading-normal hover:underline" href="#">Products</a>
+<span class="text-[#654d99] text-sm font-medium leading-normal">/</span>
+<a class="text-[#654d99] text-sm font-medium leading-normal hover:underline" href="#">Bulk Upload</a>
+<span class="text-[#654d99] text-sm font-medium leading-normal">/</span>
+<span class="text-[#120e1b] text-sm font-medium leading-normal">Results</span>
+</div>
+<!-- Page Heading & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<h1 class="text-[#120e1b] text-3xl font-display font-bold leading-tight tracking-[-0.033em]">Upload Results: Batch #BN-90210</h1>
+<p class="text-[#654d99] text-sm font-normal mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                    Uploaded on Oct 24, 2023 at 10:45 AM
+                </p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-[#d7d0e7] bg-white text-[#120e1b] text-sm font-semibold hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                    Download Log
+                </button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-[#4a16bd] shadow-md shadow-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">build</span>
+                    Fix &amp; Re-upload
+                </button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<!-- Total Card -->
+<div class="flex flex-col gap-1 rounded-xl p-6 bg-white border border-[#ebe7f3] shadow-sm relative overflow-hidden group">
+<div class="absolute right-4 top-4 p-2 bg-gray-50 rounded-lg text-gray-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">dataset</span>
+</div>
+<p class="text-[#654d99] text-sm font-medium leading-normal">Total Processed</p>
+<p class="text-[#120e1b] font-display text-3xl font-bold leading-tight">250</p>
+<div class="h-1 w-full bg-gray-100 rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-primary w-full rounded-full"></div>
+</div>
+</div>
+<!-- Success Card -->
+<div class="flex flex-col gap-1 rounded-xl p-6 bg-white border border-[#ebe7f3] shadow-sm relative overflow-hidden group">
+<div class="absolute right-4 top-4 p-2 bg-teal-50 rounded-lg text-success group-hover:bg-teal-100 transition-colors">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<p class="text-[#654d99] text-sm font-medium leading-normal">Successfully Published</p>
+<p class="text-[#120e1b] font-display text-3xl font-bold leading-tight">235</p>
+<div class="h-1 w-full bg-gray-100 rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-success w-[94%] rounded-full"></div>
+</div>
+</div>
+<!-- Error Card -->
+<div class="flex flex-col gap-1 rounded-xl p-6 bg-white border border-red-100 shadow-sm relative overflow-hidden group">
+<div class="absolute right-4 top-4 p-2 bg-red-50 rounded-lg text-error group-hover:bg-red-100 transition-colors">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<p class="text-red-800 text-sm font-medium leading-normal">Errors Found</p>
+<p class="text-[#120e1b] font-display text-3xl font-bold leading-tight">15</p>
+<div class="h-1 w-full bg-gray-100 rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-error w-[6%] rounded-full"></div>
+</div>
+<p class="text-xs text-red-600 mt-2 font-medium flex items-center gap-1">Action required</p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Main Content Area: Errors & Success Lists -->
+<div class="flex-1 flex flex-col gap-8">
+<!-- Error Report Section -->
+<div class="bg-white rounded-xl border border-[#ebe7f3] shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-[#ebe7f3] flex justify-between items-center bg-red-50/30">
+<div>
+<h3 class="text-[#120e1b] text-lg font-display font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-error">error</span>
+                                Error Report
+                            </h3>
+<p class="text-sm text-[#654d99] mt-1">Please correct the following 15 items and re-upload.</p>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm whitespace-nowrap">
+<thead class="bg-[#f9f8fc] text-[#654d99] font-medium border-b border-[#ebe7f3]">
+<tr>
+<th class="px-6 py-4 w-20">Row #</th>
+<th class="px-6 py-4">Product Details</th>
+<th class="px-6 py-4">Field</th>
+<th class="px-6 py-4">Error Message</th>
+<th class="px-6 py-4 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#ebe7f3]">
+<!-- Row 1 -->
+<tr class="hover:bg-[#fcfbff] group">
+<td class="px-6 py-4 font-mono text-gray-500">12</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-gray-100 rounded-md flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined text-[20px]">image_not_supported</span>
+</div>
+<div class="flex flex-col">
+<span class="font-medium text-[#120e1b]">Lagos Casual Shirt</span>
+<span class="text-xs text-gray-500">SKU: LGS-SH-001</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-red-50 text-error text-xs font-semibold border border-red-100">Image URL</span>
+</td>
+<td class="px-6 py-4 text-[#120e1b]">
+                                        Missing high-res image
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-[#4a16bd] font-medium text-sm">Edit</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#fcfbff] group">
+<td class="px-6 py-4 font-mono text-gray-500">45</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-md overflow-hidden bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="Ankara fabric bundle thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfp3ZMQap37y-t9FyuzZxLuxiIDPwt8MZC_tDlJrLEOcSaNKY4VOANnMeJyLZymqrVBvPO-8yQYwbRJ2B38JnDVVfCFl-NJcPwx6u0eZ0gZji_aycV6LwBFop2ku4INKKTmdshEzvbCykGP1tD_uUsU7OtKQMDS_u8fLPzl_Lpwv0a8LNxsklJsnYWKriBebFPbhN32AdCbNoph5KX-WTd__ByLzBqL8jEkDGfy3V_e5-1aSBhTsNFmtsb16BoZVmwnGFL6f7gSfA"/>
+</div>
+<div class="flex flex-col">
+<span class="font-medium text-[#120e1b]">Ankara Fabric Bundle</span>
+<span class="text-xs text-gray-500">SKU: ANK-FB-202</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-red-50 text-error text-xs font-semibold border border-red-100">Price</span>
+</td>
+<td class="px-6 py-4 text-[#120e1b]">
+                                        Invalid price format (NGN only)
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-[#4a16bd] font-medium text-sm">Edit</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#fcfbff] group">
+<td class="px-6 py-4 font-mono text-gray-500">52</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-md overflow-hidden bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="Red Nike Sneakers thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrAt8PyhGXV4reInJVgABMduLagYWzPMH5iWxxrFDERABfmDaA5jIpIODvBYcnJRgnwdqhZPvZ4yN1IIZvvk8hujDnurCFcijh4dwGhWVmzPlniS8vtOhpw3tXPUPjZdF58_LiEAT5uytYP2mVuRHA9i0QxEWX7oEETT9Zqm6YyllCWNOF11lllu93U7XJgxXJjGeCNfLgRHbSNyiYgjFuAeAx_Ko3mE3F20i9hyVhgfG3fBMW8TwFSfewq5sU3D134S6PLPJhwiE"/>
+</div>
+<div class="flex flex-col">
+<span class="font-medium text-[#120e1b]">Nike Sneakers Red</span>
+<span class="text-xs text-gray-500">SKU: NK-RD-99</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-red-50 text-error text-xs font-semibold border border-red-100">Category</span>
+</td>
+<td class="px-6 py-4 text-[#120e1b]">
+                                        Category ID not found in database
+                                    </td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-[#4a16bd] font-medium text-sm">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-[#ebe7f3] bg-[#f9f8fc] flex justify-center">
+<button class="text-sm font-medium text-[#654d99] hover:text-primary flex items-center gap-1">
+                            Show 12 more errors
+                            <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Success Accordion -->
+<div class="bg-white rounded-xl border border-[#ebe7f3] shadow-sm">
+<details class="group">
+<summary class="flex items-center justify-between cursor-pointer list-none px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-teal-50 flex items-center justify-center text-success border border-teal-100">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<h3 class="text-[#120e1b] text-lg font-display font-semibold">Successfully Published (235)</h3>
+</div>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined text-[#654d99]">expand_more</span>
+</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-[#ebe7f3] mt-2">
+<table class="w-full text-left text-sm whitespace-nowrap mt-4">
+<thead class="text-[#654d99] font-medium border-b border-[#ebe7f3]">
+<tr>
+<th class="px-4 py-3 w-16">#</th>
+<th class="px-4 py-3">Product</th>
+<th class="px-4 py-3">SKU</th>
+<th class="px-4 py-3 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#ebe7f3]">
+<tr>
+<td class="px-4 py-3 text-gray-500">1</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded overflow-hidden bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="Denim jacket thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoLAybwBj93qv3HK1XADZzGp2_be9y0xAw2i3nc4QIrj_wTT7ATg5k2KFDGqmJSXWJF0t8IH5ijJYMnKk8U1J_yT1XSG7rAG6Z2d80gdcvWABEkgdNWZ35FzZG72o5kF2EZ8mPVKo66v3brF6yg-uNX7D93SANJtI3qJy68zfW0W5V5qe1Kgl0D7MdgeDSGsEttpOcaTrMhtf___fomtuMsR-I8LPygOYkVY5PaUzommRi12oakzIhYAt4ibED_-GJSqnxKvCgDEk"/>
+</div>
+<span class="font-medium text-[#120e1b]">Classic Denim Jacket</span>
+</div>
+</td>
+<td class="px-4 py-3 text-gray-600">DNM-JK-001</td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-teal-50 text-success text-xs font-semibold border border-teal-100">
+<span class="size-1.5 rounded-full bg-success"></span> Live
+                                            </span>
+</td>
+</tr>
+<tr>
+<td class="px-4 py-3 text-gray-500">2</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded overflow-hidden bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="Cotton t-shirt thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN02IQBt34fkzkIvLpPK46v2IEpX2yP_MGMdE1tvzHge1vgv0gFcvAdLJdATpuoGMB1ALx-MOvfrxB4--jEk8wH6zK7gfo3bUP5T2mtle1mdyrovxqZW5FjBOjsgGWGI2LBPNCdJ50MhKc1bLk03pMfNRDK0Su9HBa7ctdJw2JNL1ElWLjBKWHsmf-gViM7SovlRAEn85G_l476_bnt4v6ObZ_3wxkLpb9K867r0HyLIyHWY-My1wjsHGQ6wUFNr4Fpbkezd24iU8"/>
+</div>
+<span class="font-medium text-[#120e1b]">Premium Cotton Tee</span>
+</div>
+</td>
+<td class="px-4 py-3 text-gray-600">TEE-WHT-005</td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-teal-50 text-success text-xs font-semibold border border-teal-100">
+<span class="size-1.5 rounded-full bg-success"></span> Live
+                                            </span>
+</td>
+</tr>
+<tr>
+<td class="px-4 py-3 text-gray-500">3</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded overflow-hidden bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="Leather bag thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXca90p61IaKA88o5A_N28QYoCdR_ToEFP9mXK7Qp-BEcDgrRyAzuwzoe0V0BonMiUZDxt_CtH6W9kXzCVZJ6_qu3h7xmH2GbJo7JNOBBKvFvgPlN1xHHJkvAG3ZwT69oHOXA-yDV4wduHQ69a2i1rmVXukZdVTjfflpoaqcwNW3vx5fLrm3D_2KVo1NTtiGEBfL6s_BKlPgpV3lipal9ZkEApnQD_XGFwIhprK0UE0HdTZDDoSkqlIru6AVCb4kg0B61NSPxyL84"/>
+</div>
+<span class="font-medium text-[#120e1b]">Leather Crossbody Bag</span>
+</div>
+</td>
+<td class="px-4 py-3 text-gray-600">LTH-BAG-088</td>
+<td class="px-4 py-3 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-teal-50 text-success text-xs font-semibold border border-teal-100">
+<span class="size-1.5 rounded-full bg-success"></span> Live
+                                            </span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="mt-4 text-center">
+<a class="text-sm font-medium text-primary hover:underline" href="#">View all successfull products</a>
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- Sidebar / Support -->
+<div class="w-full lg:w-80 flex flex-col gap-6">
+<!-- Video Help Card -->
+<div class="bg-white rounded-xl border border-[#ebe7f3] shadow-sm p-5">
+<div class="aspect-video w-full bg-slate-900 rounded-lg relative overflow-hidden group cursor-pointer mb-4">
+<img class="w-full h-full object-cover opacity-60 group-hover:opacity-50 transition-opacity" data-alt="Laptop with charts on screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN-lwXbEINAEA3GDKxc5Tux6vVcgETVR_axAHPeYG_snkNN_84BTtQ1Z1V70_Pj3IpPjjv9sJLF4HcnLQMHs6LzwDSu1eV9fLbDz3XHyRWLYPIgLGH_NqeSPraMSkZChxjtxUT91zrMdzsTKOrZ_JwHhv71mte2ochzaYysyGRdPKjIOs8pZPNtgKZkpNQaZKf4GIZyJQYOQg-zsjbkR4PGIresAMbKAa1N3vFU4dZyvwyFa29iTNhyE7YTKnzY26rS8dHzSSbbgw"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="size-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white">play_arrow</span>
+</div>
+</div>
+</div>
+<h3 class="font-display font-bold text-[#120e1b] text-base mb-2">Need Help?</h3>
+<p class="text-sm text-[#654d99] mb-4">Stuck with error codes? Watch our quick guide on troubleshooting bulk uploads.</p>
+<a class="text-primary text-sm font-semibold hover:underline flex items-center gap-1" href="#">
+                        Watch Tutorial <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Quick Tips -->
+<div class="bg-primary/5 rounded-xl border border-primary/10 p-5">
+<h3 class="font-display font-bold text-primary text-base mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined">lightbulb</span> Quick Tips
+                    </h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-2 text-sm text-[#120e1b]">
+<span class="size-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
+<span>Ensure image URLs are publicly accessible and end in .jpg or .png</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-[#120e1b]">
+<span class="size-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
+<span>Prices should not contain currency symbols (e.g. 5000, not N5000)</span>
+</li>
+<li class="flex items-start gap-2 text-sm text-[#120e1b]">
+<span class="size-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>
+<span>SKUs must be unique across all your products</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-[#ebe7f3] bg-white py-8 px-4">
+<div class="layout-content-container max-w-[1280px] mx-auto text-center">
+<p class="text-[#654d99] text-sm">© 2024 NobleMart Vendor Portal. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Bulk Product Upload</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9", // Electric Indigo
+                        "secondary-dark": "#020249", // Federal Blue
+                        "accent-teal": "#01C2CA", // Robin Egg Blue
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                        "success": "#10b981",
+                        "error": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="flex w-64 flex-col bg-secondary-dark text-white h-full shadow-lg z-20 hidden md:flex shrink-0">
+<div class="flex h-20 items-center justify-start px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-teal text-4xl">storefront</span>
+<h1 class="text-xl font-bold font-display tracking-tight text-white">NobleMart</h1>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-6">
+<!-- User Profile Snippet -->
+<div class="flex items-center gap-3 p-2 bg-white/5 rounded-lg border border-white/10">
+<div class="h-10 w-10 rounded-full bg-cover bg-center border-2 border-accent-teal" data-alt="Photo-realistic portrait of an African business professional smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLDcGMh1gj6915yNFNJ1WqnjGBZQ6MKKyw88qS4myRsezw3CWC8N_lDag-38da3MkpXcx_hpd0DxW8hBqwTgJq-1P3L8Q_c_2tPoxmbwtFdHBp9NjyJVDmbHzClJUOWNwmAafQ3gbRqDu3aL8i2n5qKqW1TEltO0ihD-mMYK7pcLqdTBlGu_tRxTDA5Ll-iFeQmGfHlEBpqk33p6KTzNJIGVmceqHJS0JeXBCP7291ZC3QsH6Wgib9-NmEXRJ6sxTvilWCKZPoV-8");'></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-semibold truncate">Emeka Okafor</span>
+<span class="text-xs text-slate-300 truncate">Verified Seller</span>
+</div>
+</div>
+<nav class="flex flex-col gap-1.5">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white shadow-md" href="#">
+<span class="material-symbols-outlined fill-1">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+<span class="ml-auto bg-error text-white text-[10px] font-bold px-2 py-0.5 rounded-full">3</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">account_balance_wallet</span>
+<span class="text-sm font-medium">Wallet</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<div class="pt-4 mt-2 border-t border-white/10">
+<p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">System</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white">help</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</div>
+</nav>
+</div>
+<div class="p-4 border-t border-white/10">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-white/10 hover:bg-white/20 px-4 py-2 text-sm font-medium text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark relative">
+<!-- Mobile Header (Visible on small screens) -->
+<div class="md:hidden flex items-center justify-between p-4 bg-secondary-dark text-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-teal">storefront</span>
+<h1 class="font-bold">NobleMart</h1>
+</div>
+<button class="text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="max-w-6xl mx-auto px-6 py-8 md:px-10 lg:py-12 flex flex-col gap-8">
+<!-- Page Heading & Context -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-secondary-dark dark:text-white text-3xl md:text-4xl font-bold font-display tracking-tight mb-2">Bulk Product Upload</h1>
+<p class="text-slate-500 dark:text-slate-400 font-body max-w-2xl">Manage your inventory efficiently by uploading multiple products at once. All uploads are scanned by NobleShield for quality assurance.</p>
+</div>
+<div class="hidden lg:block">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 text-green-700 rounded-full border border-green-200 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                            NobleShield Active
+                        </div>
+</div>
+</header>
+<!-- Steps Progress -->
+<div class="w-full">
+<div class="relative flex items-center justify-between w-full max-w-3xl mx-auto mb-8">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200 -z-10 rounded-full"></div>
+<!-- Step 1 (Completed) -->
+<div class="flex flex-col items-center gap-2 bg-background-light dark:bg-background-dark px-2">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Template</span>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex flex-col items-center gap-2 bg-background-light dark:bg-background-dark px-2">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white shadow-lg ring-4 ring-primary/20">
+<span class="font-display font-bold">2</span>
+</div>
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Data Entry</span>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="flex flex-col items-center gap-2 bg-background-light dark:bg-background-dark px-2">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-500">
+<span class="font-display font-bold">3</span>
+</div>
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Upload</span>
+</div>
+</div>
+</div>
+<!-- Main Interaction Area -->
+<div class="grid lg:grid-cols-3 gap-6 items-start">
+<!-- Left Column: Instructions & Template -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Download Template Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden relative group">
+<!-- Decorative Top Border -->
+<div class="h-1.5 w-full bg-accent-teal"></div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div class="p-2 bg-accent-teal/10 rounded-lg text-accent-teal">
+<span class="material-symbols-outlined">download</span>
+</div>
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Step 1</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 font-display">Get the Template</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Start by downloading our standardized CSV or Excel template. Do not change the header columns.</p>
+</div>
+<div class="flex flex-col gap-2 mt-2">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-accent-teal hover:bg-[#00aeb5] text-white py-2.5 px-4 text-sm font-semibold transition-colors shadow-sm shadow-accent-teal/20">
+<span class="material-symbols-outlined text-[20px]">table_view</span>
+                                        Download Excel Template
+                                    </button>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 py-2.5 px-4 text-sm font-medium transition-colors">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                                        Download CSV
+                                    </button>
+</div>
+<div class="mt-2 pt-4 border-t border-slate-100 dark:border-slate-700">
+<a class="flex items-center gap-2 text-sm text-primary hover:underline font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+                                        View Image Guidelines
+                                    </a>
+</div>
+</div>
+<!-- Background Pattern/Image opacity -->
+<div class="absolute bottom-0 right-0 w-32 h-32 bg-contain bg-no-repeat opacity-5 pointer-events-none" data-alt="Abstract subtle geometric pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJke0up2T4S72hiae_XTmMHjZj0VU68CLQgKxoiFfe3cE6nsaLs0ZPSTksX0u1J2PohyA2S8pML7a0MI0P-PR25QyyUFfWOewhFTO69hm5GDoRwP_LhJ-vg5C5znVpjJZAshDoa_hy3ahnprj0K4zN_rH2idBRAykddLYkMtbJSONbSSh9KKExHT_OU2RQA4L2RK9wzI1ZugHuwcVxvLkP7PrfqIUeZGSoX01KGRFLL3AkoJGxhVLnb5_Bv9GDUSD-tor2HgRln5Q');"></div>
+</div>
+<!-- Guidelines Tip -->
+<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800 flex gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 shrink-0">info</span>
+<div class="text-sm text-blue-800 dark:text-blue-200">
+<span class="font-bold block mb-1">Photo-Realistic Standards</span>
+                                Ensure your product images are high-resolution (min 1000x1000px) and on a white background.
+                            </div>
+</div>
+</div>
+<!-- Right Column: Upload Zone -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 p-8">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white font-display">Upload Inventory File</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Drag and drop your filled template below.</p>
+</div>
+<div class="hidden sm:block">
+<span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1 rounded-full font-medium">Max size: 25MB</span>
+</div>
+</div>
+<!-- Drop Zone -->
+<div class="relative group cursor-pointer">
+<input class="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer" type="file"/>
+<div class="border-2 border-dashed border-primary/30 group-hover:border-primary/60 bg-slate-50 dark:bg-slate-900/50 group-hover:bg-primary/5 rounded-xl transition-all duration-300 flex flex-col items-center justify-center py-16 px-4 text-center">
+<div class="mb-4 p-4 rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-5xl">cloud_upload</span>
+</div>
+<h3 class="text-lg font-bold text-slate-800 dark:text-white mb-2 font-display group-hover:text-primary transition-colors">Click to upload or drag and drop</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-6 max-w-xs mx-auto">Supported formats: .CSV, .XLS, .XLSX</p>
+<button class="bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 px-6 rounded-lg shadow-md shadow-primary/20 transition-all flex items-center gap-2">
+                                        Select File
+                                    </button>
+</div>
+</div>
+<!-- Real-time Validation / Status Box (Mockup State: Ready to Import) -->
+<div class="mt-6 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+<div class="bg-slate-50 dark:bg-slate-750 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Upload Status</span>
+<span class="text-xs font-medium text-slate-500">Waiting for file...</span>
+</div>
+<div class="p-6 flex flex-col items-center justify-center text-center py-8">
+<div class="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-slate-400 text-3xl">search_check</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Once you select a file, NobleShield will scan for data errors here.</p>
+</div>
+</div>
+</div>
+<!-- Trust / Footer Element -->
+<div class="flex items-center justify-center gap-2 text-slate-400 dark:text-slate-500 text-sm mt-4 lg:mt-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Secure upload powered by <strong>NobleShield</strong> technology.</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

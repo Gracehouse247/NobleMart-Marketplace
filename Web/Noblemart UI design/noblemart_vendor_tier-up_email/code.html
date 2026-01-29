@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Tier-Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5C1BE8",
+                        "noble-blue": "#01C2CA",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#171121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .platinum-gradient {
+            background: linear-gradient(135deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+        .medallion-shine {
+            background: linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#130e1b] dark:text-[#faf8fc]">
+<div class="flex min-h-screen flex-col items-center py-10 px-4">
+<!-- Email Container -->
+<div class="w-full max-w-[700px] bg-white dark:bg-[#1f1629] shadow-xl rounded-xl overflow-hidden">
+<!-- Header -->
+<header class="bg-noble-blue flex justify-center py-6 px-10">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="white" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-black tracking-tight">NobleMart</h2>
+</div>
+</header>
+<!-- Hero Section -->
+<div class="platinum-gradient relative @container overflow-hidden">
+<!-- 3D Particle Texture Overlay (Simulated via CSS/SVG) -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+<div class="flex flex-col @[480px]:flex-row items-center justify-between p-8 @[480px]:p-12 gap-8">
+<div class="flex-1 flex flex-col gap-4 text-center @[480px]:text-left z-10">
+<h1 class="text-white text-4xl @[480px]:text-5xl font-black leading-tight tracking-[-0.033em]">
+                            YOU'VE REACHED PLATINUM STATUS!
+                        </h1>
+<p class="text-white/90 text-lg font-medium">
+                            A new era of success begins for you.
+                        </p>
+</div>
+<div class="relative z-10">
+<div class="w-48 h-64 bg-cover bg-center rounded-xl shadow-2xl border-4 border-white/20" data-alt="Confident professional dark-skinned man in business attire" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfDoI_KhbCnwVBLmOHoET-w81VkZaP1jzuBV7H0aKlz48DI2T5fo64-lnE2oa5_8SRqdAlh-R43QCg7LSMYF3BRjwx-nuqbAk8dwqtj81dKkOa4K6O8IrHlH0NVU27voDu4SVaXeqmDhtctWZ161sPUXsyCYfvHF9n-ZbC8BGQK0xcLM8vJxJKWqvXBpvJ_R4sikNe7ezSgx6OgQhI01HTTfqa0Gf7ObQpdwD9cJ_s7WDxyVPVa4TTGdNisdqRNE7z3GDxA8UvucA");'>
+</div>
+</div>
+</div>
+</div>
+<!-- Core Message -->
+<div class="px-8 pt-10 pb-4 text-center">
+<h2 class="text-2xl font-bold mb-4">Congratulations [Vendor Name]!</h2>
+<p class="text-[#6a4d99] dark:text-[#a389d4] text-lg leading-relaxed max-w-[500px] mx-auto">
+                    Your outstanding performance and commitment to quality have unlocked a new level of excellence on NobleMart.
+                </p>
+</div>
+<!-- Visual Reward (Medallion) -->
+<div class="flex flex-col items-center py-6">
+<div class="relative w-32 h-32 rounded-full shadow-2xl flex items-center justify-center platinum-gradient border-4 border-[#faf8fc] dark:border-[#1f1629]">
+<div class="absolute inset-0 rounded-full medallion-shine"></div>
+<span class="material-symbols-outlined text-white text-6xl">military_tech</span>
+</div>
+<span class="mt-4 font-black text-noble-blue tracking-widest text-sm uppercase">Platinum Certified</span>
+</div>
+<!-- New Perks Card -->
+<div class="px-8 py-6">
+<div class="bg-background-light dark:bg-[#2d213d] border border-noble-blue/20 rounded-xl p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-noble-blue">auto_awesome</span>
+                        Your New Platinum Perks
+                    </h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="size-8 rounded-full bg-noble-blue/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-noble-blue text-xl">percent</span>
+</div>
+<div>
+<p class="font-bold text-[#130e1b] dark:text-white">2.5% Lower Commission Rate</p>
+<p class="text-sm text-[#6a4d99] dark:text-[#a389d4]">Keep more of your earnings on every sale across all categories.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 rounded-full bg-noble-blue/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-noble-blue text-xl">support_agent</span>
+</div>
+<div>
+<p class="font-bold text-[#130e1b] dark:text-white">Priority 24/7 Seller Support</p>
+<p class="text-sm text-[#6a4d99] dark:text-[#a389d4]">Skip the queue with our dedicated Platinum-only support channel.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 rounded-full bg-noble-blue/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-noble-blue text-xl">verified</span>
+</div>
+<div>
+<p class="font-bold text-[#130e1b] dark:text-white">Exclusive Platinum Store Badge</p>
+<p class="text-sm text-[#6a4d99] dark:text-[#a389d4]">Boost customer trust and conversion rates with premium badging.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA -->
+<div class="flex justify-center px-8 py-8">
+<button class="w-full @[480px]:w-auto min-w-[300px] h-14 bg-primary text-white text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-2">
+                    Explore My New Benefits
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Growth Tip -->
+<div class="px-8 pb-12">
+<div class="flex flex-col items-center justify-center gap-3 p-6 rounded-lg border-2 border-dashed border-[#d9d0e7] dark:border-[#433658] bg-[#faf8fc] dark:bg-[#171121]">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+<p class="text-base font-bold">Maintain Your Elite Standing</p>
+</div>
+<p class="text-[#6a4d99] dark:text-[#a389d4] text-sm text-center">
+                        Stay consistent to maintain your Platinum standing and aim for <strong>Diamond</strong> next! Platinum status is reviewed every 90 days.
+                    </p>
+<a class="text-sm font-bold text-primary underline underline-offset-4 mt-1" href="#">View Tier Requirements</a>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-[#130e1b] text-white/60 p-10 text-center">
+<div class="flex justify-center gap-8 mb-8 text-sm font-medium text-white/80">
+<a class="hover:text-noble-blue" href="#">Seller Academy</a>
+<a class="hover:text-noble-blue" href="#">Help Center</a>
+<a class="hover:text-noble-blue" href="#">Terms of Service</a>
+</div>
+<div class="flex justify-center gap-6 mb-8">
+<span class="material-symbols-outlined cursor-pointer hover:text-white">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white">alternate_email</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white">share</span>
+</div>
+<p class="text-xs leading-loose">
+                    © 2024 NobleMart Nigeria. All rights reserved.<br/>
+                    You are receiving this email because you are a registered vendor on NobleMart.<br/>
+<a class="underline" href="#">Unsubscribe</a> from these notifications.
+                </p>
+</footer>
+</div>
+</div>
+</body></html>

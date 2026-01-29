@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Shop Settings</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "federal-blue": "#020249",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sidebar-active { background-color: rgba(1, 196, 203, 0.2); border-left: 4px solid #01c4cb; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0c1c1d] dark:text-white min-h-screen">
+<div class="flex">
+<!-- Sidebar -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-federal-blue text-white flex flex-col z-50">
+<div class="p-6 flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-tight">NobleMart</h1>
+<p class="text-xs text-primary/80">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 mt-4 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg sidebar-active transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full bg-primary hover:bg-primary/90 text-federal-blue font-bold py-2 px-4 rounded-lg text-sm transition-colors">
+                    Switch to Buyer Mode
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 flex-1">
+<!-- Header Image Section -->
+<div class="relative w-full h-48 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-federal-blue/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-cover" data-alt="Nigerian vendor organizing a modern home office workspace" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDUAWtfzTl2jAQN02KJg0poXwIaqp6cO_WjohE5LJfS3h_FcznCc7BEhhh0sAl_SuqGb0Wde0UnMtToB7EQZeekSMSeSeST2856twffrJhZL9IR4XrOv2dn_nyPH2a5kNxc1h49Jul5-AfG6AWRd2UkKih2JXHbvWxy-joJT_HMMWd0gKr9HIq-EJzMDkoqlTnBMkH9kGX180He0vyq8le8QYcK1Cj8VJIlejahFM7--J780dks7E3wctp8l5w03r0jtS4c4MhyNc");'></div>
+<div class="absolute bottom-6 left-8 z-20">
+<h1 class="text-4xl font-black text-white tracking-tight">Shop Settings</h1>
+<p class="text-white/80 text-base">Manage your store operations, logistics, and security preferences.</p>
+</div>
+</div>
+<div class="max-w-5xl mx-auto px-8 py-8 space-y-8">
+<!-- Section: Operating Hours -->
+<section class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#cde9ea] overflow-hidden">
+<div class="p-6 border-b border-[#cde9ea]">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                            Store Operating Hours
+                        </h2>
+</div>
+<div class="p-0">
+<table class="w-full text-left">
+<thead class="bg-background-light dark:bg-gray-800">
+<tr>
+<th class="px-6 py-4 text-sm font-semibold text-[#0c1c1d] dark:text-white w-1/4">Day</th>
+<th class="px-6 py-4 text-sm font-semibold text-[#0c1c1d] dark:text-white w-1/4">Status</th>
+<th class="px-6 py-4 text-sm font-semibold text-[#0c1c1d] dark:text-white w-1/4">Opening Time</th>
+<th class="px-6 py-4 text-sm font-semibold text-[#0c1c1d] dark:text-white w-1/4">Closing Time</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#cde9ea]">
+<!-- Monday-Sunday Rows -->
+<tr class="hover:bg-background-light/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Monday</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-sm font-medium text-gray-500">Open</span>
+</label>
+</td>
+<td class="px-6 py-4">
+<input class="bg-background-light border-none rounded-lg text-sm px-3 py-2 w-full focus:ring-2 focus:ring-primary" type="time" value="08:00"/>
+</td>
+<td class="px-6 py-4">
+<input class="bg-background-light border-none rounded-lg text-sm px-3 py-2 w-full focus:ring-2 focus:ring-primary" type="time" value="18:00"/>
+</td>
+</tr>
+<tr class="hover:bg-background-light/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Tuesday</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-sm font-medium text-gray-500">Open</span>
+</label>
+</td>
+<td class="px-6 py-4">
+<input class="bg-background-light border-none rounded-lg text-sm px-3 py-2 w-full focus:ring-2 focus:ring-primary" type="time" value="08:00"/>
+</td>
+<td class="px-6 py-4">
+<input class="bg-background-light border-none rounded-lg text-sm px-3 py-2 w-full focus:ring-2 focus:ring-primary" type="time" value="18:00"/>
+</td>
+</tr>
+<tr class="hover:bg-background-light/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Saturday</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-sm font-medium text-gray-500">Open</span>
+</label>
+</td>
+<td class="px-6 py-4">
+<input class="bg-background-light border-none rounded-lg text-sm px-3 py-2 w-full focus:ring-2 focus:ring-primary" type="time" value="10:00"/>
+</td>
+<td class="px-6 py-4">
+<input class="bg-background-light border-none rounded-lg text-sm px-3 py-2 w-full focus:ring-2 focus:ring-primary" type="time" value="16:00"/>
+</td>
+</tr>
+<tr class="hover:bg-background-light/50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Sunday</td>
+<td class="px-6 py-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-sm font-medium text-gray-500">Closed</span>
+</label>
+</td>
+<td class="px-6 py-4">
+<input class="bg-gray-100 border-none rounded-lg text-sm px-3 py-2 w-full opacity-50" disabled="" type="time"/>
+</td>
+<td class="px-6 py-4">
+<input class="bg-gray-100 border-none rounded-lg text-sm px-3 py-2 w-full opacity-50" disabled="" type="time"/>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Section: Holiday Mode -->
+<section class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#cde9ea] p-6">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_busy</span>
+                            Holiday Mode
+                        </h2>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-sm font-medium">Automatic Store Closure</span>
+</label>
+</div>
+<p class="text-sm text-gray-500 mb-4">Automatically close your store during Nigerian national public holidays to avoid late shipping penalties.</p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="flex items-center gap-2 p-3 bg-background-light dark:bg-gray-800 rounded-lg">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+<span class="text-xs">Independence Day (Oct 1)</span>
+</div>
+<div class="flex items-center gap-2 p-3 bg-background-light dark:bg-gray-800 rounded-lg">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+<span class="text-xs">Democracy Day (Jun 12)</span>
+</div>
+<div class="flex items-center gap-2 p-3 bg-background-light dark:bg-gray-800 rounded-lg">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+<span class="text-xs">Workers Day (May 1)</span>
+</div>
+</div>
+</section>
+<!-- Section: Shipping & Logistics -->
+<section class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#cde9ea] p-6">
+<h2 class="text-xl font-bold flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+                        Shipping &amp; Logistics
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold">Default Lead Time</label>
+<select class="w-full bg-background-light border-none rounded-lg focus:ring-2 focus:ring-primary text-sm">
+<option>Within 24 Hours</option>
+<option>1-2 Business Days</option>
+<option>3-5 Business Days</option>
+</select>
+<p class="text-xs text-gray-400">Time taken to handover package to courier.</p>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold">Preferred Delivery Partners</label>
+<div class="flex flex-wrap gap-2 p-2 border border-dashed border-[#cde9ea] rounded-lg">
+<span class="bg-primary/20 text-federal-blue px-2 py-1 rounded text-xs font-medium flex items-center gap-1">GIG Logistics <span class="material-symbols-outlined text-xs">close</span></span>
+<span class="bg-primary/20 text-federal-blue px-2 py-1 rounded text-xs font-medium flex items-center gap-1">DHL Nigeria <span class="material-symbols-outlined text-xs">close</span></span>
+<button class="text-xs text-primary font-bold">+ Add Partner</button>
+</div>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-sm font-semibold">Pickup Address</label>
+<textarea class="w-full bg-background-light border-none rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="123 Victoria Island Way, Lagos..." rows="3"></textarea>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-sm font-semibold">Landmark</label>
+<input class="w-full bg-background-light border-none rounded-lg focus:ring-2 focus:ring-primary text-sm" placeholder="e.g. Near Eko Hotels &amp; Suites" type="text"/>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Section: Notification Preferences -->
+<section class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-[#cde9ea] p-6">
+<h2 class="text-xl font-bold flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">notifications</span>
+                            Notifications
+                        </h2>
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div>
+<p class="text-sm font-medium">Email Alerts</p>
+<p class="text-xs text-gray-500">Get notified for account activity and marketing.</p>
+</div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div>
+<p class="text-sm font-medium">SMS Notifications</p>
+<p class="text-xs text-gray-500">Immediate alerts for new order placements.</p>
+</div>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div>
+<p class="text-sm font-medium">Weekly Performance Reports</p>
+<p class="text-xs text-gray-500">Summary of sales and store health.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Section: Safety & Trust -->
+<section class="bg-[#020249] text-white rounded-xl shadow-lg p-6 relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">shield</span>
+<h2 class="text-xl font-bold">NobleShield Security</h2>
+</div>
+<p class="text-sm text-gray-300 mb-6">Ensure your store is protected with industry-standard security protocols.</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+<span class="text-sm">Two-Factor Auth (2FA)</span>
+<button class="bg-primary text-federal-blue text-xs font-bold px-3 py-1 rounded">Enable</button>
+</div>
+<div class="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+<span class="text-sm">Login Alerts</span>
+<span class="text-xs text-primary font-bold">Active</span>
+</div>
+</div>
+</div>
+<!-- Abstract Gradient Pattern -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+</section>
+</div>
+<!-- Main Action Button -->
+<div class="flex justify-end pt-4 pb-12">
+<button class="flex items-center gap-2 min-w-[200px] justify-center overflow-hidden rounded-xl h-14 px-8 bg-primary hover:bg-primary/90 text-federal-blue text-lg font-black transition-all shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined">save</span>
+                        Update Shop Settings
+                    </button>
+</div>
+</div>
+</main>
+</div>
+<!-- Map Component Placeholder for Pickup Location -->
+<div class="hidden" data-location="Lagos, Nigeria" style=""></div>
+</body></html>

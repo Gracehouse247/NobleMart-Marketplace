@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart - Track My Order</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                        "background-light": "#f8fafb",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "sans": ["Poppins", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #01c2ca 0%, #5C1BE8 100%);
+        }
+        .step-active {
+            @apply text-robin-egg;
+        }
+        .step-line-active {
+            @apply bg-robin-egg;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-[#0c1c1d] dark:text-white transition-colors duration-300">
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#0c1c1d] border-b border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-6">
+<div class="flex items-center gap-2 shrink-0 cursor-pointer" onclick="window.location.href='#'">
+<div class="size-10 brand-gradient rounded-full flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</div>
+<h1 class="text-2xl font-extrabold tracking-tight text-[#0c1c1d] dark:text-white">NobleMart</h1>
+</div>
+<div class="flex-1 max-w-2xl hidden md:block">
+<div class="relative flex w-full">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="w-full bg-white border border-gray-300 rounded-l-md py-2.5 pl-10 pr-4 focus:ring-1 focus:ring-robin-egg focus:border-robin-egg outline-none placeholder:text-gray-400 text-sm" placeholder="Search products, brands and categories" type="text"/>
+</div>
+<button class="bg-robin-egg hover:bg-opacity-90 text-white px-6 font-bold text-sm uppercase rounded-r-md shadow-sm transition-colors">Search</button>
+</div>
+</div>
+<div class="flex items-center gap-4 shrink-0">
+<div class="hidden lg:flex items-center gap-4">
+<a class="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-robin-egg transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="hidden xl:inline">Account</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</a>
+<a class="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-robin-egg transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">help</span>
+<span class="hidden xl:inline">Help</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</a>
+</div>
+<button class="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-robin-egg transition-colors">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full">3</span>
+</div>
+<span class="text-sm font-medium hidden xl:inline">Cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 md:px-6 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<aside class="hidden lg:block w-72 shrink-0">
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm overflow-hidden sticky top-24">
+<div class="p-4 border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<div>
+<p class="text-[11px] text-gray-500 uppercase font-bold tracking-wider">Hello,</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Adewale Johnson</p>
+</div>
+</div>
+</div>
+<nav class="py-2">
+<a class="flex items-center gap-4 px-6 py-3 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-robin-egg transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span>My NobleMart Account</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-sm text-robin-egg bg-blue-50/50 dark:bg-robin-egg/10 font-bold border-r-4 border-robin-egg" href="#">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-robin-egg transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span>Inbox</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-robin-egg transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span>Saved Items</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-robin-egg transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span>Recently Viewed</span>
+</a>
+<div class="my-2 border-t border-gray-50 dark:border-gray-800"></div>
+<a class="flex items-center gap-4 px-6 py-3 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Logout</span>
+</a>
+</nav>
+</div>
+</aside>
+<div class="flex-1 min-w-0 space-y-6">
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-100 dark:border-gray-800">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-1">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Order #NM-987654321</h2>
+<div class="flex items-center gap-3 text-sm text-gray-500">
+<span>Placed on: Oct 24, 2023</span>
+<span class="h-1 w-1 bg-gray-300 rounded-full"></span>
+<span class="font-semibold text-gray-900 dark:text-gray-200">Total: ₦45,000</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-green-50 dark:bg-green-900/20 text-green-600 px-3 py-1.5 rounded-full text-xs font-bold border border-green-100 dark:border-green-800/30">
+<span class="material-symbols-outlined text-sm fill-1">shield</span>
+                            Escrow Status: Funds Secured
+                        </div>
+<button class="bg-robin-egg hover:bg-opacity-90 text-white font-bold text-sm px-6 py-2 rounded shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                            Contact Support
+                        </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm p-8 border border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-bold mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-robin-egg">track_changes</span>
+                    Delivery Progress
+                </h3>
+<div class="relative px-4">
+<div class="absolute top-5 left-8 right-8 h-1 bg-gray-100 dark:bg-gray-800 -z-10"></div>
+<div class="absolute top-5 left-8 w-[75%] h-1 bg-robin-egg -z-10 transition-all duration-1000"></div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col items-center text-center max-w-[120px]">
+<div class="size-10 rounded-full bg-robin-egg text-white flex items-center justify-center shadow-md mb-3">
+<span class="material-symbols-outlined text-[20px]">shopping_cart_checkout</span>
+</div>
+<p class="text-[12px] font-bold text-robin-egg uppercase tracking-tight">Order Placed</p>
+<p class="text-[10px] text-gray-400 mt-1 italic">24 Oct, 09:15 AM</p>
+</div>
+<div class="flex flex-col items-center text-center max-w-[120px]">
+<div class="size-10 rounded-full bg-robin-egg text-white flex items-center justify-center shadow-md mb-3">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<p class="text-[12px] font-bold text-robin-egg uppercase tracking-tight">Payment Confirmed</p>
+<p class="text-[10px] text-gray-400 mt-1 italic">24 Oct, 10:30 AM</p>
+</div>
+<div class="flex flex-col items-center text-center max-w-[120px]">
+<div class="size-10 rounded-full bg-robin-egg text-white flex items-center justify-center shadow-md mb-3">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<p class="text-[12px] font-bold text-robin-egg uppercase tracking-tight">Shipped</p>
+<p class="text-[10px] text-gray-400 mt-1 italic">25 Oct, 02:45 PM</p>
+</div>
+<div class="flex flex-col items-center text-center max-w-[120px]">
+<div class="size-10 rounded-full bg-robin-egg text-white flex items-center justify-center shadow-md mb-3">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<p class="text-[12px] font-bold text-robin-egg uppercase tracking-tight">Out for Delivery</p>
+<p class="text-[10px] text-gray-500 mt-1 italic">Today, 08:00 AM</p>
+</div>
+<div class="flex flex-col items-center text-center max-w-[120px]">
+<div class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]">home_pin</span>
+</div>
+<p class="text-[12px] font-bold text-gray-400 uppercase tracking-tight">Delivered</p>
+<p class="text-[10px] text-gray-400 mt-1 italic">Estimated Today</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm p-6 border border-gray-100 dark:border-gray-800">
+<h3 class="font-bold text-gray-900 dark:text-white mb-6 uppercase text-sm tracking-wider">Detailed Updates</h3>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[1px] before:bg-gray-100 dark:before:bg-gray-800">
+<div class="flex gap-4 relative">
+<div class="size-6 rounded-full bg-robin-egg flex items-center justify-center text-white ring-4 ring-white dark:ring-gray-900 z-10 shrink-0">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Dispatched from Lagos Hub</p>
+<p class="text-xs text-gray-500 mt-1">Lagos, Ikeja Hub | Today, 08:30 AM</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 ring-4 ring-white dark:ring-gray-900 z-10 shrink-0">
+<span class="material-symbols-outlined text-[14px]">warehouse</span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Arrived at Lagos Hub</p>
+<p class="text-xs text-gray-500 mt-1">Lagos, Ikeja Hub | 25 Oct, 11:15 PM</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 ring-4 ring-white dark:ring-gray-900 z-10 shrink-0">
+<span class="material-symbols-outlined text-[14px]">package_2</span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Processed at Origin Warehouse</p>
+<p class="text-xs text-gray-500 mt-1">Kano Central Distribution | 25 Oct, 09:00 AM</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="size-6 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 ring-4 ring-white dark:ring-gray-900 z-10 shrink-0">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Order Ready for Pickup</p>
+<p class="text-xs text-gray-500 mt-1">Vendor: Electronic Empire | 24 Oct, 04:30 PM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-lg overflow-hidden shadow-sm group">
+<img alt="Professional Delivery Service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6a0NBGtl8Q4As4LX2LqbMJQ7fa1qlTeI5w4L_BJx0aGPn6_iDRY4qyMBd0TUBXqoh_o9KtFh8fCmFXl98xmU-U3H7KnplqSeamYT1q7dwuuEGx63mJ6vx8NhaSwy-N6R3ENQJnSroiZdR1046P-n8Q-pSXafXggUeUg6-El2W-jDFWCe4tJ-z9INHqtwmW9ruupc8xPCCh13HNeH5Ag0INYp5r34aA7pVPP9OEm0xc3CILnz7-BXRWoIbv04jPrypW2YQNukDsWA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+<h4 class="text-2xl font-bold mb-2">Fast &amp; Secure Delivery</h4>
+<p class="text-sm opacity-90 font-light max-w-xs">Your package is handled by our professional logistics partners to ensure safe delivery to your doorstep.</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="px-6 py-4 border-b border-gray-50 dark:border-gray-800 flex items-center justify-between">
+<h3 class="font-bold text-gray-900 dark:text-white uppercase text-sm tracking-wider">Items in this Order (2)</h3>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800">
+<div class="size-24 shrink-0 rounded bg-white dark:bg-gray-900 p-1">
+<img alt="Wireless Noise Cancelling Headphones" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-3V9cLYjezBWqhJ_2jM8GZHR2DXEFnzfNuTUBHeIO7YlUrxaA6HQqm7wA76IwzhfO4w445FO3R8FQPZcWRC0-QU7G8QHeyK_zHnwLXyHmK-lgyqBVo5lNwDChztYcglozxEXCbzKcFzeNRAsS1tXC5f-ao2th8GDC2ZWjOG6_3ur7MO62-Wuk0BUH-bPI0L9B8U9yAeyA87QDhhpVUyQcFG-fYqSOJiQSjAUi6PGBfoHtr2yy8O2BXagM5qPkiBZ2ZTuSFPdm4VA"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2">Wireless Noise Cancelling Headphones - Onyx Black</h4>
+<p class="text-xs text-gray-500 mt-1">Qty: 1 | Brand: Premium Audio</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-sm font-bold text-robin-egg">₦35,000</span>
+<a class="text-[11px] font-bold text-secondary uppercase hover:underline" href="#">View Product</a>
+</div>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800">
+<div class="size-24 shrink-0 rounded bg-white dark:bg-gray-900 p-1">
+<img alt="Smart Watch" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMiaUMLz9fsCjddC3JVFfSa-IKI7DkX1IrZrJMc6nlF-lz_o62vf2mdyHz8jpPL4DLkND-Ew-XKCHrT_GdH-wHVdN5FvMy7N4rgpOmtrp-xJkcTaiO9lSQyInQRXUT_vxWNu1Kk98XLkm9FRjKGT0IYTopk0CrMx2Ui1M3SjYga-Uw1VICzCiI9TueytJZIKiMCOCN1sVr5B2rF2QuSOEYqxvbGe5hLZP57pSnj-0V6tZo4FYfFBsgBwkPh20N23ROOqcjwVdtsgE"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white line-clamp-2">Classic Analog Wristwatch - Gold Plated Edition</h4>
+<p class="text-xs text-gray-500 mt-1">Qty: 1 | Brand: TimeKeepers</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-sm font-bold text-robin-egg">₦10,000</span>
+<a class="text-[11px] font-bold text-secondary uppercase hover:underline" href="#">View Product</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<section class="w-full bg-federal-blue py-12 text-white mt-12">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+<div class="flex items-center gap-3">
+<div class="size-12 bg-white rounded-full flex items-center justify-center text-federal-blue shadow-lg">
+<span class="material-symbols-outlined text-3xl font-bold">shopping_bag</span>
+</div>
+<h2 class="text-3xl font-extrabold tracking-tight text-white">NobleMart</h2>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-lg font-bold uppercase font-display">NEW TO NOBLEMART?</h3>
+<p class="text-sm opacity-90">Subscribe to our newsletter to get updates on our latest offers!</p>
+<div class="flex flex-col gap-4">
+<div class="flex gap-2">
+<div class="relative flex-1">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 material-symbols-outlined">mail</span>
+<input class="w-full pl-10 pr-4 py-3 rounded bg-white text-gray-900 border-none text-sm focus:ring-2 focus:ring-robin-egg outline-none" placeholder="Enter E-mail Address" type="email"/>
+</div>
+<button class="bg-[#1a1a1a] hover:bg-black text-white font-bold px-6 py-3 rounded text-sm uppercase transition-all">SUBSCRIBE</button>
+</div>
+<label class="flex items-start gap-2 cursor-pointer group">
+<input class="mt-1 rounded border-gray-400 text-robin-egg focus:ring-robin-egg bg-transparent" type="checkbox"/>
+<span class="text-[11px] text-gray-300 leading-tight group-hover:text-white transition-colors">
+                            I agree to NobleMart's Privacy and Cookie Policy. You can unsubscribe from newsletters at any time.
+                        </span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-4 md:items-end">
+<div class="flex items-start gap-3 md:justify-end">
+<div class="bg-yellow-400 text-federal-blue p-1.5 rounded-lg flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined fill-1 text-2xl">star</span>
+</div>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-tight">DOWNLOAD NOBLEMART FREE APP</h3>
+<p class="text-xs opacity-80 mt-1">Get access to exclusive offers!</p>
+</div>
+</div>
+<div class="flex gap-4 mt-2 md:justify-end">
+<a class="hover:opacity-80 transition-opacity" href="#">
+<img alt="Download on the App Store" class="h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4CWc0fZ3ThuZsP_xdoWMW_LRPmBD-JFpQelWCLwBxdGB3YFsymeJxsXgKm1GmgS9iB5qLj2xc3LPK1-si6f6ike46FwTS8t0Lkh0vKyNoStS_3JrYU_BsH8ZyB94VzgXMj8yDsAHo8CmYAIYwqa3JDcfKLegK2j9lfb140rcsbDtK2701LTGZGcfrmjJ1HkIvVfgBNGfTntlxBXRXQEpfPsMYXN-8u5lLl37wrSctFD72Xxaaesgsn_zul1r61EaMibPgqBoUO5k"/>
+</a>
+<a class="hover:opacity-80 transition-opacity" href="#">
+<img alt="Get it on Google Play" class="h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt5Uva4wRgYoCAYr6kT1hb1UF14oL0WIdRQhlhLOWLquB-mVkeH3d9E3n-BuipZseDnFaZGU71-6-Th1Djt_zSMSTl0LM4wfoHM0PJ4dLoE05d5b8y3fHN9Z2ISRe-mBQk5ATO0VsF4B_ToQtjDuB_vxjzrxE5XdaRHeBv0HdFeIUulByLp0EFVspzPEc7b6u0VB4jnAIoiLrUM7-eMA18-BLBCakRdsDD1E1BnjWHgy0tBxCmBe_AxvHagb6jsalLKZaoCeVvBP0"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#3e444a] text-gray-200 pt-10 pb-8 border-t border-gray-700 text-xs">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<h5 class="text-xl font-bold text-white tracking-tight">NobleMart</h5>
+</div>
+<p class="text-gray-400">NobleMart is the #1 multi-vendor platform in Nigeria, connecting quality products with value-seeking customers.</p>
+</div>
+<div>
+<h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Support</h5>
+<ul class="space-y-2 text-gray-400">
+<li><a class="hover:text-white transition-all block" href="#">Help Center</a></li>
+<li><a class="hover:text-white transition-all block" href="#">How to Shop on NobleMart</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Delivery Options</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Return Policy</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Business</h5>
+<ul class="space-y-2 text-gray-400">
+<li><a class="hover:text-white transition-all block" href="#">Sell on NobleMart</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Become a Sales Consultant</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Become a Logistics Partner</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Contact Us</h5>
+<ul class="space-y-2 text-gray-400">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Lagos, Nigeria</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+<a class="hover:text-white transition-colors" href="mailto:help@noblemart.com.ng">help@noblemart.com.ng</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-600 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-gray-500">© 2024 NobleMart Technologies Limited.</p>
+<div class="flex gap-2 opacity-50">
+<span class="font-bold border border-gray-600 px-1 py-0.5 rounded">VISA</span>
+<span class="font-bold border border-gray-600 px-1 py-0.5 rounded">Mastercard</span>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

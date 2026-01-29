@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart - Order Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9", // Electric Indigo
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                        "noble-blue": "#01C2CA", // Robin Egg Blue
+                        "noble-dark": "#020249", // Federal Blue
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="flex flex-col items-center justify-start w-full">
+<!-- Header: Robin Egg Blue -->
+<header class="w-full bg-noble-blue py-6 px-10 flex justify-center border-b border-black/5">
+<div class="max-w-[800px] w-full flex items-center gap-3">
+<div class="text-white">
+<svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-2xl font-bold tracking-tight">NobleMart</h2>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="max-w-[800px] w-full flex flex-col gap-0 shadow-xl my-0 sm:my-8 bg-white dark:bg-[#1f1a2d]">
+<!-- Hero Section -->
+<div class="relative w-full h-[320px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Happy dark-skinned person holding a shopping package" style='background-image: linear-gradient(0deg, rgba(2, 2, 73, 0.6) 0%, rgba(2, 2, 73, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHIK5jnsOh8QNrtoAqLyoPRXnSuIE2J9oCNiQu67pKA0110IASc9wmDZiftRnds2sS3lUcpKneudO-rmNfqy4TvG-mMacemoXk1u4MiJVdLFLk4ozCPGCz0G63x90bEVbDq4ffEOhjUiRUGgcC7OTYw8JH1eNBAuZPz-XsxaHOXn9VOtYXuXn8-hj7wcrhj_9Il5sZb09N4D-NFq6OYfuo4o7hyKbtf7PQyTUVzFgC3XM9JXmiNsUWqE29QrWlCzGJj75A2AL0DIs");'>
+</div>
+<div class="absolute bottom-8 left-8">
+<h1 class="text-white text-4xl font-bold leading-tight">Your Order is on its Way!</h1>
+</div>
+</div>
+<!-- Personalized Greeting & Intro -->
+<div class="px-8 pt-10">
+<h2 class="text-[#120e1b] dark:text-white text-3xl font-bold mb-4">Hi Chinelo,</h2>
+<p class="text-[#120e1b]/80 dark:text-white/80 text-lg leading-relaxed">
+                    Your order <span class="font-bold text-primary">#NM-123456789</span> has been confirmed and is being processed by our vendors. We're getting it ready for delivery.
+                </p>
+</div>
+<!-- Trust Banner (NobleShield) -->
+<div class="px-8 py-8">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl border border-[#01C2CA]/30 bg-[#01C2CA]/5 p-6">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-noble-blue">verified_user</span>
+<p class="text-noble-dark dark:text-white text-lg font-bold leading-tight">NobleShield Protection</p>
+</div>
+<p class="text-noble-dark/70 dark:text-white/70 text-base font-normal leading-normal">
+                            Funds are held in escrow and only released to vendors once you confirm delivery. Your satisfaction is guaranteed.
+                        </p>
+</div>
+<a class="text-sm font-bold leading-normal tracking-wide flex items-center gap-2 text-noble-blue whitespace-nowrap" href="#">
+                        Learn More
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Order Summary Card -->
+<div class="px-8 py-4">
+<div class="bg-white dark:bg-[#251e36] border border-gray-100 dark:border-white/5 rounded-xl p-8 shadow-sm">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2 dark:text-white">
+<span class="material-symbols-outlined">receipt_long</span>
+                        Order Summary
+                    </h3>
+<div class="flex flex-col gap-6">
+<!-- Item 1 -->
+<div class="flex items-center justify-between gap-4 pb-6 border-b border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-lg bg-cover bg-center shrink-0 border border-gray-200 dark:border-white/10" data-alt="Premium Noise Cancelling Headphones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQx5L1nMDHXqZM_GyzLJdU62AjamnKJZJBQkQ1UxxxNhQq1nCHuyIgJn0BPTutXPKp5AbfNTuvbjtxtRrE8zarwchWz2NZM2oipcMOUM6m8EwJGOYUc17UnjklnOqnehG3EwkKt1JxxYwG9eOYAbSxNRsTHbB7lNO-IGPNbFHpUfObSitskzk_dq7n34XOlRvmGeZiq_9AIoQ8BXiRjaksNwt9xZELrsx__Ufer27FPT-vrjJ61QR3x4Y-qRRzJYRMT_YrYNl_D8s");'></div>
+<div>
+<p class="text-base font-bold dark:text-white">Sony WH-1000XM5 Wireless Headphones</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Qty: 1 • Midnight Blue</p>
+</div>
+</div>
+<p class="text-lg font-bold dark:text-white">₦245,000</p>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between gap-4 pb-6 border-b border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-lg bg-cover bg-center shrink-0 border border-gray-200 dark:border-white/10" data-alt="Modern Leather Office Chair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCFmbBWf62gMI_JkxZRxP1D5B-6VMj3pvDsemjt7jUUXBCOsVCBICLvrcf8uRDqIW680yY63m587R9CB2XJYsCEI1UpA4GsEHVEGhhtenX9TVcOZ4Ohejvi42hIHM-qgRZLwiKTQt4YRNN6szchvFIZ9C3rF9CG5iZsUWM0r_PYtq0AskvDs3HJRjuHGHxfWYDu7QtZJj45WKRI6tiHEOXDSAa7ytfoCXmBp0ZRVZAZDKEyKtftOfq0LhSMNPame1MId2zQc85mWA");'></div>
+<div>
+<p class="text-base font-bold dark:text-white">Executive Ergonomic Leather Chair</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Qty: 1 • Black</p>
+</div>
+</div>
+<p class="text-lg font-bold dark:text-white">₦85,000</p>
+</div>
+</div>
+<!-- Totals -->
+<div class="mt-8 space-y-3">
+<div class="flex justify-between text-gray-600 dark:text-gray-400">
+<span>Subtotal</span>
+<span>₦330,000</span>
+</div>
+<div class="flex justify-between text-gray-600 dark:text-gray-400">
+<span>Shipping Fee</span>
+<span>₦4,500</span>
+</div>
+<div class="flex justify-between pt-4 border-t border-gray-100 dark:border-white/5">
+<span class="text-xl font-bold dark:text-white">Grand Total</span>
+<span class="text-xl font-bold text-primary">₦334,500</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Delivery Details -->
+<div class="px-8 py-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Delivery Address</h4>
+<p class="text-base leading-relaxed dark:text-white">
+                        Chinelo Adaobi<br/>
+                        15A Admiralty Way, Lekki Phase 1<br/>
+                        Lagos, Nigeria<br/>
+                        +234 802 000 0000
+                    </p>
+</div>
+<div class="space-y-4">
+<h4 class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Estimated Delivery</h4>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-noble-blue text-4xl">local_shipping</span>
+<div>
+<p class="text-xl font-bold dark:text-white">Oct 24 - Oct 27</p>
+<p class="text-sm text-gray-500">Standard Doorstep Delivery</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="px-8 py-10 flex justify-center">
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-5 px-12 rounded-xl text-lg flex items-center gap-3 transition-all transform hover:scale-[1.02]">
+<span class="material-symbols-outlined">location_on</span>
+                    Track Your Order
+                </button>
+</div>
+<!-- Footer: Federal Blue -->
+<footer class="bg-noble-dark text-white p-12 mt-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+<div>
+<div class="flex items-center gap-2 mb-6">
+<svg class="size-6 text-noble-blue" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h3 class="text-xl font-bold">NobleMart</h3>
+</div>
+<p class="text-white/60 max-w-sm mb-6">Experience high-quality products from top Nigerian vendors, protected by escrow for your peace of mind.</p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-noble-blue transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="size-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-noble-blue transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+</a>
+<a class="size-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-noble-blue transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">camera_alt</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<h4 class="font-bold mb-2">Support</h4>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Help Center</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Returns Policy</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Shipping Info</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold mb-2">Corporate</h4>
+<a class="text-white/60 hover:text-white transition-colors" href="#">About NobleMart</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Sell on NobleMart</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-white/10 text-center text-white/40 text-sm">
+                    © 2024 NobleMart Technologies. All rights reserved. Lagos, Nigeria.
+                </div>
+</footer>
+</main>
+</div>
+</body></html>

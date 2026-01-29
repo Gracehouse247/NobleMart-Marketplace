@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Refund Notification</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c1cb",
+                        "background-light": "#f8fcfc",
+                        "background-dark": "#0f2223",
+                        "card-light": "#ffffff",
+                        "card-dark": "#162a2b",
+                        "indigo-custom": "#5C1BE8",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0c1c1d] dark:text-white overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e6f4f4] dark:border-[#1a3a3c] px-10 py-3 bg-white dark:bg-[#0f2223] sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0c1c1d] dark:text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined !text-3xl">shopping_bag</span>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#459ca1] flex border-none bg-[#e6f4f4] dark:bg-[#1a3a3c] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined" style="font-size: 24px;">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0c1c1d] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e6f4f4] dark:bg-[#1a3a3c] focus:border-none h-full placeholder:text-[#459ca1] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search products..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Stores</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Help</a>
+</div>
+<div class="flex gap-2">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#e6f4f4] dark:bg-[#1a3a3c] text-[#0c1c1d] dark:text-white hover:bg-[#d0efef] dark:hover:bg-[#254b4d] transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">shopping_cart</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#e6f4f4] dark:bg-[#1a3a3c] text-[#0c1c1d] dark:text-white hover:bg-[#d0efef] dark:hover:bg-[#254b4d] transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">notifications</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-[#e6f4f4] dark:bg-[#1a3a3c] text-[#0c1c1d] dark:text-white hover:bg-[#d0efef] dark:hover:bg-[#254b4d] transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-[#0f2223] shadow-sm" data-alt="User profile avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwA7EsWZ8PZ7DDJuC4EC6-QYFuUEjh70IhlAfqWmo-qqqaOWFSv_LkRzd2gz_byJx4wkRTHfhGeJ564VRjgEzx63pB6ErsHzKQ0rlaFoZVXfn7tBoTw0Yflyn5Q8YYD92eZYPdd_5zQHkRZ4kJd80qhuhmUr4RLzVy4HrNmUg2_3H2Ag7P2PC9x-_hGXYCK4XNKMT9SyXz6606Bc7-GE1zIHKENHttjv49EdV--UKdmLzro1wzS1fJNR4IS3uq1AeO9xDkj88_afI");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6">
+<div class="max-w-[800px] w-full flex flex-col gap-6">
+<!-- Notification Card -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.2)] overflow-hidden">
+<div class="p-8 sm:p-10 flex flex-col items-center text-center">
+<!-- Icon -->
+<div class="mb-6 relative">
+<div class="w-24 h-24 sm:w-32 sm:h-32 bg-center bg-contain bg-no-repeat" data-alt="3D illustration of a digital wallet with money" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBch9fvX1mxx1zMF5gQkzIV17a2cwLTIWe-TVGhj5pmZP08-gdK9_NPMuRSWwhEK7vI_0NMrcqNGAUf4_46_V78akuFdOGrM0gvllEG27maJTxTwwIUg1MziySfqnUQFb6lBjdWMeKkNUwSURzCJ7O0wpFtANOG8b3xfARfTaKOREdhJy3isezim2_wmDFzfS-DKJLBEP8eN6BvoDFqk1cnMLPf9xXSZ7bJOBOvCN7uFM6IWvWSaADIN6quojqgI2NWYL9q-UxVkJQ");'></div>
+<div class="absolute -right-2 -bottom-2 bg-primary text-white rounded-full p-1.5 border-4 border-white dark:border-card-dark shadow-md flex items-center justify-center">
+<span class="material-symbols-outlined font-bold" style="font-size: 24px;">add</span>
+</div>
+</div>
+<!-- Header Text -->
+<h1 class="text-[#0c1c1d] dark:text-white text-2xl sm:text-3xl font-extrabold leading-tight mb-3">Refund Successfully Credited!</h1>
+<p class="text-[#5b6b6c] dark:text-gray-400 text-base sm:text-lg font-medium leading-relaxed max-w-xl">
+                        A refund of <span class="text-primary font-bold">₦25,400</span> for Order <span class="text-[#0c1c1d] dark:text-white font-semibold">#NM-987654</span> has been instantly credited to your NobleMart Wallet.
+                    </p>
+<!-- Stats / Balance Breakdown -->
+<div class="w-full mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-[#f8fcfc] dark:bg-[#132526] border border-[#e6f4f4] dark:border-[#1e3d3f]">
+<p class="text-[#5b6b6c] dark:text-gray-400 text-sm font-semibold uppercase tracking-wider">Previous Balance</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl sm:text-2xl font-bold tracking-tight">₦1,200</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-[#e6f4f4] dark:bg-[#1a3a3c] border border-primary/20">
+<p class="text-[#459ca1] dark:text-[#5bc1c6] text-sm font-semibold uppercase tracking-wider">Amount Refunded</p>
+<p class="text-primary text-xl sm:text-2xl font-bold tracking-tight">+ ₦25,400</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-[#f8fcfc] dark:bg-[#132526] border-2 border-primary/10 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full -mr-4 -mt-4"></div>
+<p class="text-[#0c1c1d] dark:text-white text-sm font-bold uppercase tracking-wider">New Balance</p>
+<p class="text-[#0c1c1d] dark:text-white text-2xl sm:text-3xl font-extrabold tracking-tight">₦26,600</p>
+</div>
+</div>
+<!-- Meta Text -->
+<div class="mt-8 flex items-center justify-center gap-2 text-xs sm:text-sm text-[#8a999a] dark:text-gray-500 font-medium bg-gray-50 dark:bg-[#132526] py-2 px-4 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 16px;">receipt_long</span>
+<span>Transaction ID: REF-2023-8899</span>
+<span class="mx-1 opacity-50">|</span>
+<span>24 Oct, 2023 - 10:42 AM</span>
+</div>
+<!-- Trust / Action Panel -->
+<div class="w-full mt-8 p-4 rounded-lg bg-[#eef8f9] dark:bg-[#142e30] border border-[#cde8ea] dark:border-[#1e3d3f] flex flex-col sm:flex-row gap-4 items-start sm:items-center text-left">
+<div class="bg-white dark:bg-[#1a3a3c] p-2 rounded-full shrink-0 shadow-sm text-primary">
+<span class="material-symbols-outlined" style="font-size: 24px;">verified_user</span>
+</div>
+<div class="flex-1">
+<p class="text-[#0c1c1d] dark:text-white text-sm font-bold mb-1">Safe &amp; Flexible Funds</p>
+<p class="text-[#459ca1] dark:text-gray-400 text-sm leading-relaxed">
+                                Wallet funds can be used for instant payment on any NobleMart store or withdrawn directly to your verified bank account.
+                            </p>
+</div>
+</div>
+<!-- Actions -->
+<div class="w-full mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+<button class="flex-1 sm:max-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-[#01b0b9] text-white text-base font-bold leading-normal transition-all shadow-[0_2px_8px_rgba(1,193,203,0.25)] hover:shadow-[0_4px_12px_rgba(1,193,203,0.35)]">
+                            Shop Now
+                        </button>
+<button class="flex-1 sm:max-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-transparent border-2 border-indigo-custom text-indigo-custom hover:bg-indigo-custom/5 dark:hover:bg-indigo-custom/10 text-base font-bold leading-normal transition-all">
+                            Withdraw Funds
+                        </button>
+</div>
+</div>
+</div>
+<!-- Footer Links (Optional subtle links) -->
+<div class="flex justify-center gap-6 text-[#8a999a] dark:text-gray-600 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+</div>
+</div>
+</main>
+</body></html>

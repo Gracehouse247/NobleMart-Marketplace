@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="post-meta-title">Blog Post | NobleMart</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .post-header {
+            max-width: 900px;
+            margin: 4rem auto 2rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .post-featured-img {
+            width: 100%;
+            max-width: 1000px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 2rem;
+            margin: 0 auto 4rem;
+            display: block;
+        }
+
+        .post-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            line-height: 1.8;
+            font-size: 1.125rem;
+            color: var(--slate-700);
+        }
+
+        .post-body h2 {
+            font-size: 1.8rem;
+            margin: 3rem 0 1.5rem;
+            color: var(--slate-900);
+        }
+
+        .post-body p {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <article id="post-detail">
+        <header class="post-header">
+            <span id="post-cat"
+                style="color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Category</span>
+            <h1 id="post-title" style="font-size: 3.5rem; font-weight: 900; margin: 1rem 0; line-height: 1.2;">Loading
+                post...</h1>
+            <div id="post-meta"
+                style="color: var(--slate-400); display: flex; align-items: center; justify-content: center; gap: 1rem; font-weight: 500;">
+                <span id="post-author">Author</span> • <span id="post-date">Date</span>
+            </div>
+        </header>
+
+        <img src="" id="post-img" class="post-featured-img">
+
+        <div id="post-content" class="post-body">
+            <!-- Content via JS -->
+        </div>
+    </article>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const slug = urlParams.get('slug');
+            if (!slug) { window.location.href = 'index.html'; return; }
+
+            try {
+                const res = await fetch(`https://api.noblemart.com.ng/content/${slug}`);
+                const post = await res.json();
+
+                document.getElementById('post-meta-title').textContent = `${post.title} | NobleMart Blog`;
+                document.getElementById('post-title').textContent = post.title;
+                document.getElementById('post-cat').textContent = post.category || 'Lifestyle';
+                document.getElementById('post-author').textContent = post.author_name;
+                document.getElementById('post-date').textContent = new Date(post.created_at).toLocaleDateString();
+                document.getElementById('post-img').src = post.featured_image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200';
+
+                // Convert \n to <br> for simple demo content
+                document.getElementById('post-content').innerHTML = post.content.replace(/\n\s*\n/g, '<br><br>').replace(/\n/g, '<br>');
+
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+
+</html>

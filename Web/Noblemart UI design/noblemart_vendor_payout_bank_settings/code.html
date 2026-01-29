@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Payout Bank Settings</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter and Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                        "federal-blue": "#020249",
+                        "noble-green": "#10b981"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "brand": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active {
+            background-color: rgba(92, 28, 233, 0.2);
+            border-left: 4px solid #5c1ce9;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar: Persistent dark Federal Blue (#020249) -->
+<aside class="w-72 bg-federal-blue text-white flex flex-col justify-between py-6 shrink-0">
+<div>
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl">shopping_cart</span>
+</div>
+<div>
+<h2 class="font-brand text-lg leading-tight">NobleMart</h2>
+<p class="text-[10px] text-primary uppercase tracking-widest font-bold">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 px-3">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="sidebar-active flex items-center gap-3 px-4 py-3 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-sm font-medium">Payouts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Account Settings</span>
+</a>
+</nav>
+</div>
+<div class="px-3">
+<div class="bg-white/5 rounded-xl p-4 mb-4 border border-white/10">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Vendor profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwk29glBgUjvmbbT8OGnoC5m61QYvh2iPKu0HWDHOUsYrqsAxbpHX50lNjf844GWh_5-UwyE5c6hdsd0f9FaGf7HeZWH_GC1vabZmWU6Gh46WNPQIgNJcQKwg_3AzULbeeT17IRsQ916SAySX8TwAMKC6zaVDjBEqLqM7pF6z_NNvakTImFJcCybgUw83D2InQzhocbL3EhLat0L4Od5oKN6Kf4b_tUiLQeNs5eD_nieAlZidrIQLVAwU8w82GtFmxoaPjO1G58Ks")'></div>
+<div>
+<p class="text-sm font-bold">Samson Okoli</p>
+<p class="text-[10px] text-slate-400">Verified Merchant</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-lg text-xs font-bold transition-all">
+                        Go to Shop
+                    </button>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">help_center</span>
+<span class="text-xs font-medium">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-red-500/10 text-red-400 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">logout</span>
+<span class="text-xs font-medium">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Section -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="max-w-[1000px] mx-auto py-10 px-8">
+<!-- Page Heading -->
+<div class="mb-8">
+<h1 class="font-brand text-3xl text-slate-900 dark:text-white mb-2">Manage Payout Bank Account</h1>
+<p class="text-slate-500 dark:text-slate-400">Securely manage your bank details for automated earnings payouts.</p>
+</div>
+<!-- Main White Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<!-- Linked Bank Card -->
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-6 flex flex-wrap items-center justify-between gap-6 border border-slate-100 dark:border-slate-800 relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute -right-8 -top-8 opacity-5">
+<span class="material-symbols-outlined text-[160px]">shield</span>
+</div>
+<div class="flex gap-6 items-center">
+<div class="size-20 rounded-xl bg-white dark:bg-slate-700 shadow-sm flex items-center justify-center p-3">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" data-alt="Access Bank Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXCvlH0MTfcoGkUdM4lHIazU26wh6VCyaQg6X7BSaMaOzN3eSbAGcFBv6U4zGivnWzi218KRa2w3fopK6mCfMfl01FlSjBZ0ADKoZO2GGiWwie9PndXHJe_KhFWfln2er9NNgvyyT5jtOmEXCcOzQHILaM8BBQRRhKtBZejEs84BEsBy5aSHjk8vO5-6Ubz0037JHaUX3mekhKwW4Vj4aD_XRmn_a3O5mEcfcJtm3gW741sGMUPwliwYnoEE6qSu-t6kmkI8KSAo0")'></div>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<p class="text-xs font-bold text-primary uppercase tracking-widest">Active Payout Method</p>
+<div class="flex items-center gap-1 bg-noble-green/10 text-noble-green px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                                            Verified
+                                        </div>
+</div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Access Bank • Samson Okoli</h3>
+<p class="text-slate-500 dark:text-slate-400 font-mono tracking-widest">**** **** 4567</p>
+</div>
+</div>
+<button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm">history</span>
+                                Payout History
+                            </button>
+</div>
+</div>
+<!-- Update Form Section -->
+<div class="p-8">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Update Bank Details</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<!-- Select Bank -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Select Bank</label>
+<div class="relative">
+<select class="w-full h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all appearance-none cursor-pointer">
+<option value="">Search Nigerian Banks...</option>
+<option value="gtb">Guaranty Trust Bank (GTBank)</option>
+<option value="zenith">Zenith Bank</option>
+<option selected="" value="access">Access Bank</option>
+<option value="first">First Bank of Nigeria</option>
+<option value="uba">United Bank for Africa (UBA)</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Account Number -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Account Number</label>
+<div class="relative">
+<input class="w-full h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="10-digit account number" type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-primary font-bold text-[10px] cursor-pointer hover:underline uppercase">
+                                        Verify
+                                    </div>
+</div>
+</div>
+<!-- Account Name -->
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Account Holder Name</label>
+<input class="w-full h-12 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 text-sm text-slate-500 cursor-not-allowed italic" disabled="" type="text" value="SAMSON OKOLI"/>
+<p class="text-[11px] text-slate-400 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                                    Name will be automatically verified against the account number provided.
+                                </p>
+</div>
+</div>
+<!-- Verification Note -->
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-8 flex items-start gap-4">
+<div class="bg-primary rounded-lg p-2 shrink-0">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">NobleShield Security Policy</h4>
+<p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    To protect your earnings, bank account names must exactly match your registered business name or personal identity on NobleMart. Updates undergo manual review if discrepancies are found.
+                                </p>
+</div>
+</div>
+<!-- 2FA Section -->
+<div class="border-t border-slate-100 dark:border-slate-800 pt-8 mb-8">
+<div class="max-w-md">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">lock_person</span>
+                                    Security Confirmation
+                                </h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Enter the 6-digit code sent to your registered phone number (****098) to authorize this change.</p>
+<div class="flex gap-2 mb-2">
+<input class="size-12 rounded-lg border border-slate-200 dark:border-slate-700 text-center text-lg font-bold focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-slate-800" maxlength="1" type="text"/>
+<input class="size-12 rounded-lg border border-slate-200 dark:border-slate-700 text-center text-lg font-bold focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-slate-800" maxlength="1" type="text"/>
+<input class="size-12 rounded-lg border border-slate-200 dark:border-slate-700 text-center text-lg font-bold focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-slate-800" maxlength="1" type="text"/>
+<input class="size-12 rounded-lg border border-slate-200 dark:border-slate-700 text-center text-lg font-bold focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-slate-800" maxlength="1" type="text"/>
+<input class="size-12 rounded-lg border border-slate-200 dark:border-slate-700 text-center text-lg font-bold focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-slate-800" maxlength="1" type="text"/>
+<input class="size-12 rounded-lg border border-slate-200 dark:border-slate-700 text-center text-lg font-bold focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-slate-800" maxlength="1" type="text"/>
+</div>
+<button class="text-[11px] text-primary font-bold hover:underline">Resend Code (45s)</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-4 border-t border-slate-100 dark:border-slate-800 pt-8">
+<button class="px-6 py-3 rounded-lg text-sm font-bold text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                Cancel
+                            </button>
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                Verify &amp; Save Bank Account
+                            </button>
+</div>
+</div>
+</div>
+<!-- Footer Support -->
+<div class="mt-10 flex justify-between items-center text-slate-400 text-xs">
+<p>© 2024 NobleMart Nigeria. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="hover:text-primary transition-colors" href="#">Security Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Vendor Support</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

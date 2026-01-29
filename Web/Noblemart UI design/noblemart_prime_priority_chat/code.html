@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Prime Priority Chat</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#440ed8",
+              "federal-blue": "#020249",
+              "robin-egg": "#01C2CA",
+              "electric-indigo": "#5C1BE8",
+              "background-light": "#f6f6f8",
+              "background-dark": "#151022",
+              "agent-bubble": "#fdf8e6",
+            },
+            fontFamily: {
+              "display": ["Poppins", "Inter", "sans-serif"],
+              "sans": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .prime-gradient {
+            background: linear-gradient(135deg, #020249 0%, #0a0a75 50%, #d4af37 150%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans transition-colors duration-300">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Top Nav Bar (Refactored from Components) -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 z-50">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="flex items-center justify-center size-8 bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-xl">diamond</span>
+</div>
+<h2 class="font-display text-lg font-bold leading-tight tracking-tight">NobleMart Prime</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Prime Benefits</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRh4c8xZeq6azs4zc_wUiB-jzwNg_U3nc4Y7D4y1eGEuoHtuhxYFB-AtJlre4pOMR16KRG-ZEdkJozTQFRfA3lkhAmFg-TWC58kdACGwUYwKwe_F9AkFodjiMpyJ_jBot56KGkIhV76y7TzmCCrZR9Qhdg91TpGJnKHgXu7DDDh_ovgtH37slUKurjjiKFz3H2FT3KTkqrZm_p-PIraxmJ8LzuhhJk-l0osnqpd28H-_12uL6_USjBNUegFjuz8zkjeBUntn7lNlc");'>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex flex-1 overflow-hidden relative">
+<!-- Abstract Background Decoration -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-no-repeat bg-cover bg-right" data-alt="Abstract sleek modern office interior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDq6R0pl2SmaMO8jUxVTm_RYpRgIjIlCmXw7oTUO6OCcLOcTf4Is3D4dM08VEQ0W_qt2WW9Erk3E2nQlrSdVE0GHnrD-ntktAFNDEYXI24IOr8cI_5IdM0zc4rjs5NAUCuxat_Jaak6nC154z80DHWI3dGlU1KwFm-Xt3jQ7q9K3eQScZKelBOasatYNy3nEcSMtDjcBn9oHaJX5YzuEaLws1KVuQ0S9OhRbh22O8oPRXLwThk5vbzUHNvURBqTF12A-tUBfm6Wv2k");'>
+</div>
+</div>
+<!-- Chat Container -->
+<div class="flex flex-1 justify-center py-6 px-4 md:px-10 z-10 overflow-hidden">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] bg-white dark:bg-slate-900 shadow-2xl rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Chat Header (Refactored from ProfileHeader) -->
+<div class="prime-gradient p-6 @container">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex items-center gap-5">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20 border-2 border-white/30 shadow-lg" data-alt="Photo-realistic Prime Concierge Specialist avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlKM8DyS99v59LqxH7f0wGV3z3-E9ltjUv0asO8Abk6nUjGntUceMLK1ItTZQHQw3DTW50DdcBG84ROWvCUJ7e-EaKpsgjbdv9Vb6GPgdf09GQ86F5_Se_0fvriAi6hmI9ij31T7Uv5-eAdNJy9WCQcNvKtC05xnN0ojhZIXCpWPtnsMTbMgOLTUsR1O6aG9bjAwGrP4sNY027D2Lq-3GB9jWLxN4rIkNZCanhyvJFbHFnQ3aqkaTbZoIg1wI1gs68vTu8o8wS8ZY");'>
+</div>
+<div class="absolute bottom-0 right-0 size-5 bg-green-400 border-2 border-[#020249] rounded-full"></div>
+</div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<h1 class="font-display text-white text-xl font-bold leading-tight">NobleMart Prime Priority Support</h1>
+<span class="material-symbols-outlined text-yellow-400 text-lg">workspace_premium</span>
+</div>
+<p class="text-white/80 text-sm font-medium font-display">Specialist: Sarah Jenkins • Gold Crown Member Support</p>
+<div class="flex items-center gap-3 mt-2">
+<span class="bg-robin-egg text-federal-blue text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Priority Status: Active</span>
+<span class="text-white/70 text-[12px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Est. Wait: &lt; 1 min
+                                    </span>
+</div>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-xl h-10 px-6 bg-white/10 hover:bg-white/20 text-white text-sm font-bold border border-white/20 transition-all">
+<span>End Chat</span>
+</button>
+</div>
+</div>
+<!-- Chat Layout Body -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar (Refactored from SideNavBar) -->
+<aside class="hidden lg:flex w-80 flex-col border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+<div class="p-6 flex flex-col h-full">
+<h3 class="font-display font-bold text-slate-800 dark:text-white mb-4">Order Context</h3>
+<div class="flex flex-col gap-4">
+<!-- Order Item -->
+<div class="flex flex-col gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-12" data-alt="High-end laptop image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbh3nzQXhn4tX-gzweIYk1ZPCBvM_uyocZo0FC55BiZ0Rn8dEq3-mIKX3R-uEhVQSnv8S6u5OlYyFbvPVTUnoLgZM3rryifUMlvAiUVkgyjDdINPJkdZc0ex3Drl72HET9tvK_GRc61EMCWsmnzLhLF6UaKh6xg-Z5ut7ghTGH1aeuildR4mVe5TGXj2-mjA3rxEjZR7mGRdgf22jGopMD7T1j5LSAW18zX7dP1aPdXu0R2ndOYA72HK51hwpZxKv4QYU8XvYtQ-o");'></div>
+<div class="flex flex-col overflow-hidden">
+<h4 class="text-slate-900 dark:text-white text-sm font-semibold truncate">MacBook Pro 16" M3</h4>
+<p class="text-slate-500 text-xs">Order #NM99283</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs mt-1">
+<span class="text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded">Delivered Oct 24</span>
+<a class="text-primary hover:underline font-medium" href="#">Details</a>
+</div>
+<button class="w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-electric-indigo transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">local_shipping</span> Track Package
+                                    </button>
+</div>
+<!-- Utility Menu -->
+<div class="flex flex-col gap-1 mt-4">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<p class="text-sm font-semibold">Active Support Case</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">history</span>
+<p class="text-sm font-medium">Order History</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">assignment_return</span>
+<p class="text-sm font-medium">Returns &amp; Refunds</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">star</span>
+<p class="text-sm font-medium">Prime Rewards</p>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-6">
+<div class="bg-federal-blue/5 dark:bg-white/5 p-4 rounded-xl">
+<p class="text-xs text-slate-500 dark:text-slate-400 text-center">Need technical help? <br/>Our Prime Tech Team is available 24/7.</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Chat Area -->
+<div class="flex flex-1 flex-col bg-white dark:bg-slate-900">
+<div class="flex-1 overflow-y-auto p-4 md:p-8 flex flex-col gap-6">
+<!-- Timestamp -->
+<div class="flex justify-center">
+<span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-[10px] font-bold text-slate-400 uppercase tracking-widest">Today 10:45 AM</span>
+</div>
+<!-- Agent Message -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mt-2 shadow-sm" data-alt="Concierge Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBssaz0OwZtH96x_0xxTDW2H1hegVDmRw17rRXu9HvWRoc_MFq41edr4uEZfBi20xzKsF-bqqPg1o_7mAaWQNDnZSaSXbyJFMCEVopWKPkuF5amRiw-dG570vPOHQF601Cqf2VpFNIoPcULDEtPdw0La_XsKOyu3aERqoj5WJe6Ob1zFm3kSTV3BDRt6LGg4MY8JDDoxJoz7vZ_NiiqYdXbumrIxiV7oX7Os58Hgii53fgrbjKbytDl39xWOKzW_Rt_ACRQ1yqvBVs");'></div>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-slate-400 text-[11px] font-bold font-display px-1 uppercase tracking-tight">Prime Concierge specialist</p>
+<div class="text-[15px] font-medium leading-relaxed rounded-2xl rounded-tl-none px-5 py-3 bg-agent-bubble text-slate-800 shadow-sm border border-yellow-100 font-display">
+                                        Hello! I'm Sarah, your Prime Concierge. I see you're inquiring about the warranty for your recent MacBook Pro 16" purchase. How can I assist you today?
+                                    </div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-start gap-3 max-w-[85%] self-end flex-row-reverse">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mt-2 shadow-sm border border-primary/20" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkqQuOJzjecT___f9bhjgjLNM84yPqSctBXZNorWHzgm5_VRdoa5Wqc-mwZ_33qvzKLNeoo1QCbfCXwq4QUklJ6SX_TvhByPavbsr3uq2d7QwDeJWudLlPHAFLEHFJPxl0v890Q2BeZez1Lc7BxpTzX-eCf3GUbtUlYgK1HfP4mlN2kSWEAqm-qzB9sxV6vxgFiykPbkgIgS-ldL1cAtcFAsTioevOylTR3bN3vSm_HQQz9uwgq8GNwweNPgIf0-QfBV8q1ARyCe4");'></div>
+<div class="flex flex-col gap-1 items-end">
+<p class="text-slate-400 text-[11px] font-bold font-display px-1 uppercase tracking-tight">You</p>
+<div class="text-[15px] font-medium leading-relaxed rounded-2xl rounded-tr-none px-5 py-3 bg-electric-indigo text-white shadow-md font-display">
+                                        Hi Sarah, thanks for the quick response! I wanted to check if the AppleCare+ I purchased is already linked to my NobleMart Prime account or if I need to register it separately?
+                                    </div>
+</div>
+</div>
+<!-- Agent Typing Indicator -->
+<div class="flex items-center gap-2 text-slate-400 text-xs italic ml-11">
+<div class="flex gap-1">
+<span class="size-1 bg-slate-400 rounded-full animate-pulse"></span>
+<span class="size-1 bg-slate-400 rounded-full animate-pulse delay-75"></span>
+<span class="size-1 bg-slate-400 rounded-full animate-pulse delay-150"></span>
+</div>
+                                Sarah is typing...
+                            </div>
+</div>
+<!-- Footer Input Bar -->
+<div class="p-6 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-800 rounded-2xl p-2 pl-4 border border-slate-200 dark:border-slate-700 shadow-inner">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-slate-800 dark:text-white font-medium text-sm py-2" placeholder="Type your message to Prime Support..." type="text"/>
+<button class="text-slate-400 hover:text-primary transition-colors px-2">
+<span class="material-symbols-outlined text-2xl">add_reaction</span>
+</button>
+<button class="bg-robin-egg hover:bg-robin-egg/80 text-federal-blue size-10 flex items-center justify-center rounded-xl shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined font-bold">send</span>
+</button>
+</div>
+<div class="mt-3 flex justify-between items-center px-2">
+<p class="text-[10px] text-slate-400 font-semibold uppercase tracking-widest">Prime Concierge active connection</p>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sm text-slate-400 cursor-pointer hover:text-primary">mic</span>
+<span class="material-symbols-outlined text-sm text-slate-400 cursor-pointer hover:text-primary">videocam</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

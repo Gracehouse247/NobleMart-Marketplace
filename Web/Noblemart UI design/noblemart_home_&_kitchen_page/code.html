@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Home &amp; Kitchen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0c1c1d] dark:text-white transition-colors duration-300">
+<!-- Navbar Component -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#e6f4f4] dark:border-gray-800 px-4 md:px-10 py-3">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-[#0c1c1d] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-64 h-10">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="bg-[#e6f4f4] dark:bg-gray-800 flex items-center justify-center pl-4 text-primary">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-[#e6f4f4] dark:bg-gray-800 text-[#0c1c1d] dark:text-white focus:ring-0 placeholder:text-gray-500 pl-2 text-sm" placeholder="Search for blenders, pots..."/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Groceries</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Electronics</a>
+<a class="text-sm font-semibold text-primary" href="#">Home &amp; Kitchen</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Fashion</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e6f4f4] dark:bg-gray-800 text-[#0c1c1d] dark:text-white hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e6f4f4] dark:bg-gray-800 text-[#0c1c1d] dark:text-white hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="relative flex items-center justify-center rounded-lg h-10 w-10 bg-primary text-white hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-red-500 text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-4 md:px-10 py-6">
+<!-- Breadcrumbs Component -->
+<div class="flex flex-wrap gap-2 mb-6">
+<a class="text-primary text-sm font-medium hover:underline" href="#">Home</a>
+<span class="text-gray-400 text-sm">/</span>
+<a class="text-primary text-sm font-medium hover:underline" href="#">Categories</a>
+<span class="text-gray-400 text-sm">/</span>
+<span class="text-gray-600 dark:text-gray-300 text-sm font-medium">Home &amp; Kitchen</span>
+</div>
+<!-- Hero Section Component -->
+<section class="mb-12">
+<div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm border border-[#e6f4f4] dark:border-gray-800">
+<div class="flex flex-col md:flex-row min-h-[400px]">
+<div class="w-full md:w-3/5 bg-center bg-no-repeat bg-cover min-h-[300px]" data-alt="Modern kitchen with premium cookware and vegetables" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-BaOQT9BErYKY809yz-e9AfYdaxPzMcdyP2LK62NeWZP-uhDYcSWu6wFXPsQaP1vOInaJpunbqA2HV_U9zghaMsvhdG1pE9sQH3I2Kzg051GmwcYj913AV5bf9oOYhP3gphwLcjjbR7BBwEVW-eM3u8ZUK3-iALxhBCf--uB8xwCBgSM_S_OrVUzFuWwYyjisIso-8Z-EFX7aHx34WcEXplBIzsVteePA9dVV3DZhwRObHGNUmPjG9vbenNG3lZz_1FaVQ4iVAfc");'>
+</div>
+<div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-center gap-6">
+<span class="text-primary font-bold tracking-widest text-xs uppercase">Curated Collection</span>
+<h1 class="text-[#0c1c1d] dark:text-white text-4xl font-extrabold leading-tight tracking-tight">
+                            Chef's Choice: The Professional Starter Kit
+                        </h1>
+<p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+                            Elevate your culinary skills with our curated selection of premium cookware and appliances, perfect for the modern Nigerian home.
+                        </p>
+<button class="inline-flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold hover:shadow-lg transition-all w-fit">
+                            Shop the Collection
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Categories (ImageGrid) -->
+<section class="mb-12">
+<h2 class="text-[#0c1c1d] dark:text-white text-2xl font-bold mb-6">Quick Categories</h2>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-full aspect-square rounded-full border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-full" data-alt="Non-stick granite cookware set" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCio7v-ZbThB7nhum2ZMXbsI5EWEjmH2q-UeBR-aRfnPM5_Pno2YHfxhHY970kYP00-LKazPwWzIUFeAl36ofwDLB-JZ_hvKVRxh8XG6iXAU4htgZNpSdaJTejjk5M0flp5nGJOlk0oUxa83j8zyjtWzOYljjILweZeNmVEeXVfVJjANhRHJiFKFIDRInLUxwXJNNimMA5E7UNX7Js1306jaLN5dSX8NPBF51a0QP8pxgRSKQdHYxeKn2D4J4AtBzeyycJLvwqe8qQ");'></div>
+</div>
+<p class="text-sm font-bold group-hover:text-primary">Cookware</p>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-full aspect-square rounded-full border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-full" data-alt="High power kitchen blender" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBNp97DPm7PJroc3CzNbnRbgR2Dgk-rMkRlcXW_mgPpuovIxAW5ZlD_1wVlmtLOuigFaTrYFuf63clyBgfugy2YWA92ZBVu55rKUW_SaMGpgSPZsiQM-pyUqu10neahnyqIfszZmF8MW4p0bj-nxDbtRGaxqhGXu9op9DgbW8ps9dF1iz54D64qng161BCX5wBVpQlsFOrv9fecwEmUIR256zpQOn2yTUodhmgCErnaEKVDF_FHV0AJQzd5iCwrgTLtHhM1kVxAB0");'></div>
+</div>
+<p class="text-sm font-bold group-hover:text-primary">Blenders</p>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-full aspect-square rounded-full border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-full" data-alt="Stainless steel stock pots" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIA3F7ox6639FAhGhhou0Qy8exXIvdBZfQyVdQLvJu7SyaX2iyaVNOOJw5Z78BoJr5slocFsSjctln5VEpc0GLAI8Exouhbm35sYHRKVaJMTAyO83TQ49oQpuI-1qBzU-hhXUUAUXgIArREufbuwcQSIsEEaynciLntpv-MYEGOHRwD2VMYe471NJaVQaK069Z-ueZAM4beRZN9enAHw35dZqNGIGBCocb6f94f8fLyfoyvcF-h6xvnyN1gAaFZMxlACpGXxoyxxY");'></div>
+</div>
+<p class="text-sm font-bold group-hover:text-primary">Pots</p>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-full aspect-square rounded-full border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-full" data-alt="Professional chef knife set" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBR2L1EH-LrIQ9aYIVGynGYFI7_HklfGQVlemLyy7ZDUvax5sFDCc_A6xOYSTCI8yujwpXtN1EHs_XiSagdYDuYEN2rU-h1D6gyTkKKeHSHOGdqEDr1xALNdwgAVmYxIdYrsIQVKobnslby2f8Wdn77F8csgW8ZbXkyADL_BU_grmnuIor6qkOdopIgW7rYbuoq4v8zyIi89qay396WYGOlXjJLoh7TQ2VY0AdNfJFl7ItStPvC74dO-J7Xvm99Tbi0vzLun3lGgiE");'></div>
+</div>
+<p class="text-sm font-bold group-hover:text-primary">Knives</p>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-full aspect-square rounded-full border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-full" data-alt="Modern digital air fryer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMBXQhQT_X50N3Wox554DCw6p2_DcuN2NDz6ulvzceSTlFKiVQ1AP-nVT50r9j7Bq-pKaRMXbQ-Svj4ce8OUsLqHf8OIDUSjkspUwm9BSxHFjC4-toGDfXfwAkp4jeplQg0GfQboRtJxDXWogczTy8SV-5_EFliAmYOuWI5JOEMCLCnIcFTl-7Hmepl_ShLmIY1WQEwUbqSHmJkfWBS9ipxghhrrd5fyfNcgGacXmZaCw1n_cym6A61C4M--ZFvh9KrnjC-aerv5I");'></div>
+</div>
+<p class="text-sm font-bold group-hover:text-primary">Air Fryers</p>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="w-full aspect-square rounded-full border-2 border-transparent group-hover:border-primary p-1 transition-all">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-full" data-alt="Electric glass tea kettle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANYTeo8l_TmBCEB39iXPJM-oSYTsSjSV5VdKhh1VJF4nFmBsfhQeUHhS6RyNjgBX5deYSmQmKD3UF-qUSgvfYKbqavTcBy9UTBQAN6aGf6gLFJ323F5thvgTeSHXFMVktbeVtW8luDOCt6Its6hmhgQgyy2s6PWeGk15pCYjShMBJAp6uDRFmHySbtz-4K419n9M2zBp7qVi-Iu_BerDeBACz253620AR53nI0M_aB56R9PEPYVcbvdnyNxX7PuXrjooghQ24LWDo");'></div>
+</div>
+<p class="text-sm font-bold group-hover:text-primary">Kettles</p>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="sticky top-24 bg-white dark:bg-gray-900 p-6 rounded-xl border border-[#e6f4f4] dark:border-gray-800 space-y-8">
+<div>
+<h3 class="font-bold text-lg mb-4">Filters</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 bg-gray-100 dark:bg-gray-800 border-none" type="checkbox"/>
+<span class="text-sm font-medium">Dishwasher Safe</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 bg-gray-100 dark:bg-gray-800 border-none" type="checkbox"/>
+<span class="text-sm font-medium">Non-Stick Coating</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="form-checkbox rounded text-primary focus:ring-primary h-5 w-5 bg-gray-100 dark:bg-gray-800 border-none" type="checkbox"/>
+<span class="text-sm font-medium">Eco-Friendly</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-sm uppercase tracking-wider text-gray-400 mb-4">Brand</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 text-sm hover:text-primary cursor-pointer">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/> Tower
+                            </label>
+<label class="flex items-center gap-3 text-sm hover:text-primary cursor-pointer">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/> Binatone
+                            </label>
+<label class="flex items-center gap-3 text-sm hover:text-primary cursor-pointer">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/> Master Chef
+                            </label>
+<label class="flex items-center gap-3 text-sm hover:text-primary cursor-pointer">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/> Prestige
+                            </label>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-sm uppercase tracking-wider text-gray-400 mb-4">Price Range</h3>
+<input class="w-full accent-primary" type="range"/>
+<div class="flex justify-between mt-2 text-xs font-bold">
+<span>₦5,000</span>
+<span>₦250,000+</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Product Area -->
+<div class="flex-1 space-y-12">
+<!-- Recipe of the Day Card -->
+<div class="bg-primary rounded-xl p-8 text-white relative overflow-hidden flex flex-col md:flex-row items-center gap-8 shadow-xl">
+<div class="absolute top-0 right-0 opacity-10">
+<span class="material-symbols-outlined text-[200px]">restaurant</span>
+</div>
+<div class="w-full md:w-1/3 aspect-video bg-center bg-cover rounded-lg shadow-lg relative z-10" data-alt="Steaming pot of party Jollof rice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmimzRHdDzmkffbNXu7eHLWXxjSTPBv6leUaLHl1RMSVrnFQwBWxKlFEn_lFw5ty6-GokFjWD8hsy4jmIx2JF9GPB6bwoQAZf-1jycPT0e9DavmC54xn2wclLW31nEjhlOdpqhv-IyD_6s3sMQkZNEOcdHdgfC2qZLt3E10dMytgGX5UN2efIYJ7smXhYnzZgU55bEcvlMrrEfUV1s6C-o6tY0Wr9tfRpPRqVkL4qipLPMdSuI2mZNkXLe-J-atGn8GMwxyun4a7E");'>
+</div>
+<div class="flex-1 relative z-10 space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">star</span>
+<span class="font-bold uppercase tracking-tighter text-sm">Recipe of the Day</span>
+</div>
+<h3 class="text-3xl font-black">Authentic Smoky Party Jollof</h3>
+<p class="text-white/90 text-sm max-w-xl">
+                            The secret to that smoky flavor isn't just the peppers, it's the pot! Learn how to use our Granite Stone Pots to achieve the perfect char without burning.
+                        </p>
+<button class="bg-white text-primary px-6 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-background-light transition-all">
+                            Shop the Ingredients &amp; Tools <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product Grid -->
+<div>
+<div class="flex justify-between items-end mb-8 px-2">
+<div>
+<h2 class="text-2xl font-bold">Recommended for You</h2>
+<p class="text-gray-500 text-sm">Based on recent Nigerian kitchen trends</p>
+</div>
+<div class="flex gap-2">
+<button class="border border-gray-200 dark:border-gray-800 px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                                Sort by: Popularity <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden group hover:shadow-xl transition-all">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Luxury granite cookware set with gold handles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNAIkbdW4sCqioyAZ-c3SGeo44AEaK2gMK3PBSiO4ybYQd_y9VvCcVv2BXpafKqbO9lVAAg3muesbAx1Iwp1iKznrchzmuSW7tZcej8pczr53NLvIrVbEo5hC9NgLGoNTIXXMaPAT1oxhsKtQ3j14E0L84yslPCsWPuQIskQtpca2f8p1OyUEB8NR4rQanq6p5WAmgUp9fIyyxqWAynZjhh_XIyenGKFtbC7mr5SJcI_jAP4TKOrjjj1vmxzeRy2UKrAN4E5Pnk9Y");'></div>
+<div class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase">Hot Sale</div>
+<button class="absolute top-3 right-3 bg-white/80 backdrop-blur rounded-full p-2 text-gray-500 hover:text-red-500 shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<div class="p-5">
+<p class="text-primary text-[10px] font-extrabold uppercase mb-1">Tower Gold Edition</p>
+<h4 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Premium 7-Piece Granite Pot Set</h4>
+<div class="flex items-center gap-1 mb-3">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+<span class="text-xs text-gray-400">(48 Reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xl font-black">₦85,000</span>
+<span class="text-xs text-gray-400 line-through ml-2">₦105,000</span>
+</div>
+<button class="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden group hover:shadow-xl transition-all">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="High power food processor and blender combo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHtIvDkTOgTqewl7uDuO2DueYvHxM4dIJ4mWcECfkNTsj3tGm_Ju6mnHsr1--ryY1iqyD3v0o7wvUPolx3J9ozcSf_4-0jqV4pvT-YuMVcphEAhdjCruw0a0A4z4xhsJoAtWgB1-vjRbe8C4s9Gp1yRJfgK8fYzDXxU7bTGyMX8eDY_Zw3bmuHHG77Y4CvkHRaAlD0rN4jGwD0JXI59NdOwiw8JEd2MuQxIsDMgRRlcDaGYxN4k2ihtC4YV6B31qAFrnkcffW6QZQ");'></div>
+</div>
+<div class="p-5">
+<p class="text-primary text-[10px] font-extrabold uppercase mb-1">Binatone Pro</p>
+<h4 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Heavy Duty 2000W Food Blender</h4>
+<div class="flex items-center gap-1 mb-3">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-200">star</span>
+</div>
+<span class="text-xs text-gray-400">(112 Reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xl font-black">₦42,500</span>
+</div>
+<button class="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden group hover:shadow-xl transition-all">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Black digital 5 liter air fryer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBM2v-Y9ZjBI8HpJCaUk5gVuFxZvB-JiJGbMvqucKtnKXkV95f9OrrjZKZEmbPdXyNQo2JSsY_LkNGnVWFuncFd2ksjMbwPrrvbQaZUcIgmVDCSMWpsF_SRBZHcGAzm7wjVtqpfxNV-2uikHlsrOv3RUTJsWNqdn0RrpVczYn_QjrRo3M7Jh6jgclUfack08lK_Rc11PBV2zDOSTVTTavidLCRw5jGJh3NTyq2PjhBP4iAgoe1tBYMgb5KOXBB-SpSazkplrCYQ_eo");'></div>
+<div class="absolute top-3 left-3 bg-primary text-white text-[10px] font-black px-2 py-1 rounded uppercase">New Arrival</div>
+</div>
+<div class="p-5">
+<p class="text-primary text-[10px] font-extrabold uppercase mb-1">Master Chef</p>
+<h4 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Digital XL Air Fryer - 5.5L</h4>
+<div class="flex items-center gap-1 mb-3">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs text-gray-400">(25 Reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xl font-black">₦68,000</span>
+</div>
+<button class="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Badges -->
+<section class="mt-20 py-10 border-t border-[#e6f4f4] dark:border-gray-800 grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="flex items-center gap-5">
+<div class="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div>
+<h5 class="font-bold text-base">Authentic Brands</h5>
+<p class="text-sm text-gray-500">100% genuine kitchenware from verified vendors.</p>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<div>
+<h5 class="font-bold text-base">Nationwide Delivery</h5>
+<p class="text-sm text-gray-500">Fast and reliable shipping across all Nigerian states.</p>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="size-14 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-3xl">payments</span>
+</div>
+<div>
+<h5 class="font-bold text-base">Secure Payment</h5>
+<p class="text-sm text-gray-500">Pay on delivery or via secure bank transfer/card.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Area -->
+<footer class="bg-white dark:bg-gray-950 border-t border-[#e6f4f4] dark:border-gray-900 pt-16 pb-10">
+<div class="max-w-[1280px] mx-auto px-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-3 text-[#0c1c1d] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-extrabold">NobleMart</h2>
+</div>
+<p class="text-sm text-gray-500 leading-relaxed">Nigeria's premium marketplace for home essentials. Quality products, trusted vendors.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Shop Categories</h4>
+<ul class="space-y-4 text-sm text-gray-500">
+<li><a class="hover:text-primary" href="#">Cookware</a></li>
+<li><a class="hover:text-primary" href="#">Small Appliances</a></li>
+<li><a class="hover:text-primary" href="#">Bakeware</a></li>
+<li><a class="hover:text-primary" href="#">Kitchen Tools</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Customer Support</h4>
+<ul class="space-y-4 text-sm text-gray-500">
+<li><a class="hover:text-primary" href="#">Track Order</a></li>
+<li><a class="hover:text-primary" href="#">Shipping Policy</a></li>
+<li><a class="hover:text-primary" href="#">Returns &amp; Refunds</a></li>
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Cooking Tips &amp; Deals</h4>
+<p class="text-sm text-gray-500 mb-4">Join our community for weekly recipes and flash sales.</p>
+<div class="flex gap-2">
+<input class="form-input flex-1 bg-gray-100 dark:bg-gray-800 border-none rounded-lg text-sm px-4" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white p-2 px-4 rounded-lg font-bold text-sm">Join</button>
+</div>
+</div>
+</div>
+<div class="text-center text-xs text-gray-400 border-t border-gray-100 dark:border-gray-900 pt-8">
+                © 2024 NobleMart Nigeria. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

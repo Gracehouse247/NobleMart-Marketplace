@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Login | NobleMart</title>    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <div class="premium-container">
+        <section class="hero-side">
+            <div class="hero-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200');">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome Back, Partner</h1>
+                <p class="hero-subtitle">Access your dashboard, manage orders, and grow your business with NobleMart.
+                </p>
+            </div>
+        </section>
+
+        <section class="form-side">
+            <div class="form-container">
+                <div class="logo-wrapper">
+                    <img src="../assets/img/logo.png" alt="NobleMart Logo" class="logo-img">
+                </div>
+
+                <div class="header-meta">
+                    <h2>Vendor Login</h2>
+                    <p>Enter your credentials to access your store.</p>
+                </div>
+
+                <form id="vendorLoginForm" class="premium-form">
+                    <div style="display: grid; gap: 1.25rem;">
+                        <div class="field-group">
+                            <label class="field-label" for="email">Email Address</label>
+                            <input class="premium-input" type="email" id="email" placeholder="business@example.com"
+                                required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="password">Password</label>
+                            <input class="premium-input" type="password" id="password" placeholder="••••••••" required>
+                        </div>
+
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem;">
+                            <label
+                                style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-600); cursor: pointer;">
+                                <input type="checkbox" style="accent-color: var(--primary);"> Remember me
+                            </label>
+                            <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">Forgot
+                                password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="loginBtn">Sign In</button>
+                    </div>
+
+                    <p style="text-align: center; font-size: 0.875rem; color: var(--slate-500); margin-top: 2rem;">
+                        Don't have a store yet? <a href="register_vendor.html"
+                            style="color: var(--primary); font-weight: 700; text-decoration: none;">Register here</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="../assets/js/login.js" defer></script>
+</body>
+
+</html>

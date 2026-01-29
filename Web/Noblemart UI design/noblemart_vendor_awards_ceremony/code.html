@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Awards Ceremony</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "federal-blue": "#020249",
+                        "gold-accent": "#D4AF37",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#020249",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .gold-shimmer {
+            background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(1, 196, 203, 0.15) 0%, rgba(2, 2, 73, 1) 70%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-federal-blue/80 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 text-gold-accent">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-poppins font-bold tracking-tight">NobleMart <span class="text-gold-accent">Awards</span></h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#categories">Categories</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#hall-of-fame">Hall of Fame</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#the-prize">The Prize</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="#details">Event Details</a>
+</nav>
+<button class="bg-primary hover:bg-primary/90 text-federal-blue px-6 py-2 rounded-lg font-bold text-sm transition-all shadow-lg shadow-primary/20">
+                    Reserve Your Seat
+                </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center justify-center hero-gradient px-6 py-20 overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#D4AF37 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="flex flex-col gap-8 text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-accent/10 border border-gold-accent/20 w-fit">
+<span class="material-symbols-outlined text-gold-accent text-sm">stars</span>
+<span class="text-gold-accent text-xs font-bold uppercase tracking-widest">Annual Gala 2024</span>
+</div>
+<h1 class="text-white text-5xl md:text-7xl font-poppins font-extrabold leading-[1.1] tracking-tight">
+                        Celebrating Excellence in <span class="gold-shimmer">Nigerian</span> E-commerce
+                    </h1>
+<p class="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed">
+                        Join us for a world-class gala honoring the visionary entrepreneurs and high-performing vendors driving the future of trade in Nigeria.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-federal-blue px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2">
+                            Join the Gala <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-colors">
+                            View Nominations
+                        </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all"></div>
+<div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl border border-white/10">
+<img class="w-full h-full object-cover" data-alt="Elegantly dressed Nigerian entrepreneurs celebrating with gold trophies at a gala" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAALbCfhlIaBeHnf8UV5GcTp5dvEHa0r212O6pQhDPB-nQfPasp722XMmVoPkUh7PU_bGiv_yTNr9q8ac8lFZPPGRklISGJB622HaPcvDyfn5pbbTSXONIUGcBsmDRGy_U6gFsVVC6y-k5B3Y33cS9XlH9zJfHDd6U5ymwKBAglxcOS-Kmf8hDTsFM02qIpn8CzIJxl46Fct9_JfYkwQnAUQG7hsmi_44vJg6tID-P067B1NLv7wlF86WBpf7vzhyjSSgfxvYe4fgg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-federal-blue via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="glass-card p-4 rounded-xl border-l-4 border-l-gold-accent">
+<p class="text-sm font-medium text-white/90 italic">"Being recognized by NobleMart transformed my business from a local shop to a national brand."</p>
+<p class="text-gold-accent font-bold text-xs mt-2 uppercase tracking-tighter">— 2023 Vendor of the Year</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Award Categories -->
+<section class="py-24 px-6 md:px-20 bg-background-light dark:bg-background-dark/50" id="categories">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 px-4">
+<div>
+<h2 class="text-gold-accent text-sm font-bold uppercase tracking-[0.2em] mb-2">The Honors</h2>
+<h3 class="text-white text-4xl font-poppins font-bold">Award Categories</h3>
+</div>
+<p class="text-white/60 max-w-md">Our awards recognize performance, customer satisfaction, and innovative growth across the entire NobleMart ecosystem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Vendor of the Year -->
+<div class="glass-card p-8 rounded-2xl flex flex-col gap-6 hover:border-primary/50 transition-all group">
+<div class="size-16 rounded-xl bg-gold-accent/10 flex items-center justify-center text-gold-accent group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">workspace_premium</span>
+</div>
+<div>
+<h4 class="text-white text-xl font-bold mb-2">Vendor of the Year</h4>
+<p class="text-white/60 text-sm leading-relaxed">The ultimate recognition for consistent excellence, top-tier service, and highest sales volume.</p>
+</div>
+</div>
+<!-- Rising Star -->
+<div class="glass-card p-8 rounded-2xl flex flex-col gap-6 hover:border-primary/50 transition-all group">
+<div class="size-16 rounded-xl bg-gold-accent/10 flex items-center justify-center text-gold-accent group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">auto_awesome</span>
+</div>
+<div>
+<h4 class="text-white text-xl font-bold mb-2">Rising Star</h4>
+<p class="text-white/60 text-sm leading-relaxed">Honoring the fastest growing new businesses that joined NobleMart in the last 12 months.</p>
+</div>
+</div>
+<!-- Logistics Excellence -->
+<div class="glass-card p-8 rounded-2xl flex flex-col gap-6 hover:border-primary/50 transition-all group">
+<div class="size-16 rounded-xl bg-gold-accent/10 flex items-center justify-center text-gold-accent group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">local_shipping</span>
+</div>
+<div>
+<h4 class="text-white text-xl font-bold mb-2">Logistics Excellence</h4>
+<p class="text-white/60 text-sm leading-relaxed">Mastery in fulfillment speed, packaging quality, and supply chain management.</p>
+</div>
+</div>
+<!-- Customer Choice -->
+<div class="glass-card p-8 rounded-2xl flex flex-col gap-6 hover:border-primary/50 transition-all group">
+<div class="size-16 rounded-xl bg-gold-accent/10 flex items-center justify-center text-gold-accent group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">favorite</span>
+</div>
+<div>
+<h4 class="text-white text-xl font-bold mb-2">Customer Choice</h4>
+<p class="text-white/60 text-sm leading-relaxed">The people's favorite based on verified buyer ratings and positive feedback loops.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Prize Section -->
+<section class="py-24 px-6 md:px-20 relative overflow-hidden" id="the-prize">
+<div class="max-w-[1200px] mx-auto bg-primary rounded-[2rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
+<!-- Background texture -->
+<div class="absolute inset-0 opacity-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPX2Zo-sdlHTZGtZR4Sd6ChuLFAUY0SY8uxPamsYkQMQEAyny6Ot-NxcWz0Lwh5TGOgBOykEVi2kD2tZxuiez_LeayO3gOYi86VexoQdUalxsU1KN7gpcVT8A8JRDx93_M1qt9Ra-D6m4BluaZTWSsSdUHQc4777kBLtWuqXc7bLgRaDR5BeHETfZILYVQgiPWM0DbSkZ-mdoXlVOTZ9mjqcJEplNFnqIheqdmyjx4SuXbwMVcAZ8FWHyUWy1EZ9WfWqtyAolIeD8');"></div>
+<div class="flex-1 z-10">
+<h2 class="text-federal-blue text-4xl md:text-5xl font-poppins font-extrabold mb-6">The Rewards of Excellence</h2>
+<p class="text-federal-blue/80 text-lg mb-8 font-medium">Winning a NobleMart Award isn't just about the trophy. It's about taking your business to the next echelon of commerce.</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex items-start gap-4">
+<span class="material-symbols-outlined text-federal-blue text-3xl">percent</span>
+<div>
+<p class="text-federal-blue font-bold text-lg">Commission Free</p>
+<p class="text-federal-blue/70 text-sm">0% marketplace fees for 3 months</p>
+</div>
+</div>
+<div class="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex items-start gap-4">
+<span class="material-symbols-outlined text-federal-blue text-3xl">ads_click</span>
+<div>
+<p class="text-federal-blue font-bold text-lg">Prime Placement</p>
+<p class="text-federal-blue/70 text-sm">Featured spotlight on homepage</p>
+</div>
+</div>
+<div class="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex items-start gap-4">
+<span class="material-symbols-outlined text-federal-blue text-3xl">verified</span>
+<div>
+<p class="text-federal-blue font-bold text-lg">Elite Badge</p>
+<p class="text-federal-blue/70 text-sm">Official Winner's verified badge</p>
+</div>
+</div>
+<div class="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex items-start gap-4">
+<span class="material-symbols-outlined text-federal-blue text-3xl">videocam</span>
+<div>
+<p class="text-federal-blue font-bold text-lg">Media Package</p>
+<p class="text-federal-blue/70 text-sm">Professional brand documentary</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 flex justify-center z-10">
+<div class="relative w-full max-w-sm aspect-square">
+<div class="absolute inset-0 bg-white/20 rounded-full blur-3xl animate-pulse"></div>
+<img class="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" data-alt="A 3D gold trophy shaped like a shield with the NobleMart logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeG5nxRIjjS2i0PjC0lo1kKMbphZ7P5M5B88DiwudPeDCxNmkdPx6SJdR1cA1yR_8lSmGENLzSHiFmk9MO1MGJ9sBFYVW6fVx58bYMpz9gstHGjLRmGvoUe1Wr82xTamjr8uQz_9GET7QZrNnY-w48xkLfJTfFor606GzJT1o8zsMQ9svb7yv3PRaDYCXCkvvmoLNUrDVdV7jrQBArr0_ve4aib5-VrWEkR6zb5eIZYl2QusYRs9sYuHOF0cV1RxgDGFfImSkpij8"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Hall of Fame -->
+<section class="py-24 px-6 md:px-20 bg-federal-blue" id="hall-of-fame">
+<div class="max-w-[1200px] mx-auto text-center mb-16">
+<h2 class="text-gold-accent text-sm font-bold uppercase tracking-[0.2em] mb-4">Past Winners</h2>
+<h3 class="text-white text-4xl font-poppins font-bold">Hall of Fame</h3>
+</div>
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Winner 1 -->
+<div class="flex flex-col gap-6 p-4 rounded-2xl bg-white/5 border border-white/10 group">
+<div class="relative rounded-xl overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional studio portrait of a successful male entrepreneur in a navy suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJfmdO3MoXHScQWT57yTOMYOcNHyVBfoHJY8-Y1o3ZdNVXWdyWt-ntH9uRbR0seotWAvcV6sirPvaNYO5Q7gHGIaDAvE7fYFjazEjdfuNmXE6qkR8HEHYFkUufxiy8INkcuz8AJP2MCKbLtW4f-JImoUppOs-SdRZBfcgYOnRFovIiqZI9DIBZpNA0FgKWTWFrIzOxY-xdT13Tyzhd-srs43XG01AxWFvW61E26XXtnh8DrSbKPd7IAj2CgSzXkBM6pv_hzs8HB8g"/>
+<div class="absolute top-4 right-4 bg-primary text-federal-blue text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-tighter">NobleShield Elite</div>
+</div>
+<div class="text-center">
+<p class="text-white text-xl font-bold">Adebayo Oluwatosin</p>
+<p class="text-primary text-sm mb-4">CEO, Tosin Luxe Global</p>
+<div class="flex justify-center gap-2">
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+</div>
+</div>
+</div>
+<!-- Winner 2 -->
+<div class="flex flex-col gap-6 p-4 rounded-2xl bg-white/5 border border-white/10 group">
+<div class="relative rounded-xl overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional studio portrait of a successful female business owner in elegant attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD13pXsuLmP5RykkaNvR7x4jMo-mr7iFWmcozynoHO57QeEVNN1mz8KWHvgDq6Uzd556tRNWplE0bi4JQ797xYVTDyR3XJjSn5kky2WHIQ-r407CAu2I9EF_mpULoT2XOur5WH1s8pWm5flTNKBgQ6mMH5e2ynrPGEPcHtGxbqiEb9XJiuf0Sgl-nU3XrUW3z_TEATbphjVAerrHqw_0TaDgCQUt_grdJq6oCT4nGMrXt88mJ6NeSVzXp8mBcizcvy1dguVcUJL8dI"/>
+<div class="absolute top-4 right-4 bg-primary text-federal-blue text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-tighter">NobleShield Elite</div>
+</div>
+<div class="text-center">
+<p class="text-white text-xl font-bold">Chinelo Eze</p>
+<p class="text-primary text-sm mb-4">Founder, Chi-Chi Organics</p>
+<div class="flex justify-center gap-2">
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+</div>
+</div>
+</div>
+<!-- Winner 3 -->
+<div class="flex flex-col gap-6 p-4 rounded-2xl bg-white/5 border border-white/10 group">
+<div class="relative rounded-xl overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional portrait of a male business leader in modern professional wear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlDI9UhHrlUkxnImDKykDIofxqeBnBZmioI233Y6qyCEKr2nBwWih9lu3-zkn0LJ-oj1RXT1IMLWWZ9fQcaATfNY_HCQyQqjzi6LIUkm6Y3FSCB1fw2PEykt3G8WPsWgcYru275s2WNYOMf539wyfR5U9IG5qdMdMp23WDtHEJoiFTmQRoda8e6WRkiK-yb9rZf23FHzdrsn5kIDJZ2F7MI6mKX5FTWaL2YRNQhtVYwQ4ZaywaTSyhMD6_oJYmyXLAn30ijY6TVHM"/>
+<div class="absolute top-4 right-4 bg-primary text-federal-blue text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-tighter">NobleShield Elite</div>
+</div>
+<div class="text-center">
+<p class="text-white text-xl font-bold">Emeka Nwosu</p>
+<p class="text-primary text-sm mb-4">Director, GadgetHub NG</p>
+<div class="flex justify-center gap-2">
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+<span class="material-symbols-outlined text-gold-accent text-sm">grade</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof/Testimonials -->
+<section class="py-24 px-6 md:px-20 bg-background-light dark:bg-federal-blue/30 border-y border-white/5">
+<div class="max-w-[960px] mx-auto">
+<div class="flex flex-col items-center text-center gap-10">
+<span class="material-symbols-outlined text-5xl text-gold-accent opacity-50">format_quote</span>
+<h3 class="text-white text-2xl md:text-3xl font-poppins leading-relaxed italic">
+                        "The NobleMart Award was the tipping point for our logistics subsidiary. After the gala, our order volume grew by 300% within two quarters. It’s the highest honor in Nigerian retail today."
+                    </h3>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-1 bg-primary rounded-full"></div>
+<p class="text-white font-bold">Musa Ibrahim</p>
+<p class="text-white/50 text-sm">Winner, Logistics Excellence 2022</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Event Details / RSVP -->
+<section class="py-24 px-6 md:px-20 relative bg-federal-blue overflow-hidden" id="details">
+<!-- Abstract Gold Particles -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute top-10 right-10 size-64 bg-gold-accent/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 left-10 size-80 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-[1200px] mx-auto text-center relative z-10">
+<div class="inline-block glass-card p-12 md:p-20 rounded-[3rem] w-full border-white/10">
+<h2 class="text-gold-accent text-sm font-bold uppercase tracking-[0.4em] mb-6">Save the Date</h2>
+<h3 class="text-white text-4xl md:text-6xl font-poppins font-extrabold mb-10 leading-tight">
+                        Lagos, December 15, 2024
+                    </h3>
+<div class="flex flex-col md:flex-row items-center justify-center gap-12 mb-12">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">location_on</span>
+<div class="text-left">
+<p class="text-white/50 text-xs font-bold uppercase tracking-widest">Location</p>
+<p class="text-white font-bold text-xl">The Grand Ballroom, Lagos</p>
+</div>
+</div>
+<div class="w-px h-12 bg-white/10 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">schedule</span>
+<div class="text-left">
+<p class="text-white/50 text-xs font-bold uppercase tracking-widest">Time</p>
+<p class="text-white font-bold text-xl">Red Carpet at 6:00 PM</p>
+</div>
+</div>
+<div class="w-px h-12 bg-white/10 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">confirmation_number</span>
+<div class="text-left">
+<p class="text-white/50 text-xs font-bold uppercase tracking-widest">Access</p>
+<p class="text-white font-bold text-xl">Invitations &amp; RSVP Only</p>
+</div>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-federal-blue px-12 py-5 rounded-2xl font-black text-xl transition-all shadow-xl shadow-primary/20 hover:-translate-y-1">
+                        Reserve Your Seat Now
+                    </button>
+<p class="mt-6 text-white/40 text-sm">Limited seats available. Selection criteria applies for all attendees.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-12 px-6 md:px-20 border-t border-white/10 bg-federal-blue">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-poppins font-bold tracking-tight">NobleMart <span class="text-gold-accent">Awards</span></h2>
+</div>
+<p class="text-white/40 text-sm">© 2024 NobleMart E-commerce Platform. All Rights Reserved.</p>
+<div class="flex gap-6">
+<a class="text-white/60 hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="text-white/60 hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="text-white/60 hover:text-primary transition-colors" href="#">Instagram</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Cancellation Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                        "federal-blue": "#020249",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0c1c1d] dark:text-white antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col flex-shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-2">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">NobleMart</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">cancel</span>
+<span class="text-sm font-medium">Cancellations</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="bg-white/5 rounded-xl p-4 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="size-10 rounded-full object-cover" data-alt="Professional portrait of a male vendor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqCVYxfZe9GhXbQKv3q5PzbbAlMDizc6uro3RRLr6SsxLNi_pseDyOTqrQImDe7nKxAZYtgmVD9qXBjSOZpa05ZDgYB1JiPnqjzWWylP9yziayxt-JM3QkH36tllE94Zaai4gPa9pIQqCH0yCo0CgrH699ocrrWSP5sErsmIQ2ZmpHcFY4tJNueIUpl0xjJn64aQ50qeXv-Nkoiq_xTYMjLL2eXWrXNMQ-WSVTCFxEVVThNdEV-nrxXxqRk-3U0uoFBGCIshSloyo"/>
+<div class="flex flex-col">
+<p class="text-sm font-semibold">Tunde Adebayo</p>
+<p class="text-xs text-primary">Verified Merchant</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white text-xs font-bold py-2 rounded-lg transition-colors">
+                        Go to Storefront
+                    </button>
+<a class="flex items-center gap-2 px-1 text-xs text-white/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">logout</span>
+                        Sign out
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden relative">
+<!-- Header -->
+<header class="flex items-center justify-between px-8 py-6 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800">
+<div>
+<h2 class="text-2xl font-black text-[#0c1c1d] dark:text-white tracking-tight">Cancellations Overview</h2>
+<p class="text-[#459ea1] text-sm">Monitor and manage order reversals and stock-related cancellations.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-background-light dark:bg-white/5 text-sm font-bold rounded-lg border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+                        Last 30 Days
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary/90">
+<span class="material-symbols-outlined text-lg">download</span>
+                        Export Report
+                    </button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400">New Cancellations</p>
+<div class="flex items-end justify-between mt-2">
+<p class="text-3xl font-bold">24</p>
+<span class="text-green-600 text-sm font-bold flex items-center bg-green-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                12%
+                            </span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Auto-Cancelled (OOS)</p>
+<div class="flex items-end justify-between mt-2">
+<p class="text-3xl font-bold">8</p>
+<span class="text-red-600 text-sm font-bold flex items-center bg-red-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                5%
+                            </span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Cancellation Rate</p>
+<div class="flex items-end justify-between mt-2">
+<p class="text-3xl font-bold">4.2%</p>
+<span class="text-green-600 text-sm font-bold flex items-center bg-green-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+                                0.8%
+                            </span>
+</div>
+</div>
+<!-- Revenue Impact Chart Mini -->
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm col-span-1">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Monthly Revenue Impact</p>
+<p class="text-2xl font-bold text-red-600 mt-1">-₦45,000</p>
+</div>
+<div class="flex items-end gap-1 h-12">
+<div class="w-2 bg-primary/20 rounded-full h-1/2"></div>
+<div class="w-2 bg-primary/20 rounded-full h-3/4"></div>
+<div class="w-2 bg-primary/20 rounded-full h-1/3"></div>
+<div class="w-2 bg-primary rounded-full h-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Section Header -->
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-[#0c1c1d] dark:text-white">Recent Cancellation Requests</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+<input class="pl-10 pr-4 py-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-700 rounded-lg text-sm w-64 focus:ring-primary focus:border-primary transition-all" placeholder="Search orders..." type="text"/>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-white dark:bg-white/5 rounded-xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 dark:bg-white/5 text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider">
+<th class="px-6 py-4">Order ID</th>
+<th class="px-6 py-4">Product</th>
+<th class="px-6 py-4">Customer Name</th>
+<th class="px-6 py-4">Cancellation Date</th>
+<th class="px-6 py-4">Reason</th>
+<th class="px-6 py-4">Refund Status</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<!-- Table Row 1 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
+<td class="px-6 py-4 text-sm font-semibold">#NM-99201</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 overflow-hidden border border-gray-200">
+<img alt="Product" class="size-full object-cover" data-alt="Red running shoe high-quality product photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV40q8rz_6X_RgdKGiIfk47RmyALeCsH11qIA9pS5pFj8B38PvGhTUndVNKk8kD28ZgpyCbl6fJjbog-rWsno_G1BhYME6RzELI-FtPQmJ-vrBx5zXw5TnRibBEg0vZdS7dIM_bHd6rmgoTrYln8DwrUy4UkofQWCy46-q8cKsErH7nOKgRCrapj9snNHnBxWunSZd9-9hpNlMM5o9YV3-_mgHXxmumydqqm1TAH6oJIghyd8jTwVwkL0-PTlPZlT1X-rOyy30c_c"/>
+</div>
+<span class="text-sm font-medium truncate max-w-[150px]">Nike Air Max 270</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Chidi Benson</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[11px] font-bold uppercase bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400">Out of Stock</span>
+</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-sm text-orange-600 dark:text-orange-400 font-medium">
+<span class="size-2 bg-orange-500 rounded-full"></span>
+                                        Processing
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors">chevron_right</button>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
+<td class="px-6 py-4 text-sm font-semibold">#NM-99188</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 overflow-hidden border border-gray-200">
+<img alt="Product" class="size-full object-cover" data-alt="High-end wireless headphones on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4HQaH_FDUmwHHwxMcbiqxN32Eoi3wlM6WPIzi1Sgut3KduybvaMM-ctY_VH7gsYC_xkg4ZS8u1Iv9ACuG1g6JIZ5PqXgW_zRZODUR8UokL8wKLQu2tHKNVYhqxGiC7XLcqWTimOd1-GBKJ0IHivajt0DRWf88rAWDjCVf6JZbLZQDYF6QzLV2yF-mySnD74UgVs6G9qUoD4DwNNzRelRfie8dVpAPDPMlv8c9P7EfrWjlF8bF9WlXLqra4p8Z4r_Tx4aslpS2ig"/>
+</div>
+<span class="text-sm font-medium truncate max-w-[150px]">Sony WH-1000XM4</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Amina Yusuf</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[11px] font-bold uppercase bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-gray-400">Customer Choice</span>
+</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-sm text-green-600 dark:text-green-400 font-medium">
+<span class="size-2 bg-green-500 rounded-full"></span>
+                                        Refunded
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors">chevron_right</button>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
+<td class="px-6 py-4 text-sm font-semibold">#NM-99175</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 overflow-hidden border border-gray-200">
+<img alt="Product" class="size-full object-cover" data-alt="Modern minimalist watch product photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU9JNeG2V2_odh4E5uAlPTnGmy-9iTXkY5COctPnmw3S0imWfFs6KKt7Z4razpMO9phmiqRVQUNLClW1iWg7ldSN6NJp0_63NucOeyiZWLB11b29_ncavA3hz60kJezUw9o9EMT7hJUyfGrqH8uKqi2xM59QSr2u_ZXKXz1zf7Rh1Py4KlxisuKlhFn9vSAgYZ3GIyRIdsYK5TucQgdG1VmR9GGOjN13WGn9j7nZB4-Nsnk70A4h1c7bLXzM1exyK19ekPxHVdpqw"/>
+</div>
+<span class="text-sm font-medium truncate max-w-[150px]">Skagen Minimalist Watch</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Emeka Obi</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[11px] font-bold uppercase bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400">Delayed Delivery</span>
+</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-sm text-orange-600 dark:text-orange-400 font-medium">
+<span class="size-2 bg-orange-500 rounded-full"></span>
+                                        Pending
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors">chevron_right</button>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer transition-colors border-b-0">
+<td class="px-6 py-4 text-sm font-semibold">#NM-99160</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 overflow-hidden border border-gray-200">
+<img alt="Product" class="size-full object-cover" data-alt="Luxury sunglasses product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoaLBpRDCY3zOUh0tGJoHWWAVTNMD23-WsKYRXge0iio8zdKaPgQi0sr9B1dDH4zUCChzjeg0Hc3_WwQZ_smUHBZAQmJiGGFg0aaYfLvhtbXTfR5wfh44yjebXmoK0ms1c2RvSDHrJfPq8ZW0irdnomrf3YIwHQHAmLPiPR6cYO-Z6vBM3Vsp2xBxN-JRiL_dsNJ8CiTbFxbc7meBF6_3NlJxstRlrXhPNxYm0Udv7hnzwqZuGP3kZ7G6SXDFzZ3hroKYgYD6O7U4"/>
+</div>
+<span class="text-sm font-medium truncate max-w-[150px]">Ray-Ban Wayfarer</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Fola Smith</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Oct 22, 2023</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded text-[11px] font-bold uppercase bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-gray-400">Customer Choice</span>
+</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-sm text-green-600 dark:text-green-400 font-medium">
+<span class="size-2 bg-green-500 rounded-full"></span>
+                                        Refunded
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors">chevron_right</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between mt-6">
+<p class="text-sm text-gray-500">Showing 1 to 4 of 24 cancellations</p>
+<div class="flex items-center gap-2">
+<button class="p-2 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg">1</button>
+<button class="px-4 py-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-700 text-sm font-bold rounded-lg hover:bg-gray-100 dark:hover:bg-white/5">2</button>
+<button class="px-4 py-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-700 text-sm font-bold rounded-lg hover:bg-gray-100 dark:hover:bg-white/5">3</button>
+<button class="p-2 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Slide-out Side Panel (Detail View Simulation) -->
+<div class="absolute inset-y-0 right-0 w-[420px] bg-white dark:bg-background-dark shadow-2xl border-l border-gray-200 dark:border-gray-800 transform transition-transform duration-300 translate-x-0 flex flex-col z-20">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+<h4 class="text-lg font-bold">Cancellation Details</h4>
+<button class="material-symbols-outlined p-2 hover:bg-gray-100 dark:hover:bg-white/5 rounded-full text-gray-400">close</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 custom-scrollbar">
+<div class="mb-6">
+<img alt="Large Product View" class="w-full h-64 object-cover rounded-xl border border-gray-100 dark:border-gray-800 mb-4" data-alt="Detailed high-resolution photo of red Nike running shoe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA86m2b91V4SE-6qtCu2wGYopDrTdsWZEmb_Impl_WnZ35Au2btvLLNiEnnjbx8XFxU8cRDpfajLWe_909RyyO0L6VH2r6_NimPeMkd1cdW0pkHzMFFyjVYAekkq14vVJkyC6EkzFUxLBk4DxcjOPnFp7Ra-LJ3lXbt4dPn2JMBfsCJFq5Njcg7WBNaNUrrpU9Ma2YdrAmIrwccPbRVuoPk01zS9EKLbn-eMhsXA7F4FTvkXAfgWPlxC9K2l4XOdL6ElvyQnFdosWw"/>
+<div class="flex justify-between items-start">
+<div>
+<h5 class="text-xl font-bold">Nike Air Max 270</h5>
+<p class="text-primary font-semibold text-lg">₦68,000</p>
+</div>
+<span class="px-2 py-1 bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 rounded text-[10px] font-black tracking-widest uppercase">Out of Stock</span>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Order Information</p>
+<div class="bg-background-light dark:bg-white/5 rounded-lg p-4 grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] text-gray-500 font-medium">Order ID</p>
+<p class="text-sm font-semibold">#NM-99201</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-medium">Customer</p>
+<p class="text-sm font-semibold">Chidi Benson</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-medium">Date Cancelled</p>
+<p class="text-sm font-semibold">Oct 24, 2023</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-500 font-medium">Payment Method</p>
+<p class="text-sm font-semibold">Credit Card</p>
+</div>
+</div>
+</div>
+<div>
+<p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Customer Feedback</p>
+<div class="bg-background-light dark:bg-white/5 rounded-lg p-4 italic text-sm text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-primary/40">
+                                "The vendor contacted me saying the size 12 is no longer in stock. I really needed this for a weekend trip, so I'd like a full refund immediately to try elsewhere. Very disappointed with the stock inventory sync."
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-gray-100 dark:border-gray-800 space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+                        Acknowledge Cancellation
+                    </button>
+<button class="w-full bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-300 font-bold py-3 rounded-lg flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">help_center</span>
+                        Contact Support / Dispute
+                    </button>
+<p class="text-[10px] text-center text-gray-400 mt-2">Acknowledging will finalize the refund process for this order.</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

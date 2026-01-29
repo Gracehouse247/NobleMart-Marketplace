@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Wallet Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c1cb",
+                        "indigo-brand": "#5C1BE8",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wallet-gradient {
+            background: linear-gradient(135deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0c1c1d]">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-solid border-[#e6f4f4] bg-white px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0c1c1d]">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">NobleMart</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 w-96">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-[#459ca1] flex border-none bg-[#e6f4f4] items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#e6f4f4] focus:ring-0 h-full placeholder:text-[#459ca1] px-4 rounded-r-xl pl-2 text-base font-normal" placeholder="Search products, vendors..."/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-6">
+<nav class="flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Vendors</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-[#e6f4f4] hover:bg-[#d0eaea] transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-[#e6f4f4] hover:bg-[#d0eaea] transition-colors">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Profile picture of a professional user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAa-YnE34dz42UJERITj4lbdvs3VualXkScbe0f6hP9Omo4ysB5qV4m2ICczkqtqWvl3vy_qYGr3XfLR7ZeepjHCmhgdcMu5qgCFFs8d4eiL6nOhAT-XxIXFEI3LEv0pcqOttWp-9APLrV1VUbIWmMFOETEpvxU3FSLADi_CzpqftLMNG9tUYQOmoeRc7Qr7US6xhaWXcsNSxe9RNO5QH4zrcsW7zUQGL5ZBEcxwg-k-SX4qC7idMN3ltAwiMJ69dXyb_Pgb6O6hzI");'></div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-white border-r border-[#e6f4f4] p-6 flex flex-col justify-between">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col">
+<h1 class="text-lg font-bold">NobleMart Account</h1>
+<p class="text-[#459ca1] text-sm font-normal">Manage your shopping &amp; funds</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-background-light" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-background-light" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<p class="text-sm font-medium">My Orders</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-[#0c1c1d]" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">account_balance_wallet</span>
+<p class="text-sm font-bold">NobleMart Wallet</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-background-light" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<p class="text-sm font-medium">Wishlist</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-background-light" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Account Settings</p>
+</a>
+<hr class="my-2 border-[#e6f4f4]"/>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-500 transition-colors hover:bg-red-50" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Log Out</p>
+</a>
+</nav>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
+                    Upgrade to Premium
+                </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-10 max-w-6xl mx-auto w-full">
+<!-- Wallet Balance Card -->
+<div class="wallet-gradient rounded-xl p-8 mb-8 relative overflow-hidden shadow-xl shadow-indigo-brand/20">
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<p class="text-white/80 text-sm font-medium tracking-wide">AVAILABLE BALANCE</p>
+<h2 class="text-white text-5xl font-poppins font-bold tracking-tight">₦125,500.00</h2>
+<p class="text-white/70 text-sm mt-2">Securely manage your shopping funds and escrow payments.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="flex items-center justify-center gap-2 bg-white text-[#0c1c1d] px-8 py-3 rounded-xl font-bold text-sm hover:bg-white/90 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                                Top Up Wallet
+                            </button>
+<button class="flex items-center justify-center gap-2 border border-white text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">outbound</span>
+                                Withdraw Funds
+                            </button>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -right-20 -bottom-20 opacity-10">
+<span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'wght' 200">payments</span>
+</div>
+</div>
+<!-- Escrow Notice Panel -->
+<div class="mb-8 @container">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 rounded-xl border border-[#cde8ea] bg-white p-6 shadow-sm">
+<div class="flex gap-4">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#e6f4f4] text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#0c1c1d] text-base font-bold">Escrow Protection Active</p>
+<p class="text-[#459ca1] text-sm leading-relaxed">
+                                    Payments for orders are safely held in Escrow until delivery is confirmed via OTP. This ensures your money is protected and only released when you are satisfied.
+                                </p>
+</div>
+</div>
+<a class="text-sm font-bold tracking-tight flex items-center gap-2 text-indigo-brand hover:underline whitespace-nowrap" href="#">
+                            Learn more about Escrow
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Transaction History & Photo Background -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Table Section -->
+<div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-[#e6f4f4] overflow-hidden">
+<div class="px-6 py-5 border-b border-[#e6f4f4] flex justify-between items-center">
+<h3 class="font-bold text-lg">Transaction History</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                                Filter
+                            </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-background-light text-[#459ca1] text-xs font-bold uppercase">
+<tr>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Transaction ID</th>
+<th class="px-6 py-4">Type</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e6f4f4]">
+<tr class="hover:bg-background-light transition-colors group">
+<td class="px-6 py-4 text-sm">Oct 24, 2023</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">#NM-92834</td>
+<td class="px-6 py-4 text-sm font-medium">Refund</td>
+<td class="px-6 py-4 text-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">Successful</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-right text-green-600">+ ₦12,000.00</td>
+</tr>
+<tr class="hover:bg-background-light transition-colors">
+<td class="px-6 py-4 text-sm">Oct 23, 2023</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">#NM-92711</td>
+<td class="px-6 py-4 text-sm font-medium">Purchase</td>
+<td class="px-6 py-4 text-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">Successful</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-right">- ₦45,500.00</td>
+</tr>
+<tr class="hover:bg-background-light transition-colors">
+<td class="px-6 py-4 text-sm">Oct 21, 2023</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">#NM-92550</td>
+<td class="px-6 py-4 text-sm font-medium">Top-up</td>
+<td class="px-6 py-4 text-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-100 text-indigo-brand">Pending</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-right text-primary">+ ₦50,000.00</td>
+</tr>
+<tr class="hover:bg-background-light transition-colors">
+<td class="px-6 py-4 text-sm">Oct 19, 2023</td>
+<td class="px-6 py-4 text-sm font-mono text-primary">#NM-92332</td>
+<td class="px-6 py-4 text-sm font-medium">Purchase</td>
+<td class="px-6 py-4 text-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">Successful</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-right">- ₦8,200.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-background-light/50 border-t border-[#e6f4f4] text-center">
+<a class="text-sm font-bold text-indigo-brand hover:underline" href="#">View All Transactions</a>
+</div>
+</div>
+<!-- Side Illustration/Support -->
+<div class="flex flex-col gap-6">
+<div class="relative h-64 w-full rounded-xl bg-center bg-cover overflow-hidden group shadow-lg" data-alt="A dark-skinned professional using a mobile banking app securely" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgjw4kJuE1srV7_S2USms0SXZuTILYnM39uHf0sCvof1lxiyIYGH-gfFhnC0-ARsXPZedQiYHl0VXL9E2G7GoAcU_4vSOS9K-ZFTDF2ZTcCd_Fwgrh9JppJdz9rfM6Yh0D-WIT3LlSSogrg8Rn1YeRGDt7okmz5umk88VhiQEjbrGWcbMXi15kEGB3muvF3fvsSwdChDLZUoTCJzOBLLZ5gQSRROcGmBMycglx27qqOYBDGXXGOiUxituXoa4LgkVaJeTD2sgUV0I");'>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0c1c1d]/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="text-white text-sm font-bold">Secure Transactions</p>
+<p class="text-white/80 text-xs">Your financial data is encrypted with 256-bit bank-grade security protocols.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-[#e6f4f4] shadow-sm">
+<h4 class="font-bold mb-2">Need Help?</h4>
+<p class="text-sm text-[#459ca1] mb-4">Have questions about a specific transaction or your escrow balance?</p>
+<a class="inline-flex items-center gap-2 text-indigo-brand font-bold text-sm hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined text-base">support_agent</span>
+                                Need Help with a Transaction?
+                            </a>
+</div>
+</div>
+</div>
+<footer class="mt-12 py-6 border-t border-[#e6f4f4] text-center">
+<p class="text-sm text-[#459ca1]">© 2023 NobleMart Nigeria. All funds are insured by NDIC through our partner banks.</p>
+</footer>
+</main>
+</div>
+</div>
+</body></html>

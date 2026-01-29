@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Store Performance Tips</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5e21e4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#00CCCC",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-slate-100">
+<div class="flex min-h-screen">
+<!-- Persistent Sidebar -->
+<aside class="w-72 bg-federal-blue flex flex-col fixed h-full shadow-2xl z-20">
+<div class="p-6 flex flex-col h-full justify-between">
+<div class="space-y-8">
+<!-- Vendor Info -->
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Nigerian vendor store logo mascot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMPdDClzmPF5K5FYiErr-YuPSkXYr-7Gv-5rHNo2d0fjFGkOj91pPYkoqZEVz-wkKf74_nIILeOxlHitJNPzN5pJ1JuzF14nlQa2my7VDpq8bLXjhd_Twner5DcLZwjuipKo-AiDCFgIAxsnC6AyqY_uj3KnJymFcIlGzCDgvx5wEo1_31EVcU-WqlW2_2MUs4WHldapV-juC7zuLwUNtVwnmdErPrBFLMWFRjPBQ0cZRx29bh0WP7QcSC6_MYaqYvgsfr3cqVwxQ"/>
+</div>
+<div class="flex flex-col">
+<h2 class="text-white text-sm font-bold leading-tight">NobleMart Vendor</h2>
+<p class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-green-400">verified</span>
+                                Verified Merchant
+                            </p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium leading-normal">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium leading-normal">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium leading-normal">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-sm font-medium leading-normal">Performance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium leading-normal">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Academy Action -->
+<button class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-bold transition-all transform hover:scale-[1.02]">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span class="truncate uppercase tracking-wider text-[11px]">Seller Academy</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-72 overflow-y-auto">
+<div class="max-w-[1100px] mx-auto p-10 space-y-10">
+<!-- Page Heading -->
+<header class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest">
+<span>Metrics</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span>Optimization</span>
+</div>
+<h1 class="text-white text-4xl font-black tracking-tight leading-tight">Performance Optimization Tips</h1>
+<p class="text-slate-400 text-lg max-w-2xl">Personalized insights to grow your business and increase visibility on NobleMart's marketplace.</p>
+</header>
+<!-- Tips Grid -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-white text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bolt</span>
+                            Quick Boosters
+                        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Tip 1: Photography -->
+<div class="group bg-[#1e1a2d] border border-white/5 rounded-xl p-6 hover:border-primary/50 transition-all cursor-pointer flex flex-col gap-5 shadow-xl">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">photo_camera</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-white text-lg font-bold leading-tight">Improve Product Photography</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Update 5 products with low-quality images to photo-realistic standards to boost conversion by <span class="text-green-400 font-bold">20%</span>.</p>
+</div>
+<button class="mt-auto text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Update Gallery <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Tip 2: Fulfillment -->
+<div class="group bg-[#1e1a2d] border border-white/5 rounded-xl p-6 hover:border-robin-egg/50 transition-all cursor-pointer flex flex-col gap-5 shadow-xl">
+<div class="w-14 h-14 rounded-full bg-robin-egg/10 flex items-center justify-center text-robin-egg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">flash_on</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-white text-lg font-bold leading-tight">Reduce Fulfillment Time</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Ship within 24 hours to earn the <span class="text-robin-egg font-bold">'Speed Master'</span> badge and gain 15% more search visibility.</p>
+</div>
+<button class="mt-auto text-robin-egg text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View Shipping Settings <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Tip 3: Inventory -->
+<div class="group bg-[#1e1a2d] border border-white/5 rounded-xl p-6 hover:border-orange-500/50 transition-all cursor-pointer flex flex-col gap-5 shadow-xl">
+<div class="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">inventory</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-white text-lg font-bold leading-tight">Restock Best-Sellers</h3>
+<p class="text-slate-400 text-sm leading-relaxed">3 high-demand items are currently low in stock. Restock now to prevent lost sales this weekend.</p>
+</div>
+<button class="mt-auto text-orange-500 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Restock Items <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- NobleShield Coaching Section -->
+<section class="space-y-6">
+<h2 class="text-white text-xl font-bold px-1">NobleShield Coaching</h2>
+<div class="relative overflow-hidden rounded-2xl bg-[#221a32] border border-primary/20 p-8 shadow-2xl flex items-center gap-8 group">
+<!-- Decorative glow -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/20 blur-[80px] rounded-full"></div>
+<div class="relative z-10 w-48 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg border-2 border-primary/30">
+<img class="w-full h-full object-cover" data-alt="Professional Nigerian growth coach smiling avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiW9U4Jhq8ISdDUGwBEOfWqKriduGpUsANcmFVGgkcqORyWiYXOEyRvujZOgNlJNam3fyin9_izuwBucwR9Yc0ci4-L75o0iist-BZ6c6Ew2MMO_IDDOWFqey8pe8thLNbTaLgOb871QKh3i9HGNm9i_5PkO85_SyifSRd7RZTPp3pC31Nkvkf3tgOwMM6Vt6FSPGjirueHpNNaVBKjB2vRTOaF2aBa7GzY98bmBmeTtbnE4-fiI6q02VGMEU6v2F0nHf_y7kImRY"/>
+</div>
+<div class="relative z-10 flex-1 flex flex-col gap-6">
+<div class="space-y-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-black uppercase tracking-widest border border-primary/30">
+<span class="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+                                    Store Growth Coach
+                                </div>
+<h3 class="text-white text-2xl font-bold leading-tight">Increase Your Store Rating</h3>
+<p class="text-slate-300 text-lg leading-relaxed max-w-xl">
+                                    "Your current store rating is <span class="text-yellow-400 font-bold">4.6</span>. Resolving pending customer messages within the next 2 hours could increase it to <span class="text-green-400 font-bold">4.8</span>!"
+                                </p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary hover:bg-primary/90 text-white font-bold transition-all shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">chat_bubble</span>
+                                    Resolve Messages
+                                </button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-white/5 hover:bg-white/10 text-white font-bold border border-white/10 transition-all">
+                                    View Detailed Analytics
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer CTA -->
+<div class="flex flex-col items-center py-10 gap-6 border-t border-white/5">
+<div class="text-center space-y-2">
+<p class="text-slate-400 text-sm">Need more advanced strategies?</p>
+<h3 class="text-white text-xl font-bold">Master the NobleMart Ecosystem</h3>
+</div>
+<button class="min-w-[320px] rounded-xl h-14 bg-primary hover:bg-primary/90 text-white text-base font-bold transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-3 group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">auto_stories</span>
+                        Visit Seller Academy for Advanced Training
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

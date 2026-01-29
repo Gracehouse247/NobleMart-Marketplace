@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | NobleMart</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-img-wrapper {
+            height: 250px;
+            background: var(--slate-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .promoted-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .product-info {
+            padding: 1.25rem;
+        }
+
+        .product-cat {
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--slate-800);
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--federal-blue);
+        }
+
+        .vendor-tag {
+            font-size: 0.8rem;
+            color: var(--slate-400);
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Page Header */
+        .shop-header {
+            background: white;
+            border-bottom: 1px solid var(--slate-200);
+            padding: 2rem 0;
+        }
+
+        .shop-header .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 5rem 0;
+            color: var(--slate-500);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="shop-header">
+        <div class="container">
+            <div>
+                <nav class="breadcrumb" style="font-size: 0.85rem; color: var(--slate-400); margin-bottom: 0.5rem;">
+                    <a href="/" style="text-decoration: none; color: inherit;">Home</a> / <span
+                        id="breadcrumb-current">Shop</span>
+                </nav>
+                <h1 id="page-display-title">Browse Products</h1>
+                <p id="page-display-subtitle" style="color: var(--slate-500);">Discover high-quality items from verified
+                    vendors.</p>
+            </div>
+            <div class="sort-wrapper">
+                <select id="sort-select" class="premium-input" style="width: 200px; padding: 0.5rem 1rem;">
+                    <option value="recommended">Recommended</option>
+                    <option value="newest">Newest Arrivals</option>
+                    <option value="price_asc">Price: Low to High</option>
+                    <option value="price_desc">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="shop-layout">
+        <aside class="filters-sidebar">
+            <div class="filter-section">
+                <h3 class="filter-title">Categories</h3>
+                <ul class="category-filter-list" id="sidebar-category-list">
+                    <!-- Loaded via JS -->
+                    <li>Loading...</li>
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Price Range</h3>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <input type="number" id="min-price" class="premium-input" placeholder="Min"
+                        style="padding: 0.5rem;">
+                    <span>-</span>
+                    <input type="number" id="max-price" class="premium-input" placeholder="Max"
+                        style="padding: 0.5rem;">
+                </div>
+                <button id="apply-price-filter" class="btn-primary"
+                    style="margin-top: 1rem; padding: 0.5rem; font-size: 0.85rem;">Apply</button>
+            </div>
+        </aside>
+
+        <main class="products-container">
+            <div id="products-loading" class="empty-state">
+                <span class="material-symbols-outlined"
+                    style="font-size: 3rem; animation: spin 2s linear infinite;">sync</span>
+                <p>Loading products...</p>
+            </div>
+            <div id="product-grid" class="product-grid" style="display: none;">
+                <!-- Products dynamically loaded -->
+            </div>
+            <div id="no-products" class="empty-state" style="display: none;">
+                <span class="material-symbols-outlined"
+                    style="font-size: 4rem; color: var(--slate-200);">inventory_2</span>
+                <h3>No products found</h3>
+                <p>Try adjusting your filters or search terms.</p>
+                <button onclick="window.location.href='/shop/category.html'" class="btn-secondary"
+                    style="width: auto; margin-top: 1rem;">Clear All Filters</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script src="../assets/js/content-loader.js" defer></script>
+</body>
+
+</html>

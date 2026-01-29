@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Health &amp; Beauty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .product-card:hover { transform: translateY(-4px); transition: all 0.3s ease; }
+        .concern-item:hover img { transform: scale(1.05); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#120e1b] dark:text-white font-display">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#ebe7f3] dark:border-white/10 px-4 md:px-20 py-3">
+<div class="max-w-[1400px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight">NobleMart</h1>
+</div>
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Skincare</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Makeup</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Haircare</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Fragrance</a>
+</div>
+</div>
+<div class="flex-1 max-w-xl hidden md:block">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary">search</span>
+<input class="w-full bg-[#f0eff5] dark:bg-white/5 border-none rounded-full py-2.5 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 outline-none text-sm transition-all" placeholder="Search for products, brands or concerns..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBC7IaW33RlelCbqHKMboDtzeuTalivUVBt6yjcKEDUqaEdVs72ndAm3fNCI3IzrQtxKY--_RKB181qBY1UKk5eEWiZbvslldsuoiWS7N35znhf8-O9837SEt7OWZvMd11TSIxUZbWElxfqBxU85hHBgmUIO-eAy08XQQk9c0n2VipvQapQzJUr73sBEvLzlVxD6zk0JwU7oaHAtmtqeaha2vzByu5yyyJ2tm8bktWe52rND1ZkUNIteHMFuGiwrAbZosecaBNHecY");'></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1400px] mx-auto px-4 md:px-20 py-8">
+<!-- NobleShield Authenticity Banner -->
+<div class="mb-8 flex items-center justify-between p-4 bg-primary/5 rounded-2xl border border-primary/10">
+<div class="flex items-center gap-4">
+<div class="bg-primary text-white p-2 rounded-full">
+<span class="material-symbols-outlined !text-xl">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">NobleShield Authenticity</h4>
+<p class="text-xs text-gray-600 dark:text-gray-400">Every single product in our health &amp; beauty section is 100% original, direct from authorized distributors.</p>
+</div>
+</div>
+<button class="text-xs font-bold text-primary underline underline-offset-4">Learn More</button>
+</div>
+<!-- Hero Section -->
+<div class="relative overflow-hidden rounded-[2rem] bg-background-dark mb-12 min-h-[400px] flex items-center">
+<div class="absolute inset-0 z-0 opacity-60">
+<div class="w-full h-full bg-cover bg-center" data-alt="Woman with radiant healthy skin smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxox-MIdGMHn1tSdoqyIoeva-RDkvHowObIYokuYVIEEvblnSMpUpScAVXJOOx03l3VqttbHZ0m9wqVoIdnxZMJtbl3OD8uYRWVuXAP9TS-fmTBMHFx8Xqz-LxaxYw9aie4An5P6-hTeEkNkxbxHySG7oc50Daomc4chAukNv8dJc_jDA3qkLjqXt7t8Gr2eDhtGdfX587hv2CfJ5eZ_N0V5D3XJ-inS3aRqUzFiIFDjNuM6iZBYdnTSzEzeKP5w2Up9biu6nVFws");'></div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/40 to-transparent z-10"></div>
+<div class="relative z-20 px-12 max-w-2xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-xs font-bold mb-4 backdrop-blur-md border border-primary/30">PREMIUM WELLNESS</span>
+<h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">Embrace Your <br/><span class="text-primary">Natural Glow</span></h1>
+<p class="text-lg text-white/80 mb-8 max-w-md">Discover curated skincare and wellness routines tailored for the vibrant Nigerian climate and your unique skin needs.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-3.5 rounded-full font-bold text-sm shadow-xl shadow-primary/20 hover:scale-105 transition-transform">Shop Collection</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-3.5 rounded-full font-bold text-sm hover:bg-white/20 transition-colors">Routine Guide</button>
+</div>
+</div>
+</div>
+<!-- Shop by Concern Section -->
+<div class="mb-12">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold">Shop by Concern</h2>
+<button class="text-primary font-bold text-sm flex items-center gap-1">View All <span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+<!-- Concerns -->
+<a class="concern-item group flex flex-col items-center gap-3 text-center" href="#">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg shadow-gray-200 dark:shadow-none bg-primary/10 flex items-center justify-center">
+<img alt="Acne Control icon" class="w-full h-full object-cover" data-alt="Clear skin close up for acne control" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5_mfSYTDIV9EeSVzCEAt7ZzFJi5xkYreLxrt_zEn8RGUQ78BnQomrxUVgA3BnSEATYhFyxFk8Ue2eHTqt6w1_bCbuhiwdoBdjblEW6Ke8ler7ivOZeyRU6w73Om3Ze66R51tGeu6fVQ7nW_RTHooqtW0rXywsW5oVupdb6FLNGUfKpakY3tX27Gcsv9RKvslqiZ2pjEc5hqlE28MQg5UC-uk2Q-Jp5mr69dxXefSFVn17ZpZ-JUuNdo1gi-8aIvHOZlggC_Xx4Mg"/>
+</div>
+<span class="text-sm font-bold group-hover:text-primary transition-colors">Acne Control</span>
+</a>
+<a class="concern-item group flex flex-col items-center gap-3 text-center" href="#">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg shadow-gray-200 dark:shadow-none bg-primary/10 flex items-center justify-center">
+<img alt="Hydration icon" class="w-full h-full object-cover" data-alt="Water splashing for hydration products" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Vmmj6ccVeMGINeV2MhpNyDRb-zkHkFWuGFEu4TXCVM5h080-Ma5zRKXj7XE9pQzgs9q9DODg8Kul0c6MV7PgeLkzzWboZVD0YnWeT94b_L-ufY7f9Xt6c1koY3VKybS4Wc7NO8b_GJCeBk9W9kCaz7hdHS1h41ZXFxaAu8-VssNdxtsEGQBc5V3ClLR9dplIC5uJVeJSdHXXtetiJnT9KJ-lxF4ufkQb7EfMSIdY1L1df5j5WNcHHleHQJ7maS4_bxPF0gptwZs"/>
+</div>
+<span class="text-sm font-bold group-hover:text-primary transition-colors">Hydration</span>
+</a>
+<a class="concern-item group flex flex-col items-center gap-3 text-center" href="#">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg shadow-gray-200 dark:shadow-none bg-primary/10 flex items-center justify-center">
+<img alt="Anti-aging icon" class="w-full h-full object-cover" data-alt="Serum bottles for anti-aging care" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFLO52P1-IVoteGHH5iX3lnDGnfV-QskFdMsmU_ADAky4733rieUikZaWi9mpL3XHxIjPhpvLo7JlMfzOjfzYPyPfoRJronJ88lr1t-3hPh1jeC_DbzlZRdBTjo0A_1E1ctlW5GOfxpx8Smd_eePkZon0U9-rbHtG-QzbAoyAPBvOB6TACe-rBdP_I9CBh9byrV7xGsyqFeFkZEW2tuZqULEkO-HUTViAqsE1_eaweM5XutZCUd47bST14uWsrVROOQ1I3_Wqy7_A"/>
+</div>
+<span class="text-sm font-bold group-hover:text-primary transition-colors">Anti-aging</span>
+</a>
+<a class="concern-item group flex flex-col items-center gap-3 text-center" href="#">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg shadow-gray-200 dark:shadow-none bg-primary/10 flex items-center justify-center">
+<img alt="Sun Protection icon" class="w-full h-full object-cover" data-alt="Bottle of sunscreen on beach sand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4WcFumLESFVVierot9kC8P4_WuOa0ndReeZqkGkPf5BD-VD1yHNzcMhPa60p6yzzXua0-sGNYa8glnExpVzCIM98zc-bpj9Q1AJ6bS9TUuFdh6E3ouop7WY__9KeLJTFWxrYvcJzsYWQacXtVPpNcbNBbATxYwyUiuRrm0Ahcir0GPEm7To8LUPbNDg9qgVoJy7Akp2DchipMcF-b3-IuBVfaD7Sg5wKbY9TTf58EYdmnqLMay2dXhXozk1srUWUhFh0EMunsydg"/>
+</div>
+<span class="text-sm font-bold group-hover:text-primary transition-colors">Sun Protection</span>
+</a>
+<a class="concern-item group flex flex-col items-center gap-3 text-center" href="#">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg shadow-gray-200 dark:shadow-none bg-primary/10 flex items-center justify-center">
+<img alt="Dark Spots icon" class="w-full h-full object-cover" data-alt="Glowy skin for dark spot treatment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkc9i1P14Mfu7ycgqAGy8joM61z_DPM2A3SwJl0PiF0kY_gZkkjMUR42fsudDlkZaywqLGaZZ9PnDgBQziqf5REftr5NXiwqly3OyxuYhrzuNoje6bRDtm2bM6GWDIx1LADjcNt82Gxw8k-1aVjPlu7UMN_KSj4FvkHaqn5_m67eOIjModYDo2VgDaEz5CkTZ5s5iBPoYAlVsEk4CvDS31HnXQhU9x44ACz5wZsV4-URHHorI66zuM_vyX_-yIWTyXZCKKCUQG-dQ"/>
+</div>
+<span class="text-sm font-bold group-hover:text-primary transition-colors">Dark Spots</span>
+</a>
+<a class="concern-item group flex flex-col items-center gap-3 text-center" href="#">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg shadow-gray-200 dark:shadow-none bg-primary/10 flex items-center justify-center">
+<img alt="Brightening icon" class="w-full h-full object-cover" data-alt="Lemons and Vitamin C serum for brightening" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVUZqbE5cyNm0u3tbvNJ8dr0LOZOOt88gez_C8FjMybwJ_WsQcqywBLf9DxNJPh9BjW3jO7VqJqdHOOVh0a1qdRhNTSib82PPSp7jSEdZGpBrhxi5bp8-9nobj3-ArHo5e-m0yh2U9yFdRdBeSsfwSVtdwjPP9zrpodis4L_9TD1kgOKb7UNE8I5giFc2iLW-swzMxRKClBqoSOMKh5lJTOeTcSctqA4XzFDa15RCmfC6r74izujxy1fFiCqk_mM1kuEGMETV4954"/>
+</div>
+<span class="text-sm font-bold group-hover:text-primary transition-colors">Brightening</span>
+</a>
+</div>
+</div>
+<div class="flex gap-10">
+<!-- Sidebar -->
+<aside class="w-64 hidden lg:block flex-shrink-0">
+<div class="sticky top-28 space-y-8">
+<div>
+<h3 class="text-sm font-extrabold uppercase tracking-wider mb-4">Ingredients</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined !text-xs text-white bg-primary w-full h-full flex items-center justify-center rounded-sm">check</span>
+</div>
+<span class="text-sm font-medium">Vitamin C</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary transition-colors"></div>
+<span class="text-sm font-medium">Retinol</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary transition-colors"></div>
+<span class="text-sm font-medium">Hyaluronic Acid</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary transition-colors"></div>
+<span class="text-sm font-medium">Niacinamide</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary transition-colors"></div>
+<span class="text-sm font-medium">Shea Butter</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-extrabold uppercase tracking-wider mb-4">Skin Type</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary transition-colors"></div>
+<span class="text-sm font-medium">Oily Skin</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary transition-colors"></div>
+<span class="text-sm font-medium">Dry Skin</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded-full border-2 border-primary bg-primary/10 flex items-center justify-center transition-colors">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<span class="text-sm font-bold text-primary">Sensitive Skin</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-5 h-5 rounded border-2 border-gray-300 group-hover:border-primary transition-colors"></div>
+<span class="text-sm font-medium">Combination</span>
+</label>
+</div>
+</div>
+<div class="p-4 bg-background-light dark:bg-white/5 rounded-2xl border border-gray-200 dark:border-white/10">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined !text-xl">auto_awesome</span>
+<span class="text-sm font-bold">Skin Match AI</span>
+</div>
+<p class="text-[11px] text-gray-500 mb-3">Take a quick quiz to get a personalized routine built just for you.</p>
+<button class="w-full py-2 bg-white dark:bg-background-dark border border-primary/20 rounded-full text-xs font-bold text-primary hover:bg-primary hover:text-white transition-all">Start Quiz</button>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="flex items-center justify-between mb-6">
+<p class="text-sm font-medium text-gray-500">Showing 148 results for <span class="text-black dark:text-white font-bold">Sensitive Skincare</span></p>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase text-gray-400">Sort by:</span>
+<select class="bg-transparent border-none text-sm font-bold focus:ring-0 cursor-pointer">
+<option>Best Selling</option>
+<option>Newest</option>
+<option>Price: Low to High</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="product-card group bg-white dark:bg-white/5 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-white/5">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<img alt="La Roche-Posay Cleanser" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Cleanser bottle for sensitive skin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ0aPXc_1M-ztYEqDB_8oj_g8TaLw_J7kn8rRKfsYiPLNt_I_0EiO0Arf1sVXTEAls8DGiLfoTm_IneuknmJhQi1nzmR_Ga9dYPmWmAsHPz3u2-LJct-b_QRF3KS0PZ4In1R4BLGyx4DehoF4fbmh1a2hslxFu7ZdGKqJClil86DzUYFEXpG2_4VWvBJYGP4s6Md6noj9fl546ZKw9GJWgGS1SeNzrUWSeRbrzBf4bA5XBuBPGCuM3qwsolWkHpOxhibcqh1BVzcA"/>
+<div class="absolute top-4 left-4">
+<div class="flex items-center gap-1 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-black text-primary shadow-sm border border-primary/20">
+<span class="material-symbols-outlined !text-[14px]">verified</span>
+                                    NOBLESHIELD
+                                </div>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:text-red-500">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-5">
+<p class="text-[10px] uppercase font-bold text-gray-400 mb-1 tracking-widest">La Roche-Posay</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-1">Toleriane Hydrating Gentle Cleanser</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm">star_half</span>
+</div>
+<span class="text-[11px] font-medium text-gray-400">(421)</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="text-lg font-black">₦14,500</span>
+</div>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card group bg-white dark:bg-white/5 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-white/5">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<img alt="CeraVe Moisturizer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="CeraVe moisturizer tub on clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Y8oqMOkjVnz3OpCv_BJN1x0034_MPhIW7uQ1dI7KWu_W3Gl7v_hBXveOo1aLigTMfBK8ZZItZdasqRbwSvOO7n7brpxoyNILp21ounwlAtXHHDiMD9HTpZdD4kfa_cX8tYkKr_2pxhe2gUYjg31jURU0Y41MOuogqCU1eCX9dKxVsDoI6ZD0jCnpPYb4vhdvsMz7v_CeG89Eoppl67XNVBYGHtuSjEinUYl5nfjuDcZf4JTYl6PCjZnRJd8A7QvJeJ90xtASnNs"/>
+<div class="absolute top-4 left-4">
+<div class="flex items-center gap-1 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-black text-primary shadow-sm border border-primary/20">
+<span class="material-symbols-outlined !text-[14px]">verified</span>
+                                    NOBLESHIELD
+                                </div>
+</div>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-full text-center">BESTSELLER</span>
+</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] uppercase font-bold text-gray-400 mb-1 tracking-widest">CeraVe</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-1">Daily Moisturizing Lotion for Dry Skin</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+</div>
+<span class="text-[11px] font-medium text-gray-400">(1.2k)</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="text-lg font-black">₦18,200</span>
+</div>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card group bg-white dark:bg-white/5 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 dark:border-white/5">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<img alt="The Ordinary Serum" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Niacinamide serum bottle from The Ordinary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs7cshzNEBc4NFzyrVDGZRi7Qev0gOq5fv2764InMitzAiijW_TxAswbTCUqLXU9B0NJS9_XeTCmdDZ1dCUHaWDcmMnww3POZdcPVifRMH_zuA29PUn8z-fQBodP7cpNKzUqNocy_cdkkvt-XpVK1lv3XI0keJU_SiigGH9Kf63H2Zi4cVipqbvNmmYf1MdxCiGiXLq2rd0ePSMTEkC3xM9CG-fQXiy1rB9nAzILml4IoOLQqAC46S3-WoeExVBWs7ggQFP0gRXxQ"/>
+<div class="absolute top-4 left-4">
+<div class="flex items-center gap-1 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[10px] font-black text-primary shadow-sm border border-primary/20">
+<span class="material-symbols-outlined !text-[14px]">verified</span>
+                                    NOBLESHIELD
+                                </div>
+</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] uppercase font-bold text-gray-400 mb-1 tracking-widest">The Ordinary</p>
+<h3 class="font-bold text-sm mb-2 line-clamp-1">Niacinamide 10% + Zinc 1%</h3>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm fill-1">star</span>
+<span class="material-symbols-outlined !text-sm">star</span>
+</div>
+<span class="text-[11px] font-medium text-gray-400">(856)</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="text-lg font-black">₦9,800</span>
+<span class="text-xs text-gray-400 line-through block font-medium">₦11,500</span>
+</div>
+<button class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Wellness Tips / Newsletter -->
+<div class="mt-16 p-10 bg-gradient-to-br from-primary/10 to-white dark:to-white/5 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-10">
+<div class="md:w-1/2">
+<span class="material-symbols-outlined !text-4xl text-primary mb-4">content_paste_search</span>
+<h2 class="text-3xl font-black mb-4 leading-tight">Join our Wellness Circle</h2>
+<p class="text-gray-600 dark:text-gray-300 mb-6">Receive weekly expert-curated skincare routines, nutritional tips for glowing skin, and early access to beauty drops.</p>
+<div class="flex gap-2 max-w-sm">
+<input class="flex-1 rounded-full px-5 py-3 border-none ring-1 ring-gray-200 dark:ring-white/10 dark:bg-background-dark/50 focus:ring-2 focus:ring-primary outline-none text-sm" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-white px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap">Sign Up</button>
+</div>
+</div>
+<div class="md:w-1/2 relative h-64 w-full">
+<div class="absolute inset-0 bg-cover bg-center rounded-2xl rotate-2 hover:rotate-0 transition-transform duration-500" data-alt="Wellness ingredients like avocado and cucumber" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8DeAj7DSkQS6aWAqqHnxpEZasao6SZoXLcY2xdA4WRd8O_VclvJGBGIEEsKzhAokXc1fx8B_sUqn7qLhKK7lcReTBbK8nnm0sw03WGbYmmkWTTNjxyMox1Or1_gERgr7FN4aw9UTMq8nRBuFcZZLmwKd5vdv4KnhpyzseQjishwv6xGf1AbUTQCsVKGV2R5xnWOhge_zaoqh0KM-jkSLotx0PKMIHKbIoFvcXJYklwMU2VtOhp2FVX5_0n3g9WhBlAKF8UN0ngtY");'></div>
+<div class="absolute -top-4 -right-4 bg-white dark:bg-background-dark p-4 rounded-2xl shadow-xl flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/20 text-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-gray-400 uppercase tracking-tighter leading-none">Certified</p>
+<p class="text-xs font-black">Expert Approved</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer for context -->
+<footer class="bg-white dark:bg-background-dark border-t border-[#ebe7f3] dark:border-white/10 mt-20 py-12 px-4 md:px-20">
+<div class="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
+<div>
+<div class="flex items-center gap-2 mb-6">
+<div class="text-primary">
+<svg class="w-6 h-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-extrabold">NobleMart</h2>
+</div>
+<p class="text-xs text-gray-500 leading-relaxed">The premium multi-vendor marketplace for the African continent, ensuring authenticity and trust in every purchase.</p>
+</div>
+<div>
+<h4 class="font-black text-sm mb-6">Help &amp; Support</h4>
+<ul class="text-xs text-gray-500 space-y-4 font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Authenticity Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping Information</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Returns &amp; Refunds</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-black text-sm mb-6">Categories</h4>
+<ul class="text-xs text-gray-500 space-y-4 font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Health &amp; Beauty</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Fashion &amp; Apparel</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Electronics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Home &amp; Living</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-black text-sm mb-6">NobleShield™</h4>
+<p class="text-xs text-gray-500 mb-4 font-medium">Your guarantee of 100% genuine health and beauty products. We fight counterfeits so you don't have to.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-gray-400 hover:text-primary cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-primary cursor-pointer transition-colors">shield</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-primary cursor-pointer transition-colors">verified</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1400px] mx-auto mt-12 pt-8 border-t border-[#ebe7f3] dark:border-white/10 flex justify-between items-center text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+<p>© 2024 NOBLEMART NIGERIA LTD. ALL RIGHTS RESERVED.</p>
+<p>LAGOS, NIGERIA</p>
+</div>
+</footer>
+</body></html>

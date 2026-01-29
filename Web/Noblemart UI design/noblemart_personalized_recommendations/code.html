@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Personalized Recommendations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#02024b",
+                "background-light": "#f5f5f8",
+                "background-dark": "#0f0f23",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d0d1c] dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#1a1a3a] border-b border-solid border-[#e6e6f4] dark:border-[#2a2a4a] px-4 md:px-10 lg:px-40 py-3">
+<div class="flex items-center justify-between whitespace-nowrap max-w-[1280px] mx-auto w-full">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary dark:text-white">
+<div class="size-8 text-primary dark:text-blue-400">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 h-10 w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#47479e] flex items-center justify-center bg-[#e6e6f4] dark:bg-[#2a2a4a] px-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-[#e6e6f4] dark:bg-[#2a2a4a] focus:ring-0 text-sm placeholder:text-[#47479e] dark:placeholder:text-[#8a8ab5] px-2" placeholder="Search products, brands..."/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-4 lg:gap-8">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Groceries</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Electronics</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Fashion</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e6e6f4] dark:bg-[#2a2a4a] text-primary dark:text-white hover:bg-primary/10">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e6e6f4] dark:bg-[#2a2a4a] text-primary dark:text-white hover:bg-primary/10">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e6e6f4] dark:bg-[#2a2a4a] text-primary dark:text-white hover:bg-primary/10">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-4 py-8 lg:px-10">
+<!-- Tabs for filtering -->
+<div class="mb-6 overflow-x-auto">
+<div class="flex border-b border-[#cecee9] dark:border-[#2a2a4a] gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary dark:border-b-blue-400 text-primary dark:text-white pb-3 pt-4" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">All</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#47479e] dark:text-[#8a8ab5] pb-3 pt-4 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Recently Viewed</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#47479e] dark:text-[#8a8ab5] pb-3 pt-4 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Similar Items</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#47479e] dark:text-[#8a8ab5] pb-3 pt-4 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold tracking-[0.015em]">Trending</p>
+</a>
+</div>
+</div>
+<!-- Personalized Recommendations Section -->
+<section class="bg-white dark:bg-[#151530] rounded-xl overflow-hidden shadow-sm border border-[#e6e6f4] dark:border-[#2a2a4a]">
+<!-- Header Bar -->
+<div class="bg-primary px-6 py-4 flex items-center justify-between">
+<h2 class="text-white text-xl font-bold tracking-tight">Recommended for You</h2>
+<a class="text-white/90 text-sm font-bold hover:text-white flex items-center gap-1 transition-all" href="#">
+                    See All
+                    <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+<!-- Product Grid -->
+<div class="p-6">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Product Card 1 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="relative w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border border-[#f0f0f5] dark:border-[#2a2a4a]">
+<div class="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">
+                                -12%
+                            </div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-110" data-alt="High-end noise cancelling headphones over white background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2oPZ4FEH5eEIclcvxQknETvzpXCXdqjZu6j1eAq_7P_ASjhFE7JdVrDiWlnFMU3vdVOc74aYD2LnBu2E-QHUBWMW7SpcMrmdOJQWQGz2-U2FSf-7VNToZbNHEExxA2Qt8aJ3-hIshwCo_JR5aMDU3ONH3RkerdpC8F57oEH49c0x7ON8JzstSs0vj8PjGy0w4i700gXQyZtryY5B5A7_gokNL1l3qmshMTMouA_ggOEypJLN-F1iZpPNm9BJoTFIAssSZHujk-1c");'>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="text-[#0d0d1c] dark:text-gray-200 text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem] group-hover:text-primary transition-colors">Premium Wireless Studio Headphones</h3>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="text-primary dark:text-blue-400 text-base font-bold">₦125,000</span>
+<span class="text-[#8a8ab5] text-[11px] line-through">₦142,000</span>
+</div>
+<div class="mt-auto pt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary/60 dark:text-blue-400/60">auto_awesome</span>
+<p class="text-[#47479e] dark:text-[#8a8ab5] text-[10px] font-semibold uppercase tracking-wider">Based on interest</p>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="relative w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border border-[#f0f0f5] dark:border-[#2a2a4a]">
+<div class="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">
+                                -25%
+                            </div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-110" data-alt="Minimalist wrist watch with leather strap" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArisZZF44U8mYxw84Glrzxu-JLlj5dQaCO9Z3sCfPHLrxu-u9LsHlfJWkjcoRr08nxr_-0sXA1-7OjBlS4i8Ot2cT5a6FJBxOr42ehdpWQDJJ0gXE19NcDgNm8ZPHQEQu_Tby3a4vVqHC-PDaS3bt8RpASK4LpqWFcYU2bbhsQLVcv_nzzudCc1ltFsowI7w1y1ltJhmmPGQ6hlkGwc6x2ObXA5okxE80wWTATBO41bqy5Ow_y0FBI0PQU-4K6a1GxKXEkz4bKCTo");'>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="text-[#0d0d1c] dark:text-gray-200 text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem] group-hover:text-primary transition-colors">Executive Minimalist Quartz Watch</h3>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="text-primary dark:text-blue-400 text-base font-bold">₦45,000</span>
+<span class="text-[#8a8ab5] text-[11px] line-through">₦60,000</span>
+</div>
+<div class="mt-auto pt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary/60 dark:text-blue-400/60">auto_awesome</span>
+<p class="text-[#47479e] dark:text-[#8a8ab5] text-[10px] font-semibold uppercase tracking-wider">Based on interest</p>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="relative w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border border-[#f0f0f5] dark:border-[#2a2a4a]">
+<div class="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">
+                                -15%
+                            </div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-110" data-alt="Modern high-performance running sneakers" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAV1Mww3ozgd0oEkOtgrRjt1JbbyLiihdWOSsaONGgEwVao_TntlDbRY-LsC6R1oTH0NreLCtrSUbQcBDJb54jgbezoq6cEWcFdjUfxl9TkHwvQr8-7rbFqZLTMYTZjvGNF5i5u3UbCIG8ioaRyfTjRN5Zgv-ImFiMN1uJbKOHVae8Wm6Q6qwwRZm_46aT3IZoJGi6bCFe63RLlwQdEIoBw0Jj8KyhgkSnn-K04cCkgRMbB7-fRDhh3ih0I3odMGw0a4-IWCXHEW3c");'>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="text-[#0d0d1c] dark:text-gray-200 text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem] group-hover:text-primary transition-colors">SwiftRun Pro Athletic Sneakers</h3>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="text-primary dark:text-blue-400 text-base font-bold">₦68,000</span>
+<span class="text-[#8a8ab5] text-[11px] line-through">₦80,000</span>
+</div>
+<div class="mt-auto pt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary/60 dark:text-blue-400/60">auto_awesome</span>
+<p class="text-[#47479e] dark:text-[#8a8ab5] text-[10px] font-semibold uppercase tracking-wider">Based on interest</p>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="relative w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border border-[#f0f0f5] dark:border-[#2a2a4a]">
+<div class="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">
+                                -8%
+                            </div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-110" data-alt="Professional DSLR camera with zoom lens" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLP5vsUYNXXCJ2UhA2XSeltoODN63Os2cfwQA_SDZTQR6e0xZofUgwTrSeKR0JnsqAODMOjCzMoMtxK5iuazEUwbhqM-wEz9zxX6Y8FeRwGTNxiMcrV8rTXfg5LP1UKFd1vi3zX1hJydhP7RcJ91w6aqEgFBqo0ZPUYsrEuv2R6bhHZEU8do7jagaba6yJNj0Kcve4-_k5s3Kv-Ii7eK9DwnYM9jOCpW52yioH0XFVW5eGmVp51AqNouOIlOUkgdmrmGcGtZrYxNA");'>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="text-[#0d0d1c] dark:text-gray-200 text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem] group-hover:text-primary transition-colors">4K Mirrorless Cinema Camera Kit</h3>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="text-primary dark:text-blue-400 text-base font-bold">₦850,000</span>
+<span class="text-[#8a8ab5] text-[11px] line-through">₦925,000</span>
+</div>
+<div class="mt-auto pt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary/60 dark:text-blue-400/60">auto_awesome</span>
+<p class="text-[#47479e] dark:text-[#8a8ab5] text-[10px] font-semibold uppercase tracking-wider">Based on interest</p>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="relative w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border border-[#f0f0f5] dark:border-[#2a2a4a]">
+<div class="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">
+                                -10%
+                            </div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-110" data-alt="Smart home speaker device on a wooden table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoJbWtWBt0cm3AaYIxRP_FNXQ8Dm20mCSQ4wYf4t4b1Jhvgd_3qytPBGUZyxF0o3HS3uWp_a6LdUXDeIZFy1NB6sKyMqO-MUbp0b3wpswAXmwG4X-0DAKb6lSxltTd0CY9dYiE12tgR1z4nBcDoyoWdT_5rPo0_k2J4ps5LdA5qfNRPGQswEVfAYreYrWqIRJd-R3zibADjdvWxFVk77C2zglEN9ZVifgCVwfLLeosGeUY9kKXxvuGolyqIo8vnNlf6Ru-lEVhn2U");'>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="text-[#0d0d1c] dark:text-gray-200 text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem] group-hover:text-primary transition-colors">Smart Home AI Speaker Hub</h3>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="text-primary dark:text-blue-400 text-base font-bold">₦32,500</span>
+<span class="text-[#8a8ab5] text-[11px] line-through">₦36,000</span>
+</div>
+<div class="mt-auto pt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary/60 dark:text-blue-400/60">auto_awesome</span>
+<p class="text-[#47479e] dark:text-[#8a8ab5] text-[10px] font-semibold uppercase tracking-wider">Based on interest</p>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col gap-3 cursor-pointer">
+<div class="relative w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border border-[#f0f0f5] dark:border-[#2a2a4a]">
+<div class="absolute top-2 left-2 z-10 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded">
+                                -20%
+                            </div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-300 group-hover:scale-110" data-alt="Luxurious organic skincare cream jar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSxc7q5pemTnCWvpGDs-GcI9ib2ggeCYSYIntLhfBXUImbLPEqM29Vc-f44Bm6QqPus5l7cXfT2YoPBy7NKV2uwomBcReWDcfFMQymMYf54UGG5RJcZTVFI9XYl8xqorq_BetTo4rQaUnC5fSx71PZWw-T1d4WoFspRnMmk7gHA0RJkR_ewDqvLvS7A0Bk2yRh1Rl_v__T6qrk2bSzEEJKv1nsKLSXKrpzWxVj6EQCJo3J1KZvC0pGwXR2hX3SfrewCgWCaNZv3BI");'>
+</div>
+</div>
+<div class="flex flex-col flex-1">
+<h3 class="text-[#0d0d1c] dark:text-gray-200 text-sm font-medium leading-snug line-clamp-2 min-h-[2.5rem] group-hover:text-primary transition-colors">Radiance Luxe Organic Moisturizer</h3>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="text-primary dark:text-blue-400 text-base font-bold">₦15,200</span>
+<span class="text-[#8a8ab5] text-[11px] line-through">₦19,000</span>
+</div>
+<div class="mt-auto pt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary/60 dark:text-blue-400/60">auto_awesome</span>
+<p class="text-[#47479e] dark:text-[#8a8ab5] text-[10px] font-semibold uppercase tracking-wider">Based on interest</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="border-t border-[#f0f0f5] dark:border-[#2a2a4a] bg-gray-50 dark:bg-[#1a1a3a] py-4 text-center">
+<button class="inline-flex items-center justify-center h-10 px-6 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all shadow-md">
+                    Explore More Recommendations
+                </button>
+</div>
+</section>
+<!-- Newsletter section footer mockup for realism -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-primary/5 dark:bg-[#1a1a3a] rounded-2xl p-8 border border-primary/10">
+<div>
+<h3 class="text-2xl font-extrabold text-primary dark:text-white mb-2">Get personalized deals daily</h3>
+<p class="text-[#47479e] dark:text-[#8a8ab5]">Join 50,000+ shoppers and receive exclusive offers tailored just for you.</p>
+</div>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-[#cecee9] focus:ring-primary focus:border-primary text-sm" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-bold hover:bg-primary/90">Subscribe</button>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-[#e6e6f4] dark:border-[#2a2a4a] py-10 bg-white dark:bg-[#0f0f23]">
+<div class="max-w-[1280px] mx-auto px-10 text-center">
+<p class="text-[#47479e] dark:text-[#8a8ab5] text-sm">© 2024 NobleMart Nigeria. All rights reserved. High-quality Multi-vendor Marketplace.</p>
+</div>
+</footer>
+</body></html>

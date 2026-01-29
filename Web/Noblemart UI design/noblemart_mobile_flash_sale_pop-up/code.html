@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Flash Sale</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "noble-cyan": "#01C2CA",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .modal-overlay {
+            background-color: rgba(18, 14, 27, 0.85);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- Main Page Content (Dimmed in Background) -->
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Nav Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 py-3 lg:px-40">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">NobleMart</h2>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="hidden md:flex items-center gap-6 mr-6">
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium" href="#">Deals</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium" href="#">New Arrivals</a>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9NMq5HfXaNpXVHD_Z26uYceFPG-pu123jDY_w51gwXe3V7bkwlAz67quxEwEs8myqfJhA4OCZi7lhBM98FdD8DRpooJP0x0a98OCfWJpmIk_8wIA91jqtW0sxjGDhJcI0gI4Hnn64a0DDJIXGv5ec2EQ6Ujbmp6jEgjJfmxe3IEOcCbmq0U74Hf169WIuB7so8gfes6ahNF8uylVszQ0inPrXS5GsBLUtPGdxV6p2q95ttoJcMK6WhfMG8Czx22zgEpGof3A0Iag");'></div>
+</div>
+</header>
+<!-- Placeholder Hero for background context -->
+<main class="flex-1 px-4 lg:px-40 py-8 opacity-40">
+<div class="w-full h-64 bg-slate-200 dark:bg-slate-800 rounded-xl mb-8 flex items-center justify-center">
+<span class="text-slate-400">Website Content</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
+<div class="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
+<div class="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
+<div class="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile Simulation) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-10">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-semibold">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-semibold">Categories</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-semibold">Account</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="text-[10px] font-semibold">Help</span>
+</div>
+</nav>
+</div>
+<!-- Pop-up Overlay -->
+<div class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+<!-- Mobile-Optimized Pop-up Card -->
+<div class="relative w-full max-w-[380px] bg-white dark:bg-[#1c162b] rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+<!-- Close Button -->
+<button class="absolute top-3 right-3 z-20 bg-black/20 hover:bg-black/40 text-white rounded-full p-1 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+<!-- Gradient Header -->
+<div class="h-28 bg-gradient-to-r from-noble-cyan to-primary flex flex-col items-center justify-center p-4 text-center">
+<h1 class="text-white text-2xl font-extrabold tracking-wider leading-tight">FLASH SALE LIVE!</h1>
+<p class="text-white/90 text-xs font-medium mt-1 uppercase tracking-widest">Don't miss out</p>
+</div>
+<!-- Product Display Section -->
+<div class="relative px-6 py-4">
+<!-- Discount Badge -->
+<div class="absolute top-2 left-6 z-10 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                        -50% OFF
+                    </div>
+<div class="w-full aspect-square bg-white dark:bg-white/5 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+<img alt="Premium Smartphone" class="object-contain w-4/5 h-4/5 transform transition-transform hover:scale-105 duration-500" data-alt="Modern premium smartphone on minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzM_0Lb6RBCoulCGtskaYHaVHsQfhL0JCgZqySfFIMCjfHifvqqwai61L6lJBomcsGXa-2fybre-GU5B494IXd0yI9vfEv7Mm98dKt97jy59eBAEiSnEXRUU1XBKk38Os-494NWlhHvvljkJPYeJUigRkcxunBAU--RwD1HUgk-i6u-QcBPbxogRE5ENA_bCgbeZ-jCWrrFoP2nYKeKjjBqQgHKjTyy0CJ2etTuR_UZF5Acevq1E9KzV0PT45CWEIcLIh0Obt8JrQ"/>
+</div>
+<div class="text-center mb-6">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Trending Smartphone X100</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Limited stock available! Grab yours before it's gone.</p>
+</div>
+<!-- Countdown Timer -->
+<div class="flex items-center justify-center gap-3 mb-6">
+<div class="flex flex-col items-center gap-1">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 dark:bg-background-dark border border-slate-200 dark:border-white/10 shadow-sm">
+<p class="text-primary dark:text-white text-xl font-bold">00</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-tighter">Hours</p>
+</div>
+<span class="text-primary font-bold text-xl mb-5">:</span>
+<div class="flex flex-col items-center gap-1">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100 dark:bg-background-dark border border-slate-200 dark:border-white/10 shadow-sm">
+<p class="text-primary dark:text-white text-xl font-bold">59</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-tighter">Mins</p>
+</div>
+<span class="text-primary font-bold text-xl mb-5">:</span>
+<div class="flex flex-col items-center gap-1">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white shadow-lg shadow-primary/30">
+<p class="text-xl font-bold">59</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-tighter">Secs</p>
+</div>
+</div>
+<!-- Shop Now Button -->
+<button class="group w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white py-4 px-6 rounded-xl font-bold text-base transition-all active:scale-95 shadow-lg shadow-primary/25">
+<span class="truncate">SHOP THE SALE NOW</span>
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-4 text-center">
+<button class="text-slate-400 dark:text-slate-500 text-xs font-medium hover:text-slate-600 transition-colors">
+                            Maybe later, I'll pay full price
+                        </button>
+</div>
+</div>
+<!-- Footer Accents -->
+<div class="h-1.5 w-full bg-gradient-to-r from-noble-cyan via-primary to-noble-cyan opacity-50"></div>
+</div>
+</div>
+</div>
+</body></html>

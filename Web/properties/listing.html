@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details | NobleMart</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .prop-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            margin-top: 3rem;
+            height: 500px;
+        }
+
+        .main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.5rem;
+        }
+
+        .sub-imgs {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .sub-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        .prop-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 1.5rem;
+            border: 1px solid var(--slate-100);
+            padding: 2.5rem;
+            position: sticky;
+            top: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .amenity-chip {
+            background: var(--slate-50);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 0.5rem 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container" style="padding: 4rem 2rem;">
+        <div id="prop-details-loading">
+            <p>Loading luxury...</p>
+        </div>
+
+        <div id="prop-content-box" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <h1 id="prop-title"
+                        style="font-size: 3rem; font-weight: 900; color: var(--federal-blue); margin-bottom: 0.75rem;">
+                        Loading Title...</h1>
+                    <div id="prop-location"
+                        style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-500); font-size: 1.1rem; font-weight: 500;">
+                        <span class="material-symbols-outlined">location_on</span>
+                        Lagos, Nigeria
+                    </div>
+                </div>
+                <div id="prop-price" style="font-size: 2.5rem; font-weight: 900; color: var(--primary);">₦0</div>
+            </div>
+
+            <div class="prop-gallery" id="prop-gallery">
+                <img src="" class="main-img" id="main-img">
+                <div class="sub-imgs" id="sub-imgs">
+                    <img src="" class="sub-img">
+                    <img src="" class="sub-img">
+                </div>
+            </div>
+
+            <div class="prop-layout">
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">Property Description</h3>
+                    <p id="prop-desc"
+                        style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.8; margin-bottom: 3rem;"></p>
+
+                    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">Features & Amenities</h3>
+                    <div id="prop-amenities">
+                        <!-- Amenities will be listed here -->
+                    </div>
+
+                    <div
+                        style="margin-top: 4rem; padding: 2.5rem; background: var(--slate-900); color: white; border-radius: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h4 style="font-size: 1.5rem; font-weight: 800;">Interested in this property?</h4>
+                            <p style="opacity: 0.8;">NobleMart ensures 100% verified documentation for every listing.
+                            </p>
+                        </div>
+                        <button class="btn-primary" style="width: auto; padding: 1rem 2rem;">Secure Viewing</button>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="contact-card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                            <div
+                                style="width: 3.5rem; height: 3.5rem; background: var(--slate-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--primary); font-size: 1.25rem;">
+                                V</div>
+                            <div>
+                                <div
+                                    style="font-size: 0.75rem; color: var(--slate-400); font-weight: 700; text-transform: uppercase;">
+                                    Listed By</div>
+                                <div id="vendor-name" style="font-weight: 700; font-size: 1.1rem;">Verified Vendor</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <button class="btn-primary" style="background: #10b981;">WhatsApp Agent</button>
+                            <button class="btn-secondary">Send Inquiry</button>
+                        </div>
+
+                        <hr style="border: none; border-top: 1px solid var(--slate-100); margin: 2rem 0;">
+
+                        <div style="font-size: 0.85rem; color: var(--slate-500);">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <span class="material-symbols-outlined" style="font-size: 1rem;">verified</span>
+                                Verified Documentation
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="material-symbols-outlined" style="font-size: 1rem;">shield</span>
+                                Escrow Protected Transaction
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const slug = urlParams.get('slug');
+
+            if (!slug) { window.location.href = 'index.html'; return; }
+
+            try {
+                const res = await fetch(`https://api.noblemart.com.ng/properties/${slug}`);
+                const prop = await res.json();
+
+                document.getElementById('prop-details-loading').style.display = 'none';
+                document.getElementById('prop-content-box').style.display = 'block';
+
+                document.title = `${prop.title} | NobleMart Properties`;
+                document.getElementById('prop-title').textContent = prop.title;
+                document.getElementById('prop-location').innerHTML = `<span class="material-symbols-outlined">location_on</span> ${prop.location}`;
+                document.getElementById('prop-price').textContent = `₦${parseFloat(prop.price).toLocaleString()}`;
+                document.getElementById('prop-desc').textContent = prop.description;
+                document.getElementById('vendor-name').textContent = prop.shop_name;
+
+                const images = prop.images ? JSON.parse(prop.images) : [];
+                document.getElementById('main-img').src = images[0] || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800';
+
+                const subBox = document.getElementById('sub-imgs');
+                if (images.length > 1) {
+                    subBox.innerHTML = images.slice(1, 3).map(img => `<img src="${img}" class="sub-img">`).join('');
+                }
+
+                const amenities = prop.amenities ? JSON.parse(prop.amenities) : ['Verified Documents', 'Security', '24/7 Power'];
+                document.getElementById('prop-amenities').innerHTML = amenities.map(a => `
+                    <span class="amenity-chip">
+                        <span class="material-symbols-outlined" style="font-size: 1.25rem; color: var(--prop-gold);">check_circle</span>
+                        ${a}
+                    </span>
+                `).join('');
+
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+
+</html>

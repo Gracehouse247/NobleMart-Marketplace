@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Reviews &amp; Ratings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#01c4cb",
+                "background-light": "#f5f8f8",
+                "background-dark": "#0f2223",
+                "indigo-brand": "#5C1BE8",
+                "federal-blue": "#020249",
+                "brand-gold": "#FFB800"
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .star-filled { font-variation-settings: 'FILL' 1; color: #FFB800; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-federal-blue dark:text-white transition-colors duration-200">
+<!-- Header / TopNavBar -->
+<header class="sticky top-0 z-40 w-full bg-white dark:bg-[#152e2f] border-b border-[#e6f4f4] dark:border-[#1e3a3b] px-4 md:px-10 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-federal-blue dark:text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">NobleMart</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#459ea1] flex items-center justify-center bg-[#e6f4f4] dark:bg-[#1e3a3b] px-3">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full border-none bg-[#e6f4f4] dark:bg-[#1e3a3b] focus:ring-0 text-sm placeholder:text-[#459ea1] dark:text-white" placeholder="Search products..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary" href="#">Shop</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Deals</a>
+<a class="text-sm font-medium hover:text-primary" href="#">What's New</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border-2 border-primary" data-alt="User profile avatar with professional look" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5i-1UCQ9Bnc-Z3jGIKMaGzQLU5qyPHSK8MGX57_hYgjZgbNheULuK9F6RGRe-UjYaHarmLSviDXrPtVjpEodp0MpSJ167e0i4Wd_MF1m3OL0xlC1zUd-hW_taRWvqvTGsDKNgZ6F6vNSkrYPrSQkMavZ8gZfVLxZP8GBJt5zoLZbbZxFuvrhDSSyFaNkawnF9i41P3JFAlEcXCi3VCc6Tps1k6CRMU-la8qsmH3ucIRsMQb_E-AUJAsQdEeLDX6E6PIaAyW5-vFc");'></div>
+</div>
+</div>
+</div>
+</header>
+<div class="max-w-[1440px] mx-auto flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-72 hidden lg:flex flex-col border-r border-[#e6f4f4] dark:border-[#1e3a3b] bg-white dark:bg-[#152e2f] p-6 gap-8">
+<div class="flex flex-col">
+<p class="text-primary text-xs font-bold uppercase tracking-widest mb-1">My Account</p>
+<p class="text-federal-blue dark:text-white text-sm">John Adebayo</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f5f8f8] dark:hover:bg-[#1e3a3b] transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">grid_view</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f5f8f8] dark:hover:bg-[#1e3a3b] transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">shopping_bag</span>
+<p class="text-sm font-medium">My Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f5f8f8] dark:hover:bg-[#1e3a3b] transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">mail</span>
+<p class="text-sm font-medium">Inbox</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#e6f4f4] dark:bg-[#01c4cb20] text-primary" href="#">
+<span class="material-symbols-outlined fill-1">star</span>
+<p class="text-sm font-bold">Ratings &amp; Reviews</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f5f8f8] dark:hover:bg-[#1e3a3b] transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">confirmation_number</span>
+<p class="text-sm font-medium">Vouchers</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#f5f8f8] dark:hover:bg-[#1e3a3b] transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">settings</span>
+<p class="text-sm font-medium">Account Settings</p>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg h-11 px-4 bg-gray-100 dark:bg-[#1e3a3b] text-federal-blue dark:text-white text-sm font-bold hover:bg-red-50 hover:text-red-600 transition-all">
+<span class="material-symbols-outlined text-sm">logout</span>
+<span>Log Out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-white dark:bg-background-dark">
+<!-- PageHeading -->
+<div class="p-8 border-b border-[#e6f4f4] dark:border-[#1e3a3b]">
+<h1 class="text-3xl font-black text-federal-blue dark:text-white tracking-tight">Ratings &amp; Reviews</h1>
+<p class="text-[#459ea1] mt-2">Manage your product feedback and shared experiences</p>
+</div>
+<!-- Tabs -->
+<div class="px-8 border-b border-[#e6f4f4] dark:border-[#1e3a3b] flex gap-10">
+<button class="py-4 border-b-2 border-primary text-federal-blue dark:text-white font-bold text-sm">
+                    Pending Reviews (3)
+                </button>
+<button class="py-4 border-b-2 border-transparent text-[#459ea1] hover:text-federal-blue dark:hover:text-white font-bold text-sm transition-all">
+                    Published Reviews (12)
+                </button>
+</div>
+<!-- Pending Reviews Section -->
+<div class="p-8 space-y-6">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold">Recently Delivered</h2>
+</div>
+<div class="grid gap-4">
+<!-- Product Item 1 -->
+<div class="flex flex-wrap items-center gap-6 p-4 rounded-xl border border-[#e6f4f4] dark:border-[#1e3a3b] bg-white dark:bg-[#152e2f] shadow-sm">
+<div class="h-24 w-24 rounded-lg bg-gray-100 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Studio shot of premium wireless headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_TBuLJ8SqVvcsf6Yi8gM3YBMBFbPldZA4q5QlEwO3feZeB_lX4EnNTMHw279_NLBmZF6Su3sABhg3zOgDEIFdB0qyun1T7wyT4NXxQYqzsEoD7AdBvayRcoqnwh-vNLEVabsJR44YVBmWbcNN-g-n3UyUsAeGpStevMUMG37Ge80roEMygPmLnDHVJmYoCAUNSHKvI7qe_mEWE2mb8BzwliGfD4LRLi7gjLYu79BY738tEJVqGsPKRBLuA4x8KFh-WrvdpyVbxaM"/>
+</div>
+<div class="flex-1 min-w-[200px]">
+<h3 class="font-bold text-federal-blue dark:text-white">Sony WH-1000XM4 Noise Cancelling Headphones</h3>
+<p class="text-xs text-[#459ea1] mt-1 uppercase tracking-tighter">Order #NM-82910 • Delivered Oct 12, 2023</p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-indigo-brand hover:opacity-90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md shadow-indigo-brand/20">
+                                Rate this Product
+                            </button>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="flex flex-wrap items-center gap-6 p-4 rounded-xl border border-[#e6f4f4] dark:border-[#1e3a3b] bg-white dark:bg-[#152e2f] shadow-sm">
+<div class="h-24 w-24 rounded-lg bg-gray-100 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up of red athletic running shoe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDERvRYK6Eyftzj3jlDTq6AcHbwDuaPXXOmfLbKiGkxAtZlWc2yDXuhdtQuKkqdFffiAVTSKrh_ZNVsu8gypEHhdwCX0qr-Olod4x3A7D5l37hr0AbXaaA_slhC08rFRCUwZQvlr_Pts0oItyVUZHAAkMPcFwr54GUXNRQ1ylZbYs4AT2w4q-BzV2NgmWtYW3AbAu0DCMxkJzgJ-Xf88PhpaEf2x8jD0gJat-j73WML0BO_Z-Debv5A-q13ray5xYx6hsoLU2Fw-5I"/>
+</div>
+<div class="flex-1 min-w-[200px]">
+<h3 class="font-bold text-federal-blue dark:text-white">Nike Air Max Speedster - Crimson Red</h3>
+<p class="text-xs text-[#459ea1] mt-1 uppercase tracking-tighter">Order #NM-77231 • Delivered Oct 09, 2023</p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-indigo-brand hover:opacity-90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md shadow-indigo-brand/20">
+                                Rate this Product
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Published Reviews Section -->
+<div class="p-8 border-t border-[#e6f4f4] dark:border-[#1e3a3b] bg-[#fcfdfe] dark:bg-background-dark/50">
+<h2 class="text-lg font-bold mb-6">Your Previous Reviews</h2>
+<div class="space-y-6">
+<div class="flex flex-col gap-4 p-6 bg-white dark:bg-[#152e2f] rounded-xl border border-[#e6f4f4] dark:border-[#1e3a3b]">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded bg-gray-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern minimalist wristwatch on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATErS25n6JzfwVussdGCqkA5qZOwpzGcAb1sGzmn2C-6gwa1jqBiaLBzhNQT-Y23Kl1XFvUhBTj7FuKWYrsGUu9lVObcue9PNv9YhsNJLuPi5xzbCF8vudrvGpuLYiURBcjhcie_uKvV9rQXUw-Pfnq9c7Gafjj0Q2NgriZYjLDKvsQofEATt7R2tp-m54MJaqRlUdHitHE4uRkNNPx7o14QDWFhH_k3ByRUzk3x7Y1CW7_EQerRMyllfxNNROFAeh8mJaZluTm1o"/>
+</div>
+<div>
+<h4 class="font-bold text-sm">Minimalist Quartz Watch</h4>
+<div class="flex mt-0.5">
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+<span class="material-symbols-outlined star-filled text-sm">star</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-[#459ea1] font-medium uppercase">Reviewed on Aug 24</p>
+</div>
+<p class="text-sm text-federal-blue dark:text-gray-300 italic">"Absolutely stunning piece. The leather strap is genuine and very comfortable. Keeps time perfectly and matches almost all my outfits. Highly recommended for the price!"</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Review Modal (Overlay) - Hidden by default in logic but shown for preview -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-federal-blue/60 backdrop-blur-sm">
+<div class="bg-white dark:bg-[#152e2f] w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+<div class="p-6 border-b border-[#e6f4f4] dark:border-[#1e3a3b] flex items-center justify-between">
+<h3 class="text-xl font-bold">Write a Review</h3>
+<button class="text-[#459ea1] hover:text-federal-blue">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-8 space-y-6">
+<!-- Product Mini info -->
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Sony WH-1000XM4 headphones detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2kxqr7Z4L-NVSoGOynYwWPH0_aKDOp-zc63fAPOL_u7AqYcrA0IU_bS-Mfv_WTh7006u3k-CDOHQGjdxNNcEjReVas9sjwRZO9IOHwd2cHsah89_ejaGwyzZpHOAems0ZQnyHDD6BujrZWl4VxP0uamPTcfBB9dnSHRiANX9eAYv1tO_cIEED85DFolaVEUuP_wNQ9nV6GYzxBmDhmJ7LjMz7bgrWVVqDrXgCMIgQG2xDukO-_nqhabg40kHV47WHZlmN_Bc2Q8E"/>
+</div>
+<div>
+<p class="text-sm font-bold">Sony WH-1000XM4 Noise Cancelling</p>
+<p class="text-xs text-[#459ea1]">Please share your honest experience</p>
+</div>
+</div>
+<!-- Star Rating -->
+<div class="text-center">
+<p class="text-sm font-bold mb-3">How would you rate this product?</p>
+<div class="flex justify-center gap-2">
+<span class="material-symbols-outlined text-4xl cursor-pointer star-filled">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer star-filled">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer star-filled">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer star-filled">star</span>
+<span class="material-symbols-outlined text-4xl cursor-pointer text-gray-200 dark:text-gray-700">star</span>
+</div>
+</div>
+<!-- Review Text -->
+<div class="space-y-2">
+<label class="text-sm font-bold">What did you like or dislike?</label>
+<textarea class="w-full min-h-[120px] rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-[#0f2223] dark:text-white focus:border-primary focus:ring-1 focus:ring-primary text-sm p-4" placeholder="The sound quality is amazing, but the case is a bit bulky..."></textarea>
+</div>
+<!-- Add Photos -->
+<div class="space-y-2">
+<label class="text-sm font-bold">Add Photos</label>
+<div class="border-2 border-dashed border-[#e6f4f4] dark:border-gray-700 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-[#1e3a3b] transition-all">
+<span class="material-symbols-outlined text-primary text-3xl mb-2">add_a_photo</span>
+<p class="text-xs text-[#459ea1] font-medium">Click to upload photo-realistic images</p>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-federal-blue py-4 rounded-xl font-bold text-base hover:opacity-90 shadow-lg shadow-primary/20 transition-all">
+                    Submit Review
+                </button>
+</div>
+</div>
+</div>
+</body></html>

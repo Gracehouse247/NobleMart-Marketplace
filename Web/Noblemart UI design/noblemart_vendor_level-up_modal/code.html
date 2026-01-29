@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Level-Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Poppins:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "indigo-custom": "#5C1BE8",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-celebration-gradient {
+            background: linear-gradient(135deg, #5C1BE8 0%, #01C2CA 100%);
+        }
+        .shimmer-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+        .badge-shadow {
+            filter: drop-shadow(0 10px 15px rgba(1, 196, 203, 0.3));
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex items-center justify-center p-4">
+<!-- Mock Dashboard Background (Dimmed) -->
+<div class="fixed inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
+<div class="max-w-[1200px] mx-auto grid grid-cols-12 gap-6 p-10">
+<div class="col-span-3 h-screen bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+<div class="col-span-9 space-y-6">
+<div class="h-40 bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+<div class="grid grid-cols-3 gap-6">
+<div class="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+<div class="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+<div class="h-64 bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Backdrop Overlay -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
+<!-- Modal Container -->
+<div class="relative z-20 w-full max-w-[540px] bg-white dark:bg-background-dark rounded-2xl shadow-2xl overflow-hidden border border-white/10">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 text-white/80 hover:text-white z-30 transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<!-- Header with Gradient -->
+<div class="bg-celebration-gradient pt-12 pb-8 px-6 text-center relative overflow-hidden">
+<!-- Decorative Sparkles -->
+<div class="absolute top-2 left-10 text-white/20 animate-pulse">
+<span class="material-symbols-outlined" style="font-size: 40px;">auto_awesome</span>
+</div>
+<div class="absolute bottom-4 right-12 text-white/20 animate-pulse">
+<span class="material-symbols-outlined" style="font-size: 32px;">star</span>
+</div>
+<h2 class="font-poppins text-white text-[32px] font-bold tracking-wider leading-tight">
+                CONGRATULATIONS!
+            </h2>
+</div>
+<!-- Content Area -->
+<div class="px-8 pb-10 pt-6 flex flex-col items-center">
+<!-- Badge Image Area -->
+<div class="relative -mt-20 mb-6 group">
+<!-- Outer Glow -->
+<div class="absolute inset-0 bg-primary/30 blur-3xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity"></div>
+<!-- The Badge -->
+<div class="relative w-48 h-48 flex items-center justify-center bg-center bg-contain bg-no-repeat badge-shadow" data-alt="Photorealistic 3D NobleShield Elite golden metallic badge with particles" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJk76MZYiGTb_0f_eM-AHrMUdYUTDQT0tgN11Lc9wJLqn7Mf2aUfc_yhgwH9U5hYFgDGnXuNU6Iq6Ixyls2RDmV4DAIvYep1tacfo6wutWouUQNThLZfxxrBjZpZ2V0PIgJqTstx1Oigm16-n4kC5bN1liilbkJyOmYxEzzj_YAYR0CHWa4of4YztAbBWH8Bs0ecOoc-GkvAUfcNNW_zZWeku4vyiLnjJIgaw-I7v8aspSmk5cGXsulCetttqi-akQyJlShwdhz9E');">
+</div>
+<!-- Particle/Sparkle Icons Overlay -->
+<div class="absolute -top-4 -right-2 text-yellow-400">
+<span class="material-symbols-outlined" style="font-size: 24px; font-variation-settings: 'FILL' 1;">colors_spark</span>
+</div>
+<div class="absolute bottom-6 -left-6 text-yellow-500">
+<span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+</div>
+</div>
+<!-- Title Text -->
+<h1 class="text-[#0c1c1d] dark:text-white text-[24px] font-bold leading-tight tracking-tight text-center mb-6">
+                Your store has been promoted to Elite Status!
+            </h1>
+<!-- Perks Checklist -->
+<div class="w-full max-w-[380px] space-y-2 mb-8" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(12,28,29)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');">
+<div class="flex items-center gap-x-4 p-3 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/10">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">percent</span>
+</div>
+<p class="text-[#0c1c1d] dark:text-gray-200 text-base font-medium">Lower commission rates</p>
+</div>
+<div class="flex items-center gap-x-4 p-3 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/10">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<p class="text-[#0c1c1d] dark:text-gray-200 text-base font-medium">Priority search placement</p>
+</div>
+<div class="flex items-center gap-x-4 p-3 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/10">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<p class="text-[#0c1c1d] dark:text-gray-200 text-base font-medium">Exclusive badge on your profile</p>
+</div>
+</div>
+<!-- Single Button Component -->
+<div class="w-full flex justify-center">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-primary text-[#0c1c1d] text-lg font-bold leading-normal tracking-wide hover:brightness-105 active:scale-95 transition-all shadow-lg shadow-primary/30 shimmer-effect">
+<span class="truncate">Claim My Perks</span>
+</button>
+</div>
+<button class="mt-4 text-gray-500 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors">
+                Maybe later, take me to dashboard
+            </button>
+</div>
+</div>
+</body></html>

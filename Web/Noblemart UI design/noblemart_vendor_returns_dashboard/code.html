@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Returns Dashboard</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                        "federal-blue": "#020249",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col fixed h-full z-20">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">NobleMart</h1>
+<p class="text-xs text-white/60">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 mt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors text-white/70" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors text-white/70" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors text-white/70" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white" href="#">
+<span class="material-symbols-outlined">assignment_return</span>
+<span class="text-sm font-medium">Returns</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors text-white/70" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</a>
+<div class="border-t border-white/10 my-4"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors text-white/70" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors text-white/70" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</nav>
+<div class="p-4 bg-black/20 m-4 rounded-xl flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary/40" data-alt="Vendor profile avatar image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWAr7RyVQ713-4DPMvaqTCOiOscz2Xiqd5vyFxASWim69HNUEZjttRGw-BszBp5WUUGZChjQp16vy_NDfiO9TXFDrtPQqexI7mCPvHXnadBPx9ohhWRSLVCxOGYd5MTVHeisyibXo0j8DjfVZI19Bfnj-9nW_acHP4WkKCTJGm9FaOOzL5SnS6aJEMypCte8DnDPaIP4igk5soh0eKgEyB7MEQNVHW7QCmpu2vL4F6WbQ6cHD4SIKVPMJXZmZqJYb616nCWLqsoN0')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-semibold truncate">Elite Gadgets NG</p>
+<p class="text-xs text-white/50 truncate">Verified Merchant</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 min-h-screen flex flex-col relative">
+<!-- Top Navigation -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<h2 class="text-xl font-bold">Returns Management</h2>
+<div class="flex items-center gap-6">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-lg pl-10 text-sm focus:ring-primary focus:border-primary" placeholder="Search Return ID or Order ID..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-400 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-8 space-y-8 max-w-[1400px] mx-auto w-full">
+<!-- Statistics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Pending Returns</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">12</span>
+<span class="text-emerald-500 text-sm font-semibold mb-1 flex items-center"><span class="material-symbols-outlined text-sm">trending_up</span> 5%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Resolved This Month</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">45</span>
+<span class="text-rose-500 text-sm font-semibold mb-1 flex items-center"><span class="material-symbols-outlined text-sm">trending_down</span> 2%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Refunds Issued</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">₦240,500</span>
+<span class="text-emerald-500 text-sm font-semibold mb-1 flex items-center"><span class="material-symbols-outlined text-sm">trending_up</span> 12%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col gap-1">
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Avg. Processing Time</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold">1.2 Days</span>
+<span class="text-emerald-500 text-sm font-semibold mb-1 flex items-center"><span class="material-symbols-outlined text-sm">bolt</span> Good</span>
+</div>
+</div>
+</div>
+<!-- Trust & Escrow Notice -->
+<div class="bg-primary/10 border border-primary/30 rounded-xl p-5 flex items-start gap-4">
+<div class="bg-primary text-white p-2 rounded-full">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-slate-900 dark:text-white">Trust &amp; Escrow Notice</h3>
+<p class="text-sm text-slate-700 dark:text-slate-300 mt-1">
+                        Refunds for approved requests are automatically debited from your pending wallet balance. This mechanism ensures customer trust and prevents platform integrity disputes.
+                    </p>
+</div>
+<a class="text-primary font-bold text-sm whitespace-nowrap hover:underline flex items-center gap-1" href="#">
+                    Learn about escrow <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Returns Table Container -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-lg">Return Requests</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                        </button>
+<button class="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Return ID</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Order ID</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Product</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Reason</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Evidence</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-slate-900 dark:text-white">#RET-1021</span>
+<p class="text-xs text-slate-500 mt-0.5">2 hours ago</p>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm text-primary font-medium hover:underline">#NM-9921</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-cover bg-center border border-slate-100" data-alt="Oraimo FreePods 4 product thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT3athDOtv1ZDQ82--JkP3d96PitngPJUUi5QPobNj6hjwlN0FQzQJbvCDnx7f78BylZ6CFwQuo0M8ntCEtRtg8jPI_kLYiP2LBUvFMnuDZGhfQHzqwJnYUBAkqsCBKNnGh3duMQUBgqqCHt9zyG1kpUHAE-awNU_b5SqOhWxNHB_D0g_PSyXBLzVr0DLgcj-LIrCpcfn_SGRxUdR8Emy5BO-AFs16Uyy4nGn2XOKeGlmLbEAbTFqlPU22-mmGP5Wt3CUh3dmBJqM')"></div>
+<div class="max-w-[150px]">
+<p class="text-sm font-semibold truncate">Oraimo FreePods 4</p>
+<p class="text-xs text-slate-500">₦24,500</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-medium">Faulty Battery</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-500 rounded-full text-xs font-bold">Pending</span>
+</td>
+<td class="px-6 py-4">
+<div class="size-8 rounded border border-slate-200 bg-cover bg-center" data-alt="Customer uploaded evidence photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhaoH8tXwmqMZcjB9PZhXwtemk-9HCG7nR0cfhgSzRUFukel1ITIGm2ovVEtLquX1aqZPqPIasvcjFDsFLlhTy9tl_nkR7QZKSshp0b5P3_Q7VXub4TIfUIXd1ftrB_l4zxbQisKTjhqGeP5Hw07JsrvSd3FkZccDSnQy7KgpzJpqtGAoI1byOZbVA5MQ133dpYKkK9sP_8LK2-rgEGWTbwB-warx4MYSGhijg5IHHAh-qgB1kVH4XJ_9WDLcuE_TBum_9kGv6vgY')"></div>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary text-sm font-bold hover:underline">View Details</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-slate-900 dark:text-white">#RET-1022</span>
+<p class="text-xs text-slate-500 mt-0.5">Yesterday</p>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm text-primary font-medium hover:underline">#NM-8843</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-cover bg-center border border-slate-100" data-alt="Zaron Foundation product thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFI9M4PJeXUjMKhrwtE4j6OU8n5IeiCEhV5P1R234NAhBeBIVTbP6-2c5QooI679OzYc2rDehwj4aYOp2TStWJXL4e0VLkPFT9QwNGlAxD8hhb0VycMSzj_blp27toFWdGJqDkDJhLO5Fr6ECL_zQ1yKMSkxPZTBn1eUMRXLtZVMguMlH_AXKGKxq7TFR6lXjcvXayZCg9tnNK-aUNy7FIkpC2X-sMGR3q9QuXhWH-EA6Hxztpc6se4viVxfaNxuGhgMfMQVs0M-s')"></div>
+<div class="max-w-[150px]">
+<p class="text-sm font-semibold truncate">Zaron Foundation</p>
+<p class="text-xs text-slate-500">₦12,000</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-medium">Wrong Shade</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-500 rounded-full text-xs font-bold">Approved</span>
+</td>
+<td class="px-6 py-4">
+<div class="size-8 rounded border border-slate-200 bg-cover bg-center" data-alt="Customer uploaded evidence photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPyZ1_My19b9901ndwk_JWkq8wQWGNmHQWn1tM1Kj0wzG-XWqEbPuYpDJF2MyHBZV0-mbOZerqg3ocpi-t9qq0l0qU1tFgUcASwpYM-1TOoGoC8cB7nx-AUiqFUOLy5Pf2OshjLVVCgf54mL8Ry5F40Q29YtP4y8Gcp-j7gmJN1SssSnBWFZaveULNfsRgXh3v_nCMslg9JdS9ZmSwfb4DzUOO19UDYRlGwSBSu8EniN5XMy_wHLBeYL39XkXDDjSGcku8bYLN8vg')"></div>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary text-sm font-bold hover:underline">View Details</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<span class="text-sm font-bold text-slate-900 dark:text-white">#RET-1023</span>
+<p class="text-xs text-slate-500 mt-0.5">2 days ago</p>
+</td>
+<td class="px-6 py-4">
+<span class="text-sm text-primary font-medium hover:underline">#NM-7712</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-cover bg-center border border-slate-100" data-alt="Nike Air Max product thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXjSP9IQ0xXvwMqD7VeUrmekJm_TzjsZ7k4GwIHjjwjKTCnqW3I_8gj-IE1ZdeeVmtjB4FvsC0ldtUY5jxa6MwanUrRo2MJxFKcBsVKCJYnrBjKkLKf_K5f9N8AKABACPBZTU9TsmzZSOfzcW0ggejgJI5YHihjfr0mxgLB7yxZ2lPDMIO7MhuSYzC9sryluTN3RQWeHHWIueI_p56D-rOWL8aPMF0EwREeKM9I7NIclW94v4SW40tt5qGyqAjjdV4Z19rAQ5eLoU')"></div>
+<div class="max-w-[150px]">
+<p class="text-sm font-semibold truncate">Nike Air Max 90</p>
+<p class="text-xs text-slate-500">₦85,000</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-medium">Sizing Issue</span>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-500 rounded-full text-xs font-bold">Rejected</span>
+</td>
+<td class="px-6 py-4">
+<div class="size-8 rounded border border-slate-200 bg-cover bg-center" data-alt="Customer uploaded evidence photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4R-7zQya3FdUZWjIWTlN6qfgL-ku3X40MGIlgqUQOuy0ZPFHh4nU1KcDMFV5pqLIJHTJfSGEcHsQJ5lejxgAZkxAy6dWCg9IqOulbiGV1Rkr0TloVHtg0aNdNz3yTvwRj73hTHOIESSTOsi2L68WIrthAtOTd1SWq0WVhCK3CsZa1cC3NqOZdB7boeRpB37vuBbalLEAnzVfcEtf5-IEhCv1wde-STz2B7yYfiddtUA9NrBznmlJ3EEcm7H1XaEs6iudAqzCoM_s')"></div>
+</td>
+<td class="px-6 py-4">
+<button class="text-primary text-sm font-bold hover:underline">View Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<p class="text-sm text-slate-500">Showing 1-10 of 12 requests</p>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded hover:bg-slate-50 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Drawer (Visible overlay state) -->
+<div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 pointer-events-none opacity-0 transition-opacity"></div>
+<aside class="fixed right-0 top-0 h-full w-[450px] bg-white dark:bg-slate-900 shadow-2xl z-40 transform translate-x-0 transition-transform flex flex-col border-l border-slate-200 dark:border-slate-800">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<div>
+<h3 class="font-bold text-lg">Return Details</h3>
+<p class="text-sm text-slate-500">Request ID: #RET-1021</p>
+</div>
+<button class="p-2 hover:bg-slate-100 rounded-full">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Customer Details -->
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">person</span>
+</div>
+<div>
+<p class="font-bold">Chioma Uzoma</p>
+<p class="text-xs text-slate-500">Lagos, Nigeria • Customer since 2023</p>
+</div>
+<button class="ml-auto text-primary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">chat</span> Contact
+                    </button>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700">
+<p class="text-xs font-bold text-slate-400 uppercase">Reason for Return</p>
+<p class="font-semibold text-slate-900 dark:text-white mt-1">Faulty Battery</p>
+<p class="text-sm text-slate-600 dark:text-slate-400 mt-2 italic">
+                            "The left earbud doesn't charge at all even after leaving it in the case overnight. I've tried cleaning the contacts but no change. Very disappointed as this was a gift."
+                        </p>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase mb-3">Evidence Photos</p>
+<div class="grid grid-cols-2 gap-3">
+<div class="aspect-video rounded-lg bg-cover bg-center border border-slate-200" data-alt="Evidence photo of the charging case" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVNyzDn4n1jA7eE0L0C2HEXjWhYGKZGgWI8KdNxUxRp3YWKNe0WgQt63ZSEXvf73WXv3K2CkCCiSzrb1eNKTFjjvxAvLp_jyT8eRXWSbKr7l10Gj-87TJ3H4ut1ZXQ4GjcOt4z9slZsshzK17iQkLVnNRLdt0cHXE04OwpSFVtNVnHkP_3w1qRUI8dVq-BEiDBbWc4jCBaXeaFp8IeQ4o5aXJQywDlEaLR0Hu2-FhwDS2aky3nFePCW0un44296mDQIXQPypew41Q')"></div>
+<div class="aspect-video rounded-lg bg-cover bg-center border border-slate-200" data-alt="Evidence photo of the left earbud unit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyub-yIJyMPEDGphcjvDaB0ixuyGYOcw2mKqwHKqO9VCQPGNa-4L4VUJVbjcY564aVMt8W3OrdiWjfYap_WtVuligqeiZnSs0V-Yh72IbJPNjPBlNwqanSJEtiuma0vEpUt4r-EmOrl0rjWXaGKIMtLE5bdjIZOFM8Aw5mXN1XTWhYzjYVlbLUvRnKGH9BBVCoeus0XX_OLSJFSo-Y_5e-2DHOngCOGk8luOkSBIXTGK59ch9Qe4-O3EFBt0snSSe4PkV7Z8CW9Ww')"></div>
+</div>
+</div>
+<div class="space-y-2 border-t border-slate-100 dark:border-slate-800 pt-4">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Refund Amount</span>
+<span class="font-bold">₦24,500</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Wallet Impact</span>
+<span class="font-bold text-rose-500">- ₦24,500</span>
+</div>
+</div>
+</div>
+<!-- Action Logic Notice -->
+<div class="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800 rounded-xl">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-amber-500">info</span>
+<p class="text-xs text-amber-800 dark:text-amber-300">
+                            Approving this request will immediately refund the customer and debit your pending wallet. This action cannot be undone.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Footer Buttons -->
+<div class="p-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+<button class="w-full py-3 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                    Approve &amp; Issue Refund
+                </button>
+<button class="w-full py-3 border-2 border-rose-500 text-rose-500 font-bold rounded-lg hover:bg-rose-50 transition-all">
+                    Reject Request
+                </button>
+</div>
+</aside>
+</main>
+</body></html>

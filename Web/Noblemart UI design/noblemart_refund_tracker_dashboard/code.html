@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Refund Tracker Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter & Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c1cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            background-color: #e6f4f4;
+            border-left: 4px solid #01c1cb;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#0c1c1d]">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6f4f4] bg-white dark:bg-background-dark px-6 md:px-12 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0c1c1d] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em] font-poppins">NobleMart</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Merchant Portal</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#459ca1] flex items-center justify-center bg-[#e6f4f4] px-3">
+<span class="material-symbols-outlined text-lg">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-[#e6f4f4] focus:ring-0 text-sm placeholder:text-[#459ca1]" placeholder="Search orders..." value=""/>
+</div>
+</label>
+<div class="flex items-center gap-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Profile photo of a Nigerian male smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZkZQ2sGFamjq8OddIvSSH8mfMsj1vCiXiEPm1ML5nehj_DImba0PE7c7B0grR0zzHFiCSUup3NNfMtTckX5GlKggU7_7NN41Tx6SeSnfE6RuLqmZ3uuPfAugNsa5xdYjuHYVgN5BvY4VrWVwQKGA4sXRwQf5fI9FGQk5M0vJP7Vyij6UMIm78MJlPRcpS6o8Mao32mEJ1IMNCiMv-iyXynVx6SGl_sMWXdwHrrfGErOj3Y1cBk9qa2p-cIcr38NndbGl6jYU7P3M");'></div>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- Persistent Side Navigation -->
+<aside class="hidden md:flex flex-col w-64 h-[calc(100vh-65px)] sticky top-[65px] bg-white dark:bg-background-dark border-r border-solid border-b-[#e6f4f4] p-4">
+<div class="flex flex-col justify-between h-full">
+<div class="flex flex-col gap-6">
+<div class="flex gap-3 px-2">
+<div class="flex flex-col">
+<h1 class="text-[#0c1c1d] dark:text-white text-base font-bold">Welcome back,</h1>
+<p class="text-[#459ca1] text-xs font-normal">NobleMart Elite Account</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">My Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-sm font-medium">Wallet</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg active-tab text-[#0c1c1d]" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">history_edu</span>
+<span class="text-sm font-bold">Refunds</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-50 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="pt-4 border-t border-gray-100">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-red-500 hover:bg-red-50 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-6 md:p-10 max-w-6xl mx-auto">
+<!-- Header Image Section -->
+<div class="relative overflow-hidden rounded-xl mb-8 group">
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
+<div class="h-[180px] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A person checking account balance on a laptop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHvaC0aNJwo7Po3339gqQ4lf07wDWSdkeEzjikWZ0mt13hC-_bN4M85K8PpsLsG4D_0rk1S2rZ8uJkQpKYdDnZTiIhC4LJFYmXAsIBIHuLkX3fxSub46R_Q70d6e3fXw3DHjAYFZIU0GNW4LqH7zznAG_xNtURnWxGHbKbz5jc9cp1adm6bUKJvM8xuVhZ-XAJSDMsZ267_TA32tIlzq2oZClU4decPcAQS68CNMXEJbIq2Ij38cDMLYnEsiXp1CYvTG2eyxMULNs');"></div>
+<div class="absolute inset-0 z-20 flex flex-col justify-center p-8">
+<h1 class="text-white text-3xl md:text-4xl font-black font-poppins mb-2">Refund Tracker</h1>
+<p class="text-primary font-medium bg-white/10 backdrop-blur-md self-start px-3 py-1 rounded-full text-sm">Track your escrow releases in real-time</p>
+</div>
+</div>
+<!-- Page Heading & Stats -->
+<div class="flex flex-wrap justify-between items-end gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<p class="text-[#459ca1] dark:text-primary text-sm font-bold uppercase tracking-wider">Dashboard Overview</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">Total refunds processed this year: <span class="text-primary">₦150,000</span></p>
+</div>
+<button class="flex items-center gap-2 min-w-[140px] cursor-pointer justify-center rounded-lg h-10 px-4 bg-[#e6f4f4] hover:bg-[#d0ecec] text-[#0c1c1d] text-sm font-bold transition-all">
+<span class="material-symbols-outlined text-base">support_agent</span>
+<span>Support Center</span>
+</button>
+</div>
+<!-- Active Refund Card -->
+<section class="mb-10">
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#e6f4f4] overflow-hidden">
+<div class="bg-[#f8fcfc] dark:bg-[#1a3334] p-4 border-b border-[#e6f4f4] flex justify-between items-center">
+<h3 class="font-bold text-[#0c1c1d] dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">pending_actions</span>
+                            Active Refund: Order #NM-123456
+                        </h3>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wide">Processing</span>
+</div>
+<div class="p-6">
+<!-- Visual Status Stepper -->
+<div class="relative mb-10 mt-4 px-4">
+<div class="absolute top-1/2 left-0 w-full h-1 bg-gray-100 dark:bg-gray-800 -translate-y-1/2 -z-10 rounded-full"></div>
+<div class="absolute top-1/2 left-0 w-[66%] h-1 bg-primary -translate-y-1/2 -z-10 rounded-full"></div>
+<div class="flex justify-between items-start text-center">
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center shadow-[0_0_15px_rgba(1,193,203,0.4)]">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<span class="text-[11px] font-bold text-gray-500 uppercase tracking-tight leading-none">Refund Requested</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-8 rounded-full bg-primary text-white flex items-center justify-center shadow-[0_0_15px_rgba(1,193,203,0.4)]">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<span class="text-[11px] font-bold text-gray-500 uppercase tracking-tight leading-none">Mediator Approved</span>
+</div>
+<!-- Step 3 - Current -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-10 -mt-1 rounded-full bg-primary text-white flex items-center justify-center ring-4 ring-[#e6f4f4] shadow-[0_0_20px_rgba(1,193,203,0.5)]">
+<span class="material-symbols-outlined text-lg">payments</span>
+</div>
+<span class="text-[11px] font-black text-primary uppercase tracking-tight leading-none">Funds Released</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-3 w-1/4">
+<div class="size-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span>
+</div>
+<span class="text-[11px] font-bold text-gray-400 uppercase tracking-tight leading-none">Credited to Wallet</span>
+</div>
+</div>
+</div>
+<!-- Refund Details -->
+<div class="flex flex-col md:flex-row gap-6 items-center border-t border-gray-50 dark:border-gray-800 pt-6">
+<div class="w-24 h-24 bg-center bg-cover rounded-lg border border-gray-100 shrink-0" data-alt="Product thumbnail of Samsung Galaxy A54 5G" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOlJiFGKN0wI1XYYfJ1Hzpockk6v4OdVr93_rd5Am5KqwtdQewRh2sqANhf8vUDopuSOoZhG8dar4XkTY_SZXe00NZL-eEhzZi84SC7ehaU1irMs3RgLr5wsz8W2TMjNY39L0V1ySLIdC1D67o0FC172TN4nxdCYERf7tfCvMVFofdMG1tsP3RvZUCyHYzWOksQgTHmpG0Kg5eQNWk3ykMqCQ52bJr8cjX9saBSietbf505bVzhZrjJLh0XpPNORl9-IL98IqeBKI');"></div>
+<div class="flex-1 space-y-2 text-center md:text-left">
+<h4 class="text-lg font-bold text-[#0c1c1d] dark:text-white">Samsung Galaxy A54 5G - Dual SIM</h4>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+<div class="flex items-center gap-1">
+<span class="text-sm text-gray-400">Amount:</span>
+<span class="text-lg font-black text-primary">₦45,000.00</span>
+</div>
+<div class="flex items-center gap-2 bg-[#e6f4f4] px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span class="text-xs font-bold text-[#459ca1]">EST. COMPLETION: 24-48 HOURS</span>
+</div>
+</div>
+</div>
+<button class="bg-primary hover:bg-[#01a8b1] text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all shadow-md">
+                                View Order Details
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Refund History Table & Shield -->
+<div class="grid lg:grid-cols-3 gap-8">
+<!-- History Table -->
+<div class="lg:col-span-2">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold font-poppins">Refund History</h2>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All</a>
+</div>
+<div class="bg-white dark:bg-background-dark rounded-xl border border-gray-100 overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-gray-50 dark:bg-[#1a3334] text-gray-500 dark:text-gray-400 font-bold uppercase text-[10px] tracking-widest">
+<tr>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Reference ID</th>
+<th class="px-6 py-4">Amount</th>
+<th class="px-6 py-4">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-[#142d2e] transition-colors">
+<td class="px-6 py-4 font-medium">May 12, 2024</td>
+<td class="px-6 py-4 text-gray-400">#NM-98765</td>
+<td class="px-6 py-4 font-bold text-[#0c1c1d] dark:text-white">₦12,400</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-green-600 font-bold">
+<span class="size-2 bg-green-500 rounded-full"></span>
+                                            Completed
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-[#142d2e] transition-colors">
+<td class="px-6 py-4 font-medium">Apr 28, 2024</td>
+<td class="px-6 py-4 text-gray-400">#NM-88210</td>
+<td class="px-6 py-4 font-bold text-[#0c1c1d] dark:text-white">₦2,500</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-green-600 font-bold">
+<span class="size-2 bg-green-500 rounded-full"></span>
+                                            Completed
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-[#142d2e] transition-colors">
+<td class="px-6 py-4 font-medium">Mar 15, 2024</td>
+<td class="px-6 py-4 text-gray-400">#NM-76122</td>
+<td class="px-6 py-4 font-bold text-[#0c1c1d] dark:text-white">₦90,100</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-green-600 font-bold">
+<span class="size-2 bg-green-500 rounded-full"></span>
+                                            Completed
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- NobleShield Badge -->
+<div class="lg:col-span-1">
+<div class="bg-gradient-to-br from-[#0c1c1d] to-[#1a3334] rounded-xl p-6 text-white h-full flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 size-32 text-primary/10">
+<span class="material-symbols-outlined text-[120px]">verified_user</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-12 rounded-lg bg-primary/20 border border-primary/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-bold text-lg leading-tight font-poppins">NobleShield Secure Refund</h3>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                Your money is held in a secure <span class="text-white font-bold">multi-sig escrow</span> until the return product is verified by our inspection team. 
+                            </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-2 text-xs text-gray-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Verified Merchant Returns</span>
+</li>
+<li class="flex items-start gap-2 text-xs text-gray-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>24/7 Escrow Monitoring</span>
+</li>
+<li class="flex items-start gap-2 text-xs text-gray-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span>Instant Wallet Credit upon approval</span>
+</li>
+</ul>
+</div>
+<button class="relative z-10 mt-8 w-full border border-primary text-primary hover:bg-primary hover:text-white font-bold py-2 rounded-lg text-sm transition-all">
+                            Learn more about Escrow
+                        </button>
+</div>
+</div>
+</div>
+<!-- Footer Small -->
+<footer class="mt-16 text-center text-gray-400 text-xs pb-10">
+<p>© 2024 NobleMart Nigeria. All refunds are subject to our Return &amp; Exchange Policy.</p>
+</footer>
+</main>
+</div>
+</body></html>

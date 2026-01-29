@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vouchers Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1c5ce9",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.voucher-dashed {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCKVKgt8QBmuLIQpf_SAiIql8cVIjzo1zuOaIS8myNrFH1ObtvZmZqgUNaEpMkzmfDW8mFI3IZ8dFoNEsPbASSkw06PJareRWJwABwmTQSCvlzr6kd8M9ik8YX_LJDVLxDZpCqgzluCVqN7WpiFdeFAHZy2F7WtS5Gh17QfVjKusJ9uU1rvkEuauBZQrz08EQi1YxBdFstCS7w5hfXAoFbwznrLIy-COD-WSRHtkJ1ggG0dmL4sGwRU1yoKkTrxIELDltOshctoy5o);
+    border-radius: 12px
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0e121b] dark:text-white antialiased min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-72 bg-white dark:bg-[#1a202c] border-r border-gray-200 dark:border-gray-800 flex flex-col shrink-0">
+<div class="p-6 flex flex-col gap-8 h-full">
+<!-- Brand -->
+<div class="flex items-center gap-3">
+<div class="bg-primary rounded-lg p-2 text-white">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-xl font-bold font-poppins text-primary leading-tight">NobleMart</h1>
+<p class="text-gray-500 text-xs font-medium uppercase tracking-wider">Premium Shopping</p>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">grid_view</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">shopping_bag</span>
+<span class="font-medium">Orders</span>
+</a>
+<!-- Highlighted Vouchers Link -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-robin-egg text-white shadow-lg shadow-robin-egg/20" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-medium">Vouchers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">account_balance_wallet</span>
+<span class="font-medium">Wallet</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-gray-500">forum</span>
+<span class="font-medium">Support</span>
+</a>
+</nav>
+<!-- Profile Small -->
+<div class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Professional profile photo of a Nigerian man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYXbqjEonvvsRS9bL4pNW6PQI143CQBfwuNpRZLyuPxmr68KLEF_HddcamLfolOhHbEiF8jlCJvloEx4i1Bhz7_5iU0JsNXSfOQPn9KKWGED-aacZRdSVukv7vj1I6DFnE9oLLG93sgLsmuvf9yjuJR9bx5DmrVE3wZeYzg3gEw4FrzqzncSMb49jheiwoTnyNWT72eDPpXuiP-zMss_D0rCFcqu2ejcvrmXu12vysq_UheL0K5UDSnBfgr_c36VsQe9E0LVIde3c");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Chidi Okechukwu</span>
+<span class="text-xs text-gray-500">Gold Member</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="max-w-6xl mx-auto px-8 py-10 flex flex-col gap-8">
+<!-- PageHeading & Redemption -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div>
+<h2 class="text-4xl font-bold font-poppins text-[#0e121b] dark:text-white mb-2">Vouchers</h2>
+<p class="text-gray-500">Manage your discounts and redeem new promotional codes.</p>
+</div>
+<!-- TextField and Button Group -->
+<div class="flex items-end gap-3 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="flex flex-col gap-1 min-w-[300px]">
+<label class="text-sm font-semibold text-gray-600 dark:text-gray-400 px-1">Voucher Code</label>
+<input class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:ring-2 focus:ring-electric-indigo/20 focus:border-electric-indigo outline-none transition-all placeholder:text-gray-400" placeholder="Enter your coupon code here" type="text"/>
+</div>
+<button class="bg-electric-indigo hover:bg-electric-indigo/90 text-white font-bold py-3.5 px-8 rounded-lg transition-all shadow-lg shadow-electric-indigo/20 flex items-center gap-2">
+<span>Redeem</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="border-b border-gray-200 dark:border-gray-800">
+<div class="flex gap-10">
+<a class="border-b-4 border-electric-indigo py-4 text-electric-indigo font-bold text-sm tracking-wide" href="#">
+                            ACTIVE (4)
+                        </a>
+<a class="border-b-4 border-transparent py-4 text-gray-400 font-bold text-sm tracking-wide hover:text-gray-600 transition-colors" href="#">
+                            USED
+                        </a>
+<a class="border-b-4 border-transparent py-4 text-gray-400 font-bold text-sm tracking-wide hover:text-gray-600 transition-colors" href="#">
+                            EXPIRED
+                        </a>
+</div>
+</div>
+<!-- Voucher Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Voucher Card 1 -->
+<div class="voucher-dashed p-6 bg-white dark:bg-gray-800 flex flex-col gap-4 relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern tech company minimalist logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAmireAIfH32DWbiupKOjCkLdf5xBIX0Gj1Yx9Lpcykc-4133VqOR-640qicZmKybcJ1ZX74nU9FAXOMS8JvbCt3OjRkQH-fzJ7uNtbGK2DyhO7eWLp1mSSaQ9IAxkD6-piznnKMcRS-vtlxz_lGcAq6xpjO4QXRpj4dNA83dbqCkAzQ0LXywOXQxG1Wo-ip6Yir1gieTocdJSisBuuNOYuYBIcAaxCkjA68envjthzN40mI2oLBjc5ceT34lH5O-3_jvsDG0-jvQ"/>
+</div>
+<span class="bg-green-100 text-green-700 text-[10px] font-black px-2 py-1 rounded uppercase tracking-tighter">Verified</span>
+</div>
+<div>
+<h3 class="text-2xl font-black text-electric-indigo font-poppins">₦5,000 OFF</h3>
+<p class="font-bold text-[#0e121b] dark:text-white">Tech Extravaganza Discount</p>
+<p class="text-xs text-gray-500 mt-1">Expires: 24 Oct, 2024</p>
+</div>
+<button class="mt-2 w-full flex items-center justify-center gap-2 py-2.5 border-2 border-electric-indigo text-electric-indigo font-bold rounded-lg hover:bg-electric-indigo hover:text-white transition-all group">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copy Code</span>
+</button>
+</div>
+<!-- Voucher Card 2 -->
+<div class="voucher-dashed p-6 bg-white dark:bg-gray-800 flex flex-col gap-4 relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Lifestyle and fashion brand logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5NWvuMiTrwjrqLKKT7-B93PNQvjTPAswT51TQBiQm_2EOBjZwh4HAmuKUZCfAskmvc2QvW8FRc0XTqekggYRD9J8uIVvJUhboIhYRVEmofhDRIRKOVTZ_SyiJbarC_i1jYVOy3f-BFd0AuHhzhixQ7OgAAu0MdIbPKbAjOR0I3JXG79gRKIbjlJwM50lmF_qvS9HaKfwve1wCbwNWw0qmPZBw8l1aBLwTWH8Vn1k0OvCS1LeZKJ5Qqkc9JDlz9uQVv70SbB66A3o"/>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-black text-electric-indigo font-poppins">₦2,000 OFF</h3>
+<p class="font-bold text-[#0e121b] dark:text-white">Welcome Discount</p>
+<p class="text-xs text-gray-500 mt-1">Expires: 12 Nov, 2024</p>
+</div>
+<button class="mt-2 w-full flex items-center justify-center gap-2 py-2.5 border-2 border-electric-indigo text-electric-indigo font-bold rounded-lg hover:bg-electric-indigo hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copy Code</span>
+</button>
+</div>
+<!-- Voucher Card 3 -->
+<div class="voucher-dashed p-6 bg-white dark:bg-gray-800 flex flex-col gap-4 relative overflow-hidden group border-2 border-transparent">
+<div class="flex justify-between items-start">
+<div class="size-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High-end footwear brand logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATjgdKQEacuXRCB37kKiLMyuWAmfuxXQDA7aURhMNyHhWS2b4_PBxCxpLIAGT-4iPsOnORqufG9557bvtvXVAThG0SkNDHJs4B5SakEz7wTaj-Q080OHkz3q2z2U2O-eXd-seQZHOr9DZqvN3epawN2QqPUYdG94GduAn1xbGWQege_Gqj_N7SY7A6lJ1L-PL_OSBPOp2fRQrUHtQYRQdS0-s8B_EoGj9JWT7h7pTcVZmAcy7nhJea68T-ANnEec2dXmA-pLa28o0"/>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-black text-electric-indigo font-poppins">15% OFF</h3>
+<p class="font-bold text-[#0e121b] dark:text-white">Fashion Week Special</p>
+<p class="text-xs text-gray-500 mt-1">Expires: 30 Sep, 2024</p>
+</div>
+<button class="mt-2 w-full flex items-center justify-center gap-2 py-2.5 border-2 border-electric-indigo text-electric-indigo font-bold rounded-lg hover:bg-electric-indigo hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copy Code</span>
+</button>
+</div>
+</div>
+<!-- Promotional Banner -->
+<div class="mt-4 relative rounded-2xl overflow-hidden h-48 bg-gradient-to-r from-robin-egg to-electric-indigo">
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="relative h-full flex items-center justify-between px-10">
+<div class="max-w-md z-10">
+<h3 class="text-2xl font-bold font-poppins text-white leading-tight mb-2">Get more vouchers by participating in our daily games!</h3>
+<button class="bg-white text-electric-indigo font-black py-2 px-6 rounded-full hover:shadow-xl transition-all text-sm uppercase tracking-wider">
+                                Play Now
+                            </button>
+</div>
+<div class="absolute right-0 bottom-0 h-full w-1/2 overflow-hidden pointer-events-none">
+<img class="object-cover object-top w-full h-full opacity-90 scale-110" data-alt="High-quality photo of a happy Nigerian woman shopping on her phone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS1t1GOykkrXSVz341-WI45GMWqzfaaSbnuzw4fOZ5N4Plt2i_XhW9Z50rQdW6WuGGYY6VTjNhL-ziY5uD_e0QIfpdaHIo-zepeI_JAuc5qhDjoiCb4mbdqvPnepjzBJYyRyWzzi0R1Mmivi1SnIZr3cNRK9Gp98BL3lsXOyYEVB-ZreWJLx-O02weBaNbfRKSuLUtLIFOE6zzUOYYESj4WrAzH8Mb02p3RGxvwuWGZvfQGE4xZRhBTUPWMr3ydAZNlhMDqbtuOnY"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

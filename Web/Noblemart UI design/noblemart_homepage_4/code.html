@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart 404 - Page Not Found</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                        "dark-navy": "#0c1c1d"
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "sans": ["Poppins", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .brand-gradient {
+            background: linear-gradient(135deg, #01c2ca 0%, #5C1BE8 100%);
+        }
+        .category-circle {
+            @apply flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105;
+        }
+        .category-icon {
+            @apply size-16 md:size-20 rounded-full bg-gray-50 flex items-center justify-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-dark-navy min-h-screen flex flex-col">
+<header class="w-full py-8 flex justify-center">
+<div class="flex items-center gap-2">
+<div class="size-8 brand-gradient rounded-full flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-lg">shopping_bag</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight">NobleMart</h1>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-6 max-w-4xl mx-auto text-center">
+<div class="mb-8 relative max-w-md w-full">
+<img alt="Confused searching" class="rounded-2xl shadow-xl w-full h-64 object-cover object-top border-4 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfaubbbjkkL3kOEn20mGukt9PFSjFnrSKz93RFqOyxmzlkQarGUxLPqCTyfYePiI3IJ9MdapP2XYYxHhXQOP8Te0VVCf0iqeDW92CTRUPjMH-AHhhVR50XOg9diwl1sNIvXdja7IUMPz0YGJQvUv7SdKHGJpKrRyDZZHFJul1hjlLEx7wdv_j6NQYb3AF2Y7KMdJweisFx7sN83y0mHACtmiojDf-lNTiFBleIwMFAyEudLb71WbbTAUT173fdSkWnkiT5hw7_V6M"/>
+<div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-4xl text-robin-egg">search</span>
+</div>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold mb-4 text-dark-navy">404 - Page Not Found</h2>
+<p class="text-gray-600 text-lg mb-10 max-w-lg mx-auto">
+            Oops! The page you are looking for doesn't exist or has been moved.
+        </p>
+<div class="w-full max-w-xl mb-12">
+<div class="relative flex items-center p-1 bg-gray-50 rounded-full border border-gray-200 shadow-sm focus-within:ring-2 focus-within:ring-robin-egg transition-all">
+<span class="material-symbols-outlined absolute left-5 text-gray-400">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 py-4 pl-14 pr-32 text-dark-navy placeholder:text-gray-400" placeholder="Search for products, brands and more..." type="text"/>
+<button class="absolute right-1 bg-robin-egg text-white font-semibold py-3 px-8 rounded-full hover:bg-[#00b0b8] transition-colors">
+                    Search
+                </button>
+</div>
+</div>
+<div class="w-full mb-12">
+<h3 class="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-6">Popular Categories</h3>
+<div class="flex flex-wrap justify-center gap-6 md:gap-10">
+<a class="category-circle" href="#">
+<div class="category-icon">
+<span class="material-symbols-outlined text-robin-egg text-3xl">grocery</span>
+</div>
+<span class="text-sm font-medium">Groceries</span>
+</a>
+<a class="category-circle" href="#">
+<div class="category-icon">
+<span class="material-symbols-outlined text-robin-egg text-3xl">smartphone</span>
+</div>
+<span class="text-sm font-medium">Phones</span>
+</a>
+<a class="category-circle" href="#">
+<div class="category-icon">
+<span class="material-symbols-outlined text-robin-egg text-3xl">tv</span>
+</div>
+<span class="text-sm font-medium">Electronics</span>
+</a>
+<a class="category-circle" href="#">
+<div class="category-icon">
+<span class="material-symbols-outlined text-robin-egg text-3xl">styler</span>
+</div>
+<span class="text-sm font-medium">Fashion</span>
+</a>
+</div>
+</div>
+<a class="mb-16 inline-flex items-center gap-2 bg-electric-indigo text-white font-bold py-4 px-10 rounded-xl hover:bg-[#4a14bf] transition-all transform hover:-translate-y-1 shadow-lg shadow-secondary/20" href="/">
+<span class="material-symbols-outlined">home</span>
+            Back to Home
+        </a>
+</main>
+<footer class="py-8 text-gray-400 text-sm border-t border-gray-100 w-full text-center">
+        © 2024 NobleMart. All rights reserved.
+    </footer>
+
+</body></html>

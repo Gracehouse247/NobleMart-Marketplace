@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Access Granted</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "sans": ["Poppins", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #01c2ca 0%, #5C1BE8 100%);
+        }
+        .checkmark-glow {
+            filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.4));
+        }
+        .loader-spin {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #01C2CA;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-[#0c1c1d] flex flex-col items-center justify-center min-h-screen relative">
+<header class="absolute top-8 left-0 right-0 flex justify-center">
+<div class="flex items-center gap-2">
+<div class="size-8 brand-gradient rounded-full flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-lg">shopping_bag</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-[#0c1c1d]">NobleMart</h1>
+</div>
+</header>
+<main class="flex flex-col items-center justify-center text-center px-6">
+<h2 class="text-3xl md:text-4xl font-bold mb-8 text-[#0c1c1d]">Verification Successful</h2>
+<div class="mb-8 relative">
+<div class="bg-green-500 rounded-full size-24 md:size-32 flex items-center justify-center checkmark-glow">
+<span class="material-symbols-outlined text-white text-6xl md:text-8xl">check_circle</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-lg md:text-xl text-gray-800 font-normal">Access Granted.</p>
+<p class="text-gray-500 font-normal">Redirecting you to NobleMart...</p>
+</div>
+</main>
+<footer class="absolute bottom-16 flex flex-col items-center gap-3">
+<div class="loader-spin"></div>
+</footer>
+
+</body></html>

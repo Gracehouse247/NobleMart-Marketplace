@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Welcome to NobleMart Prime</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "accent": "#01C2CA",
+                        "dark-blue": "#020249",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .header-gradient {
+            background: linear-gradient(90deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#120e1b] dark:text-[#f9f8fc] min-h-screen">
+<div class="flex justify-center py-10 px-4">
+<!-- Email Container -->
+<div class="max-w-[800px] w-full bg-white dark:bg-[#1f1a2e] shadow-xl rounded-xl overflow-hidden flex flex-col">
+<!-- Header Section -->
+<header class="header-gradient px-8 py-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 text-white">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">NobleMart <span class="font-normal opacity-90">Prime</span></h2>
+</div>
+<div class="text-white/80 text-sm font-medium">Subscription Confirmed</div>
+</header>
+<!-- Hero Section -->
+<div class="flex flex-col @container">
+<div class="flex flex-col gap-6 px-8 py-10 @[480px]:gap-10 @[864px]:flex-row items-center">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl @[480px]:h-auto @[480px]:min-w-[340px] @[864px]:w-1/2 border-4 border-primary/10" data-alt="Happy African man opening NobleMart box with gold ribbon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCP4R9qdxnaWZiqDhmFqhJxHm7Mp6gBoFPbe734x090AAgL2rsa8pkYmaeQ4DDAxbpVeCFo7fXJDTolZ3zGju0ld5pVdZZYsF6GYXi-D5PoaMRMiObC5vmtC2gRYDklm7S8JeWqUTnhVhuMgcrKcvGLQN1YQ7Anr_eBLHAEQB13F3LY-JfmU0lfOzq_FsNiTz3RL8usvoBAyysGgb1knc7PzsRD78Gronn8Cpq-_nIcJ3g-YYuCnxvsvKXTTYvB9l7CH-YWgMZXDmI");'>
+</div>
+<div class="flex flex-col gap-6 @[480px]:min-w-[340px] @[864px]:justify-center">
+<div class="flex flex-col gap-4">
+<h1 class="text-primary dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+                            Welcome to the Inner Circle, <span class="text-accent">Damilola</span>!
+                        </h1>
+<p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                            Your journey to premium shopping begins now. As a Prime member, you've unlocked a world of exclusive benefits designed to make your shopping experience faster and more rewarding.
+                        </p>
+</div>
+<button class="flex min-w-[200px] max-w-fit cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-white text-lg font-bold transition-transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/25">
+<span class="truncate">Start Shopping with Prime</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section Header: Perks -->
+<div class="px-8 pt-4">
+<div class="h-px bg-slate-100 dark:bg-slate-800 w-full mb-8"></div>
+<h2 class="text-2xl font-bold leading-tight tracking-tight text-center">Your New Prime Perks</h2>
+</div>
+<!-- Perks Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-8">
+<div class="flex flex-1 gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-6 flex-col items-center text-center shadow-sm">
+<div class="size-14 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+<span class="material-symbols-outlined !text-3xl">local_shipping</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold">Unlimited Free Delivery</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">No minimum spend on all Prime-eligible items nationwide.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-6 flex-col items-center text-center shadow-sm">
+<div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined !text-3xl">sell</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold">Exclusive Prime Deals</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Access to members-only pricing and early product launches.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-6 flex-col items-center text-center shadow-sm">
+<div class="size-14 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-600">
+<span class="material-symbols-outlined !text-3xl">support_agent</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold">Priority Support</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Skip the queue with our dedicated 24/7 VIP assistance line.</p>
+</div>
+</div>
+</div>
+<!-- Personalized Section: Prime Deals -->
+<div class="bg-slate-50 dark:bg-[#25203a] px-8 py-12">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-2xl font-bold tracking-tight">Prime Deals for You</h2>
+<p class="text-slate-500 dark:text-slate-400">Trending items at exclusive member prices</p>
+</div>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:underline" href="#">
+                    View all deals
+                    <span class="material-symbols-outlined !text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-lg bg-white overflow-hidden mb-3 relative shadow-md">
+<div class="absolute top-2 left-2 bg-yellow-400 text-[#120e1b] text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider z-10">Prime Only</div>
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="Professional studio headphones on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbWCnQV2OC8aoVC367HZvpybXBZCCI97wfymENs5Yz6bvNXfM6zEUArKJP_2YEaRIrwjmb5iDVjYmQGZTpFZ_QK4GM6AciSAin_1ZCI7PS0NYgVf_ImrTFPCZEOrDISleyp4SvjoGp8nw8-6-9q1QxDWYxwg9jatHkDQLzp85PW3dPo33Ce7YSgqY7UvW3rl-Y9Pxcg-gAMuloo4wsNHNNljOJ6IH7jm0CAkch02Egg2bGKF-BzAT7CgHeFHMRTXHTCMTCOrMlrZg"/>
+</div>
+<h4 class="font-bold text-sm truncate">Premium Noise Cancelling Headphones</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">₦45,000</span>
+<span class="text-slate-400 text-xs line-through">₦62,000</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-lg bg-white overflow-hidden mb-3 relative shadow-md">
+<div class="absolute top-2 left-2 bg-yellow-400 text-[#120e1b] text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider z-10">Prime Only</div>
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="Modern minimalist wristwatch with leather strap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-GcferIsCgrJAk3-uhY1U32Q3BwMJSnk5h_V5UPwiOoXLBsXCOiwqtyHf3l3UtHsEuHCW-EUFsDGr223OCfNiberEUHU31l3k6km_Z_G7nqQ2R92AniGvQFJH2BGZYr8V0AJ6YB3lQCIRNxptkrv7sg7BsVHJ1UJVgexakbi7wF0L6wM-Chp87SRpQsADiVlzD8nfkH13ZBo0PfBkGfm_QJHG3Si9E5lujcoN9liQAn6qsJAkqBMqvhZUf-MCTkMENLxxfgXAJ04"/>
+</div>
+<h4 class="font-bold text-sm truncate">Minimalist Smart Watch Series 5</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">₦28,500</span>
+<span class="text-slate-400 text-xs line-through">₦35,000</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-lg bg-white overflow-hidden mb-3 relative shadow-md">
+<div class="absolute top-2 left-2 bg-yellow-400 text-[#120e1b] text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider z-10">Prime Only</div>
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="Designer leather messenger bag for work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0BgxYOxAraz5a0H90HO8cETGwTli20kvQ_7oFnozTploJB8Lu0w3Ip1ACVAtPgg3JEyQkqV-G4aj3FcXqy2iydlLzYFHFiNiOj_WE9SAPlvG-Ij3o9bP2-_tm7ywDTGxi5XHx89AvJPpWJI6IFT5K9R8UG3E08njFt3pMVICtsdcxpeSo2m3LgX_yHDW3hcuA6lh_qd1vIgYK7mCwjGPFiXC2PwK6IgiRCLMmQ7EYX7q2R8RTnMyPWZgt_j80Hwv_c6K7atNTxrA"/>
+</div>
+<h4 class="font-bold text-sm truncate">Handcrafted Leather Messenger Bag</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">₦19,900</span>
+<span class="text-slate-400 text-xs line-through">₦24,500</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="bg-dark-blue text-white p-10">
+<div class="flex flex-col md:flex-row justify-between gap-10">
+<div class="flex flex-col gap-4 max-w-xs">
+<div class="flex items-center gap-2">
+<div class="size-6 text-accent">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold">NobleMart</h2>
+</div>
+<p class="text-slate-400 text-sm">
+                        The premium shopping destination for the modern Nigerian consumer. Quality, speed, and trust.
+                    </p>
+<div class="flex gap-4 mt-2">
+<button class="size-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined !text-lg">public</span>
+</button>
+<button class="size-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined !text-lg">alternate_email</span>
+</button>
+<button class="size-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined !text-lg">share</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-10">
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white">Account</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li><a class="hover:text-accent transition-colors" href="#">My Profile</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Order History</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Prime Settings</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Wishlist</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white">Resources</h4>
+<ul class="text-slate-400 text-sm flex flex-col gap-2">
+<li><a class="hover:text-accent transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Delivery Rates</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-6 border-t border-white/10 text-center">
+<p class="text-slate-500 text-[10px] uppercase tracking-widest font-bold">
+                    © 2024 NobleMart Nigeria Limited. All Rights Reserved.
+                </p>
+<p class="text-slate-600 text-[10px] mt-2 italic">
+                    You received this email because you subscribed to NobleMart Prime. 
+                    <a class="underline" href="#">Unsubscribe</a>
+</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

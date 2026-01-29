@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Customer Inbox</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6517ee",
+                        "accent": "#01C2CA",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#171022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .message-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .message-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #ebe7f3;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#120d1c] dark:text-white">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar: Persistent Account Navigation -->
+<aside class="w-64 border-r border-solid border-[#ebe7f3] dark:border-white/10 bg-white dark:bg-[#1f162e] flex flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<!-- Branding -->
+<div class="flex items-center gap-3 px-2">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-poppins font-bold tracking-tight">NobleMart</h2>
+</div>
+<!-- User Profile Summary -->
+<div class="flex gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Portrait of a smiling male customer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDubONOWZH7nl5izWm0J9YBctD6PiACseDqQ8Mxh-UlXItkb-PBM43ycCkly1CmAtsgcxCb-gKqSRyPucso0ok2lOJSKVruTpetMtt4tz2IJFp3cBOykCJ-E8JWyWT7tIxbqBFjQFUIzIQ_6chewVxYHQmuFKwB71PaVzNFVDUIMZ0hU8GTx5z5pRe-gfQSgAm4d_grTjxHh7AhPmxyxua_rVQiQqmsbhF5DoZSrI_mDLoI_Rtw7S5zly6hQDyknj-Xov5IuM6X1tE");'></div>
+<div class="flex flex-col overflow-hidden">
+<h1 class="text-sm font-poppins font-bold truncate">John Adebayo</h1>
+<p class="text-[#684b9b] dark:text-primary/70 text-xs font-normal">Silver Member</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#ebe7f3] dark:hover:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#ebe7f3] dark:hover:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-lg">shopping_bag</span>
+<p class="text-sm font-medium">Orders</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#ebe7f3] dark:hover:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-lg">person</span>
+<p class="text-sm font-medium">Profile</p>
+</div>
+<!-- Active State: Inbox -->
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white shadow-sm">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">chat</span>
+<p class="text-sm font-medium">Inbox</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#ebe7f3] dark:hover:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<p class="text-sm font-medium">Wishlist</p>
+</div>
+</nav>
+</div>
+<div class="flex flex-col gap-1 border-t border-[#ebe7f3] dark:border-white/10 pt-4">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#ebe7f3] dark:hover:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-lg">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#ebe7f3] dark:hover:bg-primary/20 cursor-pointer text-red-500">
+<span class="material-symbols-outlined text-lg">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Message List (Left Pane) -->
+<div class="w-80 border-r border-solid border-[#ebe7f3] dark:border-white/10 bg-white dark:bg-[#1a1226] flex flex-col">
+<div class="p-4 border-b border-[#ebe7f3] dark:border-white/10">
+<h2 class="text-xl font-poppins font-bold mb-4">Messages</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#684b9b] text-xl">search</span>
+<input class="w-full bg-[#ebe7f3] dark:bg-white/5 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary" placeholder="Search chats..." type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto message-scrollbar">
+<!-- Active/Selected Thread -->
+<div class="flex items-center gap-3 px-4 py-4 bg-[#f0ecf9] dark:bg-primary/20 border-l-4 border-primary cursor-pointer transition-colors">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Official NobleMart company logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDg_6GqDMu9R8UEM0RS8LnOXfyTY4oG1AuOnADrs0DLOD1WYR31_vSS1eTcbMuypPwrY-GrPNsm6C9l1VgBCcTa4tE7x6rMWB2qBOE6WbC3oqNeENDodYYsuEiO_v78XynUcGSbqp49hOIvo1uKDnPIdZhkEx3QVO_P-pGk5mqy7P0ePFdV1zqMJsC_PgYa_HRXNw-N0o15AvYQ3-JG8vAml-GiYhKyUlKzsR2TuYiwbg36w6Na-mLDiVPoSSgnRdGPIQkzVJ_K-U");'></div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-white dark:border-[#1a1226] rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="text-sm font-poppins font-bold truncate">NobleMart Support</h3>
+<span class="text-[10px] text-[#684b9b] dark:text-gray-400">10:45 AM</span>
+</div>
+<p class="text-xs text-[#684b9b] dark:text-gray-400 truncate">Your order #12345 has been shipped...</p>
+</div>
+<div class="size-2 rounded-full bg-primary shrink-0"></div>
+</div>
+<!-- Unread Thread -->
+<div class="flex items-center gap-3 px-4 py-4 hover:bg-[#f9f8fc] dark:hover:bg-white/5 cursor-pointer transition-colors border-b border-[#ebe7f3]/50 dark:border-white/5">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Vendor shop logo with electronic items" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVn2fINhBtQWgDkCvMSPEhIt7f18B0IN-_SUDc_6gnnlZdcUrrw-8kWRZQart_Lfeu3kXilfGyLAMna3r8RKlAMRa7vDweTpT8_lzcGLqsHiefC16Rke-kyzYffHWVwEhfCj1HKjxGbhBWKt1j9HDjy502hAf3x1E19A9aiYPNjABpyn2N0sO5C_AqVF-NaCBxTuO2lcwXV6HHPJLUP5kG9y4yQy2Mf9rn7gKzPqHpzBeEDa1T5_P9NnVxB2GxCqsV1Iy_IgKuAso");'></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="text-sm font-poppins font-bold truncate">TechWorld Store</h3>
+<span class="text-[10px] text-[#684b9b] dark:text-gray-400">09:12 AM</span>
+</div>
+<p class="text-xs text-[#120d1c] dark:text-white font-medium truncate">Is the product still available for pick up?</p>
+</div>
+<div class="size-2 rounded-full bg-primary shrink-0"></div>
+</div>
+<!-- Read Thread -->
+<div class="flex items-center gap-3 px-4 py-4 hover:bg-[#f9f8fc] dark:hover:bg-white/5 cursor-pointer transition-colors border-b border-[#ebe7f3]/50 dark:border-white/5">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Female customer service representative avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvLw42ZBsTCfnGL675eNWmx1llqrSzk7g3IQfEKqbqHaI2cd4Md1lAjN9z4TLW_NEo-aXu9tUCMDoy-9iTHzD2iS8iDux-xvXgRGJapvKwUdW8YajUODEemnI3FHbj-94z_VFa0eV-zsvFeK-_1O-JbSp7XogDZE5041HHEqUioup8Bt62i_chBLyoKTmO7UIXr1d_mMjRExqqvzYPxZqF8Wb89GgTq03Vxr1mgJr_cVPCyoM7dmNJqHC9T09FQvRKHdj8tuuCBrw");'></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="text-sm font-poppins font-bold truncate">Sarah from Logistics</h3>
+<span class="text-[10px] text-[#684b9b] dark:text-gray-400">Yesterday</span>
+</div>
+<p class="text-xs text-[#684b9b] dark:text-gray-400 truncate">I've updated your delivery address.</p>
+</div>
+</div>
+<!-- Thread -->
+<div class="flex items-center gap-3 px-4 py-4 hover:bg-[#f9f8fc] dark:hover:bg-white/5 cursor-pointer transition-colors border-b border-[#ebe7f3]/50 dark:border-white/5">
+<div class="shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="Furniture shop owner portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBZaWgT4RWQJ6ZKP6mEeV48FKGYHJSa3ArvOp7jWky7f2JHFAgtO--o1ViU1Tc7DCFUlGyQikTKdlWss9-pKUxUCsOa8mBgJoujDfc0_EK4oH6SurfGLDHaNDquR5BPBuYJkRyL4Dn4s0ecdfe3nPtkHOJ4ywvg-nB8bGyl2l-eb1D2s8-Bl500u0knJueUe-e1KpUIJBsd0ylJdSc80SFA61KTcmJM4-_nrGV8N0VbrV8KDwcbggxWvFjbLBm9_7Xnz_kFDEKo2U");'></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="text-sm font-poppins font-bold truncate">HomeStyles Hub</h3>
+<span class="text-[10px] text-[#684b9b] dark:text-gray-400">Oct 24</span>
+</div>
+<p class="text-xs text-[#684b9b] dark:text-gray-400 truncate">The warranty period is 12 months...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Window (Right Pane) -->
+<div class="flex-1 bg-[#fcfcfe] dark:bg-background-dark flex flex-col">
+<!-- Chat Header -->
+<header class="h-16 flex items-center justify-between px-6 border-b border-[#ebe7f3] dark:border-white/10 bg-white dark:bg-[#1f162e]">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Official NobleMart logo avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtdt8CKGCAaDUB43jXWvKPDGvc_Wov0Myc3j_CWQCp-zcF7kWMq6Qa-yQpMlLY2RVpcEfOXxJynERM__seUVv-1NVcptrh_cUHGrxeStC_QJIBuSwpz6A-NmW781ECHihDdjidLTNpYJWCsPyFFSuPX3rbY1fNZD7ya0n4Sgjtgp2ajKjgHWf87V6xLIAaoGr5TgHjas_nzc_h2dwtzlc3BUAbEe1o69jEkxbQKLTbP_F43wtPKnIzSZg6UEHdzdMd0VvWttxWQOg");'></div>
+<div class="absolute -bottom-0.5 -right-0.5 size-2.5 bg-green-500 border-2 border-white dark:border-[#1f162e] rounded-full"></div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="text-base font-poppins font-bold">NobleMart Support</h2>
+<span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;" title="Verified Sender">verified</span>
+</div>
+<p class="text-[11px] text-green-500 font-medium">Online • Response time: &lt; 5 mins</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-[#ebe7f3] dark:hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-xl">call</span>
+</button>
+<button class="p-2 hover:bg-[#ebe7f3] dark:hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-xl">info</span>
+</button>
+</div>
+</header>
+<!-- Message Stream -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4 message-scrollbar">
+<!-- Date Divider -->
+<div class="flex justify-center">
+<span class="text-[11px] font-bold text-[#684b9b] bg-[#ebe7f3] dark:bg-white/5 px-3 py-1 rounded-full uppercase tracking-wider">Today</span>
+</div>
+<!-- Incoming Message -->
+<div class="flex items-end gap-2 max-w-[80%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mb-1" data-alt="NobleMart profile thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3IyRAwrysXCv6HxiR04VjHoRhvcJea44koUjmdERxdBAleSTvY-B6vHN7NLTdQg2nY11uxlMmQH-WDIY3I0NsaneLWQp-85BZ31SsBB_Y5m-_TdZhzxmPgOVauygoTFqu5-wkZ_pOp-q3xR5GjOG8-SUzhIgSv64HX4_khsjxkVGrg4wMfiJHtbyDidW-zF0jxhh9N9obvU4Q27MJg667QT1IiVQ-leOTOMYgPKXJb4cTpin8J6M7QG8o9GmknHZVAAAm1oZjkIQ");'></div>
+<div class="flex flex-col gap-1">
+<div class="bg-[#ebe7f3] dark:bg-white/10 text-[#120d1c] dark:text-white px-4 py-2.5 rounded-xl rounded-bl-none text-sm shadow-sm leading-relaxed">
+                                Hello John! We noticed you have a pending order for the "Smart LED Watch". Would you like us to assist you with the checkout process?
+                            </div>
+<span class="text-[10px] text-[#684b9b] px-1">10:42 AM</span>
+</div>
+</div>
+<!-- User Outgoing Message -->
+<div class="flex items-end gap-2 justify-end">
+<div class="flex flex-col items-end gap-1 max-w-[80%]">
+<div class="bg-primary text-white px-4 py-2.5 rounded-xl rounded-br-none text-sm shadow-md leading-relaxed">
+                                Yes, please! I was having some issues with the payment gateway earlier. Is there a different way to pay?
+                            </div>
+<div class="flex items-center gap-1 px-1">
+<span class="text-[10px] text-[#684b9b]">10:44 AM</span>
+<span class="material-symbols-outlined text-sm text-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Incoming Message -->
+<div class="flex items-end gap-2 max-w-[80%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 shrink-0 mb-1" data-alt="NobleMart profile thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAy3cj1aq_YctpXAWhGMjyAh-CX5Gjk7J6ITkWaEUpHTIPvuej-iDl0hrD2eHBFQnmv2ucY3NRrxgPLcjirpHpR7sMojjcyOCKzgWrCvJNFwV9xWCnDWb1M3jDZIQxuYR6diH3HQMtdXL3B4NYmWePEFFIRfbeRdU3Y59ypWk0pFVBSQ0i_iwdsUTdz5jAi_lTA5WZoLWDwTZb5B-A_k1ecvOJ_IuaVGhTCBcSwe12k1FwIyjHzQ0QYcs4Hq-uUFv04N5sHYRoTw20");'></div>
+<div class="flex flex-col gap-1">
+<div class="bg-[#ebe7f3] dark:bg-white/10 text-[#120d1c] dark:text-white px-4 py-2.5 rounded-xl rounded-bl-none text-sm shadow-sm leading-relaxed">
+                                Absolutely! We have recently enabled bank transfers and USSD payments. You can select "Alternative Payment" at checkout. Your order #12345 has been updated with these options.
+                            </div>
+<span class="text-[10px] text-[#684b9b] px-1">10:45 AM</span>
+</div>
+</div>
+</div>
+<!-- Footer: Message Input -->
+<footer class="p-4 bg-white dark:bg-[#1f162e] border-t border-[#ebe7f3] dark:border-white/10">
+<div class="flex items-center gap-3 bg-[#f6f6f8] dark:bg-white/5 rounded-xl px-4 py-2">
+<button class="text-[#684b9b] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm py-2 placeholder:text-[#684b9b]" placeholder="Type a message..." type="text"/>
+<button class="text-[#684b9b] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<button class="bg-accent hover:bg-[#01b0b8] text-white p-2 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-xl">send</span>
+</button>
+</div>
+<div class="mt-2 text-[10px] text-center text-[#684b9b] font-medium uppercase tracking-widest">
+                        NobleMart Secure Messaging Platform
+                    </div>
+</footer>
+</div>
+</main>
+</div>
+</body></html>

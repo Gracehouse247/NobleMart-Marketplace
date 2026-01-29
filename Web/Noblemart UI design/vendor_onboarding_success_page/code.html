@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vendor Onboarding Success - NobleMart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "accent-blue": "#01C2CA",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .confetti-bg {
+            background-image: 
+                radial-gradient(circle, #5c1ce9 10%, transparent 10%),
+                radial-gradient(circle, #01C2CA 10%, transparent 10%);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#120e1b] dark:text-white min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#ebe7f3] dark:border-[#2d2445] bg-white dark:bg-background-dark px-10 py-3 z-10">
+<div class="flex items-center gap-4 text-[#120e1b] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-[#120e1b] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] font-poppins">NobleMart</h2>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 bg-[#ebe7f3] dark:bg-[#2d2445] text-[#120e1b] dark:text-white px-3">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 bg-[#ebe7f3] dark:bg-[#2d2445] text-[#120e1b] dark:text-white px-3">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-10 px-4 relative">
+<!-- Subtle Confetti Pattern Layer -->
+<div class="absolute inset-0 confetti-bg pointer-events-none"></div>
+<div class="max-w-[1000px] w-full flex flex-col gap-8 z-10">
+<!-- Main Success Card -->
+<div class="bg-white dark:bg-[#1e1631] rounded-xl overflow-hidden shadow-xl border border-[#ebe7f3] dark:border-[#2d2445]">
+<div class="flex flex-col md:flex-row">
+<!-- Left: Visual Side -->
+<div class="w-full md:w-1/2 h-[300px] md:h-auto bg-center bg-cover" data-alt="Happy entrepreneur celebrating success in a modern shop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFuavXYuH-2kP4oz7HaBgV5RLqXPiOD9IF30BnZK9_QQPCNplvOIju7ee4oEV-kI2RT0slgQDL8sVZJ8lANvKcq1Tponu8bRAO_pgerBkkSgwQhXDtlC4OhdflUYMjTOCB3LpmlM4PgghzCnnjo0yjITv9kB0dOwSoZBVNXwzJvqYp5ecm31lYCGxUjAqSe7aNP4PtcobI_V4BtpmEiRa2TdLTZvYwqn5P7_Nhz7wg_XzRr-4xCgQyRK3rUSsdtVa4bMioGUYiH7M');">
+</div>
+<!-- Right: Content Side -->
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center gap-6">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-accent-blue/10 text-accent-blue rounded-full font-bold text-xs uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                    Store Verified
+                                </div>
+<h1 class="font-poppins text-3xl md:text-4xl font-bold leading-tight text-primary dark:text-white">
+                                    Congratulations, Your Store is Live!
+                                </h1>
+<p class="text-[#654d99] dark:text-gray-400 text-lg leading-relaxed">
+                                    Welcome to the NobleMart family. You can now start listing products and reaching millions of shoppers across Nigeria.
+                                </p>
+</div>
+<div class="flex flex-col gap-4">
+<button class="flex w-full items-center justify-center rounded-lg h-14 bg-primary text-white text-lg font-bold shadow-lg shadow-primary/25 hover:opacity-90 transition-all">
+                                    Go to Vendor Dashboard
+                                </button>
+<p class="text-center text-sm text-gray-500">Redirecting to your dashboard in 10 seconds...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- NobleShield Action Panel -->
+<div class="w-full">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 rounded-xl border-2 border-accent-blue/30 bg-accent-blue/5 dark:bg-accent-blue/10 p-6">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-accent-blue flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-2xl">shield</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#120e1b] dark:text-white text-lg font-bold leading-tight">NobleShield Active</p>
+<p class="text-[#654d99] dark:text-gray-300 text-base">Your store is now protected by NobleMart's escrow and security systems. Sell with confidence.</p>
+</div>
+</div>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-accent-blue text-white text-sm font-bold">
+                            View Security Details
+                        </button>
+</div>
+</div>
+<!-- Next Steps Grid -->
+<div class="space-y-6">
+<h2 class="text-2xl font-bold font-poppins px-1">What's Next?</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1 -->
+<div class="group bg-white dark:bg-[#1e1631] p-6 rounded-xl border border-[#ebe7f3] dark:border-[#2d2445] hover:border-primary transition-colors cursor-pointer">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">add_box</span>
+</div>
+<h3 class="text-[#120e1b] dark:text-white text-lg font-bold mb-2">Add Your First Product</h3>
+<p class="text-[#654d99] dark:text-gray-400 text-sm">Start listing your items to show them to the millions of shoppers on our platform.</p>
+</div>
+<!-- Step 2 -->
+<div class="group bg-white dark:bg-[#1e1631] p-6 rounded-xl border border-[#ebe7f3] dark:border-[#2d2445] hover:border-primary transition-colors cursor-pointer">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<h3 class="text-[#120e1b] dark:text-white text-lg font-bold mb-2">Complete Your Profile</h3>
+<p class="text-[#654d99] dark:text-gray-400 text-sm">Set up your store branding, shipping preferences, and payout methods.</p>
+</div>
+<!-- Step 3 -->
+<div class="group bg-white dark:bg-[#1e1631] p-6 rounded-xl border border-[#ebe7f3] dark:border-[#2d2445] hover:border-primary transition-colors cursor-pointer">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="text-[#120e1b] dark:text-white text-lg font-bold mb-2">Visit Seller Academy</h3>
+<p class="text-[#654d99] dark:text-gray-400 text-sm">Learn how to optimize your listings and grow your business with our pro tips.</p>
+</div>
+</div>
+</div>
+<!-- Footer Support -->
+<div class="flex flex-col items-center gap-4 py-8 border-t border-[#ebe7f3] dark:border-[#2d2445] mt-8">
+<p class="text-gray-500">Need help setting up?</p>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-primary font-bold hover:underline">
+<span class="material-symbols-outlined">chat</span>
+                            Live Chat Support
+                        </button>
+<span class="text-gray-300">|</span>
+<button class="flex items-center gap-2 text-primary font-bold hover:underline">
+<span class="material-symbols-outlined">description</span>
+                            Seller Documentation
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

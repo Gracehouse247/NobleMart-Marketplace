@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | NobleMart</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#020249",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-[#f5f8f8] font-display text-secondary">
+    <div id="header-placeholder"></div>
+
+    <main class="max-w-[1280px] mx-auto px-6 py-10 lg:py-16">
+        <!-- Progress Steps -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-8">
+            <div>
+                <h1 class="text-3xl font-black italic tracking-tight">Secure <span class="text-primary">Checkout</span>
+                </h1>
+                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">Multi-Vendor Protection
+                    Active</p>
+            </div>
+            <div class="w-full md:w-80">
+                <div class="flex justify-between mb-2">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-[#0c1c1d]">Progress</span>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-primary">66% Completed</span>
+                </div>
+                <div class="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-primary" style="width: 66%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Form Sections -->
+            <div class="lg:col-span-2 space-y-10">
+                <!-- Shipping Address -->
+                <section class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden px-8 py-10">
+                    <div class="flex items-center gap-4 mb-10">
+                        <span
+                            class="bg-[#020249] text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-xs">1</span>
+                        <h2 class="text-xl font-black italic uppercase tracking-wider">Shipping <span
+                                class="text-primary">Info</span></h2>
+                    </div>
+
+                    <form id="checkout-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-black text-gray-300 uppercase tracking-widest">Recipient
+                                    Name</label>
+                                <input id="name" required
+                                    class="w-full bg-gray-50 border-none rounded-2xl text-xs font-bold px-5 py-4 focus:ring-1 focus:ring-primary"
+                                    placeholder="Enter Full Name" type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] font-black text-gray-300 uppercase tracking-widest">WhatsApp/Phone</label>
+                                <input id="phone" required
+                                    class="w-full bg-gray-50 border-none rounded-2xl text-xs font-bold px-5 py-4 focus:ring-1 focus:ring-primary"
+                                    placeholder="+234..." type="text" />
+                            </div>
+                            <div class="md:col-span-2 space-y-2">
+                                <label class="text-[10px] font-black text-gray-300 uppercase tracking-widest">Delivery
+                                    Address</label>
+                                <textarea id="address" required
+                                    class="w-full bg-gray-50 border-none rounded-2xl text-xs font-bold px-5 py-4 focus:ring-1 focus:ring-primary min-h-[100px]"
+                                    placeholder="Street Name, Area, City, State"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Payment Method -->
+                <section class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden px-8 py-10">
+                    <div class="flex items-center gap-4 mb-10">
+                        <span
+                            class="bg-[#020249] text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-xs">2</span>
+                        <h2 class="text-xl font-black italic uppercase tracking-wider">Payment <span
+                                class="text-primary">Method</span></h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <label
+                            class="relative flex items-center p-6 border-2 border-primary rounded-3xl bg-primary/5 cursor-pointer group hover:bg-primary/10 transition-all">
+                            <input checked class="text-primary focus:ring-primary h-5 w-5" name="payment" type="radio"
+                                value="paystack" />
+                            <div class="ml-4">
+                                <span class="block text-xs font-black uppercase tracking-widest">Pay Online</span>
+                                <span class="block text-[10px] text-gray-400 font-bold mt-1">Direct Bank / Card /
+                                    Transfer</span>
+                            </div>
+                            <span
+                                class="absolute top-4 right-4 material-symbols-outlined text-primary text-xl">verified_user</span>
+                        </label>
+                        <label
+                            class="relative flex items-center p-6 border border-gray-100 rounded-3xl bg-gray-50/50 cursor-not-allowed opacity-50">
+                            <input disabled class="text-gray-300 h-5 w-5" name="payment" type="radio" value="pod" />
+                            <div class="ml-4">
+                                <span class="block text-xs font-black uppercase tracking-widest">Pay on Delivery</span>
+                                <span class="block text-[10px] text-gray-400 font-bold mt-1">Lagos Only (Coming
+                                    Soon)</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Escrow Box -->
+                    <div class="bg-[#020249] rounded-3xl p-8 text-white relative overflow-hidden shadow-2xl">
+                        <div class="relative z-10 flex items-start gap-4">
+                            <div class="p-3 bg-white/10 rounded-2xl backdrop-blur-md">
+                                <span class="material-symbols-outlined text-primary">security</span>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-sm uppercase tracking-widest mb-2">NobleMart Escrow
+                                    Protection</h4>
+                                <p class="text-[10px] text-gray-400 leading-relaxed font-bold">
+                                    Your funds are held securely. The seller only receives payment after you provide the
+                                    <strong>Delivery OTP</strong> to the courier, confirming receipt and quality.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Order Summary -->
+            <aside class="lg:col-span-1">
+                <div class="sticky top-28 bg-white rounded-3xl border border-gray-100 p-8 shadow-xl shadow-gray-200/50">
+                    <h3 class="text-xl font-black mb-8 uppercase tracking-widest italic">Order <span
+                            class="text-primary">Summary</span></h3>
+
+                    <div id="checkout-items" class="space-y-6 mb-10">
+                        <!-- Items will be injected here -->
+                    </div>
+
+                    <div class="space-y-4 pt-6 mt-6 border-t border-gray-50">
+                        <div
+                            class="flex justify-between text-[10px] font-black text-gray-400 uppercase tracking-widest">
+                            <span>Subtotal</span>
+                            <span class="text-[#0c1c1d]" id="summary-subtotal">₦0</span>
+                        </div>
+                        <div
+                            class="flex justify-between text-[10px] font-black text-gray-400 uppercase tracking-widest">
+                            <span>Service Fee</span>
+                            <span class="text-[#0c1c1d]">₦0</span>
+                        </div>
+                        <div class="pt-6 border-t border-gray-50 flex justify-between items-end">
+                            <span class="text-sm font-black uppercase tracking-widest">Total to Pay</span>
+                            <span class="text-2xl font-black text-primary italic" id="summary-total">₦0</span>
+                        </div>
+                    </div>
+
+                    <button id="place-order-btn"
+                        class="w-full bg-primary hover:bg-opacity-90 text-white py-5 rounded-2xl font-black text-xs tracking-[0.2em] shadow-xl shadow-primary/20 transition-all uppercase mt-10 flex items-center justify-center gap-3">
+                        Complete Payment
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </button>
+
+                    <p
+                        class="text-[8px] font-bold text-gray-300 uppercase tracking-widest text-center mt-6 leading-relaxed">
+                        By completing this order you agree to our <br>
+                        <a href="#" class="underline">Terms of Service</a> & <a href="#" class="underline">Buyer
+                            Protection Policy</a>
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const itemsContainer = document.getElementById('checkout-items');
+            const subtotalEl = document.getElementById('summary-subtotal');
+            const totalEl = document.getElementById('summary-total');
+            const placeOrderBtn = document.getElementById('place-order-btn');
+
+            if (Cart.items.length === 0) {
+                window.location.href = '/shop/cart.html';
+                return;
+            }
+
+            // Sync with local memory
+            const userData = JSON.parse(localStorage.getItem('user') || '{}');
+            if (userData.full_name) document.getElementById('name').value = userData.full_name;
+            if (userData.phone) document.getElementById('phone').value = userData.phone;
+
+            itemsContainer.innerHTML = Cart.items.map(item => `
+                <div class="flex gap-4 items-center">
+                    <div class="size-14 bg-gray-50 rounded-xl overflow-hidden shrink-0 border border-gray-50">
+                        <img src="${item.image}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-[10px] font-black uppercase tracking-widest text-[#0c1c1d] line-clamp-1">${item.name}</h4>
+                        <p class="text-[10px] text-gray-400 font-bold mt-1">QTY: ${item.quantity} • ₦${item.price.toLocaleString()}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            const total = Cart.getTotal();
+            subtotalEl.textContent = `₦${total.toLocaleString()}`;
+            totalEl.textContent = `₦${total.toLocaleString()}`;
+
+            placeOrderBtn.onclick = async () => {
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+
+                if (!name || !phone || !address) {
+                    alert('Please fill in all shipping details');
+                    return;
+                }
+
+                placeOrderBtn.disabled = true;
+                placeOrderBtn.innerHTML = '<span class="animate-spin material-symbols-outlined">autofps_select</span> SECURING CONNECTION...';
+
+                const orderData = {
+                    shipping_name: name,
+                    shipping_phone: phone,
+                    shipping_address: address,
+                    items: Cart.items,
+                    total: total,
+                    payment_method: 'paystack'
+                };
+
+                try {
+                    const res = await fetch('https://api.noblemart.com.ng/orders/create', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+                        },
+                        body: JSON.stringify(orderData)
+                    });
+
+                    const result = await res.json();
+                    if (res.ok) {
+                        Cart.clear();
+                        if (result.payment_url) {
+                            window.location.href = result.payment_url;
+                        } else {
+                            window.location.href = '/shop/success.html';
+                        }
+                    } else {
+                        alert(result.message || 'Error creating order');
+                        placeOrderBtn.disabled = false;
+                        placeOrderBtn.innerHTML = 'Complete Payment <span class="material-symbols-outlined text-lg">arrow_forward</span>';
+                    }
+                } catch (err) {
+                    console.error(err);
+                    alert('Order request failed. Check your connection.');
+                    placeOrderBtn.disabled = false;
+                    placeOrderBtn.innerHTML = 'Complete Payment <span class="material-symbols-outlined text-lg">arrow_forward</span>';
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

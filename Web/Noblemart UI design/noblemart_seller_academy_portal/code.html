@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Seller Academy Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#05bdc7",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                        "federal-blue": "#020249",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-federal-blue dark:text-white min-h-screen">
+<!-- Header Section -->
+<header class="header-gradient text-white px-6 py-8 md:px-20 lg:px-40">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h1 class="text-3xl font-black tracking-tight">Seller Academy</h1>
+</div>
+<div class="w-full max-w-xl">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-white/70">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-white/50 focus:bg-white/20 placeholder:text-white/70 text-white outline-none transition-all backdrop-blur-md" placeholder="Search tutorials, guides, and tips" type="text"/>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-6 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Courses</a>
+<a class="hover:text-primary transition-colors" href="#">Resources</a>
+<button class="bg-white text-federal-blue px-6 py-2 rounded-lg font-bold hover:bg-primary hover:text-white transition-all">My Learning</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-12 md:px-10">
+<!-- Welcome Hero Section -->
+<section class="mb-16">
+<div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 flex flex-col lg:flex-row items-stretch">
+<div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center gap-6">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Welcome back, Noble Seller</span>
+<h2 class="text-4xl md:text-5xl font-black text-federal-blue dark:text-white leading-tight">
+                        Empowering Your Business Growth
+                    </h2>
+<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Learn from the best mentors to scale your shop on NobleMart. Master photography, marketing, and logistics with our expert-led modules.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:-translate-y-0.5 transition-all">Start Learning Now</button>
+<button class="bg-gray-100 dark:bg-gray-700 text-federal-blue dark:text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-200 transition-all">View Paths</button>
+</div>
+</div>
+<div class="lg:w-1/2 min-h-[400px] bg-cover bg-center" data-alt="Nigerian mentor explaining data on screen to a student" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5Ecfs5r_780g7wqcr9LKzZZLunTOhOhEnOgz4W3DEUg14RfHksAR7ZjYYnKo0uVtbl6NZTv1g1GbB4MB_BBXtp9_wG2WSfE1z76nLRiYJdeOej-nyZwWEqYX9Gkbb0Gok4Skut6YjUmGPbudqCXUXIh07zUl_9MY18WYiRl0e1ZxK1BofqlS4FJiXwhBv4W206eyJr5i4kTyMXYGhk_nyPS79X9kJ7DUwlznPYdOg1a9b6-t6hhXmwpRyy9ODt9V3yTcZfp2AKH0')">
+</div>
+</div>
+</section>
+<!-- Featured Courses Grid -->
+<section class="mb-16">
+<div class="flex justify-between items-end mb-8 px-2">
+<div>
+<h2 class="text-3xl font-black text-federal-blue dark:text-white">Featured Courses</h2>
+<p class="text-gray-500 mt-1">Pick up where the pros started</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+                    See all courses <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course Card 1 -->
+<div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional camera photographing products on a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzvbMgoqh8xJs-4VROSzQQtgTyM4H0VFYViofDb8G6PHICOGEU56grGhZsWHSTJ23qaZ9LZ76_i2UbFhlzCy8c-fPvm3mE9ISXIUfkjLyIWykl01UFX-72n9Ie-tK9DQMRA447Kl9wXa8t6O83P4jf3IUElp5gu11wqi_35TcIDk37MNqh-_PH6JEDn6W-HTnTM2gGf32drnp5HCowHQof8R3lGJFuHjmDi3-veBfLd4wGlb2zb626zJG-qD9Xs1iIwCa8yUK1994"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Beginner</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 15m
+                            </span>
+</div>
+<h3 class="text-xl font-bold text-federal-blue dark:text-white mb-2">Mastering Product Photography</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">Learn how to take professional-grade photos with just your smartphone to boost sales.</p>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Business graph showing high growth trends" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABjSMHhGDM7wXZ2dgeN1xJDOVk2DDS4wrIwqmaVrIL-5lAPzrn1v9kXnsb_IEV2Rw_chKFVgB9LQLU6YVu_H8zcs7Nxkuvi6C4VSiml-G45Qo3UxkoVIbZ0NCEkH_Tiz3Fr0FtGlOF5LAoALI_Q-JM8XsQmYHRNpwQQzVCvBTu7tBzwSCGu4YbE8SLU8pOh-wvJnU_Fq8OjK6PNXelG_RW3EEFc-ONQFVqeXUOFJLoXgEUgzu42SjsPl0KnFd-3DmExkz06HsYPvo"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">Intermediate</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 10m
+                            </span>
+</div>
+<h3 class="text-xl font-bold text-federal-blue dark:text-white mb-2">How to Win with Flash Sales</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">Strategic timing and inventory management to maximize revenue during peak events.</p>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Secure digital payment icons and shield symbol" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZnEQ4JS1L2oQ-uxD50PLYUhdq5CrQXTb87bhmDIqnD-o_jMN0Wl-JZqyY5ml6C6sqQjqrlQpk0f-Wuq2E-VDX6Gr-u_RnaeI_Zm6Ezv5QbnXUt78UgIVy1zDTQ0ujn1-RWKiEophy7kyXrF1kfGis84dF_okt81jSELql2sQ1B6ljuAVctyJIiU1gxTdOql0PV9IUlNm6C0iDtrPYj6BfUEFGosy5tNgoLDOfVJPUpzz5nJPMWKJ4U0yGt5Wwcuj0iTxAGD6d0b4"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-6xl">play_circle</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">Essential</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 5m
+                            </span>
+</div>
+<h3 class="text-xl font-bold text-federal-blue dark:text-white mb-2">Understanding NobleShield Escrow</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">Ensure your payments are secure. A guide to the NobleShield protection system.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Learning Paths Section -->
+<section class="mb-16">
+<h2 class="text-3xl font-black text-federal-blue dark:text-white mb-8 px-2">Learning Paths</h2>
+<div class="space-y-6">
+<!-- Path 1 -->
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-primary transition-all">
+<div class="flex items-center gap-6">
+<div class="size-16 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">rocket_launch</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold">New Seller Start-up</h3>
+<p class="text-gray-500">8 Modules • Complete onboarding for new vendors</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-10 py-3 bg-federal-blue dark:bg-primary text-white font-bold rounded-xl">Resume Path</button>
+</div>
+<!-- Path 2 -->
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-primary transition-all">
+<div class="flex items-center gap-6">
+<div class="size-16 bg-electric-indigo/10 rounded-full flex items-center justify-center text-electric-indigo">
+<span class="material-symbols-outlined text-4xl">trending_up</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold">Growth &amp; Scaling</h3>
+<p class="text-gray-500">12 Modules • Intermediate strategies for volume</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-10 py-3 border-2 border-federal-blue dark:border-primary text-federal-blue dark:text-primary font-bold rounded-xl">Start Path</button>
+</div>
+<!-- Path 3 -->
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-primary transition-all">
+<div class="flex items-center gap-6">
+<div class="size-16 bg-robin-egg/10 rounded-full flex items-center justify-center text-robin-egg">
+<span class="material-symbols-outlined text-4xl">campaign</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold">Advanced Advertising</h3>
+<p class="text-gray-500">5 Modules • Paid promotions and SEO mastery</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-10 py-3 border-2 border-federal-blue dark:border-primary text-federal-blue dark:text-primary font-bold rounded-xl">Start Path</button>
+</div>
+</div>
+</section>
+<!-- Resource Library & Community -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Resource Library -->
+<section class="lg:col-span-2">
+<h2 class="text-3xl font-black text-federal-blue dark:text-white mb-8">Resource Library</h2>
+<div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
+<div class="divide-y divide-gray-100 dark:divide-gray-700">
+<!-- Resource 1 -->
+<div class="p-6 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-500 text-3xl">picture_as_pdf</span>
+<div>
+<h4 class="font-bold text-lg">Nigerian Shipping Logistics Guide</h4>
+<p class="text-sm text-gray-500">PDF • 2.4 MB</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-all">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<!-- Resource 2 -->
+<div class="p-6 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-blue-500 text-3xl">article</span>
+<div>
+<h4 class="font-bold text-lg">Packaging Standards Checklist</h4>
+<p class="text-sm text-gray-500">Article • 5 min read</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-all">
+<span class="material-symbols-outlined">open_in_new</span>
+</button>
+</div>
+<!-- Resource 3 -->
+<div class="p-6 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-red-500 text-3xl">picture_as_pdf</span>
+<div>
+<h4 class="font-bold text-lg">Customer Service Best Practices</h4>
+<p class="text-sm text-gray-500">PDF • 1.1 MB</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full transition-all">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Community CTA -->
+<section>
+<h2 class="text-3xl font-black text-federal-blue dark:text-white mb-8">Community</h2>
+<div class="bg-federal-blue text-white rounded-3xl p-8 flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 size-40 bg-white/5 rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -top-10 size-32 bg-primary/20 rounded-full blur-2xl"></div>
+<span class="material-symbols-outlined text-5xl text-primary">forum</span>
+<h3 class="text-2xl font-bold leading-tight">Join the NobleMart Vendor Forum</h3>
+<p class="text-white/70 leading-relaxed">Connect with thousands of other Nigerian sellers. Share tips, ask questions, and grow together.</p>
+<button class="bg-primary text-federal-blue w-full py-4 rounded-xl font-black text-lg hover:shadow-[0_0_20px_rgba(5,189,199,0.5)] transition-all">Join Forum</button>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 py-12 px-6 mt-12">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">verified</span>
+</div>
+<span class="text-xl font-black text-federal-blue dark:text-white">NobleMart</span>
+</div>
+<div class="flex gap-8 text-gray-500 text-sm">
+<a class="hover:text-primary" href="#">Help Center</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+</div>
+<p class="text-gray-400 text-sm">© 2024 NobleMart Seller Academy. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

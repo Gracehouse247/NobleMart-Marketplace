@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Marketplace Expansion Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "federal-blue": "#020249",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .poppins-title {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#120e1b] dark:text-white transition-colors duration-200">
+<div class="flex min-h-screen">
+<!-- Sidebar: Federal Blue -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col fixed h-full z-20">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold poppins-title leading-none">NobleMart</h1>
+<p class="text-[10px] text-blue-200 uppercase tracking-widest font-semibold mt-1">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 mt-4 space-y-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 cursor-pointer text-blue-100/70 transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 cursor-pointer text-blue-100/70 transition-colors">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary text-white shadow-lg shadow-primary/20 cursor-pointer">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="text-sm font-medium">Insights</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 cursor-pointer text-blue-100/70 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-white/10 cursor-pointer text-blue-100/70 transition-colors">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Finances</span>
+</div>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3 p-2 rounded-lg bg-white/5">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border border-white/20" data-alt="Professional profile photo of a vendor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCesHM7W13uw14lz-po6Zs8xTuxORRn98AKdrD_c9Zwu3zfreuIK4AB4k9_cDibh1szgJfMj6aCEpgh93pK-0xs_6WbfJsFkVnyou8Ru4-Szmh5AFZUQnKwnYCABEnPsvFPkS9tIsqknyBM1XgWtlobmOA7Mpb-wyjdy0Hk0wHPvqxc7eHp9HD7p2FfZ6wIPhOpV_FbkMMj4q9eJEkNNssp4bvxCB1HYD_n19e2LhTBs6tB1Gfv5ZY5G4eH4ZNZ-j3Wt8ixH2T5gTs')"></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-sm font-semibold truncate">Premium Vendor</p>
+<p class="text-xs text-blue-200/60 truncate">Lagos Hub</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 pb-12">
+<!-- Header Section -->
+<header class="bg-white dark:bg-background-dark border-b border-gray-200 dark:border-white/10 sticky top-0 z-10">
+<div class="max-w-7xl mx-auto px-8 py-6 flex flex-wrap justify-between items-center gap-4">
+<h2 class="text-3xl font-bold poppins-title text-gray-900 dark:text-white">Marketplace Expansion Opportunities</h2>
+<div class="flex items-center gap-4">
+<label class="flex flex-col min-w-48">
+<select class="form-select block w-full rounded-lg border-gray-300 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-sm focus:border-primary focus:ring-primary h-11 px-4 dark:text-white">
+<option value="electronics">Target: Electronics &amp; Gadgets</option>
+<option value="fashion">Target: Home &amp; Kitchen</option>
+<option value="beauty">Target: Beauty &amp; Personal Care</option>
+</select>
+</label>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-primary/90 transition-all">
+                            Export PDF
+                        </button>
+</div>
+</div>
+</header>
+<div class="max-w-7xl mx-auto px-8 py-8 space-y-8">
+<!-- Section 3: High-Demand Gap Analysis -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold text-gray-800 dark:text-white">High-Demand Gap Analysis: Top Unmet Search Terms</h3>
+<span class="text-primary text-sm font-semibold cursor-pointer hover:underline">View all trends</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-white/5 p-5 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-orange-100 dark:bg-orange-500/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400">trending_up</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Smart Air Fryers</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Health-conscious tech consumers</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">+450% Growth</span>
+<span class="text-xs text-gray-400 font-medium">12k searches/mo</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-white/5 p-5 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-blue-100 dark:bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400">solar_power</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Solar-Powered Laptops</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Remote workers in rural areas</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">+320% Growth</span>
+<span class="text-xs text-gray-400 font-medium">8.5k searches/mo</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-white/5 p-5 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-purple-100 dark:bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-purple-600 dark:text-purple-400">battery_charging_full</span>
+</div>
+<h4 class="text-lg font-bold mb-1">Portable Power Stations</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Backup energy solutions</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">+210% Growth</span>
+<span class="text-xs text-gray-400 font-medium">25k searches/mo</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-white/5 p-5 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-500/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400">headphones</span>
+</div>
+<h4 class="text-lg font-bold mb-1">ANC Earbuds</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">High-fidelity noise cancellation</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">+185% Growth</span>
+<span class="text-xs text-gray-400 font-medium">40k searches/mo</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Section 4: Regional Growth Heatmap -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-gray-800 dark:text-white">Regional Growth Heatmap: Nigeria</h3>
+<div class="flex gap-2">
+<span class="flex items-center gap-1 text-xs text-gray-500"><span class="w-2 h-2 rounded-full bg-red-500"></span> High Potential</span>
+<span class="flex items-center gap-1 text-xs text-gray-500"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Medium</span>
+</div>
+</div>
+<div class="relative bg-white dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/10 overflow-hidden h-[500px] shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center opacity-90 grayscale-[0.5] hover:grayscale-0 transition-all duration-700" data-alt="Detailed heatmap of Nigeria showing business growth zones" data-location="Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjZPUc-m5bHWHhbfMIaqRsJC_tjrLXWQTBOmlow5Xv7YLNpO-9L4Ut-MKh98YWlnE8C1wf3C2hT3PbYLF-QVbdyTb6WBWUgG6m29NjyoekT5xQ8daxQPOA8cJimK6KGOju0Xm2JPEDIs6k35CKGxpdsv1aI6sHlzzd_E-hr05oRx8LqtSpqJqblV4JoSxCiBxOgEnRtR4vEtFJDB6Ug-g51JEjxB9hsISoTExavMJV4Tg1-l0StFgoK1_SGSb9IxKXBMTFan64EIg')"></div>
+<!-- Map Markers/Hotspots -->
+<div class="absolute top-1/4 left-1/2 -translate-x-12 group cursor-pointer">
+<div class="w-6 h-6 bg-red-500 rounded-full animate-ping absolute opacity-75"></div>
+<div class="relative w-6 h-6 bg-red-600 rounded-full border-2 border-white"></div>
+<div class="absolute top-8 left-0 bg-white dark:bg-gray-800 px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+<p class="text-xs font-bold">Jos: High Demand</p>
+<p class="text-[10px] text-gray-500">Low Vendor Presence</p>
+</div>
+</div>
+<div class="absolute bottom-1/4 right-1/3 group cursor-pointer">
+<div class="w-6 h-6 bg-red-500 rounded-full animate-ping absolute opacity-75"></div>
+<div class="relative w-6 h-6 bg-red-600 rounded-full border-2 border-white"></div>
+<div class="absolute top-8 left-0 bg-white dark:bg-gray-800 px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+<p class="text-xs font-bold">Enugu: Growing Market</p>
+<p class="text-[10px] text-gray-500">+12% Monthly Search</p>
+</div>
+</div>
+<div class="absolute bottom-1/4 right-1/4 group cursor-pointer">
+<div class="w-6 h-6 bg-red-500 rounded-full animate-ping absolute opacity-75"></div>
+<div class="relative w-6 h-6 bg-red-600 rounded-full border-2 border-white"></div>
+<div class="absolute top-8 left-0 bg-white dark:bg-gray-800 px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+<p class="text-xs font-bold">Calabar: Untapped</p>
+<p class="text-[10px] text-gray-500">Hub expansion target</p>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 bg-white/90 dark:bg-gray-900/90 p-4 rounded-xl border border-white/20 backdrop-blur-sm max-w-xs">
+<h5 class="text-sm font-bold mb-2">Expansion Insight</h5>
+<p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    South-Eastern markets (Enugu, Calabar) show a 40% higher search-to-purchase ratio for electronic appliances compared to Lagos.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Revenue & Saturation -->
+<div class="space-y-6">
+<!-- Section 6: Revenue Projection -->
+<div class="bg-primary p-6 rounded-2xl text-white shadow-xl relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-20">
+<span class="material-symbols-outlined text-9xl">monetization_on</span>
+</div>
+<p class="text-xs font-bold uppercase tracking-widest opacity-80 mb-1">Potential Monthly Revenue</p>
+<h3 class="text-4xl font-bold poppins-title mb-2">₦4,250,000</h3>
+<p class="text-xs text-blue-100/70 mb-4">Projected for Smart Appliance entry</p>
+<div class="flex items-center gap-2 bg-white/10 p-2 rounded-lg backdrop-blur-sm inline-flex">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-[10px] font-bold">Recommended Entry: Oct 2024</span>
+</div>
+</div>
+<!-- Section 5: Category Saturation Index -->
+<div class="bg-white dark:bg-white/5 p-6 rounded-2xl border border-gray-100 dark:border-white/10 shadow-sm">
+<h3 class="text-lg font-bold mb-6 text-gray-800 dark:text-white">Saturation Index</h3>
+<div class="space-y-5">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>Solar Panels</span>
+<span class="text-primary font-bold">High Demand / Low Supply</span>
+</div>
+<div class="w-full h-2 bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden flex">
+<div class="w-[85%] bg-primary h-full"></div>
+<div class="w-[15%] bg-gray-300 dark:bg-white/20 h-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>Air Fryers</span>
+<span class="text-blue-500 font-bold">Emerging Gap</span>
+</div>
+<div class="w-full h-2 bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden flex">
+<div class="w-[60%] bg-primary h-full"></div>
+<div class="w-[40%] bg-gray-300 dark:bg-white/20 h-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>Smart Watches</span>
+<span class="text-orange-500 font-bold">Saturated</span>
+</div>
+<div class="w-full h-2 bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden flex">
+<div class="w-[30%] bg-primary h-full"></div>
+<div class="w-[70%] bg-gray-300 dark:bg-white/20 h-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span>Home Robotics</span>
+<span class="text-green-500 font-bold">Blue Ocean</span>
+</div>
+<div class="w-full h-2 bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden flex">
+<div class="w-[92%] bg-primary h-full"></div>
+<div class="w-[8%] bg-gray-300 dark:bg-white/20 h-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 7 & 8: Competitor Benchmarking & Call to Action -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+<div class="lg:col-span-3">
+<h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Expansion Category: Competitor Benchmarking</h3>
+<div class="overflow-x-auto bg-white dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/10">
+<table class="min-w-full divide-y divide-gray-200 dark:divide-white/10">
+<thead>
+<tr class="bg-gray-50 dark:bg-white/5">
+<th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Top Seller Category</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Avg. Price</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Fulfillment Speed</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Avg. Rating</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-white/10">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-semibold">Premium Solar Tech</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">₦145,000</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 text-[10px] font-bold bg-green-100 text-green-700 rounded-full">Fast (24h)</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">4.8/5.0</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-semibold">Home Comfort Ltd</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">₦85,500</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 text-[10px] font-bold bg-orange-100 text-orange-700 rounded-full">Standard (3-5d)</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">4.2/5.0</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-semibold">Elite Gadgets NG</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">₦210,000</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 text-[10px] font-bold bg-green-100 text-green-700 rounded-full">Ultra Fast (12h)</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">4.9/5.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Call to Action Section -->
+<div class="lg:col-span-2 relative group overflow-hidden rounded-2xl shadow-xl h-full min-h-[300px] flex items-end">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Business entrepreneur pointing at a large strategic world map expansion plan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCf517NUKAwl03sAtUzqdVFd791E_hSlQM33NfuRygdQp9W-y1YT-KAoMAJMuNF99EklKK7UoO56c2RzktGp9DcWOu6XokLm2nszALZVwJY8M978Xq8-2JKKqypwQZRtyTHo2RFBlVJ0szCM8Vz3uZtjFzelELRK2FNOsiZUk-WR8DnXdOcwafYa1sthmUB43TSIZzKdLeLqvfqj_PQYXqGJFIzNajG9pF-9ze4f_HoN8j0KBTJ1U79DsIKuYPbFX-i9PVFZd6TQpo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-federal-blue via-federal-blue/40 to-transparent"></div>
+<div class="relative p-8 w-full">
+<h4 class="text-white text-2xl font-bold poppins-title mb-4">Ready to Scale Your Business?</h4>
+<p class="text-blue-100 text-sm mb-6 leading-relaxed">
+                                Our strategic advisors can help you navigate the regulatory and logistical requirements for entering the Jos and Calabar hubs.
+                            </p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/40 transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">rocket_launch</span>
+                                Request Category Entrance Strategy
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Store Anniversary Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#01f1fe",
+              "electric-indigo": "#5C1BE8",
+              "robin-egg": "#01C2CA",
+              "background-light": "#f5f8f8",
+              "background-dark": "#0f2223",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: "Plus Jakarta Sans", sans-serif; }
+        .celebration-gradient {
+            background: linear-gradient(135deg, #5C1BE8 0%, #01C2CA 100%);
+        }
+        .confetti-overlay {
+            background-image: radial-gradient(circle, #ffd700 1px, transparent 1px), radial-gradient(circle, #c0c0c0 1px, transparent 1px);
+            background-size: 20px 20px, 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-[#20494b] px-6 md:px-40 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Reviews</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-primary text-background-dark text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        Profile
+                    </button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Vendor profile avatar picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApSDdJhVyxNjg5XJTUnhmtXx6sBjtB8731llFxWCBJJEoZbp_zyJLt9l4NZqgYpZhsKp-K36yiTS6EfWidhLF39D4iK7rhtT8jVeD4kknpk6uK7KQyusi3o65TeuvE90SbAouuvr-1rnYt34iBLADHhaJOQlGccg1av03TmBPCNUVfHBZB0a6uE0GtaZ0G6apteqYm-PQqbB2Rz6N33bcJ7G4ZPj9hQ_F9CZji8geLORtJp-G3tYble9XlOkn5Q_R8-rdBlRDUa6o");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-16 px-6 md:px-40 celebration-gradient">
+<div class="absolute inset-0 confetti-overlay"></div>
+<div class="max-w-[1200px] mx-auto relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="flex flex-col gap-6 lg:w-1/2">
+<div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 w-fit border border-white/20">
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+<span class="text-white text-xs font-bold uppercase tracking-widest">NobleShield Anniversary Partner</span>
+</div>
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-[-0.033em]">
+                                Happy 1st Anniversary, <span class="text-primary">Eldorado Tech</span>!
+                            </h1>
+<p class="text-white/90 text-lg md:text-xl font-normal leading-relaxed max-w-xl">
+                                Cheers to a year of excellence and massive growth on NobleMart. You've built a world-class store that inspires our community.
+                            </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="flex min-w-[180px] items-center justify-center rounded-xl h-14 px-8 bg-primary text-background-dark text-base font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                                    Go to Dashboard
+                                </button>
+<button class="flex min-w-[180px] items-center justify-center rounded-xl h-14 px-8 bg-white/10 backdrop-blur-md text-white text-base font-bold border border-white/30 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined mr-2">share</span>
+                                    Share Milestone
+                                </button>
+</div>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative w-full aspect-square md:aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 group">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/60 to-transparent"></div>
+<img alt="Vendor celebrating in a modern decorated office" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Successful vendor celebrating in a high-end office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpfNpEjZZexQJIKXHBArbvS639y-3IiQWW6085Zw75DN0ZFJ_JdBtcaSh9EEFlmqbGlLomdT-Yh7LOHft0tafUoJDoP8qeK8b2nazy8LjdJlOQrcrsEnGvQbEiRBx4ZeYNSWyBHZA6zwsRWSLOsY-vCiaD_Av4uzK-3fIU6vCXSzlGzaVdSUCcOOsdU3gWQo3OlAKvVK5APHeTqdjYSS-BoYNah_88EE-La6a_Aa6eY9JZzCGUZi6qkEGkQpetYXrXGUb50_SlYcw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Recap -->
+<section class="py-16 px-6 md:px-40 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-2 mb-10">
+<h2 class="text-3xl font-bold tracking-tight">Your Impact Recap</h2>
+<p class="text-slate-500 dark:text-[#8dcbce]">Key achievements since you joined the NobleMart family</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-3 rounded-2xl p-8 border border-slate-200 dark:border-[#2e686b] bg-white dark:bg-[#173436] shadow-sm hover:border-primary/50 transition-colors group">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_cart_checkout</span>
+<p class="text-slate-500 dark:text-[#8dcbce] text-base font-medium">Total Orders Fulfilled</p>
+<div class="flex items-baseline gap-3">
+<p class="text-3xl font-bold">1,240+</p>
+<p class="text-[#0bda50] text-sm font-bold flex items-center"><span class="material-symbols-outlined text-sm">trending_up</span>+12%</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-2xl p-8 border border-slate-200 dark:border-[#2e686b] bg-white dark:bg-[#173436] shadow-sm hover:border-primary/50 transition-colors group">
+<span class="material-symbols-outlined text-primary text-3xl">sentiment_satisfied</span>
+<p class="text-slate-500 dark:text-[#8dcbce] text-base font-medium">Customers Delighted</p>
+<div class="flex items-baseline gap-3">
+<p class="text-3xl font-bold">98%</p>
+<p class="text-[#0bda50] text-sm font-bold flex items-center"><span class="material-symbols-outlined text-sm">trending_up</span>+5%</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-2xl p-8 border border-slate-200 dark:border-[#2e686b] bg-white dark:bg-[#173436] shadow-sm hover:border-primary/50 transition-colors group">
+<span class="material-symbols-outlined text-primary text-3xl">insights</span>
+<p class="text-slate-500 dark:text-[#8dcbce] text-base font-medium">Marketplace Growth</p>
+<div class="flex items-baseline gap-3">
+<p class="text-3xl font-bold">+15%</p>
+<p class="text-[#0bda50] text-sm font-bold flex items-center"><span class="material-symbols-outlined text-sm">trending_up</span>+3%</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Anniversary Gift Card -->
+<section class="py-8 px-6 md:px-40">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row items-stretch justify-between gap-8 rounded-3xl bg-primary p-8 md:p-12 shadow-2xl shadow-primary/30 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[120px] text-background-dark">celebration</span>
+</div>
+<div class="flex flex-[1.5_1.5_0px] flex-col gap-6 relative z-10">
+<div class="flex flex-col gap-2">
+<span class="bg-background-dark text-primary text-[10px] font-black uppercase tracking-[0.2em] w-fit px-3 py-1 rounded-full">Exclusive Anniversary Perk</span>
+<h3 class="text-background-dark text-4xl font-black leading-tight">Anniversary Gift: 0% Commission!</h3>
+<p class="text-background-dark/80 text-lg font-medium max-w-lg">Enjoy 0% Commission for the next 48 hours as a thank you for your incredible partnership. Your success is our mission.</p>
+</div>
+<button class="flex min-w-[180px] w-fit items-center justify-center rounded-xl h-12 px-8 bg-background-dark text-primary text-base font-bold hover:shadow-xl transition-all">
+<span class="material-symbols-outlined mr-2">redeem</span>
+                                Claim Reward
+                            </button>
+</div>
+<div class="hidden md:block flex-1 rounded-2xl overflow-hidden border-4 border-white/20">
+<img alt="Confetti and celebration gift" class="w-full h-full object-cover" data-alt="Vibrant celebration scene with floating gold ribbons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqWSyLYA4PbAu35K5WyTRc0_NTos8NOPLbscXGO22gT_BJx1rjDL1Z0rjen7_fTe6pAA2PUhipMaFwpBqiyjoot0ruvh7fG5rXvBK-w0BYngHqO8Z5dUlAoZQjnVb_dtzbF6aNqwbSZBS2xXB8KkG1AIAn_MwV-6HNRHrw5d-f4v0LudUwIi_OzzqNpuIN4jXPiAhLS32Yu0MPgkCsUiShFzh2TpDvlfJftOVsUd4Bjnf1rMbLf3s1knOJNmiBVo_diZ90zTP2lrw"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Memory Lane -->
+<section class="py-16 px-6 md:px-40">
+<div class="max-w-[1200px] mx-auto">
+<h2 class="text-3xl font-bold tracking-tight mb-8">Memory Lane: Your Milestones</h2>
+<div class="flex gap-6 overflow-x-auto pb-8 scrollbar-hide">
+<div class="min-w-[300px] flex flex-col gap-4 group">
+<div class="aspect-video rounded-2xl overflow-hidden bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all shadow-lg">
+<img alt="First sale celebration" class="w-full h-full object-cover" data-alt="Close up of a phone showing a successful first sale notification" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMRzMwECaeOTz5MjifqRoW6mfQeAEHyH_pTEmsTBLDBzmFtZsL9GzXGEssGksyRpi1IX0ifpMIaIBb9Yoz2OjCzWdURg6YX3STtOqCaMnnBMODaPEFN1CSDt7aSSrxboch4fmR4aL7xVz4J-3Q9fsfEshcSPVbru3eNlOihCxGz5A01lvjiFZcReUDIwHTGYYXTzHvcrcvBGA0DeXYMZF18wrumaly6ND_wDD54ntY4skLYcexZ6bOKkN3z2V9oH0mTT1xaq2bedM"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">The Beginning</h4>
+<p class="text-sm text-slate-500 dark:text-[#8dcbce]">October 2023 • First sale made within 2 hours of launch!</p>
+</div>
+</div>
+<div class="min-w-[300px] flex flex-col gap-4 group">
+<div class="aspect-video rounded-2xl overflow-hidden bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all shadow-lg">
+<img alt="Elite badge achievement" class="w-full h-full object-cover" data-alt="Golden medal icon on a dark premium background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9mi-hJXk9sfrAzhxQTwiPqmXP_oXAp__rFKqiw23UWOl2z_Ihg3eRSt3bAAxevpt2X0MtinuFSp-_FwDwoZHzXmJhD-r_5kTA18jiV_Rf7Nc5PBjsu9zxp03z4K8A2eBGsjNTdMOkb5VqPgscyJAeYdVrwJ-seVEhh9I22A-DdVVu8KnqsAME5agB4-ivwC7yfqHfoQvQuJlHL93GsEl0OmGpvke_oTm7B6tgNlEyfQNdoNlDtmd29_TH_lNvSR1hv2v4P4VDQEM"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">Elite Status Earned</h4>
+<p class="text-sm text-slate-500 dark:text-[#8dcbce]">February 2024 • Joined the top 5% of NobleMart vendors.</p>
+</div>
+</div>
+<div class="min-w-[300px] flex flex-col gap-4 group">
+<div class="aspect-video rounded-2xl overflow-hidden bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all shadow-lg">
+<img alt="Inventory growth milestone" class="w-full h-full object-cover" data-alt="Stock organized neatly in a modern logistics warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA71_ClCfq9QC7gKDmjK_f3PdtZ5LicgG1EeeDPVNXGqttraZKh2TMwP45meFqTxe2H7JdbMAAdcXSIO6kCBVbUai2G11fMVBcVcDufPV0gqm5yTi1kmd8rDPbaXOEPgbrTI1L19ubkYo6uofV0XdO-zY2i5YQel9KSrsqIh17pOdTgXpcY4FPXZxXyfBqo-iiku-W7oABx4K5f8g6uINSAIsk2HPM3V5UEeKGY9tvs2LjiqaRfmWuCXISd6FKXUmb8hSKvmPejL0"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">Inventory Expansion</h4>
+<p class="text-sm text-slate-500 dark:text-[#8dcbce]">June 2024 • Reached over 500 unique product listings.</p>
+</div>
+</div>
+<div class="min-w-[300px] flex flex-col gap-4 group">
+<div class="aspect-video rounded-2xl overflow-hidden bg-slate-800 border-2 border-transparent group-hover:border-primary transition-all shadow-lg">
+<img alt="Customer satisfaction milestone" class="w-full h-full object-cover" data-alt="Five star rating icon glowing on a dark screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY7Sh5DImRIHl3Ih42fIE79cP5bKRt9KS6AZb4zyjqD-0ZOuN7LreGeU6iMBapYSVIQTWYO3aa_8hr_z8Zv0Xzh2l9KWwM_kOAzzjGmOpBNiXj2f-fja9_BdBvjnWx7CD-HP9MCuDueYC-YWTDsJKup6w1Dr37gU-AzWHT6IY37_Hl9McXN1BCL5oK5Q6uUmmh1c4sEz6JNBNyUhQ0taL4gVnBmy1ERPkwfQmEXn9w-vIdGMXhUf-t06xJz6nvMdRwggjlMA06F7s"/>
+</div>
+<div>
+<h4 class="font-bold text-lg">1,000 Happy Reviews</h4>
+<p class="text-sm text-slate-500 dark:text-[#8dcbce]">August 2024 • Maintaining a consistent 4.9-star rating.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Love -->
+<section class="py-16 px-6 md:px-40 bg-slate-100 dark:bg-background-dark/50">
+<div class="max-w-[1200px] mx-auto text-center">
+<h2 class="text-3xl font-bold tracking-tight mb-12">Community Love</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-[#173436] p-8 rounded-2xl border border-slate-200 dark:border-[#2e686b] text-left shadow-sm">
+<div class="flex text-yellow-400 mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="italic text-slate-700 dark:text-white/80 mb-6 font-medium">"Absolutely the best service! Eldorado Tech always delivers ahead of time and the quality of their tech gadgets is top-notch."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Customer avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrhTiI3inbBVXpNCXwm5I2wcb_tCejBFZRdXukUbzE9L4G5q-TYCB4EbedJripf-ZBFZyEdJN-CSnCn7I-PUO9fZ8VKN8fZpHZG-4oBHVz-FsZU4kYdkoenIEbYUaJtbnluK2XpsZNtlB52peSruAZ00MwYcp5iSA5ClJP3VAaG-EspagKJ0Y5wAHZa0jhcnvZbG9Xzp8M0DhO1mO12w-wX2p3KApv9eNEcSyEUcCkUoWbijwYqhb08A36lbadYTueS4Tl-_6nlXs"); background-size: cover;'></div>
+<div>
+<p class="font-bold text-sm">Amara K.</p>
+<p class="text-xs text-slate-500">Verified Buyer</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#173436] p-8 rounded-2xl border border-slate-200 dark:border-[#2e686b] text-left shadow-sm">
+<div class="flex text-yellow-400 mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="italic text-slate-700 dark:text-white/80 mb-6 font-medium">"Trustworthy vendor. I had a small issue and they resolved it in less than an hour. Highly recommend!"</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Customer avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGbB92g2Vq6j8AJ2-s0PAvEKf6C7atXQA_SPcIl85C9mjcGSllmpd2Aq1kxt6Voua1EGfzL9m5oOsp6rvckldx-V3IGrWyfQbdH_CkHSdLyakZ2P7RW5dSDxrqMrzFRVTLXxd3XehlFTSscDpTUTxzWCFXYwV99g4vY0Ef1QT0qHofFlymj_mthNnWr75ZIsmfQFnieXSpSgeFhBIIN4QehHXHZOV0cvCF5KvoOvQIGOobaBbep_qA1ShD5mwqSir7j7139BJSVLQ"); background-size: cover;'></div>
+<div>
+<p class="font-bold text-sm">Chidi O.</p>
+<p class="text-xs text-slate-500">Verified Buyer</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#173436] p-8 rounded-2xl border border-slate-200 dark:border-[#2e686b] text-left shadow-sm">
+<div class="flex text-yellow-400 mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="italic text-slate-700 dark:text-white/80 mb-6 font-medium">"Been buying from Eldorado for months now. Consistent quality and great prices. Happy anniversary!"</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Customer avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjIq-hxzSkxhkRaoiS4-SB2rld9NN1oQ88j18edGRlDMyuyXItWvJt9--coDVOeMqmTZ2XXaiQU7rCkDY4cj1LzDJGm8bPDSs_SPfiOcR3rBr_zB3T1Z2vrbfM1pklyIhdJvSl1n_t6aLF3a11ZtGQJrRbArGaaa8kPh9nz6-0hZe5N4ofwXx7Z-U1UcrgPiXUX3dIUqvoRWI9lCL-DHYDbvXkCx8HcH9YedTc26uvPLEi8xmiZIAfegJlgsqvAcc-O0IYD_a-oeU"); background-size: cover;'></div>
+<div>
+<p class="font-bold text-sm">Folake A.</p>
+<p class="text-xs text-slate-500">Verified Buyer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="py-12 px-6 md:px-40 border-t border-slate-200 dark:border-[#20494b] bg-background-light dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="size-5 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
+</svg>
+</div>
+<p class="text-sm font-bold opacity-70">© 2024 NobleMart Africa. All rights reserved.</p>
+</div>
+<div class="flex gap-4">
+<a class="size-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-[#173436] hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="size-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-[#173436] hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="size-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-[#173436] hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="material-symbols-outlined">campaign</span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

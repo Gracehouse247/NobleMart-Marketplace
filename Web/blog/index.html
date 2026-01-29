@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NobleMart Blog | Insights, Trends & Market News</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .blog-hero {
+            padding: 6rem 2rem;
+            background: var(--slate-900);
+            color: white;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: -4rem auto 5rem;
+            padding: 0 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--slate-100);
+            box-shadow: var(--shadow-lg);
+            transition: 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-cat {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--slate-500);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="blog-hero">
+        <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 1.5rem;">NobleMart Insights</h1>
+        <p style="font-size: 1.25rem; opacity: 0.8; max-width: 700px; margin: 0 auto;">Your daily source for Nigerian
+            marketplace trends, real estate tips, and vendor success stories.</p>
+    </section>
+
+    <main class="blog-grid" id="blog-posts">
+        <div class="loading-shimmer" style="height: 450px; border-radius: 1.5rem;"></div>
+        <div class="loading-shimmer" style="height: 450px; border-radius: 1.5rem;"></div>
+        <div class="loading-shimmer" style="height: 450px; border-radius: 1.5rem;"></div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const blogContainer = document.getElementById('blog-posts');
+            try {
+                const res = await fetch('https://api.noblemart.com.ng/content');
+                const posts = await res.json();
+
+                if (posts.length === 0) {
+                    blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 5rem; color: var(--slate-400);">No posts found. Coming soon!</p>';
+                } else {
+                    blogContainer.innerHTML = posts.map(p => `
+                        <article class="blog-card" onclick="window.location.href='post.html?slug=${p.slug}'" style="cursor: pointer;">
+                            <img src="${p.featured_image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800'}" class="blog-img">
+                            <div class="blog-content">
+                                <span class="blog-cat">${p.category || 'Lifestyle'}</span>
+                                <h2 class="blog-title">${p.title}</h2>
+                                <p class="blog-excerpt">${p.excerpt || p.content.substring(0, 150) + '...'}</p>
+                                <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--slate-400); font-size: 0.85rem;">
+                                    <span class="material-symbols-outlined" style="font-size: 1rem;">person</span>
+                                    ${p.author_name}
+                                    <span style="margin: 0 0.5rem;">•</span>
+                                    ${new Date(p.created_at).toLocaleDateString()}
+                                </div>
+                            </div>
+                        </article>
+                    `).join('');
+                }
+            } catch (err) {
+                blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ef4444;">Failed to load blog posts.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>

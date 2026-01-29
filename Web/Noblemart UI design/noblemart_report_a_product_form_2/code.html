@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Report a Product</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                        "federal-blue": "#020249",
+                        "electric-indigo": "#5c1ce9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .safety-badge-bg {
+            background-image: radial-gradient(circle at 90% 10%, rgba(92, 28, 233, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 10% 90%, rgba(2, 2, 73, 0.03) 0%, transparent 40%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 min-h-screen">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden safety-badge-bg">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-[#ebe7f3] bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="mx-auto max-w-[1200px] px-6 py-3 flex items-center justify-between">
+<div class="flex items-center gap-4 text-[#120e1b] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight font-poppins">NobleMart</h2>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">verified_user</span> NobleShield
+                        </a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Safety Guidelines</a>
+</nav>
+<div class="h-8 w-[1px] bg-gray-200 dark:bg-gray-700 mx-2"></div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all">
+                        Account
+                    </button>
+<div class="size-10 rounded-full border border-gray-200 dark:border-gray-700 bg-cover bg-center" data-alt="User profile avatar circle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgx7extipMM5GAqXjAiZOxLeWepJS-vHSjHOgsvOdgB1KXRx-6iS2j6dfBfiL4_PbfwN8apwgyRUSACFQ4MfLk0_qZ79Zp_nCU1Fx36bzku6dbc90ewLoS3DpfyFa25AxMaJdR7-UuDkx_MjQEo3rTu0mDXmPRwstmYa7UWchi5Gi-5PmTn3pNcDB_Na9xWPxk9Tmmr5PzIX7lWDmZJarvt7ST5fkirTJuTHjNhitHQVrNeo7frMeNHs5Inhh68IMi8uDMdBH-Gyo')"></div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full mx-auto max-w-[960px] px-6 py-10">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8">
+<a class="text-primary text-sm font-medium hover:underline" href="#">Home</a>
+<span class="material-symbols-outlined text-gray-400 text-sm">chevron_right</span>
+<span class="text-gray-500 dark:text-gray-400 text-sm">Trust &amp; Safety</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">chevron_right</span>
+<span class="text-federal-blue dark:text-gray-200 text-sm font-semibold">Report a Product</span>
+</nav>
+<!-- Page Heading -->
+<div class="mb-10">
+<h1 class="text-4xl font-black text-federal-blue dark:text-white leading-tight tracking-tight mb-3 font-poppins">Report a Product</h1>
+<p class="text-gray-600 dark:text-gray-400 text-lg">Help us maintain NobleShield standards by reporting suspicious listings or prohibited items.</p>
+</div>
+<!-- Form Card -->
+<div class="bg-white dark:bg-[#1f1a2e] rounded-xl shadow-xl shadow-primary/5 border border-gray-100 dark:border-gray-800 overflow-hidden">
+<form class="p-8 space-y-8">
+<!-- Product Selection -->
+<div class="space-y-4">
+<label class="block">
+<span class="text-federal-blue dark:text-gray-200 text-base font-semibold mb-2 block">Which product are you reporting?</span>
+<div class="relative group">
+<input class="w-full bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 rounded-lg h-14 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-gray-900 dark:text-white placeholder:text-gray-400" placeholder="Paste product URL (e.g. shop.noblemart.com/product/...) or search name" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary">search</span>
+</div>
+</label>
+<!-- Identified Product Preview (Mocked State) -->
+<div class="flex items-center gap-4 bg-gray-50 dark:bg-background-dark/50 p-4 rounded-lg border border-dashed border-gray-300 dark:border-gray-700">
+<div class="size-16 rounded-lg bg-cover bg-center border border-gray-200 dark:border-gray-700" data-alt="High quality leather jacket thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI-KE5Xtv7Oni-VNwtbA2GQNCuHbl5x3XNTCMgFSGu659fCfbSiUIqrZkBQDo12PqWqG5t4Y7M8r_L2XAVjbyQ6OKlA0mi5TcrozUV87NyGcDhMY1XhvfSbdRslkU2OVFh6nXvnBb7gFhhSCkdlq6NX4JuddndgX75DKQ_td-uVlhE5X7PPkk5zd989QIGxVLBJjyJvbYV8JUzcYKMB_bLTRaYE97yzRIIOKmLfBDvHzKnA7snl0OY5mCo4kHY4upF0nYRNn5hsyE')"></div>
+<div class="flex-1">
+<p class="text-federal-blue dark:text-white font-bold text-sm">Premium Leather Agbada - Emerald Green</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs mt-1 uppercase tracking-wider font-semibold">Vendor: Excellence Nigerian Couture</p>
+</div>
+<div class="text-primary">
+<span class="material-symbols-outlined fill-1">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Report Reason -->
+<div class="space-y-2">
+<label class="text-federal-blue dark:text-gray-200 text-base font-semibold">Reason for report</label>
+<div class="relative">
+<select class="w-full appearance-none bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 rounded-lg h-14 px-4 pr-10 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-gray-900 dark:text-white">
+<option disabled="" selected="" value="">Select a reason...</option>
+<option>Counterfeit/Fake Product</option>
+<option>Misleading Information</option>
+<option>Inappropriate Content</option>
+<option>Prohibited Item</option>
+<option>Intellectual Property Infringement</option>
+<option>Suspicious Vendor Activity</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Evidence Upload -->
+<div class="space-y-2">
+<label class="text-federal-blue dark:text-gray-200 text-base font-semibold">Evidence Upload</label>
+<div class="border-2 border-dashed border-primary/30 hover:border-primary bg-primary/5 rounded-xl p-10 flex flex-col items-center justify-center transition-all cursor-pointer group">
+<div class="size-16 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">cloud_upload</span>
+</div>
+<p class="text-federal-blue dark:text-white font-bold text-lg">Upload Photos or Videos</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Drag and drop files or click to browse (Max 10MB)</p>
+</div>
+</div>
+<!-- Detailed Description -->
+<div class="space-y-2">
+<label class="text-federal-blue dark:text-gray-200 text-base font-semibold">Describe the Issue</label>
+<textarea class="w-full bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 rounded-lg p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-gray-900 dark:text-white placeholder:text-gray-400" placeholder="Provide as much detail as possible to help our safety team investigate..." rows="4"></textarea>
+</div>
+<!-- Privacy & Info Box -->
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer h-6 w-6 rounded border-gray-300 text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
+</div>
+<span class="text-federal-blue dark:text-gray-200 font-medium">Report Anonymously</span>
+</label>
+<div class="bg-federal-blue dark:bg-federal-blue/30 text-white p-6 rounded-xl relative overflow-hidden">
+<div class="relative z-10 flex gap-4">
+<div class="shrink-0 flex items-center justify-center size-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20">
+<span class="material-symbols-outlined text-yellow-400">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1 flex items-center gap-2">
+                                        NobleShield Protection
+                                    </h4>
+<p class="text-blue-100 text-sm leading-relaxed">
+                                        We take safety reports seriously. Our team will review your report within 24 hours. Your contribution helps maintain our high-quality marketplace standards.
+                                    </p>
+</div>
+</div>
+<!-- Decorative background icon -->
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[120px] opacity-10 rotate-12 select-none pointer-events-none">shield_with_heart</span>
+</div>
+</div>
+<!-- Action -->
+<div class="pt-4">
+<button class="w-full bg-electric-indigo hover:bg-electric-indigo/90 text-white font-bold text-lg h-16 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2" type="submit">
+<span>Submit Report</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+<p class="text-center text-gray-500 dark:text-gray-400 text-xs mt-4">
+                            By submitting, you agree to our Terms of Service regarding safety reporting.
+                        </p>
+</div>
+</form>
+</div>
+<!-- Trust Badges Footer -->
+<div class="mt-12 flex justify-center items-center gap-8 opacity-50 grayscale">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-federal-blue dark:text-white">lock</span>
+<span class="text-xs font-bold uppercase tracking-widest text-federal-blue dark:text-white">Secure Submission</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-federal-blue dark:text-white">policy</span>
+<span class="text-xs font-bold uppercase tracking-widest text-federal-blue dark:text-white">Encrypted Data</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-federal-blue dark:text-white">support_agent</span>
+<span class="text-xs font-bold uppercase tracking-widest text-federal-blue dark:text-white">24/7 Monitoring</span>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-10 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark">
+<div class="mx-auto max-w-[1200px] px-6 text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 NobleMart Nigeria. All rights reserved. Your safety is our priority.</p>
+</div>
+</footer>
+</div>
+</body></html>

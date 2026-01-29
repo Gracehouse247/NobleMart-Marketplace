@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Prime Deals Carousel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c1cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                        "federal-blue": "#020249",
+                        "gold-prime": "#D4AF37",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
+        .prime-gradient { background: linear-gradient(135deg, #020249 0%, #050566 100%); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- Navbar Replacement / Top Nav -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6f4f4] px-10 py-3 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-federal-blue dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-federal-blue dark:text-white text-xl font-extrabold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-primary flex border-none bg-[#e6f4f4] dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-federal-blue dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e6f4f4] dark:bg-slate-800 focus:border-none h-full placeholder:text-[#459ca1] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal" placeholder="Search premium deals..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-federal-blue dark:text-gray-300 text-sm font-semibold leading-normal hover:text-primary transition-colors" href="#">Electronics</a>
+<a class="text-federal-blue dark:text-gray-300 text-sm font-semibold leading-normal hover:text-primary transition-colors" href="#">Fashion</a>
+<a class="text-federal-blue dark:text-gray-300 text-sm font-semibold leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-federal-blue dark:text-gray-300 text-sm font-semibold leading-normal hover:text-primary transition-colors" href="#">Beauty</a>
+<a class="text-primary text-sm font-bold leading-normal border-b-2 border-primary" href="#">Prime Deals</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em]">
+<span>Account</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-[#e6f4f4] dark:bg-slate-800 text-federal-blue dark:text-white px-2.5">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="py-12 bg-[#f0fafb] dark:bg-[#0c1c1d]">
+<div class="max-w-[1280px] mx-auto px-6">
+<!-- Prime Section Header -->
+<div class="prime-gradient rounded-t-xl px-8 py-6 flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-prime text-3xl">crown</span>
+<h2 class="text-white text-[24px] font-extrabold tracking-tight">NobleMart <span class="text-gold-prime">Prime</span> Deals</h2>
+</div>
+<a class="text-gold-prime text-sm font-bold uppercase tracking-widest flex items-center gap-2 hover:opacity-80 transition-opacity" href="#">
+                    View All Prime Deals <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+<!-- Carousel Area -->
+<div class="relative bg-white dark:bg-background-dark p-8 rounded-b-xl shadow-2xl overflow-hidden border-x border-b border-gray-100 dark:border-slate-800">
+<!-- Background Accent Decoration -->
+<div class="absolute -right-20 -bottom-20 opacity-10 pointer-events-none">
+<div class="w-96 h-96 bg-cover bg-no-repeat rotate-12" data-alt="high quality gift box with gold ribbon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4op3lUcDm2kv5MdWhoTI4IijqITLeaWBsSNhw5JCUlvt2_dhY4IykLcpp2nW5Ts5XNKlpkHtq0OIuT9rhTSZBTqxglOmiMQtTXWAD6qO51SP5ExbChqCDipiPverYSOI89nIMI3Wkfj-abIK6OQZd0pQFofuEtR9BQb_kCANx-_eSWVFd8bIeH3Djo4YqUqly7UMUVkPv0iwLKO_QyLMqon9PtCp5Smp8Ycgu9WQfeQQD8eOEe1x1b-jasJh7ANzkIKfyL3aXyAs");'></div>
+</div>
+<!-- Product Scroller -->
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-4 relative z-10">
+<!-- Card 1 -->
+<div class="min-w-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden gold-border hover:shadow-xl transition-all duration-300 group">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<div class="absolute top-3 left-3 z-20 flex items-center justify-center bg-federal-blue/90 text-gold-prime rounded-full p-1.5 shadow-lg">
+<span class="material-symbols-outlined text-[18px] fill-current">crown</span>
+</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="luxury gold and black perfume bottle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAiEp4tVh1DzvBiZjD2RicahgA59dmicDWfYIGyKZ_89sNR0RwwVhNjB7RNqQTCiNfOwfdYd_MiD7zncG4BUHQ8Kjx2OeppsqLH0UB0FYCIk-kEFSr-gsXot7jguaioVhFgcTAxn0pD0W72ed7zkuJTQaSYD73qIO12YXFhPPadnLd20W2rjdRL_ZJls91Xa3dxzo_McJSn7scE2YUYWOm7z2uliy7uRJJmiaFm4z6Eyu6O6Jp5rr27jtSKpqc4_MSl8QuVuSR4rsI");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<span class="bg-primary/10 text-primary text-[11px] font-bold uppercase px-2.5 py-1 rounded-full w-fit">Free Delivery</span>
+<h3 class="text-federal-blue dark:text-white font-bold text-lg line-clamp-1">Royal Oud Intense EDP</h3>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="text-federal-blue dark:text-white text-xl font-extrabold">₦45,000</span>
+<span class="text-gray-400 line-through text-xs font-medium">₦62,000</span>
+</div>
+<p class="text-gold-prime text-[11px] font-bold tracking-tight">PRIME PRICE</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden gold-border hover:shadow-xl transition-all duration-300 group">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<div class="absolute top-3 left-3 z-20 flex items-center justify-center bg-federal-blue/90 text-gold-prime rounded-full p-1.5 shadow-lg">
+<span class="material-symbols-outlined text-[18px] fill-current">crown</span>
+</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="matte black pro noise cancelling headphones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPXa1atZuveusDk93qYcPvjQzPdXNo0cKN1g24qsMvzV8srgxWdlhPsI5HwCN358AEcuL5y3z5sQhbv0eQPfTG6xgDVBmSdA8nsmAGpPjY4VgWF4trwuznGXsOzls7ebbixRde_ILigpU5OX6SWVltj_c8xQrgWe4a3bWbXedWVycYE-CmDhIqlY9jTEFb1Nj8jEY_z15L6h1CQvmcP_hsSWNE8J3XiPRBpNwHydR13RdCJTa5g6a1EPAYKzGCMvqOLBTK_qiOJRk");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<span class="bg-primary/10 text-primary text-[11px] font-bold uppercase px-2.5 py-1 rounded-full w-fit">Free Delivery</span>
+<h3 class="text-federal-blue dark:text-white font-bold text-lg line-clamp-1">SonicPro ANC Headphones</h3>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="text-federal-blue dark:text-white text-xl font-extrabold">₦85,000</span>
+<span class="text-gray-400 line-through text-xs font-medium">₦110,000</span>
+</div>
+<p class="text-gold-prime text-[11px] font-bold tracking-tight">PRIME PRICE</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden gold-border hover:shadow-xl transition-all duration-300 group">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<div class="absolute top-3 left-3 z-20 flex items-center justify-center bg-federal-blue/90 text-gold-prime rounded-full p-1.5 shadow-lg">
+<span class="material-symbols-outlined text-[18px] fill-current">crown</span>
+</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="premium silk floral print designer shirt" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPgtKF0owLEE42kzjCM15v3WxvgtU9Rj9ihygnRTQIbOJsOiIkiAvnJagbaKtD5YXwl6WhJRfPEZtwYV7at8xWffA8b8TgNuEhti0GipkJVAf0SfDsS3HAa5-doKKkVG0DfmSWvwl_HazNCXByIeIctOEZlI_3dsGdNljpy_24PQ64jHTGn5wYmOyoVbDLNE1yVHyqJuMu-ARWrnmLxevYJ218hh7vbynmF7QgiAUPmnHzq7PnQ-9rivVZgaZXPMsQphq8pIepdhg");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<span class="bg-primary/10 text-primary text-[11px] font-bold uppercase px-2.5 py-1 rounded-full w-fit">Free Delivery</span>
+<h3 class="text-federal-blue dark:text-white font-bold text-lg line-clamp-1">Italian Silk Heritage Shirt</h3>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="text-federal-blue dark:text-white text-xl font-extrabold">₦22,000</span>
+<span class="text-gray-400 line-through text-xs font-medium">₦35,500</span>
+</div>
+<p class="text-gold-prime text-[11px] font-bold tracking-tight">PRIME PRICE</p>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="min-w-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden gold-border hover:shadow-xl transition-all duration-300 group">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<div class="absolute top-3 left-3 z-20 flex items-center justify-center bg-federal-blue/90 text-gold-prime rounded-full p-1.5 shadow-lg">
+<span class="material-symbols-outlined text-[18px] fill-current">crown</span>
+</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="luxury gold wristwatch with leather strap" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrjDav3oUhWRVJQvmRr8ZKcP7IzPqg8R56IHrHCCaujY5mgt3DLxzSOr8xWAceSXV0Cg23CJsW0GNIwF6kBWivjF3dkJvz2fZAOs6JEpy5MxCYmY2GBiqY7_-30z1KBv1r4CobTT9bwuywpOGCy9QvjnZj_L5HNkpaB53_6dbi74YL5z6cXfLak8ib8WeFhldhuxXluVs3Ctsh7xGM4TPNaYeo_4Y89fBaoeBRwFtT4QTbVEPCUp2-nOLMM-hi5orLqHx_t8oGgKY");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<span class="bg-primary/10 text-primary text-[11px] font-bold uppercase px-2.5 py-1 rounded-full w-fit">Free Delivery</span>
+<h3 class="text-federal-blue dark:text-white font-bold text-lg line-clamp-1">Gilded Chronograph Series 7</h3>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="text-federal-blue dark:text-white text-xl font-extrabold">₦120,000</span>
+<span class="text-gray-400 line-through text-xs font-medium">₦180,000</span>
+</div>
+<p class="text-gold-prime text-[11px] font-bold tracking-tight">PRIME PRICE</p>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="min-w-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden gold-border hover:shadow-xl transition-all duration-300 group">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<div class="absolute top-3 left-3 z-20 flex items-center justify-center bg-federal-blue/90 text-gold-prime rounded-full p-1.5 shadow-lg">
+<span class="material-symbols-outlined text-[18px] fill-current">crown</span>
+</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="premium tan leather weekend travel bag" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1WxFSqHceY3kJHOjTmOgf2XiwrPS8yeAMyanZG62t0gMaQ-VZeVRA0PTuRZqEk-pyGxw50ZxV7CEs17uBQ1tKzi_QTxkYvN_h_zw_nwa2FZ2D_hlWF8Xk3AclPVf3JEKbrvV_VOjp3WoLxJpLVIOUAzgobpBe49ZraVU-rXt15JYYwn5xI_5SPGVfUUi3KcGqtoqTg75VZ9-0WJtJcNgMCJ0nzGAkpODWxp7cdyytnBkzSY7BuEdPm3m-nJfQFc4jzwWL-aGvAsU");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<span class="bg-primary/10 text-primary text-[11px] font-bold uppercase px-2.5 py-1 rounded-full w-fit">Free Delivery</span>
+<h3 class="text-federal-blue dark:text-white font-bold text-lg line-clamp-1">Artisan Leather Weekender</h3>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="text-federal-blue dark:text-white text-xl font-extrabold">₦65,000</span>
+<span class="text-gray-400 line-through text-xs font-medium">₦95,000</span>
+</div>
+<p class="text-gold-prime text-[11px] font-bold tracking-tight">PRIME PRICE</p>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="min-w-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden gold-border hover:shadow-xl transition-all duration-300 group">
+<div class="relative aspect-square overflow-hidden bg-gray-50">
+<div class="absolute top-3 left-3 z-20 flex items-center justify-center bg-federal-blue/90 text-gold-prime rounded-full p-1.5 shadow-lg">
+<span class="material-symbols-outlined text-[18px] fill-current">crown</span>
+</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="minimalist wireless home speaker" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8Az0QR1T0qBwuC5SU8pEM0lte5RjYpGixVP-l7_35Hh1Y0__4p-7m3jq-sZ10wHpUZtCcpbIKQZ9rsXP-3gz0sXapJlCwirJs2wNC_uVbUx1DaQqAtXHh23BEt2KIWPbeQ3KqEf_uuybT_By6E7oBIkguh1e39xd8WY1Z770CI8xzoqWDNhk5v0gw-fK4hC3tDN1eoovbLtzX5ESUquRup_gI2XUR58DC4JT9StIxd9k_jbngM4B_Vyn0mRwLqi2FioZZipC40K4");'></div>
+</div>
+<div class="p-5 flex flex-col gap-3">
+<span class="bg-primary/10 text-primary text-[11px] font-bold uppercase px-2.5 py-1 rounded-full w-fit">Free Delivery</span>
+<h3 class="text-federal-blue dark:text-white font-bold text-lg line-clamp-1">Omni Hi-Fi Home Speaker</h3>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-2">
+<span class="text-federal-blue dark:text-white text-xl font-extrabold">₦35,000</span>
+<span class="text-gray-400 line-through text-xs font-medium">₦52,000</span>
+</div>
+<p class="text-gold-prime text-[11px] font-bold tracking-tight">PRIME PRICE</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Controls -->
+<button class="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 text-federal-blue hover:bg-primary hover:text-white transition-all hidden group-hover:block border border-gray-100">
+<span class="material-symbols-outlined text-2xl">chevron_left</span>
+</button>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white shadow-xl rounded-full p-2 text-federal-blue hover:bg-primary hover:text-white transition-all border border-gray-100">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</button>
+</div>
+<!-- Promotion Banner -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-cover bg-center rounded-xl p-8 flex flex-col justify-center min-h-[160px] relative overflow-hidden" data-alt="abstract gold and blue pattern" style='background-image: linear-gradient(rgba(2, 2, 73, 0.9), rgba(2, 2, 73, 0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7qWbqof6xWz7LMnlfCtj1R5Eux1UMCILm34MQS7qjRmdGaq3tFMT9diNsuhNoUPRHr2RXGiA0DOW9vWkPvtHnggpnToPG85avqCx66u7zsrXxbcqJFyQx0Uta7pyR_KNg8363JgMvhBiqH30yplOTb_oXrntuReAvAQ6ZLuWi84CKdgiFowvsYbPRUNmbkwHyAwXdmr6Z2iGcXJEb3Eaoc8w-MqxJUB0WowwEYHRV0bw6uHqS8oDn6PYsz1m_nzfCyJZsvvqsGqE");'>
+<h3 class="text-white text-2xl font-bold mb-2">Not a Prime Member?</h3>
+<p class="text-gray-300 mb-4 max-w-sm">Join today to unlock exclusive prices and unlimited free delivery across Nigeria.</p>
+<button class="bg-primary text-white font-bold px-6 py-2 rounded-lg w-fit hover:scale-105 transition-transform">Get Started</button>
+</div>
+<div class="bg-gold-prime/10 border-2 border-dashed border-gold-prime rounded-xl p-8 flex items-center gap-6">
+<div class="bg-gold-prime text-white p-4 rounded-full">
+<span class="material-symbols-outlined text-4xl">local_shipping</span>
+</div>
+<div>
+<h4 class="text-federal-blue dark:text-white text-xl font-bold">Fastest Prime Shipping</h4>
+<p class="text-federal-blue/70 dark:text-gray-400">Next-day delivery available for over 10,000 selected luxury items.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-federal-blue py-10">
+<div class="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold">NobleMart <span class="text-gold-prime">Prime</span></h2>
+</div>
+<div class="flex gap-8">
+<a class="text-gray-400 text-sm hover:text-white" href="#">Privacy Policy</a>
+<a class="text-gray-400 text-sm hover:text-white" href="#">Terms of Membership</a>
+<a class="text-gray-400 text-sm hover:text-white" href="#">Help Center</a>
+</div>
+<p class="text-gray-500 text-sm">© 2024 NobleMart eCommerce. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

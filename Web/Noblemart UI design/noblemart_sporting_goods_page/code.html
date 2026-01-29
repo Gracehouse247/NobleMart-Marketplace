@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Sporting Goods | Push Your Limits</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b8cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-slate-50 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#e7edf3] dark:border-slate-800">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">NobleMart</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Sporting Goods</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Fitness</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Footwear</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Apparel</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 max-w-xl ml-8">
+<div class="relative flex-1 hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-full border-none bg-slate-200 dark:bg-slate-800 focus:ring-2 focus:ring-primary text-sm" placeholder="Search gear, brands, or sports..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="hidden lg:flex px-5 h-10 bg-primary text-white rounded-full text-sm font-bold items-center justify-center">Sign Up</button>
+<button class="p-2 h-10 w-10 flex items-center justify-center bg-slate-200 dark:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<button class="p-2 h-10 w-10 flex items-center justify-center bg-slate-200 dark:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-6 py-8">
+<!-- Hero Section -->
+<section class="mb-12">
+<div class="grid grid-cols-1 @[864px]:grid-cols-2 gap-8 bg-slate-100 dark:bg-slate-900 rounded-xl overflow-hidden min-h-[460px]">
+<div class="relative min-h-[300px] @[864px]:h-auto bg-center bg-cover" data-alt="Dark-skinned athlete in mid-sprint wearing high-performance gear" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByFeKVd4PGOOixRb3flbyR4VqNGqBckzu5v9X-rRkSppsJN2TtTHmYNAAejtGndjcV8tFUFvsQv9kAdccjgPnvVJEGNOhJlpxMsMp8HT2jgQMleLT8IawbdL8mVzIjvrS9jxTXh3jVDYEgja-OVixQ0mn1rui8W-swBLNgsEUUvGQ9grIXPYqrkztWyoX7i7Re3kMhiTnIYlbyhGK5jmHv8lfk5MNutex0xDfKWIsuNXaTlNtxAMp3ktlbCcZk1fI0A5VkApd9r7I");'>
+<div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-center p-8 lg:p-12 gap-6">
+<div class="space-y-4">
+<span class="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full uppercase tracking-wider">New Collection 2024</span>
+<h1 class="text-4xl lg:text-6xl font-black leading-tight tracking-tight">
+                            Push Your <br/><span class="text-primary">Limits</span>
+</h1>
+<p class="text-lg opacity-80 max-w-md">
+                            Discover high-performance athletic wear designed for the Nigerian athlete. Gear up with premium quality for every sport.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-white font-bold rounded-full hover:scale-105 transition-transform">Shop Performance Gear</button>
+<button class="px-8 py-4 bg-white dark:bg-slate-800 text-primary border border-primary font-bold rounded-full hover:bg-primary/5 transition-colors">View Catalog</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Shop by Sport -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8 px-2">
+<h2 class="text-2xl font-bold tracking-tight">Shop by Sport</h2>
+<a class="text-primary text-sm font-bold flex items-center gap-1" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-4 no-scrollbar">
+<!-- Sport Icons -->
+<div class="flex flex-col items-center gap-3 min-w-[100px] cursor-pointer group">
+<div class="w-20 h-20 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all overflow-hidden bg-cover bg-center" data-alt="Football on a green pitch icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0KcyJuHIpfeJa9mHIWUZNdIC1oDwGtV9KkfX5tEWJaRR8minyStQUCsqkZFMBxPFBDxkRwYQcN_mRl9xDWvPmTeH-WhJCHY7pqpjGlJUxy_x_fkpRveerLZJmQhZklequqDKlph3bwE3B_p7o4QT0XPoihr2ZCmookhEK88Ik0WVEpWThZY8GJqvJVQjiIU1FUcMT5NG-ubOqHhbuLx2BdXZqpRRdGBk4FKwOBRcsVA1WTJjCOaf-WXrR2uTlFz9CfArQ4-pE2Eg')">
+</div>
+<p class="text-sm font-semibold">Football</p>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[100px] cursor-pointer group">
+<div class="w-20 h-20 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all overflow-hidden bg-cover bg-center" data-alt="Dumbbell in a modern gym setting icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5kH967KXy8wDYid-o-KzqMHA4r0YeROQooYkUwxiGYFeRe0pVOtrabkk3f7a58VoBChnLcl9ZkD1eWlyjqrAKzTr-zEPhdt2Cvx9hn90ORmJIxYv7xdHZ2JHQW2RzXJlQZe3Q5yBAHubNW8grrm2UW4AYKG8z0eLauKfZNXlGIeUPl6Yhhd4dJmsAeCIdZsLPzFeLmZEU3wHPNR-YJuKhcXy10H_WevngJ4ORunjeVZt7saP3WhOOsXnjkGo7mgo-L2GMkc6clgQ')">
+</div>
+<p class="text-sm font-semibold text-center">Gym &amp; Training</p>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[100px] cursor-pointer group">
+<div class="w-20 h-20 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all overflow-hidden bg-cover bg-center" data-alt="Basketball hoop outdoors icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfp4aIcTgD0k8anjy3spBMn6zlaVNZ70zH5tDHOt7K-vIlD-vBbjfU_WLdr-LsV3RboCVRTpWI6Tfta86Ip-8Uu3RiIb0ya02IqNAk_Cyw6hvCIC3Cs9jDyi1d2qHtYNXPTTElAea35a6MmuUk5JXDPcjINkiWKztx6T5R7mHb-WS1EpWYDtMmLr3o7LhQ4eNuSX2mf7hyppCc-Kq4fEQNgh7pI75F-rnm-ChOSw_JlMu643cNeOYaD1L7jpJR04LWukyBCTm23ng')">
+</div>
+<p class="text-sm font-semibold">Basketball</p>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[100px] cursor-pointer group">
+<div class="w-20 h-20 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all overflow-hidden bg-cover bg-center" data-alt="Professional running track icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVobr_KBJpM-oVAhLWqmapRIo_jE4kRtJFA_hXka8baHHyq6Fy1FvRBetQU6VlcNjQ5BqqKWylKZLM3pQs98bz6FyfHG6Hmt6FHeBF-Xkj6-xWkPGa2OAivSQjHMtcIpsEVUtlfp6Cr9IiaMmfqaVOKrlkBTEtHuzs6W3ZiQkoX_e5-jvLlOut4MM3LDN42mdhp--5_jd9kYGrcrAVtk6M5ICo8ypKXr-0XQd46aKfBZDZnEM9JnCYOXHQBS7Vov4dWXyPtZCmZNw')">
+</div>
+<p class="text-sm font-semibold">Athletics</p>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[100px] cursor-pointer group">
+<div class="w-20 h-20 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all overflow-hidden bg-cover bg-center" data-alt="Boxing gloves icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8HJSYOIY607QtQpVJ55SJtQk-IszM_GlUSFxwNVoV8nnZT-U3NU21NQGoOd6ah6Nx4hXqqcXhZ1uID2kRdp8C37bcB4gGt_WslpYqeYl8cZmyQuaqH4Af5KjZjKLZ830vhpaTkv3ODUc8TGNeIHTkpwHlFJWu511Wv3rihl9KClpbNb4KobMNKQKfCns_Oi4MAC7dKhPwbEI8kcvzqpFCCljYMxWI5FwjMbDYyf0-ToYvMfY6R8DMeKkWI3-jJ8Y4x7AYvY--3kA')">
+</div>
+<p class="text-sm font-semibold">Combat Sports</p>
+</div>
+<div class="flex flex-col items-center gap-3 min-w-[100px] cursor-pointer group">
+<div class="w-20 h-20 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center border-2 border-transparent group-hover:border-primary transition-all overflow-hidden bg-cover bg-center" data-alt="Tennis racket and ball icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkgJiEkRdP8K2eX3C4C8ihsFKkRjd31my9zxA58gG0hHwzOFfmHGdKaJenDcldgVxdTnzXgfV6qf8CONjTR9qqDs73_x7agH7xee286NzRyv6gmYsuxJHJ7Zm_CoyfN6Mqu71Htb284FiewUdUBpWkv_tWDhQn898c2XfTNDu3kdB-g6y79YlLKWRdGPdZdFPzt5yWPTqnDd9PjpA-NHp2zfkzyxZh_GB7cIe4upOliGONqIqW7aQmSgRZGk1Ha1_j-RfkxQTgFxI')">
+</div>
+<p class="text-sm font-semibold">Tennis</p>
+</div>
+</div>
+</section>
+<!-- Product Grid with Performance Metrics -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-24 space-y-8">
+<div>
+<h3 class="font-bold mb-4">Categories</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="rounded-full text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm">Footwear</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded-full text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm">Apparel</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded-full text-primary focus:ring-primary border-slate-300" type="checkbox"/>
+<span class="text-sm">Accessories</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-bold mb-4">Price Range</h3>
+<input class="w-full accent-primary h-2 bg-slate-200 rounded-full appearance-none" type="range"/>
+<div class="flex justify-between mt-2 text-xs font-medium">
+<span>₦5,000</span>
+<span>₦150,000+</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold mb-4">Brands</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded-full text-xs font-medium cursor-pointer hover:bg-primary hover:text-white transition-colors">Nike</span>
+<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded-full text-xs font-medium cursor-pointer hover:bg-primary hover:text-white transition-colors">Adidas</span>
+<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded-full text-xs font-medium cursor-pointer hover:bg-primary hover:text-white transition-colors">Puma</span>
+<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded-full text-xs font-medium cursor-pointer hover:bg-primary hover:text-white transition-colors">Under Armour</span>
+<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded-full text-xs font-medium cursor-pointer hover:bg-primary hover:text-white transition-colors">NobleFit</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Grid -->
+<div class="flex-1">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold">Elite Performance Gear</h2>
+<div class="flex items-center gap-2">
+<span class="text-sm opacity-60">Sort by:</span>
+<select class="bg-transparent border-none text-sm font-bold focus:ring-0 cursor-pointer">
+<option>Popularity</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Performance Rating</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
+<div class="aspect-square bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Red Nike performance running shoe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoA76zRt1vEQuZ5N-34LK-amulfXj68M9saYqbTCPL3XIAgGbEewyWENcHlH070O5wle-T2Max6trCr_5Bfnh-sBDfEnYZ8LPPvguqivP1Lf1LXkR5LIuZeU0l0HGpE6wyqjWPL1yuJNiT80ttresbfio2dGxeWNDTK9qQb45h8P6JLpdvtEe3OT14CL2bqk_ydCP8i_cx68tHfK2jn_x0wg6X52t_OD7IxGEb-pTft5hs8gZL0luYuWbHAOqqN3-kPcdvmMJDhy0"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 dark:bg-black/80 rounded-full backdrop-blur">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-primary text-white text-[10px] font-bold rounded-full uppercase">Top Rated</span>
+</div>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<h3 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Elite Aero-Jersey</h3>
+<p class="text-sm opacity-60">Nike Performance • 3 Colors</p>
+</div>
+<div class="space-y-3">
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-wider">
+<span>Breathability</span>
+<span class="text-primary">95%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-wider">
+<span>Durability</span>
+<span class="text-primary">88%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xl font-black">₦45,000</span>
+<button class="p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
+<div class="aspect-square bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Professional grade basketball gear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOyt-JYRONJaJEO41xZuZe3NXnaG_UDgkb2mZ9F3sgfO4TB5C1IvHnAR4obzyFY4qYcbHyUSD7CsSZOPN1UvU-1h9ZBhXQUwBYXHrphzsd8KZyVBFtPiWNDL66HAtIecE6lZNthqvx9gC47w7d_7YKXXPYsoZKjYyo3QOajiyd-Qhd1RSDHsJDj--cEijxDJEJZurxvMxfQbPldBDubHdNLVgqVN1sQRT_CVHkEk0C2DW1we5OFdiVSp-CV1NWr2HQV6nlA_864i8"/>
+<div class="absolute bottom-4 left-4">
+<span class="px-2 py-1 bg-green-500 text-white text-[10px] font-bold rounded-full uppercase">Professional</span>
+</div>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<h3 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Pro-Grip Basketball</h3>
+<p class="text-sm opacity-60">NobleFit Elite • Size 7</p>
+</div>
+<div class="space-y-3">
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-wider">
+<span>Grip Tech</span>
+<span class="text-primary">92%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-wider">
+<span>Durability</span>
+<span class="text-primary">98%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 98%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xl font-black">₦18,500</span>
+<button class="p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-800">
+<div class="aspect-square bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Dumbbell set for high intensity training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJnsT_Rl622CzmonrtTL7Y-2knkjofB80_LB3ydPVfN2r4Xn1eyWcAE55G4qAKu42PwEX5270xHioPB-FjEZMDsjbS8606-xCSqrIdyHWuohM3Vya5ajS7sgcGLLDPY2NOwYLd8LJJxSFbObvkO76KQXxVLXd7qVas0tejBJyMYWvVJavENbr_WZP3sTZ7koBk2fVoJYRkwAOS-iLFC1JpaibT5z2RAIUDmp_NyjtW_SYKnmQcPcJDQ2qJDiDFWo08dklXNQfsbU0"/>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<h3 class="font-bold text-lg mb-1 group-hover:text-primary transition-colors">Dynamic Weight Vest</h3>
+<p class="text-sm opacity-60">Training Gear • 10kg-20kg</p>
+</div>
+<div class="space-y-3">
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-wider">
+<span>Breathability</span>
+<span class="text-primary">70%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-wider">
+<span>Durability</span>
+<span class="text-primary">100%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full">
+<div class="h-full bg-primary rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xl font-black">₦32,000</span>
+<button class="p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 bg-slate-200 dark:bg-slate-800 rounded-full font-bold text-sm hover:bg-primary hover:text-white transition-all">Load More Products</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Marquee -->
+<section class="border-t border-slate-200 dark:border-slate-800 py-12">
+<h3 class="text-center text-xs font-bold uppercase tracking-widest opacity-40 mb-8">Official Brand Partners</h3>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-60 grayscale hover:grayscale-0 transition-all">
+<span class="text-2xl font-black tracking-tighter">NIKE</span>
+<span class="text-2xl font-black tracking-tighter italic">ADIDAS</span>
+<span class="text-2xl font-black tracking-tighter">PUMA</span>
+<span class="text-2xl font-black tracking-tighter">REEBOK</span>
+<span class="text-2xl font-black tracking-tighter">NOBLEFIT</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="size-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">NobleMart</h2>
+</div>
+<p class="text-sm opacity-60 leading-relaxed">The premier destination for high-performance sporting goods in Nigeria. Quality equipment for every athlete.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Shop</h4>
+<ul class="space-y-2 text-sm opacity-60">
+<li><a class="hover:text-primary" href="#">Men's Apparel</a></li>
+<li><a class="hover:text-primary" href="#">Women's Apparel</a></li>
+<li><a class="hover:text-primary" href="#">Footwear</a></li>
+<li><a class="hover:text-primary" href="#">Equipment</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Support</h4>
+<ul class="space-y-2 text-sm opacity-60">
+<li><a class="hover:text-primary" href="#">Shipping Info</a></li>
+<li><a class="hover:text-primary" href="#">Returns</a></li>
+<li><a class="hover:text-primary" href="#">Become a Vendor</a></li>
+<li><a class="hover:text-primary" href="#">NobleFit Community</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Newsletter</h4>
+<div class="flex flex-col gap-3">
+<input class="rounded-full border-none bg-slate-200 dark:bg-slate-800 text-sm px-4 h-10" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-white rounded-full h-10 text-sm font-bold">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-6 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-40 font-medium">
+<p>© 2024 NobleMart Nigeria. All rights reserved.</p>
+<div class="flex gap-6">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

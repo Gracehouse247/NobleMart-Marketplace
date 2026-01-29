@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Team Access Management</title>
+<!-- Google Fonts: Inter and Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#851ce9",
+                        "federal-blue": "#020249",
+                        "electric-indigo": "#5C1BE8",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav {
+            background-color: rgba(133, 28, 233, 0.2);
+            border-left: 4px solid #851ce9;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex min-h-screen">
+<!-- Sidebar: Persistent Federal Blue Navigation -->
+<aside class="w-72 bg-federal-blue text-white flex flex-col sticky top-0 h-screen shadow-xl">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-tight">NobleMart</h1>
+<p class="text-xs text-slate-400">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 mt-4 px-3 space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-white/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-white/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-white/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-white/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">reviews</span>
+<span class="text-sm font-medium">Reviews</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg active-nav text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Team Management</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-white/10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</div>
+</nav>
+<div class="p-4 border-t border-white/10 space-y-2">
+<div class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm">Account Settings</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-400 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="text-sm">Support Center</span>
+</div>
+<button class="w-full mt-4 bg-primary text-white py-2.5 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Logout
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<!-- Header Section with Background Image -->
+<header class="relative h-48 flex items-center px-12 overflow-hidden bg-slate-900">
+<div class="absolute inset-0 opacity-40 bg-cover bg-center" data-alt="Modern collaborative team in an office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIjXSd5HLXS8xWI6ZUoMFY-SzNmUcUn6se8P-paAYl82Nk4kYQbGtOXpsnX_za2E40k__x_0dgNdM2rGZoU2ZHwqI_iS1meL2ELCexbsJsUIAWqx28XU5DczaTwiCm6PFfbE9r2obDZDU5rUW471qtZn1NgQHu0YeoCxWxZJ29HcPHu2ilktcjiUQZVdwQLmR3GVAfjKZQrS7tAk6Tu_MWPKfzvbJhQlbQQK77BPGCb9ANNvCZMtmYaCLxJQGPQXmzvP3yOYO7nQw");'></div>
+<div class="absolute inset-0 bg-gradient-to-r from-federal-blue via-federal-blue/80 to-transparent"></div>
+<div class="relative flex justify-between items-center w-full">
+<div>
+<nav class="flex text-xs text-slate-300 mb-2 gap-1 uppercase tracking-wider font-semibold">
+<span>Settings</span>
+<span>/</span>
+<span class="text-white">Team Management</span>
+</nav>
+<h2 class="font-poppins text-3xl font-bold text-white tracking-tight">Team Access &amp; Permissions</h2>
+<p class="text-slate-300 mt-1 max-w-xl">Control who can access your NobleMart store and define their specific operational roles.</p>
+</div>
+<button class="bg-electric-indigo text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined">person_add</span>
+                    Add New Member
+                </button>
+</div>
+</header>
+<div class="px-12 -mt-8 relative z-10 pb-12">
+<!-- Team Overview Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Members</p>
+<div class="flex items-center gap-2">
+<span class="text-3xl font-bold text-slate-900 dark:text-white">12</span>
+<span class="text-xs font-semibold text-emerald-500 bg-emerald-100 dark:bg-emerald-500/10 px-2 py-0.5 rounded-full">+2 this month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Active Roles</p>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">4</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pending Invites</p>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">3</p>
+</div>
+<!-- NobleShield Security Banner -->
+<div class="md:col-span-1 bg-gradient-to-br from-indigo-600 to-primary p-6 rounded-xl shadow-lg text-white relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-20 transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl">verified_user</span>
+</div>
+<div class="relative">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<p class="text-sm font-bold uppercase tracking-wider">NobleShield</p>
+</div>
+<p class="text-xs opacity-90 leading-relaxed mb-3">Enable 2FA for all team members to enhance store security.</p>
+<button class="text-xs font-bold bg-white text-primary px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors">Enable 2FA Now</button>
+</div>
+</div>
+</div>
+<!-- Team Members Table Area -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-700 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-900 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search by name, email, or role..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                            Filter
+                        </button>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                            Audit Access Logs
+                        </a>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Member Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email Address</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Role</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Last Login</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Amina Yusuf" class="size-10 rounded-full object-cover border-2 border-slate-100 dark:border-slate-600" data-alt="Professional headshot of Amina Yusuf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtYC1Nb6OTJ2v2KhPyoC3RQ7rf-0Qak6fBwLNTHXi-aK31LQ42trtsyn19NySusxctUII3Y-u_4g2xNzcEGM9JEzg-LpPQtY03n0pLQ9iKd4u4YAaSHsj4-HuhKB3tpddH4tbRWyjmcwwzCE0Afzrl5HKujs1G9umqD42P0SaCoZfapTS2jCSE4cJ3xX2tGHinECW5Ve735IFRc6TOSK8ORLwxLL1L_Di35mKmTmsdNM4Pb65WeK0p81DTFyuoSvHKRb8yUyM4HLE"/>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Amina Yusuf</p>
+<p class="text-xs text-slate-500">Joined 2 months ago</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">amina.y@noblemart.com</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[11px] font-bold rounded-lg uppercase">Administrator</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold text-xs">
+<span class="size-2 bg-emerald-500 rounded-full"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">2 hours ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors" title="Edit Permissions">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors" title="Remove Member">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Chidi Okafor" class="size-10 rounded-full object-cover border-2 border-slate-100 dark:border-slate-600" data-alt="Professional headshot of Chidi Okafor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwtYhE4ilDeO3xGa9ytrIqjPcZSYcr15sIEMYXeTNS3X-Fmx-jf2M2rKyN1IDv0vHfdVuvdm7tgSSQ9kXRetdmwl_WLO1en73JF8msqvPQwBjlD9PuF2HqGl8MKZ_xbhcSl29pOd-E8OSaWGN0mlqwdbh2YFlSKF0n5WwImEd25ytdLJEuUSBelalg-RyehyTCmIT3-UKZ5F9LWrhujNRHIy6doa8JrH26trNlxAYaFdaefCx25soB7wJmC6CttqrHEuEO5aL4Gz0"/>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Chidi Okafor</p>
+<p class="text-xs text-slate-500">Joined 1 year ago</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">chidi.o@noblemart.com</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[11px] font-bold rounded-lg uppercase">Support Agent</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold text-xs">
+<span class="size-2 bg-emerald-500 rounded-full"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">5 mins ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Zainab Bello" class="size-10 rounded-full object-cover border-2 border-slate-100 dark:border-slate-600" data-alt="Professional headshot of Zainab Bello" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABobHnL9dBbnRO4mXLOgqciqvZcR48tM-uQu_OwmQ23ewm_16dwU3S2QlNo4t0__TowLZ5HlN5wgWFLi8lKZbILYakbPmMhEFq-DnzKDL-JXBBVxR5X8Sya4RrrBgBx0mvBy1PUQuCoqWnJtL5Wv9hzj6y-C4roxcOPWhE1oDW1vDW3EKJVBQkCU9FkNr5hUnrCvIs5oCOqlDlpiDohawOtk55259ntTSIx_aMYovboFHkydK9936LlZcjL5yqQFifN19o8WhjGPM"/>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Zainab Bello</p>
+<p class="text-xs text-slate-500">Invited yesterday</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">z.bello@noblemart.com</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[11px] font-bold rounded-lg uppercase">Inventory Clerk</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-amber-600 dark:text-amber-500 font-semibold text-xs">
+<span class="size-2 bg-amber-500 rounded-full animate-pulse"></span>
+                                        Pending
+                                    </div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500 italic">Never</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-primary hover:text-primary/80 text-xs font-bold underline transition-colors">Resend Invite</button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Tunde Adeyemi" class="size-10 rounded-full object-cover border-2 border-slate-100 dark:border-slate-600" data-alt="Professional headshot of Tunde Adeyemi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAweLimTf4JgNZa2qQ-X0AbRvqETUQOYvoC02hEZfC7VL6TzfupdxC78MvtIHWRNmVWCQ8nbuhKjwNfiE0zfu0OT6v4haifF3C0iukpgNzFxAasqud6hOZkRPphpw-kcVOSswkYLERP9PzUa-VpYSmW7Nl3RFQbdD9XbFeoSlbJQN-JuDWkkfZq5vS9NEC3Ve_B_ICE_j4Ve5MKp8jvGuPnCIcBM5Gk_6hJCHRt0rJqCasoy7zKnYWETQg7dycnnabJyRk3HjhSQF8"/>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Tunde Adeyemi</p>
+<p class="text-xs text-slate-500">Joined 6 months ago</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">tunde.a@noblemart.com</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-purple-100 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[11px] font-bold rounded-lg uppercase">Manager</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold text-xs">
+<span class="size-2 bg-emerald-500 rounded-full"></span>
+                                        Active
+                                    </div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">1 day ago</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/30">
+<p class="text-xs text-slate-500">Showing 4 of 12 active team members</p>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-semibold hover:bg-white dark:hover:bg-slate-700 disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1.5 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-semibold hover:bg-white dark:hover:bg-slate-700">Next</button>
+</div>
+</div>
+</div>
+<!-- Conceptual Modal Section (Static for Demo) -->
+<div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-poppins text-lg font-bold">Role Access Quick Look</h3>
+<span class="text-xs text-primary font-bold">Manage Roles</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500 bg-blue-100 p-2 rounded-lg">support_agent</span>
+<div>
+<p class="text-sm font-bold">Support Agent</p>
+<p class="text-xs text-slate-500">Full Inbox &amp; Review access</p>
+</div>
+</div>
+<div class="flex -space-x-2">
+<span class="material-symbols-outlined text-xs bg-emerald-100 text-emerald-600 size-6 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900" title="Inbox Access">mail</span>
+<span class="material-symbols-outlined text-xs bg-emerald-100 text-emerald-600 size-6 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900" title="Review Access">star</span>
+<span class="material-symbols-outlined text-xs bg-red-100 text-red-600 size-6 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900" title="No Payment Access">payments</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-purple-500 bg-purple-100 p-2 rounded-lg">inventory</span>
+<div>
+<p class="text-sm font-bold">Inventory Clerk</p>
+<p class="text-xs text-slate-500">Product and Stock Management only</p>
+</div>
+</div>
+<div class="flex -space-x-2">
+<span class="material-symbols-outlined text-xs bg-emerald-100 text-emerald-600 size-6 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900">package_2</span>
+<span class="material-symbols-outlined text-xs bg-red-100 text-red-600 size-6 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900">analytics</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-federal-blue text-white p-8 rounded-xl relative overflow-hidden">
+<div class="absolute right-0 top-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="relative">
+<h3 class="font-poppins text-lg font-bold mb-4">Why Security Matters?</h3>
+<p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                            Protecting your store is a collective effort. With granular permissions, you ensure team members only see what they need to. NobleShield monitors logins from unrecognized locations to keep your business safe.
+                        </p>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+<span class="text-xs font-semibold">98% Secure</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+<span class="text-xs font-semibold">Audit Logs Enabled</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

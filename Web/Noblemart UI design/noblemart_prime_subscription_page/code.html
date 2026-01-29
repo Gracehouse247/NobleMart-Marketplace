@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Prime Subscription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5e1fe5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                        "noble-gold": "#D4AF37",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .prime-gradient {
+            background: linear-gradient(135deg, #020249 0%, #161121 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">diamond</span>
+<h2 class="text-federal-blue dark:text-white text-xl font-black tracking-tight">NobleMart</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Groceries</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Electronics</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Fashion</a>
+<a class="text-sm font-semibold text-primary flex items-center gap-1" href="#">Prime <span class="size-1.5 rounded-full bg-primary"></span></a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex relative items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search products..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg font-bold text-sm">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+                        Cart
+                    </button>
+<button class="px-5 py-2 bg-primary text-white rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+                        Account
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-white dark:bg-background-dark py-12 lg:py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">star</span> Exclusive Membership
+                        </div>
+<h1 class="text-federal-blue dark:text-white text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
+                            Get More with <span class="text-primary">NobleMart Prime</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg lg:text-xl leading-relaxed max-w-lg">
+                            Unlimited Free Delivery, Exclusive Deals, and Priority Support. Join the club of elite shoppers today and save more on every order.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/25 hover:-translate-y-0.5 transition-all">
+                                Start Your 30-Day Free Trial
+                            </button>
+<button class="px-8 py-4 bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                View All Benefits
+                            </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-robin-egg/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 aspect-[4/3] bg-slate-200">
+<img alt="Happy Nigerian family receiving delivery boxes" class="w-full h-full object-cover" data-alt="Happy dark-skinned family receiving multiple NobleMart packages at their door" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEpLr5os28dIeCHoQy9pRAwISfix2eVtfDGk2Adr8sAlTIXPrQyF9tsnTHcIoOgfDfFslmbkHpHNV83oRVR7Ie9i8txtdPWLRrIDE3zvZaf5iJyzn3cGwqyxpQtdV_cFsdiuZPVIlCKkKH_IlYYKIU5juUSnjmETv_AepEPlxxAnuutr9-4Vo_MltDpNKf4X9NvgxkvBLLBpGCxPRM9l183PCRgJuuB35hbF3arkt_-OEttsjgD1RC4KUPt-yHQkhUIURHZeNAPQQ"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Grid -->
+<section class="py-16 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-federal-blue dark:text-white text-3xl font-black mb-4">Premium Benefits</h2>
+<p class="text-slate-600 dark:text-slate-400">Experience the gold standard of e-commerce in Nigeria.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Benefit 1 -->
+<div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Free Delivery</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Unlimited free delivery on all Prime-eligible items across Lagos, Abuja, and major cities in Nigeria.
+                        </p>
+</div>
+<!-- Benefit 2 -->
+<div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-robin-egg/10 rounded-xl flex items-center justify-center text-robin-egg mb-6">
+<span class="material-symbols-outlined text-3xl">sell</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Prime-Only Deals</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Get exclusive early access to weekly flash sales, Black Friday discounts, and special member-only pricing.
+                        </p>
+</div>
+<!-- Benefit 3 -->
+<div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-noble-gold/10 rounded-xl flex items-center justify-center text-noble-gold mb-6">
+<span class="material-symbols-outlined text-3xl">headset_mic</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Priority Support</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Skip the queue with our dedicated 24/7 concierge support line. Your issues are resolved faster than ever.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Plans -->
+<section class="py-20 bg-white dark:bg-background-dark">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-federal-blue dark:text-white text-4xl font-black mb-4">Simple, Transparent Pricing</h2>
+<p class="text-slate-600 dark:text-slate-400">Choose the plan that fits your shopping style.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Monthly Plan -->
+<div class="flex flex-col p-10 bg-white dark:bg-slate-800 rounded-3xl border-2 border-slate-100 dark:border-slate-700 relative overflow-hidden group">
+<div class="mb-8">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Monthly Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-5xl font-black text-federal-blue dark:text-white">₦2,500</span>
+<span class="text-slate-500 font-medium">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> Free delivery on Prime items
+                            </li>
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> Exclusive weekly deals
+                            </li>
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> Standard priority support
+                            </li>
+<li class="flex items-center gap-3 text-slate-400 italic">
+<span class="material-symbols-outlined text-slate-300">cancel</span> No annual discount
+                            </li>
+</ul>
+<button class="w-full py-4 px-6 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white rounded-xl font-bold hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                            Start Free Trial
+                        </button>
+</div>
+<!-- Annual Plan -->
+<div class="flex flex-col p-10 bg-white dark:bg-slate-800 rounded-3xl border-2 border-primary relative overflow-hidden shadow-2xl shadow-primary/10">
+<div class="absolute top-6 right-6">
+<span class="bg-robin-egg text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">Best Value</span>
+</div>
+<div class="mb-8">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Annual Plan</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-5xl font-black text-federal-blue dark:text-white">₦25,000</span>
+<span class="text-slate-500 font-medium">/year</span>
+</div>
+<p class="text-robin-egg font-bold text-sm mt-2">Save ₦5,000 per year</p>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> Unlimited free delivery
+                            </li>
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> Early access to mega sales
+                            </li>
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> 24/7 Priority Concierge Support
+                            </li>
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> NobleShield Prime Protection
+                            </li>
+<li class="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-robin-egg">check_circle</span> Exclusive Prime Video Access
+                            </li>
+</ul>
+<button class="w-full py-4 px-6 bg-primary text-white rounded-xl font-bold hover:opacity-90 shadow-lg shadow-primary/30 transition-all active:scale-[0.98]">
+                            Start Free Trial
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Banner (NobleShield) -->
+<section class="py-12 px-4">
+<div class="max-w-7xl mx-auto">
+<div class="prime-gradient rounded-3xl p-8 lg:p-12 text-white relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+<div class="relative flex flex-col lg:flex-row items-center justify-between gap-10">
+<div class="max-w-2xl text-center lg:text-left">
+<div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
+<span class="material-symbols-outlined text-noble-gold text-4xl">verified_user</span>
+<h2 class="text-3xl font-black italic">NobleShield Prime</h2>
+</div>
+<p class="text-slate-300 text-lg leading-relaxed">
+                                Shop with absolute peace of mind. Prime members get enhanced protection, including 
+                                <span class="text-white font-bold">1-hour refund approvals</span>, extended 30-day return windows, 
+                                and 100% authenticity guarantees on every item.
+                            </p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<button class="px-8 py-3 bg-noble-gold text-federal-blue rounded-xl font-black hover:bg-white transition-colors">
+                                LEARN MORE
+                            </button>
+<p class="text-xs text-slate-400 font-medium">Terms and conditions apply</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-20 bg-white dark:bg-background-dark">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-federal-blue dark:text-white text-3xl font-black mb-2">Common Questions</h2>
+<p class="text-slate-600 dark:text-slate-400">Everything you need to know about NobleMart Prime.</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+<button class="w-full px-6 py-4 flex items-center justify-between bg-white dark:bg-slate-800 text-left hover:bg-slate-50 transition-colors">
+<span class="font-bold text-federal-blue dark:text-white">Where is free delivery applicable?</span>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Free delivery is currently available for all Prime-eligible items shipped to major cities across Nigeria, including Lagos, Abuja, Port Harcourt, Ibadan, and Kano. Look for the Prime logo on product pages.
+                        </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+<button class="w-full px-6 py-4 flex items-center justify-between bg-white dark:bg-slate-800 text-left hover:bg-slate-50 transition-colors">
+<span class="font-bold text-federal-blue dark:text-white">Can I cancel my subscription anytime?</span>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+<button class="w-full px-6 py-4 flex items-center justify-between bg-white dark:bg-slate-800 text-left hover:bg-slate-50 transition-colors">
+<span class="font-bold text-federal-blue dark:text-white">How does the 30-day free trial work?</span>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+<button class="w-full px-6 py-4 flex items-center justify-between bg-white dark:bg-slate-800 text-left hover:bg-slate-50 transition-colors">
+<span class="font-bold text-federal-blue dark:text-white">Is Prime Video included in both plans?</span>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-federal-blue text-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
+<div class="col-span-2">
+<div class="flex items-center gap-2 text-white mb-6">
+<span class="material-symbols-outlined text-3xl font-bold">diamond</span>
+<h2 class="text-xl font-black tracking-tight">NobleMart</h2>
+</div>
+<p class="text-slate-400 max-w-xs mb-8">
+                        Nigeria's leading multi-vendor marketplace, delivering quality and convenience to your doorstep.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">language</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">About Us</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Company Info</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Press Room</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Support</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Returns &amp; Refunds</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">NobleMart Prime</h4>
+<ul class="space-y-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Membership Terms</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Prime Video</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Exclusive Deals</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/10 text-center text-slate-500 text-xs">
+                © 2024 NobleMart Nigeria Limited. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

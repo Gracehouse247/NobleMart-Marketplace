@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#02c0ca",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Left Side: High-Quality Imagery -->
+<div class="hidden lg:flex lg:w-1/2 relative">
+<div class="absolute inset-0 bg-primary/20 z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Smiling dark-skinned individual using a laptop for online shopping" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBw5feTJ4qqtOro1NlA89tiqxbhk9LTLcJFrElvHNIl8aap9494bQT3b8tdjNBCqY5jK-SiWxs3hOIBpX5kV_N2ZNzx443k00soOOYdfd5SQt5lmiJ3CS2wj5U4FNs4q0e2f3w3gGHtOyM_1IuTTHOFmG4ehspqGXViYxbDpGFpv0SIzNztq4GoddzrQMJqi1fQhah83zzreL-SEwFd_4GpeVWsnCn4JNNUZ07wU1o0QN8N8IhsH6yadAWFpT38iBr4U2i4rXxMoCE');">
+</div>
+<div class="absolute bottom-12 left-12 z-20 text-white max-w-md">
+<h1 class="text-4xl font-bold leading-tight mb-4">Discover Quality Products with NobleMart</h1>
+<p class="text-lg opacity-90">Join thousands of shoppers across Nigeria finding the best deals daily.</p>
+</div>
+</div>
+<!-- Right Side: Login Form -->
+<div class="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 md:px-12 lg:px-24 bg-white dark:bg-background-dark">
+<div class="w-full max-w-[480px]">
+<!-- Header Component Modification: Logo -->
+<div class="flex items-center gap-3 mb-12">
+<div class="text-primary size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">NobleMart</h2>
+</div>
+<!-- Section Header -->
+<div class="mb-8">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white leading-tight">Welcome Back</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2">Login to manage your account and track orders.</p>
+</div>
+<!-- Form Fields -->
+<form class="space-y-5">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-900 dark:text-white text-base font-medium">Email or Phone Number</label>
+<input class="w-full rounded-lg border border-[#dae6e7] dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white h-14 px-4 focus:ring-2 focus:ring-primary focus:border-primary placeholder:text-slate-400" placeholder="Enter your email or phone" type="text"/>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-slate-900 dark:text-white text-base font-medium">Password</label>
+<a class="text-sm font-semibold text-primary hover:text-primary/80" href="#">Forgot Password?</a>
+</div>
+<div class="relative flex items-center">
+<input class="w-full rounded-lg border border-[#dae6e7] dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white h-14 px-4 pr-12 focus:ring-2 focus:ring-primary focus:border-primary placeholder:text-slate-400" placeholder="Enter your password" type="password"/>
+<div class="absolute right-4 text-slate-400 cursor-pointer">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center gap-2 py-2">
+<input class="w-5 h-5 rounded border-[#dae6e7] text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="text-sm text-slate-600 dark:text-slate-400" for="remember">Remember me for 30 days</label>
+</div>
+<!-- Login Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white h-14 rounded-lg font-bold text-lg transition-colors shadow-lg shadow-primary/20" type="submit">
+                        Login
+                    </button>
+</form>
+<!-- Footer Links -->
+<div class="mt-8 text-center">
+<p class="text-slate-600 dark:text-slate-400">
+                        Don't have an account? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Sign Up</a>
+</p>
+</div>
+<!-- Alternative Login -->
+<div class="relative my-10">
+<div class="absolute inset-0 flex items-center">
+<span class="w-full border-t border-slate-200 dark:border-slate-700"></span>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-4 bg-white dark:bg-background-dark text-slate-500 uppercase">Or continue with</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 h-12 border border-[#dae6e7] dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<img alt="Google" class="w-5 h-5" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoexUydEJNFKI43gskp7AOTiidZbQDqFDxQKBLR6svDRP2FXCDA4H3GF1FkUKsXxtS17iPfbZCKKf85AqwqlSG8BYYicFtNn0wJueVSauUEMeOIrrefoHqrcSoc_cS3klm3pn_7UkqzO9uSKRgMr5eKSvdBm4PM0cdlTu278aLO17W9wcBb39WFWcqjDYS7_ED53eE2Q8frk7Oe3y0dtCOLn4K4UDNU8YZJy1f5eD3tNsteiEjFk7y4Vo1eMuE912OVBgJ3GUTho"/>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 border border-[#dae6e7] dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<img alt="Facebook" class="w-5 h-5" data-alt="Facebook logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs0FBNY7pYqdFhX_RsVNWrqyEDNJaB-LGrQ9zgazMqvc1k5aY6W0MreYaWcre0nstPR7YxOYeGjgb4cNZur5gw1yp3dndtocFQYaXaI-bVErkFubrMcTtAvqr5d_peP8FvZWGL3dS-mWUrxnV1ggGBOSZ-NFC2dEmvkyPjLx3fpA4R4D1l5Fi0n405ghW_YPfgfwtl1Ohj2E-VmJublbzaHeMYZhGPXra1LUUSq55UGYBNrJyUGwicXST3Uxp1yqukbaUiA3M8hC4"/>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Facebook</span>
+</button>
+</div>
+</div>
+<!-- Mobile Footer -->
+<div class="mt-auto py-8 text-slate-400 text-xs">
+                © 2024 NobleMart Nigeria. All rights reserved.
+            </div>
+</div>
+</div>
+</body></html>

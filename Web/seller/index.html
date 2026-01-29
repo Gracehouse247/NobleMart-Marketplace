@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard | NobleMart</title>    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        body {
+            background-color: var(--slate-50);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 280px;
+            background-color: white;
+            border-right: 1px solid var(--slate-200);
+            display: flex;
+            flex-direction: column;
+            z-index: 50;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--slate-100);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sidebar-nav {
+            padding: 1.5rem 1rem;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1rem;
+            color: var(--slate-600);
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background-color: var(--slate-50);
+            color: var(--primary);
+        }
+
+        .nav-item .material-symbols-outlined {
+            font-size: 1.25rem;
+        }
+
+        .sidebar-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--slate-100);
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .top-header {
+            height: 4rem;
+            background-color: white;
+            border-bottom: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .view-container {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--federal-blue);
+            margin: 0.5rem 0;
+        }
+
+        .stat-label {
+            color: var(--slate-500);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .pending-state {
+            max-width: 600px;
+            margin: 4rem auto;
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid var(--slate-200);
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/img/logo.png" alt="NobleMart" style="height: 2rem;">
+            <span style="font-weight: 700; font-size: 1.125rem;">Seller Hub</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-view="overview">
+                <span class="material-symbols-outlined">dashboard</span>
+                Overview
+            </a>
+            <a href="#" class="nav-item" data-view="products">
+                <span class="material-symbols-outlined">inventory_2</span>
+                Products
+            </a>
+            <a href="#" class="nav-item" data-view="orders">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+            </a>
+            <a href="#" class="nav-item" data-view="properties">
+                <span class="material-symbols-outlined">home_work</span>
+                Real Estate
+            </a>
+            <a href="#" class="nav-item" data-view="earnings">
+                <span class="material-symbols-outlined">payments</span>
+                Earnings
+            </a>
+            <a href="#" class="nav-item" data-view="settings">
+                <span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="#" id="logoutBtn" class="nav-item" style="color: #ef4444;">
+                <span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <h2 id="pageTitle" style="font-size: 1.25rem; font-weight: 700;">Overview</h2>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <span class="material-symbols-outlined"
+                    style="color: var(--slate-400); cursor: pointer;">notifications</span>
+                <div style="width: 2rem; height: 2rem; background: var(--slate-200); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--slate-600);"
+                    id="userInitials">
+                    VM
+                </div>
+            </div>
+        </header>
+
+        <div class="view-container" id="viewContainer">
+            <div class="pending-state" id="loadingState">
+                <span class="material-symbols-outlined"
+                    style="font-size: 3rem; color: var(--slate-300); animation: spin 1s linear infinite;">progress_activity</span>
+                <p style="margin-top: 1rem; color: var(--slate-500);">Loading your dashboard...</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/dashboard.js" defer></script>
+</body>
+
+</html>

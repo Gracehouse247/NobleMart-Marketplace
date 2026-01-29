@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Fashion Category Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-size: 24px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#120e1b] dark:text-white antialiased">
+<!-- Navigation Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#ebe7f3] dark:border-[#2d2545] px-10 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-[#120e1b] dark:text-white text-xl font-extrabold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-[#120e1b] dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Fashion</a>
+<a class="text-[#120e1b] dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-[#120e1b] dark:text-gray-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Sell</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden border border-[#ebe7f3] dark:border-[#2d2545]">
+<div class="text-[#654d99] flex bg-[#ebe7f3] dark:bg-[#2d2545] items-center justify-center px-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-[#120e1b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#1f1a2e] h-full placeholder:text-[#654d99] px-4 text-sm font-normal leading-normal" placeholder="Search brands, styles..." value=""/>
+</div>
+</label>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#ebe7f3] dark:bg-[#2d2545] text-[#120e1b] dark:text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#ebe7f3] dark:bg-[#2d2545] text-[#120e1b] dark:text-white hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Nigerian fashion model profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQxqtEihn5ulLw5VLmupSxRnsBabxqzwmS-ZjwJ3d9NpBjwswqMbx6Rt8hRnzTvXzx_5wGgmHZRMKyM-0H0QKcj0ghZLFZmmu_FrRnpub79z6ypTm7BWeG-czTQ-6KJzn_rO3UBPbHFKW30wsY0eiZq1OEwUwoJKvW4u4JzSBvzmy1R5P4o_jomWGRwadG8lA2BILO0Cu4uY6Vvdjad-IiD0gK7-90Ld0yzpc14uupcy2JJwdCoe5sZc2qxY3nyjjU0dSvQF5UCAc");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-[1440px] mx-auto pb-20">
+<!-- Hero Section -->
+<section class="p-6">
+<div class="relative overflow-hidden rounded-xl bg-[#120e1b] aspect-[21/9] flex items-center group">
+<!-- Background Image (Simulating Video) -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Cinematic shot of dark-skinned models in vibrant Nigerian fashion" style='background-image: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC35Pj5e0YgiEayPoHW7Qd4taobfF8cUyW-qXoqBA5ug_6dLi0X_Shk_qA6IrzQ0nbu0JD11M5nHdZz8ZEkrim_VyhiBvBXuWDq_6FhB5n6ZvyaTkzo_62ZkCtR6izMjjGj2No898wLkChj_w7L7LEDMx1X8rN1eaXkZDRJH8PFviO3F18crBMcRepY6i0-gS_xOIP1x8-jsdZnDwtloWxoURqlYkuC1YBUxWA8qXRbnZge8eu2uhYU8H2pCbubgaygY-FEHcbphWc");'></div>
+<div class="relative z-10 px-12 max-w-2xl">
+<span class="bg-primary/30 text-primary border border-primary/50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">New Collection 2024</span>
+<h1 class="text-white text-5xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
+                        Vibrant Heritage,<br/><span class="text-primary">Modern Style</span>
+</h1>
+<p class="text-gray-300 text-lg mb-8 font-medium">
+                        Explore the latest in luxury Nigerian fashion. From Ankara prints to contemporary minimalism, redefine your wardrobe with NobelMart.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-bold text-base transition-all transform hover:translate-y-[-2px] flex items-center gap-2">
+                            Explore New Arrivals
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-lg font-bold text-base transition-all flex items-center gap-2 border border-white/20">
+                            Watch Film
+                            <span class="material-symbols-outlined">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Sub-Navigation (Tabs) -->
+<nav class="sticky top-[73px] z-40 bg-background-light dark:bg-background-dark border-b border-[#ebe7f3] dark:border-[#2d2545] px-10">
+<div class="flex justify-center gap-12">
+<a class="flex flex-col items-center py-4 border-b-4 border-transparent text-[#654d99] hover:text-primary transition-all group" href="#">
+<span class="font-bold text-sm tracking-widest uppercase">Men</span>
+</a>
+<a class="flex flex-col items-center py-4 border-b-4 border-primary text-primary transition-all" href="#">
+<span class="font-bold text-sm tracking-widest uppercase">Women</span>
+</a>
+<a class="flex flex-col items-center py-4 border-b-4 border-transparent text-[#654d99] hover:text-primary transition-all" href="#">
+<span class="font-bold text-sm tracking-widest uppercase">Accessories</span>
+</a>
+<a class="flex flex-col items-center py-4 border-b-4 border-transparent text-[#654d99] hover:text-primary transition-all" href="#">
+<span class="font-bold text-sm tracking-widest uppercase">Collections</span>
+</a>
+</div>
+</nav>
+<div class="flex px-10 pt-8 gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-64 shrink-0 hidden lg:block">
+<div class="sticky top-40 space-y-8">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Filters</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">Reset</button>
+</div>
+<p class="text-[#654d99] text-xs font-medium uppercase tracking-widest mb-6">Refine your selection</p>
+</div>
+<!-- Size Filter -->
+<div class="border-t border-[#ebe7f3] dark:border-[#2d2545] pt-6">
+<h4 class="flex items-center gap-2 text-sm font-bold mb-4">
+<span class="material-symbols-outlined text-primary">straighten</span>
+                            Size
+                        </h4>
+<div class="grid grid-cols-4 gap-2">
+<button class="h-10 border border-[#ebe7f3] dark:border-[#2d2545] rounded hover:border-primary hover:text-primary font-bold text-xs transition-colors">XS</button>
+<button class="h-10 border border-primary bg-primary/10 text-primary rounded font-bold text-xs">S</button>
+<button class="h-10 border border-[#ebe7f3] dark:border-[#2d2545] rounded hover:border-primary hover:text-primary font-bold text-xs transition-colors">M</button>
+<button class="h-10 border border-[#ebe7f3] dark:border-[#2d2545] rounded hover:border-primary hover:text-primary font-bold text-xs transition-colors">L</button>
+<button class="h-10 border border-[#ebe7f3] dark:border-[#2d2545] rounded hover:border-primary hover:text-primary font-bold text-xs transition-colors">XL</button>
+<button class="h-10 border border-[#ebe7f3] dark:border-[#2d2545] rounded hover:border-primary hover:text-primary font-bold text-xs transition-colors">2XL</button>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="border-t border-[#ebe7f3] dark:border-[#2d2545] pt-6">
+<h4 class="flex items-center gap-2 text-sm font-bold mb-4">
+<span class="material-symbols-outlined text-primary">palette</span>
+                            Color
+                        </h4>
+<div class="flex flex-wrap gap-3">
+<button class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200 bg-red-600"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200 bg-blue-600"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white ring-2 ring-primary bg-black"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200 bg-amber-500"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200 bg-indigo-900"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white ring-1 ring-gray-200 bg-emerald-700"></button>
+</div>
+</div>
+<!-- Brand Filter -->
+<div class="border-t border-[#ebe7f3] dark:border-[#2d2545] pt-6">
+<h4 class="flex items-center gap-2 text-sm font-bold mb-4">
+<span class="material-symbols-outlined text-primary">stars</span>
+                            Brand
+                        </h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary">Orange Culture</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary">Lisa Folawiyo</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary">Andrea Iyamah</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm font-medium group-hover:text-primary">Dye Lab</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<section class="flex-1">
+<!-- Shop the Look Banner -->
+<div class="relative w-full rounded-xl overflow-hidden mb-12 aspect-[16/6] bg-[#ebe7f3]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="High fashion editorial shot of models in Lagos" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1-rEByrwR5-M_M3Yl8rr47mmRWqzd-kU5GCvTNiZs0jFccz603tk-FS5vipkaqSDDPWxup0zK6OMauioK1XJGKeq9XnRpnJDLYj9mDSolGcoGXttdrSrGf-impZu5-955i4rqNBFUTToyk5uhFY_N3t-_muzvrlj7MfKxB-i0fVBU0yXLtRBH5M7-f92V59mVRE3TioqmltNM5HQp6NJvLUprmmRxAi2nluWKK9DtaTQhmsmasOXbiTqRtqCCzGI2nBU4pdfFQHA");'></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center px-12">
+<h3 class="text-white text-3xl font-black mb-2 italic">Shop the Look:</h3>
+<p class="text-white/80 text-lg font-bold">Lagos Fashion Week Staples</p>
+<button class="mt-4 bg-white text-black px-6 py-2 rounded-lg font-bold text-sm w-fit flex items-center gap-2 hover:bg-primary hover:text-white transition-colors">
+                            View Products
+                            <span class="material-symbols-outlined text-sm">local_mall</span>
+</button>
+</div>
+<!-- Hotspots -->
+<div class="absolute top-1/4 left-1/2 w-4 h-4 bg-white rounded-full border-4 border-primary shadow-lg animate-pulse"></div>
+<div class="absolute bottom-1/3 left-1/3 w-4 h-4 bg-white rounded-full border-4 border-primary shadow-lg animate-pulse"></div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="group">
+<div class="relative aspect-[3/4] bg-[#f9f8fc] rounded-xl overflow-hidden mb-4 shadow-sm border border-transparent hover:border-primary/20 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-500 group-hover:opacity-0" data-alt="Silk adire wrap dress" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQOlBCoESHz2-yL5lUsBG2s4PR31Lbma-IcPJ0HsEC2rRROHLU9z0zcH1hI3gVjBIWB87tqCZ39rq6a8MWsuxddUsL6tEk_gsqKhk9ZekTN9dtmalUADLwURjFTgALMTRXbqzVbc-Pzm_FPvq4cwQ2aKC4tsJd1TzBzqW3YIKfSTiwyoB41pTnaYz5QZ860VXOoSJDtygkoAAJ-_jbKVwbLjYqSby_ZKI3HswLSL6u0BPTTa9ZWzp7qlFc_UolMiiCaJ94ha6IQUw");'></div>
+<div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100" data-alt="Detail view of silk adire wrap dress" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAy2k98h-onGtgunGYAR6KhsM-yAy3buEkdxp1zzMurgtaI9jHn2j0nRxdX3_l-XyVhz2Ukj2Oz__x-E3qj8Zy6dpOdSiMJnY6TSo1Kr5-StkZ1WmpRNxEX9UQeMEcV7b8Dy9EX-wYXBuoqhrek7rnq4b-vbYBYgzSZJTi7V3QOBgXiBEe2dfRMlfwNeRBLRBv3v7FULa5JwQJEaI1rw7xvYaaCR5uZ_4mYgi_MDmZ3m111zaIKhWAcqS_kuLuTBiM3WWolPGFQyf8");'></div>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-primary text-white text-[10px] font-black uppercase px-2 py-1 rounded tracking-tighter">New Arrival</span>
+<span class="bg-rose-500 text-white text-[10px] font-black uppercase px-2 py-1 rounded tracking-tighter">-20%</span>
+</div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md rounded-full size-10 flex items-center justify-center text-primary shadow-lg opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#654d99] text-xs font-bold uppercase tracking-widest">Andrea Iyamah</p>
+<h3 class="text-base font-bold truncate group-hover:text-primary transition-colors">Silk Adire Wrap Dress</h3>
+<div class="flex items-center gap-2">
+<p class="text-primary font-extrabold">₦45,000</p>
+<p class="text-gray-400 text-sm line-through">₦56,250</p>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="relative aspect-[3/4] bg-[#f9f8fc] rounded-xl overflow-hidden mb-4 shadow-sm border border-transparent hover:border-primary/20 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-500 group-hover:opacity-0" data-alt="Modern ankara two-piece set" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmeGA2VptHEl2v8EBOmZ_Zmi1EUSe70-fttymD321XqNi8YEDt3JSnravR1Pm5HApQzrcSrjBUVdBZRp_i-hBxAP5nQu20_lc8gIH0Oslrt8g1AaEvjbIAQXU7MPxMMA-th2l02_-p1QhCAFde6qvgyy48a1TQuAsgtgPVM57dDzPhbbl8nCRx21k0JyFIwuwbpxZ_HyK9RFzBV1yW3lpdBdMNm8eV10xzMteVsXapFAOim9EAIQYPIagOuBDXj_dOeBZcH-2NtNU");'></div>
+<div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100" data-alt="Model wearing ankara set walking" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAotlQKVkFAc_pS9TamGhcFWp2sWrQf8U7HXGAkcQg_H8CL9B70K0ipa5gVEh4LQdnjG1EW3VK0tTjIK9F_qGj192Iuf95_EXnC8uJiptbFFngFY02TVJmpyJvN77DwiFANyILKhyYJiHjqqdWXmkKDPbmqfNQCMDMuICOsVmgeSeH7KAvTexeP3O0egWNSjGlez5GtsfxpACIITby350259HdSJXyn9pBtgR4WLcVdkM868SCSLYL2CrHCl7gV-6f1-Y3IlY1L4sE");'></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-[10px] font-black uppercase px-2 py-1 rounded tracking-tighter">Bestseller</span>
+</div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md rounded-full size-10 flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#654d99] text-xs font-bold uppercase tracking-widest">Lisa Folawiyo</p>
+<h3 class="text-base font-bold truncate group-hover:text-primary transition-colors">Vibrant Ankara Two-Piece</h3>
+<p class="text-primary font-extrabold">₦82,000</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="relative aspect-[3/4] bg-[#f9f8fc] rounded-xl overflow-hidden mb-4 shadow-sm border border-transparent hover:border-primary/20 transition-all">
+<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-500 group-hover:opacity-0" data-alt="Structural fashion accessory" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrP6dmxNTf6MSo3WTua-JRNa81yMQ1NTrjF_zn3acWeXcnGYm_76Z3xdyDWt4Ad7aq1J4wOXmtIoVMXqb8j_ZI-fdjLoXa1Mf7mY4OcM9HzhCGFAFtdX0gGGdE7yyCvLk_8WDs496E7yc-o6AbhYie3ImPlW7GzF7pGZAMTpPbR4o7cQT6Z5inrS8VPUdyH5Q0CDyjt28O86TXVqqB2GZSAJgEwk7ORX2SypS09YD9kdKNNgos6FI78UZ9CwHrnelD2qYXlvjyR2E");'></div>
+<div class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-500 group-hover:opacity-100" data-alt="Close up of fashion fabric" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHaG26apBS25b6FFgvFKdwGMAa-tAiEyFjfmIKljhCkr_ifp7jXSRjWEFlbiqVqZYEtVrzF36lZshf28yAsC1Vfpxg6uQbb9ahFTCJt4uVTprr-amJWpcP3WihQaW4NCL36cZEvYvv14Og2Z0Kv2flIk6N748GnWPSZoEXMR8jeNKXH71Bq29DC77Wm4MqNv1KqD9fhjvr-SPTRoVJuIsiTdTINDH-WqaExl9fKyOiQVCFHT5eAeMQqoY9TqSJ-uviksS0Yu4wzEE");'></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-[10px] font-black uppercase px-2 py-1 rounded tracking-tighter">Limited Edition</span>
+</div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md rounded-full size-10 flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#654d99] text-xs font-bold uppercase tracking-widest">Dye Lab</p>
+<h3 class="text-base font-bold truncate group-hover:text-primary transition-colors">Indigo Dyed Agbada Gown</h3>
+<p class="text-primary font-extrabold">₦38,500</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group">
+<div class="relative aspect-[3/4] bg-[#f9f8fc] rounded-xl overflow-hidden mb-4 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Leather handbag with traditional pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJQw5jJ7hzBS95K5WbuTZbkA980Qwmr54zJf6emzZCb96dgm9rFrZPWULv3zoCNX0Inrd3TMepJUg55D79mWHgA8-uEiodgCixgsNQOkkKyYRqgAyH3lHTTYgCP18BQPuliiv3sRYekSHR9Baji67w7ZYSPZ8P7h5eoazx9IHcNn4rqWlPz-eeWMRgb55qI8MDOySxMpRNyMpKmYVgaePg8vgmf2QDZUi5S6ASpf5yOm6rSTPzNMlPi6QrkIYmp-WtLQoA1Dxa1ls");'></div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md rounded-full size-10 flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#654d99] text-xs font-bold uppercase tracking-widest">Leather &amp; Co</p>
+<h3 class="text-base font-bold truncate group-hover:text-primary transition-colors">Heritage Leather Tote</h3>
+<p class="text-primary font-extrabold">₦55,000</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group">
+<div class="relative aspect-[3/4] bg-[#f9f8fc] rounded-xl overflow-hidden mb-4 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Traditional bead necklace" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOo93EF3mu3uoDxr4pSiG_JBHR6bAbuB-8wCpVOuQXICgX_TovpeihjHZZZkL33lsrrJeoIq2jegvHTqjrqkXygKINEnFpeYvdfrvj8zYj8aYUb88p-oM4FEZyr-AgY35oLwM__F1r83K_hpcvL9iwkzyHYi2dSTCnEEbqqcj4FVxFTGMGVz8tej9rRe5_dACvE9MGtDxLvOOmL1UuXXZIQj2uFIFUl3byChJ2dlalQWC2MsVWWCfLlMxAkZ2jABYxKkQuS4YlXqk");'></div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md rounded-full size-10 flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#654d99] text-xs font-bold uppercase tracking-widest">Royal Beads</p>
+<h3 class="text-base font-bold truncate group-hover:text-primary transition-colors">Ceremonial Coral Necklace</h3>
+<p class="text-primary font-extrabold">₦120,000</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group">
+<div class="relative aspect-[3/4] bg-[#f9f8fc] rounded-xl overflow-hidden mb-4 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Modern kaftan for women" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4WsiG4914NY7hnNM7TUML3AMysPUsSBKrttaS5WRVJKIeZyPk4QMuan7s2R7Wc2fcvnn_5hlNXB8Jcmy0nlrYXOgCUONZMTHsFkzLo3EeX2iFcOBr9a0WsTGoVRs6kJGK5-sy6VfIQ9E9LzX6shU61RI26HnQpZeXoF9PxoT1yqMUjmm3hlRzhAZJDxBZkEVit5AWoKYBX29FARGYUO11yGf8YwNpc37rZU_NUqXBYv_C5wcZmxLIZ52i7yiCQOQgJGpD4F2xTDo");'></div>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md rounded-full size-10 flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform bg-gradient-to-t from-black/60 to-transparent">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold text-sm shadow-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    Quick Add
+                                </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#654d99] text-xs font-bold uppercase tracking-widest">Lagos Luxe</p>
+<h3 class="text-base font-bold truncate group-hover:text-primary transition-colors">Evening Silk Kaftan</h3>
+<p class="text-primary font-extrabold">₦68,000</p>
+</div>
+</div>
+</div>
+<!-- Load More Button -->
+<div class="mt-16 flex justify-center">
+<button class="flex items-center gap-3 border-2 border-primary text-primary px-10 py-4 rounded-lg font-black uppercase tracking-widest text-sm hover:bg-primary hover:text-white transition-all">
+                        Load More Styles
+                        <span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Trend Alert (Editorial Section) -->
+<section class="mt-24 px-10">
+<div class="bg-primary rounded-2xl p-12 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="flex-1 z-10">
+<span class="text-white/80 font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Trend Alert</span>
+<h2 class="text-white text-4xl lg:text-5xl font-black mb-6 leading-tight">The Resurgence of<br/>Indigo Adire</h2>
+<p class="text-white/80 text-lg mb-8 max-w-lg">
+                        Discover how contemporary designers are reimagining the ancient Yoruba art of hand-dyed fabric for the global runway.
+                    </p>
+<button class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-background-light transition-colors">
+                        Read the Story
+                    </button>
+</div>
+<div class="w-full md:w-1/2 aspect-video md:aspect-square bg-white rounded-xl overflow-hidden shadow-2xl rotate-3" data-alt="Traditional adire dyeing process" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeZJx3E_k6m8GL-kfdmPXp5yWM23K2zjIZX2qtu4l4227vboP6h6YV1ylIrdJzCuWtCh1EIFdN24IveYUv3IWxiS9qVsBwh4ruYdjJ32TsBjqzjoAoOP81cPl1ubqXIGbgLUkvjzppsN3TkdeP7xd2rSvquCyqio7L4EbNGQ7wG3Jf5Tmo7Fr3E1zHAPV2pKfo3ratjfsBMoW6-oM5Lcsh0knoCjBExRxpO-7298cwW3wFp2MCBGHSiQfsf6XbOGG3qzmH9T61PYU"); background-size: cover; background-position: center;'>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-dark text-white pt-20 pb-10 px-10">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-10">
+<div class="space-y-6">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+</svg>
+</div>
+<h2 class="text-white text-xl font-extrabold">NobleMart</h2>
+</div>
+<p class="text-gray-400 text-sm">Nigeria's premier fashion destination, bridging the gap between local heritage and global trends.</p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase text-xs tracking-[0.2em]">Shop</h4>
+<ul class="space-y-4 text-gray-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Women's Collection</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Men's Style</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sale &amp; Offers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase text-xs tracking-[0.2em]">Support</h4>
+<ul class="space-y-4 text-gray-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Size Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping Info</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Return Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase text-xs tracking-[0.2em]">Newsletter</h4>
+<p class="text-gray-400 text-sm mb-4">Join the Noble Tribe for exclusive drops.</p>
+<div class="flex gap-2">
+<input class="bg-white/5 border-white/10 rounded-lg text-sm px-4 flex-1" placeholder="Email" type="email"/>
+<button class="bg-primary px-4 py-2 rounded-lg font-bold text-sm">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs">
+<p>© 2024 NobleMart Africa. All Rights Reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Premium Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb", // Robin Egg Blue
+                        "secondary": "#2D10D6", // Chrysler Blue
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+        .poppins-bold { font-family: 'Poppins', sans-serif; font-weight: 700; }
+        .chrysler-text { color: #2D10D6; }
+        .chrysler-bg { background-color: #2D10D6; }
+        /* Custom line height as requested */
+        .spacious-text { line-height: 1.5; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0c1c1d]">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#e6f4f4] dark:border-gray-800 px-6 py-3">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-2xl font-extrabold tracking-tight">NobleMart</h2>
+</div>
+<label class="hidden lg:flex flex-col min-w-80 h-11">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full bg-[#e6f4f4] dark:bg-gray-800">
+<div class="text-[#459ea1] flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-transparent focus:ring-0 h-full placeholder:text-[#459ea1] px-4 text-base font-normal" placeholder="Search for products, brands and categories" value=""/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-semibold hover:text-primary transition-colors" href="#">Groceries</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-semibold hover:text-primary transition-colors" href="#">Fashion</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-semibold hover:text-primary transition-colors" href="#">Electronics</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full h-11 px-6 bg-primary text-white text-sm font-bold tracking-wide shadow-lg shadow-primary/20">
+                        Login
+                    </button>
+<button class="flex items-center justify-center rounded-full h-11 px-4 bg-[#e6f4f4] dark:bg-gray-800 text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-6 py-6">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 pb-6 items-center text-sm font-medium">
+<a class="text-primary hover:underline" href="#">Home</a>
+<span class="text-[#459ea1]">/</span>
+<a class="text-primary hover:underline" href="#">Computing</a>
+<span class="text-[#459ea1]">/</span>
+<a class="text-primary hover:underline" href="#">Laptops</a>
+<span class="text-[#459ea1]">/</span>
+<span class="text-[#0c1c1d] dark:text-white opacity-60">MacBook Pro M3</span>
+</nav>
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Left Column: Image Gallery -->
+<div class="w-full lg:w-1/2 flex gap-4">
+<!-- Thumbnails Strip -->
+<div class="flex flex-col gap-3 min-w-[80px]">
+<div class="w-20 h-20 bg-white dark:bg-gray-800 border-2 border-primary rounded-xl overflow-hidden cursor-pointer p-1">
+<div class="w-full h-full bg-cover bg-center rounded-lg" data-alt="Main view of premium silver laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHnZhBKyHoKqLjhIqFW-yjx1Ix8a8slNjVxZZ0WSYRbiC4B4IH0Fan-NJQGLcjGJNkpYGWnvWkivRsUMrRxjNnrRB4j3IN8eAFck1e6NdbdRoja0p2_8TpSU7XqJ2CbeewwcUqUB9PivMWOTXpamLcFDtsfZJKweKr5pvTDQJz738kYc4xGne8LJ1ty5Hf3rf3PZqVfvbrwepsI7sHLq_qd3O2y-zlW_y91frWR6WGcz_erEPQ7pVIZPyDkn4S9nl09EI8Aom93MY");'></div>
+</div>
+<div class="w-20 h-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden cursor-pointer p-1 hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center rounded-lg" data-alt="Side profile of silver laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmLy9y05pkUiXyaOSNQbRGEPrVfg1Tzqh1pdxKJeeJZJIH6_Xt8Ym8det8Yc6ZAM3r2mUgM_Td50zzQdQlFnbNGxHnqLKxlMhYSSoXeuZSf26hwoO5_EzM4aFEY9VLynCy_jR_isFF_kzzefSP1U1LRK4a3tsKgYt4IjzD2s1JptL46EHXAZMElLejPb0a98Aa8JHWtLTQ88lj8aNSnzvEX0JqyArQyIL86v90us0hwJbffZ5Z1Gvc-jWcLRCB3sVkWJ6SZgx8KnM");'></div>
+</div>
+<div class="w-20 h-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden cursor-pointer p-1 hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center rounded-lg" data-alt="Laptop keyboard and trackpad detail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3JbABzeqXeFaEMhlExzgY4ZhDt8dM3qUVe2xds3c1mrWvmG2hV83ebq9z0-fUjhMTFwdI1whlBu1A01xsmUka7LiTNhRkYJ3zY_sn0RbBFVpZCAKBNeok-zbVx1x5ek0z6njtE8zUfjZozsziqg89X_kXs0JGC83HUI2lQfT7hVwpDD-iNPb9cm3aUSy0gmeWFiPIYlzpoEGJEhuvNnv4Us8LpwAXis3-XStw7V3ceKs7LX_ecGIX_P_073Q_yGUaB_I65FA6QO4");'></div>
+</div>
+<div class="w-20 h-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden cursor-pointer p-1 hover:border-primary transition-all">
+<div class="w-full h-full bg-cover bg-center rounded-lg" data-alt="Laptop ports and connectivity view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbyBo2abxHqXwePdkYHkkErkiJCnRTjCA_uLAfV94lCNUh7C7mT54BoIGSl_B3wgfVat5X0SBZojV0YCXKX_kIsaT5gA8PpNs2FVTV1hxlSITJKNTy63RjsPlFJuVSUUwB2cAjBP72fY4V0NRcMai-aiTbO-dxtuMTi1YMJraAcGuck7Yu_zlvzbW0exqUwNzKwrfDfkOSeF9eFiP9LGcob6sUuVbNtoGqcycQjvvyohWBrSGyHz65LcBZo-_6yyNu41cqPi5cJT8");'></div>
+</div>
+</div>
+<!-- Main Active Image -->
+<div class="flex-1 relative group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800 aspect-square">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110 cursor-zoom-in" data-alt="Large detailed product view of laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjpCyW0iAGXVvEds9KRMwlOmdUdXICi9bwwDIBaRlZafDRSEIr1KLoOS-8SFWVtwNYoTukm4eTpLUfQ_C-NASLYn723NgATGamE6L5lxlIOwGFUL4DbuwtiLVDNNvuFjo6pAst32nKabIB29Qv3wv3AcU-UnHkbkAr8QjEfP-KGOjIZGsuTmaPVj5hx5m6gmkBCVxZfQN0pyx-2_wPrG8NtrMoTxuSvS-SUYNwX1Z3uZYbUDXh1Eyr6OamYR8Oc2bW9xoR3ljphJI");'></div>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/50 p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-primary">zoom_in</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Product Info -->
+<div class="w-full lg:w-1/2 flex flex-col gap-6">
+<!-- NobleShield Badge & Brand -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-primary text-lg">verified_user</span>
+<span class="text-primary font-bold text-xs uppercase tracking-wider">NobleShield Verified</span>
+</div>
+<div class="flex items-center gap-1 text-orange-400">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined">star_half</span>
+<span class="text-[#0c1c1d] dark:text-gray-400 text-sm ml-2">(124 reviews)</span>
+</div>
+</div>
+<!-- Title -->
+<h1 class="poppins-bold text-3xl xl:text-4xl text-[#0c1c1d] dark:text-white leading-[1.2]">
+                    MacBook Pro 14" M3 Pro Chip - 11‑core CPU, 14‑core GPU, 18GB Unified Memory, 512GB SSD Storage
+                </h1>
+<!-- Price Section -->
+<div class="flex flex-col gap-1 py-4 border-y border-gray-100 dark:border-gray-800">
+<div class="flex items-baseline gap-4">
+<span class="text-4xl font-extrabold text-primary">₦1,850,000</span>
+<span class="text-xl text-gray-400 line-through">₦2,100,000</span>
+<span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold">-12%</span>
+</div>
+<p class="text-sm text-[#459ea1] font-medium">Flash Sales: Offer ends in 04:22:15</p>
+</div>
+<!-- Variant Selection -->
+<div class="flex flex-col gap-4">
+<span class="text-sm font-bold text-[#0c1c1d] dark:text-gray-300">Color: Space Black</span>
+<div class="flex gap-3">
+<button class="w-12 h-12 rounded-full border-2 border-primary bg-black shadow-inner"></button>
+<button class="w-12 h-12 rounded-full border-2 border-transparent hover:border-gray-300 bg-gray-200 shadow-inner transition-all"></button>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="flex flex-col gap-4 pt-6">
+<div class="flex gap-3">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white h-16 rounded-full text-lg font-bold transition-all flex items-center justify-center gap-2 shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined">bolt</span>
+                            BUY NOW
+                        </button>
+</div>
+<div class="flex gap-3">
+<button class="flex-[3] bg-[#e6f4f4] dark:bg-gray-800 hover:bg-[#d5eeee] dark:hover:bg-gray-700 text-primary h-14 rounded-full text-base font-bold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                            ADD TO CART
+                        </button>
+<button class="flex-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-red-400 hover:text-red-400 h-14 rounded-full transition-all flex items-center justify-center group">
+<span class="material-symbols-outlined group-hover:fill-1">favorite</span>
+</button>
+</div>
+</div>
+<!-- Delivery & Trust -->
+<div class="mt-4 p-5 bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary">local_shipping</span>
+<div>
+<p class="font-bold text-sm">Delivery Information</p>
+<p class="text-xs text-gray-500">Free delivery to <span class="text-secondary font-bold">Lagos, Abuja, and Port-Harcourt</span></p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary">restart_alt</span>
+<div>
+<p class="font-bold text-sm">7-Day Free Return</p>
+<p class="text-xs text-gray-500">Hassle-free returns if product is not as described</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Details Section -->
+<div class="mt-16 bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="border-b border-gray-100 dark:border-gray-700">
+<div class="flex">
+<button class="px-8 py-5 text-secondary font-bold border-b-4 border-secondary">Product Details</button>
+<button class="px-8 py-5 text-gray-400 font-semibold hover:text-[#0c1c1d] dark:hover:text-white transition-colors">Specifications</button>
+<button class="px-8 py-5 text-gray-400 font-semibold hover:text-[#0c1c1d] dark:hover:text-white transition-colors">Verified Customer Reviews</button>
+</div>
+</div>
+<div class="p-8 lg:p-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-6">
+<h2 class="chrysler-text text-2xl font-bold">Experience Unmatched Performance</h2>
+<p class="text-gray-600 dark:text-gray-300 spacious-text">
+                            The MacBook Pro 14" with M3 Pro chip takes performance to the next level. Featuring an 11-core CPU and 14-core GPU, it delivers up to 40% faster performance than the M1 Pro. Whether you're coding, editing 8K video, or rendering complex 3D scenes, this power-house handles it all with ease.
+                        </p>
+<div class="grid grid-cols-2 gap-6 pt-4">
+<div class="p-4 bg-background-light dark:bg-background-dark rounded-2xl">
+<p class="text-xs font-bold text-primary uppercase">Display</p>
+<p class="text-sm font-semibold">Liquid Retina XDR</p>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark rounded-2xl">
+<p class="text-xs font-bold text-primary uppercase">Battery</p>
+<p class="text-sm font-semibold">Up to 22 Hours</p>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark rounded-2xl">
+<p class="text-xs font-bold text-primary uppercase">Connectivity</p>
+<p class="text-sm font-semibold">Wi-Fi 6E, BT 5.3</p>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark rounded-2xl">
+<p class="text-xs font-bold text-primary uppercase">Camera</p>
+<p class="text-sm font-semibold">1080p FaceTime HD</p>
+</div>
+</div>
+</div>
+<div class="rounded-3xl overflow-hidden shadow-2xl">
+<div class="w-full h-80 bg-cover bg-center" data-alt="Dynamic shot of laptop display showing vibrant colors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6jucHCH17syFP0Pt4cZaKaYDgTNfexmz9P3blQmk13gfHDFupVE8xPqUfuRgMDqOVKbTe4o6-eLhaET0TaRo7sr0MEi0w8sCp-iVftMI5KVHCajLy0TPbHZwuM5d2wrK4on-wpBimPmMa4CxscFFceRUo9HbjGayJJKo7U7Lnh4ewdo0NNFZJm5yaq9GeU3cXE2aP6m2I-vusOgipDFFHPaUPB9sn01j2kdjVnJmuSPLnKZwOKB1EvmHUXFu-dO6swNig0rakJTI");'></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between mt-12 mb-6">
+<h2 class="chrysler-text text-[26px] font-extrabold tracking-tight">Similar Products You May Like</h2>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">
+                View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Related Items Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all group border border-gray-100 dark:border-gray-800">
+<div class="aspect-square w-full bg-cover bg-center rounded-2xl mb-3" data-alt="Space Gray laptop product view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6wt2CpXopjMlLHJwqKWHm9ghYrFg8_p93Y1H_2dJK_NHfdOqUgN6TWSGVIfmGXD5-Unsg3vncbCN3j0LeEnOh0y8lTLe-FTtFglQsM8mcZWEAEEAY8dnhUTB4EYhxtOSHU2V5dg0AnA8m3t0zeklPJIkAVFGJ9aKB4j85gPjcLsr_s5fzIpn0YyoWYeJ5aB5DWG3ggp7qySTB_bPt6GPI__Kk1zkra9RI07j2PSD7zIzwlSkCo6a-L7LHQLi59tk1Ql7TeI1-9C4");'></div>
+<h3 class="text-sm font-bold truncate">MacBook Air M2</h3>
+<p class="text-primary font-extrabold mt-1">₦850,000</p>
+<div class="flex items-center gap-1 mt-2 text-[10px] text-gray-400">
+<span class="material-symbols-outlined text-[12px] fill-1 text-orange-400">star</span>
+                    4.8 (89)
+                </div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all group border border-gray-100 dark:border-gray-800">
+<div class="aspect-square w-full bg-cover bg-center rounded-2xl mb-3" data-alt="High-end studio laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnbKk_evVRj3QDnoOgG3wDVy-TrtyBLaJAbjH9m8Z4vTPtHn255Nu7eT-tYrdaklslLCflipg8mD2rn11MRS2N6ZYdsNF5Gj0LmNE6kGMF4NJ3McNwiAN4IArmOgMVWefXooHZmjlECqiiX1WiROsnuewwdIE5w2HM5vxlPmHCbRaw-oHojy0FNQA3lFwp8f-bCtgc_lUU2SC-yZTPUQq0En9w45q1J9429EE9GhaPh05NpzvaikeYM9DImtYqWfag8zr5sg6YWFk");'></div>
+<h3 class="text-sm font-bold truncate">MacBook Pro 16"</h3>
+<p class="text-primary font-extrabold mt-1">₦2,450,000</p>
+<div class="flex items-center gap-1 mt-2 text-[10px] text-gray-400">
+<span class="material-symbols-outlined text-[12px] fill-1 text-orange-400">star</span>
+                    5.0 (42)
+                </div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all group border border-gray-100 dark:border-gray-800">
+<div class="aspect-square w-full bg-cover bg-center rounded-2xl mb-3" data-alt="Portable ultrabook laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCN57XJSnVy8RZ3bhbMQhhtnztFVpt8E6WvirzcjN89SQF_LzDEN-lgvW9CSvtncLwpGUPa6NuLPyr3dzvZP2HG_tt5MvJNj-uo0c0nMtmq96A0723FWH3Hid0SC8lokSEvfGilcY5G4EYGqTmo_4z9V7FVAT2-b-8NOH0Cbiovf3HTWJ4pBCs6niqLWZrZkeuXvzQdgJH0mGUbFzDafDRmJkCn_Q36R8QSTVPlLEm8ziJRDGxfAtCGuRPEQCV1H5Vr1IJJE9lW90");'></div>
+<h3 class="text-sm font-bold truncate">Dell XPS 13</h3>
+<p class="text-primary font-extrabold mt-1">₦1,150,000</p>
+<div class="flex items-center gap-1 mt-2 text-[10px] text-gray-400">
+<span class="material-symbols-outlined text-[12px] fill-1 text-orange-400">star</span>
+                    4.5 (156)
+                </div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all group border border-gray-100 dark:border-gray-800">
+<div class="aspect-square w-full bg-cover bg-center rounded-2xl mb-3" data-alt="Surface laptop for professionals" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBK5C8iSbqarGbPOuq5utMgRSVfOlZweXii4n1sntKb7TzGQP0VZuVkXGGj-mTDi6aw7zwLhEkhfMrxsa3P_T22ZVGOoMuP2eZVG-p5C-oKt6gq3mAyWlys5ptNg81nSNNmPo8lMdy2YQfjZZWjbkjh8C-TIxhtYur19_dIEsa_Nmzq7TJYJdubOPStyZDnHgFGpXmvWOTaUX7JEEArjm6B9_FLJ_iI-WQNT6M-srUixd1kL50EhBG81BFoef5ePtVP73msDmwx_AM");'></div>
+<h3 class="text-sm font-bold truncate">Surface Laptop 5</h3>
+<p class="text-primary font-extrabold mt-1">₦920,000</p>
+<div class="flex items-center gap-1 mt-2 text-[10px] text-gray-400">
+<span class="material-symbols-outlined text-[12px] fill-1 text-orange-400">star</span>
+                    4.7 (31)
+                </div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all group border border-gray-100 dark:border-gray-800">
+<div class="aspect-square w-full bg-cover bg-center rounded-2xl mb-3" data-alt="Gaming performance laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDv7e5p3Trxj4uA1sPGcRoIQ8QVYQsfXrI7lDnwIyVa_J-dss2vKNKqZdrRZF0YOivXzUvxE_O-a2nVNnOiwI7YLD89U935DAGqM93CmeaFp8Gfdmw2k-YpgMUm-ENzoXCCdOPKKymIS6IBlwnyhrIM94gBDcMoAEyUFcyOSp83DNKUO9YjeW-P9QBD5CSueqtach8TFobWzfkzk9LW6PI9-p1qyj4-NSf9cx6_1ZzVF98ML9M5HxdPDj83vAp1lxfV8V9A3oH9s0U");'></div>
+<h3 class="text-sm font-bold truncate">Razer Blade 14</h3>
+<p class="text-primary font-extrabold mt-1">₦1,680,000</p>
+<div class="flex items-center gap-1 mt-2 text-[10px] text-gray-400">
+<span class="material-symbols-outlined text-[12px] fill-1 text-orange-400">star</span>
+                    4.9 (67)
+                </div>
+</div>
+</div>
+</main>
+<!-- Footer Simple -->
+<footer class="mt-20 py-12 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 px-6">
+<div class="max-w-[1280px] mx-auto text-center">
+<div class="flex items-center justify-center gap-2 text-primary mb-6">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-xl font-bold">NobleMart</h2>
+</div>
+<p class="text-sm text-gray-500 max-w-md mx-auto">Nigeria's premium multi-vendor experience. Quality verified by NobleShield.</p>
+<div class="flex justify-center gap-8 mt-8">
+<a class="text-sm text-gray-400 hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-sm text-gray-400 hover:text-primary transition-colors" href="#">Sell on NobleMart</a>
+<a class="text-sm text-gray-400 hover:text-primary transition-colors" href="#">NobleShield Protection</a>
+</div>
+<p class="text-xs text-gray-400 mt-12">© 2024 NobleMart Technologies. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

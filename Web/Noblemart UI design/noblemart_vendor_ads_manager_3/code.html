@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Ads Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "federal-blue": "#020249",
+                        "electric-indigo": "#5C1BE8",
+                        "robin-egg": "#01C2CA",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav {
+            background-color: rgba(92, 28, 233, 0.2);
+            border-left: 4px solid #5c1ce9;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#120e1b] dark:text-white">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-white rounded-lg p-1.5">
+<svg class="size-6 text-federal-blue" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<h1 class="font-poppins text-lg font-bold leading-none">NobleMart</h1>
+<p class="text-xs text-blue-200 opacity-70">Vendor Dashboard</p>
+</div>
+</div>
+<nav class="flex-1 mt-4 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg active-nav text-white" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1">campaign</span>
+<span class="text-sm font-medium">Advertising</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+<span class="text-sm font-medium">Finances</span>
+</a>
+<div class="pt-8 pb-4 px-4 text-[10px] font-bold text-blue-300 uppercase tracking-widest">Support</div>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">help_center</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-center bg-cover border-2 border-primary" data-alt="Portrait of a professional male vendor smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoqEyCIMqzN3zns2fuoYdXy8v0FzCepkmunzqJApeRCD13o6uZWkkqGNGtii8lUULCzeYZVD5HxxYpc4grfcaUGXDBaiRSp6dW4NIjTijxOsCqwApKb0wQM9_QR-vVYeOX41Sov-zsR3cWgjvYWuQHyEHi3ED4inIyb0QkRlKZOLyD7fMMroOx44e7Ls8C0qoXeBfBsPm9fvKfjs5cHtcKrOb9ajlkSIF-nuZUiAAts3kJDz6bR1h3UUOQoj6BOk0kM-o6GdPOBis");'></div>
+<div class="overflow-hidden">
+<p class="text-sm font-semibold truncate">Segun Arinze</p>
+<p class="text-[10px] text-blue-300">Pro Merchant</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 px-8 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<h2 class="font-poppins text-2xl font-bold text-federal-blue dark:text-white">Ads &amp; Visibility Manager</h2>
+<div class="hidden md:flex bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-1.5 items-center gap-2">
+<span class="material-symbols-outlined text-gray-500 text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Search campaigns..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-electric-indigo text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add_circle</span>
+                        Create New Campaign
+                    </button>
+<button class="p-2.5 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<div class="p-8 space-y-8">
+<!-- Active Campaigns Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Active Campaigns</h3>
+<a class="text-sm text-primary font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Campaign Card 1 -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="w-full h-32 rounded-lg bg-center bg-cover mb-3" data-alt="Abstract vibrant shopping banner graphic" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhXpVxG6HuHlgooW1g73C52633XPsmsotsucFYX-ibIJsBCzwUNeK6ennwbkT2ZuOfBQOc1CaE4603WhzmDKKwYWe3j11vADIOZ2e_P5FFI7w5RcDkYnVTSXohv-LmtFv7Ogfso2lsVMCrkv1Cg9MeP7N0ueJzFxtptzLWEFf7vwVikArkVMZ71vOO_GyNCuYx3HM3-Un6uFcabyN3_pLoMXV3F9453xO9g9QhCC62O63ZJ7h61enCALthG7cZGcXsm4KUkXx9W3M");'></div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-base">Homepage Banner Ad</h4>
+<span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded uppercase">Active</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Duration: Aug 1 - Aug 30</p>
+<div class="grid grid-cols-2 gap-4 border-t border-gray-50 dark:border-gray-800 pt-4">
+<div>
+<p class="text-[10px] text-gray-400 uppercase font-bold">Impressions</p>
+<p class="text-lg font-bold">45.2k</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-400 uppercase font-bold">Spend</p>
+<p class="text-lg font-bold text-primary">₦15,000</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Campaign Card 2 -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="w-full h-32 rounded-lg bg-center bg-cover mb-3" data-alt="Watch product photography for category boost" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMjQ0cEQW4ynKM-YKs0Na2sO6ombj0aUpXfF3NRvpqptHMrglSc2vAcxpUEJZuIhgSiupkhHVTPftXIkiLVJ3Np5T04T26aQHgVdZ4DSRW07tYg-nbrRiz0lA5lO2pvmXGVgHaQUyIwTB42lsHu2LJfEbNUS_oZkYllL_keGJ52PMgc5Nynm6qqk_Djrs_EFIeKMPq8qh9g_IVCrACsmLJRFoGK71PrI9iGzH3GumROqkviX6qQIm0b4UXHfCW9uHaDlCnb_UPWwI");'></div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-base">Category Search Boost</h4>
+<span class="px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded uppercase">Paused</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Duration: July 15 - Aug 15</p>
+<div class="grid grid-cols-2 gap-4 border-t border-gray-50 dark:border-gray-800 pt-4">
+<div>
+<p class="text-[10px] text-gray-400 uppercase font-bold">Impressions</p>
+<p class="text-lg font-bold">12.8k</p>
+</div>
+<div>
+<p class="text-[10px] text-gray-400 uppercase font-bold">Spend</p>
+<p class="text-lg font-bold text-primary">₦4,200</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Add New Campaign Placeholder -->
+<div class="border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-xl flex flex-col items-center justify-center p-8 group cursor-pointer hover:border-primary transition-colors">
+<div class="size-12 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center mb-3 group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">add</span>
+</div>
+<p class="font-bold text-gray-500 group-hover:text-primary">Start a New Ad</p>
+<p class="text-xs text-gray-400 text-center mt-1">Boost your visibility and sales across the platform.</p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Ad Creation Form -->
+<div class="lg:col-span-1">
+<div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-100 dark:border-gray-800 shadow-sm h-full">
+<h3 class="text-lg font-bold mb-6">Campaign Configuration</h3>
+<form class="space-y-5">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-500 uppercase">Campaign Name</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-800 dark:bg-gray-800 focus:ring-primary focus:border-primary text-sm" placeholder="e.g. Summer Clearance Sale" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-500 uppercase">Target Audience</label>
+<select class="w-full rounded-lg border-gray-200 dark:border-gray-800 dark:bg-gray-800 focus:ring-primary focus:border-primary text-sm">
+<option>Interest-based (Gadgets &amp; Tech)</option>
+<option>Demographic-based (Lagos &amp; Abuja)</option>
+<option>Lookalike Audience</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-500 uppercase">Promotion Type</label>
+<div class="grid grid-cols-1 gap-2">
+<label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-primary bg-primary/5">
+<input checked="" class="text-primary focus:ring-primary" name="promo_type" type="radio"/>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Sponsored Product</span>
+<span class="text-[10px] text-gray-500">Highest ROI for single items</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-gray-200 dark:border-gray-800">
+<input class="text-primary focus:ring-primary" name="promo_type" type="radio"/>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Featured Store</span>
+<span class="text-[10px] text-gray-500">Brand awareness &amp; followers</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-gray-200 dark:border-gray-800">
+<input class="text-primary focus:ring-primary" name="promo_type" type="radio"/>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Banner Ad</span>
+<span class="text-[10px] text-gray-500">Premium homepage placement</span>
+</div>
+</label>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-500 uppercase">Daily Budget (₦)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">₦</span>
+<input class="w-full pl-8 rounded-lg border-gray-200 dark:border-gray-800 dark:bg-gray-800 focus:ring-primary focus:border-primary text-sm" type="number" value="2500"/>
+</div>
+<p class="text-[10px] text-gray-400 mt-1 italic">Est. daily reach: 2.5k - 4.2k customers</p>
+</div>
+<button class="w-full bg-electric-indigo text-white py-3 rounded-lg font-bold text-sm mt-4 shadow-lg shadow-primary/20 hover:bg-primary" type="button">
+                                    Review &amp; Launch Campaign
+                                </button>
+</form>
+</div>
+</div>
+<!-- Analytics Section -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Chart Card -->
+<div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-100 dark:border-gray-800 shadow-sm flex-1">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-lg font-bold">Performance Overview</h3>
+<p class="text-xs text-gray-500">Last 30 days performance</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="size-2.5 rounded-full bg-electric-indigo"></div>
+<span class="text-xs font-medium">Ad Spend</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-2.5 rounded-full bg-robin-egg"></div>
+<span class="text-xs font-medium">Revenue</span>
+</div>
+</div>
+</div>
+<!-- Visualizing a Chart with CSS Gradients/Shapes -->
+<div class="h-64 relative flex items-end gap-1 px-2 mb-4">
+<!-- Background grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between py-2 border-b border-gray-100 dark:border-gray-800">
+<div class="w-full h-px bg-gray-50 dark:bg-gray-800"></div>
+<div class="w-full h-px bg-gray-50 dark:bg-gray-800"></div>
+<div class="w-full h-px bg-gray-50 dark:bg-gray-800"></div>
+<div class="w-full h-px bg-gray-50 dark:bg-gray-800"></div>
+</div>
+<!-- Mock data visual -->
+<div class="flex-1 h-3/4 bg-primary/10 rounded-t-sm relative group cursor-pointer">
+<div class="absolute bottom-0 w-full bg-primary/40 h-2/3 rounded-t-sm"></div>
+</div>
+<div class="flex-1 h-1/2 bg-primary/10 rounded-t-sm relative">
+<div class="absolute bottom-0 w-full bg-primary/40 h-1/2 rounded-t-sm"></div>
+</div>
+<div class="flex-1 h-2/3 bg-primary/10 rounded-t-sm relative">
+<div class="absolute bottom-0 w-full bg-primary/40 h-3/4 rounded-t-sm"></div>
+</div>
+<div class="flex-1 h-5/6 bg-primary/10 rounded-t-sm relative">
+<div class="absolute bottom-0 w-full bg-primary/40 h-5/6 rounded-t-sm"></div>
+</div>
+<div class="flex-1 h-full bg-primary/10 rounded-t-sm relative">
+<div class="absolute bottom-0 w-full bg-primary/40 h-3/4 rounded-t-sm"></div>
+<div class="absolute top-0 w-full bg-robin-egg h-1/4 rounded-sm shadow-lg"></div>
+</div>
+<div class="flex-1 h-4/5 bg-primary/10 rounded-t-sm relative">
+<div class="absolute bottom-0 w-full bg-primary/40 h-1/2 rounded-t-sm"></div>
+</div>
+<div class="flex-1 h-3/4 bg-primary/10 rounded-t-sm relative">
+<div class="absolute bottom-0 w-full bg-primary/40 h-5/6 rounded-t-sm"></div>
+</div>
+</div>
+<div class="flex justify-between px-2 text-[10px] text-gray-400 font-bold uppercase">
+<span>Week 1</span>
+<span>Week 2</span>
+<span>Week 3</span>
+<span>Week 4</span>
+</div>
+</div>
+<!-- Bid Manager Table -->
+<div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="p-5 border-b border-gray-50 dark:border-gray-800 flex items-center justify-between">
+<h3 class="text-lg font-bold">Top Products &amp; Visibility</h3>
+<button class="text-xs bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg font-bold">Optimize All</button>
+</div>
+<table class="w-full text-left text-sm">
+<thead>
+<tr class="bg-gray-50 dark:bg-gray-800/50 text-[10px] uppercase font-bold text-gray-400">
+<th class="px-5 py-3">Product Name</th>
+<th class="px-5 py-3">Visibility Score</th>
+<th class="px-5 py-3">Daily Impressions</th>
+<th class="px-5 py-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50 dark:divide-gray-800">
+<tr>
+<td class="px-5 py-4 font-medium flex items-center gap-3">
+<div class="size-8 rounded bg-gray-100 bg-center bg-cover" data-alt="Red athletic shoe product" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWv7t2T_TXFIqh0c07bYs1XltGhafUK9-_Ria0fKQQOtsKqSRtng1XZNjTyP9erpfkYP3vh77Pmpa-ph36ApxLGsaOciHns2O0qvyXJO6RWyxODWsRIq35z-U9C_PkFjJDpSrH6vn9wqC9Y32fKes2Ht3pLGZ3Hxv_Z6fUbqFPBAYXrmymvkYIEj9C0bU27DYzXRLkS9O3fdBRjGeyjSUZgWOyffi6KocDccr7eHO1Iuxr8pBb5ki8zcysXqXEqNstLVtAAMDT_0w");'></div>
+                                            Red Runner Pro
+                                        </td>
+<td class="px-5 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-[85%]"></div>
+</div>
+<span class="text-xs font-bold">85</span>
+</div>
+</td>
+<td class="px-5 py-4 text-gray-500">1,240</td>
+<td class="px-5 py-4 text-right">
+<button class="text-xs font-bold text-primary px-3 py-1.5 border border-primary/20 rounded-lg hover:bg-primary hover:text-white transition-colors">Increase Bid</button>
+</td>
+</tr>
+<tr>
+<td class="px-5 py-4 font-medium flex items-center gap-3">
+<div class="size-8 rounded bg-gray-100 bg-center bg-cover" data-alt="Vintage style camera product" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqAaVRVlNeuM6UI5VZoF7ShOajOKjFoqrb2DvlxQl4st1H7ZR2uIAco77t_0CvLgyir3lT_3r4J8p-uuNHUGPVupADH_oNdSYILu-E_lEkBnRnAlDxU7RS18Uzh2k6PqerjcF5H_xE8e6_Pm9Nz8EUOhYRU4W4Okeq2p-X6a5HIBmW38h2c1Q9L03Nnzdu7N-j7zymZgy5UvI6FJj_pa4ARYB1mfE5sSshRn2GDfbWI7Yn0HNF1pbZrNDktdFa1ZY8OiqOqt_YxQ4");'></div>
+                                            Retro Cam X10
+                                        </td>
+<td class="px-5 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[42%]"></div>
+</div>
+<span class="text-xs font-bold">42</span>
+</div>
+</td>
+<td class="px-5 py-4 text-gray-500">430</td>
+<td class="px-5 py-4 text-right">
+<button class="text-xs font-bold text-primary px-3 py-1.5 border border-primary/20 rounded-lg hover:bg-primary hover:text-white transition-colors">Increase Bid</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Trust & Compliance Banner -->
+<div class="bg-gradient-to-r from-federal-blue to-[#1a1a5e] rounded-xl p-6 text-white flex items-center justify-between shadow-xl">
+<div class="flex items-center gap-5">
+<div class="size-14 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">verified_user</span>
+</div>
+<div>
+<h4 class="text-lg font-bold flex items-center gap-2">
+                                NobleShield Compliance Status: <span class="text-robin-egg uppercase tracking-widest text-sm">Verified</span>
+</h4>
+<p class="text-blue-200 text-sm max-w-2xl opacity-80">
+                                Your advertising complies with the NobleMart Fair Use Policy. Maintaining this status ensures your ads receive priority placement and 15% lower transaction fees on sponsored sales.
+                            </p>
+</div>
+</div>
+<button class="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-sm font-bold transition-colors">
+                        Read Fair Advertising Policy
+                    </button>
+</div>
+</div>
+<!-- Footer Footer (Micro) -->
+<footer class="px-8 py-6 text-center text-gray-400 text-xs border-t border-gray-100 dark:border-gray-800">
+                © 2024 NobleMart Nigeria Ltd. All rights reserved. Advertising transparency and vendor success tools.
+            </footer>
+</main>
+</div>
+</body></html>

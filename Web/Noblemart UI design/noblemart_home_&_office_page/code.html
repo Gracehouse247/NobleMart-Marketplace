@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Home &amp; Office Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0e141b] dark:text-slate-100 transition-colors duration-200">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#e7edf3] dark:border-slate-800 px-4 md:px-10 lg:px-20 py-3">
+<div class="flex items-center justify-between gap-8 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight">NobleMart</h2>
+</div>
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Electronics</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Fashion</a>
+<a class="text-sm font-semibold text-primary" href="#">Home &amp; Office</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Groceries</a>
+</div>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4">
+<label class="hidden md:flex flex-col min-w-40 h-10 max-w-sm flex-1">
+<div class="flex w-full flex-1 items-stretch rounded-lg bg-[#e7edf3] dark:bg-slate-800 h-full border border-transparent focus-within:border-primary">
+<div class="flex items-center justify-center pl-4 text-slate-500">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500" placeholder="Search furniture, desks, decor..."/>
+</div>
+</label>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e7edf3] dark:bg-slate-800 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e7edf3] dark:bg-slate-800 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 ml-2 border-2 border-primary" data-alt="User profile avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMvTPVKxpsywWexSgX6nLxIidyrf70WVVNPPSPcP_zU3NiQnbWgVImrid4s7tHshEr9pbe1hBPKF1yd_RCf5RjYZRC6Q1vMZq1ibXpcEQuuwku1W0QLSda64O7zZP6hL1FiQrJVSmoOx_jyRsLbts70yFQzxMRwI9ELO1EfLdhMS0qFME3LBJuNDmoULkmwJLpC4I0Soyf3anC5dp6LO0p4cMN1Whr2DqsWR88DQwBan1JnzIkMHO7RHT29f3g6Lv3Tmbi4p7F08I");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1440px] mx-auto w-full px-4 md:px-10 lg:px-20 py-6">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 pb-6 items-center text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Categories</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-primary font-semibold">Home &amp; Office</span>
+</nav>
+<!-- Hero Section -->
+<section class="mb-12 @container">
+<div class="flex flex-col gap-8 rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 lg:flex-row shadow-sm">
+<div class="w-full lg:w-3/5 h-64 lg:h-[450px] bg-center bg-no-repeat bg-cover" data-alt="Modern executive office with mahogany furniture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQyMoDaf320Ov5kHtoGkUbo-xmLVb71BWZjU-mVbP_XjfzDZ0OD1ZzSvvFYR-Tt2UbMIq1Nn9couSo9R6wjbyDJIZ5dXSDm6USTI0ewENDPe01VXczYcwUoAwqAtmJVxWMN9h9xaHSGBgTB9EB9JrQi4vjmPOu_DFGBg45kb2STDVXJcAL19A_HTBG6EgWF7ccmehdMAxDw0zGS82d4tuBIxLDoCGv2u-MCPii84MWRpgzGrDaUJiEtQQa-URp_SaYTfZbMyC68jE");'></div>
+<div class="flex flex-col justify-center p-8 lg:p-12 lg:w-2/5">
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-4">New Collection</span>
+<h1 class="text-3xl lg:text-5xl font-black leading-tight tracking-tight mb-4">
+                            The Executive <br/>Office Collection
+                        </h1>
+<p class="text-slate-600 dark:text-slate-400 text-base mb-8 max-w-md">
+                            Elevate your professional space with furniture designed for the modern Nigerian leader. Crafted for comfort, built for prestige.
+                        </p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-3 rounded-lg font-bold hover:brightness-110 transition-all flex items-center gap-2">
+                                Shop the Look <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="sticky top-24 bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="mb-6">
+<h3 class="text-lg font-bold mb-1">Filters</h3>
+<p class="text-xs text-slate-500">Refine your interior search</p>
+</div>
+<div class="space-y-6">
+<!-- Material Filter -->
+<div>
+<h4 class="flex items-center gap-2 text-sm font-bold mb-4">
+<span class="material-symbols-outlined text-primary text-[20px]">layers</span> Material
+                                </h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm">Solid Teak Wood</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm">Nigerian Mahogany</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm">Premium Leather</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="rounded border-slate-300 text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm">Powder-coated Steel</span>
+</label>
+</div>
+</div>
+<!-- Assembly Filter -->
+<div>
+<h4 class="flex items-center gap-2 text-sm font-bold mb-4">
+<span class="material-symbols-outlined text-primary text-[20px]">build</span> Assembly
+                                </h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="border-slate-300 text-primary focus:ring-primary h-4 w-4" name="assembly" type="radio"/>
+<span class="text-sm">Fully Assembled</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="border-slate-300 text-primary focus:ring-primary h-4 w-4" name="assembly" type="radio"/>
+<span class="text-sm">Self-Assembly</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div>
+<h4 class="flex items-center gap-2 text-sm font-bold mb-4">
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span> Price Range
+                                </h4>
+<input class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+<div class="flex justify-between mt-2 text-xs font-semibold">
+<span>₦50k</span>
+<span>₦2.5M+</span>
+</div>
+</div>
+<!-- Rating -->
+<div>
+<h4 class="flex items-center gap-2 text-sm font-bold mb-4">
+<span class="material-symbols-outlined text-primary text-[20px]">star</span> Vendor Rating
+                                </h4>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+<span class="material-symbols-outlined text-slate-300 text-[20px]">star</span>
+<span class="text-xs font-bold self-center ml-2">4.0+</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="flex-1">
+<!-- Section: Minimalist Workspace -->
+<div class="mb-12">
+<div class="flex items-center justify-between px-2 mb-6">
+<h2 class="text-2xl font-bold tracking-tight">Minimalist Workspace</h2>
+<a class="text-primary text-sm font-bold hover:underline flex items-center gap-1" href="#">
+                                View all <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="relative aspect-[4/5] bg-center bg-no-repeat bg-cover overflow-hidden" data-alt="Minimalist wooden desk in a bright office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAb8SFr_VhyUKwN7bNbppouBc5B7rFUyl1c-6z3fyA2XUKpm_qHT0y0fvy9mjmT5UCOgH1MRFWWCcClJwQTIl9ba_aN32iIVDKlu-00fPgZvatb908bOikyD78dtDiaLfKTdxSueKS_ATW42YUVP4Z8pwSLpbl4ZD3S4NW4nOAx4jOhtBMU6HcLBpRq3XDiJQcjTcGzc-NsMF0cPqhpiYi2fz9zvkLrXGYy-xLGcAK9XxH5-pD2WdqDddc4bIqzzQ0A5H4BSwdEHqQ");'>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-slate-800/90 p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 bg-primary text-white text-[10px] font-black uppercase px-2 py-1 rounded">
+                                        Handcrafted
+                                    </div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Iroko Desk Pro</h3>
+<span class="font-black text-primary">₦245,000</span>
+</div>
+<p class="text-xs text-slate-500 mb-4 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">store</span> Lagos Furniture Co.
+                                    </p>
+<button class="w-full py-2.5 bg-[#e7edf3] dark:bg-slate-800 text-sm font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                                    </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="relative aspect-[4/5] bg-center bg-no-repeat bg-cover overflow-hidden" data-alt="Ergonomic leather office chair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBO5MC8hzJaj5bIdwTNWaOiA6bPIxE_2KRQTqqVONSrhzkkfa7KSZoOIcecBE-oi02NHjMlQ1xR1WiQDS_u_HKMCFVIcZ5uiZyEuaiwcIarViuJFQi7DOcukNYCnbnHphCZoVw3OeAkvSxSODHQk_NBiJv9R5B6zTOxWZR-htI3eVH8YYZlPxrT6tkgNzWv1sZ5AQrlnMqEs9NLWZJjIWrRR_Gf-ubC76I54HsIbxD4kvlCIucd9X4fyt-2aYZAUMLSzAZJbosANkA");'>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-slate-800/90 p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Nova Task Chair</h3>
+<span class="font-black text-primary">₦185,000</span>
+</div>
+<p class="text-xs text-slate-500 mb-4 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">store</span> Abuja Decor Studio
+                                    </p>
+<button class="w-full py-2.5 bg-[#e7edf3] dark:bg-slate-800 text-sm font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                                    </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="relative aspect-[4/5] bg-center bg-no-repeat bg-cover overflow-hidden" data-alt="Modern shelving unit with books and plants" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByhNybEFffRY9zrqZ73iZHtjMdD1jt_llR06_cM5bn4YKiKWYWBwKAFnyJJDL6ZDhk89qGZeKpXyymOJ7bcpWEt0xd1IE0P0E5rnXGBIwaLtt6v797NLjzE0GcOmme0vU47UoViBSgmYoE_-Bb4kBbvANB_YTV6Ohw7dvV9tk23VObglUqyerp0MCr_N5jULRw7YDpVGTCWAGl_owGMGnNztsyQB73yAX_bvB450820kcFWa6tVOccINSL9nlKmyEVODATczg7o3g");'>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 dark:bg-slate-800/90 p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Apex Grid Shelf</h3>
+<span class="font-black text-primary">₦320,000</span>
+</div>
+<p class="text-xs text-slate-500 mb-4 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">store</span> NobleMart Verified
+                                    </p>
+<button class="w-full py-2.5 bg-[#e7edf3] dark:bg-slate-800 text-sm font-bold rounded-lg group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Furniture Grid -->
+<div>
+<div class="flex items-center justify-between px-2 mb-6 border-t border-slate-200 dark:border-slate-800 pt-10">
+<h2 class="text-2xl font-bold tracking-tight">Executive Office Staples</h2>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-slate-500">Sort by:</span>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-bold text-primary py-0 pl-0 pr-8">
+<option>Popularity</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest First</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Card 4 -->
+<div class="group flex flex-col gap-4">
+<div class="bg-center bg-no-repeat bg-cover aspect-video rounded-xl" data-alt="Large mahogany conference table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHgAMigbokiwuIYFZUOxMJQ5Ln_5B75gnXm9E_nA0cTwK9IbTNEDGzN2LSkwN7I7hY9CEqMzY-ciP_5hUwk1_kX5_AeTAm6LNiV2_e3aEwJf-ziMveTsY8lfCPzZUDgxpGEB9u12zZeFRqCBq0TR7Hfwp8p6uF4NwV_n5gQf11Z1Udotx6QGWHrel7ecPuqkBroUoE88cz6ZxyVnDRV8o2yx3BqIZmT-8FEjJJaNSYXAXVJvrcrnGhRBnivWPvXwT9MBZiakrkabg");'></div>
+<div class="flex flex-col gap-1">
+<p class="text-[10px] font-bold text-primary uppercase">Conference</p>
+<h3 class="font-bold">Presidential Mahogany Table</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-lg font-black">₦1,250,000</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm fill-current">star</span>
+<span class="text-xs font-bold">4.9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col gap-4">
+<div class="bg-center bg-no-repeat bg-cover aspect-video rounded-xl" data-alt="Luxury leather lounge chair for office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB105fA2wZzaw8FMQXypYVbJSTnyZ84gkKycMDEnNNjfqW8FlCDXE-JZdrkT4PYvy85VUKANXxIpzm8eHGcFiES6g8mOZTR0Y5r3lDoZe3mVYLMLA_AQrSopheE_HENukGffeN1MZz_qi2apRdotR4H7Vl13wUcTLrLnWoOPAFMHKZEMPu51w2Rnjh9k6-WFoyRDNxaMJbSAnfy8thsmgzvkNvzjDNa9MV533EbFxhG31fdkAxRp5lgT4tqWlutshPAbUasKSf2Los");'></div>
+<div class="flex flex-col gap-1">
+<p class="text-[10px] font-bold text-primary uppercase">Lounge</p>
+<h3 class="font-bold">Eames-Style Executive Lounge</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-lg font-black">₦550,000</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm fill-current">star</span>
+<span class="text-xs font-bold">4.8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col gap-4">
+<div class="bg-center bg-no-repeat bg-cover aspect-video rounded-xl" data-alt="Industrial style metal filing cabinet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAe9ZLXLxZpx9keyU8zxzKmrLz2VX2MKNqP_4vXAKy-rDMERZ4cgSN6EtyJ4gdImlQEZF5VBwCRU1FOPh35Vigic0NmO3xhoYzeMNb5BNcBRDLIuuOjF3CBqDBhmLnzQzOKrzGQz_exKF-DRDOp8RopfQDzHIaR49t4igzmEhhc6bXPoacOvLEYbxiylTNTOxpH9k_ZT2SNfBgO2Bzkhq8m4OOxT0_FhRDgwLtAdFYA-NCk2OK_gORgZFvm2Mv6nHNjFDOgvHUs0oE");'></div>
+<div class="flex flex-col gap-1">
+<p class="text-[10px] font-bold text-primary uppercase">Storage</p>
+<h3 class="font-bold">Steel Archival Cabinet</h3>
+<div class="flex items-center justify-between mt-2">
+<span class="text-lg font-black">₦110,000</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm fill-current">star</span>
+<span class="text-xs font-bold">4.5</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-12 flex justify-center">
+<button class="px-10 py-3 border-2 border-slate-200 dark:border-slate-800 rounded-xl font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                                Explore More Items
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-20 py-12 px-4 md:px-10 lg:px-20">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-extrabold">NobleMart</h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">Nigeria's premium marketplace for home and office essentials. Quality furniture, locally and internationally sourced.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Shop Categories</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Executive Desks</a></li>
+<li><a class="hover:text-primary" href="#">Office Chairs</a></li>
+<li><a class="hover:text-primary" href="#">Meeting Tables</a></li>
+<li><a class="hover:text-primary" href="#">Office Decor</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Customer Support</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Shipping Information</a></li>
+<li><a class="hover:text-primary" href="#">Returns &amp; Exchanges</a></li>
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary" href="#">Bulk Office Quotes</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Newsletter</h4>
+<p class="text-xs text-slate-500 mb-4">Subscribe for interior design tips and exclusive deals.</p>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-slate-200 dark:bg-slate-800 dark:border-slate-700 text-sm" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400">
+                © 2024 NobleMart Nigeria. All rights reserved.
+            </div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Notification Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                        "noble-blue": "#020249",
+                        "robin-egg": "#01C2CA"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .unread-indicator { border-left: 4px solid #5c1ce9; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#120e1b] dark:text-white transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#ebe7f3] dark:border-white/10 bg-white dark:bg-background-dark px-10 py-3 z-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#120e1b] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-primary/70 flex border-none bg-primary/5 dark:bg-white/5 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-primary/5 dark:bg-white/5 h-full placeholder:text-primary/50 px-4 rounded-r-lg text-base font-normal focus:ring-0" placeholder="Search orders, brands..."/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Nigerian professional man profile photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjtl4ubAWggaEW-_syHZENmdsGDa5sH7Vz1wSQSbzYBnd-AX6Mhkms7pL-O9dCiYnfKp1rQBwTIHBVHA81RHApp-Z0_CYYCh1rYFrmYH9d7lpC1OEyHufSUDTQgjuEgxtgT76E7BsHm9l7YJSY_evWfwVIepnloFa5L3CEzzenrwSca66NezaW_yzTG0HM8oWHClekRQvaWTxURJxYL46vxJUlnV27P0Ydq5au754mEg3Nvjaqn4AQWMQghJMuuz-_ZOCHWs38bdg");'></div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Side Navigation Bar -->
+<aside class="w-72 border-r border-[#ebe7f3] dark:border-white/10 bg-white dark:bg-background-dark p-6 hidden lg:flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 border-2 border-primary/20" data-alt="User avatar small" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtMoHGWayOq7-JT1sF4ZE1aqu6dCtYLA8pTsOCXVpvwmTUfJ0ODbx02Rga9r7Afic1wpIIJMqgvdfutkP_Ec7se_uIh5RnjMFTOygGM_FYxF6ptOzH5wZsOhps1UK3m71EMzFh71eAudZFSjFdEUP71aH0ilCjjODowAMLGTBB53uKxD6aua_MUE58rrBIV6yazWOKCqKVlwE7r232QRv_N3Hmkry4dze7jglFhfv_ANVUsJqlxiTw3kTM1UIu6jSGE5x_CjmSvAI");'></div>
+<div class="flex flex-col overflow-hidden">
+<h1 class="text-[#120e1b] dark:text-white text-base font-bold truncate">Olumide Adebayo</h1>
+<p class="text-primary text-xs font-semibold uppercase tracking-wider">Platinum Member</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-primary/5 group" href="#">
+<span class="material-symbols-outlined text-[#654d99] group-hover:text-primary">dashboard</span>
+<p class="text-[#120e1b] dark:text-white text-sm font-semibold">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-primary/5 group" href="#">
+<span class="material-symbols-outlined text-[#654d99] group-hover:text-primary">inventory_2</span>
+<p class="text-[#120e1b] dark:text-white text-sm font-semibold">My Orders</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/30" href="#">
+<span class="material-symbols-outlined">notifications_active</span>
+<p class="text-sm font-bold">Notifications</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-primary/5 group" href="#">
+<span class="material-symbols-outlined text-[#654d99] group-hover:text-primary">account_balance_wallet</span>
+<p class="text-[#120e1b] dark:text-white text-sm font-semibold">Wallet</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-primary/5 group" href="#">
+<span class="material-symbols-outlined text-[#654d99] group-hover:text-primary">settings</span>
+<p class="text-[#120e1b] dark:text-white text-sm font-semibold">Settings</p>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-[#ebe7f3] dark:border-white/10">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-red-50 group" href="#">
+<span class="material-symbols-outlined text-red-500">logout</span>
+<p class="text-red-500 text-sm font-bold">Logout</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 relative overflow-y-auto bg-white dark:bg-background-dark">
+<!-- Background Accent Image -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-center bg-no-repeat bg-cover" data-alt="Professional person using laptop in a clean office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwoaVaHGlL5TTrgiMtFgnu2ocqf7jNvWilrVXfb_4cOjO62XGQQc9o6j-Q8je2tMrUqg5pj1Ido9ug5nXuh9d639ViJ4BYP78NNiwCLrauwC-0g_SaHQtG7eIQe3PfCKj7oW0NGLooW17S0vKenriAbiYcXQgf-LIwf2muMbj-Rb0_WJClc0sl5CR35_bv2Vczs9DFX6yaWJogHFeOGYUfh8NotVv7PZYbEwv475e4unZj5SUhHORRJVs6W18Sf-uwhQgfy89rPCM");'></div>
+<div class="max-w-4xl mx-auto py-8 px-8 relative z-10">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 mb-8">
+<div>
+<h1 class="text-[#120e1b] dark:text-white text-4xl font-extrabold leading-tight tracking-tight">Notifications</h1>
+<p class="text-[#654d99] dark:text-white/60 text-sm mt-1">Manage your order updates and exclusive offers</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary/10 text-primary text-sm font-bold hover:bg-primary hover:text-white transition-colors">
+<span>Mark all as read</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="mb-6">
+<div class="flex border-b border-[#ebe7f3] dark:border-white/10 px-2 gap-8">
+<a class="flex items-center justify-center border-b-2 border-primary text-[#120e1b] dark:text-white pb-3 pt-2 px-1" href="#">
+<p class="text-sm font-bold">All</p>
+<span class="ml-2 bg-primary text-white text-[10px] px-1.5 py-0.5 rounded-full">3</span>
+</a>
+<a class="flex items-center justify-center border-b-2 border-transparent text-[#654d99] dark:text-white/50 pb-3 pt-2 px-1 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-semibold">Orders</p>
+</a>
+<a class="flex items-center justify-center border-b-2 border-transparent text-[#654d99] dark:text-white/50 pb-3 pt-2 px-1 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-semibold">Offers</p>
+</a>
+<a class="flex items-center justify-center border-b-2 border-transparent text-[#654d99] dark:text-white/50 pb-3 pt-2 px-1 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-semibold">Account</p>
+</a>
+</div>
+</div>
+<!-- Notification List -->
+<div class="flex flex-col gap-3">
+<!-- Order Shipped Notification (Unread) -->
+<div class="flex items-center gap-4 bg-primary/[0.03] dark:bg-white/[0.02] unread-indicator p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-white dark:bg-background-dark p-2 rounded-lg border border-primary/10 shadow-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-12" data-alt="Photo-realistic high quality shipping box icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAAVjfV22hgNUUI8v4fwNIdwn1icfx1ll2w2ySVEdXlsTG3DOxaW9zshzett45g_kgGElmrKthIbEfbLXD8Gw7KE1suIOqVWdo3l8XHw2mls7ZJXryPc7zM3d04QqhyiYgDB_EDX392q8YYvh2eAegKZ1XqhvqJ2A5PQ9DMp-jSMvC2AHSbdeIuon8cGQ98UVUVpi-YhfsuRxlSAUMarbVwIIdJv_6kFPmaJQdiRttQt2kJDcJ2PRvDQpZvb-BcgQ1YjIhcA1_hqBA");'></div>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-[#120e1b] dark:text-white text-base font-bold leading-normal">Order #NM-12345 has been shipped!</h3>
+<span class="text-[#654d99] dark:text-white/40 text-xs font-medium">2 mins ago</span>
+</div>
+<p class="text-[#654d99] dark:text-white/70 text-sm mt-0.5">Your package containing the "Ultra-HD Smart Watch" is on its way to the Lagos delivery hub.</p>
+<div class="flex gap-3 mt-3">
+<button class="text-xs font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-md hover:bg-primary hover:text-white transition-colors">Track Order</button>
+</div>
+</div>
+</div>
+<!-- Flash Sale Notification (Robin Egg Blue) -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark p-4 border border-[#ebe7f3] dark:border-white/10 rounded-xl hover:bg-gray-50 dark:hover:bg-white/[0.02] transition-colors">
+<div class="bg-robin-egg/10 p-2 rounded-lg border border-robin-egg/20">
+<span class="material-symbols-outlined text-robin-egg text-3xl">featured_seasonal_and_gifts</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-robin-egg text-base font-bold leading-normal">Flash Sale Alert! Up to 40% off on Electronics</h3>
+<span class="text-[#654d99] dark:text-white/40 text-xs font-medium">4 hours ago</span>
+</div>
+<p class="text-[#654d99] dark:text-white/70 text-sm mt-0.5">Don't miss out on our limited-time deals for top brands like Samsung, Apple, and Sony.</p>
+<div class="flex gap-3 mt-3">
+<button class="text-xs font-bold text-robin-egg border border-robin-egg/30 px-3 py-1.5 rounded-md hover:bg-robin-egg hover:text-white transition-colors">Shop Electronics</button>
+</div>
+</div>
+</div>
+<!-- Security Alert (Federal Blue) -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark p-4 border border-[#ebe7f3] dark:border-white/10 rounded-xl hover:bg-gray-50 dark:hover:bg-white/[0.02] transition-colors">
+<div class="bg-noble-blue/10 p-2 rounded-lg border border-noble-blue/20">
+<span class="material-symbols-outlined text-noble-blue text-3xl">shield_person</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-noble-blue dark:text-white text-base font-bold leading-normal">Security Alert: New login detected</h3>
+<span class="text-[#654d99] dark:text-white/40 text-xs font-medium">Yesterday</span>
+</div>
+<p class="text-[#654d99] dark:text-white/70 text-sm mt-0.5">We noticed a new login to your account from Chrome on a Windows device in Ikeja, Nigeria.</p>
+<div class="flex gap-3 mt-3">
+<button class="text-xs font-bold text-noble-blue dark:text-white border border-noble-blue/30 px-3 py-1.5 rounded-md hover:bg-noble-blue hover:text-white transition-colors">This was me</button>
+<button class="text-xs font-bold text-red-500 border border-red-200 px-3 py-1.5 rounded-md hover:bg-red-500 hover:text-white transition-colors">Secure Account</button>
+</div>
+</div>
+</div>
+<!-- Order Delivered Notification (Read) -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark p-4 border border-[#ebe7f3] dark:border-white/10 rounded-xl opacity-80">
+<div class="bg-gray-100 dark:bg-white/5 p-2 rounded-lg">
+<span class="material-symbols-outlined text-gray-500 text-3xl">inventory</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<h3 class="text-[#120e1b] dark:text-white text-base font-semibold leading-normal">Order #NM-12290 has been delivered</h3>
+<span class="text-[#654d99] dark:text-white/40 text-xs font-medium">3 days ago</span>
+</div>
+<p class="text-[#654d99] dark:text-white/70 text-sm mt-0.5">Package was signed for by Ade. We hope you enjoy your new purchase!</p>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default, shown here for visual context) -->
+<div class="mt-20 flex flex-col items-center justify-center text-center max-w-sm mx-auto hidden">
+<div class="size-24 bg-primary/5 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-5xl">notifications_off</span>
+</div>
+<h2 class="text-2xl font-bold mb-2">All clear!</h2>
+<p class="text-[#654d99] mb-8">You're all caught up. New notifications for orders and offers will appear here.</p>
+<button class="bg-primary text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
+                            Go Shopping
+                        </button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

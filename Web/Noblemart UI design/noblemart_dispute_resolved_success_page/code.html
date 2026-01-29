@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart - Dispute Resolved</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c1cb",
+                        "secondary-indigo": "#5C1BE8",
+                        "footer-blue": "#020249",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "heading": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0c1c1d] dark:text-white min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e6f4f4] dark:border-white/10 px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0c1c1d] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-xl font-bold font-heading leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">My Orders</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#459ca1] flex border-none bg-[#e6f4f4] dark:bg-white/10 items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#e6f4f4] dark:bg-white/10 text-[#0c1c1d] dark:text-white focus:ring-0 placeholder:text-[#459ca1] px-4 pl-2 text-base font-normal" placeholder="Search orders" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e6f4f4] dark:bg-white/10 text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-[#e6f4f4] dark:bg-white/10 text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCGXJr3qTj-t9KKvBLewtA-o_WfmMMAxQ7zT5tKPe5VMxeoccZxy7XXV69STLGGR0IewmKiXpN2rM-SwvzsG082WwrvwcdDyqHWd6z1aBPegaczyELZlwam_aeOhUnD-TK35Y4kNJnXjoERyzY8eM_YC3ZnHVjfPps0cZ1_yVmNiTv7TiiP5FpEpmi-jY_bMfxQYIsb_--70VWhN0q1HKOCp2olC0VSeCwWJRw8MKcpb2yUPltFEQHAgDLKtCdQuIcdV5V0Xyifz8A");'></div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center py-12 px-4 md:px-20 lg:px-40">
+<div class="w-full max-w-[960px] flex flex-col gap-8">
+<!-- Success Content Card -->
+<div class="bg-white dark:bg-[#142d2e] rounded-xl shadow-xl overflow-hidden border border-[#e6f4f4] dark:border-white/5">
+<!-- Hero Image & Status -->
+<div class="relative h-[300px] @container">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Satisfied person closing laptop after successful resolution" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACmpJ8Q3hTYy2ZPZZvTkPLXQ1B9BJT4l9sKfC2pNFodS29WlAOISKBD4sWfTp4djnSbDGQMOyy4NpdkRnOmEuZPDwxbMNGJij2o0Kn1pQm28nUzTT1uccWQfz6WmHTSRAqf6zYSE7lh5FTVvGXVDlIT6zdw1xDQ9LpMjoG8POmnMYntUXEGZdX8d_2MGY9qPM9P7YFM0qeNN6zm_Z8jwd-NYADWiVRevRETslQ0w_ACmXxI1lMrJj9Vwun0FJO8SxaGJTgIzB6hiU");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="absolute bottom-6 left-8 flex items-center gap-4">
+<div class="bg-green-500 text-white rounded-full p-3 shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px] font-bold">check_circle</span>
+</div>
+<div class="text-white">
+<span class="text-sm font-medium bg-green-500/20 backdrop-blur-md px-3 py-1 rounded-full border border-green-500/30">Case Finalized</span>
+</div>
+</div>
+</div>
+<!-- Text Content Area -->
+<div class="p-8 md:p-12">
+<h1 class="text-[#0c1c1d] dark:text-white font-heading font-bold text-3xl md:text-4xl tracking-tight mb-4">
+                        Dispute Case #DR-55201 Resolved
+                    </h1>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-1 space-y-6">
+<div class="p-5 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20">
+<p class="text-[#0c1c1d] dark:text-gray-100 text-lg leading-relaxed">
+                                    Based on the evidence provided, a full refund of <span class="font-bold">₦45,000</span> has been approved and credited back to your NobleMart Wallet.
+                                </p>
+</div>
+<!-- NobleShield Guarantee Action Panel -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl border border-primary/30 bg-[#f8fcfc] dark:bg-white/5 p-5">
+<div class="flex gap-4 items-center">
+<div class="text-primary">
+<span class="material-symbols-outlined text-[40px] font-light">verified_user</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#0c1c1d] dark:text-white text-base font-bold leading-tight">NobleShield Guarantee</p>
+<p class="text-[#459ca1] dark:text-gray-400 text-sm">The escrow funds have been safely released. Your satisfaction is our priority.</p>
+</div>
+</div>
+<a class="text-sm font-bold text-primary flex items-center gap-1 hover:underline" href="#">
+                                    Learn more
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Resolution Table -->
+<div class="border border-[#e6f4f4] dark:border-white/10 rounded-xl overflow-hidden">
+<div class="grid grid-cols-3 bg-[#f8fcfc] dark:bg-white/5 border-b border-[#e6f4f4] dark:border-white/10 px-6 py-3">
+<div class="text-xs font-bold text-[#459ca1] uppercase tracking-wider">Resolution Type</div>
+<div class="text-xs font-bold text-[#459ca1] uppercase tracking-wider">Amount</div>
+<div class="text-xs font-bold text-[#459ca1] uppercase tracking-wider">Date Resolved</div>
+</div>
+<div class="grid grid-cols-3 px-6 py-4">
+<div class="text-base font-semibold text-[#0c1c1d] dark:text-white">Full Refund</div>
+<div class="text-base font-bold text-primary">₦45,000.00</div>
+<div class="text-base text-[#459ca1] dark:text-gray-400">Oct 24, 2023</div>
+</div>
+</div>
+</div>
+<!-- Side Actions / Summary Box -->
+<div class="w-full md:w-80 flex flex-col gap-4">
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-14 bg-primary text-white gap-2 text-base font-bold shadow-lg shadow-primary/20 hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                                View Wallet Balance
+                            </button>
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-14 bg-secondary-indigo text-white gap-2 text-base font-bold shadow-lg shadow-secondary-indigo/20 hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+                                Continue Shopping
+                            </button>
+<div class="mt-4 p-4 border border-dashed border-[#cde8ea] dark:border-white/20 rounded-lg">
+<p class="text-xs text-center text-[#459ca1]">Need further assistance? Contact our <a class="underline text-primary" href="#">Dispute Center</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-footer-blue text-white py-16 px-10 md:px-40 mt-12">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-heading font-bold">NobleMart</h2>
+</div>
+<p class="text-sm text-gray-400 leading-relaxed">Nigeria's leading multi-vendor marketplace. We bridge trust and trade for everyone.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-primary">Company</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Affiliate Program</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-primary">Support</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-white transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-white transition-colors" href="#">NobleShield Protection</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Dispute Resolution</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-primary">Download Our App</h4>
+<p class="text-xs text-gray-400">Get the best shopping experience on your mobile device.</p>
+<div class="space-y-3">
+<div class="bg-white/10 p-3 rounded-lg border border-white/5 flex items-center gap-3 cursor-pointer hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">shop</span>
+<div>
+<p class="text-[10px] uppercase text-gray-400 leading-none">Get it on</p>
+<p class="text-sm font-bold leading-none mt-1">Google Play</p>
+</div>
+</div>
+<div class="bg-white/10 p-3 rounded-lg border border-white/5 flex items-center gap-3 cursor-pointer hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">ios</span>
+<div>
+<p class="text-[10px] uppercase text-gray-400 leading-none">Download on the</p>
+<p class="text-sm font-bold leading-none mt-1">App Store</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-gray-400">© 2023 NobleMart Marketplace. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<img class="h-4 opacity-50 grayscale brightness-200" data-alt="Payment provider Visa logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD23FdAxXzPFzmIhNG2oRsCdpNYUz03k1R-Q3ydaGeOc7SRtxpc7PnPgF9amnzJOj3wR1WwwAUHGrKYRUVNe6ySWfR-PvXM7yqUGPvbbYKojGCbEgPE1IFK9fqgtAtbsSnO0DXKNdc_Y10hCI8VbkoJmtQbAVEUYFrq2BxMzY5sylUXRebkkbFRZme7aYx-JCqhkweMhEfIK_KQSBCdvYjtH7yLkNTtl1jdUZKnkv6tx7vI9sJGLrmuvTxDyf6HVK-967-2PSsP4l4"/>
+<img class="h-4 opacity-50 grayscale brightness-200" data-alt="Payment provider Mastercard logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNK566DC4yYHrPEXKK1WbHnfBiQNjMjgNM8emCO75KvnKtU-RtUxD-47Xqb0t6Nk4K5Rv39fbVpAZyKQc14FGLy50VwIHCJzfcHmVfBBiXYPKVrk-iGaq-McyjDwTzZ_G6hCuM_KVzPI3rM2b0h_r-92DW5x7SHogLtVh9eaDku0REPsJhWn34yWSKFL7xVBQwZ0Uixjp7fBxN1KFS8Aa5tAwssiWRg_9gwwX4K8KlZqHN_XErACy9q0-X6bLpqvVuOZkPrn2_gMo"/>
+<img class="h-4 opacity-50 grayscale brightness-200" data-alt="Payment provider Verve logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZFsDz0KiQlWC7KMwFci1sncdp2pAj-uS5JIdZvK-hbA_PkXoBPiLoxgesY5c6mpR_sTmUuzE7tiwiaugbH22bPg49aI39rIhVnvCf8oObvE7ja56ZdI5_ElmEY_xoVYvtWVg8YAIjv1s2s_F1RSA4-8tgBTOWXfUKO1CiILVthuKJNKVKN9iSh-UU2NPqgYGmIwXRjpZPUFboaZ5pV8l-xRMBMEBimQR_ZgyUgqB50DaSr0eBPyo0V97QEfjxDqteROToGiEmY8w"/>
+</div>
+</div>
+</footer>
+</body></html>

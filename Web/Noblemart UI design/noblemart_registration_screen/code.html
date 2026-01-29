@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Registration Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "federal-blue": "#020249",
+                        "background-light": "#ffffff",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-100 dark:border-slate-800 px-6 lg:px-40 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-4 text-federal-blue dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-federal-blue dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-federal-blue dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-federal-blue dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-federal-blue dark:text-slate-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Deals</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-all">
+<span>Log in</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex flex-col lg:flex-row">
+<!-- Split Screen - Image Section -->
+<div class="hidden lg:flex w-1/2 bg-slate-100 dark:bg-slate-900 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Happy Nigerian family laughing together at home" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHlz2Sl8PSnVsnt3YRi7ZOpR002uxDfDGK9CwdGJ_G-NU1YNbztBFqheXwDCSRarD7jKYh4bDwEwn4zCa4tEZmq90ObLtKiFbFCoXMwp_f01uVcgclKDdxFv7tN6Gv6CiLEQmomgkkiNhCpi-AEoFdoYbNfWAIyD83R2NlwBRz4vmsiLUa1gZwHnodWvQZV7buTeDAclsqwl_RXqfd5-AXNrlB8Dv6ZXK91XjZsfPgW-CISsyKSeYFcu-aSyUJULapuPY6gZHA-bk');">
+<div class="absolute inset-0 bg-federal-blue/20 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-federal-blue/60 to-transparent"></div>
+</div>
+<div class="relative z-10 flex flex-col justify-end p-20 text-white">
+<h1 class="text-5xl font-black leading-tight mb-6">Join Nigeria's Premium Marketplace</h1>
+<p class="text-xl font-medium max-w-lg opacity-90">Experience high-quality products from trusted vendors across the nation. Quality you can trust, delivered to your doorstep.</p>
+<div class="mt-10 flex gap-4">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Nigerian professional portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTZzdj6bmB9e_f3TQzCgZHy-mkto7KdVnO983sFEJ3LTI-lVb2JMMsloMTC2QeSlaCyPuNohMJkfjkhfz0COcDSGU4rNgeVlOUajQhTB84xBzhtq5eyRwXQMcB9R_hNIBdLxewcPS9YFfAS_Xv8M8ZEh3SWBZ9DsoyFYKnQokoBWSnf-tbzecVTc-LA7qpiMVuKLu3Ap-moZypwvz4mPAE7B8bAdPjremSRv8bV88lJAN39LWx-SU5sOmfAfSij5U36eY3HX8qfPA"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="West African businessman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIBu8WeAKctT3MpwxQqT5B3F_oeSpmjdz-dqpEN4zVpVVdHFtA9xYt-5rg6oGrVslFQ0YV-347Ypay0jeR_Ywne4pJ7gQxKA4Q1xh1Op9E4TgK_4FsUXfW1zpymnRFOplVJba7PZe7qpl1gYZx4fRZd83FLKdbul89bnQQxZaJk38lqpdpF8m21kRXVZwdfJve0_Js7DOpyRRAB-6MFedxx6d5mEQZ-6k0S_uQ6Mls5JmyoHF56oswbs9wHOUco7lTI7XW-aGjHZo"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Young Nigerian woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApZDdSrUj0zRqO3WZ_U9ST8qpsstNWz_jNdWOwxuS0H6vi0YJHme2TlmgByokElx8tagR0wtZ4TJC8NuldILIgLVD0jwZTvVs4Cwn3M17E5FmSs5iKvpHI1u6lROBDsHmKMwCnvNnoLs61mShfebBdF1IttwCS_IZ8n5HR3W_4ESxm-hINjb9_-GPnmET47QPJ3mPCqKOHmwqbcbjZzc11qEce8izPAKML2tKFGlt2hCrfqaikcB1uj_sD3r12rUl7-0GkKxxW6JU"/>
+</div>
+<p class="text-sm self-center">Join over 50k+ active users</p>
+</div>
+</div>
+</div>
+<!-- Split Screen - Form Section -->
+<div class="flex-grow lg:w-1/2 flex items-center justify-center p-6 lg:p-20 bg-background-light dark:bg-background-dark">
+<div class="w-full max-w-[540px]">
+<!-- Page Heading -->
+<div class="mb-8">
+<h2 class="text-federal-blue dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] mb-2">Create Your Account</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Fill in the details below to get started with NobleMart.</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-4">
+<!-- First & Last Name -->
+<div class="flex flex-col sm:flex-row gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-federal-blue dark:text-slate-200 text-sm font-semibold leading-normal pb-2">First Name</p>
+<input class="form-input flex w-full rounded-lg text-federal-blue dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-all" placeholder="e.g. Chidi" type="text"/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-federal-blue dark:text-slate-200 text-sm font-semibold leading-normal pb-2">Last Name</p>
+<input class="form-input flex w-full rounded-lg text-federal-blue dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-all" placeholder="e.g. Okoro" type="text"/>
+</label>
+</div>
+<!-- Email Address -->
+<label class="flex flex-col w-full">
+<p class="text-federal-blue dark:text-slate-200 text-sm font-semibold leading-normal pb-2">Email Address</p>
+<input class="form-input flex w-full rounded-lg text-federal-blue dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-all" placeholder="email@example.com" type="email"/>
+</label>
+<!-- Phone Number -->
+<label class="flex flex-col w-full">
+<p class="text-federal-blue dark:text-slate-200 text-sm font-semibold leading-normal pb-2">Phone Number</p>
+<div class="relative flex">
+<span class="inline-flex items-center px-4 rounded-l-lg border border-r-0 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 text-slate-500 text-sm">+234</span>
+<input class="form-input flex w-full rounded-r-lg text-federal-blue dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-all" placeholder="801 234 5678" type="tel"/>
+</div>
+</label>
+<!-- Password -->
+<label class="flex flex-col w-full">
+<p class="text-federal-blue dark:text-slate-200 text-sm font-semibold leading-normal pb-2">Password</p>
+<div class="relative">
+<input class="form-input flex w-full rounded-lg text-federal-blue dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:border-primary h-12 px-4 placeholder:text-slate-400 text-base font-normal transition-all pr-12" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-federal-blue dark:hover:text-white" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</label>
+<!-- Vendor Toggle -->
+<div class="flex items-center justify-between py-2">
+<span class="text-sm font-medium text-slate-600 dark:text-slate-400">Want to sell on NobleMart?</span>
+<a class="text-sm font-bold text-primary hover:underline" href="#">Become a Vendor</a>
+</div>
+<!-- Create Account CTA -->
+<button class="w-full flex items-center justify-center rounded-lg h-14 bg-primary text-white text-base font-bold tracking-[0.015em] hover:bg-opacity-95 shadow-lg shadow-primary/20 transition-all" type="submit">
+                        Create Account
+                    </button>
+<!-- Social Auth Section -->
+<div class="relative py-4">
+<div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-200 dark:border-slate-800"></div></div>
+<div class="relative flex justify-center text-xs uppercase"><span class="bg-background-light dark:bg-background-dark px-2 text-slate-400">Or sign up with</span></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 h-12 px-4 bg-white dark:bg-slate-800 text-federal-blue dark:text-white text-sm font-bold hover:bg-slate-50 transition-all" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"></path>
+</svg>
+                            Google
+                        </button>
+<button class="flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 h-12 px-4 bg-white dark:bg-slate-800 text-federal-blue dark:text-white text-sm font-bold hover:bg-slate-50 transition-all" type="button">
+<svg class="w-5 h-5 text-[#1877F2]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+                            Facebook
+                        </button>
+</div>
+<p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+                        Already have an account? 
+                        <a class="font-bold text-federal-blue dark:text-white hover:text-primary transition-colors underline underline-offset-4 decoration-primary/30" href="#">Log in</a>
+</p>
+</form>
+<!-- Footer Info -->
+<div class="mt-12 text-center">
+<p class="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-widest leading-loose">
+                        © 2024 NobleMart Africa. All rights reserved. <br/>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a> • <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

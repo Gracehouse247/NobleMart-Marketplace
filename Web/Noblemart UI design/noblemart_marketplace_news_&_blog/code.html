@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Marketplace News &amp; Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01b9c6",
+                        "indigo-accent": "#5C1BE8",
+                        "federal-blue": "#020249",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #01b9c6 0%, #5C1BE8 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-federal-blue dark:text-white font-display transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header / TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-solid border-gray-100 dark:border-gray-800">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-3 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-federal-blue dark:text-white text-xl font-extrabold tracking-tight">NobleMart</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Sell</a>
+<a class="text-sm font-semibold text-primary" href="#">News &amp; Blog</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<label class="hidden lg:flex items-center min-w-48 max-w-64 h-10 relative">
+<span class="material-symbols-outlined absolute left-3 text-gray-400">search</span>
+<input class="w-full h-full pl-10 pr-4 rounded-lg bg-gray-100 dark:bg-gray-800 border-none focus:ring-2 focus:ring-primary text-sm" placeholder="Search articles..." type="text"/>
+</label>
+<button class="px-5 py-2 rounded-lg bg-primary text-white text-sm font-bold hover:brightness-110 transition-all">Login</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="hero-gradient w-full py-16 px-6 lg:px-10">
+<div class="max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2 flex flex-col gap-6 text-white">
+<div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full self-start">
+<span class="material-symbols-outlined text-[18px] fill-1">verified</span>
+<span class="text-xs font-bold uppercase tracking-wider">NobleShield Verified</span>
+</div>
+<h1 class="text-4xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+                            NobleMart <br/>Marketplace News
+                        </h1>
+<p class="text-lg opacity-90 max-w-lg leading-relaxed">
+                            Official updates, seller tips, and success stories from the heart of African trade. Discover how we're building Nigeria's most trusted ecosystem.
+                        </p>
+<div class="flex gap-4">
+<button class="bg-white text-federal-blue px-8 py-3 rounded-lg font-extrabold hover:bg-opacity-90 transition-all">Latest News</button>
+<button class="border-2 border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-extrabold transition-all">Success Stories</button>
+</div>
+</div>
+<!-- Featured Article Card -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] duration-300">
+<div class="relative h-64 w-full bg-cover bg-center" data-alt="Portrait of a smiling Nigerian female entrepreneur in a modern office" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIcGcCzGEfwyHoOS5FbimaEOCaYyI5dkwhFN18OgO505mvvu4cM0B3Att_E7d5BaP9OGt-8SQz98v_M5Au7qv9uEX-mOhE-x1AQf06Ed5q6wGu9TvEAfUjBKL1BpHZALF8Vs6qFsUFMjkdo7rvGZSojAfbExJRx94hXNKQ7p_guU4Bf1td8nND_-cdqbF9J6ERB3XQ_WbqM6Pzx_eZfGKrITvMopp83cu8bVqqOM-4Vu1UvTo1UDaQJxCo5qFUDykiWkZiXlnL-b4');">
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Featured Story</span>
+</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-extrabold text-federal-blue dark:text-white mb-4 leading-tight">
+                                    How NobleMart is Revolutionizing E-commerce Trust in Nigeria
+                                </h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6 line-clamp-2">
+                                    Building a platform where buyers and sellers can trade with absolute confidence through the power of NobleShield technology and local logistics hubs.
+                                </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="text-sm font-bold">Admin Team</p>
+<p class="text-xs text-gray-400">Oct 24, 2023</p>
+</div>
+</div>
+<span class="text-primary font-bold text-sm flex items-center gap-1 group cursor-pointer">
+                                        Read Story <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News Categories -->
+<div class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark sticky top-[65px] z-40">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<div class="flex gap-8 overflow-x-auto no-scrollbar py-4">
+<button class="text-primary font-bold text-sm whitespace-nowrap border-b-2 border-primary pb-4 -mb-[18px]">All Articles</button>
+<button class="text-gray-500 hover:text-federal-blue dark:hover:text-white font-bold text-sm whitespace-nowrap transition-colors">Company Updates</button>
+<button class="text-gray-500 hover:text-federal-blue dark:hover:text-white font-bold text-sm whitespace-nowrap transition-colors">Seller Tips</button>
+<button class="text-gray-500 hover:text-federal-blue dark:hover:text-white font-bold text-sm whitespace-nowrap transition-colors">Market Trends</button>
+<button class="text-gray-500 hover:text-federal-blue dark:hover:text-white font-bold text-sm whitespace-nowrap transition-colors">Success Stories</button>
+<button class="text-gray-500 hover:text-federal-blue dark:hover:text-white font-bold text-sm whitespace-nowrap transition-colors">Community Events</button>
+</div>
+</div>
+</div>
+<!-- Content Section (Grid + Sidebar) -->
+<section class="max-w-[1280px] mx-auto px-6 lg:px-10 py-12">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Main Feed -->
+<div class="w-full lg:w-2/3">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-extrabold">Latest Articles</h2>
+<div class="flex items-center gap-2 text-primary font-bold text-sm bg-primary/10 px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                                NobleShield Verified
+                            </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Post 1 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-video rounded-xl overflow-hidden shadow-sm" data-alt="Nigerian merchant organizing colorful fashion accessories in a boutique" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvHvhv1_CzyPxko3Fqt_eyYEXOXwkCDoFicP0FL2KhZ5AcD4uwsExoQWnB7bJJn1FEiPcYl0IXgE3HhbcE2rMyOMmEsHl5RIeLwej4xsLHTIeWGwLvL3okQbyn5_vKOCGGzs8r28Owjry0Eb3uZ4a4UyaHeXHCTBZZb4B1DLwmClg4kNsBLxul2yRP0EdDKJRdIlIN-8fejuNQCv51vfP7-RwrdZ_B2TwvP92IiIy_suOwoTVdodjPbTc9V8yvoXQXUkHdsC_4hg4'); background-size: cover;">
+<div class="absolute bottom-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-extrabold uppercase text-primary">Seller Tips</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+<span>Oct 22, 2023</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 5 min read</span>
+</div>
+<h3 class="text-lg font-extrabold group-hover:text-primary transition-colors leading-snug">Expanding Logistics: Faster Delivery to Northern Nigeria</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">How our new fulfillment centers in Kano and Kaduna are slashing delivery times by 40% for our merchants.</p>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-video rounded-xl overflow-hidden shadow-sm" data-alt="Stock market chart dashboard on a laptop screen showing growth" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLhXcRgsnrXinf2FyAN8QfYqUPAWmBvHYF0fZSb7kfRb6isForgeyUn-SibzPnP_Nm9n3o8qJxyWrFecKe20I7AVh_4URI3xoGg5UtCARrDA0rmba4dxiG3HO4qBDsSds11mHF6mE4d5f7P86sS3Vl-qqxDIAm7n7NEolIhNhwun31POaHPE6mbHOVjXrYU9WDCUCbqQcUQsas5ei9QhHQZGK_kUPCfh3aeSkp6i8oJEfxxDkDqBHkLU1oQ6E35qawNqjTX1V7kZM'); background-size: cover;">
+<div class="absolute bottom-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-extrabold uppercase text-primary">Market Trends</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+<span>Oct 20, 2023</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 4 min read</span>
+</div>
+<h3 class="text-lg font-extrabold group-hover:text-primary transition-colors leading-snug">Top 10 Selling Categories in Q4 2024</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">Data insights into what Nigerian consumers are searching for this festive season.</p>
+</div>
+</div>
+<!-- Post 3 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-video rounded-xl overflow-hidden shadow-sm" data-alt="Group of diverse African business professionals having a meeting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXN9n2oBavI6xSE-nWlZZeyMTSFJQMHHxqT9A_QC_enJKxP8Ht8ogAaaVuX41RyhowmuVhHTAMPThj_iO_EuS09h3rKDQk59eAu64NzYTeJFgPELFTcM6T_xUNpgEov8J4NU2N9KAJ5BYLzyRdjrbu8YHXD4h-fa8WX4nYMlYXM-la51IoHots5h5222bcDcQVt3oZtQQOri4CwX4clRLdXM8h_G36At5XdTwzCi8pWlvF7dO1sCw8KeihEkzIL7cJY9FQ0kKRcOE'); background-size: cover;">
+<div class="absolute bottom-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-extrabold uppercase text-primary">Community</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+<span>Oct 18, 2023</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 3 min read</span>
+</div>
+<h3 class="text-lg font-extrabold group-hover:text-primary transition-colors leading-snug">NobleMart Seller Meetup: Lagos Edition</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">Recap of our networking event where over 200 vendors shared their scaling secrets.</p>
+</div>
+</div>
+<!-- Post 4 -->
+<div class="group flex flex-col gap-4">
+<div class="relative aspect-video rounded-xl overflow-hidden shadow-sm" data-alt="Smartphone showing a secure payment confirmation with green checkmark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNt5am52d_7ofye1Gjzo49IS-TrhvetIDC2qgj_mh5ce_SSflAnCEWc2GeVTZyJS7vPpZmn8mt2Pz15umJInE-9l8QqUrFH0Nl4qxiyzscJC26Vr25232ckEP8SIrgEeC-rWo9TQyUdrl25l2wM7EZDQXFAK4MGPHE-K1vvb0BnlJLegUhvMWNYuU_U5tUzeXZGjuYglzXvGdGh5-qthqLfZplzeNIu-TpLUdvPmZs-nciLMCCFsZB8nlcXWN6hxoSHwn-kHTm7iI'); background-size: cover;">
+<div class="absolute bottom-3 left-3 flex gap-2">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-extrabold uppercase text-primary">Company Updates</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+<span>Oct 15, 2023</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 7 min read</span>
+</div>
+<h3 class="text-lg font-extrabold group-hover:text-primary transition-colors leading-snug">Understanding NobleShield Protection</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">A deep dive into the technology securing every transaction on our platform.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-federal-blue dark:text-white px-10 py-3 rounded-lg font-extrabold transition-all">Load More Articles</button>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="w-full lg:w-1/3 flex flex-col gap-10">
+<!-- Newsletter -->
+<div class="bg-federal-blue text-white p-8 rounded-xl shadow-xl">
+<h3 class="text-xl font-extrabold mb-3">Newsletter</h3>
+<p class="text-sm opacity-80 mb-6">Get the latest seller tips and market trends delivered straight to your inbox weekly.</p>
+<form class="flex flex-col gap-3">
+<input class="w-full p-3 rounded-lg bg-white/10 border-white/20 focus:ring-primary focus:border-primary text-sm" placeholder="Your email address" type="email"/>
+<button class="w-full bg-primary hover:brightness-110 py-3 rounded-lg font-extrabold transition-all" type="submit">Subscribe Now</button>
+</form>
+<p class="text-[10px] opacity-60 mt-4 text-center">Join 50,000+ Nigerian merchants. Unsubscribe anytime.</p>
+</div>
+<!-- Popular Articles -->
+<div class="flex flex-col gap-6">
+<h3 class="text-xl font-extrabold border-b border-gray-100 dark:border-gray-800 pb-3">Trending Now</h3>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4 group cursor-pointer">
+<span class="text-3xl font-extrabold text-gray-200 dark:text-gray-800">01</span>
+<div>
+<h4 class="text-sm font-extrabold leading-tight group-hover:text-primary transition-colors">How to optimize your product photos for 2x sales</h4>
+<p class="text-xs text-gray-500 mt-1">4.5k reads • Seller Tips</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<span class="text-3xl font-extrabold text-gray-200 dark:text-gray-800">02</span>
+<div>
+<h4 class="text-sm font-extrabold leading-tight group-hover:text-primary transition-colors">Why video reviews are the future of Nigerian E-commerce</h4>
+<p class="text-xs text-gray-500 mt-1">3.2k reads • Market Trends</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<span class="text-3xl font-extrabold text-gray-200 dark:text-gray-800">03</span>
+<div>
+<h4 class="text-sm font-extrabold leading-tight group-hover:text-primary transition-colors">5 Essential apps for managing your inventory on the go</h4>
+<p class="text-xs text-gray-500 mt-1">2.8k reads • Tools</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer">
+<span class="text-3xl font-extrabold text-gray-200 dark:text-gray-800">04</span>
+<div>
+<h4 class="text-sm font-extrabold leading-tight group-hover:text-primary transition-colors">New policy update regarding seller payouts</h4>
+<p class="text-xs text-gray-500 mt-1">2.1k reads • Policy</p>
+</div>
+</div>
+</div>
+</div>
+<!-- NobleShield Badge Sidebar -->
+<div class="bg-primary/5 border border-primary/10 p-6 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<div>
+<h4 class="text-sm font-extrabold text-federal-blue dark:text-white">NobleShield Verified</h4>
+<p class="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
+                                    All advice and news published here are vetted by the official NobleMart quality assurance team for accuracy.
+                                </p>
+</div>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-federal-blue text-white pt-16 pb-8">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold">NobleMart</h2>
+</div>
+<p class="text-sm opacity-60 leading-relaxed">
+                        Nigeria's premier multi-vendor e-commerce destination. Connecting trusted sellers with quality-conscious buyers nationwide.
+                    </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer">share</span>
+<span class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer">camera</span>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-extrabold text-lg">Marketplace</h4>
+<ul class="flex flex-col gap-3 text-sm opacity-60">
+<li class="hover:text-primary cursor-pointer">Buy Product</li>
+<li class="hover:text-primary cursor-pointer">Sell on NobleMart</li>
+<li class="hover:text-primary cursor-pointer">Affiliate Program</li>
+<li class="hover:text-primary cursor-pointer">Flash Deals</li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-extrabold text-lg">Support</h4>
+<ul class="flex flex-col gap-3 text-sm opacity-60">
+<li class="hover:text-primary cursor-pointer">Help Center</li>
+<li class="hover:text-primary cursor-pointer">Safety &amp; Security</li>
+<li class="hover:text-primary cursor-pointer">Contact Us</li>
+<li class="hover:text-primary cursor-pointer">Return Policy</li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-extrabold text-lg">Newsletter</h4>
+<p class="text-sm opacity-60">Stay updated with our latest offers.</p>
+<div class="flex gap-2">
+<input class="bg-white/10 border-none rounded-lg text-sm flex-grow" placeholder="Email" type="text"/>
+<button class="bg-primary px-4 rounded-lg"><span class="material-symbols-outlined text-[20px]">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-6 lg:px-10 pt-8 border-t border-white/10 text-center md:text-left">
+<p class="text-xs opacity-40">© 2024 NobleMart Technologies. All rights reserved. Designed for the Nigerian Market.</p>
+</div>
+</footer>
+</div>
+</body></html>

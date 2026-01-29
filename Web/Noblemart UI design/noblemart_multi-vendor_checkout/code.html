@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Checkout - Secure Multi-Vendor Shopping</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "secondary": "#020249",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-secondary dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800">
+<div class="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-secondary dark:text-white text-2xl font-extrabold tracking-tight">NobleMart</h2>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-6 mr-6 border-r border-gray-200 dark:border-gray-700 pr-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">My Orders</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-1.5 rounded-full">3</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYbvkA-Dfr0tZSDsp4cfkl8rLG-9jbdW2qY81OtWOpm8QRr0iOoMaFVfxVuf7HMJ1fc8ubpRdcIuYE8gl5el-HYyh6jSKGAude3n-DavMiExGxqUVSkW9aCqSTXSBJGObRMiJWKgz4ouJypK8-TDnBdZgW3zteduBrWIk3dGyEyWA_dAWhZA4jtDRBwVLsM8ikQFs5Y0I1TOWTtBWyCzXVYx42sR9uRguGhO2hsy_VWZ-7ZZN8eDOrKrhPWTlmHWRnlXT1nur6OIA');"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-6 py-8">
+<!-- Breadcrumbs & Progress -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div class="flex items-center gap-2 text-sm font-medium">
+<a class="text-primary hover:underline" href="#">Home</a>
+<span class="text-gray-400">/</span>
+<a class="text-primary hover:underline" href="#">Cart</a>
+<span class="text-gray-400">/</span>
+<span class="text-secondary dark:text-gray-300">Secure Checkout</span>
+</div>
+<div class="w-full md:w-96">
+<div class="flex justify-between mb-2">
+<span class="text-sm font-bold text-secondary dark:text-white">Shipping &amp; Payment</span>
+<span class="text-sm text-primary font-semibold">Step 2 of 3</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 66%;"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Checkout Details -->
+<div class="lg:col-span-2 space-y-6">
+<!-- 1. Shipping Address Section -->
+<section class="bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center gap-3">
+<span class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
+<h2 class="text-xl font-bold">Shipping Address</h2>
+</div>
+<div class="p-6 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">Full Name</label>
+<input class="w-full rounded-xl border-gray-200 bg-gray-50 dark:bg-gray-900 focus:ring-primary focus:border-primary" type="text" value="Chidi Okafor"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">Phone Number</label>
+<input class="w-full rounded-xl border-gray-200 bg-gray-50 dark:bg-gray-900 focus:ring-primary focus:border-primary" type="text" value="+234 812 345 6789"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">Street Address</label>
+<input class="w-full rounded-xl border-gray-200 bg-gray-50 dark:bg-gray-900 focus:ring-primary focus:border-primary" placeholder="e.g. 15 Admiralty Way, Lekki Phase 1" type="text"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300 flex items-center gap-2">
+                                    Landmark
+                                    <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full uppercase">Helpful</span>
+</label>
+<input class="w-full rounded-xl border-gray-200 bg-gray-50 dark:bg-gray-900 focus:ring-primary focus:border-primary" placeholder="e.g. Opposite the Zenith Bank building, yellow gate" type="text"/>
+</div>
+</div>
+<!-- Map Geo-Pin Integration -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-sm font-bold text-gray-700 dark:text-gray-300">Confirm Pin Location</label>
+<button class="text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">my_location</span> Use Current Location
+                                </button>
+</div>
+<div class="relative h-64 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Digital map showing delivery pin in Lagos" data-location="Lagos, Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFuDrZeoQzFVO8bvOD2yOJf-eNzoz3_w3YaJrfEY2Q9U2lgME0qiysN5cBWsl-37LPYrLcrBqBxJY58Bf7_oOVISwAeuRsblv7nPKYHi0sbtBhLCVvF-WatNrfXRH60wuC7fOgTQTx8ZmyeXD9aTpd_RKz83nmQG1niZ7CLu_t1xrADhtIiwRyFoc66oqf64xTcyocvdQ7T11-FQwN1WTL1G5hGID9IT5MD19aom_qfwUjWaVfNvcHil6fHjzUuK2K5MBQgfOKMq0');"></div>
+<div class="absolute inset-0 bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg">location_on</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-background-dark/90 backdrop-blur p-3 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">verified</span>
+<p class="text-xs font-medium">Precision geo-pin active. Our rider will see your exact gate.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Split-Cart Visualization (Multi-Vendor) -->
+<section class="bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span>
+<h2 class="text-xl font-bold">Review Items &amp; Shipping</h2>
+</div>
+<span class="text-sm font-semibold text-gray-500">3 Items in Cart</span>
+</div>
+<!-- Vendor 1 -->
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">storefront</span>
+<span class="font-bold text-secondary dark:text-white">Sold by: <span class="text-primary underline">GadgetHub Lagos</span></span>
+</div>
+<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Est. Delivery: 2-3 Days</span>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+<div class="size-20 bg-gray-100 rounded-lg bg-cover bg-center" data-alt="Smartphone display" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVw84b2Fkmlbtr8_h6rZh7ImhvbQZVMudY1I_X2ghgPbOUY4aWdEesyf96Rdl3XeP-3fJWdI3YWmIfrgeCEgrEHdpBAGvk0_UlV85sYKjAQhxVy1zUuhD9YH5WUp00vDT_D4J6mSscSMa_70lvxP5Xv40hD4WE1I00grmztAG5At6haqcmrJ4pjZKeQQopqx9l7h0itU825KGKzVnuLYMfPlbssUMaiGgezCsKg74TBBgzKUcs9N72bIoSdLuKta4pVuKaunC4aXs');"></div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">X-Pro Smartphone 256GB - Phantom Black</h4>
+<p class="text-xs text-gray-500">Qty: 1</p>
+<p class="text-primary font-bold mt-1">₦ 245,000</p>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-sm">
+<span class="text-gray-600 dark:text-gray-400">Vendor Shipping Fee:</span>
+<span class="font-bold">₦ 2,500</span>
+</div>
+</div>
+<!-- Vendor 2 -->
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">storefront</span>
+<span class="font-bold text-secondary dark:text-white">Sold by: <span class="text-primary underline">HomeStyles PH</span></span>
+</div>
+<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Est. Delivery: 5-7 Days</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+<div class="size-20 bg-gray-100 rounded-lg bg-cover bg-center" data-alt="Coffee maker" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_s-d23hkrFSwuMWp-e4uSvilDBetheMNZ9A-zKTE7BKYwL8drtVtVWdfJl-X3JeZJV7W0U5MRqOi83PToq3G5gV3iJf2IZHjko0WA8mkn39xMrOoq0r3tB43mZAEuAnUcABwrpl3QUJ85d12MGlriMzzKA-zQWIAPTs0iGmv7PGV5SkMKokTQoL2B5hJezk2gODjbHKUvLZY_QU1rjK3zixCxws58TRmmlLCA4cpYqvC1p_Q9sAqw-piKNETpkIuw3gW77qsVi4o');"></div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Professional Espresso Maker v2</h4>
+<p class="text-xs text-gray-500">Qty: 1</p>
+<p class="text-primary font-bold mt-1">₦ 85,000</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+<div class="size-20 bg-gray-100 rounded-lg bg-cover bg-center" data-alt="Pack of coffee beans" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2eoTsrrgLRs7yUi9uTttnOxEFL6zzw9prNkiuZahAeGsmWV8LEVTD8qSjfgdM7r7I4MkLv6Py9B9UeqaiKPomZTcYiRBRCs_sRieFBZFsCwwF96MWD6tHMnb1RN3QQ8Znf6YFSmUIJVo3iNJ5d1aqHcZCW1hIhzcC7_tai36Sx-C-_udE9zr_C7Pq4d4ctKncjGy5j4_nXT5cqYPiOwTsfB0D_OGx8N9AR3mZxwYo_fs-PLD9u5jXDwf4zXOwWAcLZgSFo1AB1m4');"></div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Premium Arabica Beans (500g)</h4>
+<p class="text-xs text-gray-500">Qty: 1</p>
+<p class="text-primary font-bold mt-1">₦ 7,500</p>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-sm">
+<span class="text-gray-600 dark:text-gray-400">Vendor Shipping Fee:</span>
+<span class="font-bold text-primary">FREE</span>
+</div>
+</div>
+</section>
+<!-- 3. Payment Section -->
+<section class="bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center gap-3">
+<span class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span>
+<h2 class="text-xl font-bold">Payment Method</h2>
+</div>
+<div class="p-6 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="relative flex items-center p-4 border-2 border-primary rounded-xl cursor-pointer bg-primary/5">
+<input checked="" class="text-primary focus:ring-primary h-5 w-5" name="payment" type="radio"/>
+<div class="ml-4">
+<span class="block text-sm font-bold">Pay Now (Card/Transfer)</span>
+<span class="block text-xs text-gray-500">Secure Flutterwave Checkout</span>
+</div>
+<span class="absolute top-2 right-2 material-symbols-outlined text-primary">verified_user</span>
+</label>
+<label class="relative flex items-center p-4 border border-gray-200 dark:border-gray-800 rounded-xl cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+<input class="text-primary focus:ring-primary h-5 w-5" name="payment" type="radio"/>
+<div class="ml-4">
+<span class="block text-sm font-bold">Pay on Delivery</span>
+<span class="block text-xs text-gray-500">Available for Lagos only</span>
+</div>
+</label>
+</div>
+<!-- Escrow Transparency Notice -->
+<div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-600 mt-0.5">security</span>
+<div>
+<h5 class="text-sm font-bold text-blue-900 dark:text-blue-300">Escrow Transparency &amp; Protection</h5>
+<p class="text-xs text-blue-800 dark:text-blue-400 mt-1 leading-relaxed">
+                                        Your payment is held securely by NobleMart. Funds are only released to vendors after you provide the <strong>Delivery OTP</strong> to the rider, confirming you have received your items in good condition.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-1">
+<div class="sticky top-28 space-y-4">
+<div class="bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800 shadow-lg overflow-hidden">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-bold text-secondary dark:text-white uppercase tracking-tight">Order Summary</h3>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between text-sm">
+<span class="text-gray-500">Items Total (3)</span>
+<span class="font-semibold">₦ 337,500</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-500">Total Shipping Fees</span>
+<span class="font-semibold">₦ 2,500</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-500">Service Fee</span>
+<span class="font-semibold">₦ 450</span>
+</div>
+<div class="py-4 border-y border-dashed border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-2">
+<input class="flex-1 bg-gray-50 dark:bg-gray-900 border-gray-200 rounded-lg text-sm" placeholder="Enter Voucher Code" type="text"/>
+<button class="bg-secondary text-white text-xs font-bold px-4 py-2.5 rounded-lg">APPLY</button>
+</div>
+</div>
+<div class="flex justify-between items-end pt-2">
+<div>
+<span class="text-sm font-bold block">Grand Total</span>
+<span class="text-[10px] text-gray-400 uppercase">Includes VAT where applicable</span>
+</div>
+<span class="text-2xl font-extrabold text-secondary dark:text-primary">₦ 340,450</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-extrabold py-4 rounded-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-2 mt-4">
+<span>PLACE ORDER</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-[11px] text-center text-gray-500 leading-tight">
+                                By clicking 'Place Order', you agree to NobleMart's <br/>
+<a class="underline" href="#">Terms of Service</a> and <a class="underline" href="#">Refund Policy</a>.
+                            </p>
+</div>
+</div>
+<!-- Trust Signals -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-4 bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800">
+<div class="bg-primary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h6 class="text-xs font-bold">Secure Checkout</h6>
+<p class="text-[10px] text-gray-500">256-bit SSL encrypted connection</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 bg-white dark:bg-background-dark rounded-xl border border-gray-100 dark:border-gray-800">
+<div class="bg-primary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">history</span>
+</div>
+<div>
+<h6 class="text-xs font-bold">7-Day Return Policy</h6>
+<p class="text-[10px] text-gray-500">Easy returns if items don't match</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark py-12">
+<div class="max-w-[1280px] mx-auto px-6 text-center">
+<div class="flex justify-center gap-4 mb-6">
+<img alt="PayPal" class="h-6 opacity-50 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpzHiuDoKWrFxA8cpfzwTkBP1o9M0cDtGa0Kqnj9ReQJLDjA01Ctzb7OrifjfsaKvsMV2fpen_IbPQfzIcr9HFwaf91kkYr1HFQNFR1ABokVgsIbnLFbPfbHNsFesRkTSkWf1MG2jQAj_jf7CoRBgEoLSCpw_HdJ84b4kCCW8KbWHfu_Q7DTlNsCqLuB7c8fNJtLqehZayoHNpx5fa0CJ_DErsyV6cjleV_QW0WSqqkUcdZQnTWMgqoOJ3UU-mInJOPSlaYQor3NM"/>
+<img alt="Visa" class="h-6 opacity-50 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk6Ohv0hDfsTtoJcTn4CU9bDUo_rnNpQwloQ4YMF3tfhUZ-2inn_3T85ltguE_cngmOJmJLdCXC5ZBKeVPlhGPEKHvxdoAqj1I37r6icqyx08Un1OsGvTfJxudu2w79J1sS4elxLr2LLay4BySKaUUsaVqTG3o0-6ppUBMnmuiKL26i8RXBQ-P1R-dGiXQ9Rjf1FQEVQ468IXC3TroZFSHdonl8n4nvl12DCpliSebc2NlqO0jpZ4AMSz--16D-vGgM594D4IUjrs"/>
+<img alt="Mastercard" class="h-6 opacity-50 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ-gHs9nMVvZqHrXeB5VXg45PCqB1wdG7mPHP6qT02Q_Q0LvXIWmdvQrMv8mXaq1W8PSLmjTeoaP62blvw2ntKZ3bYo32izuL4vvca8jIoReVroA9S-JmMKmhvF2qPFG1-tpeTkzbU87G01Xk5U3gtrzqtFwUZXfyoWoKS37dQ-aQbmnk6Lu2VeBFmFY4Qj9-jvRYqoQNtrreBlXIcXoh02DEJhP_vioGKDZ5sK4_I0w-H5JsEIxS3pdqoqMzQ7UUGmIgwyAZW6g4"/>
+</div>
+<p class="text-sm text-gray-500">© 2024 NobleMart Nigeria. All rights reserved. A Secure Marketplace Platform.</p>
+</div>
+</footer>
+</body></html>

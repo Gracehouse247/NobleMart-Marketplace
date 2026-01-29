@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Payout Calendar</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                        "federal-blue": "#020249",
+                        "electric-indigo": "#5C1BE8",
+                        "robin-egg": "#01C2CA",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar: Federal Blue -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-3 border-b border-white/10">
+<div class="size-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<h1 class="font-poppins text-lg font-bold tracking-tight">NobleMart</h1>
+</div>
+<nav class="flex-1 p-4 flex flex-col gap-2">
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</div>
+<!-- Active State: Payouts/Wallet -->
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-federal-blue font-bold cursor-pointer shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">account_balance_wallet</span>
+<span class="text-sm">Payouts</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 cursor-pointer mt-auto">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</div>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3 p-2 bg-white/5 rounded-lg">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Vendor profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXduA9WJmdBj8p3Pxj5UAGADBO3j8_83O78VR22tVeGfJE-5UvRjnl2GiV-I3hPGCX5ztx9WcE9dYd3XQDRviBhAO8_0FQ60GtMh3qO17L9RfA03rNEUNCZ1ua0Mqu0_o9Gn7hmQ4BAFfeDgiEbp54uamuBYvHWmsow5muaRZe1prH8V9RfFSiGsnBU0hTqOt8unQ5VIiwp1kWSsCJpHPsbxdR1WsywXFXFHRm0gVZ3ewhGcCIbCXsoXAbyP2w_1Xei8osV4ML4aA')"></div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Aduke's Boutique</p>
+<p class="text-[10px] text-primary">Verified Merchant</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Header -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-6 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-10">
+<div>
+<h2 class="font-poppins text-3xl font-bold text-federal-blue dark:text-white leading-none">Payout Calendar</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1 text-sm font-medium">Track your scheduled earnings and transaction history.</p>
+</div>
+<!-- Countdown Timer -->
+<div class="flex items-center gap-6 bg-slate-50 dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Next Payout In</span>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex flex-col items-center">
+<span class="text-xl font-bold text-federal-blue dark:text-primary">02</span>
+<span class="text-[10px] text-slate-500">Days</span>
+</div>
+<span class="text-xl font-bold text-slate-300">:</span>
+<div class="flex flex-col items-center">
+<span class="text-xl font-bold text-federal-blue dark:text-primary">14</span>
+<span class="text-[10px] text-slate-500">Hrs</span>
+</div>
+<span class="text-xl font-bold text-slate-300">:</span>
+<div class="flex flex-col items-center">
+<span class="text-xl font-bold text-federal-blue dark:text-primary">45</span>
+<span class="text-[10px] text-slate-500">Mins</span>
+</div>
+</div>
+</div>
+<button class="bg-robin-egg hover:bg-robin-egg/90 text-white px-4 py-2 rounded-lg font-bold text-sm h-fit transition-colors">
+                        Manage Payout Frequency
+                    </button>
+</div>
+</header>
+<div class="p-6 grid grid-cols-12 gap-6">
+<!-- Trust & Transparency Banner -->
+<div class="col-span-12 bg-gradient-to-r from-federal-blue to-slate-900 rounded-xl p-4 flex items-center gap-4 text-white shadow-lg overflow-hidden relative">
+<div class="absolute right-0 top-0 h-full w-1/3 opacity-20 bg-cover bg-center mix-blend-overlay" data-alt="Abstract digital network pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7TA1aBpkX8qUh3QA_0RXPhmLFayBMkrbLNba9iP4grhiPxH_wE8AxCqLc-2lSn4Fdlt7Kne87t_HYqTeh0IOayS00o7Clmqmfnnija4_LIy0eZ2ZwbMkeCYQi8fgN62SFe4z8ccAYJ9FrTCLquEXANDYKhoZ2R8CCQohIBKAOHD7HSNahWHGXeSXwsBSrpeeFwDGkC5OzKer7_lyqoDkKvW_uTWL2SRvsjbvsOt4Lle0YtXZtRouzBHi33BONYgWBozbmgNEAEBU')"></div>
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-base leading-tight">7-Day Escrow Security</h4>
+<p class="text-xs text-slate-300 mt-1">NobleMart holds funds for 7 days post-delivery to ensure customer satisfaction before releasing to your payout cycle.</p>
+</div>
+</div>
+<!-- Calendar View -->
+<div class="col-span-12 xl:col-span-8 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<h3 class="text-xl font-bold text-federal-blue dark:text-white">October 2023</h3>
+<div class="flex gap-1">
+<button class="size-8 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="size-8 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-4 text-xs">
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-robin-egg"></span>
+<span class="font-medium text-slate-500">Scheduled</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-electric-indigo" style="font-variation-settings: 'wght' 700">check_circle</span>
+<span class="font-medium text-slate-500">Completed</span>
+</div>
+</div>
+</div>
+<!-- Main Grid -->
+<div class="p-6">
+<div class="calendar-grid text-center mb-4">
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest pb-2">Sun</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest pb-2">Mon</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest pb-2">Tue</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest pb-2">Wed</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest pb-2">Thu</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest pb-2">Fri</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest pb-2">Sat</div>
+</div>
+<div class="calendar-grid gap-1">
+<!-- Empty starting days -->
+<div class="h-24 bg-slate-50/50 dark:bg-slate-800/30 rounded-lg"></div>
+<div class="h-24 bg-slate-50/50 dark:bg-slate-800/30 rounded-lg"></div>
+<div class="h-24 bg-slate-50/50 dark:bg-slate-800/30 rounded-lg"></div>
+<!-- Oct 1 -->
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative hover:border-primary/40 cursor-pointer">
+<span class="text-xs font-bold">1</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">2</span>
+</div>
+<!-- Oct 3: Completed -->
+<div class="h-24 border border-slate-100 dark:border-slate-800 bg-electric-indigo/5 rounded-lg p-2 relative border-electric-indigo/20">
+<span class="text-xs font-bold text-electric-indigo">3</span>
+<div class="absolute bottom-2 right-2">
+<span class="material-symbols-outlined text-electric-indigo text-lg">check_circle</span>
+</div>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold text-slate-400">4</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">5</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">6</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">7</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">8</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">9</span>
+</div>
+<!-- Oct 10: Scheduled -->
+<div class="h-24 border-2 border-primary bg-primary/5 rounded-lg p-2 relative">
+<span class="text-xs font-bold text-primary">10</span>
+<span class="absolute top-2 right-2 text-[8px] font-bold text-primary bg-primary/10 px-1 rounded uppercase">Selected</span>
+<div class="absolute bottom-2 right-2">
+<span class="size-3 bg-primary rounded-full animate-pulse"></span>
+</div>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">11</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">12</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">13</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">14</span>
+</div>
+<!-- Rows continue... truncated for design -->
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">15</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">16</span>
+</div>
+<!-- Oct 17: Scheduled -->
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">17</span>
+<div class="absolute bottom-2 right-2">
+<span class="size-2 bg-primary rounded-full"></span>
+</div>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">18</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold text-slate-400">19</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">20</span>
+</div>
+<div class="h-24 border border-slate-100 dark:border-slate-800 rounded-lg p-2 relative">
+<span class="text-xs font-bold">21</span>
+</div>
+</div>
+</div>
+</div>
+<!-- History Summary -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-federal-blue dark:text-white">Recent Payouts</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All History</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-electric-indigo/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-electric-indigo">account_balance</span>
+</div>
+<div>
+<p class="text-sm font-bold">REF: NM-9284102</p>
+<p class="text-xs text-slate-500">Paid on Oct 03, 2023</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-federal-blue dark:text-white">₦428,500.00</p>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">check</span> PAID
+                                    </span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-electric-indigo/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-electric-indigo">account_balance</span>
+</div>
+<div>
+<p class="text-sm font-bold">REF: NM-9210455</p>
+<p class="text-xs text-slate-500">Paid on Sep 26, 2023</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-federal-blue dark:text-white">₦1,105,200.00</p>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">check</span> PAID
+                                    </span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-electric-indigo/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-electric-indigo">account_balance</span>
+</div>
+<div>
+<p class="text-sm font-bold">REF: NM-9199281</p>
+<p class="text-xs text-slate-500">Paid on Sep 19, 2023</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-federal-blue dark:text-white">₦350,000.00</p>
+<span class="inline-flex items-center gap-1 text-[10px] font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">check</span> PAID
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Panel (Right): Payout Details -->
+<div class="col-span-12 xl:col-span-4 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden sticky top-28">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-lg font-bold text-federal-blue dark:text-white">Payout Details</h3>
+<span class="text-xs font-bold text-primary py-1 px-2 bg-primary/10 rounded">OCT 10</span>
+</div>
+<div class="p-6 space-y-8">
+<!-- Amount -->
+<div class="text-center py-4 bg-slate-50 dark:bg-slate-800 rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700">
+<p class="text-xs text-slate-500 font-bold uppercase tracking-widest">Estimated Amount</p>
+<h4 class="text-4xl font-extrabold text-federal-blue dark:text-white mt-2">₦842,000</h4>
+<p class="text-xs text-primary font-medium mt-1">+₦12,500 pending approval</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="size-8 bg-slate-100 dark:bg-slate-800 rounded flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-500">receipt_long</span>
+</div>
+<div class="flex-1">
+<p class="text-xs text-slate-500 font-bold uppercase tracking-tight">Orders Included</p>
+<p class="text-sm font-bold mt-1">24 Delivered Orders</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Eligibility based on 7-day post-delivery rule.</p>
+</div>
+<button class="text-primary material-symbols-outlined text-sm">open_in_new</button>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 bg-slate-100 dark:bg-slate-800 rounded flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-500">account_balance</span>
+</div>
+<div class="flex-1">
+<p class="text-xs text-slate-500 font-bold uppercase tracking-tight">Destination Account</p>
+<p class="text-sm font-bold mt-1">Access Bank PLC</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Account: ****1234 • NGN</p>
+</div>
+<button class="text-primary material-symbols-outlined text-sm">edit</button>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-8 bg-slate-100 dark:bg-slate-800 rounded flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-500">event_repeat</span>
+</div>
+<div class="flex-1">
+<p class="text-xs text-slate-500 font-bold uppercase tracking-tight">Payout Frequency</p>
+<p class="text-sm font-bold mt-1">Weekly (Tuesdays)</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Your next change will apply from Nov 01.</p>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full bg-federal-blue text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all">
+<span class="material-symbols-outlined">download</span>
+                                    Download Forecast (PDF)
+                                </button>
+</div>
+</div>
+</div>
+<!-- Digital Planner Imagery Decor -->
+<div class="rounded-xl overflow-hidden relative group h-48">
+<div class="absolute inset-0 bg-federal-blue/40 group-hover:bg-federal-blue/20 transition-all duration-500 z-10"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center z-20 text-white p-6 text-center">
+<h5 class="font-poppins font-bold text-lg">Stay Organized</h5>
+<p class="text-xs text-white/80 mt-1">NobleMart vendor tools are built to help you grow your business with transparency.</p>
+</div>
+<div class="h-full w-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Organized desk with a digital planner and tablet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjiIj3Hftumu8TkgpkEyfQ7tcGRX2nJlo6CavB12FgfHJ08GuAGRIBCuqh2t3CwEPn86qmKZtaeT_iKGqHFrYQGoVWM-x_fPTibXLW5Jlnwuxy8QDqdnvUMlm_Sz8alj1ENHVCUCSQtDQdJwLB36EIOKnIakx31HDC_IR993jh8O5blVaXBhQS1i8twzanCnQ4JSUhvTyuRUzSgorBUhpERGiMiXDDdhZ7x4XpT128jhkuW38B46aGlmb4y6jVvkNAYPTR7Kkog70')"></div>
+</div>
+</div>
+</div>
+<!-- Footer for additional info -->
+<footer class="p-6 border-t border-slate-200 dark:border-slate-800 mt-auto flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-xs">
+<p>© 2023 NobleMart Marketplace. Licensed Financial Operator.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="hover:text-primary transition-colors" href="#">Payout Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

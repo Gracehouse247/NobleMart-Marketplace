@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Promotion Analytics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#330dde",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "heading": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav {
+            background-color: rgba(51, 13, 222, 0.2);
+            border-left: 4px solid #330dde;
+        }
+        .chart-gradient-1 {
+            background: linear-gradient(180deg, rgba(1, 194, 202, 0.2) 0%, rgba(1, 194, 202, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-federal-blue fixed h-full flex flex-col z-50">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<div>
+<h1 class="text-white font-heading font-bold text-lg leading-tight">NobleMart</h1>
+<p class="text-blue-300 text-xs">Vendor Portal</p>
+</div>
+</div>
+<nav class="mt-6 flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-blue-100/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-blue-100/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-blue-100/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/20 text-white border-l-4 border-primary rounded-r-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-blue-100/70 hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="bg-white/5 rounded-xl p-4 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-400 text-sm">shield</span>
+<span class="text-xs font-bold text-white uppercase tracking-wider">NobleShield Growth</span>
+</div>
+<p class="text-[10px] text-blue-200">Your visibility is up 15% due to recent promotions.</p>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[75%]"></div>
+</div>
+</div>
+</div>
+<div class="p-6 mt-auto">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of a smiling male merchant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiO9vhDXw-2wwAcQKrSXptk3QxiqGSW1c89_u4srtr7pSGCx59cZ9JAftd0z_9N49GjDTywtW1Ciy52_l5hWFAse4kze8gky2TFN7G0FPewMMQVCzcGdoizGg64o0vJ1FHheiVRGrjR5dceqw_ClCFGrr3wNfiNlXo2xmuw0lCjbSXUasGoPLJKOQcL-JCEgtGFBkneOQp2XlpcnhTbsNcgLZ_HOBRukjxwk7ZdRwTDW7gDMCURExC9eZ0At-KyO_p8zmFQ7_kNZ8')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-white truncate">Chukwudi Evans</p>
+<p class="text-xs text-blue-300 truncate">Premium Merchant</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 p-8 relative overflow-y-auto">
+<!-- Subtle Background Image Overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none z-0 overflow-hidden">
+<div class="absolute right-0 bottom-0 w-1/2 h-1/2 bg-no-repeat bg-contain bg-right-bottom" data-alt="Data analytics visualization on a digital tablet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmpIqk60u7vA4FRUuAfT2uD5sbrIySwuXQLiOnVeQ6UJnFVUc8_-zl84X_P-9uDMxGc7Xc4IPOhGz3o3rftsBlWpnsiAnFcIg7LK-sQyrC5N-98STH6W42YKKGnGGxjZ0ONOH98l1W81vUO3D9K2PKzMgU-bDjslIulWI0NAIhAleHgu75Mb0ZXIbeQ2ehTrhtjlgOojHeCuNC6sxNaNESDMMt6XS6MGFLRSJdC6-TqOogLZtCjGvT1NwReMbktFi3hUweNm-97UA')"></div>
+</div>
+<div class="relative z-10 max-w-6xl mx-auto space-y-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white">Promotion Performance Analytics</h2>
+<p class="text-slate-500 text-sm mt-1">Track and optimize your campaign ROI in real-time</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 shadow-sm">
+<span class="material-symbols-outlined text-slate-400 text-lg mr-2">calendar_today</span>
+<span class="text-sm font-medium">Nov 1 - Nov 30, 2024</span>
+</div>
+<div class="relative min-w-[200px]">
+<select class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 text-sm font-medium focus:ring-primary focus:border-primary appearance-none pr-10">
+<option>Flash Sale Nov 2024</option>
+<option>Black Friday Special</option>
+<option>End of Year Clearance</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                    </button>
+</div>
+</div>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-robin-egg/10 rounded-lg">
+<span class="material-symbols-outlined text-robin-egg">payments</span>
+</div>
+<span class="flex items-center text-xs font-bold text-emerald-500">+12.4% <span class="material-symbols-outlined text-xs">trending_up</span></span>
+</div>
+<h3 class="text-slate-500 text-xs font-bold uppercase tracking-wider">Total Promo Revenue</h3>
+<p class="text-2xl font-bold mt-1">₦4,250,000</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-electric-indigo/10 rounded-lg">
+<span class="material-symbols-outlined text-electric-indigo">percent</span>
+</div>
+<span class="flex items-center text-xs font-bold text-emerald-500">+3.1% <span class="material-symbols-outlined text-xs">trending_up</span></span>
+</div>
+<h3 class="text-slate-500 text-xs font-bold uppercase tracking-wider">Conversion Rate</h3>
+<p class="text-2xl font-bold mt-1">8.42%</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">confirmation_number</span>
+</div>
+<span class="flex items-center text-xs font-bold text-slate-400">Stable <span class="material-symbols-outlined text-xs">horizontal_rule</span></span>
+</div>
+<h3 class="text-slate-500 text-xs font-bold uppercase tracking-wider">Number of Claims</h3>
+<p class="text-2xl font-bold mt-1">1,842</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-500/10 rounded-lg">
+<span class="material-symbols-outlined text-amber-500">insights</span>
+</div>
+<span class="flex items-center text-xs font-bold text-emerald-500">4.2x <span class="material-symbols-outlined text-xs">trending_up</span></span>
+</div>
+<h3 class="text-slate-500 text-xs font-bold uppercase tracking-wider">Marketing ROI</h3>
+<p class="text-2xl font-bold mt-1">325%</p>
+</div>
+</div>
+<!-- Main Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Large Sales Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-heading font-bold text-slate-800 dark:text-white">Sales Trend Performance</h3>
+<div class="flex items-center gap-4 text-xs font-medium">
+<div class="flex items-center gap-1.5">
+<span class="size-2.5 rounded-full bg-robin-egg"></span>
+<span>Promo Sales</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="size-2.5 rounded-full bg-electric-indigo"></span>
+<span>Regular Sales</span>
+</div>
+</div>
+</div>
+<div class="flex-1 relative min-h-[300px] flex items-end gap-1">
+<!-- Mockup Bar/Area Chart Content -->
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-robin-egg/40 h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/40 h-[40%] rounded-b-sm"></div>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-robin-egg/40 h-[75%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/40 h-[35%] rounded-b-sm"></div>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-robin-egg/60 h-[90%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/40 h-[30%] rounded-b-sm"></div>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-robin-egg/40 h-[50%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/60 h-[50%] rounded-b-sm"></div>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-robin-egg/80 h-[100%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/40 h-[45%] rounded-b-sm"></div>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-robin-egg/40 h-[65%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/40 h-[55%] rounded-b-sm"></div>
+</div>
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-robin-egg/50 h-[80%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/50 h-[35%] rounded-b-sm"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-[10px] text-slate-400 font-bold">
+<span>WEEK 1</span>
+<span>WEEK 2</span>
+<span>WEEK 3</span>
+<span>WEEK 4</span>
+</div>
+</div>
+<!-- Customer Donut Chart -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col items-center justify-between">
+<div class="w-full mb-4">
+<h3 class="font-heading font-bold text-slate-800 dark:text-white">Customer Acquisition</h3>
+<p class="text-xs text-slate-500">New vs Returning Promo Users</p>
+</div>
+<div class="relative size-48">
+<svg class="size-full" viewbox="0 0 36 36">
+<path class="text-slate-100 dark:text-slate-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-width="3"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="65, 100" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-bold">65%</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">New Customers</span>
+</div>
+</div>
+<div class="w-full space-y-3 mt-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-sm">New Customers</span>
+</div>
+<span class="font-bold">1,197</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-slate-200 dark:bg-slate-700"></span>
+<span class="text-sm">Returning</span>
+</div>
+<span class="font-bold">645</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Performance Table -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+<h3 class="font-heading font-bold text-slate-800 dark:text-white">Top Performing Products</h3>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All Products</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-700/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4">Product</th>
+<th class="px-6 py-4 text-right">Promo Price</th>
+<th class="px-6 py-4 text-right">Units Sold</th>
+<th class="px-6 py-4 text-right">Total Revenue</th>
+<th class="px-6 py-4 text-center">Stock Left</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-lg bg-cover bg-center border border-slate-100" data-alt="Modern white minimalist wristwatch" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpTXUHFLiyqqSRAdVBh8REpaLAqDZACOGxQmP1LJSfmAo8TAswkx6GIeiOBKOi1gblhBUdoN4tv6mrU6mNPwVlHuBUHiTBe93NFLg3NTRWNtuAW54E688pHS4Deph3u9zWoH9nBXstUDBaYebo2uSknGMQNjfPQZ0wdJKiYEqDwRv1nuHzyId8Hs_k8DXrlmzjG-aS0ZwQvuBDExy7Mu4dvLsUnEplcjI8HoUf-go7xsSRPSYOoPllVe-HP1EwLh8FJiKat2LkBgw')"></div>
+<div>
+<p class="font-bold text-sm">Zenith Smart Watch X</p>
+<p class="text-[10px] text-slate-400">Electronics • SKU: ZSW-001</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium">₦18,500</td>
+<td class="px-6 py-4 text-right font-bold">248</td>
+<td class="px-6 py-4 text-right font-bold text-emerald-600">₦4,588,000</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 rounded bg-orange-100 text-orange-700 text-[10px] font-bold">12 Left</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-lg bg-cover bg-center border border-slate-100" data-alt="High-end noise cancelling headphones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJKCmQBUUrj4DhTZPplxV9gehRFM-5fHmGG-QLPYfJRdldow5nTSycWySGu_p2i8JRehZYnxzOX1jVOPfTdA7cHEt023zbpAcJofZvWc7JVnyStfnT-7Nj6fgw8Ae6f5kJSyIHXRZESj2FAtB02NiLEBRiTU7uZkEVmlj5KDauFA0Ggm7WqJfjPKbPDQxK6hYLufdRLRGpzV7kbq-MhWskP45heMn2mGWhn2vDmE9iMXDdPv9CVIIqteKZyCLv9pPbuyGAgT_ofQM')"></div>
+<div>
+<p class="font-bold text-sm">Acoustic Bass Elite</p>
+<p class="text-[10px] text-slate-400">Audio • SKU: AB-202</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium">₦12,200</td>
+<td class="px-6 py-4 text-right font-bold">185</td>
+<td class="px-6 py-4 text-right font-bold text-emerald-600">₦2,257,000</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700 text-[10px] font-bold">84 Left</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-lg bg-cover bg-center border border-slate-100" data-alt="Classic red athletic running shoe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDw8MMzQh3bD_rPxcYl3PAVAZqKjRBljL9RioOV-kUDh7t5YjPbw1uEysKKpP_ITP_AiJf2iZFmQaX-wL2MXBcoyLlGGvfDH0bnx6YC3qTz-iL_WhvWTcghV55vPEOGAgAucFEiwwxbC4KtWmD_EQa73wI8w4aMu2CQZ1c4xL7NCk7xka6m-thYkgEvKnAMPc6gp4OLOGKXe8hZrQqYfU1ARW1uS0z3qRF7m123k3-UluDJ3ktEcodauLjJ6xbxckX29hrGvRfn0SU')"></div>
+<div>
+<p class="font-bold text-sm">Rapid Sprint Runners</p>
+<p class="text-[10px] text-slate-400">Footwear • SKU: RSR-99</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-medium">₦25,000</td>
+<td class="px-6 py-4 text-right font-bold">92</td>
+<td class="px-6 py-4 text-right font-bold text-emerald-600">₦2,300,000</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 rounded bg-red-100 text-red-700 text-[10px] font-bold">2 Left</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footer Section / Badge -->
+<div class="flex flex-col md:flex-row gap-6 items-stretch">
+<div class="flex-1 bg-gradient-to-r from-federal-blue to-primary p-6 rounded-xl text-white shadow-lg flex items-center justify-between">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-400">verified</span>
+<span class="text-sm font-bold uppercase tracking-widest">NobleShield Trust Marker</span>
+</div>
+<h4 class="text-2xl font-heading font-bold">Visibility Boosted!</h4>
+<p class="text-blue-100 text-sm max-w-md">Your recent 'Flash Sale Nov 2024' promotion has increased your overall store visibility by 15.4% across the NobleMart search engine.</p>
+</div>
+<div class="hidden lg:block">
+<div class="size-24 rounded-full border-4 border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm">
+<span class="text-3xl font-black">+15%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Bulk Product Edit Tool</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#5c1ce9",
+                "background-light": "#f6f6f8",
+                "background-dark": "#161121",
+                "federal-blue": "#020249",
+                "electric-indigo": "#5C1BE8",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"],
+                "poppins": ["Poppins", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .table-input:focus { border-color: #5c1ce9; ring: 1px #5c1ce9; }
+        .error-border { border-color: #ef4444 !important; }
+        .success-highlight { background-color: rgba(16, 185, 129, 0.05); border-left: 2px solid #10b981; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col fixed h-full z-50">
+<div class="p-6 flex items-center gap-3">
+<div class="size-8 bg-electric-indigo rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+<h1 class="font-poppins font-bold text-xl tracking-tight">NobleMart</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-electric-indigo text-white shadow-lg shadow-indigo-900/20" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3 p-2 rounded-lg bg-white/5">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Vendor profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRUKTCiIeeIUsnQ0FrU8nlmZeJ1DJpOd_NZNSE8K4CGOZVv7H3bGY6JuiyG-LBg08m0KLN2KQGBK2PHuq2x99REqSyokhAZzIztLL9D7CaCAXCJMYHj1ky3C2hh_UXwJ0LxoLvzknCJrpf3c5vkccjzLlzTkVc9PpkSYs4n4WPQMVa3N_OgB3fmJcDFHp_7nX4dEuPiDEN5SD9sNaX0gn7HtM-h7O3rco1afjPsqUs7lqIHFTKCVDXXhlWqXhtQeSUplEYjDcKjL4')"></div>
+<div class="overflow-hidden">
+<p class="text-xs font-semibold truncate">Lagos Electronics Hub</p>
+<p class="text-[10px] text-white/50">Premium Vendor</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 flex-1 flex flex-col">
+<!-- Top Navigation -->
+<header class="h-16 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-white/10 px-8 flex items-center justify-between sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<nav class="flex items-center gap-2 text-sm">
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">Products</a>
+<span class="material-symbols-outlined text-gray-400 text-sm">chevron_right</span>
+<span class="text-gray-900 dark:text-white font-medium">Bulk Edit</span>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-gray-500 text-sm font-semibold hover:text-red-600 transition-colors">Discard</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-bold transition-all shadow-md shadow-primary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">save</span>
+                    Save All Changes
+                </button>
+</div>
+</header>
+<div class="p-8">
+<!-- Page Heading -->
+<div class="mb-8">
+<h2 class="font-poppins font-bold text-3xl text-gray-900 dark:text-white mb-2">Bulk Product Edit</h2>
+<p class="text-gray-500 text-base">Update multiple product prices, stock levels, and promotional statuses in real-time across your Lagos warehouse.</p>
+</div>
+<!-- Filter & Selection Bar -->
+<div class="bg-white dark:bg-background-dark p-4 rounded-xl border border-gray-200 dark:border-white/10 shadow-sm flex flex-wrap items-center gap-4 mb-6">
+<div class="flex items-center gap-3 pr-4 border-r border-gray-200 dark:border-white/10">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Select All</span>
+</div>
+<div class="flex gap-3 flex-1 overflow-x-auto pb-1 sm:pb-0">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-white/5 px-4 text-gray-700 dark:text-gray-300 border border-transparent hover:border-gray-300 transition-all">
+<span class="text-sm font-medium">Category: All</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-white/5 px-4 text-gray-700 dark:text-gray-300 border border-transparent hover:border-gray-300 transition-all">
+<span class="text-sm font-medium">Brand: All</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-gray-100 dark:bg-white/5 px-4 text-gray-700 dark:text-gray-300 border border-transparent hover:border-gray-300 transition-all">
+<span class="text-sm font-medium">Stock: Low Inventory</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="flex-1 max-w-xs relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+<input class="w-full bg-gray-100 dark:bg-white/5 border-none rounded-lg pl-10 h-10 text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search SKU or Name..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Sticky Bulk Action Tool (Visible when items selected) -->
+<div class="bg-primary text-white p-3 rounded-xl shadow-xl flex items-center justify-between gap-6 mb-6 animate-in slide-in-from-top-4 duration-300 border border-white/20">
+<div class="flex items-center gap-4 pl-3">
+<span class="bg-white/20 px-2 py-1 rounded text-xs font-bold">12 Selected</span>
+<div class="h-6 w-px bg-white/20"></div>
+<span class="text-sm font-medium">Bulk Actions:</span>
+</div>
+<div class="flex flex-1 items-center gap-3 justify-center">
+<div class="flex items-center bg-white/10 rounded-lg p-1">
+<span class="text-xs px-2 font-semibold">Price Adjustment</span>
+<select class="bg-transparent border-none text-xs focus:ring-0 py-1 pr-8">
+<option>Increase by %</option>
+<option>Decrease by ₦</option>
+<option>Fixed Value</option>
+</select>
+<input class="w-20 bg-white/20 border-none rounded text-xs py-1 placeholder:text-white/50 focus:ring-0" placeholder="Value" type="number"/>
+</div>
+<div class="flex items-center bg-white/10 rounded-lg p-1">
+<span class="text-xs px-2 font-semibold">Stock</span>
+<input class="w-32 bg-white/20 border-none rounded text-xs py-1 placeholder:text-white/50 focus:ring-0" placeholder="Add quantity" type="number"/>
+</div>
+<div class="flex items-center bg-white/10 rounded-lg p-1">
+<span class="text-xs px-2 font-semibold">Promotion</span>
+<select class="bg-transparent border-none text-xs focus:ring-0 py-1 pr-8">
+<option>Active</option>
+<option>Inactive</option>
+</select>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="bg-white text-primary px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-gray-100 transition-colors">Apply to All</button>
+<button class="bg-transparent hover:bg-white/10 px-4 py-1.5 rounded-lg text-xs font-bold transition-colors">Clear Selection</button>
+</div>
+</div>
+<!-- Editable Data Table -->
+<div class="bg-white dark:bg-background-dark rounded-xl border border-gray-200 dark:border-white/10 shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
+<th class="p-4 w-10 text-center"><input class="rounded text-primary border-gray-300" type="checkbox"/></th>
+<th class="p-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Product</th>
+<th class="p-4 text-xs font-bold text-gray-500 uppercase tracking-wider">SKU</th>
+<th class="p-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Base Price (₦)</th>
+<th class="p-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Sale Price (₦)</th>
+<th class="p-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Stock</th>
+<th class="p-4 text-xs font-bold text-gray-500 uppercase tracking-wider text-center">NobleShield</th>
+<th class="p-4 text-xs font-bold text-gray-500 uppercase tracking-wider text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200 dark:divide-white/10">
+<!-- Row 1 -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 group transition-colors">
+<td class="p-4 text-center"><input class="rounded text-primary border-gray-300" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 bg-cover bg-center shrink-0" data-alt="High-end smartphone product photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPBznUk55VgRJyNdhTTORxy59wYvIs7bZVKOsZb0ax2x5GlPQAeWvKR5mrJv9e2Hf-jTIl0cL1CLZot-Wro4xQ2AsDznufOfEHE9on214nVsQ6N7-dRBeKTcnMTnfgm_z9S2f65VqxFiv9_T0tceRfoPrbWWqCcJEquOXijUHt4xW5047WUl4JaV3AUKbtxGsVI_J3AHvFf1ogQEAFRqMLWxgFoFcNcLVN7Gv2miyCI6B2pOtQhqPoHc9Xo30jTWN9_w37xkvFF6Y')"></div>
+<span class="text-sm font-semibold text-gray-900 dark:text-white truncate max-w-[200px]">Galaxy S23 Ultra - 512GB</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-500 font-mono uppercase">SM-S23-LAG-01</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="text" value="950,000"/>
+</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary success-highlight" type="text" value="890,000"/>
+</td>
+<td class="p-4">
+<input class="w-20 border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="number" value="12"/>
+</td>
+<td class="p-4 text-center">
+<span class="material-symbols-outlined text-green-500" title="Protected">verified_user</span>
+</td>
+<td class="p-4 text-right">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 uppercase">Live</span>
+</td>
+</tr>
+<!-- Row 2 (Error State) -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 group transition-colors">
+<td class="p-4 text-center"><input checked="" class="rounded text-primary border-gray-300" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 bg-cover bg-center shrink-0" data-alt="Wireless headphones product image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzvWii8pNFsChsHcOTZDdnu8V80_QpkxK_gNC5wfHt9WYa_2wn3sePPmJ_GO2TkDGZk6e_HAmeEZLTBrHgej_K99vsnbcaKeIDHmXYJtJUcP56WOcsv17qBwK8GpX4R2Q7ueU_vSqg7rPruLyJS9F0mi1p7z8NyPFlFNo5Sd0xRX9nmOzobbrvkEf2F9wgB7ypLfAofXYOXTS4WWYP73pjdJquJ9laNvSlLPGr2Q55IMTRPdTJEYYxGosF2ydPvX-8xVP8v2rLl-U')"></div>
+<span class="text-sm font-semibold text-gray-900 dark:text-white truncate max-w-[200px]">AirPods Pro Max - Silver</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-500 font-mono uppercase">AP-MAX-WHT-09</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary error-border" type="text" value="-50,000"/>
+<p class="text-[10px] text-red-500 mt-1">Cannot be negative</p>
+</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="text" value="440,000"/>
+</td>
+<td class="p-4">
+<input class="w-20 border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="number" value="0"/>
+</td>
+<td class="p-4 text-center">
+<span class="material-symbols-outlined text-gray-300">verified_user</span>
+</td>
+<td class="p-4 text-right">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 uppercase">OOS</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 group transition-colors">
+<td class="p-4 text-center"><input class="rounded text-primary border-gray-300" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 bg-cover bg-center shrink-0" data-alt="4K Smart TV display" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkJvEnYsOjVaJE5-DdH4ILChgE72OhmtiM4Kt7fTwdax3ghI9BTyikQgvK6E9iB55hNj3HyOd1C576W1vVLplAyr5jzqlRI5mv8SWw-_jbpVzIhfh6FdDhkhq6I9xFZP0evrMY_QGjXmtDDO_oUZrlhilPnvSzGwoU09STr_8nmjg-5HCTxaP-F6FdNVScymXWFQMioiLdFUFg9fC6HAFLJ2sl_gnnDJZVb373budJZcR3MCBWE5sLC_2bBtLME7EPCt6Fm-Pb4jY')"></div>
+<span class="text-sm font-semibold text-gray-900 dark:text-white truncate max-w-[200px]">LG 55" OLED C2 Series</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-500 font-mono uppercase">LG-TV-55-C2</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="text" value="1,250,000"/>
+</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="text" value="1,150,000"/>
+</td>
+<td class="p-4">
+<input class="w-20 border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="number" value="4"/>
+</td>
+<td class="p-4 text-center">
+<span class="material-symbols-outlined text-green-500">verified_user</span>
+</td>
+<td class="p-4 text-right">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 uppercase">Live</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 group transition-colors">
+<td class="p-4 text-center"><input checked="" class="rounded text-primary border-gray-300" type="checkbox"/></td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-gray-100 bg-cover bg-center shrink-0" data-alt="Portable bluetooth speaker" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAc_8HURvHYoBy8XLkwjnJiCoGiSV4Q5vXRWSzCLksNyLGxCk2gxcWIjATlV-2NKgOmIW_9FnQ9vlNzzq8NWAj6dAsVQP8gf9mRb4-eujbJL5rfa7jqdfc6VnZVpdi2kbx_ZrtpLOKIaSg8zllgy3fExSX1__t0jEBbL8PR6Ec6wB3pwuF17uy4Wq2nzJo3Y4gMj1MKjaAI3jRhpGjLyagtiq3dKBWIXbyinCFG5fGesTvQ21qQEnRSkLW-mf3B668arxIT6S0B6A')"></div>
+<span class="text-sm font-semibold text-gray-900 dark:text-white truncate max-w-[200px]">JBL Flip 6 Waterproof</span>
+</div>
+</td>
+<td class="p-4 text-sm text-gray-500 font-mono uppercase">JBL-FL6-BLK</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="text" value="85,000"/>
+</td>
+<td class="p-4">
+<input class="w-full border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary success-highlight" type="text" value="79,500"/>
+</td>
+<td class="p-4">
+<input class="w-20 border-gray-200 dark:border-white/10 rounded-lg text-sm bg-transparent table-input px-2 py-1.5 focus:ring-1 focus:ring-primary" type="number" value="42"/>
+</td>
+<td class="p-4 text-center">
+<span class="material-symbols-outlined text-green-500">verified_user</span>
+</td>
+<td class="p-4 text-right">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-orange-100 text-orange-700 uppercase">Review</span>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Footer -->
+<footer class="p-4 border-t border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<p class="text-xs text-gray-500 font-medium">Showing 1-10 of 248 products</p>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<p class="text-xs text-primary font-bold">12 Modified Items Ready to Save</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="size-8 flex items-center justify-center rounded-lg hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="size-8 flex items-center justify-center rounded-lg bg-primary text-white text-xs font-bold">1</button>
+<button class="size-8 flex items-center justify-center rounded-lg hover:bg-gray-200 transition-colors text-xs font-medium">2</button>
+<button class="size-8 flex items-center justify-center rounded-lg hover:bg-gray-200 transition-colors text-xs font-medium">3</button>
+<span class="px-1 text-gray-400">...</span>
+<button class="size-8 flex items-center justify-center rounded-lg hover:bg-gray-200 transition-colors text-xs font-medium">25</button>
+<button class="size-8 flex items-center justify-center rounded-lg hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</footer>
+</div>
+</div>
+</main>
+</body></html>

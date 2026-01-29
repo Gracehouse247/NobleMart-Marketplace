@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Saved Items Wishlist</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#01c4cb",
+              "background-light": "#f5f8f8",
+              "background-dark": "#0f2223",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#0c1c1d] dark:text-[#f8fcfc]">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e6f4f4] dark:border-[#1a3a3b] bg-white dark:bg-[#0c1c1d] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0c1c1d] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-[#459ea1] flex border-none bg-[#e6f4f4] dark:bg-[#1a3a3b] items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0c1c1d] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e6f4f4] dark:bg-[#1a3a3b] focus:border-none h-full placeholder:text-[#459ea1] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal" placeholder="Search for products..."/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Help</a>
+</div>
+<div class="flex gap-2">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-[#e6f4f4] dark:bg-[#1a3a3b] text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-[#e6f4f4] dark:bg-[#1a3a3b] text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User profile avatar photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3CHqCDkRfsS5_IOqFHsDTo5ybsQkn9E-jExIMkMij_C_tUIuhkye-5go96XqyaO7qitsdcVRDacjMOh_2jDhWHMgdg0Z8oWyBlYBhqlk36FPNmhzFGsbfphFvuaOmJ0ItSITlj4Ex0b5_NyzMXORNqvkTHBg-vnfN7zHC04B99luBNXSJILNMADnqr9TU2F0fsKo9Jr34N0CwvT_fRAUe_fjBaRhLFT2hELfkV1pQel2R3lUZzRYQVvVkUsKLdBewhsnYzfjkU0o");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8 px-4 md:px-20 lg:px-40">
+<div class="layout-content-container flex flex-row w-full max-w-[1280px] gap-8">
+<!-- Persistent Side Navigation -->
+<aside class="w-64 flex flex-col gap-4 shrink-0">
+<div class="flex flex-col p-4 bg-white dark:bg-[#0c1c1d] rounded-xl shadow-sm h-fit">
+<div class="flex flex-col mb-6">
+<h1 class="text-[#0c1c1d] dark:text-white text-base font-bold leading-normal">NobleMart Account</h1>
+<p class="text-[#459ea1] text-xs font-normal leading-normal">John Doe (Gold Member)</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-[#0c1c1d] dark:text-white hover:bg-[#e6f4f4] dark:hover:bg-[#1a3a3b] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-sm font-medium">My Account</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0c1c1d] dark:text-white hover:bg-[#e6f4f4] dark:hover:bg-[#1a3a3b] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">package_2</span>
+<p class="text-sm font-medium">Orders</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl bg-primary text-white shadow-md shadow-primary/30" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">favorite</span>
+<p class="text-sm font-bold">Saved Items</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0c1c1d] dark:text-white hover:bg-[#e6f4f4] dark:hover:bg-[#1a3a3b] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<p class="text-sm font-medium">NobleWallet</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0c1c1d] dark:text-white hover:bg-[#e6f4f4] dark:hover:bg-[#1a3a3b] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<div class="border-t border-[#e6f4f4] dark:border-[#1a3a3b] my-2"></div>
+<button class="flex items-center gap-3 px-3 py-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 rounded-xl transition-all">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</button>
+</nav>
+<button class="mt-8 flex w-full cursor-pointer items-center justify-center rounded-full h-11 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:brightness-105 transition-all">
+<span>Shop All Categories</span>
+</button>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 bg-white dark:bg-[#0c1c1d] p-6 rounded-xl shadow-sm">
+<div class="flex min-w-72 flex-col gap-1">
+<h1 class="text-[#0c1c1d] dark:text-white text-3xl font-extrabold leading-tight tracking-[-0.033em]">Saved Items (5)</h1>
+<p class="text-[#459ea1] text-sm font-normal leading-normal">Manage your favorite products and move them to cart for checkout.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+<span class="material-symbols-outlined">delete_sweep</span>
+                            Clear Wishlist
+                        </button>
+</div>
+<!-- List of Saved Products -->
+<div class="flex flex-col gap-1 bg-white dark:bg-[#0c1c1d] rounded-xl shadow-sm overflow-hidden">
+<!-- Product Item 1 -->
+<div class="flex gap-4 px-6 py-6 border-b border-[#e6f4f4] dark:border-[#1a3a3b] hover:bg-gray-50 dark:hover:bg-[#0c2223] transition-colors group">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg h-32 w-32 border border-gray-100 dark:border-gray-800" data-alt="Brown premium leather loafers footwear" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfR3naWUlR9yb0dsjZsB1uHXFZbVl2bTsXsppnPDhSj7NLahHIOODG4dOxPwxa3RvAGsTxhky2kD1yj-pJVQ0jjJxtME5Opc1xJJABDmHO92B6HcXdRZV5GjQrxTAc0m63_3mtHMvP3_ngiLLPNHcRMaCEgYyQPc69cPKb_YRXmmcXYlEn6MftXsIY3D-bb_WEkEcjyMU5emaJ9ejYwg2GD2F22e5lTJ2QIyjYs5CLufiCUP06V_hge0oQis0duV23W1cZBGXIx2g");'></div>
+<div class="absolute -top-2 -left-2 bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm">NobleShield</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-[#0c1c1d] dark:text-white text-lg font-semibold leading-tight">Premium Leather Loafers - Mahogany Brown</p>
+<button class="text-[#459ea1] hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">In Stock</span>
+<p class="text-[#459ea1] text-xs font-normal">Free Delivery available</p>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<p class="text-[#459ea1] text-xs line-through">₦55,000</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">₦45,000</p>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span>Buy Now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="flex gap-4 px-6 py-6 border-b border-[#e6f4f4] dark:border-[#1a3a3b] hover:bg-gray-50 dark:hover:bg-[#0c2223] transition-colors">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg h-32 w-32 border border-gray-100 dark:border-gray-800" data-alt="High-end 55 inch Ultra HD Smart TV" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaOwswqHKupSyB_x6yLT26uyAkDsh0GflHzPhRLyAHskpftxXKZGIKsnivagF0gzteD8fb10iZa8rjG3MwZvwIzBh3zy6IEJ2G3m9q-74lw1CCD1lNpU_yrttqQ-9Dy8iXSo2934iRvgGIgh3FLYuL_M3G53431mQ4md3HgFCc049fV-B7EESvMHqWfz5TGwR4ntmtp_fCtv-7EHDMG-6q8-0Odgjlrl1RqDzuGI_zoBiRiAE9zNP0qzuTEm2hX1ph4VojxZEtwSY");'></div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-[#0c1c1d] dark:text-white text-lg font-semibold leading-tight">Ultra HD Smart TV - 55 Inch Cinema Series</p>
+<button class="text-[#459ea1] hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> NobleShield Protected
+                                        </span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<p class="text-[#459ea1] text-xs line-through">₦350,000</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">₦320,000</p>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span>Buy Now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="flex gap-4 px-6 py-6 border-b border-[#e6f4f4] dark:border-[#1a3a3b] hover:bg-gray-50 dark:hover:bg-[#0c2223] transition-colors">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg h-32 w-32 border border-gray-100 dark:border-gray-800" data-alt="Modern high-performance gaming laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQ8wO-EZm82BgLl1eAMl8g8Wdu2Cn4OtacEoLFKP6SKfogyMj7WZMQk5zWVSi70Tp5ECDu5_JiD3dQbfLVISDuCZnNoE6yy6tC97W5txO0Dxnfd9sOmNeL7IGBxx77w7xqhbxvWnB1qqnRTfWXL9P83S7pJhVZKV938olT2aUJ8IQYhGD_pnJpQkJ0WwY-Id_PSybzLmu3LGJV6vYETUx_ta4LKmf-JfZCly6bKWOoRFh5l-rbBf4r0k3fV68HIR03qf2ttQiX43s");'></div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-[#0c1c1d] dark:text-white text-lg font-semibold leading-tight">NobleX Pro Gaming Laptop - 16GB RAM / 1TB SSD</p>
+<button class="text-[#459ea1] hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-orange-100 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Only 2 left!</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<p class="text-[#459ea1] text-xs line-through">₦850,000</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">₦780,000</p>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span>Buy Now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Item 4 -->
+<div class="flex gap-4 px-6 py-6 border-b border-[#e6f4f4] dark:border-[#1a3a3b] hover:bg-gray-50 dark:hover:bg-[#0c2223] transition-colors">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg h-32 w-32 border border-gray-100 dark:border-gray-800" data-alt="High-quality noise-canceling headphones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmXlDZUuaOZGYzWzecKOwNiwK0k_53GATaHCcDvcHzVidMZeUzKUY8X9AcR2FV5yUn1AqI5Gc9iMDmFZoXpD872P9XRnPBHpQnBGFjKiYzvJLMcwgHV6yAHGfT0U_Q-wEE-xpGYLHundWVHt_C47QkPLTsUu7kivBEE7YwkU_uYcve8V1_BzBDv4MSm-Pb9IYN0qpNSZ1BhbpocaUUAPjd0b_k2ioYdwpNB_HScl9IUs1e7Dl7xf5B6Qg6AUX3CMIiIOI__naqXQA");'></div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-[#0c1c1d] dark:text-white text-lg font-semibold leading-tight">Wireless Noise Canceling Headphones - Matte Black</p>
+<button class="text-[#459ea1] hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">In Stock</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<p class="text-[#459ea1] text-xs line-through">₦120,000</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">₦95,000</p>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span>Buy Now</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Item 5 -->
+<div class="flex gap-4 px-6 py-6 hover:bg-gray-50 dark:hover:bg-[#0c2223] transition-colors">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg h-32 w-32 border border-gray-100 dark:border-gray-800" data-alt="Premium designer stainless steel wrist watch" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWYS-d9LfkvaYfSFzjheDxdCtBzOUqpQDcE0OyK0eQN8eNqYBIXF8NLgFCidMfCbBcjearo9zj1mv9p71ViKXQsofccmkmJw7CliwGq5pn04i9UOCxIS-2CEL7Hg01hBNxkrE5qhc9QqzS0b-IQRWmPz5ieuvkT6ucr9z1Bft44fS9aXuqyLEu8zEk3deK4Xqfm00A8CoKb8Ale2alGJjZM8iD450h6h3Fn6W6Iprx97LGhfjHIWQ-qdeJbVKo7sbtEFV_nsXTilc");'></div>
+<div class="flex flex-1 flex-col justify-between py-1">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-[#0c1c1d] dark:text-white text-lg font-semibold leading-tight">Noble Chronograph Watch - Silver Edition</p>
+<button class="text-[#459ea1] hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">NobleShield</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<p class="text-[#459ea1] text-xs line-through">₦85,000</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">₦68,000</p>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-md shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span>Buy Now</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions / Empty State Encouragement -->
+<div class="flex flex-col items-center justify-center py-12 px-6 bg-white dark:bg-[#0c1c1d] rounded-xl shadow-sm gap-4">
+<div class="flex flex-col items-center gap-2 text-center">
+<p class="text-[#0c1c1d] dark:text-white text-lg font-bold">Want to explore more?</p>
+<p class="text-[#459ea1] text-sm font-normal">Check out today's trending deals across all categories.</p>
+</div>
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-base font-bold tracking-[0.015em] hover:brightness-110 shadow-lg shadow-primary/20 transition-all">
+<span>Shop Now</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="border-t border-[#e6f4f4] dark:border-[#1a3a3b] bg-white dark:bg-[#0c1c1d] px-10 py-8">
+<div class="flex justify-between items-center max-w-[1280px] mx-auto">
+<div class="flex items-center gap-2 opacity-50">
+<div class="size-4">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"></path>
+</svg>
+</div>
+<p class="text-xs font-medium">© 2024 NobleMart Nigeria. High-Speed E-commerce.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-xs font-medium hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-xs font-medium hover:text-primary" href="#">Terms of Service</a>
+<a class="text-xs font-medium hover:text-primary" href="#">Seller Center</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Promotion Analytics</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#05c0c7",
+              "primary-dark": "#049a9f",
+              "sidebar": "#020249",
+              "chart-blue": "#5C1BE8",
+              "background-light": "#f5f8f8",
+              "background-dark": "#0f2223",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"],
+              "heading": ["Poppins", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for table container if needed */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-[#0d1c1c] overflow-hidden flex h-screen w-full">
+<!-- Sidebar -->
+<aside class="flex w-64 flex-col bg-sidebar text-white h-full shrink-0 transition-all duration-300 ease-in-out">
+<!-- Logo Area -->
+<div class="flex items-center gap-3 px-6 py-6 border-b border-white/10">
+<div class="flex items-center justify-center size-10 rounded-xl bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">storefront</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold font-heading tracking-wide">NobleMart</h1>
+<p class="text-white/60 text-xs">Vendor Portal</p>
+</div>
+</div>
+<!-- Navigation -->
+<div class="flex flex-col gap-2 p-4 flex-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-white/70 hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">grid_view</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-white/70 hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">inventory_2</span>
+<span class="font-medium text-sm">Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-white/70 hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">shopping_cart</span>
+<span class="font-medium text-sm">Orders</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined icon-filled">campaign</span>
+<span class="font-medium text-sm">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-white/70 hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">analytics</span>
+<span class="font-medium text-sm">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-white/70 hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-white transition-colors">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</div>
+<!-- User Profile -->
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer">
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Profile picture of the vendor account owner" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWhDer6CbsfHKTga3FWxhVkoO1J8ivPXWLSQbP5inJhJx5ZT4Teqkx9ed-FRaDIX-v27-L_K_E5ogqSCZW4AYyP2vda-8Yi3YPaEBd9uTN2DXyl86dvqAiafM2mWI5Ikd2HNGP37bcXETCFfuHSry3dwBn2-lkBe_pFkdxhjOwNWzcc7ugUTkCpWA6GPy_9LdB-ASvurReljJOgdxJZCn_jDZa0D9-tVnrcmF6CJxrInVFEV0It_4DaVTGDBTWoo0nnrY01hNjcFs');"></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-sm font-medium truncate text-white">Adewale Stores</p>
+<p class="text-xs text-primary truncate">Verified Seller</p>
+</div>
+<span class="material-symbols-outlined text-white/50 ml-auto text-lg">expand_more</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light relative">
+<!-- Header Section -->
+<header class="bg-white border-b border-[#cee8e9] px-8 py-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shrink-0 z-10 shadow-sm">
+<div class="flex flex-col gap-1">
+<h2 class="text-[#0d1c1c] font-heading text-2xl font-bold leading-tight">Promotion Analytics</h2>
+<p class="text-[#479b9e] text-sm">Track performance for your campaigns</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<!-- Date Range -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#479b9e] text-xl">calendar_today</span>
+</div>
+<select class="appearance-none bg-[#f8fcfc] border border-[#cee8e9] text-[#0d1c1c] text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 pr-8 py-2.5 font-medium cursor-pointer hover:border-primary transition-colors">
+<option>Nov 1, 2024 - Nov 30, 2024</option>
+<option>Oct 1, 2024 - Oct 31, 2024</option>
+<option>Sep 1, 2024 - Sep 30, 2024</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<span class="material-symbols-outlined text-[#0d1c1c] text-lg">expand_more</span>
+</div>
+</div>
+<!-- Campaign Selector -->
+<div class="relative group min-w-[200px]">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#479b9e] text-xl">sell</span>
+</div>
+<select class="appearance-none bg-primary/10 border border-primary/20 text-primary-dark text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 pr-8 py-2.5 font-bold cursor-pointer hover:bg-primary/20 transition-colors">
+<option>Black Friday Deals 2024</option>
+<option>Cyber Monday 2024</option>
+<option>Independence Day Promo</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<span class="material-symbols-outlined text-primary-dark text-lg">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 scrollbar-hide">
+<div class="max-w-7xl mx-auto flex flex-col gap-6">
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Revenue -->
+<div class="bg-white rounded-xl p-5 border border-[#cee8e9] shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 rounded-lg bg-green-50 text-green-600">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="flex items-center gap-1 text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-base">trending_up</span> 15%
+                            </span>
+</div>
+<p class="text-[#6b7280] text-sm font-medium">Incremental Revenue</p>
+<p class="text-[#0d1c1c] font-heading text-2xl font-bold mt-1">₦1,250,000</p>
+</div>
+<!-- Conversion -->
+<div class="bg-white rounded-xl p-5 border border-[#cee8e9] shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 rounded-lg bg-blue-50 text-blue-600">
+<span class="material-symbols-outlined">ads_click</span>
+</div>
+<span class="flex items-center gap-1 text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-base">trending_up</span> 1.1%
+                            </span>
+</div>
+<p class="text-[#6b7280] text-sm font-medium">Promo Conversion</p>
+<p class="text-[#0d1c1c] font-heading text-2xl font-bold mt-1">4.2%</p>
+</div>
+<!-- Items Sold -->
+<div class="bg-white rounded-xl p-5 border border-[#cee8e9] shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<span class="flex items-center gap-1 text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-base">trending_up</span> +120
+                            </span>
+</div>
+<p class="text-[#6b7280] text-sm font-medium">Promo Items Sold</p>
+<p class="text-[#0d1c1c] font-heading text-2xl font-bold mt-1">850</p>
+</div>
+<!-- ROI -->
+<div class="bg-white rounded-xl p-5 border border-[#cee8e9] shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 rounded-lg bg-purple-50 text-purple-600">
+<span class="material-symbols-outlined">monitoring</span>
+</div>
+<span class="flex items-center gap-1 text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-base">trending_up</span> 45%
+                            </span>
+</div>
+<p class="text-[#6b7280] text-sm font-medium">ROI</p>
+<p class="text-[#0d1c1c] font-heading text-2xl font-bold mt-1">350%</p>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Main Line Chart -->
+<div class="lg:col-span-2 bg-white rounded-xl border border-[#cee8e9] p-6 shadow-sm flex flex-col">
+<div class="flex flex-wrap justify-between items-center mb-6 gap-4">
+<div>
+<h3 class="text-[#0d1c1c] text-lg font-heading font-bold">Sales Performance</h3>
+<p class="text-[#479b9e] text-sm">Promo Sales vs Regular Sales</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-sm text-gray-600">Promo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-chart-blue"></span>
+<span class="text-sm text-gray-600">Regular</span>
+</div>
+</div>
+</div>
+<!-- SVG Chart -->
+<div class="relative w-full h-[280px] mt-auto">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 100 50">
+<!-- Grid lines -->
+<line stroke="#f1f5f9" stroke-width="0.5" x1="0" x2="100" y1="0" y2="0"></line>
+<line stroke="#f1f5f9" stroke-width="0.5" x1="0" x2="100" y1="12.5" y2="12.5"></line>
+<line stroke="#f1f5f9" stroke-width="0.5" x1="0" x2="100" y1="25" y2="25"></line>
+<line stroke="#f1f5f9" stroke-width="0.5" x1="0" x2="100" y1="37.5" y2="37.5"></line>
+<line stroke="#f1f5f9" stroke-width="0.5" x1="0" x2="100" y1="50" y2="50"></line>
+<!-- Regular Sales Line (Purple) -->
+<polyline fill="none" opacity="0.6" points="0,40 10,38 20,42 30,35 40,30 50,32 60,28 70,25 80,28 90,20 100,22" stroke="#5C1BE8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" vector-effect="non-scaling-stroke"></polyline>
+<!-- Promo Sales Line (Teal/Primary) - Higher spikes -->
+<polyline fill="none" points="0,45 10,40 20,30 30,25 40,15 50,20 60,10 70,15 80,5 90,12 100,8" stroke="#05c0c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+<!-- Tooltip Point Example -->
+<circle class="drop-shadow-md" cx="80" cy="5" fill="#05c0c7" r="3" stroke="white" stroke-width="1" vector-effect="non-scaling-stroke"></circle>
+</svg>
+<!-- X Axis Labels -->
+<div class="flex justify-between mt-4 text-xs text-gray-400 font-medium px-2">
+<span>Nov 1</span>
+<span>Nov 5</span>
+<span>Nov 10</span>
+<span>Nov 15</span>
+<span>Nov 20</span>
+<span>Nov 25</span>
+<span>Nov 30</span>
+</div>
+</div>
+</div>
+<!-- Customer Reach Donut -->
+<div class="bg-white rounded-xl border border-[#cee8e9] p-6 shadow-sm flex flex-col">
+<h3 class="text-[#0d1c1c] text-lg font-heading font-bold mb-1">Customer Reach</h3>
+<p class="text-[#479b9e] text-sm mb-6">Acquisition Channel Mix</p>
+<div class="flex-1 flex flex-col items-center justify-center relative">
+<div class="relative size-48">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<!-- Returning Customers Ring -->
+<path class="text-chart-blue" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="60, 100" stroke-width="3.8"></path>
+<!-- New Customers Ring -->
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="40, 100" stroke-dashoffset="-60" stroke-width="3.8"></path>
+</svg>
+<!-- Center Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-bold font-heading text-[#0d1c1c]">2.4k</span>
+<span class="text-xs text-gray-500 font-medium">Customers</span>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-6 mt-6">
+<div class="flex flex-col items-center">
+<div class="flex items-center gap-2 mb-1">
+<span class="size-3 rounded-full bg-chart-blue"></span>
+<span class="text-sm font-bold text-[#0d1c1c]">60%</span>
+</div>
+<span class="text-xs text-gray-500">Returning</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="flex items-center gap-2 mb-1">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-sm font-bold text-[#0d1c1c]">40%</span>
+</div>
+<span class="text-xs text-gray-500">New Acquired</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Top Performing Products Table -->
+<div class="lg:col-span-2 bg-white rounded-xl border border-[#cee8e9] overflow-hidden shadow-sm">
+<div class="p-6 border-b border-[#cee8e9] flex justify-between items-center">
+<h3 class="text-[#0d1c1c] text-lg font-heading font-bold">Top Performing Promo Products</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider">
+<th class="p-4 font-semibold">Product Name</th>
+<th class="p-4 font-semibold text-center">Discount</th>
+<th class="p-4 font-semibold text-right">Units Sold</th>
+<th class="p-4 font-semibold text-right">Revenue</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 text-sm">
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-200" data-alt="Wireless headphones product thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALekQpDjCil_djF7bpvy_vbXEk15NzC9KgekCJA2cMIpdc6k5CcDziXUhezhlVthfwxoYib5BbrB1YZ3doZYvVETNSMghFpk5Lfpwcm67iWzk4Uv9cd2YkMfNZdDIVr4kjKbL8hyJBr2W1Zf0UIBZ-TpGMZ2BNCDAkNS28HI_iI7MPsYtwY_0NJfsWxPpU3YybUuMDuSyNt-NRHZmA63Ig9oCcP4Igobw1o8kgIfxG_P2icIkKyiUACq-iX902aYOcyTbr-Gk3GEQ');"></div>
+<div class="flex flex-col">
+<span class="font-bold text-[#0d1c1c]">Sony WH-1000XM5</span>
+<span class="text-gray-500 text-xs">Electronics</span>
+</div>
+</div>
+</td>
+<td class="p-4 text-center">
+<span class="bg-red-100 text-red-700 px-2 py-1 rounded-md text-xs font-bold">-25%</span>
+</td>
+<td class="p-4 text-right font-medium text-[#0d1c1c]">342</td>
+<td class="p-4 text-right font-bold text-[#0d1c1c]">₦850,000</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-200" data-alt="Smart watch product thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDyxhxd0enP_6iKjEH8YVESnDEcSW-Y0HRW5PlKOrAbVZWvFyk0iHY-ToWWvt2BPrj5W3NHAiClA3GNG5cM9HLtKw6MTFbziiT1UHaGAxaGEIq9QhjoQ-HwJ_Ti-K1nXdf3Snbk8PgvCZl58-jQnKmRdyEwee7-vT5u3JPtn5bJpF8JLByiMKn8lwloR1v8CGwYB7ab7p-VnBuWuLQCbjE-PzyNXxnkm5VCBzSpH4ovt66I78rkenogGYJSTHQ260Wgz-yPbOT0ao');"></div>
+<div class="flex flex-col">
+<span class="font-bold text-[#0d1c1c]">Apple Watch Series 9</span>
+<span class="text-gray-500 text-xs">Wearables</span>
+</div>
+</div>
+</td>
+<td class="p-4 text-center">
+<span class="bg-red-100 text-red-700 px-2 py-1 rounded-md text-xs font-bold">-15%</span>
+</td>
+<td class="p-4 text-right font-medium text-[#0d1c1c]">215</td>
+<td class="p-4 text-right font-bold text-[#0d1c1c]">₦620,000</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-lg bg-gray-100 bg-cover bg-center shrink-0 border border-gray-200" data-alt="Running shoes product thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLBdLSe5rEF6k2scssELiozI55yLHoGcV6745tm31ntVH3YNj12Ria16cY-N7qgms9GBWDvwkVr0U3205mBZIUy6IzoeRi_5E9tANrcxdIyhF8Z5ddyY9_FobUkqhFEwO50ltc2a0pntbhwRYxjLx_7-ri3_6tLWrO-yMtmiMBsfQ7bluMxOTBVFCagIW4APy3yhqVUBbfEgTlhxxpmk00xILSXvBPFcDHqdQ4KhsThHPKhoa2s66LGpv7cu20IO8GzPyBTJR5HTA');"></div>
+<div class="flex flex-col">
+<span class="font-bold text-[#0d1c1c]">Nike Air Zoom Pegasus</span>
+<span class="text-gray-500 text-xs">Fashion</span>
+</div>
+</div>
+</td>
+<td class="p-4 text-center">
+<span class="bg-red-100 text-red-700 px-2 py-1 rounded-md text-xs font-bold">-30%</span>
+</td>
+<td class="p-4 text-right font-medium text-[#0d1c1c]">189</td>
+<td class="p-4 text-right font-bold text-[#0d1c1c]">₦415,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Trust Element & Visual Widget -->
+<div class="flex flex-col gap-6">
+<!-- NobleShield Trust Card -->
+<div class="relative bg-gradient-to-br from-sidebar to-[#1a1a60] rounded-xl p-6 text-white overflow-hidden shadow-lg group">
+<!-- Background Image Overlay -->
+<div class="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-700" data-alt="Abstract background pattern representing security and trust" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmudhfY2WpxZvhG13IASAFzqIuC1d3vvRz-wm53hZUdInGJZKRMazlOQx7BmCJ4q_FoTV9vcvANohri5cuUiQwYG27E_KtFh6dWNyeIhklWKxiQPrOE5oZvECemgBgGMNfI6BLqUcloASws1ryArC8wE_VPGVDSKnOJbyDulnBi6ZbhvsT7shDkALxPKnH_NQrxOjxqpuKIrJ3oUe1xcYx8Qd5MOYodsNHhDZk1g1UMWd5dwnmF33WNuHdnI6QvPUthRWNJUZZJBI');"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="bg-white/10 p-3 rounded-full mb-3 backdrop-blur-sm border border-white/20">
+<span class="material-symbols-outlined text-3xl text-primary icon-filled">verified_user</span>
+</div>
+<h3 class="text-lg font-heading font-bold mb-1">NobleShield Rating</h3>
+<p class="text-white/70 text-sm mb-4">Campaign Impact Analysis</p>
+<div class="w-full bg-white/10 rounded-lg p-4 backdrop-blur-sm border border-white/5">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Trust Score</span>
+<span class="text-primary font-bold text-lg">98/100</span>
+</div>
+<div class="w-full bg-black/30 rounded-full h-2 mb-2">
+<div class="bg-primary h-2 rounded-full" style="width: 98%"></div>
+</div>
+<p class="text-xs text-primary-light flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+                                        +5 Points gained from high fulfillment rate
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Vendor Insight Card (Contextual Image) -->
+<div class="relative flex-1 rounded-xl overflow-hidden shadow-sm group min-h-[200px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Photo-realistic background image of a vendor analyzing growth data on a tablet in a modern office" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVzzOoKfTIl52tFujlFQxy9nze77SyVWR_-H8TIWkhIor_nSyqa9u0VbtJi1HyJkOcgkvgQhQkHNe72QipRGc96W42I8W6rZSkx7e7YFqlWUvuk_ORFWhOKoKiVeEGeU_KT0YhfhiCd-V57e0Aj0BBDyjWNUZA9uU8qBcwYPY5V67f6C6FHqyWrjKgtyI3m3UXbO22ijTXSwXAUFnJJw1g9PB2GYKhTleOcQ6wnJA3TgJMS_75jN0QC_XtroiOZbA4Sw9hPapOqFY');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 z-10">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block uppercase tracking-wider">Insight</span>
+<h4 class="text-white font-heading font-bold text-lg leading-snug">Black Friday momentum is strong.</h4>
+<p class="text-white/80 text-xs mt-1">Your store traffic is peaking between 6PM and 9PM.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="max-w-7xl mx-auto mt-12 py-6 border-t border-[#cee8e9] text-center">
+<p class="text-[#479b9e] text-xs">© 2024 NobleMart Vendor Portal. All rights reserved.</p>
+</div>
+</div>
+</main>
+</body></html>

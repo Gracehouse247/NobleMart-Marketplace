@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart - Invite Team Member</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#05bdc7", // Robin Egg Blue
+                "indigo-noble": "#5C1BE8", // Electric Indigo
+                "background-light": "#f5f8f8",
+                "background-dark": "#0f2223",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"],
+                "poppins": ["Poppins", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.modal-overlay {
+    background-color: rgba(15, 34, 35, 0.7)
+    }
+select {
+    appearance: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDfl70LB3rxQLYIkevVxrHxvRUoMa6euKYW8VAsF6o6SS_7QK7nxXcc03qeiNLWoVdhSEwtVfzUBWG7wPd0F2KhFy8GlfDBDvbhY1xw7L66kKk_hcMjV9JgG_GRKHMt0qCA4tKuc7-jbHYMRGvBLkFAQit3j4pP_rstIb4LM3I1H9iSNI5W6aZxOt92RJEUpZg3gDHbWADw08VVE11FwV9TddXemBYmySWmc9hlxq_aNkMlferzMnUBkx1PIZpcTzjY6aX_SkgoemM);
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d1b1c] min-h-screen">
+<!-- Mock Dashboard Background (Dimmed) -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="p-8 max-w-7xl mx-auto opacity-20">
+<div class="flex justify-between items-center mb-8">
+<div class="h-8 w-40 bg-gray-300 rounded"></div>
+<div class="h-10 w-10 bg-gray-300 rounded-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="h-32 bg-gray-200 rounded-lg"></div>
+<div class="h-32 bg-gray-200 rounded-lg"></div>
+<div class="h-32 bg-gray-200 rounded-lg"></div>
+</div>
+<div class="mt-8 h-96 bg-gray-100 rounded-xl"></div>
+</div>
+</div>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay backdrop-blur-sm">
+<!-- Modal Container -->
+<div class="bg-white dark:bg-[#1a2e2f] w-full max-w-[540px] rounded-xl shadow-2xl overflow-hidden flex flex-col">
+<!-- Header Section (Electric Indigo) -->
+<div class="bg-indigo-noble px-6 py-5 flex justify-between items-center">
+<h2 class="text-white font-poppins font-bold text-xl tracking-tight">Invite a Team Member</h2>
+<button class="text-white/80 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<!-- Modal Content/Form -->
+<div class="p-6 space-y-5">
+<!-- Full Name Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-[#0d1b1c] dark:text-white text-sm font-semibold leading-normal">Full Name</label>
+<input class="form-input w-full rounded-lg border border-[#cee8e9] bg-[#f8fcfc] dark:bg-[#0f2223] dark:border-[#2d4a4b] text-[#0d1b1c] dark:text-white focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4 text-base font-normal placeholder:text-[#479a9e]/60" placeholder="Enter staff member's full name" type="text"/>
+</div>
+<!-- Email Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-[#0d1b1c] dark:text-white text-sm font-semibold leading-normal">Professional Email</label>
+<input class="form-input w-full rounded-lg border border-[#cee8e9] bg-[#f8fcfc] dark:bg-[#0f2223] dark:border-[#2d4a4b] text-[#0d1b1c] dark:text-white focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4 text-base font-normal placeholder:text-[#479a9e]/60" placeholder="e.g. name@company.com" type="email"/>
+</div>
+<!-- Role Selection Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="text-[#0d1b1c] dark:text-white text-sm font-semibold leading-normal">Assign Role</label>
+<select class="form-input w-full rounded-lg border border-[#cee8e9] bg-[#f8fcfc] dark:bg-[#0f2223] dark:border-[#2d4a4b] text-[#0d1b1c] dark:text-white focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4 text-base font-normal">
+<option value="administrator">Administrator</option>
+<option value="manager">Manager</option>
+<option selected="" value="support">Support Agent</option>
+<option value="clerk">Inventory Clerk</option>
+</select>
+</div>
+<!-- Permission Preview Box -->
+<div class="p-4 rounded-lg border border-primary/20 bg-primary/5 flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b1c] dark:text-white text-sm font-bold leading-tight">Support Agent Permissions</p>
+<p class="text-[#479a9e] text-xs font-normal leading-relaxed">
+                            Access to Inbox and Reviews only. Cannot view financial reports, manage payouts, or edit core store settings.
+                        </p>
+</div>
+</div>
+<!-- Action Panel (Toggle Example for notifications) -->
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<p class="text-[#0d1b1c] dark:text-white text-sm font-semibold">Notify via Email</p>
+<p class="text-[#479a9e] text-xs">Send immediate onboarding instructions</p>
+</div>
+<label class="relative flex h-[24px] w-[44px] cursor-pointer items-center rounded-full border-none bg-gray-200 dark:bg-gray-700 has-[:checked]:bg-primary transition-colors">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="absolute left-1 top-1 h-4 w-4 rounded-full bg-white shadow-md transition-all peer-checked:translate-x-[20px]"></div>
+</label>
+</div>
+<!-- Footer Buttons -->
+<div class="flex flex-col gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
+<button class="w-full bg-primary hover:bg-[#04a9b3] text-white font-bold py-3.5 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">send</span>
+                        Send Invitation
+                    </button>
+<button class="w-full text-[#479a9e] hover:text-[#0d1b1c] dark:hover:text-white font-medium py-2 transition-colors text-sm">
+                        Cancel and return
+                    </button>
+</div>
+</div>
+<!-- Bottom Brand Bar -->
+<div class="bg-gray-50 dark:bg-[#152627] px-6 py-3 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-xs text-[#479a9e]">verified_user</span>
+<p class="text-[10px] uppercase tracking-widest text-[#479a9e] font-bold">Secure Store Management by NobleMart</p>
+</div>
+</div>
+</div>
+</body></html>

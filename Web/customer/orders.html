@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | NobleMart</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .account-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 1.5rem;
+            border: 1px solid var(--slate-100);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--slate-50);
+        }
+
+        .order-status {
+            padding: 0.35rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-paid {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-pending {
+            background: #fef9c3;
+            color: #854d0e;
+        }
+
+        .order-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .item-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="account-container">
+        <h1 style="margin-bottom: 2.5rem; font-weight: 800;">My Orders</h1>
+
+        <div id="orders-list">
+            <div class="loading-state">
+                <p>Fetching your purchase history...</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            const ordersList = document.getElementById('orders-list');
+
+            if (!token) {
+                window.location.href = '../login.html';
+                return;
+            }
+
+            try {
+                const res = await fetch('https://api.noblemart.com.ng/orders/my-orders', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const orders = await res.json();
+
+                if (orders.length === 0) {
+                    ordersList.innerHTML = `
+                        <div style="text-align: center; padding: 5rem 0;">
+                            <span class="material-symbols-outlined" style="font-size: 4rem; color: var(--slate-200); margin-bottom: 1rem;">receipt_long</span>
+                            <h3>No orders yet</h3>
+                            <p style="color: var(--slate-500); margin-bottom: 2rem;">When you buy items, they will appear here.</p>
+                            <a href="../shop/category.html" class="btn-primary" style="width: auto;">Start Shopping</a>
+                        </div>
+                    `;
+                } else {
+                    ordersList.innerHTML = orders.map(order => `
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div>
+                                    <div style="font-size: 0.85rem; color: var(--slate-400); margin-bottom: 0.25rem;">Order #NM-${order.id}</div>
+                                    <div style="font-weight: 700;">${new Date(order.created_at).toLocaleDateString()}</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span class="order-status ${order.payment_status === 'paid' ? 'status-paid' : 'status-pending'}">
+                                        ${order.payment_status === 'paid' ? 'PAID & PROCESSING' : 'PAYMENT PENDING'}
+                                    </span>
+                                    <div style="font-weight: 800; font-size: 1.25rem; margin-top: 0.5rem;">₦${parseFloat(order.total_amount).toLocaleString()}</div>
+                                </div>
+                            </div>
+                            <div class="order-vendor" style="font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
+                                Shop: ${order.shop_name}
+                            </div>
+                            <div class="order-items">
+                                ${order.items.map(item => `
+                                    <div class="order-item">
+                                        <img src="${item.images ? JSON.parse(item.images)[0] : 'https://placehold.co/100'}" class="item-img">
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600;">${item.name}</div>
+                                            <div style="font-size: 0.85rem; color: var(--slate-500);">Qty: ${item.quantity} × ₦${parseFloat(item.unit_price || item.price).toLocaleString()}</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            ${order.payment_status !== 'paid' ? `
+                                <div style="margin-top: 1.5rem; padding: 1rem; background: #fffbeb; border-radius: 1rem; border: 1px solid #fef3c7; display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-size: 0.85rem; color: #92400e;">Payment was not completed for this order.</div>
+                                    <a href="#" class="btn-primary" style="width: auto; padding: 0.5rem 1rem; font-size: 0.8rem;">Pay Now</a>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `).join('');
+                }
+            } catch (err) {
+                ordersList.innerHTML = '<p style="color: #ef4444;">Failed to load order history. Please try again.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>

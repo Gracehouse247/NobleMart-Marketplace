@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Order Status Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active { color: #01c4cb; }
+        .step-line-active { background-color: #01c4cb; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0c1c1d] dark:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#162a2b] border-b border-[#e6f4f4] dark:border-[#1e3a3b] px-4 md:px-10 py-3">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-xl font-extrabold tracking-tight">NobleMart</h2>
+</div>
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-primary text-sm font-bold" href="#">My Orders</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<label class="hidden md:flex items-center bg-[#e6f4f4] dark:bg-[#1e3a3b] rounded-lg px-3 py-2">
+<span class="material-symbols-outlined text-primary text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-[#459ea1]" placeholder="Track another order..." type="text"/>
+</label>
+<button class="p-2 rounded-lg bg-[#e6f4f4] dark:bg-[#1e3a3b] text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 rounded-lg bg-[#e6f4f4] dark:bg-[#1e3a3b] text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto p-4 md:p-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-6">
+<a class="text-primary text-sm font-medium" href="#">My Account</a>
+<span class="text-[#459ea1] text-sm">/</span>
+<a class="text-primary text-sm font-medium" href="#">Order History</a>
+<span class="text-[#459ea1] text-sm">/</span>
+<span class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium">Order #NM-882910</span>
+</nav>
+<!-- Page Heading Card -->
+<div class="bg-white dark:bg-[#162a2b] rounded-xl p-6 mb-8 border border-[#e6f4f4] dark:border-[#1e3a3b] shadow-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#0c1c1d] dark:text-white text-3xl font-black tracking-tight">Order #NM-882910</h1>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">In Transit</span>
+<p class="text-[#459ea1] text-sm font-medium">Estimated Delivery: Oct 24, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-bold text-sm shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                            NobleShield Verified
+                        </button>
+<p class="text-[10px] text-[#459ea1] mt-1 uppercase font-bold tracking-widest">Premium Handling</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Progress Tracker -->
+<div class="bg-white dark:bg-[#162a2b] rounded-xl p-8 mb-8 border border-[#e6f4f4] dark:border-[#1e3a3b] shadow-sm">
+<div class="relative flex justify-between items-center max-w-4xl mx-auto">
+<!-- Progress Line Background -->
+<div class="absolute top-5 left-0 w-full h-1 bg-[#cde9ea] dark:bg-[#1e3a3b] -z-0"></div>
+<!-- Active Progress Line -->
+<div class="absolute top-5 left-0 w-[60%] h-1 bg-primary -z-0"></div>
+<!-- Step 1: Ordered -->
+<div class="relative z-10 flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white dark:border-[#162a2b]">
+<span class="material-symbols-outlined text-[20px]">shopping_basket</span>
+</div>
+<span class="text-xs font-bold text-primary">Ordered</span>
+</div>
+<!-- Step 2: Processed -->
+<div class="relative z-10 flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white dark:border-[#162a2b]">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+</div>
+<span class="text-xs font-bold text-primary">Processed</span>
+</div>
+<!-- Step 3: Shipped -->
+<div class="relative z-10 flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center border-4 border-white dark:border-[#162a2b]">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<span class="text-xs font-bold text-primary">Shipped</span>
+</div>
+<!-- Step 4: Out for Delivery -->
+<div class="relative z-10 flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-[#cde9ea] dark:bg-[#1e3a3b] text-white flex items-center justify-center border-4 border-white dark:border-[#162a2b]">
+<span class="material-symbols-outlined text-[20px]">directions_run</span>
+</div>
+<span class="text-xs font-bold text-[#459ea1]">Out for Delivery</span>
+</div>
+<!-- Step 5: Delivered -->
+<div class="relative z-10 flex flex-col items-center gap-3">
+<div class="size-10 rounded-full bg-[#cde9ea] dark:bg-[#1e3a3b] text-white flex items-center justify-center border-4 border-white dark:border-[#162a2b]">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<span class="text-xs font-bold text-[#459ea1]">Delivered</span>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-center px-4">
+<p class="text-sm font-medium text-[#459ea1]">60% Complete • Last update: 2 hours ago</p>
+<p class="text-sm font-bold text-primary">Current Stage: Shipped to Hub</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Map and Ship Log -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Map View -->
+<div class="bg-white dark:bg-[#162a2b] rounded-xl overflow-hidden border border-[#e6f4f4] dark:border-[#1e3a3b] shadow-sm">
+<div class="p-4 border-b border-[#e6f4f4] dark:border-[#1e3a3b] flex justify-between items-center">
+<h3 class="font-bold text-sm">Live Location Tracking</h3>
+<span class="flex items-center gap-1 text-[10px] font-bold text-[#459ea1] uppercase">
+<span class="size-2 bg-red-500 rounded-full"></span> Live
+                        </span>
+</div>
+<div class="relative h-[400px] w-full bg-[#eef5f5] dark:bg-[#1e3a3b]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Real-time map showing delivery truck in Lagos" data-location="Lagos, Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGPCjfRd1tjweGQ0-9pimySTguXv1tBsXV5tMGEqqT8hz6tYnwC-1vfvpEyEJEa5XWHNPEIMMDJAFOC6Vij7MW0d6Rk0gaan0Mdyus5SHNsb4oOQG63rO8vl5xkL13P7msSKh7Pb8O8lVCAFnBmCgTSlkBU7VUMb36q3n5pUuDAIsBxn1Ze3eHye3ZfU1OejVC20euRjfLT9OLpt4MqzSBqQzRMZeLNUge47RfDf_Kfe2H6Jt0v4y94fg_DRbvNomiR7Y2t7CP-7c');"></div>
+<!-- Custom Truck Marker -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="relative">
+<div class="absolute -top-12 -left-6 bg-white dark:bg-[#0c1c1d] px-3 py-1 rounded shadow-lg text-[10px] font-bold whitespace-nowrap border border-primary/20">
+                                    NM Delivery Truck #42
+                                </div>
+<div class="size-10 bg-primary rounded-full flex items-center justify-center shadow-xl ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-white text-[24px]">local_shipping</span>
+</div>
+<div class="mt-1 w-2 h-2 bg-primary rounded-full mx-auto animate-ping"></div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-sm font-medium">Currently near: Ikeja Distribution Center, Lagos</span>
+</div>
+<button class="text-primary text-sm font-bold hover:underline">Full Screen Map</button>
+</div>
+</div>
+<!-- Shipment Log -->
+<div class="bg-white dark:bg-[#162a2b] rounded-xl p-6 border border-[#e6f4f4] dark:border-[#1e3a3b] shadow-sm">
+<h3 class="font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                        Shipment Activity
+                    </h3>
+<div class="space-y-8">
+<!-- Log Entry 1 -->
+<div class="relative pl-8 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-[-32px] before:w-[2px] before:bg-primary">
+<div class="absolute left-0 top-1 size-6 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]">check</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold">Arrived at Lagos Sorting Hub</p>
+<p class="text-xs text-[#459ea1]">Oct 22, 2023 | 02:45 PM • Ikeja, Lagos State</p>
+</div>
+</div>
+<!-- Log Entry 2 -->
+<div class="relative pl-8 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-[-32px] before:w-[2px] before:bg-primary">
+<div class="absolute left-0 top-1 size-6 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]">check</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold">In Transit from Onne Port</p>
+<p class="text-xs text-[#459ea1]">Oct 21, 2023 | 09:15 AM • Rivers State</p>
+</div>
+</div>
+<!-- Log Entry 3 -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 size-6 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]">check</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold">Order Confirmed &amp; Picked Up</p>
+<p class="text-xs text-[#459ea1]">Oct 20, 2023 | 04:30 PM • Port Harcourt Facility</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary and Actions -->
+<div class="flex flex-col gap-8">
+<!-- Items Summary -->
+<div class="bg-white dark:bg-[#162a2b] rounded-xl p-6 border border-[#e6f4f4] dark:border-[#1e3a3b] shadow-sm">
+<h3 class="font-bold text-lg mb-6">Order Summary</h3>
+<div class="flex flex-col gap-4">
+<div class="flex gap-4 p-3 rounded-lg bg-background-light dark:bg-[#1e3a3b]">
+<div class="size-16 bg-gray-200 rounded-lg bg-cover bg-center shrink-0" data-alt="High-end smartphone with clean aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI_LS9zBe_NzVwGby_gigEQlUKCay0-51bBxoVo8VKO5R3BAVOAOQF2jIxx3yy3a0gPkmU9Kk2OMqXsNeFiXg8cuPrG7JXUFViW2JsYqnOwqDfptZEt_JPBJO5c_kwWieweW2WohZhAIMscf1UOzSZ7IwsC6X6geO_uBuPhTwl_D19AGdYHNfufizE1Wbg506I7cQCgOER1B2P8tmKijC5tYWX4_x4M1NSiPhzkWeVsmNMrVrGPGit1MK2VG-Fg4IwVkj2VBu-zD0');"></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold leading-tight">NobleX Phone 15 Pro</p>
+<p class="text-xs text-[#459ea1] mt-1">Titanium Blue • 256GB</p>
+<p class="text-sm font-bold text-primary mt-2">₦650,000</p>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-lg bg-background-light dark:bg-[#1e3a3b]">
+<div class="size-16 bg-gray-200 rounded-lg bg-cover bg-center shrink-0" data-alt="Premium wireless noise-cancelling headphones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8ZuMBdDUdq5qTZy-OwEqsNVblWSu92z9YEKSEOBKv6dF9I50TkqakRe2u9bK9ospmsXvbB43G57DJsUefM6PACxA1Sn1mqDj7xfe8JBs18LuXDBQIGq21qkgEyx3in5AyAowVoRvLo4n5YBmF8wGLA4MCAVI7NnkF6uagB8gosG7GOkS4r77vWtOdd5zcZQXx-59utKUQgoWYCoJQdluB2tSYU7S-D_UwROtAnDn2co2zxAD9Pivsr-D9bJvzX7jtHILTWCrhOrM');"></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold leading-tight">NobleSound Elite X2</p>
+<p class="text-xs text-[#459ea1] mt-1">Matte Black • Wireless</p>
+<p class="text-sm font-bold text-primary mt-2">₦120,000</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-[#e6f4f4] dark:border-[#1e3a3b] space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-[#459ea1]">Subtotal</span>
+<span class="font-medium">₦770,000</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-[#459ea1]">Shipping Fee</span>
+<span class="font-medium">₦5,500</span>
+</div>
+<div class="flex justify-between text-lg font-black mt-4">
+<span>Total</span>
+<span class="text-primary">₦775,500</span>
+</div>
+</div>
+</div>
+<!-- Action Sidebar -->
+<div class="flex flex-col gap-3">
+<button class="w-full py-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">support_agent</span>
+                        Contact Support
+                    </button>
+<button class="w-full py-4 bg-white dark:bg-[#162a2b] text-[#0c1c1d] dark:text-white border border-[#e6f4f4] dark:border-[#1e3a3b] rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#e6f4f4] dark:hover:bg-[#1e3a3b] transition-colors">
+<span class="material-symbols-outlined">receipt</span>
+                        Download Invoice
+                    </button>
+<div class="bg-[#01c4cb]/5 dark:bg-primary/10 p-4 rounded-xl border border-primary/20 flex gap-3">
+<span class="material-symbols-outlined text-primary">security</span>
+<div>
+<p class="text-xs font-bold text-primary">NobleShield Assurance</p>
+<p class="text-[11px] text-[#459ea1] mt-1">Your package is fully insured and handled by our certified logistics partners.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-12 border-t border-[#e6f4f4] dark:border-[#1e3a3b] py-8 text-center">
+<p class="text-sm text-[#459ea1]">© 2023 NobleMart Nigeria. All Rights Reserved.</p>
+</footer>
+</body></html>

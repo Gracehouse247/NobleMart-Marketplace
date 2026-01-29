@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Homepage with Prime Deals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "federal-blue": "#020249",
+                        "noble-gold": "#FFD700",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Poppins", "sans-serif"],
+                        "sans": ["Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #01c2ca 0%, #5C1BE8 100%);
+        }
+        .flash-sale-header {
+            background: linear-gradient(90deg, #01C2CA 0%, #5C1BE8 100%);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-[#0c1c1d] dark:text-white transition-colors duration-300">
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#0c1c1d] border-b border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-6">
+<div class="flex items-center gap-2 shrink-0">
+<div class="size-10 brand-gradient rounded-full flex items-center justify-center text-white shadow-md">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</div>
+<h1 class="text-2xl font-extrabold tracking-tight text-[#0c1c1d] dark:text-white">NobleMart</h1>
+</div>
+<div class="flex-1 max-w-2xl hidden md:block">
+<div class="relative flex w-full">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="w-full bg-white border border-gray-300 rounded-l-md py-2.5 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary outline-none placeholder:text-gray-400 text-sm" placeholder="Search products, brands and categories" type="text"/>
+</div>
+<button class="bg-[#5C1BE8] hover:bg-opacity-90 text-white px-6 font-bold text-sm uppercase rounded-r-md shadow-sm transition-colors">Search</button>
+</div>
+</div>
+<div class="flex items-center gap-4 shrink-0">
+<div class="hidden lg:flex items-center gap-4">
+<a class="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="hidden xl:inline">Account</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</a>
+<a class="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">help</span>
+<span class="hidden xl:inline">Help</span>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</a>
+</div>
+<button class="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full">3</span>
+</div>
+<span class="text-sm font-medium hidden xl:inline">Cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 md:px-6 py-4">
+<div class="flex flex-col lg:flex-row gap-4 mb-4">
+<aside class="hidden lg:flex w-[210px] shrink-0 bg-white dark:bg-gray-900 rounded-md shadow-sm flex-col py-2 h-[384px]">
+<nav class="flex flex-col h-full text-[12px]">
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">kitchen</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Appliances</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">smartphone</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Phones &amp; Tablets</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">health_and_safety</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Health &amp; Beauty</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">home</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Home &amp; Office</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">tv</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Electronics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">apparel</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Fashion</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">storefront</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Supermarket</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">laptop_mac</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Computing</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">child_care</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Baby Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">sports_esports</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Gaming</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-secondary transition-all group" href="#">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-secondary text-[18px]">more_horiz</span>
+<span class="font-normal text-gray-700 dark:text-gray-300">Other Categories</span>
+</a>
+</nav>
+</aside>
+<div class="flex-1 min-w-0">
+<div class="relative w-full h-[384px] rounded-md overflow-hidden bg-gray-100 group">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDodEA-K-myD6z4MDofxoM3_ZOhwSzvuykwT8N79uL9XyLbsI7740Gq3zhMAy9VTNSO-qTJvfiIsvrnFO9Tw1EYzgPPdcVRAjTOhb-VBxRGUxpbuOaPuDWsFmMhmWEAxRoxwpKlfHkStZHZxM9suqQsEcmQuIfO_rIeJRlNq_0aYlTiS3wtAtldGsDO4evHbixWBQksCDsCA4IGh2Fo_bpIEx1ThRLPqxgtl-tKZ39YG9mAFCzk8Kyo7xLrginhMfk6rRwQAu0NUIc');">
+<div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+</div>
+<div class="relative h-full flex flex-col justify-center px-8 md:px-12 text-white max-w-xl">
+<h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-md">Upgrade Your Life<br/> <span class="text-[#01c2ca]">Big Savings</span></h2>
+<p class="text-base md:text-lg mb-6 drop-shadow-sm font-light">Official Stores, Warranty &amp; Fast Delivery.</p>
+<div class="flex gap-2 mt-auto mb-8">
+<button class="w-2.5 h-2.5 rounded-full bg-secondary border border-white"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all"></button>
+</div>
+</div>
+<button class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="hidden xl:flex flex-col gap-3 w-[218px] h-[384px]">
+<div class="flex-1 bg-white dark:bg-gray-900 rounded-md shadow-sm p-4 flex flex-col gap-2 hover:shadow-md transition-shadow">
+<div class="flex items-start gap-3">
+<div class="bg-orange-50 p-2 rounded-full text-orange-500">
+<span class="material-symbols-outlined text-[24px]">call</span>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase text-[#0c1c1d] dark:text-white leading-tight">Call to<br/>Order</h4>
+<p class="text-[10px] text-gray-500 mt-1">0800-NOBLE-MART</p>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-white dark:bg-gray-900 rounded-md shadow-sm p-4 flex flex-col gap-2 hover:shadow-md transition-shadow">
+<div class="flex items-start gap-3">
+<div class="bg-secondary/10 p-2 rounded-full text-secondary">
+<span class="material-symbols-outlined text-[24px]">store</span>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase text-[#0c1c1d] dark:text-white leading-tight">Sell on<br/>NobleMart</h4>
+<p class="text-[10px] text-gray-500 mt-1">Join thousands of sellers</p>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-white dark:bg-gray-900 rounded-md shadow-sm p-4 flex flex-col gap-2 hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute right-0 bottom-0 opacity-10">
+<span class="material-symbols-outlined text-[80px]">local_shipping</span>
+</div>
+<div class="flex items-start gap-3 relative z-10">
+<div class="bg-primary/10 p-2 rounded-full text-primary">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase text-[#0c1c1d] dark:text-white leading-tight">Send Your<br/>Packages</h4>
+<p class="text-[10px] text-gray-500 mt-1">Reliable Logistics</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-md border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="bg-[#020249] px-4 py-3 flex items-center justify-between text-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-noble-gold fill-1">workspace_premium</span>
+<h2 class="text-lg md:text-xl font-bold italic tracking-tight text-noble-gold">NobleMart Prime</h2>
+</div>
+<a class="flex items-center gap-1 text-noble-gold font-bold text-xs uppercase hover:underline" href="#">
+                    View All Prime Deals <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="flex overflow-x-auto scrollbar-hide gap-0 divide-x divide-gray-100 dark:divide-gray-800">
+<div class="min-w-[200px] flex-1 group relative flex flex-col p-3 hover:shadow-inner transition-all duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Premium Smartphone" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw"/>
+<div class="absolute top-0 left-0 bg-federal-blue text-noble-gold flex items-center gap-1 px-1.5 py-0.5 rounded-br-md shadow-md">
+<span class="material-symbols-outlined text-[12px] fill-1">crown</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Exclusive</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Galaxy S24 Ultra - Titanium Gray</p>
+<div class="mt-2">
+<span class="text-[10px] font-bold text-federal-blue dark:text-noble-gold uppercase tracking-tighter">Prime Price</span>
+<p class="text-base font-bold text-federal-blue dark:text-white">₦1,450,000</p>
+<p class="text-xs text-gray-400 line-through">₦1,600,000</p>
+</div>
+</div>
+</div>
+<div class="min-w-[200px] flex-1 group relative flex flex-col p-3 hover:shadow-inner transition-all duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Premium Headphones" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-3V9cLYjezBWqhJ_2jM8GZHR2DXEFnzfNuTUBHeIO7YlUrxaA6HQqm7wA76IwzhfO4w445FO3R8FQPZcWRC0-QU7G8QHeyK_zHnwLXyHmK-lgyqBVo5lNwDChztYcglozxEXCbzKcFzeNRAsS1tXC5f-ao2th8GDC2ZWjOG6_3ur7MO62-Wuk0BUH-bPI0L9B8U9yAeyA87QDhhpVUyQcFG-fYqSOJiQSjAUi6PGBfoHtr2yy8O2BXagM5qPkiBZ2ZTuSFPdm4VA"/>
+<div class="absolute top-0 left-0 bg-federal-blue text-noble-gold flex items-center gap-1 px-1.5 py-0.5 rounded-br-md shadow-md">
+<span class="material-symbols-outlined text-[12px] fill-1">crown</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Exclusive</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">WH-1000XM5 Noise Cancelling Headphones</p>
+<div class="mt-2">
+<span class="text-[10px] font-bold text-federal-blue dark:text-noble-gold uppercase tracking-tighter">Prime Price</span>
+<p class="text-base font-bold text-federal-blue dark:text-white">₦420,000</p>
+<p class="text-xs text-gray-400 line-through">₦485,000</p>
+</div>
+</div>
+</div>
+<div class="min-w-[200px] flex-1 group relative flex flex-col p-3 hover:shadow-inner transition-all duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Luxury Watch" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMiaUMLz9fsCjddC3JVFfSa-IKI7DkX1IrZrJMc6nlF-lz_o62vf2mdyHz8jpPL4DLkND-Ew-XKCHrT_GdH-wHVdN5FvMy7N4rgpOmtrp-xJkcTaiO9lSQyInQRXUT_vxWNu1Kk98XLkm9FRjKGT0IYTopk0CrMx2Ui1M3SjYga-Uw1VICzCiI9TueytJZIKiMCOCN1sVr5B2rF2QuSOEYqxvbGe5hLZP57pSnj-0V6tZo4FYfFBsgBwkPh20N23ROOqcjwVdtsgE"/>
+<div class="absolute top-0 left-0 bg-federal-blue text-noble-gold flex items-center gap-1 px-1.5 py-0.5 rounded-br-md shadow-md">
+<span class="material-symbols-outlined text-[12px] fill-1">crown</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Exclusive</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Heritage Gold Limited Edition Watch</p>
+<div class="mt-2">
+<span class="text-[10px] font-bold text-federal-blue dark:text-noble-gold uppercase tracking-tighter">Prime Price</span>
+<p class="text-base font-bold text-federal-blue dark:text-white">₦85,000</p>
+<p class="text-xs text-gray-400 line-through">₦120,000</p>
+</div>
+</div>
+</div>
+<div class="min-w-[200px] flex-1 group relative flex flex-col p-3 hover:shadow-inner transition-all duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Premium Laptop" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArarAM2v1NQy821T8-uTh_wpefireHkKZfMLk1ORJMsgJTLOu_Q9aCKa2mcnfnARbIvw9KgNCwtFoZw0aUu9bavOcwWsucLpc3jqJSjy-4KnSRFG2hEmmD708BaqDu3D07kjYDJ5nF5ODgoF9TRuottlS0xsh1GHaynT_si4U8XIkyq8Od0YSbkJUAeendQISirItDp0Y5QPpUJKooFdee9DKwDK6ynaNujaU92aVkRWw2EPYIJAVrRmzR349fFnQfiBfDyj3xIyw"/>
+<div class="absolute top-0 left-0 bg-federal-blue text-noble-gold flex items-center gap-1 px-1.5 py-0.5 rounded-br-md shadow-md">
+<span class="material-symbols-outlined text-[12px] fill-1">crown</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Exclusive</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">MacBook Pro 14 M3 Chip - Space Black</p>
+<div class="mt-2">
+<span class="text-[10px] font-bold text-federal-blue dark:text-noble-gold uppercase tracking-tighter">Prime Price</span>
+<p class="text-base font-bold text-federal-blue dark:text-white">₦2,100,000</p>
+<p class="text-xs text-gray-400 line-through">₦2,350,000</p>
+</div>
+</div>
+</div>
+<div class="min-w-[200px] flex-1 group relative flex flex-col p-3 hover:shadow-inner transition-all duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="High-end TV" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ1vBmKKD2lzOiS1WKWHbpjiWnCBR78847mdiPa8nmD-lAEGKkswjg6lasB-VDoCyrvwu3-WaNQeUCee0AMx2M3HAmvI4LXVqOhwI3OHT9jygXc99KZi-vrJXqt4hSnzdJCEfv3hgfBeGKTmbUHpXQSj2OG08e0Iv9ZOKOBv8vQnHbbYIlbtlvJMHFw6zXyjzXiUsAk5gSgWZQXq679C6qXK8QQOP2MilSTdjiMo-vJOU4rKv9NG61KbGZeYaY2DSbNKZcS0wD8GY"/>
+<div class="absolute top-0 left-0 bg-federal-blue text-noble-gold flex items-center gap-1 px-1.5 py-0.5 rounded-br-md shadow-md">
+<span class="material-symbols-outlined text-[12px] fill-1">crown</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Exclusive</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">OLED 65" 4K Smart Cinema Display</p>
+<div class="mt-2">
+<span class="text-[10px] font-bold text-federal-blue dark:text-noble-gold uppercase tracking-tighter">Prime Price</span>
+<p class="text-base font-bold text-federal-blue dark:text-white">₦1,150,000</p>
+<p class="text-xs text-gray-400 line-through">₦1,400,000</p>
+</div>
+</div>
+</div>
+<div class="min-w-[200px] flex-1 group relative flex flex-col p-3 hover:shadow-inner transition-all duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Designer Sneakers" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWmFDXwWAESWD1j880IfFZXB1C97l3nbItI5PC3Zn8U-tzu9VrbSm7ZQ94H7C_iP4BBAYeJvMPXU4Eakq1RNsKunp49_1oVKch6mJhma1QgpO46ABAkwwDQx9FWXlwECTcAbZrsjhggW5DsVH9Y-NgEQD0Yx6ndjQlXSim1IkzVKtaRZNNtMbgisY6-0MOZZBHywPzda08u_bjijtfCnPg-13URAkUW-YbW-iM-gBUkMAL-ZmA-QDddUXTZwQDekybawJQMX0IUNo"/>
+<div class="absolute top-0 left-0 bg-federal-blue text-noble-gold flex items-center gap-1 px-1.5 py-0.5 rounded-br-md shadow-md">
+<span class="material-symbols-outlined text-[12px] fill-1">crown</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Exclusive</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Elite Edition Sports Sneakers - White</p>
+<div class="mt-2">
+<span class="text-[10px] font-bold text-federal-blue dark:text-noble-gold uppercase tracking-tighter">Prime Price</span>
+<p class="text-base font-bold text-federal-blue dark:text-white">₦55,000</p>
+<p class="text-xs text-gray-400 line-through">₦72,000</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm p-4">
+<div class="flex overflow-x-auto gap-4 scrollbar-hide pb-2">
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative bg-[#F68B1E]">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-white font-black text-center text-lg leading-tight p-2 uppercase drop-shadow-md border-4 border-white transform -rotate-6">Awoof<br/>Deals</span>
+</div>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Awoof Deals</span>
+</a>
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative bg-[#dedede]">
+<span class="absolute inset-0 flex items-center justify-center text-[#ff9900] font-black uppercase text-xl drop-shadow-sm" style="text-shadow: 1px 1px 0 #fff;">Clearance<br/>Sales</span>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Clearance Sales</span>
+</a>
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative">
+<img alt="Kids" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIk5RB6zY2i6ASR1sRUIl1A58jcgptZ7MSPFIOF8drHbKjvOOHW4_v_PbhsZBK1Y5gIu1ttcdNX7aQ7ZqJUSI5lDU9GVDQE4-Kzi7Yv_PEt00FTTz4rDsXlLic6org9E--RccvQ6pW55VkEgsa12pxky6jTuZwhPsipiba5zEUOYOEW2kga0CAORVpqqIw0ublVHGdNgS7boTYpd3OorFpmWwNeWa4LseHayW8bQ78zJxiBIjfVdnf2wsMiKx6cXPbxH0ULX7fSns"/>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Kids &amp; Baby</span>
+</a>
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative bg-black">
+<div class="absolute inset-0 flex flex-col items-center justify-center p-2">
+<span class="text-white font-bold text-xs uppercase bg-red-600 px-2 py-0.5 transform -rotate-3">Buy 2</span>
+<span class="text-yellow-400 font-black text-xl uppercase italic">Pay For</span>
+<span class="text-white font-bold text-lg uppercase border-b-2 border-white">One</span>
+</div>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Unbeatable Offers</span>
+</a>
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative">
+<img alt="Groceries" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZeXjdlbhr6XpU5Y7rMfSAU5REjkva4Wce_7QESkjINp9HRePsxbKHVUzvwdC-sQPYTDPS6kIUw50wNQrIwNvM35sewoloymOW97z43KRYyV05ethQVau230FxDGLv-VcCIOaxUdZ7L3M3I8vvKkA5io-EEwYjg4tR9gKucDcAr-tfgAV_1E2J6dLCCnS2GXbc6r_3miOIk2yEVhZKR9yIZY7NEPBXuPEGIa7B88viXgecpGVvj3VylJcHvzKsC-l2uTALph1iKb8"/>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Groceries</span>
+</a>
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative bg-purple-900">
+<img alt="Video Games" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGmH6xz6BqxNmwqjQl5glroUfRRqLFfTO0jkL4j5qCdLH9bF0B1TMe6njwoxxW5aJdwUQDOryZ9MDWOODYNqafGpd8FUYmlZURmT_oPo67plPJkFi69rUTHjAmrTtWLM1IxW5o9YULc6rhCtQmO56uQjQcJw_lH1CXyp6scCLX--SdeBD8L77j_ys9WEgWTE2fjNZuFwpxwdAeAlc9MJokwagwyqkvNFt3rfXUF_iq0voFfeTISON24c3haCiZ_ZVPC-6rvGZQhsU"/>
+<div class="absolute bottom-0 w-full bg-black/50 text-white text-[10px] text-center py-1">Gaming</div>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Video Games</span>
+</a>
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative bg-[#004e82]">
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-white/80 font-bold uppercase text-xs">Deals</span>
+<span class="text-white font-black uppercase text-lg">Reloaded</span>
+</div>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Deals Reloaded</span>
+</a>
+<a class="flex flex-col items-center gap-2 min-w-[100px] group cursor-pointer" href="#">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative">
+<img alt="Toys" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMYy53vsBt8a_Z6wUxwq-6fuKS4tIK-9AmF3TQdwchZwJLrP18flBIlJzn1yK3NI6ceSmNzbeJZHPJExFj0_wLSMJ3HGFBpd3alLM4djK3JYyCbhFXRo7qxAXmvCJc79DgLrsMc3orvaUHIxEuuQ4B0F2EvML7g8TGZ8IQ4BEYeIQ9Vzgfnq1PL7r7Gv-RZoylNJjpDmqSypuk69ot0TkP5bUbiekOnEifIJgHTaUps2DcXJGxwDyYenKVErP-mkAcbiYlVVKUDz4"/>
+</div>
+<span class="text-xs text-center font-medium group-hover:text-secondary">Toys &amp; Games</span>
+</a>
+</div>
+</section>
+<section class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="flash-sale-header px-4 py-3 flex items-center justify-between text-white">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-300 fill-1">bolt</span>
+<h2 class="text-lg md:text-xl font-bold uppercase tracking-tight">Flash Sales</h2>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<span class="text-sm font-medium opacity-90">Time Left:</span>
+<div class="flex gap-1 text-sm font-mono font-bold">
+<span>02h</span> : <span>14m</span> : <span>45s</span>
+</div>
+</div>
+</div>
+<a class="flex items-center gap-1 text-white font-bold text-xs uppercase hover:underline" href="#">
+                    See All <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0 divide-x divide-gray-100 dark:divide-gray-800">
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-3V9cLYjezBWqhJ_2jM8GZHR2DXEFnzfNuTUBHeIO7YlUrxaA6HQqm7wA76IwzhfO4w445FO3R8FQPZcWRC0-QU7G8QHeyK_zHnwLXyHmK-lgyqBVo5lNwDChztYcglozxEXCbzKcFzeNRAsS1tXC5f-ao2th8GDC2ZWjOG6_3ur7MO62-Wuk0BUH-bPI0L9B8U9yAeyA87QDhhpVUyQcFG-fYqSOJiQSjAUi6PGBfoHtr2yy8O2BXagM5qPkiBZ2ZTuSFPdm4VA');"></div>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-17%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Wireless Noise Cancelling Headphones - Onyx Black</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦45,000</p>
+<p class="text-xs text-gray-400 line-through">₦54,200</p>
+</div>
+<div class="mt-2">
+<p class="text-[10px] text-gray-500 mb-1">20 items left</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0e3k_R_ZN0lsS9jJlCuyYzxWM-zT_kd_5QOUQFTPwZOEz2J0K3HQqD7ly1qw9c87hDyxxrw1GTAIvupPO6GCWN5gxFfmwH6PB3dxyo8niZWZUXUPRb7kgKgM8gZC9JNDbKjZSHERV3cIUkkTdXffMBDtHx1Hq_Ky1yH3Czxiw4rlsFCEMbdOREpSBBeQuq2Lhal_9V92yIH_4U22x4nOb1CZQbsoPcaLGa5vxfY7TiX8-GobDcrA5i2D4P9OMrlbMouji-5MOxYw');"></div>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-10%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">SmartX Pro 128GB - 5G Enabled Smartphone</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦280,000</p>
+<p class="text-xs text-gray-400 line-through">₦310,000</p>
+</div>
+<div class="mt-2">
+<p class="text-[10px] text-gray-500 mb-1">5 items left</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+<div class="bg-[#f68b1e] h-1.5 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_m8L2QY0IaJEzav33kU6YWm0UvIr65XZ9fbaU606g5zYGyzHBc9UcVamGOoBRowuU3VXep6QX6xbip7B6Kxs-u7ZG6izG55SANSRaKjm9dRW9i-tIJ2BQyH_COqLx60WiGibMyZjysWeqGt-h5d2N8wDyWqyieJgrVtQmJYs1USSGf8BDyI1I-1GKmimvisbhyOToIpSOK18IOLz4TnOAEKcLklrPnVfn7SGtQV2dtO3_D1No1Ujurv7Rb8aUe0xvckhARo2JoKg');"></div>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-25%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">NutriBullet Professional 1200W Kitchen Blender</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦85,000</p>
+<p class="text-xs text-gray-400 line-through">₦113,300</p>
+</div>
+<div class="mt-2">
+<p class="text-[10px] text-gray-500 mb-1">12 items left</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX5Y_aaz8WF3-JNEgq6ge13Z4VUn95CtkxCrqFJkOKWkNsmeT3JOmgK6UX11kIb0YU9Ilz18F5P9wcPhIgAJfpu8VJUJwji0b6jXxH4dduNCQnhOJvt6rIwwWnoE56HEW57HNsFOMYkVFmNEfEi5Bo2yhI0vGBhxINjdVz5ZYVzfwZUNSG47DeUjJZmJno-XxlMlrNICBIb2Mxhz6VwpASzhL-VjUmEdn5_V4zc-dqUe0a6z-UDWEdZsNIKR_YJrruZs5kwZocMUs');"></div>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Glow Kit: Organic Shea &amp; Cocoa Butter Set</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦12,500</p>
+<p class="text-xs text-gray-400 line-through">₦13,150</p>
+</div>
+<div class="mt-2">
+<p class="text-[10px] text-gray-500 mb-1">150 items left</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 20%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRxk4ExsWEEyleyqyuIQJUWZLxAWECbQZhEA330IWeplGzfLr8dnbcUK04IovaUgyXAQcCm-_so-EC3blGmLgzMK5-7EBePZJaDPbqV6b4IWrGQ29V_3a517SAsbTuD5LlFX2xM-FBb3N3hoIO8WkeAbDNs8iG-y9iLdixedA6AkRuVK8Pd2YR_yf_N-S1R-nyOyggv5Y1LaBFUAfgtg4hHRgmvsXE_YlZpzj9SfjzH4-HxXQnmBz0H51qTRYpw1UxbR0umDnYGBY');"></div>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-20%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Urban Elite Leather Sneakers - Midnight Blue</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦24,000</p>
+<p class="text-xs text-gray-400 line-through">₦30,000</p>
+</div>
+<div class="mt-2">
+<p class="text-[10px] text-gray-500 mb-1">8 items left</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+<div class="bg-[#f68b1e] h-1.5 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Watch" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMiaUMLz9fsCjddC3JVFfSa-IKI7DkX1IrZrJMc6nlF-lz_o62vf2mdyHz8jpPL4DLkND-Ew-XKCHrT_GdH-wHVdN5FvMy7N4rgpOmtrp-xJkcTaiO9lSQyInQRXUT_vxWNu1Kk98XLkm9FRjKGT0IYTopk0CrMx2Ui1M3SjYga-Uw1VICzCiI9TueytJZIKiMCOCN1sVr5B2rF2QuSOEYqxvbGe5hLZP57pSnj-0V6tZo4FYfFBsgBwkPh20N23ROOqcjwVdtsgE"/>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-30%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Classic Analog Wristwatch - Gold Plated</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦15,000</p>
+<p class="text-xs text-gray-400 line-through">₦21,400</p>
+</div>
+<div class="mt-2">
+<p class="text-[10px] text-gray-500 mb-1">45 items left</p>
+<div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 30%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-6 bg-white dark:bg-gray-900 rounded-md shadow-sm p-4">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-blue-900 relative flex items-center justify-center">
+<div class="text-center">
+<h3 class="text-white text-lg font-bold">with</h3>
+<p class="text-white text-xs opacity-80">NoblePay</p>
+</div>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors line-clamp-1">Buy Now, Pay Small Small</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Phones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwkNoALPCXsN0Y9iyrNbJXveqdpeGUoMnIaAciOfTaLXHIm-USGNHPHW7cLmjm8LnUHTg_t1zzVd2zAMhsJ5t8IDyCmxUYZawge0N27kFrjOBgl-BJReQmHlM9dWpGfCCMcfKpTTPxhDQjap0LPt1tKD4Xdtc1eK-JdzArOViKTlW5skEcdzp4xcOkjoHarv5Hm8K6FWgbNhus5I3uPp3X3gEWAXyqFnHVXn-2jLL3OjOm-kPqvKsQgBN3xG-0khoZrQLrp6SRosk"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Phones &amp; Tablets</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Appliances" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBScVJMpWO1hitO57ciPip7-lRyu0oK8FtMAKGmzZ805Ijuds2BzsgGakds5B8FhcUA4HavbmGLLrDfuduVoeNrvc8i2DaHgB8eqAOIA4yed6ysaizVrhSiVMRqklaKsscbea_NrndFmNzKlodMz3oJuZlWV5dCHh3oFWMulaKrL1JT7iy-1y2QWJH6oC3ZOS_xuXAtkX0MQDMEsV6p8SdL5vdiK6elkh-oTBF6DLXk1ytvvzxM_f5zRiRYXjgHz4kG6SVGybIndZ4"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Appliances</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Fashion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATVYz-TQMKJVbVlpOdWB0pjD0khw_5qdCsgr_7-_wlVT2mt464F64UZV36BkKTbBRgmUe53EnLF5RAOJwlbc5uEJa61N0TcdXGX4OFD4ceaanez1dvrZJ3_jVxZc-SGRqWHBaGFT_jvwrKzqQnpio0oXpe-tBgmgPaQpxon2k_2fY3o1lPr21M8D5E5fV--nN9FDv6vkrjW1THq-EhVOpwL2J9YdT0aGoufiwv0VPM0BHqNfhxzAjvXn8ZXG5P83Evqf2d7mtFAvI"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Fashion</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="TV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ1vBmKKD2lzOiS1WKWHbpjiWnCBR78847mdiPa8nmD-lAEGKkswjg6lasB-VDoCyrvwu3-WaNQeUCee0AMx2M3HAmvI4LXVqOhwI3OHT9jygXc99KZi-vrJXqt4hSnzdJCEfv3hgfBeGKTmbUHpXQSj2OG08e0Iv9ZOKOBv8vQnHbbYIlbtlvJMHFw6zXyjzXiUsAk5gSgWZQXq679C6qXK8QQOP2MilSTdjiMo-vJOU4rKv9NG61KbGZeYaY2DSbNKZcS0wD8GY"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">TV &amp; Audio</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Beauty" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlBVgb8Cw2uaerf5ZwUBXfzOp60DJJGDStX0aayJWc-4beBJSeG-bfvQOEi7sM0Xq_qnni4Ji3P-9k_6wBRMJEvkgKPOFZwHXCtXnk87GTdK5ESXCWb8DoVfeIVjzrbA6xQRvPb423xo-ZE4qcYbhbZtCfW9wiqPCewiyKV0FQV7ziRmUxbZ4GuER_gqgQjXwM45pVn3rhJB1N_v8RUBji9sVU08lpobSlVoFzJd_7HynZpvaEsgu8TKVa4bW8bsKoD3aCHjfdfJ0"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Beauty Must Have</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUqLF_BlixHlRinG7msfoZESXaySe63ogjiPRwyy_ihwl9oxZwgo_poacXWbTi7Y8ANMIqYokEZNe_QoGd5zfuJmxdJBKMWcVdXipBKDyA7fQTCCs_rySlZHVnqZeU87beFLPwy5VaA5fVMjeiVdroIV-YGjWVXK4Ee4b_X0WrP_wRl2C71886t6kTVRPRF-yUPtbqGINmnJwpIflsKMXzIz3EYThFFWpw9hgsPzgPfAQ2scB8YViAXYtoQayOFEqr0CJOyEXNvxg"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Home &amp; Office</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Computing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArarAM2v1NQy821T8-uTh_wpefireHkKZfMLk1ORJMsgJTLOu_Q9aCKa2mcnfnARbIvw9KgNCwtFoZw0aUu9bavOcwWsucLpc3jqJSjy-4KnSRFG2hEmmD708BaqDu3D07kjYDJ5nF5ODgoF9TRuottlS0xsh1GHaynT_si4U8XIkyq8Od0YSbkJUAeendQISirItDp0Y5QPpUJKooFdee9DKwDK6ynaNujaU92aVkRWw2EPYIJAVrRmzR349fFnQfiBfDyj3xIyw"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Computing</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Fitness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTLJ-cHw0xSA9vJ9ZgsEgeOo4HnLcztrcYUfKYTiy7vJ_dwH22p9T8GOxnUvp9DYIpxc6yevCZDVM7SfsOaH1tXRyVmURgO7Pvp3R3M8rybGiXBFEul8iTALEKr8-QfjOFjFDx_eZVxAUpRl1DJVguuqRdGWPCu_oOgH6D07sfdiGMWKaYFAtvo3pLwyReBE8OIlu7E2R8UJ-28cIZy-LK_1ugHa04sdwVTnc38HuR0Qcq0ZYxW1KuJws5R6nEqtlgexJ--sLFyEI"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Fitness deals</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Generators" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEHDxFmRf0aMXRz8H-K266YFmIDMnirzt9E_EF6e0g2Usdv0Spoda0zAvN5vmoeNw8dfKhkcXUR9Y7eatN60Xgvl8AtmupOaNnP8SRxce32aBFs1msqzeYpwkQbPSD22TqXSSUJQXJ-iixI9mt3scYHyp3vfijXdczeH7KlhHaeAjLAibCpIjv9iRJAYR6yEu0zGFNk7tw287QJXb86AwqptdxlaO0WJi5uj_LtbYk3bV7ECMqfUEuz9dOYN7miiQqkoJZCLfI26o"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Generators &amp; Inverters</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Accessories" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqoM65LlMfj3ggzw6_BHqJCqnNCQOH6aB700oqW_v_l-ynxturHI1pVUTjVe-WbTV-R-rcHRAYisnco2Dq4g_-00lesiMY5eV1voJKV3-3bHnxtwKKkfBwCbeD7PP2DYvCh_ylV0QYd5p7AOKSDbt81HZAZkLdISLlaOiVciBGXjYTcNYX92IR7vuN6WuWeF9U1ND9VfAL8mzUJwi3OHrOKIup_v_Uex4Zranc-34naQkqPw3EWIn90hrgObbNsGshkjHXl5_3hJY"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Mobile Accessories</span>
+</a>
+<a class="flex flex-col gap-2 group cursor-pointer hover:shadow-md transition-all p-1 rounded-md" href="#">
+<div class="w-full aspect-square rounded overflow-hidden bg-gray-100">
+<img alt="Sneakers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWmFDXwWAESWD1j880IfFZXB1C97l3nbItI5PC3Zn8U-tzu9VrbSm7ZQ94H7C_iP4BBAYeJvMPXU4Eakq1RNsKunp49_1oVKch6mJhma1QgpO46ABAkwwDQx9FWXlwECTcAbZrsjhggW5DsVH9Y-NgEQD0Yx6ndjQlXSim1IkzVKtaRZNNtMbgisY6-0MOZZBHywPzda08u_bjijtfCnPg-13URAkUW-YbW-iM-gBUkMAL-ZmA-QDddUXTZwQDekybawJQMX0IUNo"/>
+</div>
+<span class="text-xs text-center font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary transition-colors">Sneakers</span>
+</a>
+</div>
+</section>
+<section class="mb-12 bg-white dark:bg-gray-900 rounded-md shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="bg-[#01C2CA] px-4 py-3 flex items-center justify-between text-white">
+<h2 class="text-lg md:text-xl font-bold font-sans tracking-tight">Top Sellers</h2>
+<a class="flex items-center gap-1 text-white font-bold text-xs uppercase hover:underline" href="#">
+                    See All <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0 divide-x divide-gray-100 dark:divide-gray-800">
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Redmi 13C" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv0TQCfGfu5Q1-OOePpwSOPfOPict6HOgxKT5YBe6TMn3S1f7lE0Poh27yOB3lFBpChBbtG-X28aX6y6w2Nye88GTrxCanTEJs-V7C2iUclgVkfbuhzhISUoK8Ya-ZR3eHWdDOAiDwEMO6WaLHr0NIl1OCf4Yp0H6wCg0PFhgpUG5lPnwD0yIset8LYYJzqFJrWYINIkOyoI2E5pO4jeBiDhdwMfdGZv7NhUALCcnRTVTSkTpzpEXjctIoZ_iDpHN-pAm3zNf61N8"/>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-5%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">XIAOMI Redmi 13C 6.7" 128GB ROM/4GB RAM</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦153,206</p>
+<p class="text-xs text-gray-400 line-through">₦160,866</p>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Freezer" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQx6lA7qDg5YW4u05NP6xZ9ZPJMYuBKIR7T1wZtaZCSwg9ODZb3tC_P632jiEu4HAfbhVkxQxbO0gRMzrsefzBWb5IF6u6_rbHboMTG7MzkyCezwFEQSU-Hoeps9jRAdFkUZSbLTq5SDb3X32pvBkTeykvUqWlbtS_YjvuqLdS6Q1byWTykDmAup983Niuy8a_8_1hx46xzJDXjYM6HqwThJkWHvw-TYsItxJvU-wyrQ9qPHUIx426zRwGE8KNfp5O_E9puiI41E0"/>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-23%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Skyrun 200L Chest Freezer - Anti-rust</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦299,450</p>
+<p class="text-xs text-gray-400 line-through">₦388,765</p>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Air Fryer" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUZy_2QlhMDP_8yTsrC6w9arXmKZxjkO7Ci1E-ee8pzLV8WPaUmq_Yiwc8wl9lbQKzT4V88rBer70_55pEicjugGB2AZR_IPDYs0k6xq9DNaAdRr27m2OG4tivXQ3GVj537ApgKbWPhbob9XT2kzCHKf-PVlcHzGsCi7dpbVzz7kFAHEgaiS_f-hlrLrEMFc_D2BblNwd0r_oNPonReWtSFjEDqZ-uZBd5CmdAw_ClWuwxkHILQqnnYRagx-_CsJG3JUaENh9HTL4"/>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-10%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">SILVER CREST 8L Extra Large Capacity Air Fryer</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦39,399</p>
+<p class="text-xs text-gray-400 line-through">₦44,000</p>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Sunscreen" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPABBJxCUtX_o9b0ayod3uyeG7bnrqTN0rc2LRBQpkJqZZN09fwJ6UfGJ-q0hCs7-WtWuefXqrXRWYFm3zsrrNroG7s4KOQi0QOiqPSSGT7fx9FtOB57eCIeyDeql1D7tHgZvMU7XeiR8VoiGLJy1qZBSvSxbCS5EuADvRZARbAakijD__S81MDxI8M4saYzqtntdMyqjaCSakUNAvybyVs_VE8d6FKIRXhImmgLhjY-mwBh_AwOR0HSCKUdQjMP6e-lqecJeQ2AM"/>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-24%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">NIVEA Sun UV Sunscreen SPF 50 - 50ml</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦16,578</p>
+<p class="text-xs text-gray-400 line-through">₦21,840</p>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Washing Machine" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyYRkM4ePmgwX2F2K9iHsNbgiQTppkVn6Jm1ue5M8FjpX5bJ4CN_P70BnI5l9IJbNVOz8Jm00HmX8how2vl1TsYNkpKB-tSeJ0emiAQblj35z06tlKOtCk3oXp4E6s-AGEC37O6RW6YcOxC14Diyb7b3bVMpnecP-Gqg8jwwMOefiP5gGTMpGS1rwrJ5aLpsbzy8wNeYXpZHQ1ICRxv45xb0iQCR7sOfasXIM6S1Im2q0uWVHwZkc8WvQ8QQ-mOjzAnB6zFHAoHk4"/>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-23%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">Hisense 7.5kg Twin Tub Washing Machine</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦189,999</p>
+<p class="text-xs text-gray-400 line-through">₦247,000</p>
+</div>
+</div>
+</div>
+<div class="group relative flex flex-col p-3 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800">
+<div class="relative aspect-square overflow-hidden mb-2">
+<img alt="Blender" class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApcgs8YfxnirSnPkPekQs0FlgyXrwZ30rm3djlOtcwiFXB_V9-j7N91lhwx7xGJlzqcCVhcbAAVGpOzABFlxXvfxSS6P5WdUpcecSDRDAnv3Rl7QMn9vDW14szI_ZhnH29y5Ia6C_1eLTzUHVq3OqPzKE6-Hyr1HB-ftrQVbzHo2e8buw-8gbj-1GYj0NImqked8WbWQqYe8H9_YxvJ2VQTd9Mt3pPaUSCrt3nEORKCbd17UV9K_bHp45IzvRK5zuxo9oQ3bMEuTc"/>
+<span class="absolute top-0 right-0 bg-[#feefde] text-[#f68b1e] text-[12px] font-bold px-2 py-0.5 rounded-sm">-25%</span>
+</div>
+<div class="flex flex-col flex-1 gap-1">
+<p class="text-[13px] leading-snug text-gray-700 dark:text-gray-300 line-clamp-2">TropicWhirl Blender 2L 2-in-1 Grinder</p>
+<div class="flex flex-col gap-0.5 mt-1">
+<p class="text-base font-bold text-[#0c1c1d] dark:text-white font-sans">₦19,999</p>
+<p class="text-xs text-gray-400 line-through">₦26,640</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-12 brand-gradient rounded-md p-8 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl relative overflow-hidden">
+<div class="absolute inset-0 bg-white/5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+<div class="relative z-10 w-full md:w-1/2">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-white/20 p-2 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</span>
+<h3 class="text-xl md:text-2xl font-bold uppercase">New to NobleMart?</h3>
+</div>
+<p class="opacity-90 text-sm leading-relaxed">Subscribe to our newsletter to get updates on our latest offers! Get exclusive vouchers.</p>
+</div>
+<div class="relative z-10 w-full md:w-1/2 flex flex-col sm:flex-row gap-2">
+<div class="relative flex-1">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 material-symbols-outlined text-xl">email</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-md bg-white text-[#0c1c1d] border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-gray-400 text-sm" placeholder="Enter E-mail Address" type="email"/>
+</div>
+<button class="bg-[#0c1c1d] hover:bg-black text-white font-bold px-6 py-3 rounded-md shadow-md hover:shadow-lg transition-all uppercase text-sm tracking-wider whitespace-nowrap border border-[#0c1c1d]">
+                    Subscribe
+                </button>
+</div>
+</section>
+</main>
+<footer class="bg-[#3e444a] text-gray-200 pt-10 pb-8 border-t border-gray-700 text-xs">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<h5 class="text-xl font-bold text-white tracking-tight">NobleMart</h5>
+</div>
+<div class="space-y-2">
+<p class="text-gray-400">NobleMart is the #1 multi-vendor platform in Nigeria.</p>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Support</h5>
+<ul class="space-y-2 text-gray-400">
+<li><a class="hover:text-white transition-all block" href="#">Help Center</a></li>
+<li><a class="hover:text-white transition-all block" href="#">How to Shop on NobleMart</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Delivery Options</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Return Policy</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Business</h5>
+<ul class="space-y-2 text-gray-400">
+<li><a class="hover:text-white transition-all block" href="#">Sell on NobleMart</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Become a Sales Consultant</a></li>
+<li><a class="hover:text-white transition-all block" href="#">Become a Logistics Partner</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Contact Us</h5>
+<ul class="space-y-2 text-gray-400">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Lagos, Nigeria</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+<a class="hover:text-white transition-colors" href="mailto:help@noblemart.com.ng">help@noblemart.com.ng</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-600 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-gray-500">© 2024 NobleMart Technologies Limited.</p>
+<div class="flex gap-2 opacity-50">
+<span class="font-bold border border-gray-600 px-1 py-0.5 rounded">VISA</span>
+<span class="font-bold border border-gray-600 px-1 py-0.5 rounded">Mastercard</span>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Loyalty Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5e1fe5",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .sidebar-item-active {
+            background-color: rgba(94, 31, 229, 0.2);
+            border-left: 4px solid #5e1fe5;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex">
+<!-- Sidebar -->
+<aside class="fixed left-0 top-0 h-screen w-72 bg-federal-blue text-white flex flex-col z-50">
+<div class="p-8 flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white">shopping_bag</span>
+</div>
+<div>
+<h1 class="text-xl font-bold leading-none tracking-tight">NobleMart</h1>
+<p class="text-xs text-slate-400 font-medium">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-semibold">Inventory</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-semibold">Orders</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 bg-primary/20 text-white rounded-lg cursor-pointer border-l-4 border-primary">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="text-sm font-bold">Loyalty Program</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-semibold">Analytics</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg cursor-pointer transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-semibold">Settings</span>
+</div>
+</nav>
+<div class="p-6 border-t border-white/10">
+<div class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white cursor-pointer">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-semibold">Help Center</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-72 flex-1 p-8 lg:px-12">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<h2 class="text-4xl font-black text-slate-900 dark:text-white tracking-tight">Vendor Loyalty Dashboard</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg">Scale your business and unlock premium marketplace rewards.</p>
+</div>
+<button class="flex items-center gap-2 px-6 h-12 bg-primary text-white text-sm font-bold rounded-xl shadow-lg shadow-primary/25 hover:bg-opacity-90 transition-all">
+<span>View All Tier Benefits</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+<!-- Loyalty Tier Header Card -->
+<div class="relative overflow-hidden rounded-xl mb-10 bg-gradient-to-r from-robin-egg to-primary p-12 min-h-[320px] flex flex-col justify-center shadow-2xl">
+<!-- Decorative Gold Medallion Image -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 lg:opacity-100 transform translate-x-12">
+<img class="w-80 h-80 object-contain rotate-12" data-alt="Photo-realistic 3D gold medallion with sparks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrDFOwWJ1dD_eAzZTQKKTzT_rGZFHuk9q_iG3fwbPUN80MXRV_qBE7YFVjNIdv0NAIRjHHdC_rLbXkSOD-Afn1BpcGAIFYPNd6WzwNpEicK2xTtYYNMxv5DXgRrdOv1Yiue3ZgkMUg21mRJqcR3X-cwqQ8-LrxGWwnu4Pt3O3tkYYd4xDFtjD8ZE3G-uvBBMwFwfchxnDJ8rQim5IiAR3L79Ms5lqq-kzF9RMC9iq0uwQvc-CG5QbasmYUaFWypoBdSSuwf4wLFrM"/>
+</div>
+<!-- Background Image Integration -->
+<div class="absolute inset-0 z-0 opacity-10 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="Successful dark-skinned business professional smiling at store growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0zM76wjCU1AnDKzoTnUsAh2FqYoZSvLXhASA39zfYrfoUnXxTwzziv_isTKxJZDdMxfRBGOTZOgsjrqzWHvXpnRr0C4zqz5ynpINmzW2AhXsNfH5Oy-yEyADwkTUVOq4MICzcakY_k_ao3ewJPEGzcw7OOE-RXXbZkH7aqUmvADk6rCrIk6eyUJiCY5hg_3z2pYqXtBhyNUCEi4tTTBgXDgg90yzmZ2nuSz0jlHV8A9z9jduhgO70xvKyXiwIM8AG_yAz082ugQU"/>
+</div>
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold tracking-widest uppercase mb-4">Current Status</span>
+<h3 class="text-5xl font-black text-white mb-4 tracking-tighter">GOLD PARTNER</h3>
+<p class="text-white/90 text-xl font-medium leading-relaxed max-w-lg">
+                        Congratulations! You've achieved Gold status. You are currently in the top 10% of NobleMart's fastest-growing vendors.
+                    </p>
+<div class="mt-8 flex gap-4">
+<div class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg text-primary font-bold shadow-sm">
+<span class="material-symbols-outlined">stars</span>
+                            7,500 Lifetime Points
+                        </div>
+</div>
+</div>
+</div>
+<!-- Progress & Benefits Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+<!-- Points Progress -->
+<div class="lg:col-span-1 bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-slate-100 dark:border-white/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-end mb-4">
+<h4 class="text-slate-900 dark:text-white font-bold">Progress to Platinum</h4>
+<span class="text-primary font-black text-xl">75%</span>
+</div>
+<div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden mb-4">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 75%;"></div>
+</div>
+<div class="flex justify-between text-sm font-bold text-slate-500 mb-6">
+<span>7,500 / 10,000 Points</span>
+</div>
+</div>
+<div class="p-4 bg-primary/5 rounded-lg border border-primary/10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                You are only <span class="text-primary font-bold">2,500 points away</span> from unlocking a 2.5% lower sales commission!
+                            </p>
+</div>
+</div>
+</div>
+<!-- Benefits Grid -->
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Perk 1 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-white/5 shadow-sm hover:border-primary/20 transition-all group">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">headset_mic</span>
+</div>
+<h5 class="text-slate-900 dark:text-white font-bold mb-1">Priority Support</h5>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Dedicated agent for your account growth.</p>
+</div>
+<!-- Perk 2 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-white/5 shadow-sm hover:border-primary/20 transition-all group">
+<div class="size-12 rounded-full bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">sell</span>
+</div>
+<h5 class="text-slate-900 dark:text-white font-bold mb-1">15% Ad Discount</h5>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Reduced costs for marketplace promotions.</p>
+</div>
+<!-- Perk 3 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-100 dark:border-white/5 shadow-sm hover:border-primary/20 transition-all group">
+<div class="size-12 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">shield_person</span>
+</div>
+<h5 class="text-slate-900 dark:text-white font-bold mb-1">NobleShield</h5>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Premium protection against fraudulent claims.</p>
+</div>
+</div>
+</div>
+<!-- Activity and Redemption Sections -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Points History Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-white/5 overflow-hidden">
+<div class="px-8 py-6 border-b border-slate-50 dark:border-white/5 flex justify-between items-center">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Points History</h3>
+<button class="text-primary text-sm font-bold hover:underline">Download Report</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-white/5 text-slate-500 text-xs font-bold uppercase tracking-wider">
+<tr>
+<th class="px-8 py-4">Activity</th>
+<th class="px-8 py-4">Status</th>
+<th class="px-8 py-4 text-right">Points</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-white/5">
+<tr>
+<td class="px-8 py-4">
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white">Order Fulfillment</span>
+<span class="text-xs text-slate-400">Oct 12, 2023 • Order #8821</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Completed</span>
+</td>
+<td class="px-8 py-4 text-right font-bold text-green-600">+50 pts</td>
+</tr>
+<tr>
+<td class="px-8 py-4">
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white">Positive Review</span>
+<span class="text-xs text-slate-400">Oct 11, 2023 • 5 Stars Received</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Verified</span>
+</td>
+<td class="px-8 py-4 text-right font-bold text-green-600">+20 pts</td>
+</tr>
+<tr>
+<td class="px-8 py-4">
+<div class="flex flex-col">
+<span class="font-bold text-slate-900 dark:text-white">On-time Shipping</span>
+<span class="text-xs text-slate-400">Oct 10, 2023 • Weekly Streak</span>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Completed</span>
+</td>
+<td class="px-8 py-4 text-right font-bold text-green-600">+30 pts</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Redemption Center -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Redemption Center</h3>
+<div class="bg-primary text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                            Available: 2,450 pts
+                        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Reward Item 1 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border-2 border-slate-50 dark:border-white/5 hover:border-primary transition-all flex flex-col justify-between h-48">
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold text-lg mb-1">₦5,000 Ad Credit</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Boost your products to the homepage top slider.</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-black text-primary">1,500 pts</span>
+<button class="px-4 py-2 bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-bold rounded-lg text-sm hover:bg-primary hover:text-white transition-all">Redeem</button>
+</div>
+</div>
+<!-- Reward Item 2 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border-2 border-slate-50 dark:border-white/5 hover:border-primary transition-all flex flex-col justify-between h-48">
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold text-lg mb-1">Featured Storefront</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Get the 'Featured' badge on your store for 24 hours.</p>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-black text-primary">2,000 pts</span>
+<button class="px-4 py-2 bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-bold rounded-lg text-sm hover:bg-primary hover:text-white transition-all">Redeem</button>
+</div>
+</div>
+</div>
+<!-- Locked Reward State Example -->
+<div class="bg-slate-50 dark:bg-white/5 p-6 rounded-xl border border-dashed border-slate-200 dark:border-white/10 opacity-60">
+<div class="flex items-start gap-4">
+<div class="size-10 rounded bg-slate-200 dark:bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">lock</span>
+</div>
+<div>
+<h4 class="text-slate-600 dark:text-slate-400 font-bold">NobleMart VIP Gala Ticket</h4>
+<p class="text-slate-400 text-xs mt-1">Requires Platinum Status to unlock.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

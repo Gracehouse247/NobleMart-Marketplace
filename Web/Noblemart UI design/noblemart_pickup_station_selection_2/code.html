@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vendor Onboarding - Store Setup | NobleMart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #01C2CA;
+            --electric-indigo: #5C1BE8;
+            --federal-blue: #020249;
+            --robin-egg-blue: #01C2CA;
+        }
+        @layer base {
+            body {
+                @apply font-['Inter'] text-[#020249];
+            }
+            h1, h2, h3, h4 {
+                @apply font-['Poppins'];
+            }
+        }
+        .gradient-brand {
+            background: linear-gradient(135deg, var(--robin-egg-blue) 0%, var(--electric-indigo) 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                        "federal-blue": "#020249",
+                    },
+                    borderRadius: {
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-slate-50 min-h-screen">
+<div class="fixed inset-0 z-0 opacity-10 pointer-events-none">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1tjdwoV9wpVihu2D6I8_xqeTRV8jtNInJ27hsUcljd1sh1GnKrx9DVdKppFe2wl0x_QvoHcfEwmFPEE158p65b0n0ksBX8FEQN8yiubzdSnBU7vnvBOki5JRLUyoYiO8z3BNjo6uKEufp3FK0JpEPKuftER3D429cZ9j5gULXS1z6cZ6CMU4qeht6Wy4Z5Ml4LaHFoPb1E2PzqAesTeyPOndve-IaFFeVMqAAQ9XQxbfyaxrw99SJ8qEvX9wPmvpAEHJtM8Tel50');"></div>
+</div>
+<div class="relative z-10 flex flex-col min-h-screen">
+<header class="bg-white border-b border-slate-200 px-6 py-4 lg:px-20 flex justify-between items-center sticky top-0">
+<div class="flex items-center gap-3">
+<div class="size-10 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-federal-blue text-2xl font-bold font-poppins">NobleMart</h2>
+</div>
+<div class="hidden md:flex items-center gap-2 text-sm">
+<span class="text-slate-400">Onboarding Status:</span>
+<span class="text-primary font-bold">Step 4 of 4</span>
+</div>
+</header>
+<div class="bg-white border-b border-slate-100 py-6">
+<div class="max-w-5xl mx-auto px-6">
+<div class="flex items-center justify-between">
+<div class="flex flex-col items-center gap-2 group opacity-60">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold border-2 border-primary">1</div>
+<span class="text-xs font-semibold">Business Info</span>
+</div>
+<div class="h-px bg-slate-200 flex-1 mx-4 mb-6"></div>
+<div class="flex flex-col items-center gap-2 opacity-60">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold border-2 border-primary">2</div>
+<span class="text-xs font-semibold">Verification</span>
+</div>
+<div class="h-px bg-slate-200 flex-1 mx-4 mb-6"></div>
+<div class="flex flex-col items-center gap-2 opacity-60">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold border-2 border-primary">3</div>
+<span class="text-xs font-semibold">Payouts</span>
+</div>
+<div class="h-px bg-slate-200 flex-1 mx-4 mb-6"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="size-10 rounded-full bg-electric-indigo flex items-center justify-center text-white font-bold ring-4 ring-electric-indigo/20">4</div>
+<span class="text-xs font-bold text-electric-indigo">Store Setup</span>
+</div>
+</div>
+</div>
+</div>
+<main class="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-8">
+<section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+<h1 class="text-3xl font-bold text-federal-blue mb-2 tracking-tight">Set up your Storefront</h1>
+<p class="text-slate-500 mb-8">Personalize how customers see your brand across the NobleMart marketplace.</p>
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-federal-blue">Store Name</label>
+<input class="w-full h-12 px-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary transition-all" type="text" value="Adebayo's Fashion House"/>
+<p class="text-xs text-slate-400 italic">Auto-filled from your business name</p>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-federal-blue">Store Tagline</label>
+<input class="w-full h-12 px-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="e.g. Quality Nigerian Fabrics" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-federal-blue">Store URL Slug</label>
+<div class="flex items-center">
+<span class="h-12 px-4 bg-slate-50 border border-r-0 border-slate-200 rounded-l-xl flex items-center text-slate-400 text-sm">noblemart.com/stores/</span>
+<input class="flex-1 h-12 px-4 border border-slate-200 rounded-r-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all text-sm" type="text" value="adebayo-fashion"/>
+</div>
+</div>
+<div class="space-y-4 pt-4">
+<label class="block text-sm font-bold text-federal-blue">What categories will you be selling in?</label>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+<div class="border border-primary bg-primary/5 rounded-xl p-3 flex items-center gap-3 cursor-pointer">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">Fashion</span>
+</div>
+<div class="border border-slate-100 bg-white rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primary/50">
+<span class="material-symbols-outlined text-slate-300">category</span>
+<span class="text-sm font-medium">Electronics</span>
+</div>
+<div class="border border-slate-100 bg-white rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primary/50">
+<span class="material-symbols-outlined text-slate-300">home</span>
+<span class="text-sm font-medium">Home &amp; Office</span>
+</div>
+<div class="border border-slate-100 bg-white rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primary/50">
+<span class="material-symbols-outlined text-slate-300">face</span>
+<span class="text-sm font-medium">Beauty</span>
+</div>
+<div class="border border-slate-100 bg-white rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primary/50">
+<span class="material-symbols-outlined text-slate-300">fitness_center</span>
+<span class="text-sm font-medium">Sports</span>
+</div>
+<div class="border border-slate-100 bg-white rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:border-primary/50">
+<span class="material-symbols-outlined text-slate-300">toys</span>
+<span class="text-sm font-medium">Toys &amp; Kids</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold text-federal-blue">Visual Identity</h3>
+<div class="flex gap-2">
+<div class="size-10 rounded-lg bg-cover bg-center border border-slate-200" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaIuZhFy0HVYn6tIv8YV_mruIn5EKM-P9h6BboUlPN88NDE9fA0xw0Yr1xJd2eOGOoralEXAurkqVC0mGI4eM6JkHOJbOrBvEYVpC1zg08dOVMKRirWropyleaZ4qzOVMOHxZllJ1t1zv-UU7CHgwGYTEOB-GqmwDxnep-M2iro2KOBiTIeKldtHuK1VIFoIwUN6jSVGNh4wWDFA8q5XisWtWPxJ0siPsS2V81I9N9QLaVgomAfeYabkixDe9Rwxw2-ZZRTESpFls');"></div>
+<div class="size-10 rounded-lg bg-cover bg-center border border-slate-200" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCi7f9CVvsrLV0MwD-I3s9IXuvbDDJqamD5yvUpvZhEI1YrUW3mr39idYvWld7VlJEGy45qGg1Tt5rr4V4LuGHql_abw07Y1zAKun7AIRrIyIa7awyKj6lra1ytDImquSmnySCVSJOJtNWky0ZmQq2oDLc411o-r3yt7x6jQEkDzrR5z0sTPumsBcx9Dj-tlU_SWFFNIAhiFb5p7-uQkQfSjH48aD4n2S2m62zH_qVJ1DZrneeF62OLyQ2Okt7rQOpikHux-UC8xeg');"></div>
+</div>
+</div>
+<div class="relative group">
+<label class="block text-sm font-bold text-federal-blue mb-2">Store Banner (1200x400)</label>
+<div class="gradient-brand h-48 rounded-2xl w-full flex flex-col items-center justify-center border-4 border-dashed border-white/30 group-hover:border-white/50 transition-all cursor-pointer overflow-hidden relative">
+<span class="material-symbols-outlined text-white text-5xl mb-2">add_a_photo</span>
+<span class="text-white font-medium">Drop your banner here or click to browse</span>
+<span class="text-white/60 text-xs mt-1">Default brand gradient applied</span>
+</div>
+<div class="absolute -bottom-10 left-8">
+<div class="size-24 rounded-full bg-white p-1 shadow-xl border border-slate-100">
+<div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-slate-400 cursor-pointer hover:bg-slate-200 transition-colors border-2 border-dashed border-slate-300 relative group/logo overflow-hidden">
+<span class="material-symbols-outlined">upload</span>
+<div class="absolute inset-0 bg-federal-blue/40 opacity-0 group-hover/logo:opacity-100 flex flex-col items-center justify-center text-[10px] text-white font-bold transition-opacity">
+<span>LOGO</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 bg-slate-50 p-4 rounded-xl flex items-center gap-4">
+<div class="size-12 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh4yrkW2_rH9bsbhjR_dt80smMHZdkp3aKXJf1tQRDvCcbh97SyTp528Ce3PldX7QZs2w_UiTPo7VJDHbtG6nbmnfXQ6knOQT8Ihe1IQ6WPy8uGI9Gft2CUhrx31yOBGWjSrqr6c6OgFlQzWBedSLHLfs3dP65qLRADA1bHrrM0PFNBS3PUA9GaMclFMPLxjnEwcu1Ljka3ELbDgHCLlB9qNdq5fKvChzPWVn83man4MxOcx99dvwdCSwEX9P8deWSlV5YHmHLeMM');"></div>
+<p class="text-sm text-slate-600">Pro tip: Stores with high-quality banners see <span class="text-emerald-600 font-bold">40% more conversions</span>.</p>
+</div>
+</section>
+</div>
+<div class="space-y-6">
+<div class="bg-federal-blue text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+<div class="absolute -right-10 -top-10 size-40 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+<h4 class="text-lg font-bold">NobleShield Status</h4>
+</div>
+<p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                                Our trust algorithm analyzes your storefront presentation. Professional logos and banners increase your trust score.
+                            </p>
+<div class="space-y-4">
+<div class="flex items-center justify-between text-xs">
+<span>Visual Quality</span>
+<span class="text-primary font-bold">Pending</span>
+</div>
+<div class="h-2 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3 rounded-full"></div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-white/10">
+<p class="text-xs text-slate-400 italic">High trust stores receive priority search placement.</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-100 flex gap-4">
+<div class="size-12 rounded-xl bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO7btGRPUARMLFzIO7PgQSe74zDzPTZ41n_Xb06cZh1Uaim5CW5PHzfS66KLXxl-_habmPFYwhJa8hV88TgspmBCWj0ny5hWQwvjRBZApsTBzJQZwPoYGKC645zpIghLwUByju30J4_CeV0k5Mg_wTuEL0qQybfv2VkuriKuM-VYuh2f5hLwvRxPMGyujuHVox2uJb_ZY-qqnxFbyvvw9K_tPBx5xxpLMnS8PnNivizyY5g2q8xyxIAr68WNDyNwZuvdWabdnc3EA');"></div>
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Onboarding Support</p>
+<p class="text-sm text-slate-600">"Need help with your logo? Our designers can assist!"</p>
+</div>
+</div>
+<div class="pt-4 space-y-4">
+<button class="w-full bg-electric-indigo hover:bg-[#4a15be] text-white font-bold py-5 rounded-2xl shadow-lg shadow-electric-indigo/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-3">
+                            Complete Setup &amp; Launch Store
+                            <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+<a class="flex items-center justify-center gap-2 text-slate-500 hover:text-federal-blue font-bold text-sm py-2 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                            Back to Payouts
+                        </a>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-10 px-6 lg:px-20 border-t border-slate-200 bg-white">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-400 text-sm">© 2024 NobleMart Vendor Portal. Powered by NobleShield Security.</p>
+<div class="flex gap-8 text-sm font-medium text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Seller Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

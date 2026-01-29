@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Team Audit Logs</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                        "federal-blue": "#020249",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans"],
+                        "poppins": ["Poppins"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-item-active {
+            background-color: rgba(1, 196, 203, 0.2);
+            border-left: 4px solid #01c4cb;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0c1c1d] min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- 1. Sidebar: Persistent Federal Blue Navigation -->
+<aside class="w-64 bg-federal-blue text-white flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg">
+<svg class="size-6 text-white" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-poppins font-bold tracking-tight">NobleMart</h1>
+</div>
+<div class="px-4 mt-2 mb-6">
+<div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10">
+<div class="size-10 rounded-full bg-center bg-cover border-2 border-primary" data-alt="Nigerian vendor store owner portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBifwubABIpcb9XAviCKzzA9YXPLNtq-T8Ydw9r138VG9H0AGZOU4Bqp3k8BVJjM2jqmUYGO6eKWNBtlxCpw3SoIzhr-oOsYcnyLfKg_ny1AA4ybHWJABa4lTD14hoelOjABy2Dp6UDHUHr5glM81xe0eTRJZ-wrlgAlR1YA28n-TzfuhoCBF3YtiUltxZDdMsiZHf0e-jLAmTq7BLQ3DhZyJFTbSg_C1mFd1sU1sY07ETw48h4JDjBWC48eVoyonX5umlmFJJ_NX8')"></div>
+<div class="flex flex-col">
+<p class="text-xs text-white/60 font-medium">Vendor Admin</p>
+<p class="text-sm font-bold truncate">Adekunle Gold</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<div class="pt-4 pb-2 px-4 text-[10px] font-bold text-white/40 uppercase tracking-widest">Security &amp; Team</div>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Team Members</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-white sidebar-item-active rounded-r-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">security_update_good</span>
+<span class="text-sm font-bold">Audit Logs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-white/70 hover:bg-white/5 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Account Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<button class="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-500/10 rounded-lg transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-y-auto relative bg-white dark:bg-background-dark">
+<!-- Subtle Server Room Background Image Overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-multiply bg-center bg-cover" data-alt="Modern high-tech server room background pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlNru988V5ujEP-gV3hYrXcuusP9v0fCzRbHgMhFXvZ1Bdf7HQG0D9XwEaFWI-QbGf2LCQR7WP4tjQ7MO-6Aa5RgNxVWrGKr1gEGGiUdru4GvtDJUccnC2Z_kNWW3uGMiE-SMdLrcu_CztJ6_OVF7SvbT_rNbqeY-3eUQ3HKXwj8KiNiydXCU_GFhOs8k1fdMen1w1GTl8xlTo8d9KM0BdAGg43mzPld0jVWieDXZyLEGB0TdYsRj5CfMScC1GhMlAa7EI5ODpJFY')">
+</div>
+<!-- Top Header with Title and Search -->
+<header class="sticky top-0 z-10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 px-8 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<label class="flex items-center bg-gray-100 dark:bg-white/5 px-4 py-2 rounded-lg w-80 group focus-within:ring-2 ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-gray-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-gray-400" placeholder="Search activities..." type="text"/>
+</label>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 size-2 bg-red-500 rounded-full"></span>
+</button>
+<div class="h-6 w-px bg-gray-200"></div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-gray-500 uppercase">System Status:</span>
+<span class="flex items-center gap-1.5 text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">
+<span class="size-1.5 bg-green-600 rounded-full animate-pulse"></span>
+                            Secure
+                        </span>
+</div>
+</div>
+</header>
+<div class="p-8 relative">
+<!-- 2. Header: Title and Actions -->
+<div class="flex flex-wrap justify-between items-end gap-6 mb-8">
+<div class="flex-1">
+<h2 class="text-3xl font-poppins font-bold text-federal-blue dark:text-white mb-2">Team Activity &amp; Audit Logs</h2>
+<p class="text-gray-500 dark:text-white/60">Monitor vendor team actions and security events across the marketplace.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg px-3 py-2 shadow-sm">
+<span class="material-symbols-outlined text-gray-400 text-sm mr-2">calendar_today</span>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-medium pr-8">
+<option>Last 24 Hours</option>
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+<option>Custom Range</option>
+</select>
+</div>
+<div class="flex items-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg px-3 py-2 shadow-sm">
+<span class="material-symbols-outlined text-gray-400 text-sm mr-2">person</span>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-medium pr-8">
+<option>Filter by Member</option>
+<option>Chinua Achebe</option>
+<option>Funke Akindele</option>
+<option>Wole Soyinka</option>
+</select>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold text-sm px-6 py-2.5 rounded-lg flex items-center gap-2 shadow-lg shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                            Export Audit Log (PDF/CSV)
+                        </button>
+</div>
+</div>
+<!-- 3. Activity Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-gray-500 mb-1">Total Actions (24h)</p>
+<h3 class="text-3xl font-poppins font-bold text-federal-blue dark:text-white">1,248</h3>
+<p class="text-xs text-green-500 font-bold mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +12% vs yesterday
+                            </p>
+</div>
+<div class="p-3 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl">history</span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-gray-500 mb-1">Security Alerts</p>
+<h3 class="text-3xl font-poppins font-bold text-red-500">3</h3>
+<p class="text-xs text-gray-400 font-medium mt-2">Failed login attempts</p>
+</div>
+<div class="p-3 bg-red-50 rounded-lg">
+<span class="material-symbols-outlined text-red-500 text-2xl">lock</span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm flex items-start justify-between">
+<div>
+<p class="text-sm font-medium text-gray-500 mb-1">Critical Edits</p>
+<h3 class="text-3xl font-poppins font-bold text-amber-500">12</h3>
+<p class="text-xs text-amber-600 font-bold mt-2">Requires review</p>
+</div>
+<div class="p-3 bg-amber-50 rounded-lg">
+<span class="material-symbols-outlined text-amber-500 text-2xl">warning</span>
+</div>
+</div>
+</div>
+<!-- Tabs (Optional inclusion for UX) -->
+<div class="mb-6">
+<div class="flex border-b border-gray-200 dark:border-white/10">
+<button class="px-6 py-3 border-b-2 border-primary text-primary text-sm font-bold flex items-center gap-2">
+                            All Activities
+                        </button>
+<button class="px-6 py-3 text-gray-400 text-sm font-medium hover:text-federal-blue transition-colors flex items-center gap-2">
+                            Security Events
+                        </button>
+<button class="px-6 py-3 text-gray-400 text-sm font-medium hover:text-federal-blue transition-colors flex items-center gap-2">
+                            Finance &amp; Payouts
+                        </button>
+</div>
+</div>
+<!-- 4. Audit Log Table -->
+<div class="bg-white dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-gray-50 dark:bg-white/5 border-b border-gray-100 dark:border-white/10">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Timestamp</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Member</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Action</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Module</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">IP Address / Device</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-white/10">
+<!-- Row 1: High Risk -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 transition-colors bg-red-50/10">
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-sm font-bold text-federal-blue dark:text-white">Oct 24, 2023</p>
+<p class="text-xs text-gray-400">14:22:10 PM</p>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center shadow-sm" data-alt="Female team member profile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZfb1dbXdf60teABhbbl6L7HAIi-ooQ_H3QrfwIpXj6LZEnkGQLrJTy4QZHpjJvCzf4_1wdcq4RtT0EJhsZyu4SEvW2WDdqv06LfPHybzsXlwLRZHxLt0j1WP6MQKObvobJ1Bs5pDYZ6WgvVm5DqigqkdDL8h4hpuQsuNAwPNAx09j2ug7UpNAZi8Kcj_qxaW7j-MwIqX9rU_IyaaTEyRCVMQFOe9ZM2VsqtBpDAeItptNtOCUlUVBX-LUSS-c8_szR4fg-aLxPro')"></div>
+<div>
+<p class="text-sm font-bold">Funke Akindele</p>
+<p class="text-[10px] text-primary font-bold uppercase">Store Manager</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<!-- 5. Security Flag Icon -->
+<span class="material-symbols-outlined text-federal-blue text-lg" style="font-variation-settings: 'FILL' 1">report</span>
+<p class="text-sm font-medium text-federal-blue">Changed Payout Bank Details</p>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-federal-blue text-white text-[10px] font-bold rounded-lg uppercase">Finance</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-xs font-medium text-gray-600 dark:text-white/70">197.210.226.44</p>
+<p class="text-[10px] text-gray-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">laptop_mac</span> Chrome / MacOS
+                                        </p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:bg-primary/10 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-sm font-bold text-federal-blue dark:text-white">Oct 24, 2023</p>
+<p class="text-xs text-gray-400">13:15:05 PM</p>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center shadow-sm" data-alt="Male team member profile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7nOGef-x_RAfXbevKwtbqZimFbzKMbf1MLJk9A8JSbcQ3iDC5gJO6HcFZkiAS_aDCrEf9lEYjueCNNEmVJhqVbD_rGzbCBa6hGbwFbDkT4gm7oOw0boIYrEs8dFc8pDGFSYNWSVV3_1OfPoKHeioGCI5dYGqdFyqdXO_n4XXPqaOMiB6V4aYTOmn_R2j9w5mZvK9nYWvvGZiwymLXLDOqUzCnqt3aS9Me65l_Oih5cTDJGlZ1ND271dRCDqPGCLUGqxTxb4060GU')"></div>
+<div>
+<p class="text-sm font-bold">Chinua Achebe</p>
+<p class="text-[10px] text-gray-400 font-bold uppercase">Staff</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium text-gray-700 dark:text-white/80">Updated Stock (Product #402)</p>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-lg uppercase">Inventory</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-xs font-medium text-gray-600 dark:text-white/70">102.89.2.145</p>
+<p class="text-[10px] text-gray-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">smartphone</span> iPhone / Safari
+                                        </p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:bg-primary/10 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-sm font-bold text-federal-blue dark:text-white">Oct 24, 2023</p>
+<p class="text-xs text-gray-400">12:45:11 PM</p>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center shadow-sm" data-alt="Female customer support profile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4NVEc1jgULBo91WavirqZdizaCrU6OxynGDtomZtCFP3Im4wx1_Rw9fQClz0aC6KuOJW9hs3f-2C8snSH0MvxLE_E-56K9iErU2-WFU7gfOMHKoMZlY_wm5Ls0KlR6EKhT0mR-D7I-dekCCIdJNoYJG39Ggb9lkw_VCM7a2RcIcOqEyRPAYG7ZR0hDxpqoBG4Z9skvnBLmt2yG-gIAks71vlB9enxTBi8qieGCoL1KeGJqassu8X6WcxnUiqbuK1V0jmKpSu80Yw')"></div>
+<div>
+<p class="text-sm font-bold">Genevieve Nnaji</p>
+<p class="text-[10px] text-gray-400 font-bold uppercase">Support</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium text-gray-700 dark:text-white/80">Replied to Message (Order #2938)</p>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold rounded-lg uppercase">Inbox</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-xs font-medium text-gray-600 dark:text-white/70">41.190.2.12</p>
+<p class="text-[10px] text-gray-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">desktop_windows</span> Edge / Windows
+                                        </p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:bg-primary/10 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: High Risk -->
+<tr class="hover:bg-gray-50/50 dark:hover:bg-white/5 transition-colors bg-red-50/10">
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-sm font-bold text-federal-blue dark:text-white">Oct 24, 2023</p>
+<p class="text-xs text-gray-400">10:02:14 AM</p>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-cover bg-center shadow-sm" data-alt="Admin user profile photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD62jPg8kJ_Zuadg6_j9fFhCe-4-rr2MW_861LLdbEwR0MRIrokOZMmgEVy68J5_lWSrXAElzCa2R6Rl5wjgO61PzuPlqTgqkayQMxximzX85I65vnUwgunulHfD_wQLmOnefmAlpWpCUI8Kz0p4quAPrIqNRomRqOlKdrPIad9EIPWhrUeY6bcmVJl6FS2j84cu6bCte-aSO_lQAiZWkWORRPxFeYPpWr2V7uqgOiO_MIGEc3wUWxYW1sYlXMODX2UwVEfsyxQT3E')"></div>
+<div>
+<p class="text-sm font-bold">Adekunle Gold</p>
+<p class="text-[10px] text-primary font-bold uppercase">Admin</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-federal-blue text-lg" style="font-variation-settings: 'FILL' 1">report</span>
+<p class="text-sm font-medium text-federal-blue">Deleted Product (ID #882)</p>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-gray-100 text-gray-700 text-[10px] font-bold rounded-lg uppercase">Inventory</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<p class="text-xs font-medium text-gray-600 dark:text-white/70">197.210.226.44</p>
+<p class="text-[10px] text-gray-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">laptop_mac</span> Chrome / MacOS
+                                        </p>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:bg-primary/10 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-gray-100 dark:border-white/10 flex items-center justify-between">
+<p class="text-sm text-gray-500">Showing 1 to 4 of 1,248 activities</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-gray-200 dark:border-white/10 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">Previous</button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold shadow-sm">Next</button>
+</div>
+</div>
+</div>
+<!-- Security Key Information -->
+<div class="mt-8 bg-federal-blue/5 dark:bg-primary/5 border border-federal-blue/10 dark:border-primary/20 rounded-xl p-6 flex items-start gap-4">
+<span class="material-symbols-outlined text-federal-blue dark:text-primary mt-1">info</span>
+<div>
+<h4 class="text-sm font-bold text-federal-blue dark:text-white mb-1">Audit Trail Information</h4>
+<p class="text-xs text-gray-600 dark:text-white/60 leading-relaxed">
+                            Audit logs are retained for 90 days. All critical security actions are verified via two-factor authentication (2FA) and logged with high-precision timestamps synchronized with NobelMart's central servers. High-risk actions marked with <span class="material-symbols-outlined text-[14px] align-middle">report</span> are sent to the owner's registered email immediately.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto py-6 px-8 border-t border-gray-100 dark:border-white/10 text-center">
+<p class="text-xs text-gray-400">© 2023 NobleMart Marketplace Nigeria. Secure Vendor Dashboard v2.4.0</p>
+</footer>
+</main>
+</div>
+</body></html>

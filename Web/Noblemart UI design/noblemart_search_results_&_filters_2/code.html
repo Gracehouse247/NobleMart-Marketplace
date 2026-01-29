@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Confirmation - NobleMart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "robin-egg-blue": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                        "noble-green": "#22C55E",
+                        "background-light": "#F8FAFC",
+                    },
+                    fontFamily: {
+                        "sans": ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-celebration-overlay {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=2069&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-[#1A1A1A] min-h-screen">
+<header class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 px-4 md:px-20 py-4">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-2 text-robin-egg-blue">
+<div class="size-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#1A1A1A] text-2xl font-bold tracking-tight">NobleMart</h2>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-gray-600 hover:text-robin-egg-blue">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="text-gray-600 hover:text-robin-egg-blue">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+</button>
+<button class="flex items-center gap-2 group">
+<div class="size-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-robin-egg-blue group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">person</span>
+</div>
+</button>
+</div>
+</div>
+</header>
+<main class="bg-celebration-overlay min-h-[calc(100vh-80px)]">
+<div class="max-w-[1440px] mx-auto px-4 md:px-20 py-12 flex flex-col items-center">
+<div class="bg-white w-full max-w-2xl rounded-2xl shadow-xl shadow-gray-200/50 p-8 md:p-12 text-center relative overflow-hidden">
+<div class="inline-flex items-center justify-center size-20 rounded-full bg-green-50 text-noble-green mb-8">
+<span class="material-symbols-outlined text-5xl filled-icon">check_circle</span>
+</div>
+<h1 class="text-3xl font-bold text-[#1A1A1A] mb-3">Thank You for Your Order!</h1>
+<p class="text-gray-500 mb-8">Your order <span class="font-semibold text-[#1A1A1A]">#NM-123456789</span> has been successfully placed.</p>
+<div class="bg-blue-50/50 border border-blue-100 rounded-xl p-4 mb-10 flex items-start gap-3 text-left">
+<span class="material-symbols-outlined text-robin-egg-blue filled-icon">verified_user</span>
+<div>
+<h4 class="text-sm font-bold text-[#1A1A1A]">Escrow Secured</h4>
+<p class="text-xs text-gray-500 mt-1">Your payment is held safely in escrow. Funds are only released to the vendor after you confirm delivery and satisfaction.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-6 text-left border-t border-b border-gray-100 py-8 mb-10">
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-gray-400 mb-2">Delivery Address</p>
+<p class="text-sm font-medium text-[#1A1A1A]">15, Adeola Hopewell St, Victoria Island, Lagos</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-gray-400 mb-2">Estimated Arrival</p>
+<p class="text-sm font-medium text-[#1A1A1A]">Tuesday, Oct 24th</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-gray-400 mb-2">Total Amount</p>
+<p class="text-lg font-bold text-[#1A1A1A]">₦485,000.00</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-robin-egg-blue hover:brightness-110 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">local_shipping</span>
+                        Track My Order
+                    </button>
+<button class="bg-electric-indigo hover:brightness-110 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">shopping_basket</span>
+                        Continue Shopping
+                    </button>
+</div>
+</div>
+<div class="w-full max-w-6xl mt-20">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold">You might also like</h3>
+<div class="flex gap-2">
+<button class="size-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-robin-egg-blue hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-robin-egg-blue hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+<div class="aspect-square bg-white p-4 overflow-hidden relative">
+<img alt="Smartphone accessory" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuXDeqFPcOHHKgar_BzLbw-o1jYkqfV1ILqfK2uZS4BNoiADt3bJatPLSStpfyNdqnIbtya-FFTcH7O4IEjYF2UxFSNKsDfeFwqvYFSNSD5KJ_T4ZeOyibcIdSYOKhKGs6QwSFeI8J4-aHJ-oFvK1t3DcEq-Eg7AUJ6KuPBcmX1HwhCcQuxRTk0cwWIZZv051Zuv_aosJUYBtlbhXJfKriGzQnjbJgBiW3VvYor5Jqobt2C9loDn-cE7LUaMlF1xtmIzyc6Un1tds"/>
+<button class="absolute top-3 right-3 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 text-[10px] font-bold text-robin-egg-blue mb-2">
+<span class="material-symbols-outlined text-xs filled-icon">verified</span> NobleShield Verified
+                            </div>
+<h4 class="text-sm font-medium line-clamp-1 mb-2">Wireless Noise Cancelling Earbuds</h4>
+<div class="flex items-center justify-between">
+<span class="font-bold text-lg">₦45,000</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-sm filled-icon">star</span>
+<span class="text-xs font-bold">4.8</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+<div class="aspect-square bg-white p-4 overflow-hidden relative">
+<img alt="Tablets" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkoPU1gqTw1ugLvGU3_1L3IBpYoY5ApwqBswK2oCGlAYtcUASeHmZAxn-nx2Moemm_Tm3J2Sa7hqbDNm3svsuHSlGTutdLO8pfH5MH7i54NniNnC4FeeQ7HIQBmU6k9RHbRUR3Rx-8vBEMgo7JB4JK6i0YX-OEMAzGvSe6mF5tOADm9BUEty_I271QACWhVID-JJEstazhBbjPeJDaRh8Yxh6_e1TOa9zdeSjycLW2YaEN_3-Q2DXKM8GO0skWNaw5ZzAK8CmAihs"/>
+<button class="absolute top-3 right-3 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 text-[10px] font-bold text-robin-egg-blue mb-2">
+<span class="material-symbols-outlined text-xs filled-icon">verified</span> NobleShield Verified
+                            </div>
+<h4 class="text-sm font-medium line-clamp-1 mb-2">Ultra-Thin 10-inch Tablet</h4>
+<div class="flex items-center justify-between">
+<span class="font-bold text-lg">₦185,000</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-sm filled-icon">star</span>
+<span class="text-xs font-bold">4.9</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+<div class="aspect-square bg-white p-4 overflow-hidden relative">
+<img alt="Phone case" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjELYpPsZ9PUm8dmN12uYSELQOpqhBVa7x2SMT78VglMONTQjusGqQ64lKjzmhx1jpfqnTZ3J-LMQl-rCGvvzvQjNi4hNrDu8cQJ6-IaSDAgXjg3oMvyMbODpdlB4HJ9-ggeXynVujyVKTmpOglo8DUoWf0PiwdnF9_53leTcXUUAUtxv0nMqEvdk9usQHuM-iYFp5XtpVSFm3LeQHN1-_6hK5qQkWjqfAy0Quu0ZPgqmw-3dDR-l8Np8LKCP0dhdTLymKgh0nyBs"/>
+<button class="absolute top-3 right-3 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 text-[10px] font-bold text-robin-egg-blue mb-2">
+<span class="material-symbols-outlined text-xs filled-icon">verified</span> NobleShield Verified
+                            </div>
+<h4 class="text-sm font-medium line-clamp-1 mb-2">Luxury Leather Phone Case</h4>
+<div class="flex items-center justify-between">
+<span class="font-bold text-lg">₦12,500</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-sm filled-icon">star</span>
+<span class="text-xs font-bold">4.7</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+<div class="aspect-square bg-white p-4 overflow-hidden relative">
+<img alt="Watch" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv-9QN2BzGyfIiAH2cqtSH4VojypZXu4UYrYS12obvtFt9Qp4pot8E7YXV6H1gqbnU2m4pt8lYNQVsuoHqDG5iK3uvS4BVIK0L8twlsbyUkgHaKeDM6axP5QkGpuQWQv1xEjjJCDkfUikDny13JzkCa1yMOlixPotmu8I4e3BIV0UT6J00m-gLXfOwEVfrTFlOKeFAJ-X8gDgcE2G7f812L4F2_NHZeGeiFXx1k2p3U_tRGro4f7PbYZi9SMHaA3H_GcjrVi2g0jc"/>
+<button class="absolute top-3 right-3 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 text-[10px] font-bold text-robin-egg-blue mb-2">
+<span class="material-symbols-outlined text-xs filled-icon">verified</span> NobleShield Verified
+                            </div>
+<h4 class="text-sm font-medium line-clamp-1 mb-2">Smart Watch Series 9</h4>
+<div class="flex items-center justify-between">
+<span class="font-bold text-lg">₦210,000</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-400 text-sm filled-icon">star</span>
+<span class="text-xs font-bold">5.0</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white border-t border-gray-100 py-12 px-4 md:px-20">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 text-robin-egg-blue">
+<div class="size-6">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#1A1A1A] text-lg font-bold">NobleMart</h2>
+</div>
+<p class="text-sm text-gray-400">© 2024 NobleMart Nigeria. Secure Shopping Guaranteed.</p>
+<div class="flex gap-6">
+<a class="text-gray-400 hover:text-robin-egg-blue transition-colors" href="#"><span class="material-symbols-outlined">help</span></a>
+<a class="text-gray-400 hover:text-robin-egg-blue transition-colors" href="#"><span class="material-symbols-outlined">description</span></a>
+<a class="text-gray-400 hover:text-robin-egg-blue transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</footer>
+
+</body></html>

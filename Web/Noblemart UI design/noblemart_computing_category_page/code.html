@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Computing Category Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .gaming-glow:hover {
+            box-shadow: 0 0 15px rgba(19, 91, 236, 0.4);
+            border-color: #135bec;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #232f48;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #135bec;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-[#232f48] bg-background-light dark:bg-background-dark/95 backdrop-blur-md px-4 md:px-10 lg:px-20 py-3">
+<div class="flex items-center justify-between max-w-[1440px] mx-auto gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-64 !h-10 max-w-96">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#92a4c9] flex border-none bg-slate-200 dark:bg-[#232f48] items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-200 dark:bg-[#232f48] focus:ring-0 h-full placeholder:text-[#92a4c9] px-4 pl-2 text-sm font-normal" placeholder="Search components, laptops, rigs..." value=""/>
+</div>
+</label>
+</div>
+<nav class="hidden xl:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Laptops</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Desktops</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">PC Parts</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Accessories</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Gaming</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-[#232f48] hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-[#232f48] hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-primary/30" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtHk53Fm-dM1Y5n-lY6NspqaYJG_HU2V56e-cP0Py4qoaLDp4PR_a7Sn6xz0_s2s7ikkLiq17QVY-Rk0mIMb00jvBrPkdmoUG84oO8MVwxqUWE70izILSBDRvfq1dtBW2IPo-Qfh5B3Va_ODVjUugsQakUkSfdL3OQlSsSsZIux5cNHycsiS58n7x38LCnwEaDjL1w4ihe0Xrc3uskCG0dZveIOurpda8_TQhMscqQkTxwQ6mOwA3bJpu_iB8YL0DYTrMYDv05nws");'></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 md:px-10 lg:px-20 py-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 py-2 mb-4">
+<a class="text-[#92a4c9] text-sm font-medium hover:text-primary" href="#">Home</a>
+<span class="text-[#92a4c9] text-sm font-medium">/</span>
+<a class="text-[#92a4c9] text-sm font-medium hover:text-primary" href="#">Electronics</a>
+<span class="text-[#92a4c9] text-sm font-medium">/</span>
+<span class="text-white text-sm font-medium">Computing &amp; Accessories</span>
+</div>
+<!-- Hero Header -->
+<div class="w-full mb-8">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[280px] border border-slate-700/50" data-alt="High performance CPU and motherboard close up" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJ36P8lL11A-BeIFxf7uOaV6EJKYvRnDMYUZwJV-s3oo8E2N__2z4mmFNtxiZXm6dduJjeRL5YJnSznqi4h-0-Ncrijdf5L4TabqSNWn4tquQ5zdn__kDp3ObAGIh2Emv_KWEY2NAGpwb84GfF1L0h4ixwMyFpkGLf520S1H3d70ENUsM9150xFTqbLhAt2uH7lMMURCWzKRjaH6oA2nwm16THgAzQcqNACTI0giUpCDNpUl0Ydvx40KUp8-2MiBN_jGZyF5M4QZ4");'>
+<div class="p-8">
+<span class="inline-block px-3 py-1 bg-primary text-xs font-bold uppercase tracking-wider rounded mb-3">Professional Grade</span>
+<h1 class="text-white text-4xl md:text-5xl font-bold leading-tight">High-Performance Computing</h1>
+<p class="text-slate-300 mt-2 max-w-xl">From workstation rigs to ultrabooks, find the power you need for modern Nigerian business and creativity.</p>
+</div>
+</div>
+</div>
+<div class="flex gap-8">
+<!-- Side Navigation Filters -->
+<aside class="hidden lg:flex flex-col w-64 flex-shrink-0 gap-6">
+<div class="bg-white dark:bg-[#161d2b] p-6 rounded-xl border border-slate-200 dark:border-[#232f48]">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-lg font-bold">Filters</h2>
+<button class="text-xs text-primary font-semibold">Clear All</button>
+</div>
+<div class="space-y-6">
+<!-- GPU Filter -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">memory</span>
+<p class="text-sm font-bold uppercase tracking-wide">GPU Series</p>
+</div>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">NVIDIA RTX 40-Series</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">NVIDIA RTX 30-Series</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">AMD Radeon RX 7000</span>
+</label>
+</div>
+</div>
+<!-- CPU Filter -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">developer_board</span>
+<p class="text-sm font-bold uppercase tracking-wide">CPU Type</p>
+</div>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">Intel Core i9 / i7</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">AMD Ryzen 9 / 7</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">Apple M2 / M3 Pro</span>
+</label>
+</div>
+</div>
+<!-- Form Factor -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">laptop_mac</span>
+<p class="text-sm font-bold uppercase tracking-wide">Form Factor</p>
+</div>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">Gaming Laptop</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">Workstation Desktop</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-400 text-primary focus:ring-primary bg-transparent" type="checkbox"/>
+<span class="text-sm group-hover:text-primary">Mini PC</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+<p class="text-sm font-bold uppercase tracking-wide">Price (₦)</p>
+</div>
+<input class="w-full accent-primary h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between mt-2 text-xs text-slate-400 font-medium">
+<span>₦250k</span>
+<span>₦4.5M+</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-primary hover:bg-primary/90 text-white text-sm font-bold rounded-lg transition-all shadow-lg shadow-primary/20">
+                        Apply Filters
+                    </button>
+</div>
+<!-- Ad/Promo Card -->
+<div class="bg-gradient-to-br from-indigo-600 to-purple-700 p-6 rounded-xl text-white">
+<h3 class="font-bold text-lg leading-tight">Build Your Own PC</h3>
+<p class="text-xs text-white/80 mt-2 mb-4">Custom configurations for developers and designers.</p>
+<button class="bg-white text-indigo-700 px-4 py-2 rounded font-bold text-xs uppercase">Start Configurator</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col gap-8">
+<!-- Gaming Zone Scroller -->
+<section class="bg-[#0f172a] rounded-2xl p-6 border-2 border-indigo-500/20 overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">sports_esports</span>
+</div>
+<div class="flex items-center justify-between mb-6 relative z-10">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 bg-red-600 text-[10px] font-black uppercase rounded text-white animate-pulse">Live</span>
+<h2 class="text-2xl font-bold tracking-tight text-white italic">GAMING <span class="text-indigo-400 font-light">ZONE</span></h2>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-slate-800 border border-slate-700 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-2 rounded-full bg-slate-800 border border-slate-700 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-4 custom-scrollbar snap-x relative z-10">
+<!-- Gaming Card 1 -->
+<div class="min-w-[300px] bg-slate-900/80 border border-slate-700 rounded-xl overflow-hidden group hover:border-indigo-500 transition-all snap-start">
+<div class="h-40 bg-cover bg-center" data-alt="ROG Gaming Laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDixRBaAjPrPMLHmkhpJ7a_noIAN_DrLwyYaqxHOJoyux74u7HwxJV6LC2gBes3aVSSwBTNLdx7sB5LBTTjxnj47svjzHxwH1hW1qJZ-gN3wMS8-s9XHj7CLMyO5mnyxM5_3eE7q93PqBWocpJwuDOW19AXUMwcs3LbSIkGFilsnkHfD82o4LYufpOaFruUBE2xUO6GIgyCCgwWaUKT0d2aALfKPJZVzj7Wmdoj-yErVTkfJztsK6CGduyMbS5XH20NkfZH_lCgJcI");'></div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-white text-sm">ASUS ROG Zephyrus G14</h4>
+<span class="text-xs text-indigo-400 font-bold">RTX 4070</span>
+</div>
+<div class="flex gap-3 text-[10px] text-slate-400 mb-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">memory</span> 16GB</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">storage</span> 1TB</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">speed</span> 120Hz</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold text-white">₦1,450,000</p>
+<button class="bg-indigo-600 hover:bg-indigo-500 p-2 rounded">
+<span class="material-symbols-outlined text-sm text-white">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Gaming Card 2 -->
+<div class="min-w-[300px] bg-slate-900/80 border border-slate-700 rounded-xl overflow-hidden group hover:border-indigo-500 transition-all snap-start">
+<div class="h-40 bg-cover bg-center" data-alt="Alienware Desktop Rig" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbg0Aj0lE7-HBKyhnVaaeZ1NxwLHXE3i7th9VD3tIOomnm0v439IgdfyeNSNG-uWZ2GJoWrYHMv8x3TlXJBULgasbOSPELFLM75go23gKlLXdw_YMh6M53gRnDTTeEW_iknRr_7ILSzndmnKLoRdvIG9W_NVMnpJkdMqWyY07T2IaXRnevVk4PyDjfChHe06iZU3OKvHhY12S-OycCXRHxjAZMTokeJwL2PsdFP7FI-OPOK6MoYZ7o5e2BKzlPdZ1XkU25XB88Pkw");'></div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-white text-sm">Alienware Aurora R16</h4>
+<span class="text-xs text-indigo-400 font-bold">RTX 4090</span>
+</div>
+<div class="flex gap-3 text-[10px] text-slate-400 mb-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">memory</span> 64GB</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">storage</span> 4TB</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">ac_unit</span> Liquid Cool</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold text-white">₦3,890,000</p>
+<button class="bg-indigo-600 hover:bg-indigo-500 p-2 rounded">
+<span class="material-symbols-outlined text-sm text-white">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Gaming Card 3 -->
+<div class="min-w-[300px] bg-slate-900/80 border border-slate-700 rounded-xl overflow-hidden group hover:border-indigo-500 transition-all snap-start">
+<div class="h-40 bg-cover bg-center" data-alt="Razer Blade 15" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoxTw_Df5oL7c_XKsHQYavseiBpnOWaKLirjk-NhpN7PCZWSun2j5fPt5rQb1eyzD4dMyGPCdzZuOOfjdGx2IFeu4sKR1yd1lQfPVvH8Dstc2CY-ZGuQt0vUx3tlL2H8Gz9wlX6IDExlCRUyU806VIDG2_fI_gSJp-l3WkOqZk63SPBxTQ29D153FJmBUfd4HZHX7spyTK9yjXqUvE2MODw1XrcarNNcGcQkXbqUsNVxcLLPbX4pGsjtC5SWI0CM0WgA4uwUaxaKQ");'></div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-white text-sm">Razer Blade 15 Advanced</h4>
+<span class="text-xs text-indigo-400 font-bold">RTX 3080 Ti</span>
+</div>
+<div class="flex gap-3 text-[10px] text-slate-400 mb-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">memory</span> 32GB</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">storage</span> 2TB</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">palette</span> 4K OLED</span>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-lg font-bold text-white">₦2,100,000</p>
+<button class="bg-indigo-600 hover:bg-indigo-500 p-2 rounded">
+<span class="material-symbols-outlined text-sm text-white">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section Header & Grid Controls -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-2xl font-bold">All Products</h2>
+<p class="text-sm text-slate-400">Showing 1,240 results for your current filters</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-sm bg-white dark:bg-[#161d2b] border border-slate-200 dark:border-[#232f48] px-3 py-2 rounded-lg">
+<span class="text-slate-400">Sort by:</span>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-bold p-0 pr-8">
+<option>Best Match</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Top Performance</option>
+</select>
+</div>
+<div class="flex border border-slate-200 dark:border-[#232f48] rounded-lg overflow-hidden">
+<button class="p-2 bg-primary text-white"><span class="material-symbols-outlined text-[20px]">grid_view</span></button>
+<button class="p-2 dark:bg-[#161d2b] dark:text-slate-400 hover:text-white"><span class="material-symbols-outlined text-[20px]">list</span></button>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white dark:bg-[#161d2b] border border-slate-200 dark:border-[#232f48] rounded-xl overflow-hidden hover:border-primary transition-all group relative">
+<div class="absolute top-4 left-4 z-10">
+<span class="px-2 py-1 bg-green-500 text-white text-[10px] font-bold rounded">IN STOCK</span>
+</div>
+<div class="h-56 bg-white flex items-center justify-center p-8 group-hover:scale-105 transition-transform duration-300">
+<img alt="MacBook Pro" class="max-h-full object-contain" data-alt="Apple MacBook Pro 16 Inch Silver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_0OWDAKKlsiKSKodSKJANiEoRyvGdJjlRdOiSYDDaCcFHiKc-sOauhTbOkVqGvBxiPPJ-7PTCnL8-MMsevJASTQ9JP3eMkP-wJ5yF9M981l8Xrvg-emg2pj_vHr3XxvNWcRH-wKcocGfDrSSqPj0FdMEr9VQZKyQRaYQiCh_0xKZFq2yr39g9mehWOLvD_hLobyLR4VqW3JzUIW0j3FRRymgKqffYIsTIXmie8gtdpNWevjMz9XLBdzSf_xzVjtCnbxsxBHdWmSM"/>
+</div>
+<div class="p-5 border-t border-slate-100 dark:border-slate-800">
+<div class="mb-4">
+<p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Apple</p>
+<h3 class="font-bold text-base line-clamp-2">MacBook Pro 16" - M3 Max Chip, 48GB RAM, 1TB SSD - Space Black</h3>
+</div>
+<!-- Detailed Specs -->
+<div class="grid grid-cols-2 gap-y-3 gap-x-2 mb-6 p-3 bg-slate-50 dark:bg-background-dark/50 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">memory</span>
+<span class="text-[11px] font-medium">48GB Unified</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">storage</span>
+<span class="text-[11px] font-medium">1TB SSD</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">monitor</span>
+<span class="text-[11px] font-medium">16" Liquid Retina</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-[11px] font-medium">1Yr Warranty</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-400 line-through">₦4,250,000</p>
+<p class="text-xl font-bold text-primary">₦3,950,000</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-bold text-sm transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white dark:bg-[#161d2b] border border-slate-200 dark:border-[#232f48] rounded-xl overflow-hidden hover:border-primary transition-all group relative">
+<div class="h-56 bg-white flex items-center justify-center p-8 group-hover:scale-105 transition-transform duration-300">
+<img alt="Dell XPS 13" class="max-h-full object-contain" data-alt="Dell XPS 13 Plus Laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpSmemYn3lSVzrfKf4_kPqnejGEqLgfYDGaTVERrryaPQv7ii_FSjWyy3MYY0TooEBMo5dWRZDFu95XM3ZocRGmq5SM3P3VTJk7aXtWGrveyJZj9XPlcQg-fVHYdgtzug4ZZstwDsqvMsbyO2UUJc94zpZUXlB8mG14U65cSkCJ5fKYjL3OtIw4__DJ2A3AKJr-ARWn0WIefy2TczD9R0vsjwEedRoq9xbYAZ4JEXgTvC0U4aymQ9xRnnFtI6w-I-270FwAZv_bfs"/>
+</div>
+<div class="p-5 border-t border-slate-100 dark:border-slate-800">
+<div class="mb-4">
+<p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Dell</p>
+<h3 class="font-bold text-base line-clamp-2">Dell XPS 13 Plus - Intel Core i7-1360P, 16GB RAM, 512GB SSD</h3>
+</div>
+<div class="grid grid-cols-2 gap-y-3 gap-x-2 mb-6 p-3 bg-slate-50 dark:bg-background-dark/50 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">processing_cluster</span>
+<span class="text-[11px] font-medium">Intel i7 13th Gen</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">memory</span>
+<span class="text-[11px] font-medium">16GB LPDDR5</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">display_settings</span>
+<span class="text-[11px] font-medium">InfinityEdge 4K</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">local_shipping</span>
+<span class="text-[11px] font-medium">Free Delivery</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-xl font-bold text-primary">₦1,250,000</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-bold text-sm transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white dark:bg-[#161d2b] border border-slate-200 dark:border-[#232f48] rounded-xl overflow-hidden hover:border-primary transition-all group relative">
+<div class="absolute top-4 right-4 z-10">
+<button class="bg-white/80 dark:bg-slate-800/80 p-1.5 rounded-full hover:text-red-500">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="h-56 bg-white flex items-center justify-center p-8 group-hover:scale-105 transition-transform duration-300">
+<img alt="Workstation PC" class="max-h-full object-contain" data-alt="Custom Workstation Tower PC" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4YUnAqu60HHMkojtO4LvNS-so-AQVswkT0CbpinUVHJSXi7LvxhaZp5FkXJ3FIfTspOhqmPcVm7GgcsBbEKcmqL3MmY9pSd3vlWYOzF4F7nwp7pVIpEDsZMAc9p07jaWXYZlS-8dpLEvLrP2-G-SQaMlH2VHjQhOHRellSVID85olkZmIK9XCfDEEDT2Qn0QPdITIVm-isD2W02E6XG7hTxgWYmm9phZG9qrzzlvZDmMXpEb07_s0t1p8uX4SQOTbA__gtZ827Pc"/>
+</div>
+<div class="p-5 border-t border-slate-100 dark:border-slate-800">
+<div class="mb-4">
+<p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">NobleBuild</p>
+<h3 class="font-bold text-base line-clamp-2">Pro Workstation - AMD Ryzen 9 7950X, RTX 4080, 64GB RAM</h3>
+</div>
+<div class="grid grid-cols-2 gap-y-3 gap-x-2 mb-6 p-3 bg-slate-50 dark:bg-background-dark/50 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">developer_board</span>
+<span class="text-[11px] font-medium">AMD Ryzen 9</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">memory</span>
+<span class="text-[11px] font-medium">RTX 4080 16GB</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">settings_input_component</span>
+<span class="text-[11px] font-medium">X670E Chipset</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">support_agent</span>
+<span class="text-[11px] font-medium">3Yr On-site</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-xl font-bold text-primary">₦2,850,000</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-bold text-sm transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-12 mb-20">
+<nav class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 hover:bg-slate-700">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 hover:bg-slate-700">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 hover:bg-slate-700">42</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-700 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Compare Bar (Mockup) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white dark:bg-[#161d2b] shadow-2xl border border-primary/40 rounded-full px-6 py-3 flex items-center gap-6 z-50 animate-bounce-slow">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-[#101622] bg-white overflow-hidden" data-alt="Compared product thumbnail">
+<img alt="mbp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA46KoGp_nEVAdIifV4LAUblDBykZHDZqJaAbax7ek_SEhClhJ_rrLx6Ka2XlruFvpwCml88MQxs-6xQkliaQ4pze4WwnKeyJwYnhdTXB8m2xz5Oyms-XUasuwpnv7mO3x4pdVtRs1Nh3gecxQNuC_38KFqGMUsN_R4X1kT3_gn7hLMY4IPyDMQRnCOJ8p4jrI2A51SZsuwh-BQ8pFEzpcHfao_0Wf2edT8g1BF5le-e0YHPI1lFgA10_VfylTpoT6fVfYBR60fQaw"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-[#101622] bg-white overflow-hidden" data-alt="Compared product thumbnail">
+<img alt="xps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQLv6CQc4ztXeHshyEGz1cKDrJL7_N7MYbK3-YL1ftsaen1VCUfegun-J6pl2OjKJoWLcyYcyLJYCRhnvLbbMk5g3_cLKjua2vds6xmi1hpsG_UdmPh6JMHA2NdlP5mZRJ7M_-0C8MiZ93fj9aC2ShXiPK9oLULbbEWt9obJNbrBOsugClKf5PS4PVcn4CAcPv5PLrsT_QFAOACFpHRQdlyW7f14Vg0N3WAwapYq32PkmRVHt9NHu9I6L4TAci70VMRFqNoKpxGpU"/>
+</div>
+</div>
+<div class="h-6 w-px bg-slate-700"></div>
+<p class="text-sm font-bold">2 Items selected to compare</p>
+<button class="bg-primary hover:bg-primary/90 text-white text-xs font-bold px-5 py-2 rounded-full uppercase tracking-tighter">Compare Specs</button>
+<button class="text-slate-400 hover:text-white"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+</body></html>

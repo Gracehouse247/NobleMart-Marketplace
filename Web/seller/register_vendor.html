@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a NobleMart Vendor | Join the Premium Marketplace</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <div class="premium-container">
+        <section class="hero-side">
+            <div class="hero-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200');">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Empower Your Business in Nigeria</h1>
+                <p class="hero-subtitle">Join thousands of premium vendors reaching millions of customers across the
+                    nation. Quality commerce starts here.</p>
+                <div class="join-badge">
+                    <div class="avatar-stack">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="" class="avatar">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="" class="avatar">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="" class="avatar">
+                    </div>
+                    <span>Join 5k+ verified vendors today</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-side">
+            <div class="form-container">
+                <div class="logo-wrapper">
+                    <img src="../assets/img/logo.png" alt="NobleMart Logo" class="logo-img">
+                </div>
+
+                <div class="progress-wrapper">
+                    <div class="progress-steps">
+                        <div class="progress-bar-fill" id="progressBar" style="width: 20%;"></div>
+                        <div class="step-dot active" data-step="1">1 <span class="step-label">Personal</span></div>
+                        <div class="step-dot" data-step="2">2 <span class="step-label">Business</span></div>
+                        <div class="step-dot" data-step="3">3 <span class="step-label">Media</span></div>
+                        <div class="step-dot" data-step="4">4 <span class="step-label">KYC</span></div>
+                        <div class="step-dot" data-step="5">5 <span class="step-label">Security</span></div>
+                    </div>
+                </div>
+
+                <div class="header-meta">
+                    <h2 id="stepTitle">Let's get started!</h2>
+                    <p id="stepSubtitle">Tell us about yourself to begin your journey.</p>
+                </div>
+
+                <form id="vendorRegisterForm" class="premium-form">
+                    <!-- Step 1: Personal Info -->
+                    <div class="step-container active" id="step-1">
+                        <div class="field-group">
+                            <label class="field-label" for="fullName">Full Name</label>
+                            <input class="premium-input" type="text" id="fullName" placeholder="e.g. John Doe" required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="email">Email Address</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input class="premium-input" type="email" id="email" placeholder="business@example.com"
+                                    required style="flex: 1;">
+                                <button type="button" id="sendOtpBtn" class="btn-secondary"
+                                    style="white-space: nowrap; padding: 0 1rem; border-radius: 0.5rem; height: 3.5rem;">Send
+                                    Code</button>
+                            </div>
+                        </div>
+                        <div class="field-group" id="otpGroup" style="display: none;">
+                            <label class="field-label" for="otpCode">Verification Code</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input class="premium-input" type="text" id="otpCode" placeholder="6-digit code"
+                                    maxlength="6" style="flex: 1;">
+                                <button type="button" id="verifyOtpBtn" class="btn-primary"
+                                    style="white-space: nowrap; padding: 0 1rem; border-radius: 0.5rem; height: 3.5rem;">Verify</button>
+                            </div>
+                            <p id="otpMessage" style="font-size: 0.8rem; margin-top: 0.5rem;"></p>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="phoneNumber">Phone Number</label>
+                            <input class="premium-input" type="tel" id="phoneNumber" placeholder="+234..." required>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Business Info -->
+                    <div class="step-container" id="step-2">
+                        <div class="field-group">
+                            <label class="field-label" for="shopName">Shop Name</label>
+                            <input class="premium-input" type="text" id="shopName"
+                                placeholder="e.g. Noble Gadgets Store" required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="shopDescription">Shop Description</label>
+                            <textarea class="premium-input premium-textarea" id="shopDescription"
+                                placeholder="What do you sell? Describe your specialty..." required></textarea>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="address">Business Address</label>
+                            <input class="premium-input" type="text" id="address" placeholder="Lagos, Nigeria" required>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Brand Assets -->
+                    <div class="step-container" id="step-3">
+                        <div class="field-group">
+                            <label class="field-label">Business Logo</label>
+                            <p style="font-size: 0.8rem; color: var(--slate-500); margin-bottom: 0.5rem;">Your logo
+                                helps customers recognize your brand.</p>
+                            <div class="file-upload-wrapper" id="uploadWrapper">
+                                <input type="file" id="shopLogo" accept="image/*">
+                                <span class="material-symbols-outlined upload-icon">cloud_upload</span>
+                                <span class="upload-text">Click to upload your logo</span>
+                            </div>
+                            <div class="preview-container" id="previewContainer">
+                                <img src="" alt="" class="preview-img" id="previewImg">
+                                <div class="preview-info">
+                                    <span class="preview-name" id="fileName">logo.png</span>
+                                    <button type="button" class="remove-btn" id="removeLogo">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: KYC Verification -->
+                    <div class="step-container" id="step-4">
+                        <div class="field-group">
+                            <label class="field-label" for="kycType">Document Type</label>
+                            <select class="premium-input" id="kycType" required>
+                                <option value="" disabled selected>Select identification type</option>
+                                <option value="NIN">National Identity Number (NIN)</option>
+                                <option value="BVN">Bank Verification Number (BVN)</option>
+                                <option value="VotersID">Voter's Card</option>
+                                <option value="BusinessReg">CAC Business Registration</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="kycNumber">Document Number</label>
+                            <input class="premium-input" type="text" id="kycNumber" placeholder="Enter ID number"
+                                required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Upload Proof (ID Card / Certificate)</label>
+                            <div class="file-upload-wrapper" id="kycUploadWrapper">
+                                <input type="file" id="kycDoc" accept="image/*,application/pdf">
+                                <span class="material-symbols-outlined upload-icon">badge</span>
+                                <span class="upload-text" id="kycUploadText">Click to upload document</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Security -->
+                    <div class="step-container" id="step-5">
+                        <div class="field-group">
+                            <label class="field-label" for="password">Create Password</label>
+                            <input class="premium-input" type="password" id="password" placeholder="••••••••" required>
+                        </div>
+                        <div
+                            style="background: var(--slate-50); padding: 1rem; border-radius: var(--radius-lg); border: 1px solid var(--slate-200);">
+                            <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0;">
+                                By completing the application, you agree to NobleMart's Vendor Terms & Conditions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-secondary" id="prevBtn" style="display: none;">Back</button>
+                        <button type="button" class="btn-primary" id="nextBtn">Continue</button>
+                    </div>
+
+                    <p style="text-align: center; font-size: 0.875rem; color: var(--slate-500); margin-top: 1.5rem;">
+                        Already a vendor? <a href="login.html"
+                            style="color: var(--primary); font-weight: 700; text-decoration: none;">Login here</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="../assets/js/register.js" defer></script>
+</body>
+
+</html>

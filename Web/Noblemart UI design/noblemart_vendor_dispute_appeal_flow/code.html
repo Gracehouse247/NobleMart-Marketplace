@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Dispute Appeal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "secondary": "#020249",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#120e1b] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar Component -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#ebe7f3] dark:border-b-[#2d263a] px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-4 text-secondary dark:text-primary">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-secondary dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-9">
+<a class="text-secondary dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-secondary dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-secondary dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Disputes</a>
+<a class="text-secondary dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Storefront</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-[#ebe7f3] dark:bg-background-dark text-secondary dark:text-white px-2.5">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-10 bg-[#ebe7f3] dark:bg-background-dark text-secondary dark:text-white px-2.5">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-gray-200" data-alt="Vendor profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzSku2Sy1trKOsyoka1d6_qMj_5uEkZT---Lua_IHAWZX9BKR9dd5n4fPSaDlC46azQ_sKwzBWBbSpLFpE7bNo9OqbmwQGwuZMQsT53-j-nzFrEh5-LqHMxGygxJXU3UfiwzkAhmAgA1BUMiZshi9G_NurCKfCgNuXHn9RUq62UgoGQ73drRj5IJQntEctGZ8KyjP68AJ1WK0laFq2ljAtuypQ-QgiB4s4IsZ74pOo3875M6fp4cXs5kbJNw4y5UIBK_ba2jFrAS0");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1024px] flex-1 px-4">
+<!-- Breadcrumbs Component -->
+<div class="flex flex-wrap gap-2 py-2">
+<a class="text-primary text-sm font-medium leading-normal" href="#">Vendor Dashboard</a>
+<span class="text-gray-400 text-sm font-medium leading-normal">/</span>
+<a class="text-primary text-sm font-medium leading-normal" href="#">Disputes</a>
+<span class="text-gray-400 text-sm font-medium leading-normal">/</span>
+<span class="text-secondary dark:text-white text-sm font-medium leading-normal">Case #DR-55201 Appeal</span>
+</div>
+<!-- PageHeading Component -->
+<div class="flex flex-wrap justify-between gap-3 py-6">
+<div class="flex flex-col gap-1">
+<h1 class="text-secondary dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Vendor Dispute Appeal</h1>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Formally contest the mediation decision for Case #DR-55201</p>
+</div>
+</div>
+<!-- Case Summary Card -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Card: Case Summary -->
+<div class="rounded-xl bg-white dark:bg-background-dark p-6 shadow-sm border border-[#ebe7f3] dark:border-gray-800">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-4 flex-1">
+<div class="flex flex-col gap-1">
+<p class="text-primary text-xs font-bold uppercase tracking-wider">Original Case Context</p>
+<h3 class="text-secondary dark:text-white text-xl font-bold">Case #DR-55201</h3>
+<div class="mt-2 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 bg-red-100 text-red-700 text-xs font-bold rounded">Initial Decision: Full Refund Approved</span>
+</div>
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-normal">
+<span class="font-semibold">Reason:</span> Item reported as "not as described" by the buyer.
+                                                </p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-background-light dark:bg-gray-800 text-secondary dark:text-white text-sm font-semibold hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors w-fit">
+                                            View Full Case History
+                                        </button>
+</div>
+<div class="hidden sm:block w-40 h-28 bg-center bg-no-repeat bg-cover rounded-lg border border-gray-100" data-alt="Product image related to dispute" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhtyNNGj-jNQgjvXowtCwiq_Ho82jklfla3DI7oVpJErnF07fDyBt05loEBDwO7GfHJX-1Gl4_Ocmto4LJ4dVRNYKrmqhDWJlzm4JXAVSYSOJqnrfnxqFbg0lCJ9665mAVgwJjzuJ1P6XQ-0NzTNsdSNGLNu2C2te-xI8qeanDtsUEvBE_hoQkxHJHKHSKDx8X_nmYMIcmfrHzPHVMnwrJlPMScI-wl0IyqnQCHJBdtpW68-afMd5PK4zd3IaOej4hfbYclmFkii8");'></div>
+</div>
+</div>
+<!-- Appeal Form Section -->
+<div class="bg-white dark:bg-background-dark rounded-xl border border-[#ebe7f3] dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="px-6 py-5 border-b border-[#ebe7f3] dark:border-gray-800">
+<h2 class="text-secondary dark:text-white text-lg font-bold">Appeal Submission Form</h2>
+</div>
+<div class="p-6 flex flex-col gap-8">
+<!-- Grounds for Appeal -->
+<div class="flex flex-col gap-2">
+<label class="text-secondary dark:text-white text-sm font-bold">Reason for Appeal <span class="text-red-500">*</span></label>
+<select class="w-full rounded-lg border-gray-300 dark:bg-gray-900 dark:border-gray-700 focus:ring-primary focus:border-primary text-sm py-3 px-4">
+<option disabled="" selected="" value="">Select the primary reason for contesting this decision</option>
+<option value="evidence">New evidence available (e.g. shipping weight, delivery photo)</option>
+<option value="error">Mediator error in processing existing facts</option>
+<option value="policy">Misinterpretation of NobleMart Merchant Policy</option>
+<option value="fraud">Suspected buyer fraud or extortion attempt</option>
+</select>
+</div>
+<!-- Evidence Upload -->
+<div class="flex flex-col gap-2">
+<label class="text-secondary dark:text-white text-sm font-bold">Additional Evidence</label>
+<p class="text-gray-500 text-xs mb-1">Upload high-resolution photos or PDFs (Up to 5 files, max 10MB each)</p>
+<div class="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl p-8 flex flex-col items-center justify-center bg-background-light/50 dark:bg-background-dark/50 hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary mb-2">cloud_upload</span>
+<p class="text-sm font-medium text-secondary dark:text-white">Drag and drop files here or <span class="text-primary">browse</span></p>
+<p class="text-xs text-gray-400 mt-1">PNG, JPG, or PDF supported</p>
+</div>
+</div>
+<!-- Statement -->
+<div class="flex flex-col gap-2">
+<label class="text-secondary dark:text-white text-sm font-bold">Detailed Statement <span class="text-red-500">*</span></label>
+<div class="border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden">
+<div class="bg-gray-50 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 px-3 py-2 flex gap-4">
+<button class="text-gray-600 hover:text-primary"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="text-gray-600 hover:text-primary"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="text-gray-600 hover:text-primary"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+<button class="text-gray-600 hover:text-primary"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<textarea class="w-full border-none focus:ring-0 dark:bg-gray-900 text-sm p-4 placeholder-gray-400" placeholder="Clearly state your case, referencing order dates and specific policy sections..." rows="8"></textarea>
+</div>
+</div>
+<!-- Impartiality Notice -->
+<div class="bg-primary/5 dark:bg-primary/10 rounded-lg p-4 flex gap-4 items-start border border-primary/20">
+<span class="material-symbols-outlined text-primary">gavel</span>
+<div class="flex flex-col gap-1">
+<p class="text-secondary dark:text-white text-sm font-bold tracking-tight leading-none">Trust Notice: Independent Review</p>
+<p class="text-gray-600 dark:text-gray-300 text-xs leading-relaxed">
+                                                This appeal will be escalated to a <span class="font-bold">Senior NobleShield Mediation Supervisor</span> who was not involved in the original decision. We guarantee a 100% impartial review of all submitted materials.
+                                            </p>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-6 py-5 bg-gray-50 dark:bg-gray-900 border-t border-[#ebe7f3] dark:border-gray-800 flex items-center justify-between">
+<a class="text-gray-500 hover:text-secondary dark:hover:text-white text-sm font-semibold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                                        Back to Dashboard
+                                    </a>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-all flex items-center gap-2">
+                                        Submit Formal Appeal
+                                        <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sidebar: Policy Reference -->
+<div class="flex flex-col gap-6">
+<div class="bg-secondary text-white rounded-xl p-6 shadow-sm">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                                    Policy Reference
+                                </h3>
+<div class="flex flex-col gap-6">
+<div class="border-l-2 border-primary pl-4 py-1">
+<p class="text-xs font-bold text-primary uppercase mb-1">Section 4.2</p>
+<p class="text-sm font-medium leading-tight">Evidence Requirements</p>
+<p class="text-gray-400 text-xs mt-2 leading-relaxed italic">
+                                            "Vendors must provide photo-realistic proof of packaging and shipping labels for all claims involving item condition disputes."
+                                        </p>
+</div>
+<div class="border-l-2 border-gray-600 pl-4 py-1">
+<p class="text-xs font-bold text-gray-400 uppercase mb-1">Section 8.1</p>
+<p class="text-sm font-medium leading-tight">Appeal Timelines</p>
+<p class="text-gray-400 text-xs mt-2 leading-relaxed italic">
+                                            "Appeals must be filed within 72 hours of the initial decision notification. Decisions on appeals are final."
+                                        </p>
+</div>
+<a class="text-primary text-xs font-bold hover:underline" href="#">Read Full NobleShield Policy →</a>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark rounded-xl p-6 border border-[#ebe7f3] dark:border-gray-800 shadow-sm">
+<h4 class="text-secondary dark:text-white text-sm font-bold mb-3">Expected Resolution</h4>
+<div class="flex items-center gap-3 mb-4">
+<div class="size-10 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-xs font-bold text-secondary dark:text-white">3-5 Business Days</p>
+<p class="text-[10px] text-gray-500">Average review duration</p>
+</div>
+</div>
+<p class="text-[11px] text-gray-500 leading-relaxed">
+                                    You will be notified via email and dashboard alert once a final determination has been reached.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="py-10 border-t border-gray-200 dark:border-gray-800 text-center">
+<p class="text-gray-400 text-xs">© 2024 NobleMart Nigeria. All rights reserved. Managed by NobleShield Dispute Resolution.</p>
+</footer>
+</div>
+</div>
+</body></html>

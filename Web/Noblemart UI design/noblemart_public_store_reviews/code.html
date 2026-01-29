@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart - Lagos Tech Hub Reviews</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c1cb",
+                        "background-light": "#f8fcfc",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0c1c1d] dark:text-white font-display overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="relative flex w-full flex-col bg-white dark:bg-[#1a2c2e] border-b border-[#e6f4f4] dark:border-[#2a3c3e]">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap px-4 lg:px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0c1c1d] dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">NobleMart</h2>
+</div>
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-[#459ca1] flex border-none bg-[#e6f4f4] dark:bg-[#233537] items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0c1c1d] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e6f4f4] dark:bg-[#233537] focus:border-none h-full placeholder:text-[#459ca1] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-4 lg:gap-8">
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Categories</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Deals</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Sell</a>
+<a class="text-[#0c1c1d] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Help</a>
+</div>
+<div class="flex gap-2">
+<button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-[#0c1c1d] text-sm font-bold leading-normal hover:bg-opacity-90 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6f4f4] dark:bg-[#233537] text-[#0c1c1d] dark:text-white gap-2 text-sm font-bold leading-normal min-w-0 px-3 hover:bg-[#d0efef] dark:hover:bg-[#2f4548] transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+</div>
+</div>
+<!-- Main Content Layout -->
+<main class="w-full px-4 lg:px-40 py-8 flex justify-center">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 gap-8">
+<!-- Store Header (Slim ProfileHeader) -->
+<div class="flex p-6 bg-white dark:bg-[#1a2c2e] rounded-xl shadow-sm border border-[#e6f4f4] dark:border-[#2a3c3e]">
+<div class="flex w-full flex-col gap-4 md:flex-row md:justify-between md:items-center">
+<div class="flex gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16 border-2 border-[#e6f4f4]" data-alt="Company Logo - Abstract geometric tech shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAE34KkfOHThK6F2VeKBk4QsaGQHht95qe4AcsvUqEMACM5r2wwD4wsTKGcmeevvZxLCZkB7XyZ-dWjCEMd93wyJAuHejH6Bxd8Z1RW8qbvYSXSAyZw55JF-GI1LZAye9Cb42-2RwYZQP9K3MH37MCBkLDZ7YH-coaH8diSqAVAIO0W3GgCx3TpUxNo9s_dSH3FV5BIrijk9aYPVPC5cmNulNCsVuQiXOH-jflewP613FmhWoLWDnq_Z6hz8GJ-nq1tYZQwbL8cKKs");'></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<h1 class="text-[#0c1c1d] dark:text-white text-2xl font-bold leading-tight">Lagos Tech Hub</h1>
+<span class="material-symbols-outlined text-primary text-[20px]" title="Verified">verified</span>
+</div>
+<p class="text-[#459ca1] text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+                                NobleShield Verified Vendor
+                            </p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-[#e6f4f4] dark:bg-[#233537] text-[#0c1c1d] dark:text-white text-sm font-bold leading-normal hover:bg-[#d6eeee] dark:hover:bg-[#2f4548] transition-colors">
+                            Contact
+                        </button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-6 bg-primary text-[#0c1c1d] text-sm font-bold leading-normal hover:bg-[#00aeb6] transition-colors">
+                            Visit Store
+                        </button>
+</div>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Reviews & Metrics (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Ratings Dashboard Block -->
+<div class="bg-white dark:bg-[#1a2c2e] rounded-xl p-6 shadow-sm border border-[#e6f4f4] dark:border-[#2a3c3e]">
+<h3 class="text-lg font-bold text-[#0c1c1d] dark:text-white mb-6">Ratings &amp; Performance</h3>
+<div class="flex flex-col md:flex-row gap-8 mb-8">
+<!-- Score -->
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-[#0c1c1d] dark:text-white text-6xl font-black leading-tight tracking-[-0.033em]">4.7</span>
+<div class="flex gap-1 text-[#FFC107]"> <!-- Gold Stars -->
+<span class="material-symbols-outlined text-[24px] fill-current">star</span>
+<span class="material-symbols-outlined text-[24px] fill-current">star</span>
+<span class="material-symbols-outlined text-[24px] fill-current">star</span>
+<span class="material-symbols-outlined text-[24px] fill-current">star</span>
+<span class="material-symbols-outlined text-[24px] text-gray-300">star</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">Based on 1,240 reviews</p>
+</div>
+<!-- Breakdown Chart -->
+<div class="grid w-full flex-1 grid-cols-[20px_1fr_40px] items-center gap-y-3">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">5</p>
+<div class="flex h-3 flex-1 overflow-hidden rounded-full bg-[#e6f4f4] dark:bg-[#233537]">
+<div class="rounded-full bg-primary" style="width: 78%;"></div>
+</div>
+<p class="text-[#459ca1] text-sm font-bold text-right">78%</p>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">4</p>
+<div class="flex h-3 flex-1 overflow-hidden rounded-full bg-[#e6f4f4] dark:bg-[#233537]">
+<div class="rounded-full bg-primary" style="width: 15%;"></div>
+</div>
+<p class="text-[#459ca1] text-sm font-bold text-right">15%</p>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">3</p>
+<div class="flex h-3 flex-1 overflow-hidden rounded-full bg-[#e6f4f4] dark:bg-[#233537]">
+<div class="rounded-full bg-primary" style="width: 4%;"></div>
+</div>
+<p class="text-[#459ca1] text-sm font-bold text-right">4%</p>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">2</p>
+<div class="flex h-3 flex-1 overflow-hidden rounded-full bg-[#e6f4f4] dark:bg-[#233537]">
+<div class="rounded-full bg-primary" style="width: 1%;"></div>
+</div>
+<p class="text-[#459ca1] text-sm font-bold text-right">1%</p>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">1</p>
+<div class="flex h-3 flex-1 overflow-hidden rounded-full bg-[#e6f4f4] dark:bg-[#233537]">
+<div class="rounded-full bg-primary" style="width: 2%;"></div>
+</div>
+<p class="text-[#459ca1] text-sm font-bold text-right">2%</p>
+</div>
+</div>
+<!-- Stats Cards (Integrated) -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#e6f4f4] dark:border-[#2a3c3e]">
+<div class="flex flex-col gap-1">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wide">Order Completion</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">99%</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wide">Communication</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">Excellent</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wide">Shipping Speed</p>
+<p class="text-[#0c1c1d] dark:text-white text-xl font-bold">Fast</p>
+</div>
+</div>
+</div>
+<!-- Reviews Feed Header -->
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-[#0c1c1d] dark:text-white">Customer Feedback</h3>
+<div class="flex gap-2">
+<select class="bg-white dark:bg-[#1a2c2e] border border-[#e6f4f4] dark:border-[#2a3c3e] text-sm rounded-lg px-3 py-2 text-[#0c1c1d] dark:text-white focus:outline-none focus:border-primary">
+<option>Most Recent</option>
+<option>Highest Rating</option>
+<option>With Photos</option>
+</select>
+</div>
+</div>
+<!-- Review Item 1 (With Photos) -->
+<div class="bg-white dark:bg-[#1a2c2e] p-6 rounded-xl border border-[#e6f4f4] dark:border-[#2a3c3e] shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="size-10 rounded-full bg-gray-200 bg-cover bg-center" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAI_iK26ghlQkaxTHDnxJbE1-vKy_J_FPppil3wzGrXh30vYSiBehDgsBNhhJ02iEjo06d9B5glxnmsE68kuS9VPK6b0cnhhkoyffSiIBPvNVTi07RRWfK9W5Fci9Z16LPxoC_GLr91Snqs5Po2R29t0S5pfKDIbN5B0ELi7M5uUYy4YG6nc13_j0YdzNbm_XX2NDWNHJ64Uyf6m9xgcApcsK1EQxsEmK_3SSkg1kVI_ePwzzXtyvnqI97P8beaFC1vNDMtXgF251o")'></div>
+<div>
+<p class="font-bold text-[#0c1c1d] dark:text-white text-sm">Chinedu O.</p>
+<div class="flex items-center gap-1 text-[#459ca1] text-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified Purchase</span>
+</div>
+</div>
+</div>
+<span class="text-gray-400 text-sm">2 days ago</span>
+</div>
+<div class="flex gap-1 text-[#FFC107] mb-2">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+</div>
+<p class="text-[#0c1c1d] dark:text-gray-200 text-base leading-relaxed mb-4">
+                            The iPhone 14 Pro Max came sealed and in perfect condition. Delivery to Abuja took only 2 days, which is impressive. The packaging was very secure. Highly recommend this vendor!
+                        </p>
+<!-- User Photos Grid -->
+<div class="flex gap-3 overflow-x-auto pb-2">
+<div class="size-24 rounded-lg bg-gray-100 flex-shrink-0 bg-cover bg-center cursor-pointer hover:opacity-90 transition-opacity border border-[#e6f4f4]" data-alt="iPhone box sealed on table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCx96dRJT6XxpcO_jFhGHmeJIV9rvAfIsyTstNnZas5LCXA9KIN2pZYHi_6SnPghfJk1z1xms04LgHYFvZhst5HiQYY3I_I7McWcbulaUOPLYL4AGfRzW2reULb65F_gSrklMcQE0b7sdfxDBL0OPHDKx_i_dczZkHzXy0grzQfPm3naup1AmNTUYn0X6MUFlizn_yRS2E-yZfFucfyh4Ss77ttVFBelt-zfurNSEV5AitRBMPmQtkXxbpqm0PUy9ABbl9cP52ihuo")'></div>
+<div class="size-24 rounded-lg bg-gray-100 flex-shrink-0 bg-cover bg-center cursor-pointer hover:opacity-90 transition-opacity border border-[#e6f4f4]" data-alt="iPhone screen showing home screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_QA5CHtW1t1cJjUMqSFlps19jipHYWDNeeFsRqgrhuv-8qXy5is1b5GI1EF52ND-5QHDdOGg0WNAYKrN9sl0elBW5fLB5egZFjcL7pPJwo6j6YWJ59-jh0z3am4lKVGXjGnhhd-VUfDWu0ZZvR8fN3pi8fC8YHmmfetlgqeo6qpyPOu4fRfe2A3LkRtOIbm-oJhEO9W70glW-2COEnCq172jH8aZeouqx-R25pP8Q1dsnhZHGc2CzzPptNXwJBv1bB2A7fPzSycQ")'></div>
+</div>
+</div>
+<!-- Review Item 2 (Text Only) -->
+<div class="bg-white dark:bg-[#1a2c2e] p-6 rounded-xl border border-[#e6f4f4] dark:border-[#2a3c3e] shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">A</div>
+<div>
+<p class="font-bold text-[#0c1c1d] dark:text-white text-sm">Amina Y.</p>
+<div class="flex items-center gap-1 text-[#459ca1] text-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified Purchase</span>
+</div>
+</div>
+</div>
+<span class="text-gray-400 text-sm">1 week ago</span>
+</div>
+<div class="flex gap-1 text-[#FFC107] mb-2">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] text-gray-300">star</span>
+</div>
+<p class="text-[#0c1c1d] dark:text-gray-200 text-base leading-relaxed">
+                            Good product quality, exactly as described. However, the delivery guy was slightly late and didn't call before arriving. The seller was responsive though.
+                        </p>
+</div>
+<!-- Review Item 3 -->
+<div class="bg-white dark:bg-[#1a2c2e] p-6 rounded-xl border border-[#e6f4f4] dark:border-[#2a3c3e] shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-3">
+<div class="size-10 rounded-full bg-gray-200 bg-cover bg-center" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBe7LbfQk-0VM80c7wSda6GOGU2I75jMl-BzgTI8Z3-jwyycacqV5qZGBNhAq788ZaA79A0iXYA7rW83B-im6Buc9TmjEr0Ek-7yiyAD2_o5SOWZpS9zkRDRS3x99HfrPuY2fDNybQVfPWtyZNeyjDB-L_bWjaBvlL5cWXP3HGA3dzacVohS32clK0hyICntTAjbUjA7zNDKolbU28WICJAj6agfxE2P3knqueaqG-7rTwokd8YpP_6WAKu0Uq0C-BSDpzYaPx8IIY")'></div>
+<div>
+<p class="font-bold text-[#0c1c1d] dark:text-white text-sm">Tunde B.</p>
+<div class="flex items-center gap-1 text-[#459ca1] text-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Verified Purchase</span>
+</div>
+</div>
+</div>
+<span class="text-gray-400 text-sm">2 weeks ago</span>
+</div>
+<div class="flex gap-1 text-[#FFC107] mb-2">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+</div>
+<p class="text-[#0c1c1d] dark:text-gray-200 text-base leading-relaxed">
+                            I've bought three laptops from Lagos Tech Hub for my office. All are working perfectly. Their customer support team even followed up to ensure setup went smoothly. Top tier service!
+                        </p>
+</div>
+<button class="w-full py-4 text-primary font-bold text-sm bg-white dark:bg-[#1a2c2e] border border-[#e6f4f4] dark:border-[#2a3c3e] rounded-xl hover:bg-[#e6f4f4] dark:hover:bg-[#233537] transition-colors">
+                        Load More Reviews
+                    </button>
+</div>
+<!-- Right Column: Sidebar (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Trust Card (Sticky) -->
+<div class="sticky top-6">
+<!-- Main Trust Card -->
+<div class="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl pt-[160px] shadow-[0_4px_20px_rgba(0,0,0,0.08)] relative overflow-hidden group" data-alt="Abstract secure shield background gradient" style='background-image: linear-gradient(180deg, rgba(1, 193, 203, 0.1) 0%, rgba(1, 193, 203, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBglbIy9yDtuZrnWAxxTocUQTT6EtD16hgu2tPFXjCVk2rPrz1ln1EzIcaaLG3M8PoWZiDdT1PenyE4K1iUCWWCZnAtA1lxhNFtp0Bo6PrWTTYM6UnCv4n3hj_2W3grpZWDuu50Hr8QmoTj-84670wAQ5RoL7rB4razcj5AywZ3eUC31hB3w4HYDV7KTW5-7jZkvoVMZ2mD-UUCoo2uvQxaJAsZ_TzA8EhRdCyaApQwUen7_miVxBpkMkq4btAGUAOJSJYu6DikEzQ");'>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0f2223] to-transparent opacity-80"></div>
+<div class="relative z-10 flex w-full flex-col gap-4 p-6">
+<div class="flex items-center gap-2 mb-2">
+<div class="bg-white/20 p-2 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined text-white">security</span>
+</div>
+<span class="text-white font-bold tracking-wide text-sm uppercase">Trust &amp; Safety</span>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-white tracking-tight text-2xl font-bold leading-tight">Why trust Lagos Tech Hub?</p>
+<p class="text-gray-200 text-sm font-medium leading-relaxed">Protected by NobleShield Guarantee. If your order isn't right, we'll make it right.</p>
+</div>
+<div class="flex flex-col gap-3 py-4 border-t border-white/20 mt-2">
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-[20px] text-primary">local_shipping</span>
+<span class="text-sm font-medium">5,000+ Successful Deliveries</span>
+</div>
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-[20px] text-primary">history</span>
+<span class="text-sm font-medium">Active since 2021</span>
+</div>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-primary text-[#0c1c1d] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white hover:text-primary transition-colors">
+                                    Learn about NobleShield
+                                </button>
+</div>
+</div>
+<!-- Small Contact Card -->
+<div class="mt-6 bg-white dark:bg-[#1a2c2e] p-6 rounded-xl border border-[#e6f4f4] dark:border-[#2a3c3e] shadow-sm">
+<h4 class="font-bold text-[#0c1c1d] dark:text-white mb-2">Have a question?</h4>
+<p class="text-gray-500 text-sm mb-4">Usually responds within 2 hours.</p>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6f4f4] dark:bg-[#233537] text-[#0c1c1d] dark:text-white text-sm font-bold leading-normal hover:bg-[#d0efef] transition-colors">
+                                Chat with Seller
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

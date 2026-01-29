@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NobleMart | Premium Product Detail</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c2ca",
+                        "secondary": "#5C1BE8",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .brand-gradient {
+            background: linear-gradient(135deg, #01c2ca 0%, #5C1BE8 100%);
+        }
+
+        .chrysler-text {
+            color: #5C1BE8;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f5f8f8] font-sans text-[#0c1c1d]">
+    <div id="header-placeholder"></div>
+
+    <main class="max-w-[1440px] mx-auto px-6 py-8">
+        <!-- Breadcrumbs -->
+        <nav class="flex flex-wrap gap-2 pb-8 items-center text-xs font-bold uppercase tracking-wider text-gray-400">
+            <a class="hover:text-primary" href="/">Home</a>
+            <span>/</span>
+            <a class="hover:text-primary" id="breadcrumb-category" href="#">Category</a>
+            <span>/</span>
+            <span class="text-[#0c1c1d] opacity-40" id="breadcrumb-name">Product Name</span>
+        </nav>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Left Column: Image Gallery -->
+            <div class="w-full lg:w-3/5 flex gap-4">
+                <!-- Thumbnails Strip -->
+                <div class="flex flex-col gap-3 min-w-[100px]" id="thumbnail-container">
+                    <!-- Thumbnails will be injected here -->
+                </div>
+                <!-- Main Active Image -->
+                <div
+                    class="flex-1 relative bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 aspect-square">
+                    <img id="main-product-image" src="https://placehold.co/800"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 cursor-zoom-in">
+                </div>
+            </div>
+
+            <!-- Right Column: Product Info -->
+            <div class="w-full lg:w-2/5 flex flex-col gap-8">
+                <div>
+                    <div
+                        class="flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full border border-primary/20 w-fit mb-6">
+                        <span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+                        <span class="text-primary font-bold text-[10px] uppercase tracking-widest">NobleShield
+                            Verified</span>
+                    </div>
+
+                    <h1 class="text-3xl xl:text-4xl font-black text-[#0c1c1d] leading-tight mb-4"
+                        id="product-name-display">
+                        Loading Product Details...
+                    </h1>
+
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex text-orange-400">
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined">star_half</span>
+                        </div>
+                        <span class="text-gray-400 text-xs font-bold">(124 Global Ratings)</span>
+                    </div>
+
+                    <div class="flex items-baseline gap-4 mb-8">
+                        <span class="text-4xl font-black text-primary italic" id="product-price">₦0</span>
+                        <span class="text-xl text-gray-300 line-through font-bold" id="product-old-price"></span>
+                        <span id="discount-badge"
+                            class="hidden bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-black"></span>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="flex flex-col gap-4">
+                    <button id="add-to-cart-btn"
+                        class="w-full bg-primary hover:bg-opacity-90 text-white h-16 rounded-full text-lg font-black transition-all flex items-center justify-center gap-3 shadow-xl shadow-primary/20">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        ADD TO CART
+                    </button>
+                    <button
+                        class="w-full bg-[#020249] text-white h-16 rounded-full text-lg font-black transition-all flex items-center justify-center gap-3 shadow-xl">
+                        <span class="material-symbols-outlined">bolt</span>
+                        BUY NOW
+                    </button>
+                </div>
+
+                <!-- Delivery & Trust -->
+                <div class="p-6 bg-white rounded-3xl border border-gray-100 shadow-sm flex flex-col gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-gray-50 rounded-2xl">
+                            <span class="material-symbols-outlined text-secondary">local_shipping</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Delivery Information</p>
+                            <p class="text-xs text-gray-500 mt-1 leading-relaxed">Fast delivery to all states via
+                                NobleMart Logistics.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-gray-50 rounded-2xl">
+                            <span class="material-symbols-outlined text-secondary">verified</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Payment Security</p>
+                            <p class="text-xs text-gray-500 mt-1 leading-relaxed">Secured by Paystack & NobleMart
+                                Escrow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="mt-20">
+            <h2 class="text-2xl font-black mb-8 pb-4 border-b border-gray-100">Product <span
+                    class="text-primary italic">Description</span></h2>
+            <div id="product-description"
+                class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm text-gray-600 leading-relaxed max-w-4xl">
+                Loading description...
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/component-loader.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (!productId) {
+                window.location.href = '/';
+                return;
+            }
+
+            try {
+                const res = await fetch(`https://api.noblemart.com.ng/products/details/${productId}`);
+                const product = await res.json();
+
+                if (!product) throw new Error('Product not found');
+
+                // Update UI
+                document.title = `${product.name} | NobleMart`;
+                document.getElementById('product-name-display').textContent = product.name;
+                document.getElementById('breadcrumb-name').textContent = product.name;
+                document.getElementById('breadcrumb-category').textContent = product.category_name || 'Electronics';
+                document.getElementById('breadcrumb-category').href = `/shop/category.html?category=${product.category_id}`;
+                document.getElementById('product-price').textContent = `₦${parseFloat(product.price).toLocaleString()}`;
+                document.getElementById('product-description').innerHTML = product.description.replace(/\n/g, '<br>');
+
+                if (product.old_price && product.old_price > product.price) {
+                    const oldPriceEl = document.getElementById('product-old-price');
+                    const badge = document.getElementById('discount-badge');
+                    oldPriceEl.textContent = `₦${parseFloat(product.old_price).toLocaleString()}`;
+                    badge.textContent = `-${Math.round((product.old_price - product.price) / product.old_price * 100)}%`;
+                    badge.classList.remove('hidden');
+                }
+
+                const images = product.images ? JSON.parse(product.images) : ['https://placehold.co/800'];
+                document.getElementById('main-product-image').src = images[0];
+
+                const thumbContainer = document.getElementById('thumbnail-container');
+                thumbContainer.innerHTML = images.map((img, i) => `
+                    <div class="w-full aspect-square bg-white border ${i === 0 ? 'border-primary' : 'border-gray-100'} rounded-2xl overflow-hidden cursor-pointer p-1 hover:border-primary transition-all" onclick="document.getElementById('main-product-image').src='${img}'">
+                        <img src="${img}" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                `).join('');
+
+                document.getElementById('add-to-cart-btn').onclick = () => {
+                    Cart.add(product.id, product.name, product.price, images[0]);
+                };
+
+            } catch (err) {
+                console.error(err);
+                document.body.innerHTML = '<div class="flex flex-col items-center justify-center min-h-screen"><h1>Product Not Found</h1><a href="/" class="text-primary">Back to Home</a></div>';
+            }
+        });
+    </script>
+</body>
+
+</html>

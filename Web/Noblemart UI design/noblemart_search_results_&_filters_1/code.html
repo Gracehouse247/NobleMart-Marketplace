@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Search Results - Smartphones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#01c4cb",
+                        "electric-indigo": "#6366f1",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2223",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-star {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0c1c1d] dark:text-white min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#0c1c1d] border-b border-[#e6f4f4] dark:border-white/10 px-4 md:px-20 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-xl font-extrabold leading-tight tracking-tight">NobleMart</h2>
+</div>
+<!-- Global Search Bar -->
+<div class="hidden md:flex flex-col min-w-[400px] h-10">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full border border-[#e6f4f4] dark:border-white/10 overflow-hidden">
+<div class="text-primary flex bg-[#e6f4f4] dark:bg-white/5 items-center justify-center px-3">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-[#e6f4f4] dark:bg-white/5 focus:ring-0 text-sm placeholder:text-[#459ea1]" placeholder="Search products, brands and categories" value="Smartphones"/>
+<div class="flex items-center bg-[#e6f4f4] dark:bg-white/5 pr-2">
+<button class="text-[#459ea1] hover:text-primary">
+<span class="material-symbols-outlined text-xl">cancel</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-semibold hover:text-primary" href="#">Deals</a>
+<a class="text-sm font-semibold hover:text-primary" href="#">Vendors</a>
+<a class="text-sm font-semibold hover:text-primary" href="#">Help</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-primary text-white text-sm font-bold">
+                        Sign In
+                    </button>
+<button class="relative flex items-center justify-center rounded-xl h-10 px-4 bg-[#e6f4f4] dark:bg-white/5 text-[#0c1c1d] dark:text-white">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-electric-indigo text-white text-[10px] rounded-full size-4 flex items-center justify-center font-bold">3</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 md:px-20 py-6">
+<!-- Breadcrumbs & Search Info -->
+<div class="flex flex-col gap-2 mb-6">
+<div class="flex flex-wrap items-center gap-2 text-sm text-[#459ea1]">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary" href="#">Electronics</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-[#0c1c1d] dark:text-white font-semibold">Smartphones</span>
+</div>
+<div class="flex flex-wrap justify-between items-end gap-4 mt-2">
+<h1 class="text-[#0c1c1d] dark:text-white text-3xl font-bold">1,240 results found for "Smartphones"</h1>
+<div class="flex items-center gap-2">
+<span class="text-sm text-[#459ea1]">Sort by:</span>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-white/5 border border-[#e6f4f4] dark:border-white/10 rounded-xl text-sm font-semibold">
+                        Popularity
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<!-- SideNavBar (Filters) -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-24 flex flex-col gap-6 bg-white dark:bg-white/5 p-6 rounded-2xl border border-[#e6f4f4] dark:border-white/10">
+<div>
+<h3 class="text-lg font-bold mb-1">Filters</h3>
+<p class="text-xs text-[#459ea1]">Refine your search results</p>
+</div>
+<!-- Category -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm font-bold border-b border-[#e6f4f4] pb-2">
+<span>Category</span>
+<span class="material-symbols-outlined text-sm">remove</span>
+</div>
+<div class="flex flex-col gap-2 text-sm">
+<label class="flex items-center gap-2 cursor-pointer text-primary font-semibold">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+                                Smartphones
+                            </label>
+<label class="flex items-center gap-2 cursor-pointer hover:text-primary">
+<input class="rounded text-primary focus:ring-primary border-gray-300" type="checkbox"/>
+                                Refurbished Phones
+                            </label>
+<label class="flex items-center gap-2 cursor-pointer hover:text-primary">
+<input class="rounded text-primary focus:ring-primary border-gray-300" type="checkbox"/>
+                                Feature Phones
+                            </label>
+</div>
+</div>
+<!-- Brand -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm font-bold border-b border-[#e6f4f4] pb-2">
+<span>Brand</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+<div class="flex flex-col gap-2 text-sm">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary border-gray-300" type="checkbox"/> Samsung
+                            </label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary border-gray-300" type="checkbox"/> Apple
+                            </label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary border-gray-300" type="checkbox"/> Xiaomi
+                            </label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded text-primary border-gray-300" type="checkbox"/> Infinix
+                            </label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm font-bold border-b border-[#e6f4f4] pb-2">
+<span>Price Range (₦)</span>
+</div>
+<div class="px-2 pt-4">
+<div class="h-1 bg-[#e6f4f4] dark:bg-white/10 rounded-full relative">
+<div class="absolute left-1/4 right-1/4 h-full bg-primary"></div>
+<div class="absolute left-1/4 -top-1.5 size-4 bg-primary border-2 border-white rounded-full shadow cursor-pointer"></div>
+<div class="absolute right-1/4 -top-1.5 size-4 bg-primary border-2 border-white rounded-full shadow cursor-pointer"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold">
+<span class="px-2 py-1 bg-background-light dark:bg-white/10 rounded">₦50k</span>
+<span class="px-2 py-1 bg-background-light dark:bg-white/10 rounded">₦1.5M</span>
+</div>
+</div>
+</div>
+<!-- Rating -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm font-bold border-b border-[#e6f4f4] pb-2">
+<span>Customer Rating</span>
+</div>
+<div class="flex flex-col gap-2">
+<button class="flex items-center gap-1 text-sm hover:text-primary">
+<span class="material-symbols-outlined filled-star text-base">star</span>
+<span class="material-symbols-outlined filled-star text-base">star</span>
+<span class="material-symbols-outlined filled-star text-base">star</span>
+<span class="material-symbols-outlined filled-star text-base">star</span>
+<span class="material-symbols-outlined text-base text-gray-300">star</span>
+<span class="ml-1">&amp; up</span>
+</button>
+</div>
+</div>
+<!-- Shipping -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm font-bold border-b border-[#e6f4f4] pb-2">
+<span>Shipping Type</span>
+</div>
+<label class="flex items-center justify-between cursor-pointer">
+<span class="text-sm">Express Shipping</span>
+<div class="w-10 h-5 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 size-3 bg-white rounded-full"></div>
+</div>
+</label>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-lg">SALE -15%</span>
+</div>
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="high-end smartphone titanium natural" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuXDeqFPcOHHKgar_BzLbw-o1jYkqfV1ILqfK2uZS4BNoiADt3bJatPLSStpfyNdqnIbtya-FFTcH7O4IEjYF2UxFSNKsDfeFwqvYFSNSD5KJ_T4ZeOyibcIdSYOKhKGs6QwSFeI8J4-aHJ-oFvK1t3DcEq-Eg7AUJ6KuPBcmX1HwhCcQuxRTk0cwWIZZv051Zuv_aosJUYBtlbhXJfKriGzQnjbJgBiW3VvYor5Jqobt2C9loDn-cE7LUaMlF1xtmIzyc6Un1tds"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1 text-[10px] font-bold text-primary mb-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                                NobleShield Verified
+                            </div>
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">iPhone 15 Pro Max - 256GB - Natural Titanium</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦1,420,000</span>
+<span class="text-xs text-[#459ea1] line-through">₦1,650,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(142)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="foldable smartphone cream white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkoPU1gqTw1ugLvGU3_1L3IBpYoY5ApwqBswK2oCGlAYtcUASeHmZAxn-nx2Moemm_Tm3J2Sa7hqbDNm3svsuHSlGTutdLO8pfH5MH7i54NniNnC4FeeQ7HIQBmU6k9RHbRUR3Rx-8vBEMgo7JB4JK6i0YX-OEMAzGvSe6mF5tOADm9BUEty_I271QACWhVID-JJEstazhBbjPeJDaRh8Yxh6_e1TOa9zdeSjycLW2YaEN_3-Q2DXKM8GO0skWNaw5ZzAK8CmAihs"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1 text-[10px] font-bold text-primary mb-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                                NobleShield Verified
+                            </div>
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">Samsung Galaxy Z Fold 5 - 512GB - Phantom Black</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦1,250,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(86)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-electric-indigo text-white text-[10px] font-bold px-2 py-1 rounded-lg">TOP SELLER</span>
+</div>
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="budget friendly sleek smartphone black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjELYpPsZ9PUm8dmN12uYSELQOpqhBVa7x2SMT78VglMONTQjusGqQ64lKjzmhx1jpfqnTZ3J-LMQl-rCGvvzvQjNi4hNrDu8cQJ6-IaSDAgXjg3oMvyMbODpdlB4HJ9-ggeXynVujyVKTmpOglo8DUoWf0PiwdnF9_53leTcXUUAUtxv0nMqEvdk9usQHuM-iYFp5XtpVSFm3LeQHN1-_6hK5qQkWjqfAy0Quu0ZPgqmw-3dDR-l8Np8LKCP0dhdTLymKgh0nyBs"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1 text-[10px] font-bold text-primary mb-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                                NobleShield Verified
+                            </div>
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">Xiaomi Redmi Note 13 Pro+ 5G - 256GB</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦485,000</span>
+<span class="text-xs text-[#459ea1] line-through">₦510,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(1,204)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="android flagship phone with stylus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv-9QN2BzGyfIiAH2cqtSH4VojypZXu4UYrYS12obvtFt9Qp4pot8E7YXV6H1gqbnU2m4pt8lYNQVsuoHqDG5iK3uvS4BVIK0L8twlsbyUkgHaKeDM6axP5QkGpuQWQv1xEjjJCDkfUikDny13JzkCa1yMOlixPotmu8I4e3BIV0UT6J00m-gLXfOwEVfrTFlOKeFAJ-X8gDgcE2G7f812L4F2_NHZeGeiFXx1k2p3U_tRGro4f7PbYZi9SMHaA3H_GcjrVi2g0jc"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1 text-[10px] font-bold text-primary mb-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                                NobleShield Verified
+                            </div>
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">Samsung Galaxy S24 Ultra - 1TB - Titanium Grey</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦1,580,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(329)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Repeated Cards for Grid Filling -->
+<!-- Product Card 5 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="modern smartphone back panel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyAR414zCGr5RQnwlubVkggtLdAAt4S17pTXS8nbZEJ3OF_2Rh1CioCcKhcMJvFmaiwx6YJZmFNGEKnle20YezM0N0RARUG0OcW3dMfeQTaT3EK5LVoYOC2nViz5DUXRg3OvuOxSQXhCjFSSx6PInBpOsmU6ZoT8Rwa8b4AGvCRBqbtYlVwJd877qIrZNfrNFkmxcGuF44CvVthVxOtBX9G0NMmpCZFVQopuQd1qErB7kCsUGujfCpsqr1nnHtIVIb5u-ijU6H41o"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">Google Pixel 8 Pro - 128GB - Porcelain</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦890,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(54)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="iphone display front side" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVcE_k2aUnBPVfMvMMw5ktW8QWEc-3Nspg5oHcroNz_E85IE2Zq7zMLQPGzWngOZfKton6fO0XJP-70WEXSbIdqrTEpzefK3ZvLYSWV1QZKcP188LBT-ZtRjplHHvUv03XtgcurM4PL2w7rWPqcH0vPq1-wHnAoKwLLpxLaSFqT2C4JeWlk73sW-9UmrAclUUa5LuQxV_DgIWPdrLVhMbR4W3gAsFV-6Fbr5zh9FgnpNTIxMK1Y_7kq3uHStU7OzYzAnywU8sUQg4"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1 text-[10px] font-bold text-primary mb-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                                NobleShield Verified
+                            </div>
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">iPhone 14 - 128GB - Purple (Official Warranty)</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦720,000</span>
+<span class="text-xs text-[#459ea1] line-through">₦780,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(215)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="modern android phone lavender color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7fPQ26TpZRQe-R6GXS-km3DmVIt8QQBH98PIqzKXcOZ0u32peDJtxoi2QFHdIB-id_4gdl93IgUH3NUfRAhrmu338YypLdVnAf_A29a2qAXUrO8LhtAO_wGfNWLKFFk3rcV2M-YBOIAvjVCpLHZXzCp3iLwFphjRLyx1r_VZdhHG1KkZ6vMvbWBhS-4sGaOTa_26auEvNcMMFRYoAldgQGbTGImraPf91Uz48SrNlEVK15js0gxoCDTmJDJrStKTRWrKt9uBovRQ"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">Oppo Reno 11 5G - 256GB - Wave Green</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦410,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(12)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="group bg-white dark:bg-white/5 rounded-2xl border border-[#e6f4f4] dark:border-white/10 overflow-hidden flex flex-col hover:shadow-xl transition-shadow relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-lg">NEW</span>
+</div>
+<div class="aspect-square w-full overflow-hidden bg-white p-4">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="premium phone with matte black finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBem2SYHZs_eFHo7OodQuV4tnL3rvpLeZnz4qaFLlK0B1ermNofapAw4LauBmlZF0IKEcqWaTaff0d7n_xskvIQl-RS9GrNfLoycgDyJCoQ_pbiYBkRPnJct13K12hJg-zcHeuhss-oRyQq6sqB9ldYIxw3UDV2MZYZsK3HStj846CFCJfhDEuoamhLAJ2lBbex5sJl-I1nNf9vn3bT2y_lxotEGncIQBVbtyXGspWqzfNBa86SU9sXPbQUDtaWkkpuqdS5JvtbqwY"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex items-center gap-1 text-[10px] font-bold text-primary mb-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                                NobleShield Verified
+                            </div>
+<h3 class="text-sm font-medium line-clamp-2 mb-2 group-hover:text-primary transition-colors">OnePlus 12 - 512GB - Silky Black</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-lg font-extrabold">₦745,000</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined filled-star text-sm">star</span>
+<span class="material-symbols-outlined text-sm text-gray-300">star</span>
+</div>
+<span class="text-[10px] text-[#459ea1] font-bold">(24)</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-[#e6f4f4] dark:bg-white/10 group-hover:bg-primary group-hover:text-white text-[#0c1c1d] dark:text-white py-2 rounded-xl text-xs font-bold transition-colors">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-3 mt-12 pb-12">
+<button class="flex items-center gap-1 px-4 py-2 border border-[#e6f4f4] dark:border-white/10 rounded-xl text-sm font-bold hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+                        Previous
+                    </button>
+<div class="flex items-center gap-1">
+<button class="size-10 rounded-xl bg-primary text-white text-sm font-bold">1</button>
+<button class="size-10 rounded-xl bg-white dark:bg-white/5 text-[#0c1c1d] dark:text-white text-sm font-bold border border-[#e6f4f4] dark:border-white/10 hover:border-primary">2</button>
+<button class="size-10 rounded-xl bg-white dark:bg-white/5 text-[#0c1c1d] dark:text-white text-sm font-bold border border-[#e6f4f4] dark:border-white/10 hover:border-primary">3</button>
+<span class="px-2">...</span>
+<button class="size-10 rounded-xl bg-white dark:bg-white/5 text-[#0c1c1d] dark:text-white text-sm font-bold border border-[#e6f4f4] dark:border-white/10 hover:border-primary">50</button>
+</div>
+<button class="flex items-center gap-1 px-4 py-2 bg-primary text-white rounded-xl text-sm font-bold hover:brightness-110 transition-colors">
+                        Next
+                        <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Simple -->
+<footer class="bg-white dark:bg-[#0c1c1d] border-t border-[#e6f4f4] dark:border-white/10 py-10 px-4 md:px-20">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#0c1c1d] dark:text-white text-lg font-extrabold leading-tight">NobleMart</h2>
+</div>
+<p class="text-sm text-[#459ea1]">© 2024 NobleMart Nigeria. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-[#459ea1] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-[#459ea1] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-[#459ea1] hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</footer>
+</body></html>

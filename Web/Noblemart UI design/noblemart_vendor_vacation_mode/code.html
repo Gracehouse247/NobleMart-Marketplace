@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor - Vacation Mode</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                    "primary": "#1c1ce9",
+                    "primary-button": "#5C1BE8", // Electric Indigo for the main button
+                    "sidebar-bg": "#020249", // Federal Blue
+                    "toggle-active": "#01C2CA", // Robin Egg Blue
+                    "background-light": "#f6f6f8",
+                    "background-dark": "#111121",
+                },
+                fontFamily: {
+                    "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar: Federal Blue -->
+<aside class="w-20 lg:w-72 flex-shrink-0 flex flex-col justify-between bg-sidebar-bg h-full transition-all duration-300">
+<div class="flex flex-col h-full">
+<!-- Vendor Profile Header -->
+<div class="p-6 flex items-center gap-4 border-b border-white/10">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 shrink-0 bg-white/10 relative overflow-hidden" data-alt="Vendor profile picture placeholder">
+<img alt="Vendor Portrait" class="w-full h-full object-cover" data-alt="Portrait of a smiling vendor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtps_28kQeVH6aQjMseRzq1ovpb0K54AUIZZKIlpyYoFEYb9HacOZKEgDRq4jkKUjuyI40EFPnbqsgSNnsvhWh9sCk4lH4CGApkv4RLQLyq5qe33RX8FTo9q_BjYRtGddLZ4lSecvFvp0_YLXmFjibDeaYr1MmvKu1L-cT5dRJXQqv3KQ5k4ZDRilUPqScelYc0gBZiODguMmLV9mCO9rUw16YiWHZr_ZUMAkcSBpsyWmeXzlDek5xATbhP-UHHDC_iZNvDThY5FI"/>
+</div>
+<div class="flex flex-col hidden lg:flex">
+<h1 class="text-white text-base font-bold leading-normal">NobleMart Vendor</h1>
+<p class="text-blue-200 text-sm font-normal leading-normal">Manage Store</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2 p-4 overflow-y-auto no-scrollbar flex-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-blue-100 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-white">dashboard</span>
+<span class="hidden lg:block text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-blue-100 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-white">shopping_bag</span>
+<span class="hidden lg:block text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-blue-100 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-white">inventory_2</span>
+<span class="hidden lg:block text-sm font-medium">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-blue-100 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-white">storefront</span>
+<span class="hidden lg:block text-sm font-medium">Store Profile</span>
+</a>
+<div class="mt-4 pt-4 border-t border-white/10">
+<p class="px-4 text-xs font-bold text-blue-300 uppercase tracking-wider hidden lg:block mb-2">System</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 text-white shadow-sm" href="#">
+<span class="material-symbols-outlined text-2xl fill-1">settings</span>
+<span class="hidden lg:block text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-blue-100 hover:bg-white/10 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-white">help</span>
+<span class="hidden lg:block text-sm font-medium">Support</span>
+</a>
+</div>
+</nav>
+</div>
+<div class="p-4 border-t border-white/10 hidden lg:block">
+<p class="text-blue-300 text-xs text-center">NobleMart Vendor v2.4</p>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 h-full overflow-y-auto relative flex flex-col">
+<!-- Background Image overlay -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 bg-background-light/95 dark:bg-background-dark/95 z-10"></div>
+<img alt="Background pattern" class="w-full h-full object-cover opacity-20 filter grayscale" data-alt="Professional planning calendar on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyhzisXGAiKIO60jAcjedHX71FZemNYNK8WQ-66QeF7YTu4T6nkseUNnRbZRcm8_C4l2rAF6fzkX-8d5i4rX5X_t3lvDtgffxHulnN77VgXpBT3gPAl4pRoRtovwNEHXJpLfoTCLPvN8mO20v5zU2n-cjsNXBCWilm-h-ZZrk4Ypt2nrqEGo_2TORfGWme0InLtw3jk_W7nnsbrBZltLpPDzAS6kvCuXWBUBKL70dKAddoE6SUyS2WUUSKHRRZGQP0n31Q-ckZg3Y"/>
+</div>
+<div class="relative z-20 flex flex-col w-full max-w-[1200px] mx-auto p-6 lg:p-10 gap-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex flex-col gap-2">
+<h2 class="text-slate-900 dark:text-white text-3xl lg:text-4xl font-bold tracking-tight">Vacation Mode</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base max-w-2xl">Manage your store's availability during your time off. Changes will be reflected immediately on your storefront.</p>
+</div>
+<!-- Trust Badge -->
+<div class="hidden md:flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full border border-blue-100 dark:border-blue-800">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+<span class="text-primary font-bold text-sm">NobleShield Protected</span>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Settings Form -->
+<div class="xl:col-span-7 flex flex-col gap-6">
+<!-- Toggle Switch Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="bg-blue-50 dark:bg-slate-700 p-3 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">beach_access</span>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-slate-900 dark:text-white text-lg font-bold cursor-pointer" for="vacation-toggle">Enable Vacation Mode</label>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Turn this on to pause your store listings temporarily.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="vacation-toggle" type="checkbox"/>
+<div class="w-14 h-8 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-7 after:w-7 after:transition-all peer-checked:bg-toggle-active"></div>
+</label>
+</div>
+</div>
+<!-- Date Picker Section -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 flex flex-col gap-6">
+<h3 class="text-slate-900 dark:text-white font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">date_range</span>
+                                Duration
+                            </h3>
+<div class="flex flex-col sm:flex-row gap-4">
+<div class="flex-1">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Start Date</label>
+<div class="relative">
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:border-primary focus:ring-primary h-12" type="date" value="2023-10-05"/>
+</div>
+</div>
+<div class="flex-1">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">End Date</label>
+<div class="relative">
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:border-primary focus:ring-primary h-12" type="date" value="2023-10-12"/>
+</div>
+</div>
+</div>
+<!-- Simplified Calendar Visual -->
+<div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center justify-between mb-4">
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-bold text-slate-800 dark:text-slate-200">October 2023</span>
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-sm">
+<div class="text-slate-400 text-xs font-bold py-2">S</div>
+<div class="text-slate-400 text-xs font-bold py-2">M</div>
+<div class="text-slate-400 text-xs font-bold py-2">T</div>
+<div class="text-slate-400 text-xs font-bold py-2">W</div>
+<div class="text-slate-400 text-xs font-bold py-2">T</div>
+<div class="text-slate-400 text-xs font-bold py-2">F</div>
+<div class="text-slate-400 text-xs font-bold py-2">S</div>
+<!-- Days -->
+<div class="text-slate-300 py-2">1</div>
+<div class="text-slate-300 py-2">2</div>
+<div class="text-slate-300 py-2">3</div>
+<div class="text-slate-300 py-2">4</div>
+<!-- Selected Range Start -->
+<div class="bg-primary text-white rounded-l-full py-2 font-bold relative z-10">5</div>
+<div class="bg-primary/10 text-primary py-2 font-medium">6</div>
+<div class="bg-primary/10 text-primary py-2 font-medium">7</div>
+<div class="bg-primary/10 text-primary py-2 font-medium">8</div>
+<div class="bg-primary/10 text-primary py-2 font-medium">9</div>
+<div class="bg-primary/10 text-primary py-2 font-medium">10</div>
+<div class="bg-primary/10 text-primary py-2 font-medium">11</div>
+<!-- Selected Range End -->
+<div class="bg-primary text-white rounded-r-full py-2 font-bold relative z-10">12</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">13</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">14</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">15</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">16</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">17</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">18</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">19</div>
+<div class="text-slate-700 dark:text-slate-400 py-2">20</div>
+</div>
+</div>
+</div>
+<!-- Ordering Options -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-white font-bold text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">shopping_cart_off</span>
+                                Order Management
+                            </h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-start gap-4 rounded-xl border border-solid border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors has-[:checked]:border-primary has-[:checked]:bg-blue-50/50 dark:has-[:checked]:bg-blue-900/10 has-[:checked]:ring-1 has-[:checked]:ring-primary">
+<input checked="" class="mt-1 h-5 w-5 border-2 border-slate-300 text-primary focus:ring-primary" name="order_mode" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-normal">Disable all ordering</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-1">Customers can browse but cannot add items to cart.</p>
+</div>
+</label>
+<label class="flex items-start gap-4 rounded-xl border border-solid border-slate-200 dark:border-slate-700 p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors has-[:checked]:border-primary has-[:checked]:bg-blue-50/50 dark:has-[:checked]:bg-blue-900/10 has-[:checked]:ring-1 has-[:checked]:ring-primary">
+<input class="mt-1 h-5 w-5 border-2 border-slate-300 text-primary focus:ring-primary" name="order_mode" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-normal">Allow customers to place orders for future delivery</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-1">Customers can buy, but shipping starts after you return on Oct 12.</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Preview & Trust -->
+<div class="xl:col-span-5 flex flex-col gap-6 sticky top-6">
+<!-- Preview Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="p-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+<h3 class="text-slate-900 dark:text-white font-bold text-sm uppercase tracking-wide">Storefront Preview</h3>
+<div class="flex gap-1">
+<div class="size-2.5 rounded-full bg-red-400"></div>
+<div class="size-2.5 rounded-full bg-yellow-400"></div>
+<div class="size-2.5 rounded-full bg-green-400"></div>
+</div>
+</div>
+<!-- Mock Store Header -->
+<div class="relative w-full h-48 bg-slate-200">
+<img alt="Store Banner" class="w-full h-full object-cover" data-alt="Modern clothing store banner image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5KxV3XrdqnHGbuUA8Z4By33PYaqm43UVEVfOX6ddrvLNSWhBncGKT-RaMBp9B6F5NMQer1I-FQcxUmW18H5fdIIUXwJ6SZNcDGv5tVFS3sWQggBfK9p_peGWwgMUsH2tE8z6BG1GQWoEb3JfPhke9yoatqIlaRYIJDsRNQiVfUSa3JJE3CTd0Y8h57OgPDralbePOkAbu0X4dcERze8dgJHd5DezrVYWfaEJgRAvCGW8ovb64LJZBuSSmNL-f-Ghvfv0kVvkQs-c"/>
+<div class="absolute bottom-4 left-4 flex items-end gap-3">
+<div class="size-16 rounded-lg bg-white p-1 shadow-lg">
+<img alt="Logo" class="w-full h-full object-cover rounded" data-alt="Store logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYlFwqk88Qf4XH2w9jQlbbZBMY8Xu-TcCfeBL2VQWdxxApsYsxZYTo_lf1iLDYetl1kmXaJulkC9Kc2TYNb0V9k86IQGsxeZnU3PQmZK2Eq3YQ3EAOGzkXxxPC_brFm7GLaBglysse7jVisIq74IttIDJ21MSlUb9clueqwEE34acA5RuUpaQJupYtVKslb8VEgMofYbUeoFRbMl49ATlUbr2oRJn8f3QGNF30fUhuYejjTYI3YKIHOLdUlNZ0FgYGFIlcNnRBOPo"/>
+</div>
+<div class="mb-1">
+<h4 class="text-white font-bold text-xl drop-shadow-md">Urban Threads</h4>
+<p class="text-white/90 text-xs font-medium drop-shadow-md">Fashion &amp; Accessories • Lagos</p>
+</div>
+</div>
+</div>
+<!-- Vacation Banner Overlay Mockup -->
+<div class="bg-orange-50 border-y border-orange-100 p-4 flex gap-3 items-start">
+<span class="material-symbols-outlined text-orange-500 mt-0.5">warning</span>
+<div>
+<p class="text-orange-900 font-bold text-sm">Store is temporarily away</p>
+<p class="text-orange-800 text-xs mt-1 leading-relaxed">
+                                        This store is temporarily away and will return on <span class="font-bold">Oct 12, 2023</span>. You can still browse products, but ordering is disabled.
+                                    </p>
+</div>
+</div>
+<!-- Mock Product Grid -->
+<div class="p-4 grid grid-cols-3 gap-3 opacity-60 grayscale-[50%] pointer-events-none select-none">
+<div class="aspect-[3/4] bg-slate-100 rounded-md"></div>
+<div class="aspect-[3/4] bg-slate-100 rounded-md"></div>
+<div class="aspect-[3/4] bg-slate-100 rounded-md"></div>
+</div>
+</div>
+<!-- Trust Message -->
+<div class="bg-blue-50 dark:bg-blue-900/10 rounded-xl p-5 border border-blue-100 dark:border-blue-800 flex gap-4 items-start">
+<div class="bg-white dark:bg-blue-900 p-2 rounded-lg shadow-sm text-primary shrink-0">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-blue-100 font-bold text-sm mb-1">NobleShield Rating Protection</h4>
+<p class="text-slate-600 dark:text-blue-200/80 text-xs leading-relaxed">
+                                    Taking a break won't hurt your score. Planned vacations do not negatively impact your NobleShield rating as long as all pending orders are fulfilled before the start date (Oct 5).
+                                </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3 pt-4">
+<button class="w-full bg-primary-button hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all transform active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">save</span>
+                                Apply Vacation Mode
+                            </button>
+<button class="w-full bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-white/5 text-slate-600 dark:text-slate-300 font-semibold py-3 px-6 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors">
+                                Cancel
+                            </button>
+</div>
+</div>
+</div>
+<div class="h-10"></div> <!-- Spacer -->
+</div>
+</main>
+</div>
+</body></html>

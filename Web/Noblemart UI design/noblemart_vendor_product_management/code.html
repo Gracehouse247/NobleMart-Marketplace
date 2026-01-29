@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor - Add New Product</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "noble-blue": "#020249",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-noble-blue dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 px-4 md:px-20 lg:px-40 py-3">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-noble-blue dark:text-white">NobleMart<span class="text-primary">.</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-primary" href="#">Products</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Wallet</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-gray-100 dark:bg-gray-800 rounded-xl px-3 py-1.5 gap-2 border border-transparent focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-gray-500 text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-gray-500" placeholder="Search listing..." type="text"/>
+</div>
+<button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="size-9 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="Vendor profile avatar picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyVXu6IDTV0tAWz0NDM91sPOeUfKwfdmRjAy6yFxs9YIikYkZy3Er2HMsRwin3brrmd7FS_6fwzkSqdumnz7cje1M2woWxzvV9FHgtI-na0VCi6QHHOE4A1FgFv4GvEyMWyq5ya5YPSiV2_JnfLoscYDJ66AyLillm9HRk7xNexRhFzpobIDln-Tl-tU1LNMfbDSbNbUTtM0LnmYRGAQozbqS_HwRhxZcI-vqeYuBQ9m9yG9urGUEbAgBLXGVKtjZGfdHPfa-tOdU');"></div>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-4 md:px-20 lg:px-40 py-8">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+<a class="hover:text-primary" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Inventory</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-noble-blue dark:text-white font-medium">Add New Product</span>
+</nav>
+<!-- Page Heading -->
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-3xl md:text-4xl font-black text-noble-blue dark:text-white tracking-tight">Add New Product</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-2">Create a high-quality listing for the NobleMart marketplace.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-lg border border-gray-300 dark:border-gray-700 font-semibold text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Save Draft</button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-white font-semibold text-sm hover:opacity-90 transition-all shadow-lg shadow-primary/20">Publish Product</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Form Column -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Basic Information Section -->
+<section class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                            Basic Information
+                        </h3>
+</div>
+<div class="p-6 space-y-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-noble-blue dark:text-gray-300">Product Title</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-primary focus:border-primary py-3 px-4" placeholder="e.g. Handcrafted Premium Leather Oxford Shoes" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-noble-blue dark:text-gray-300">Category</label>
+<select class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-primary focus:border-primary py-3 px-4 appearance-none">
+<option>Select Category</option>
+<option>Fashion &amp; Apparel</option>
+<option>Electronics</option>
+<option>Home &amp; Living</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-noble-blue dark:text-gray-300">Brand</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-primary focus:border-primary py-3 px-4" placeholder="e.g. Noble Artisan" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Media Upload Section -->
+<section class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">photo_library</span>
+                                Product Media
+                            </h3>
+<div class="group relative">
+<span class="material-symbols-outlined text-gray-400 cursor-help">help</span>
+<div class="absolute right-0 bottom-full mb-2 w-64 p-3 bg-noble-blue text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-xl">
+                                    NobleMart requires high-definition (min 1080p) photo-realistic images with neutral backgrounds.
+                                </div>
+</div>
+</div>
+<p class="text-xs text-gray-500 mt-1">Upload at least 3 HD photos for better conversion.</p>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Main Image -->
+<div class="aspect-square border-2 border-dashed border-primary/30 rounded-xl flex flex-col items-center justify-center bg-primary/5 hover:bg-primary/10 transition-all cursor-pointer group relative overflow-hidden">
+<div class="text-center p-4">
+<span class="material-symbols-outlined text-primary text-3xl mb-2 group-hover:scale-110 transition-transform">add_a_photo</span>
+<p class="text-xs font-bold text-primary">Main Image</p>
+<p class="text-[10px] text-gray-500 mt-1">Front view</p>
+</div>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+<!-- Side View -->
+<div class="aspect-square border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl flex flex-col items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group relative">
+<div class="text-center p-4 text-gray-400 group-hover:text-primary">
+<span class="material-symbols-outlined text-3xl mb-2">image</span>
+<p class="text-xs font-bold">Side View</p>
+<p class="text-[10px] mt-1">Profile detail</p>
+</div>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+<!-- Lifestyle Shot -->
+<div class="aspect-square border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl flex flex-col items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-all cursor-pointer group relative">
+<div class="text-center p-4 text-gray-400 group-hover:text-primary">
+<span class="material-symbols-outlined text-3xl mb-2">self_care</span>
+<p class="text-xs font-bold">Lifestyle</p>
+<p class="text-[10px] mt-1">In-use context</p>
+</div>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Description Section -->
+<section class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                            Product Description
+                        </h3>
+</div>
+<div class="p-6">
+<div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+<div class="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-2 flex gap-2">
+<button class="p-1.5 hover:bg-white dark:hover:bg-gray-700 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-1.5 hover:bg-white dark:hover:bg-gray-700 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<button class="p-1.5 hover:bg-white dark:hover:bg-gray-700 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<button class="p-1.5 hover:bg-white dark:hover:bg-gray-700 rounded transition-colors"><span class="material-symbols-outlined text-[20px]">link</span></button>
+</div>
+<textarea class="w-full border-none focus:ring-0 dark:bg-gray-900 text-sm p-4" placeholder="Describe the craftsmanship, materials, and unique features..." rows="6"></textarea>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Column -->
+<div class="space-y-6">
+<!-- Pricing & Stock Section -->
+<section class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">payments</span>
+                            Pricing &amp; Inventory
+                        </h3>
+</div>
+<div class="p-6 space-y-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-noble-blue dark:text-gray-300">Base Price (₦)</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-primary focus:border-primary py-3 px-4 font-mono" placeholder="0.00" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-noble-blue dark:text-gray-300">Discounted Price (₦)</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-primary focus:border-primary py-3 px-4 font-mono" placeholder="Optional" type="number"/>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-noble-blue dark:text-gray-300">SKU</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-primary focus:border-primary py-3 px-4 text-xs uppercase" placeholder="NM-101" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-noble-blue dark:text-gray-300">Quantity</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-primary focus:border-primary py-3 px-4" placeholder="1" type="number"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quality Guidelines / Trust Box -->
+<section class="bg-noble-blue text-white rounded-xl p-6 shadow-xl relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<h3 class="font-bold">Noble Quality Standard</h3>
+</div>
+<ul class="space-y-3 text-xs opacity-90">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-green-400 mt-0.5">check_circle</span>
+                                Photos must be high-definition and sharp.
+                            </li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-green-400 mt-0.5">check_circle</span>
+                                Avoid heavy filters or distracting overlays.
+                            </li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-green-400 mt-0.5">check_circle</span>
+                                Accurate title matching physical product.
+                            </li>
+</ul>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-8 -right-8 size-32 bg-primary/20 rounded-full blur-2xl"></div>
+</section>
+<!-- Promotion Options -->
+<section class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold">Featured Listing</h3>
+<div class="relative inline-block w-10 h-5 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer focus:ring-0 checked:right-0 checked:border-primary checked:bg-primary transition-all right-5" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer" for="toggle"></label>
+</div>
+</div>
+<p class="text-[11px] text-gray-500">Boost your visibility in the NobleMart Featured section for 7 days (₦5,000).</p>
+</section>
+</div>
+</div>
+<!-- Sticky Mobile Actions / Desktop Footer Summary -->
+<div class="mt-12 mb-8 flex items-center justify-between bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-800">
+<div class="hidden md:block">
+<p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Listing Status</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="size-2 rounded-full bg-yellow-400"></span>
+<span class="text-sm font-semibold">Ready to Review</span>
+</div>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-8 py-3 rounded-xl border border-gray-300 dark:border-gray-700 font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Save Draft</button>
+<button class="flex-1 md:flex-none px-12 py-3 rounded-xl bg-primary text-white font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/30">Publish Now</button>
+</div>
+</div>
+</main>
+<footer class="py-10 text-center text-gray-400 text-xs border-t border-gray-200 dark:border-gray-800">
+<p>© 2024 NobleMart Vendor Portal. High-Fidelity E-commerce Experience.</p>
+</footer>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #5c1ce9;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #5c1ce9;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Promotion Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5C1BE8",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#151022",
+                        "federal-blue": "#020249",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "poppins": ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#110d1c] dark:text-white min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 bg-federal-blue text-white flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 bg-white rounded-lg flex items-center justify-center">
+<svg class="text-federal-blue size-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h1 class="font-poppins font-bold text-lg leading-tight">NobleMart</h1>
+<p class="text-white/60 text-xs uppercase tracking-widest">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70 text-xl">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70 text-xl">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-electric-indigo text-white shadow-lg" href="#">
+<span class="material-symbols-outlined text-xl">campaign</span>
+<span class="text-sm font-medium">Promotions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70 text-xl">analytics</span>
+<span class="text-sm font-medium">Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/70 text-xl">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="bg-white/5 rounded-xl p-4 border border-white/10 mb-4">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-robin-egg">shield</span>
+<span class="text-xs font-semibold">NobleShield Status</span>
+</div>
+<div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="bg-robin-egg h-full w-[92%]"></div>
+</div>
+<p class="text-[10px] text-white/50 mt-2">Excellent Compliance</p>
+</div>
+<div class="flex items-center gap-3 px-3">
+<div class="size-8 rounded-full bg-center bg-cover border border-white/20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbBrUSMuPFuJgR4DF_h6eJa5UK0wD92i6Qu9sW6_UwFMQmP8cCtZNh3sPHj52TpDE0oDi5TvGCBflTCIeUsEQwtwruZxkuItzdpYq6PBaUwCIiT1B6O05QWK3YhAsaURwTFc3m6VVYL7NDfDM5FiCEr_M9woWJUPX1DdZAZOJCQUtwMqTfwzalioY0HLXPEyY99tMzNg2sE_J_fNkV1D1ModI_gR67sRNxp90YtU2sMLHyAVPPo115I8EWRKefMAhe3awkqLusFSE');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold truncate">Adekunle Gold</p>
+<p class="text-[10px] text-white/50 truncate">Gold's Tech Hub</p>
+</div>
+<span class="material-symbols-outlined text-white/40 cursor-pointer">settings</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-white dark:bg-background-dark">
+<header class="sticky top-0 z-10 flex items-center justify-between px-10 py-6 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#eae7f3] dark:border-white/10">
+<h2 class="text-2xl font-poppins font-bold tracking-tight">Promotion Manager</h2>
+<div class="flex items-center gap-4">
+<div class="relative hidden xl:block">
+<input class="w-64 pl-10 pr-4 py-2 bg-background-light dark:bg-white/5 border-none rounded-lg text-sm" placeholder="Search promotions..."/>
+<span class="material-symbols-outlined absolute left-3 top-2 text-gray-400">search</span>
+</div>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-electric-indigo text-white rounded-lg text-sm font-bold shadow-lg shadow-electric-indigo/20">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                    Create New Promotion
+                </button>
+</div>
+</header>
+<div class="px-10 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<div class="lg:col-span-2 grid grid-cols-2 gap-6">
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Incremental Sales from Promos</h4>
+<span class="material-symbols-outlined text-electric-indigo">trending_up</span>
+</div>
+<div class="flex items-end gap-2 h-24">
+<div class="w-full bg-electric-indigo/10 h-[40%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/10 h-[60%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/10 h-[55%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo/10 h-[80%] rounded-t-sm"></div>
+<div class="w-full bg-electric-indigo h-[100%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-3">
+<span class="text-xl font-poppins font-bold">₦2.4M</span>
+<span class="text-xs font-bold text-green-500 bg-green-50 px-2 py-0.5 rounded">+12% vs last month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-[#d5cfe8] dark:border-white/10 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Redemption Rate</h4>
+<span class="material-symbols-outlined text-robin-egg">confirmation_number</span>
+</div>
+<div class="flex items-end gap-2 h-24">
+<div class="w-full bg-robin-egg/10 h-[30%] rounded-t-sm"></div>
+<div class="w-full bg-robin-egg/10 h-[45%] rounded-t-sm"></div>
+<div class="w-full bg-robin-egg/10 h-[70%] rounded-t-sm"></div>
+<div class="w-full bg-robin-egg/10 h-[65%] rounded-t-sm"></div>
+<div class="w-full bg-robin-egg h-[85%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-3">
+<span class="text-xl font-poppins font-bold">42.8%</span>
+<span class="text-xs font-bold text-robin-egg bg-robin-egg/5 px-2 py-0.5 rounded">High Engagement</span>
+</div>
+</div>
+</div>
+<div class="bg-federal-blue text-white p-6 rounded-xl relative overflow-hidden flex flex-col justify-center">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-robin-egg">verified_user</span>
+<span class="font-bold text-sm tracking-wide">NobleShield Notice</span>
+</div>
+<p class="text-sm text-white/80 leading-relaxed mb-4">
+                            Promotions must comply with NobleMart's fair pricing policy. Artificially inflating prices before a sale is strictly prohibited to maintain your <strong>NobleShield status</strong>.
+                        </p>
+<a class="text-xs text-robin-egg font-bold underline" href="#">Read Pricing Guidelines</a>
+</div>
+<div class="absolute -right-4 -bottom-4 size-32 bg-white/5 rounded-full blur-2xl"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8">
+<div class="bg-white dark:bg-white/5 border border-[#d5cfe8] dark:border-white/10 rounded-xl shadow-sm overflow-hidden">
+<div class="p-6 border-b border-[#eae7f3] dark:border-white/10 flex items-center justify-between">
+<h3 class="font-poppins font-bold text-lg">Create Promotion</h3>
+<div class="flex gap-2">
+<span class="size-2 rounded-full bg-electric-indigo"></span>
+<span class="size-2 rounded-full bg-gray-200"></span>
+<span class="size-2 rounded-full bg-gray-200"></span>
+</div>
+</div>
+<div class="p-8">
+<div class="mb-10">
+<label class="block text-sm font-bold mb-4">Step 1: Select Promotion Type</label>
+<div class="grid grid-cols-3 gap-4">
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-electric-indigo bg-electric-indigo/5 text-electric-indigo">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+<span class="text-xs font-bold uppercase">Flash Sale</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-gray-100 hover:border-electric-indigo/30 transition-all text-gray-500">
+<span class="material-symbols-outlined text-3xl">local_offer</span>
+<span class="text-xs font-bold uppercase">Discount Code</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-gray-100 hover:border-electric-indigo/30 transition-all text-gray-500">
+<span class="material-symbols-outlined text-3xl">inventory_2</span>
+<span class="text-xs font-bold uppercase">Bundle Deal</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+<div>
+<label class="block text-sm font-bold mb-4">Step 2: Set Discount</label>
+<div class="flex bg-background-light dark:bg-white/5 p-1 rounded-lg mb-4">
+<button class="flex-1 py-2 text-xs font-bold bg-white dark:bg-white/10 rounded shadow-sm">Percentage (%)</button>
+<button class="flex-1 py-2 text-xs font-bold text-gray-500">Fixed Amount (₦)</button>
+</div>
+<div class="relative">
+<input class="w-full bg-background-light dark:bg-white/5 border-none rounded-lg py-3 pl-4 pr-10 focus:ring-2 focus:ring-electric-indigo/50" placeholder="0" type="number"/>
+<span class="absolute right-4 top-3.5 text-gray-400 font-bold">%</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-bold mb-4">Duration</label>
+<div class="flex gap-4">
+<div class="flex-1 relative">
+<input class="w-full bg-background-light dark:bg-white/5 border-none rounded-lg py-3 pl-4 pr-4 text-xs" type="date"/>
+</div>
+<div class="flex-1 relative">
+<input class="w-full bg-background-light dark:bg-white/5 border-none rounded-lg py-3 pl-4 pr-4 text-xs" type="time"/>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-10">
+<div class="flex justify-between items-center mb-4">
+<label class="text-sm font-bold">Step 3: Select Products</label>
+<div class="relative">
+<input class="pl-8 pr-4 py-1.5 bg-background-light dark:bg-white/5 border-none rounded-full text-xs" placeholder="Search my inventory..." type="text"/>
+<span class="material-symbols-outlined absolute left-2 top-1.5 text-xs text-gray-400">search</span>
+</div>
+</div>
+<div class="space-y-3 max-h-60 overflow-y-auto scrollbar-hide pr-2">
+<div class="flex items-center gap-4 p-3 rounded-lg border border-gray-100 hover:border-electric-indigo/30 transition-all cursor-pointer">
+<input checked="" class="rounded border-gray-300 text-electric-indigo focus:ring-electric-indigo" type="checkbox"/>
+<div class="size-12 rounded bg-center bg-cover shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxkUuOrD8bJQF2CHEuyyDQ2oUirbdr2sfIvT1mDk89um4iLNJGfsaU91vWbKPRIEutnQFl3HXovSaPEHfqcqv5p1XKCPIsNKBx3H7jHWXr4jPhseXpWGYwy1oB9mJEoWnSIovPZ1IAAGm98e7fCYgrOD_k3oD3S6OCEkP8q3luaFJdM0I_-Fz2NIflF1ZYmDA_7iA6CNKSipdsOEKjxYdyajcbElXp4LDTSl3FhZfOyH3Ia5shL7VgnjnUClV1qki0zyF6iEcx2JE')"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Wireless Audio Headphones Pro</p>
+<p class="text-[10px] text-gray-500">SKU: HD-001 • Stock: 142 units</p>
+</div>
+<p class="text-sm font-bold">₦45,000</p>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg border border-gray-100 hover:border-electric-indigo/30 transition-all cursor-pointer">
+<input checked="" class="rounded border-gray-300 text-electric-indigo focus:ring-electric-indigo" type="checkbox"/>
+<div class="size-12 rounded bg-center bg-cover shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7EVC57SW0g4DRYmj2jqREfIpvASfXs81lT4RjlBfKJDjGwN0MITSA6gA1wwjX1B2xgZysG-TKwb5jnXmfFwfPjfwFpqFnEtKcT-X8XYaLgAILg7bVZoAGuOQUNeYwvZd0qem0WsUy5Uo2xddI0WyZLyD5ozit0J_kLLccInYTVkplXk9LLl8t0rv363SNv5ScgQu7idRUkcjhXVTfz1VAbQPfe2rSlh-5L6tmxKFofJiqYbSzKMGvzTNTBltaGHJfTpTfeAsFK-w')"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Smart Watch S8 Titanium</p>
+<p class="text-[10px] text-gray-500">SKU: WT-099 • Stock: 85 units</p>
+</div>
+<p class="text-sm font-bold">₦82,500</p>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg border border-gray-100 hover:border-electric-indigo/30 transition-all cursor-pointer">
+<input class="rounded border-gray-300 text-electric-indigo focus:ring-electric-indigo" type="checkbox"/>
+<div class="size-12 rounded bg-center bg-cover shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAY8SYmSfQRCldDisxWqMkG-5JcG1qoRmD3WPDsUhI7GfJmjMaZtBEPhVD_nEBTgNDOQ4a67sEjEWEk_kYYHQnabmS5yeZb-9YX7Z7X0ck1YgFOWymvH7-MYHA1vKQ1Ggf5iU52HSy6BUsSCH1i2Cyoi2kHvOGJwNOvW_XEeo5xammlEC2g6HPm_uyrYuLBTjy7jw05F3okwweVzfew-g-eiI5ckurEy0FmTJjhWBxYYsh_zBJoZAE-9us1NbB97L9SfbF0f6KEOvo')"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Bluetooth Speaker Rugged</p>
+<p class="text-[10px] text-gray-500">SKU: SP-002 • Stock: 210 units</p>
+</div>
+<p class="text-sm font-bold">₦15,000</p>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-6 border-t border-[#eae7f3] dark:border-white/10">
+<button class="px-6 py-2.5 text-sm font-bold text-gray-500">Save Draft</button>
+<button class="px-8 py-2.5 bg-electric-indigo text-white rounded-lg text-sm font-bold shadow-lg">Launch Promotion</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-6">
+<h3 class="font-poppins font-bold text-lg">Active Promotions</h3>
+<div class="bg-white dark:bg-white/5 border border-[#d5cfe8] dark:border-white/10 rounded-xl p-5 shadow-sm relative group overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2.5 py-1 bg-robin-egg/10 text-robin-egg text-[10px] font-bold rounded-full uppercase tracking-wider flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-robin-egg animate-pulse"></span>
+                                Active
+                            </div>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer">more_vert</span>
+</div>
+<h4 class="font-poppins font-bold text-base mb-1">Weekend Flash Sale</h4>
+<p class="text-xs text-gray-500 mb-4">Flash Sale • 15% OFF</p>
+<div class="space-y-3 mb-4">
+<div class="flex items-center gap-2 text-xs text-[#604b9b] dark:text-white/60">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Ends in 14h 23m</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#604b9b] dark:text-white/60">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+<span>24 Items Included</span>
+</div>
+</div>
+<div class="w-full bg-background-light dark:bg-white/5 h-1.5 rounded-full overflow-hidden">
+<div class="bg-robin-egg h-full w-[75%]"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-medium text-gray-400">
+<span>75% Capacity Reached</span>
+<span>421 Sold</span>
+</div>
+</div>
+<div class="bg-white dark:bg-white/5 border border-[#d5cfe8] dark:border-white/10 rounded-xl p-5 shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2.5 py-1 bg-robin-egg/10 text-robin-egg text-[10px] font-bold rounded-full uppercase tracking-wider flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-robin-egg"></span>
+                                Active
+                            </div>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer">more_vert</span>
+</div>
+<h4 class="font-poppins font-bold text-base mb-1">Free Shipping Promo</h4>
+<p class="text-xs text-gray-500 mb-4">Global • Free Delivery</p>
+<div class="space-y-3 mb-4">
+<div class="flex items-center gap-2 text-xs text-[#604b9b] dark:text-white/60">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Ends Dec 31, 2024</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#604b9b] dark:text-white/60">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+<span>All Shop Products</span>
+</div>
+</div>
+<button class="w-full py-2 bg-background-light dark:bg-white/5 border border-[#d5cfe8] dark:border-white/10 rounded-lg text-xs font-bold hover:bg-gray-100 transition-colors">Manage Promo</button>
+</div>
+<div class="p-6 bg-electric-indigo/5 border border-dashed border-electric-indigo/30 rounded-xl text-center">
+<div class="size-12 rounded-full bg-electric-indigo/10 flex items-center justify-center mx-auto mb-3">
+<span class="material-symbols-outlined text-electric-indigo">auto_awesome</span>
+</div>
+<p class="text-xs font-bold text-electric-indigo mb-1">Promotion Tips</p>
+<p class="text-[10px] text-gray-500">Flash sales on Fridays typically see 35% higher engagement in Lagos and Abuja.</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="px-10 py-8 text-center text-gray-400 text-xs">
+<p>© 2024 NobleMart Africa. All rights reserved. Vendor Promotion Portal v3.1.0</p>
+</footer>
+</main>
+</div>
+
+</body></html>

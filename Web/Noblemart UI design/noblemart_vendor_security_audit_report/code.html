@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Security Audit Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#01c4cb",
+                "background-light": "#f8fcfc",
+                "background-dark": "#0f2223",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"],
+                "poppins": ["Poppins", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6f4f4] dark:border-b-gray-800 px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0c1c1d] dark:text-white">
+<div class="size-4 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs><clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath></defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] font-poppins">NobleMart</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Orders</a>
+<a class="text-primary text-sm font-bold leading-normal border-b-2 border-primary" href="#">Security Audit</a>
+<a class="text-[#0c1c1d] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4">
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#459ea1] flex border-none bg-[#e6f4f4] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0c1c1d] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e6f4f4] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#459ea1] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal" placeholder="Search report details" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e6f4f4] dark:bg-gray-800 text-[#0c1c1d] dark:text-white gap-2 text-sm font-bold px-2.5">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Vendor profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCptYjf5HdTBb6uIkW2IIB7nGjuw9w8qbtk7m_7dGaIjrmPabPVsMbDF3zQB9nrA-wW2OyFFBqbB5vebpwm3e9rH_MwtDw1kOdTnRaRtUDYCfWzAWCfipSuxhzZPTGR4TZjfrgzxdR-zuGrU9WkrkWZGZ-gkkBJZfZc2yhOSPhx4YtxEdHojphuN-xdx1szphRqfAICJ4-bvLSyRLv6XvkrSWiko7c08p4BLR9So7GEXE0W44Fxor06eHdBODJg3cHS2cKHkn8QG28");'></div>
+</div>
+</div>
+</header>
+<main class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- Page Heading -->
+<div class="flex flex-wrap items-end justify-between gap-6 p-4 mb-4">
+<div class="flex min-w-72 flex-col gap-2">
+<h1 class="text-[#0c1c1d] dark:text-white text-4xl font-bold leading-tight tracking-[-0.033em] font-poppins">Store Security Audit: Adebayo Electronics</h1>
+<div class="flex items-center gap-2 text-[#459ea1] dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<p class="text-base font-normal">Audit Completion Date: Oct 24, 2023</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-primary text-white text-sm font-bold gap-2 transition-transform hover:scale-[1.02]">
+<span class="material-symbols-outlined">download</span>
+<span class="truncate">Download PDF</span>
+</button>
+<button class="flex min-w-[44px] cursor-pointer items-center justify-center rounded-lg h-11 px-4 bg-white dark:bg-gray-800 border border-[#e6f4f4] dark:border-gray-700 text-[#0c1c1d] dark:text-white transition-colors hover:bg-gray-50">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<!-- Security Score Card Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4">
+<div class="lg:col-span-2 flex flex-col gap-6 rounded-xl p-8 bg-white dark:bg-background-dark border border-[#cde9ea] dark:border-gray-800 shadow-sm relative overflow-hidden">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<!-- Circular Gauge -->
+<div class="relative flex items-center justify-center size-48">
+<svg class="size-full transform -rotate-90">
+<circle class="text-[#e6f4f4] dark:text-gray-800" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.92" stroke-dashoffset="27.64" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-5xl font-black text-[#0c1c1d] dark:text-white">95</span>
+<span class="text-sm font-medium text-[#459ea1]">Score / 100</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#01c4cb]">verified_user</span>
+<h3 class="text-2xl font-bold text-[#0c1c1d] dark:text-white">Excellent Security Posture</h3>
+</div>
+<p class="text-[#459ea1] dark:text-gray-400">Your store meets the high security standards of NobleMart. You are currently in the top 5% of vendors.</p>
+</div>
+<div class="flex flex-wrap gap-4 mt-2">
+<div class="flex flex-col gap-1 px-4 py-2 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-100 dark:border-green-800">
+<span class="text-xs font-bold text-green-600 uppercase">Passed</span>
+<span class="text-xl font-bold text-green-700 dark:text-green-400">45</span>
+</div>
+<div class="flex flex-col gap-1 px-4 py-2 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-100 dark:border-amber-800">
+<span class="text-xs font-bold text-amber-600 uppercase">Moderate</span>
+<span class="text-xl font-bold text-amber-700 dark:text-amber-400">01</span>
+</div>
+<div class="flex flex-col gap-1 px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-800">
+<span class="text-xs font-bold text-red-600 uppercase">Critical</span>
+<span class="text-xl font-bold text-red-700 dark:text-red-400">02</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Badge & Vault Image -->
+<div class="flex flex-col gap-6">
+<div class="bg-gradient-to-br from-primary to-[#00a8ad] rounded-xl p-6 text-white shadow-lg flex flex-col items-center text-center justify-center relative overflow-hidden h-full">
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-[120px]">shield</span>
+</div>
+<span class="material-symbols-outlined text-6xl mb-4">workspace_premium</span>
+<h3 class="text-xl font-bold font-poppins">NobleShield Certified</h3>
+<p class="text-primary-50 text-sm mt-2 opacity-90">Valid thru Oct 2024</p>
+<div class="mt-6 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider">
+                                    High-Trust Merchant
+                                </div>
+</div>
+</div>
+</div>
+<!-- Critical Tasks Section -->
+<div class="p-4">
+<h2 class="text-[#0c1c1d] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 font-poppins flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500">warning</span>
+                            Critical Tasks to Reach 100%
+                        </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+<div class="flex items-center justify-between p-4 bg-white dark:bg-background-dark border-l-4 border-red-500 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-red-50 dark:bg-red-900/30 p-2 rounded-full">
+<span class="material-symbols-outlined text-red-500">person_remove</span>
+</div>
+<div>
+<p class="font-bold text-[#0c1c1d] dark:text-white">Remove Inactive Manager</p>
+<p class="text-sm text-[#459ea1]">Olukayode B. hasn't logged in for 90 days</p>
+</div>
+</div>
+<button class="text-primary font-bold text-sm px-3 py-1 hover:bg-primary/10 rounded">Fix</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-white dark:bg-background-dark border-l-4 border-red-500 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-red-50 dark:bg-red-900/30 p-2 rounded-full">
+<span class="material-symbols-outlined text-red-500">security</span>
+</div>
+<div>
+<p class="font-bold text-[#0c1c1d] dark:text-white">Update 2FA Method</p>
+<p class="text-sm text-[#459ea1]">Switch from SMS to Authenticator App</p>
+</div>
+</div>
+<button class="text-primary font-bold text-sm px-3 py-1 hover:bg-primary/10 rounded">Update</button>
+</div>
+</div>
+</div>
+<!-- Detailed Audit Sections -->
+<div class="p-4 mt-8">
+<h2 class="text-[#0c1c1d] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-6 font-poppins">Detailed Audit Findings</h2>
+<div class="space-y-4">
+<!-- Section: Access & Identity -->
+<div class="rounded-xl border border-[#cde9ea] dark:border-gray-800 bg-white dark:bg-background-dark overflow-hidden">
+<div class="bg-gray-50 dark:bg-gray-800/50 p-4 flex justify-between items-center border-b border-[#cde9ea] dark:border-gray-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+<span class="font-bold text-[#0c1c1d] dark:text-white">Access &amp; Identity</span>
+</div>
+<span class="px-3 py-1 bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400 text-xs font-bold rounded-full">ACTION REQUIRED</span>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">2FA Status</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+<p class="text-sm font-medium">Active (SMS)</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Last Login Location</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<p class="text-sm font-medium">Lagos, Nigeria</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Inactive Team Members</p>
+<div class="flex items-center gap-2 text-red-500">
+<span class="material-symbols-outlined text-sm">error</span>
+<p class="text-sm font-bold">01 Member</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Payout & Financials -->
+<div class="rounded-xl border border-[#cde9ea] dark:border-gray-800 bg-white dark:bg-background-dark overflow-hidden">
+<div class="bg-gray-50 dark:bg-gray-800/50 p-4 flex justify-between items-center border-b border-[#cde9ea] dark:border-gray-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<span class="font-bold text-[#0c1c1d] dark:text-white">Payout &amp; Financials</span>
+</div>
+<span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400 text-xs font-bold rounded-full">SECURE</span>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Bank Account Verification</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-sm">verified</span>
+<p class="text-sm font-medium">Verified (Zenith Bank)</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Recent Change Attempts</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 text-sm">history</span>
+<p class="text-sm font-medium">None in last 30 days</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Auto-Payout Threshold</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">settings</span>
+<p class="text-sm font-medium">₦500,000 Cap</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Data Protection -->
+<div class="rounded-xl border border-[#cde9ea] dark:border-gray-800 bg-white dark:bg-background-dark overflow-hidden">
+<div class="bg-gray-50 dark:bg-gray-800/50 p-4 flex justify-between items-center border-b border-[#cde9ea] dark:border-gray-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">encrypted</span>
+<span class="font-bold text-[#0c1c1d] dark:text-white">Data Protection</span>
+</div>
+<span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400 text-xs font-bold rounded-full">SECURE</span>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Session Timeout</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">timer</span>
+<p class="text-sm font-medium">15 Minutes (Enabled)</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Password Strength Audit</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-sm">password</span>
+<p class="text-sm font-medium">Strong (Last changed Sep 20)</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-[#459ea1] uppercase">Customer PII Access</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">visibility_off</span>
+<p class="text-sm font-medium">Masked by Default</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Historical Trend & Photo Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 mt-8">
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#cde9ea] dark:border-gray-800 shadow-sm">
+<h3 class="text-lg font-bold text-[#0c1c1d] dark:text-white mb-6 font-poppins">12-Month Security Trend</h3>
+<div class="h-48 w-full flex items-end gap-2 px-2 pb-6 border-b border-gray-100 dark:border-gray-800">
+<!-- Minimalist bar/line chart representation -->
+<div class="flex-1 bg-primary/20 rounded-t h-[60%] hover:bg-primary transition-all group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100">85</div>
+</div>
+<div class="flex-1 bg-primary/20 rounded-t h-[65%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[62%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[70%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[75%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[80%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[78%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[82%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[88%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[92%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[94%] hover:bg-primary transition-all group relative"></div>
+<div class="flex-1 bg-primary rounded-t h-[95%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-[10px] px-2 py-1 rounded">95</div>
+</div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-[#459ea1] uppercase font-bold tracking-wider">
+<span>Nov 2022</span>
+<span>May 2023</span>
+<span>Oct 2023</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden min-h-[250px] shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img alt="Professional cybersecurity visualization with secure data vault" class="absolute inset-0 w-full h-full object-cover" data-alt="Digital secure vault with blue glowing circuit lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJYNbkSowqs4wud9v3eYEaKCjJ4kVQrAHRpHQ6ugdP_jScUG7MQYq-586DHT0nOx42MSE9JZ0Ex1SLAQekFalc0ZDp79_mHL4Swd9l-qOLC-9_fVLA9piqQr8gY-85FWbLgfl7eeMs3eSlcABrNFUNY82PCA3CZMmXj4Rt90zmD6MlotHKp-njztt4o_5Yox41hth_C3jYdshuCqU6ke1xNbrctS4Z_Ie-GwrJ40BEspD6T7g3sLhng4PmqFGXaDmJuYdYO28tI-Y"/>
+<div class="absolute bottom-6 left-6 z-20 text-white">
+<h4 class="text-xl font-bold font-poppins">Your Safety, Our Priority</h4>
+<p class="text-sm opacity-90 mt-1">Enterprise-grade security for every vendor.</p>
+</div>
+</div>
+</div>
+<!-- Footer / Assistance -->
+<div class="p-4 mt-8 text-center">
+<p class="text-[#459ea1] text-sm">Need help improving your score? <a class="text-primary font-bold hover:underline" href="#">Chat with a NobleMart Security Officer</a></p>
+<div class="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#459ea1]">
+<p>© 2023 NobleMart Marketplace. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Security Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Compliance Standards</a>
+<a class="hover:text-primary transition-colors" href="#">Vendor Terms</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

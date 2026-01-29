@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Cancelled Successfully - NobleMart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102210",
+                        "robin-egg": "#01C2CA",
+                        "electric-indigo": "#5C1BE8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Poppins", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="w-full bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 px-4 md:px-10 lg:px-20 py-3 flex items-center justify-between sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-gray-900 dark:text-white text-xl font-bold tracking-tight font-poppins">NobleMart</h2>
+</div>
+<div class="hidden md:flex relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 text-gray-900 dark:text-white" placeholder="Search for products..." type="text"/>
+</div>
+</div>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary text-sm font-medium" href="#">Groceries</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary text-sm font-medium" href="#">Fashion</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary text-sm font-medium" href="#">Electronics</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary text-sm font-medium" href="#">Deals</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-white dark:border-gray-700 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="User profile avatar circle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1EzCZrz9JAd-iD457IrCGhMBW_buRJm-HAeMk5-IFEqm2fx5YfBsoRcRFPgwOpdVIYR7kPJtX8WLmeiZrEWiQEC7Fj66dipquIWiezZtVoTY7YgYkByw7WIo3ULv61Vb9n5T8MU1aS2zrPZpJADsk7hd48TNSr_EUZYA75Z4tu5V7gmwnT1mLvbPgmTlG08E4Vy61e_WkdpbHikjeYs79KNt_9fS4_FIWalYo1-P2NG2tIyYGeNysH89aK2_k7MsGi9t-WsFGWB0");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex items-center justify-center p-4 md:p-8">
+<div class="max-w-5xl w-full bg-white dark:bg-gray-900 rounded-xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+<!-- Left Side: Visual -->
+<div class="w-full md:w-1/2 bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-0 overflow-hidden">
+<div class="w-full h-full min-h-[300px] md:min-h-[500px] bg-cover bg-center" data-alt="Dark-skinned person looking relieved using laptop in modern home office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuKDpBYNYJxGsGlo3Bub-4jFEsawNqMFyhTf6Ge124T-Ez_wuq_VzD_vjimXGUgPlCFmm51eGLW8e9kyCPXi1Ou7z3At-pJcU6Hl4MqAEIGGGvBdz3Ykjs6cQvRzuzO9G59SRyp5BQIYmgDYvDRyGhhbRnr0RXRjhrIM0pObIUx-Sl5dsddwi0cbLBBRKf6xkmaJijUH95iZZqqHzrbhD41sMuPaorsgnTrTJQC6qLVMlLu1ZHNFAmyjzpr6Yc00nt4QZ7bTD6Ulw");'>
+</div>
+</div>
+<!-- Right Side: Content -->
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col items-center text-center justify-center">
+<!-- Success Icon -->
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-5xl font-bold">check_circle</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 font-poppins">Order Cancelled Successfully</h1>
+<p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-8 max-w-md">
+                    Your order <span class="font-semibold text-gray-900 dark:text-white">#NM-123456789</span> has been cancelled. As per our NobleShield Escrow policy, your refund of <span class="font-bold text-gray-900 dark:text-white">₦45,000</span> has been initiated.
+                </p>
+<!-- Refund Progress Tracker -->
+<div class="w-full mb-10">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Refund Status</span>
+<span class="text-xs font-bold text-primary">66% Complete</span>
+</div>
+<div class="relative flex items-center justify-between w-full">
+<!-- Progress Bar Background -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-gray-200 dark:bg-gray-800 -translate-y-1/2 rounded-full z-0"></div>
+<!-- Active Progress Line -->
+<div class="absolute top-1/2 left-0 w-2/3 h-1 bg-primary -translate-y-1/2 rounded-full z-0"></div>
+<!-- Step 1: Confirmed -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-5 h-5 rounded-full bg-primary border-4 border-white dark:border-gray-900"></div>
+<span class="text-[10px] md:text-xs mt-2 font-medium text-gray-500">Confirmed</span>
+</div>
+<!-- Step 2: Initiated -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-5 h-5 rounded-full bg-primary border-4 border-white dark:border-gray-900"></div>
+<span class="text-[10px] md:text-xs mt-2 font-bold text-primary">Initiated</span>
+</div>
+<!-- Step 3: Completed -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 border-4 border-white dark:border-gray-900"></div>
+<span class="text-[10px] md:text-xs mt-2 font-medium text-gray-500">Completed</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col w-full gap-4 sm:flex-row">
+<button class="flex-1 bg-robin-egg hover:opacity-90 text-white font-bold py-4 rounded-lg shadow-lg shadow-robin-egg/30 transition-all text-sm uppercase tracking-wide">
+                        View Wallet Balance
+                    </button>
+<button class="flex-1 bg-electric-indigo hover:opacity-90 text-white font-bold py-4 rounded-lg shadow-lg shadow-electric-indigo/30 transition-all text-sm uppercase tracking-wide">
+                        Continue Shopping
+                    </button>
+</div>
+<!-- Support Link -->
+<div class="mt-10">
+<p class="text-gray-500 dark:text-gray-500 text-sm">
+                        Need help? <a class="text-primary font-semibold hover:underline decoration-primary/30" href="#">Contact Support</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Security Tag -->
+<footer class="py-6 flex justify-center items-center gap-4 text-gray-400">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span class="text-xs uppercase tracking-widest font-semibold">NobleShield Secured</span>
+</div>
+<div class="w-px h-3 bg-gray-300 dark:bg-gray-700"></div>
+<p class="text-xs">© 2024 NobleMart E-commerce. All rights reserved.</p>
+</footer>
+</body></html>

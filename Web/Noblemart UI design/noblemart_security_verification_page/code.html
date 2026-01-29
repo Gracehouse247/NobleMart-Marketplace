@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Security Verification</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              "background-light": "#ffffff",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+              sans: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 2s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 min-h-screen flex flex-col font-sans transition-colors duration-200">
+<main class="flex-grow flex items-center justify-center px-6">
+<div class="max-w-xl w-full">
+<div class="mb-8">
+<h2 class="text-3xl font-medium text-slate-900 dark:text-white mb-2">www.noblemart.com</h2>
+<h1 class="text-xl font-normal text-slate-600 dark:text-slate-400">Verifying you are human. This may take a few seconds.</h1>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg p-6 mb-8 flex items-center justify-between shadow-sm">
+<div class="flex items-center space-x-4">
+<div class="relative w-8 h-8 flex items-center justify-center">
+<div class="w-7 h-7 border-2 border-slate-300 dark:border-slate-500 rounded bg-white dark:bg-slate-900"></div>
+<span class="material-icons-outlined text-primary absolute scale-125">check</span>
+</div>
+<span class="text-base font-medium text-slate-700 dark:text-slate-300">Verify you are human</span>
+</div>
+<div class="flex flex-col items-end opacity-60">
+<div class="flex items-center space-x-1">
+<span class="material-icons-outlined text-sm">shield</span>
+<span class="text-xs font-semibold tracking-tight uppercase">NobleShield</span>
+</div>
+<span class="text-[10px] text-slate-500">Privacy • Terms</span>
+</div>
+</div>
+<div class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed space-y-4">
+<p>www.noblemart.com needs to review the security of your connection before proceeding.</p>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<p class="mb-4">Verification is manual or automatic depending on your browser's configuration. This process helps us prevent automated attacks and ensures a safe shopping environment for all our customers.</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="p-8 border-t border-slate-100 dark:border-slate-800">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 dark:text-slate-500 space-y-2 md:space-y-0">
+<div class="flex items-center space-x-4">
+<span>Ray ID: <span class="font-mono uppercase">9c30be643a738e65</span></span>
+<span class="hidden md:inline">•</span>
+<span>Your IP: 192.168.1.1</span>
+</div>
+<div class="flex items-center space-x-1">
+<span>Performance &amp; security by</span>
+<span class="font-semibold text-slate-500 dark:text-slate-400">NobleShield</span>
+</div>
+</div>
+</footer>
+<button class="fixed bottom-4 right-4 p-2 bg-slate-200 dark:bg-slate-700 rounded-full shadow-lg hover:opacity-80 transition-opacity" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined text-slate-600 dark:text-slate-300 block dark:hidden">dark_mode</span>
+<span class="material-icons-outlined text-slate-300 hidden dark:block">light_mode</span>
+</button>
+<script>
+        // Optional logic to simulate redirect or loading
+        window.addEventListener('load', () => {
+            // This would normally be handled by a real security provider script
+            console.log('NobleShield Verification initialized...');
+        });
+    </script>
+
+</body></html>

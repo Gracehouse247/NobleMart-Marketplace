@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart | Electronics Category</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#02024b",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f23",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .spec-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .product-card:hover .spec-overlay {
+            opacity: 1;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        .product-image {
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<!-- Header / Nav -->
+<header class="sticky top-0 z-50 w-full border-b border-white/10 bg-primary px-4 py-3 lg:px-20">
+<div class="mx-auto flex max-w-[1440px] items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 bg-white/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">developer_board</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">NobleMart</h2>
+</div>
+<div class="hidden lg:flex flex-1 min-w-[400px]">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full rounded-lg border-none bg-white/10 py-2 pl-10 pr-4 text-white placeholder-slate-400 focus:ring-2 focus:ring-white/20" placeholder="Search tech, gadgets, and more..." type="text"/>
+</div>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<div class="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-300">
+<a class="hover:text-white transition-colors" href="#">Laptops</a>
+<a class="hover:text-white transition-colors" href="#">Smartphones</a>
+<a class="hover:text-white transition-colors" href="#">TVs</a>
+<a class="hover:text-white transition-colors" href="#">Audio</a>
+</div>
+<div class="flex items-center gap-3">
+<button class="relative flex items-center justify-center rounded-lg bg-white/10 p-2 text-white hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold">3</span>
+</button>
+<button class="hidden md:flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-bold text-primary hover:bg-slate-100 transition-all">
+<span class="material-symbols-outlined text-sm">person</span>
+                        Login
+                    </button>
+</div>
+</nav>
+</div>
+</header>
+<main class="mx-auto max-w-[1440px] px-4 py-6 lg:px-20">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-6">
+<a class="hover:text-primary dark:hover:text-white" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary dark:hover:text-white" href="#">Electronics</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-white">Computing &amp; Gaming</span>
+</nav>
+<!-- Brand of the Week Hero -->
+<section class="relative mb-12 overflow-hidden rounded-xl bg-slate-900">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="relative z-10 flex flex-col justify-center p-8 lg:p-16">
+<div class="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-400 border border-blue-500/30">
+                        Brand of the Week
+                    </div>
+<h1 class="mb-4 text-4xl font-black leading-tight text-white lg:text-6xl">
+                        LG OLED <br/><span class="text-blue-500">EVO Series</span>
+</h1>
+<p class="mb-8 text-lg text-slate-400">Experience the future of display technology. 8K resolution, 120Hz refresh rates, and pixel-perfect blacks.</p>
+<div class="flex flex-wrap items-center gap-6">
+<button class="rounded-lg bg-blue-600 px-8 py-3 font-bold text-white hover:bg-blue-700 transition-all">
+                            Shop Collection
+                        </button>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-center">
+<span class="text-2xl font-bold text-white">08</span>
+<span class="text-[10px] uppercase text-slate-500 font-bold">Hrs</span>
+</div>
+<span class="text-2xl font-bold text-blue-500">:</span>
+<div class="flex flex-col items-center">
+<span class="text-2xl font-bold text-white">45</span>
+<span class="text-[10px] uppercase text-slate-500 font-bold">Min</span>
+</div>
+<span class="text-2xl font-bold text-blue-500">:</span>
+<div class="flex flex-col items-center">
+<span class="text-2xl font-bold text-white">12</span>
+<span class="text-[10px] uppercase text-slate-500 font-bold">Sec</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative min-h-[300px] lg:min-h-full">
+<div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-transparent to-transparent z-10"></div>
+<img alt="LG OLED TV Displaying Vibrant Colors" class="h-full w-full object-cover" data-alt="LG OLED TV showing high contrast vibrant colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8NRAlAO-AXQ3FNo_uGWm2scpzsrSJHjWyG0jq3Qhg36cDAtcKO8zZk66ZCQhcf6szGXMbIfQBvmYJQnwJUfhonUN8fhYMLCnI-TFsq1e83tKKS6LqW_9PwkfbmVL82IyeDsp2jh03eZKLw-Vwgf2ajrS9Zhk56WGatOj5p69_nrMUDXn44XxRWlRhWJcMiCSyJ-YxyB4o6r82qoPhgj2tPQyan4Io1KwhmNdYIspasMUkTLL44kAmPJvxZfMbBmsx_Zbw7SGPxWI"/>
+</div>
+</div>
+</section>
+<div class="flex flex-col gap-8 lg:flex-row">
+<!-- Sidebar Filters -->
+<aside class="w-full shrink-0 lg:w-64">
+<div class="sticky top-24 space-y-8">
+<div>
+<h3 class="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white mb-4">
+<span class="material-symbols-outlined text-blue-500">tune</span>
+                            Technical Filters
+                        </h3>
+<div class="space-y-6">
+<!-- Resolution -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Resolution</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm group-hover:text-primary dark:group-hover:text-white transition-colors">8K Ultra HD</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm group-hover:text-primary dark:group-hover:text-white transition-colors">4K UHD</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm group-hover:text-primary dark:group-hover:text-white transition-colors">1440p Quad HD</span>
+</label>
+</div>
+</div>
+<!-- Processor -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Processor</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Apple M3 Pro</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Intel Core i9</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">AMD Ryzen 9</span>
+</label>
+</div>
+</div>
+<!-- Connectivity -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Connectivity</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Wi-Fi 6E</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">5G Enabled</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 dark:border-slate-700 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Bluetooth 5.3</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Content -->
+<div class="flex-1">
+<div class="mb-6 flex items-center justify-between">
+<h2 class="text-xl font-bold">Premium Electronics <span class="text-sm font-normal text-slate-500">(248 items)</span></h2>
+<div class="flex items-center gap-4">
+<select class="rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-1.5 pl-3 pr-8 text-sm focus:ring-primary">
+<option>Sort by: Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Customer Rating</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+<!-- Product Card 1 -->
+<div class="product-card group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:shadow-2xl hover:shadow-blue-500/10">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800 p-8">
+<div class="absolute top-3 left-3 z-10 flex flex-col gap-2">
+<span class="rounded bg-blue-600 px-2 py-1 text-[10px] font-bold text-white uppercase">New</span>
+</div>
+<div class="absolute top-3 right-3 z-20">
+<label class="flex h-6 w-6 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 shadow-sm cursor-pointer border border-slate-200 dark:border-slate-700">
+<input class="rounded-sm text-primary focus:ring-0" type="checkbox"/>
+</label>
+</div>
+<img alt="MacBook Pro" class="product-image h-full w-full object-contain" data-alt="Sleek silver laptop with high resolution screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9IQdBnJmZyauCuctH1mCp01-Jsc972brSsVcXgvoduETzs8NnlMfcCm--e1FmVGWBNAvrFCbCpMM4p9ufzVhewND7Gkgez_ba8_GHw7ZnlAM1IqIPfjivpXBGp-lwofuX1S-raq-2zJqu8iNTmUOaNxhbBaReDtJH00hTc_qdKqAlK29gB1iwa8HhXOR12cZZLU71jMgezZ2lqLdR_cJ6YZZj_YAnhQMuRCWqI_gqv40evLfNbEsFKxXXlG7fTNHPD-tPoZPr-E"/>
+<!-- Hover Spec Overlay -->
+<div class="spec-overlay absolute inset-0 flex flex-col justify-end bg-primary/80 p-6 text-white backdrop-blur-sm">
+<h4 class="font-bold mb-2">Technical Specs</h4>
+<ul class="space-y-1 text-xs text-slate-200">
+<li class="flex justify-between"><span>CPU</span> <span>M3 Pro Chip</span></li>
+<li class="flex justify-between"><span>RAM</span> <span>16GB Unified</span></li>
+<li class="flex justify-between"><span>Display</span> <span>Liquid Retina XDR</span></li>
+<li class="flex justify-between"><span>Ports</span> <span>Thunderbolt 4</span></li>
+</ul>
+<button class="mt-4 w-full rounded bg-white py-2 text-xs font-bold text-primary">Quick View</button>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-slate-300">star</span>
+<span class="text-[10px] text-slate-500 font-medium ml-1">(124 reviews)</span>
+</div>
+<h3 class="mb-1 text-sm font-bold truncate">MacBook Pro 14" M3 Pro</h3>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold">₦1,245,000</span>
+<button class="rounded-full bg-primary p-2 text-white hover:bg-blue-900 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Verified Vendor</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:shadow-2xl hover:shadow-blue-500/10">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800 p-8">
+<div class="absolute top-3 right-3 z-20">
+<label class="flex h-6 w-6 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 shadow-sm cursor-pointer border border-slate-200 dark:border-slate-700">
+<input checked="" class="rounded-sm text-primary focus:ring-0" type="checkbox"/>
+</label>
+</div>
+<img alt="Samsung Galaxy S24" class="product-image h-full w-full object-contain" data-alt="Modern high end smartphone with triple camera system" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs2wlSPYv49fKM2IArRxseeCgzVKOCBJsin3iVhyG13lGwT-3W_qdvswm7wz0FakLm-W47ARGN1L4kueBV4fJzl_YdPlj7IU4zEbMAHuR4JqoNYszB1VNQzjCBs40aL_meT3C9ZfNb2P1AvM6xGsfUKZbFUvlLK9y0lMM4oNt2kqObK9BH-ETxw6sxYcNCo2SAKc-ZJD4APxhTxraKHHb6N2K5Jlq6YGckzuTUcz018g89VFZzXIpVH8agZpZsxRfks_dc6xz7llc"/>
+<div class="spec-overlay absolute inset-0 flex flex-col justify-end bg-primary/80 p-6 text-white backdrop-blur-sm">
+<h4 class="font-bold mb-2">Technical Specs</h4>
+<ul class="space-y-1 text-xs text-slate-200">
+<li class="flex justify-between"><span>Proc</span> <span>Exynos 2400</span></li>
+<li class="flex justify-between"><span>CAM</span> <span>50MP Triple</span></li>
+<li class="flex justify-between"><span>NET</span> <span>5G Ready</span></li>
+<li class="flex justify-between"><span>BAT</span> <span>4000 mAh</span></li>
+</ul>
+<button class="mt-4 w-full rounded bg-white py-2 text-xs font-bold text-primary">Quick View</button>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 mb-2 text-slate-400">
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="text-[10px] text-slate-500 font-medium ml-1">(98 reviews)</span>
+</div>
+<h3 class="mb-1 text-sm font-bold truncate">Samsung Galaxy S24 Ultra</h3>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold text-blue-600 dark:text-blue-400">₦850,000</span>
+<button class="rounded-full bg-primary p-2 text-white hover:bg-blue-900 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Verified Vendor</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:shadow-2xl hover:shadow-blue-500/10">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800 p-8">
+<div class="absolute top-3 right-3 z-20">
+<label class="flex h-6 w-6 items-center justify-center rounded-full bg-white/90 dark:bg-slate-900/90 shadow-sm cursor-pointer border border-slate-200 dark:border-slate-700">
+<input class="rounded-sm text-primary focus:ring-0" type="checkbox"/>
+</label>
+</div>
+<img alt="iPad Pro" class="product-image h-full w-full object-contain" data-alt="Thin tablet with large retina display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMqm8IoB4Lb2R0sse9wzfPedwVMrppcGgEJpCWQkhwAeKtMZHA5Tl5jl26aTFVFfzpVA0iwvt4t8Mk0itFeFV8s5_ULoeyS6CxtZyIx90JroLTh9QzLcQs9OoujFKFalYd9GFzxpVINNLF6TiOULV4_yjPlMzXO_rB7_sSidAZPU-3uL-9sNZj07bRc_IwBAFTIZDoe8NW1jeI4ETAMpAOH-qBVssP8rFXxLLSdb_1GMiqTFIxuFvVVx2nwu6paj0lwzsWl4zb9OE"/>
+<div class="spec-overlay absolute inset-0 flex flex-col justify-end bg-primary/80 p-6 text-white backdrop-blur-sm">
+<h4 class="font-bold mb-2">Technical Specs</h4>
+<ul class="space-y-1 text-xs text-slate-200">
+<li class="flex justify-between"><span>CHIP</span> <span>M2 Silicon</span></li>
+<li class="flex justify-between"><span>SCRN</span> <span>ProMotion 120Hz</span></li>
+<li class="flex justify-between"><span>STG</span> <span>256GB SSD</span></li>
+</ul>
+<button class="mt-4 w-full rounded bg-white py-2 text-xs font-bold text-primary">Quick View</button>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-slate-300">star</span>
+<span class="text-[10px] text-slate-500 font-medium ml-1">(210 reviews)</span>
+</div>
+<h3 class="mb-1 text-sm font-bold truncate">iPad Pro 12.9" WiFi 256GB</h3>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold">₦620,000</span>
+<button class="rounded-full bg-primary p-2 text-white hover:bg-blue-900 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Verified Vendor</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:shadow-2xl hover:shadow-blue-500/10">
+<div class="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800 p-8">
+<img alt="LG Monitor" class="product-image h-full w-full object-contain" data-alt="Ultra wide gaming monitor on desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSW9b6NRHkLk02_v9pGHbk2U1S4JNAmg7YQJVcVGKQMvZkXBQiGDSTXwHb8J-rGTejePpQ0JIsUjufbu2xWlEXHb_33GPDIrc2M1-yF-P9DLb6zAx2Z8AKFOiIrpwLGMoRoZf5MIWrD_hkmu3y3XHrpcnrb7ehbfLFDDdSo_rEKxMhELHctjEmu3D_1dohu1kqTZ1--DPVvvi-9sSMZatMaB8Bf3Hh0dNJWJVtWNNtWI37alHEqhbPWBfXX4TS3fv3u5-uX2oUsIk"/>
+<div class="spec-overlay absolute inset-0 flex flex-col justify-end bg-primary/80 p-6 text-white backdrop-blur-sm">
+<h4 class="font-bold mb-2">Technical Specs</h4>
+<ul class="space-y-1 text-xs text-slate-200">
+<li class="flex justify-between"><span>SIZE</span> <span>34" UltraWide</span></li>
+<li class="flex justify-between"><span>RATE</span> <span>144Hz</span></li>
+<li class="flex justify-between"><span>TYPE</span> <span>Nano IPS</span></li>
+</ul>
+<button class="mt-4 w-full rounded bg-white py-2 text-xs font-bold text-primary">Quick View</button>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500 fill-current">star</span>
+<span class="material-symbols-outlined text-xs text-slate-300">star</span>
+<span class="text-[10px] text-slate-500 font-medium ml-1">(45 reviews)</span>
+</div>
+<h3 class="mb-1 text-sm font-bold truncate">LG UltraGear 34" Curved</h3>
+<div class="flex items-center justify-between">
+<span class="text-lg font-bold">₦485,000</span>
+<button class="rounded-full bg-primary p-2 text-white hover:bg-blue-900 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Verified Vendor</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-12 flex justify-center">
+<button class="flex items-center gap-2 rounded-lg border-2 border-primary dark:border-blue-600 px-10 py-3 font-bold text-primary dark:text-blue-400 hover:bg-primary hover:text-white transition-all">
+                        Load More Products
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Comparison Floating Bar -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
+<div class="flex items-center gap-6 rounded-2xl bg-primary/95 px-6 py-4 text-white shadow-2xl backdrop-blur-md border border-white/10">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 font-bold uppercase tracking-tight">Comparison Mode</span>
+<span class="text-sm font-bold">2 Items Selected</span>
+</div>
+<div class="flex -space-x-3">
+<div class="size-10 overflow-hidden rounded-full border-2 border-primary bg-slate-800">
+<img class="h-full w-full object-cover" data-alt="Small laptop icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZd_56ABK4p56kSBfi62erIROI_nX_yWvG9Yog8ipfG1QsS6aXny1dsiY13ZT8SlNlr8RgDTiaH-6M63SFrnbPIvhmBUFE_Qi6elC5Esz1U-YG113BWlv0Jg8J5wTyQo5rKFj8-cCHMJOIACZTVSWdDbZ9btRX-eGIQyFPYgNnLlId_C4_-5UfCosM6_UWMHugFeL91pS1L6LLWiNZDw2mScb4XTFbeTo1G3l6xetGCSuLxbzH69YzLZpfjMYuoDHc0CAZ_1N8cls"/>
+</div>
+<div class="size-10 overflow-hidden rounded-full border-2 border-primary bg-slate-800">
+<img class="h-full w-full object-cover" data-alt="Small smartphone icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNB8AydF4FELtFsG3HVXdX9OzOKbscFZMiav-taSRchuB6MtEHGBB_8vr-d2zcaCYdhoBZ7S5_QkxndkGYGEVbdnp0zKJH4f5ZR7gnQ5nlWMj_La2XVJ-x0mLjzTqcbPcPrg0VBq2JGCTiBtN46yKJTyIPoK35jo0pLB3kFuv2Nw9Zy-n8jqqFZNJBrS-ayrcpQnByJyCigBS810FIbAxxJpo2uEYhI4KSRI_m-8EqjWf4gvyI5muLWv9fP9a9n_kRLXSpJat5UP0"/>
+</div>
+</div>
+<button class="rounded-lg bg-blue-600 px-6 py-2 text-sm font-bold text-white hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20">
+                Compare Now
+            </button>
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-colors">close</button>
+</div>
+</div>
+<!-- Footer Space -->
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-12 bg-white dark:bg-slate-950">
+<div class="mx-auto max-w-[1440px] px-4 lg:px-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2 text-primary dark:text-white mb-6">
+<span class="material-symbols-outlined">developer_board</span>
+<h2 class="text-lg font-bold">NobleMart</h2>
+</div>
+<p class="text-sm text-slate-500">Nigeria's premier tech marketplace. Quality guaranteed electronics from verified global vendors.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Categories</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Laptops &amp; PCs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Smartphones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Gaming Consoles</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Support</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Order Tracking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tech Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Returns</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Newsletter</h4>
+<div class="flex">
+<input class="w-full rounded-l-lg border-slate-200 dark:border-slate-800 bg-transparent py-2 px-3 text-sm focus:ring-primary" placeholder="Email address" type="email"/>
+<button class="rounded-r-lg bg-primary px-4 py-2 text-white">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

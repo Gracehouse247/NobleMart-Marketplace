@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NobleMart Vendor Security Center</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5c1ce9",
+                        "fed-blue": "#020249",
+                        "robin-blue": "#01C2CA",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#161121",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gauge-ring {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 14; /* 95% of 283 is approx 269, so 14 remaining */
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-[#120e1b] dark:text-white">
+<div class="flex min-h-screen">
+<!-- Sidebar: Persistent Federal Blue Navigation -->
+<aside class="w-64 bg-fed-blue text-white hidden lg:flex flex-col sticky top-0 h-screen">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-1.5">
+<span class="material-symbols-outlined text-white">shield_person</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">NobleMart</h1>
+<p class="text-xs text-primary/80">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white border-l-4 border-primary" href="#">
+<span class="material-symbols-outlined text-primary">security</span>
+<span class="text-sm font-medium">Security</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="text-sm font-medium">Banking</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 bg-white/5 mx-4 mb-6 rounded-xl">
+<p class="text-[10px] uppercase tracking-wider text-white/40 mb-2 font-bold">Account Security</p>
+<div class="flex items-center gap-2 mb-3">
+<div class="w-2 h-2 rounded-full bg-robin-blue"></div>
+<span class="text-xs font-medium">Status: Secured</span>
+</div>
+<button class="w-full py-2 bg-primary rounded-lg text-xs font-bold hover:bg-primary/90 transition-all">
+                    Run Security Audit
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-8 py-4 bg-white dark:bg-background-dark border-b border-[#ebe7f3] dark:border-white/10 sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<div class="lg:hidden text-fed-blue dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 text-xs text-[#654d99] dark:text-white/60 font-medium">
+<span>Vendor Central</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-fed-blue dark:text-white">Security Center</span>
+</div>
+<h2 class="text-xl font-bold text-fed-blue dark:text-white">Security Management</h2>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="pl-10 pr-4 py-2 bg-background-light dark:bg-white/5 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary" placeholder="Search security settings..." type="text"/>
+</div>
+<button class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg dark:hover:bg-white/10 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-gray-200 dark:border-white/10">
+<div class="text-right">
+<p class="text-sm font-bold leading-none">Abiodun Store</p>
+<p class="text-[10px] text-gray-500 uppercase font-bold tracking-tight">Silver Vendor</p>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center ring-2 ring-primary/20" data-alt="Vendor profile picture of Abiodun Store owner" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAusrIIWU_bSfFB_bpjJ1VysaoS1e_Bdl8pxXramkaxmAzIvR2rNKXc3F-zHi79Yoz1lgSloybUDSvpeYNj8v2RhYqh_bh8D248R7cqy2aXlyo-E3TJ_hPt8uLhATf4EvwsoLrj2EC5CZ8JRF7ArH2anNFsEdh21ZeHg1rMvlwmeODSdUm7HvR7gdaCEul30gBI4-MQYJ1G4jw5SuuplPYkHFSLWZTiRJOEiI-Thk8dnMm59fEBDFPe2QFyV1bxB1N3CqtNkfm3GqY');"></div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-[1200px] mx-auto w-full space-y-8">
+<!-- Security Health Score Section -->
+<div class="relative overflow-hidden bg-white dark:bg-background-dark rounded-xl shadow-sm border border-[#ebe7f3] dark:border-white/10">
+<div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none bg-cover bg-center" data-alt="Photorealistic background of digital lock patterns" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvfexIm9mNcWhv0ZQR1Km2oNZIvDY1s3SLXv31Mb5DiqsDCCY3SW4b18aMRaRKJ4EzHTHEdXgHfco7a3dKrN6PN8vBwBuMajRpDjDkgCpf1pCyuBkqA6Yaiwg3o_CHFYgyDrG2Hf9P8AF11_golI8m2xCa_A4LpzYKMM86wi4TYcttW96hYkkKyNyg40_8_fXRQcw4fsydTL-H9x8GQMc-XqC1N1dHyLfqMu0P5zqzLPIoft8mEyWNmGvI2da4qhxl-6gXukMa1J0');"></div>
+<div class="p-8 flex flex-col md:flex-row items-center gap-10 relative z-10">
+<!-- Robin Egg Blue Circular Gauge -->
+<div class="relative flex items-center justify-center">
+<svg class="w-40 h-40">
+<circle class="text-gray-100 dark:text-white/10 stroke-current" cx="80" cy="80" fill="transparent" r="45" stroke-width="8"></circle>
+<circle class="text-robin-blue stroke-current gauge-ring" cx="80" cy="80" fill="transparent" r="45" stroke-linecap="round" stroke-width="10"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-4xl font-extrabold text-fed-blue dark:text-white">95%</span>
+<span class="text-[10px] font-bold text-gray-500 uppercase">Strength</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-full mb-4">
+<span class="material-symbols-outlined text-amber-500 text-sm">verified</span>
+<span class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wide">NobleShield Certified</span>
+</div>
+<h3 class="text-2xl font-bold text-fed-blue dark:text-white mb-2">Store Security Health: Strong</h3>
+<p class="text-[#654d99] dark:text-white/60 text-base max-w-lg">
+                                Your store is highly protected against unauthorized access. Your payout details and team access logs are verified. 
+                                <span class="font-bold">Last checked: 2 hours ago.</span>
+</p>
+</div>
+<div>
+<button class="bg-primary text-white px-6 py-3 rounded-lg font-bold shadow-lg shadow-primary/30 hover:shadow-xl transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">analytics</span>
+                                View Full Report
+                            </button>
+</div>
+</div>
+</div>
+<!-- Protection Modules Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+<!-- 2FA -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#ebe7f3] dark:border-white/10 flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">vibration</span>
+</div>
+<span class="px-2 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold rounded uppercase">Active</span>
+</div>
+<h4 class="font-bold text-fed-blue dark:text-white mb-1">Two-Factor Authentication</h4>
+<p class="text-sm text-gray-500 dark:text-white/50 mb-4">Secure your login with SMS or Authenticator App.</p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-gray-50 dark:border-white/5">
+<span class="text-xs font-medium text-gray-400">Manage 2FA</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Payout Protection -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#ebe7f3] dark:border-white/10 flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-robin-blue/10 rounded-lg">
+<span class="material-symbols-outlined text-robin-blue">lock_person</span>
+</div>
+<span class="px-2 py-1 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 text-[10px] font-bold rounded uppercase">Protected</span>
+</div>
+<h4 class="font-bold text-fed-blue dark:text-white mb-1">Payout Protection</h4>
+<p class="text-sm text-gray-500 dark:text-white/50 mb-4">48-hour verification lock on bank changes.</p>
+</div>
+<button class="w-full py-2 border border-[#ebe7f3] dark:border-white/10 text-fed-blue dark:text-white text-xs font-bold rounded-lg hover:bg-gray-50 dark:hover:bg-white/5">
+                            Review Settings
+                        </button>
+</div>
+<!-- Team Access -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#ebe7f3] dark:border-white/10 flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-fed-blue/10 rounded-lg">
+<span class="material-symbols-outlined text-fed-blue dark:text-white">group</span>
+</div>
+<span class="px-2 py-1 bg-gray-100 text-gray-700 dark:bg-white/10 dark:text-white/60 text-[10px] font-bold rounded uppercase">3 Staff</span>
+</div>
+<h4 class="font-bold text-fed-blue dark:text-white mb-1">Team Access Security</h4>
+<p class="text-sm text-gray-500 dark:text-white/50 mb-4">Manage role-based permissions and activity logs.</p>
+</div>
+<button class="w-full py-2 border border-[#ebe7f3] dark:border-white/10 text-fed-blue dark:text-white text-xs font-bold rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 flex items-center justify-center gap-1">
+                            Manage Permissions
+                            <span class="material-symbols-outlined text-xs">open_in_new</span>
+</button>
+</div>
+<!-- Fraud Detection -->
+<div class="bg-white dark:bg-background-dark p-6 rounded-xl border border-[#ebe7f3] dark:border-white/10 flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-red-100/10 rounded-lg">
+<span class="material-symbols-outlined text-red-500">radar</span>
+</div>
+<span class="px-2 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-[10px] font-bold rounded uppercase">No Alerts</span>
+</div>
+<h4 class="font-bold text-fed-blue dark:text-white mb-1">Fraud Detection</h4>
+<p class="text-sm text-gray-500 dark:text-white/50 mb-4">Real-time monitoring of order patterns and behavior.</p>
+</div>
+<div class="flex items-center gap-2 py-2 text-green-600 dark:text-green-400 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                            Scanning: Safe
+                        </div>
+</div>
+</div>
+<!-- Security Tips Section -->
+<section class="bg-[#f9f8fc] dark:bg-white/5 rounded-xl p-8">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+<h3 class="text-xl font-bold text-fed-blue dark:text-white">Security Best Practices</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex gap-4 p-4 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-[#ebe7f3] dark:border-white/10">
+<div class="size-12 flex-shrink-0 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">password</span>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-1">Rotate Passwords Regularly</h5>
+<p class="text-xs text-gray-500 dark:text-white/50 leading-relaxed">Change your store owner password every 90 days to prevent unauthorized credential reuse.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-[#ebe7f3] dark:border-white/10">
+<div class="size-12 flex-shrink-0 bg-robin-blue/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-robin-blue">mail_lock</span>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-1">Enable Login Notifications</h5>
+<p class="text-xs text-gray-500 dark:text-white/50 leading-relaxed">Receive instant email/SMS alerts whenever someone logs into your vendor dashboard.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-[#ebe7f3] dark:border-white/10">
+<div class="size-12 flex-shrink-0 bg-amber-500/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-500">devices</span>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-1">Monitor Active Sessions</h5>
+<p class="text-xs text-gray-500 dark:text-white/50 leading-relaxed">Check for any active logins from unfamiliar devices or IP addresses in Nigeria or abroad.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-white dark:bg-background-dark rounded-lg shadow-sm border border-[#ebe7f3] dark:border-white/10">
+<div class="size-12 flex-shrink-0 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-1">Audit Staff Permissions</h5>
+<p class="text-xs text-gray-500 dark:text-white/50 leading-relaxed">Ensure each team member has the minimum required permissions to fulfill their specific role.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Audit Log Footer (Optional context) -->
+<div class="flex items-center justify-between py-4 text-gray-500 dark:text-white/30 border-t border-[#ebe7f3] dark:border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">NobleShield Audit Log V2.4</span>
+</div>
+<a class="text-xs font-bold hover:text-primary transition-colors uppercase tracking-widest" href="#">Download Full Audit Log</a>
+</div>
+</div>
+</main>
+</div>
+</body></html>
